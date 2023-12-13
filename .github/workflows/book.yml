@@ -25,6 +25,10 @@ jobs:
       run: |
         pip install -r requirements.txt
 
+    - name: build examples
+      run: |
+        bash build_examples.sh
+
     - name: build jupyter book
       run: |
         jupyter-book build .
