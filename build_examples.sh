@@ -23,3 +23,6 @@ for filename in examples/*.md; do
 
     python tools/make_count_table.py "$ttl_filename" "$md_filename"
 done
+
+# build queries
+python tools/generate-queries.py
