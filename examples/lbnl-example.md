@@ -7,6 +7,8 @@ This is an example building provided by Lawrence Berkeley National Laboratory
 - [Turtle file](../_static/models/lbnl-example.ttl)
 - [JSON-LD file](../_static/models/lbnl-example.ttl)
 
+## Queries
+
 ## Model Components
 | Root Class | Class | Instance Count |
 |------------|-------|----------------|
