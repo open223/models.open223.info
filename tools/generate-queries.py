@@ -10,7 +10,8 @@ def replace_section_in_markdown(file_path, header, new_content):
     # Find the start index of the header section to be replaced                              
     header_start_idx = content.find(header)                                                             
     if header_start_idx == -1:                                                                          
-        raise ValueError(f"The header '{header}' was not found in the file.")                                                                                                                                     
+        print(f"The header '{header}' was not found in the file.")                                                                                                                                     
+        return
                                                     
     # Find the start index of the next header (if it exists)                                             
     headers_start = [match.start() for match in header_pattern.finditer(content)]                                                                                                                                 
