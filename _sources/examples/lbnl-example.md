@@ -4,9 +4,9 @@ This is an example building provided by Lawrence Berkeley National Laboratory
 
 ## Downloads
 
-- [Turtle file](../_static/models/lbnl-example.ttl)
-- [JSON-LD file](../_static/models/lbnl-example.ttl)
-
+- <a href="/lbnl-example.ttl">Turtle file</a>
+- <a href="/lbnl-example.jsonld">JSON-LD file</a>
+    
 ## Queries
 | Description | Query URL |
 |-------------|-----------|
