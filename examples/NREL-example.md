@@ -8,7 +8,7 @@ This is an example building provided by the National Renewable Energy Laboratory
 - <a href="/NREL-example.jsonld">JSON-LD file</a>
     
 ## Model Components
-| Root Class | Class | Instance Count |
+| Parent Class | Class | Instances |
 |------------|-------|----------------|
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Sensor](https://explore.open223.info/s223/Sensor.html) | 131 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Valve](https://explore.open223.info/s223/Valve.html) | 41 |
