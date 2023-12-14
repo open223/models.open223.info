@@ -75,7 +75,7 @@ for root, dirs, files in os.walk(directory):
 # into the '## Downloads' folder
 for md in glob.glob('examples/*.md'):
     # Extract the file name from the path
-    file_name = os.path.basename(md)
+    file_name = os.path.basename(md).lower()
     # create the markdown with the links in a <a> tag
     markdown_content = f"""
 - <a href="/{file_name.replace('.md', '.ttl')}">Turtle file</a>

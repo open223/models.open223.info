@@ -41,12 +41,12 @@ with open('queries.toml', 'rb') as f:
 # Define the base URL for the queries
 base_url = "https://query.open223.info/"
 
-# Start creating the markdown table
-markdown_table = "| Description | Query URL |\n"
-markdown_table += "|-------------|-----------|\n"
 
 # Loop over each query configuration in the TOML file and add rows to the markdown table                 
 for key in toml_data:                               
+    # Start creating the markdown table
+    markdown_table = "| Description | Query URL |\n"
+    markdown_table += "|-------------|-----------|\n"
     for query in toml_data[key]:
         description = query.get('description', '')
         raw_query = query.get('query', '')
