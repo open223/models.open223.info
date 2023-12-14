@@ -48,7 +48,7 @@ for root_class in root_classes:
 
 # write the markdown table to a string
 markdown_table = ""
-markdown_table += "| Root Class | Class | Instance Count |\n"
+markdown_table += "| Parent Class | Class | Instances |\n"
 markdown_table += "|------------|-------|----------------|\n"
 for root_class, subclasses in class_counts.items():
     # generate a link to the root class as https://explore.open223.info/s223/{root class}.html and use the short name
