@@ -19,3 +19,14 @@ SELECT ?location ?sensor WHERE {
     ?sensor s223:hasObservationLocation ?location
 }
 """
+
+[[ibal]]
+description="Zone/room temperature sensors"
+query="""
+SELECT ?location ?sensor WHERE {
+    ?sensor rdf:type/rdfs:subClassOf* s223:Sensor .
+    ?sensor s223:observes ?property .
+    ?property qudt:hasQuantityKind quantitykind:Temperature .
+    ?sensor s223:hasObservationLocation ?location
+}
+"""
