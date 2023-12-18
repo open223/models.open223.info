@@ -6,7 +6,7 @@ This component model is an example of the variable air volume (VAV) terminal uni
 
 ## Downloads
 
-- <a href="/../models/guideline36-2021-4.2.ttl">Turtle file</a>
+- [Turtle file](../models/guideline36-2021-4.2.ttl)
 
 
 ## Queries
