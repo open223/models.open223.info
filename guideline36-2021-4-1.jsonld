@@ -1,5 +1,49 @@
 [
     {
+        "@id": "urn:ex/damper-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-after-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "urn:ex/out"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/in-connection",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/duct-before-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
         "@id": "urn:ex/damper-command",
         "@type": [
             "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
@@ -21,21 +65,19 @@
         ]
     },
     {
-        "@id": "urn:ex/duct-after-damper",
+        "@id": "urn:ex/discharge-air-flow-sensor",
         "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
+            "http://data.ashrae.org/standard223#Sensor"
         ],
-        "http://data.ashrae.org/standard223#hasMedium": [
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+                "@id": "urn:ex/out"
             }
-        ]
-    },
-    {
-        "@id": "urn:ex/",
-        "@type": [
-            "http://www.w3.org/2002/07/owl#Ontology"
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/discharge-air-flow"
+            }
         ]
     },
     {
@@ -55,39 +97,6 @@
         "http://data.ashrae.org/standard223#contains": [
             {
                 "@id": "urn:ex/damper"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-before-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/damper-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-before-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "urn:ex/in"
             }
         ]
     },
@@ -113,44 +122,25 @@
         ]
     },
     {
-        "@id": "urn:ex/out",
+        "@id": "urn:ex/damper",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+            "http://data.ashrae.org/standard223#Damper",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/out-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
+                "@id": "urn:ex/damper-in"
+            },
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+                "@id": "urn:ex/damper-out"
             }
         ],
         "http://data.ashrae.org/standard223#hasProperty": [
             {
-                "@id": "urn:ex/discharge-air-flow"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/damper-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
+                "@id": "urn:ex/damper-command"
+            },
             {
-                "@id": "urn:ex/duct-after-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "urn:ex/out"
+                "@id": "urn:ex/damper-position"
             }
         ]
     },
@@ -171,25 +161,14 @@
         ]
     },
     {
-        "@id": "urn:ex/damper",
+        "@id": "urn:ex/duct-after-damper",
         "@type": [
-            "http://data.ashrae.org/standard223#Damper",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
+        "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "urn:ex/damper-in"
-            },
-            {
-                "@id": "urn:ex/damper-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/damper-command"
-            },
-            {
-                "@id": "urn:ex/damper-position"
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
             }
         ]
     },
@@ -221,29 +200,44 @@
         ]
     },
     {
-        "@id": "urn:ex/in-connection",
+        "@id": "urn:ex/out",
         "@type": [
-            "http://data.ashrae.org/standard223#Connection"
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/out-connection"
+            }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#Medium-Air"
             }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/discharge-air-flow"
+            }
         ]
     },
     {
-        "@id": "urn:ex/discharge-air-flow-sensor",
+        "@id": "urn:ex/damper-in",
         "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
+        "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/out"
+                "@id": "urn:ex/duct-before-damper"
             }
         ],
-        "http://data.ashrae.org/standard223#observes": [
+        "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "urn:ex/discharge-air-flow"
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "urn:ex/in"
             }
         ]
     },
@@ -261,6 +255,12 @@
             {
                 "@id": "http://qudt.org/vocab/unit/PERCENT"
             }
+        ]
+    },
+    {
+        "@id": "urn:ex/",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Ontology"
         ]
     }
 ]
