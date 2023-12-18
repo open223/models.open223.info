@@ -2,6 +2,9 @@
 
 This is an example building provided by Lawrence Berkeley National Laboratory
 
+![lbnl-example](../_static/images/lbnl-example.png)
+
+
 ## Downloads
 
 - <a href="/lbnl-example.ttl">Turtle file</a>
