@@ -6,8 +6,8 @@ This component model is an example of the variable air volume (VAV) terminal uni
 
 ## Downloads
 
-- <a href="/g36-4-1.ttl">Turtle file</a>
-- <a href="/g36-4-1.jsonld">JSON-LD file</a>
+- <a href="/guideline36-2021-4.1.ttl">Turtle file</a>
+- <a href="/guideline36-2021-4.1.jsonld">JSON-LD file</a>
     
 ## Model Components
 | Parent Class | Class | Instances |
