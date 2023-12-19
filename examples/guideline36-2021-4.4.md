@@ -2,7 +2,7 @@
 
 This component model is an example of the dual dut terminal unit with inlet sensors from Guideline 36-2021 Section 4.4, illustrated in Figure A-7.
 
-![](../_static/images/g36-extensions-dual-duct-terminal-unit-with-inlet-sensors.png)
+![](../_static/images/guideline36-2021-4.4.png)
 
 ## Downloads
 
