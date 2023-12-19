@@ -2,7 +2,7 @@
 
 This is a model of the Intelligent Buildings Agents Laboratory (IBAL) at NIST.
 
-The schematics of the air and hydronic systems can be found [here](_static/schematics/ibal.pdf)
+The schematics of the air and hydronic systems can be found [here](../_static/schematics/ibal.pdf)
 
 ## Downloads
 
