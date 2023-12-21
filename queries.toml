@@ -30,3 +30,35 @@ SELECT ?location ?sensor WHERE {
     ?sensor s223:hasObservationLocation ?location
 }
 """
+
+[[ibal]]
+description="Sensors in Connections"
+query="""
+SELECT ?segment ?channel ?id WHERE {
+    ?segment a s223:Connection .
+    ?channel a/rdfs:subClassOf* s223:Sensor .
+    ?channel s223:observes ?id .
+}
+"""
+
+[[ibal]]
+description="Sensors in AHU 1 and what units they are measured in"
+query="""
+SELECT ?channel ?id ?unit WHERE {
+    BIND(IBAL:AHU_1 as ?ahu) {
+    }
+    UNION {
+        ?ahu s223:contains ?equipment .
+        ?channel s223:hasObservationLocation ?equipment .
+        ?channel s223:observes ?id .
+        ?id qudt:hasUnit ?unit .
+    }
+    UNION {
+        ?ahu s223:contains ?equipment .
+        ?equipment s223:connectedThrough ?connnection .
+        ?channel s223:hasObservationLocation ?connection .
+        ?channel s223:observes ?id .
+        ?id qudt:hasUnit ?u .
+    }
+}
+"""
