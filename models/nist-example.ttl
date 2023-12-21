@@ -3,6 +3,7 @@
 # prefix: IBAL
 
 @prefix IBAL: <http://example.org/IBAL#> .
+@prefix bacnet: <http://data.ashrae.org/bacnet/2020#> .
 @prefix brick: <https://brickschema.org/schema/Brick#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
@@ -16,6 +17,32 @@
   a owl:Ontology ;
   owl:imports <http://data.ashrae.org/standard223/1.0/model/all> ;
   owl:versionInfo "Created with TopBraid Composer" ;
+.
+IBAL:AHU1_FnB
+  a s223:FunctionBlock ;
+  s223:hasInput IBAL:ahu2_out_rtd ;
+  s223:hasInput IBAL:ahu2_p_down ;
+  s223:hasInput IBAL:d15_pos_c ;
+  s223:hasInput IBAL:d16_pos_c ;
+  s223:hasInput IBAL:v13_pos_fb ;
+  s223:hasInput IBAL:vav1_heat_c ;
+  s223:hasInput IBAL:vav2_heat_c ;
+  s223:hasOutput IBAL:ahu2_vfd ;
+  s223:hasOutput IBAL:v13_pos_c ;
+  rdfs:label "AHU1 Fn b" ;
+.
+IBAL:AHU2_FnB
+  a s223:FunctionBlock ;
+  s223:hasInput IBAL:ahu1_out_rtd ;
+  s223:hasInput IBAL:ahu1_p_down ;
+  s223:hasInput IBAL:d17_pos_c ;
+  s223:hasInput IBAL:d18_pos_c ;
+  s223:hasInput IBAL:v12_pos_fb ;
+  s223:hasInput IBAL:vav3_heat_c ;
+  s223:hasInput IBAL:vav4_heat_c ;
+  s223:hasOutput IBAL:ahu1_vfd ;
+  s223:hasOutput IBAL:v12_pos_c ;
+  rdfs:label "AHU2 Fn b" ;
 .
 IBAL:AHU_1
   a s223:AirHandlingUnit ;
@@ -78,6 +105,7 @@ IBAL:AHU_1_Zone
 .
 IBAL:AHU_2
   a s223:AirHandlingUnit ;
+  bacnet:hasPort bacnet:P_47815 ;
   s223:contains IBAL:CoolingCoil_2 ;
   s223:contains IBAL:Fan_2 ;
   s223:contains IBAL:HeatingCoil_4 ;
@@ -142,6 +170,7 @@ IBAL:AHU_3
   s223:contains IBAL:CoolingCoil_3 ;
   s223:contains IBAL:Fan_5 ;
   s223:contains IBAL:HeatingCoil_7 ;
+  s223:contains IBAL:VFD_5 ;
   s223:hasConnectionPoint IBAL:AHU_3_G_ICP ;
   s223:hasConnectionPoint IBAL:AHU_3_G_OCP ;
   s223:hasConnectionPoint IBAL:AHU_3_ICP ;
@@ -209,6 +238,7 @@ IBAL:AirFlow
   s223:hasMember IBAL:VAV_4 ;
   s223:hasMember IBAL:VFD_3 ;
   s223:hasMember IBAL:VFD_4 ;
+  rdfs:label "AirFlow" ;
 .
 IBAL:CC_1_Bypass_Connection
   a s223:Connection ;
@@ -295,11 +325,173 @@ IBAL:CC_3_W_OCP
   s223:hasMedium s223:Medium-Water ;
   rdfs:label "CC 3 W OCP" ;
 .
+IBAL:Channel_10
+  a s223:HumiditySensor ;
+  s223:hasObservationLocation IBAL:Segment_1 ;
+  s223:observes IBAL:ahu2_rh_down ;
+  rdfs:label "Channel 10" ;
+.
+IBAL:Channel_105
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:HVAC_Space_1_ICP ;
+  s223:observes IBAL:zs1_heat_rtd ;
+  rdfs:label "Channel 105" ;
+.
+IBAL:Channel_106
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_12 ;
+  s223:observes IBAL:zs1_out_rtd ;
+  rdfs:label "Channel 106" ;
+.
+IBAL:Channel_107
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:HVAC_Space_2_ICP ;
+  s223:observes IBAL:zs2_heat_rtd ;
+  rdfs:label "Channel 107" ;
+.
+IBAL:Channel_108
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_14 ;
+  s223:observes IBAL:zs2_out_rtd ;
+  rdfs:label "Channel 108" ;
+.
+IBAL:Channel_109
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:HVAC_Space_3_ICP ;
+  s223:observes IBAL:zs3_heat_rtd ;
+  rdfs:label "Channel 109" ;
+.
+IBAL:Channel_110
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_16 ;
+  s223:observes IBAL:zs3_out_rtd ;
+  rdfs:label "Channel 110" ;
+.
+IBAL:Channel_111
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:HVAC_Space_4_ICP ;
+  s223:observes IBAL:zs4_heat_rtd ;
+  rdfs:label "Channel 111" ;
+.
+IBAL:Channel_112
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_18 ;
+  s223:observes IBAL:zs4_out_rtd ;
+  rdfs:label "Channel 112" ;
+.
+IBAL:Channel_121
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_76 ;
+  s223:observes IBAL:ch1_e_in_rtd ;
+  rdfs:label "Channel 121" ;
+.
+IBAL:Channel_122
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Chiller_1_Lower_Connection ;
+  s223:observes IBAL:ch1_e_out_rtd ;
+  rdfs:label "Channel 122" ;
+.
+IBAL:Channel_123
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Chiller_2_Lower_Connection ;
+  s223:observes IBAL:ch2_e_out_rtd ;
+  rdfs:label "Channel 123" ;
+.
 IBAL:Channel_124
   a s223:TemperatureSensor ;
   s223:hasObservationLocation IBAL:Segment_105 ;
   s223:observes IBAL:ahu1_cc_out_rtd ;
   rdfs:label "Channel 124" ;
+.
+IBAL:Channel_125
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_106 ;
+  s223:observes IBAL:ahu2_cc_out_rtd ;
+  rdfs:label "Channel 125" ;
+.
+IBAL:Channel_126
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_88 ;
+  s223:observes IBAL:ts_in_rtd ;
+  rdfs:label "Channel 126" ;
+.
+IBAL:Channel_127
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_104 ;
+  s223:observes IBAL:ts_out_rtd ;
+  rdfs:label "Channel 127" ;
+.
+IBAL:Channel_128
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_67 ;
+  s223:observes IBAL:sl_out_rtd ;
+  rdfs:label "Channel 128" ;
+.
+IBAL:Channel_13
+  a s223:PressureSensor ;
+  s223:hasObservationLocation IBAL:Segment_27 ;
+  s223:observes IBAL:exf1_p_up ;
+  rdfs:label "Channel 13" ;
+.
+IBAL:Channel_130
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:PlateHeatExchange_1_Connection ;
+  s223:observes IBAL:hx1_pg_rtd ;
+  rdfs:label "Channel 130" ;
+.
+IBAL:Channel_134
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:HeatExchange_Connection ;
+  s223:observes IBAL:hx3_pg_rtd ;
+  rdfs:label "Channel 129" ;
+.
+IBAL:Channel_14
+  a s223:PressureSensor ;
+  s223:hasObservationLocation IBAL:Exhaust_Fan_1_Connection_2 ;
+  s223:observes IBAL:exf1_p_down ;
+  rdfs:label "Channel 14" ;
+.
+IBAL:Channel_155
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_56 ;
+  s223:observes IBAL:ahu2_cc_in_rtd ;
+  rdfs:label "Channel 155" ;
+.
+IBAL:Channel_159
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_92 ;
+  s223:observes IBAL:pl_out_rtd ;
+  rdfs:label "Channel 159" ;
+.
+IBAL:Channel_16
+  a s223:PressureSensor ;
+  s223:hasObservationLocation IBAL:Segment_30 ;
+  s223:observes IBAL:exf2_p_up ;
+  rdfs:label "Channel 16" ;
+.
+IBAL:Channel_160
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_70 ;
+  s223:observes IBAL:pl_in_rtd ;
+  rdfs:label "Channel 160" ;
+.
+IBAL:Channel_17
+  a s223:PressureSensor ;
+  s223:hasObservationLocation IBAL:Exhaust_Fan_2_Connection_2 ;
+  s223:observes IBAL:exf2_p_down ;
+  rdfs:label "Channel 17" ;
+.
+IBAL:Channel_18
+  a s223:ElectricMeter ;
+  s223:hasObservationLocation IBAL:VFD_3 ;
+  s223:observes IBAL:exf1_power ;
+  rdfs:label "Channel 18" ;
+.
+IBAL:Channel_193
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Chiller_1_Lower_Connection ;
+  s223:observes IBAL:ch1_f_e ;
+  rdfs:label "Channel 193" ;
 .
 IBAL:Channel_197
   a s223:FlowSensor ;
@@ -307,11 +499,101 @@ IBAL:Channel_197
   s223:observes IBAL:ahu1_f_cc ;
   rdfs:label "Channel 197" ;
 .
+IBAL:Channel_198
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Segment_106 ;
+  s223:observes IBAL:ahu2_f_cc_mag ;
+  rdfs:label "Channel 198" ;
+.
+IBAL:Channel_200
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Segment_69 ;
+  s223:observes IBAL:pl_f ;
+  rdfs:label "Channel 200" ;
+.
+IBAL:Channel_201
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_2 ;
+  s223:observes IBAL:d16_pos_c ;
+  rdfs:label "Channel 201" ;
+.
 IBAL:Channel_3
   a s223:HumiditySensor ;
   s223:hasObservationLocation IBAL:HC_4_ICP ;
   s223:observes IBAL:ahu1_rh_up ;
   rdfs:label "Channel 3" ;
+.
+IBAL:Channel_301
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Segment_2 ;
+  s223:observes IBAL:vav1_f ;
+  rdfs:label "Channel 301" ;
+.
+IBAL:Channel_301T
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_1 ;
+  s223:observes IBAL:vav1_t_in ;
+  rdfs:label "Channel 301T" ;
+.
+IBAL:Channel_302
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Segment_4 ;
+  s223:observes IBAL:vav2_f ;
+  rdfs:label "Channel 302" ;
+.
+IBAL:Channel_302T
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_4 ;
+  s223:observes IBAL:vav2_t_in ;
+  rdfs:label "Channel 302T" ;
+.
+IBAL:Channel_303
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Segment_7 ;
+  s223:observes IBAL:vav3_f ;
+  rdfs:label "Channel 303" ;
+.
+IBAL:Channel_303T
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_7 ;
+  s223:observes IBAL:vav3_t_in ;
+  rdfs:label "Channel 303T" ;
+.
+IBAL:Channel_306
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Segment_27 ;
+  s223:observes IBAL:exf1_f ;
+  rdfs:label "Channel 306" ;
+.
+IBAL:Channel_306T
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_27 ;
+  s223:observes IBAL:exf1_t_in ;
+  rdfs:label "Channel 306T" ;
+.
+IBAL:Channel_307
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Segment_30 ;
+  s223:observes IBAL:exf2_f ;
+  rdfs:label "Channel 307" ;
+.
+IBAL:Channel_307T
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_30 ;
+  s223:observes IBAL:exf2_t_in ;
+  rdfs:label "Channel 307T" ;
+.
+IBAL:Channel_308
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Segment_10 ;
+  s223:observes IBAL:vav4_f ;
+  rdfs:label "Channel 308" ;
+.
+IBAL:Channel_308T
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_10 ;
+  s223:observes IBAL:vav4_t_in ;
+  rdfs:label "Channel 308T" ;
 .
 IBAL:Channel_310
   a s223:Controller ;
@@ -349,6 +631,30 @@ IBAL:Channel_326T
   s223:observes IBAL:ahu1_t_sa ;
   rdfs:label "Channel 326T" ;
 .
+IBAL:Channel_327
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Segment_39 ;
+  s223:observes IBAL:ahu2_f_sa ;
+  rdfs:label "Channel 327" ;
+.
+IBAL:Channel_327T
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_39 ;
+  s223:observes IBAL:ahu2_t_sa ;
+  rdfs:label "Channel 327T" ;
+.
+IBAL:Channel_328
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_11 ;
+  s223:observes IBAL:d7_pos_fb ;
+  rdfs:label "Channel 328" ;
+.
+IBAL:Channel_328AO
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_11 ;
+  s223:observes IBAL:d7_pos_c ;
+  rdfs:label "Channel 328AO" ;
+.
 IBAL:Channel_329
   a s223:Controller ;
   s223:hasObservationLocation IBAL:MotorizedDamper_13 ;
@@ -361,17 +667,131 @@ IBAL:Channel_329AO
   s223:observers IBAL:d6_pos_c ;
   rdfs:label "Channel 329AO" ;
 .
+IBAL:Channel_334
+  a s223:FlowSensor ;
+  s223:hasObservationLocation IBAL:Segment_20 ;
+  s223:observes IBAL:ahu2_f_ra ;
+  rdfs:label "Channel 334" ;
+.
+IBAL:Channel_334T
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_20 ;
+  s223:observes IBAL:ahu2_t_ra ;
+  rdfs:label "Channel 334T" ;
+.
+IBAL:Channel_335
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_12 ;
+  s223:observes IBAL:d8_pos_fb ;
+  rdfs:label "Channel 335" ;
+.
+IBAL:Channel_335AO
+  a s223:Controller ;
+  s223:hasObservtaionLocation IBAL:MotorizedDamper_12 ;
+  s223:observes IBAL:d8_pos_c ;
+  rdfs:label "Channel 335AO" ;
+.
+IBAL:Channel_336
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_1 ;
+  s223:observes IBAL:d15_pos_fb ;
+  rdfs:label "Channel 336" ;
+.
+IBAL:Channel_336AO
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:VAV_1 ;
+  s223:observes IBAL:d15_pos_c ;
+  rdfs:label "Channel 336AO" ;
+.
+IBAL:Channel_360
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_2 ;
+  s223:observes IBAL:d16_pos_fb ;
+  rdfs:label "Channel 360" ;
+.
+IBAL:Channel_363
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_3 ;
+  s223:observes IBAL:d17_pos_fb ;
+  rdfs:label "Channel 363" ;
+.
+IBAL:Channel_363AO
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_3 ;
+  s223:observes IBAL:d17_pos_c ;
+  rdfs:label "Channel 363AO" ;
+.
+IBAL:Channel_364
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_4 ;
+  s223:observes IBAL:d18_pos_fb ;
+  rdfs:label "Channel 364" ;
+.
+IBAL:Channel_364AO
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_4 ;
+  s223:observes IBAL:d18_pos_c ;
+  rdfs:label "Channel 364AO" ;
+.
+IBAL:Channel_37
+  a s223:HumiditySensor ;
+  s223:hasObservationLocation IBAL:Segment_12 ;
+  s223:observes IBAL:zs1_rh ;
+  rdfs:label "Channel 37" ;
+.
+IBAL:Channel_38
+  a s223:HumiditySensor ;
+  s223:hasObservationLocation IBAL:Segment_14 ;
+  s223:observes IBAL:zs2_rh ;
+  rdfs:label "Channel 38" ;
+.
+IBAL:Channel_381
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedThreeWayValve_5 ;
+  s223:observes IBAL:v8_pos_c ;
+  rdfs:label "Channel 381" ;
+.
 IBAL:Channel_383
   a s223:Controller ;
   s223:hasObservationLocation IBAL:MotorizedThreeWayValve_1 ;
   s223:observes IBAL:v12_pos_fb ;
   rdfs:label "Channel 383" ;
 .
+IBAL:Channel_384
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedThreeWayValve_2 ;
+  s223:observes IBAL:v13_pos_fb ;
+  rdfs:label "Channel 384" ;
+.
+IBAL:Channel_39
+  a s223:HumiditySensor ;
+  s223:hasObservationLocation IBAL:Segment_16 ;
+  s223:observes IBAL:zs3_rh ;
+  rdfs:label "Channel 39" ;
+.
+IBAL:Channel_394bw
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:Fan_4 ;
+  s223:observes IBAL:exf2_on ;
+  rdfs:label "Channel 394bw" ;
+.
+IBAL:Channel_394ow
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:Fan_3 ;
+  s223:observes IBAL:exf1_on ;
+  rdfs:label "Channel 394ow" ;
+.
 IBAL:Channel_395bw
   a s223:Controller ;
   s223:hasObservationLocation IBAL:AHU_3 ;
   s223:observes IBAL:ahu1_on ;
   rdfs:label "Channel 395bw" ;
+.
+IBAL:Channel_395gw
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:AHU_3 ;
+  s223:observes IBAL:ahu2_on ;
+  rdfs:label "Channel 395gw" ;
 .
 IBAL:Channel_397
   a s223:Controller ;
@@ -385,11 +805,65 @@ IBAL:Channel_4
   s223:observes IBAL:ahu1_p_up ;
   rdfs:label "Channel 4" ;
 .
+IBAL:Channel_40
+  a s223:HumiditySensor ;
+  s223:hasObservationLocation IBAL:Segment_18 ;
+  s223:observes IBAL:zs4_rh ;
+  rdfs:label "Channel 40" ;
+.
+IBAL:Channel_401
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:HeatingCoil_2 ;
+  s223:observes IBAL:vav1_heat_c ;
+  rdfs:label "Channel 401" ;
+.
+IBAL:Channel_402
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:HeatingCoil_3 ;
+  s223:observes IBAL:vav2_heat_c ;
+  rdfs:label "Channel 402" ;
+.
+IBAL:Channel_403
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:HeatingCoil_5 ;
+  s223:observes IBAL:vav3_heat_c ;
+  rdfs:label "Channel 403" ;
+.
+IBAL:Channel_404
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:HeatingCoil_6 ;
+  s223:observes IBAL:vav4_heat_c ;
+  rdfs:label "Channel 404" ;
+.
+IBAL:Channel_405
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:HeatingCoil_1 ;
+  s223:observes IBAL:ahu2_heat_c ;
+  rdfs:label "Channel 405" ;
+.
+IBAL:Channel_411
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedThreeWayValve_2 ;
+  s223:observes IBAL:v13_pos_c ;
+  rdfs:label "Channel 411" ;
+.
 IBAL:Channel_412
   a s223:Controller ;
   s223:hasObservationLocation IBAL:MotorizedThreeWayValve_1 ;
   s223:observes IBAL:v12_pos_c ;
   rdfs:label "Channel 412" ;
+.
+IBAL:Channel_425
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_8 ;
+  s223:observes IBAL:d10_pos_c ;
+  rdfs:label "Channel 425" ;
+.
+IBAL:Channel_426
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_6 ;
+  s223:observes IBAL:d11_pos_c ;
+  rdfs:label "Channel 426" ;
 .
 IBAL:Channel_450
   a s223:Controller ;
@@ -397,11 +871,71 @@ IBAL:Channel_450
   s223:observes IBAL:ahu1_vfd ;
   rdfs:label "Channel 450" ;
 .
+IBAL:Channel_451
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:VFD_1 ;
+  s223:observes IBAL:ahu2_vfd ;
+  rdfs:label "Channel 451" ;
+.
+IBAL:Channel_453
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:VFD_3 ;
+  s223:observes IBAL:exf1_vfd ;
+  rdfs:label "Channel 453" ;
+.
+IBAL:Channel_454
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:VFD_4 ;
+  s223:observes IBAL:exf2_vfd ;
+  rdfs:label "Channel 454" ;
+.
+IBAL:Channel_456
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedThreeWayValve_5 ;
+  s223:observes IBAL:v8_pos_c ;
+  rdfs:label "Channel 456" ;
+.
+IBAL:Channel_49
+  a s223:PressureSensor ;
+  s223:hasObservationLocation IBAL:AHU_3_Connection_3 ;
+  s223:observes IBAL:oau_p_up ;
+  rdfs:label "Channel 49" ;
+.
+IBAL:Channel_495
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_8 ;
+  s223:observes IBAL:d10_pos_fb ;
+  rdfs:label "Channel 495" ;
+.
+IBAL:Channel_496
+  a s223:Controller ;
+  s223:hasObservationLocation IBAL:MotorizedDamper_6 ;
+  s223:observes IBAL:d11_pos_fb ;
+  rdfs:label "Channel 496" ;
+.
 IBAL:Channel_5
   a s223:PressureSensor ;
   s223:hasObservationLocation IBAL:Segment_9 ;
   s223:observes IBAL:ahu1_p_down ;
   rdfs:label "Channel 5" ;
+.
+IBAL:Channel_50
+  a s223:PressureSensor ;
+  s223:hasObservationLocation IBAL:Segment_44 ;
+  s223:observes IBAL:oau_p_down ;
+  rdfs:label "Channel 50" ;
+.
+IBAL:Channel_51
+  a s223:HumiditySensor ;
+  s223:hasObservationLocation IBAL:Segment_44 ;
+  s223:observes IBAL:oau_rh ;
+  rdfs:label "Channel 51" ;
+.
+IBAL:Channel_52
+  a s223:ElectricMeter ;
+  s223:hasObservationLocation IBAL:WaterChiller_1 ;
+  s223:observes IBAL:ch1_power ;
+  rdfs:label "Channel 52" ;
 .
 IBAL:Channel_59
   a s223:ElectricMeter ;
@@ -415,11 +949,59 @@ IBAL:Channel_6
   s223:observes IBAL:ahu1_rh_down ;
   rdfs:label "Channel 6" ;
 .
+IBAL:Channel_60
+  a s223:ElectricMeter ;
+  s223:hasObservationLocation IBAL:VFD_1 ;
+  s223:observes IBAL:ahu2_fan_power ;
+  rdfs:label "Channel 60" ;
+.
 IBAL:Channel_61
   a s223:ElectricMeter ;
   s223:hasObservationLocation IBAL:HeatingCoil_4 ;
   s223:observes IBAL:ahu1_heat_power ;
   rdfs:label "Channel 61" ;
+.
+IBAL:Channel_62
+  a s223:ElectricMeter ;
+  s223:hasObservationLocation IBAL:HeatingCoil_1 ;
+  s223:observes IBAL:ahu2_heat_power ;
+  rdfs:label "Channel 62" ;
+.
+IBAL:Channel_63
+  a s223:ElectricMeter ;
+  s223:hasObservationLocation IBAL:HeatingCoil_2 ;
+  s223:observes IBAL:vav1_heat_power ;
+  rdfs:label "Channel 63" ;
+.
+IBAL:Channel_64
+  a s223:ElectricMeter ;
+  s223:hasObservationLocation IBAL:HeatingCoil_3 ;
+  s223:observes IBAL:vav2_heat_power ;
+  rdfs:label "Channel 64" ;
+.
+IBAL:Channel_65
+  a s223:ElectricMeter ;
+  s223:hasObservationLocation IBAL:HeatingCoil_5 ;
+  s223:observes IBAL:vav3_heat_power ;
+  rdfs:label "Channel 65" ;
+.
+IBAL:Channel_66
+  a s223:ElectricMeter ;
+  s223:hasObservationLocation IBAL:HeatingCoil_6 ;
+  s223:observes IBAL:vav4_heat_power ;
+  rdfs:label "Channel 66" ;
+.
+IBAL:Channel_7
+  a s223:HumiditySensor ;
+  s223:hasObservationLocation IBAL:AHU_1_ICP ;
+  s223:observes IBAL:ahu2_rh_up ;
+  rdfs:label "Channel 7" ;
+.
+IBAL:Channel_72
+  a s223:ElectricMeter ;
+  s223:hasObservationLocation IBAL:VFD_4 ;
+  s223:observes IBAL:exf2_power ;
+  rdfs:label "Channel 72" ;
 .
 IBAL:Channel_73
   a s223:TemperatureSensor ;
@@ -444,6 +1026,90 @@ IBAL:Channel_76
   s223:hasObservationLocation IBAL:Segment_9 ;
   s223:observes IBAL:ahu1_out_rtd ;
   rdfs:label "Channel 76" ;
+.
+IBAL:Channel_77
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:AHU_1_ICP ;
+  s223:observes IBAL:ahu2_in_rtd ;
+  rdfs:label "Channel 77" ;
+.
+IBAL:Channel_78
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:AHU_1_Connection_2 ;
+  s223:observes IBAL:ahu2_heat_rtd ;
+  rdfs:label "Channel 78" ;
+.
+IBAL:Channel_79
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:AHU_1_Connection_3 ;
+  s223:observes IBAL:ahu2_cc_rtd ;
+  rdfs:label "Channel 79" ;
+.
+IBAL:Channel_8
+  a s223:PressureSensor ;
+  s223:hasObservationLocation IBAL:AHU_1_Connection_3 ;
+  s223:observes IBAL:ahu2_p_up ;
+  rdfs:label "Channel 8" ;
+.
+IBAL:Channel_80
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_1 ;
+  s223:observes IBAL:ahu2_out_rtd ;
+  rdfs:label "Channel 80" ;
+.
+IBAL:Channel_83
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:AHU_3_ICP ;
+  s223:observes IBAL:oau_in_rtd ;
+  rdfs:label "Channel 83" ;
+.
+IBAL:Channel_84
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:AHU_3_Connection_2 ;
+  s223:observes IBAL:oau_cc_rtd ;
+  rdfs:label "Channel 84" ;
+.
+IBAL:Channel_85
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:AHU_3_Connection_3 ;
+  s223:observes IBAL:oau_hs_rtd ;
+  rdfs:label "Channel 85" ;
+.
+IBAL:Channel_86
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:Segment_44 ;
+  s223:observes IBAL:oau_out_rtd ;
+  rdfs:label "Channel 86" ;
+.
+IBAL:Channel_87
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:VAV_1_Connection_2 ;
+  s223:observes IBAL:vav1_out_rtd ;
+  rdfs:label "Channel 87" ;
+.
+IBAL:Channel_88
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:VAV_2_Connection_2 ;
+  s223:observes IBAL:vav2_out_rtd ;
+  rdfs:label "Channel 88" ;
+.
+IBAL:Channel_89
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:VAV_3_Connection_2 ;
+  s223:observes IBAL:vav3_out_rtd ;
+  rdfs:label "Channel 89" ;
+.
+IBAL:Channel_9
+  a s223:PressureSensor ;
+  s223:hasObservationLocation IBAL:Segment_1 ;
+  s223:observes IBAL:ahu2_p_down ;
+  rdfs:label "Channel 9" ;
+.
+IBAL:Channel_90
+  a s223:TemperatureSensor ;
+  s223:hasObservationLocation IBAL:VAV_4_Connection_2 ;
+  s223:observes IBAL:vav4_out_rtd ;
+  rdfs:label "Channel 90" ;
 .
 IBAL:Chiller_1_Lower_Connection
   a s223:Connection ;
@@ -521,37 +1187,6 @@ IBAL:CoolingCoil_3
   s223:hasConnectionPoint IBAL:CC_3_W_ICP ;
   s223:hasConnectionPoint IBAL:CC_3_W_OCP ;
   rdfs:label "Cooling coil 3" ;
-.
-IBAL:Damper-1-InletFlow
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "500"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
-  qudt:value "500" ;
-  rdfs:label "Damper-1-Inlet Flow" ;
-.
-IBAL:Damper-2-InletFlow
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "45"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
-  rdfs:label "Damper-2-Inlet flow" ;
-.
-IBAL:Damper-3-InletFlow
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "700"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
-  qudt:value "700" ;
-  rdfs:label "Damper-3-Inlet Flow" ;
-.
-IBAL:Damper-4-InletFlow
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "1000"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
-  qudt:value "1000" ;
-  rdfs:label "Damper-4-Inlet Flow" ;
 .
 IBAL:Damper_10_ICP
   a s223:InletConnectionPoint ;
@@ -797,51 +1432,6 @@ IBAL:Enclosure_4
   s223:encloses IBAL:HVACSpace_4 ;
   rdfs:label "Enclosure 4" ;
 .
-IBAL:ExhaustFan-1-InletFlow
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "1000"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
-  rdfs:label "ExhaustFan 1 Inlet Flow" ;
-.
-IBAL:ExhaustFan-1-InletPressure
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "21720"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
-  qudt:value "21720" ;
-  rdfs:label "ExhaustFan 1 Inlet Pressure" ;
-.
-IBAL:ExhaustFan-1-InletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "1000"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  rdfs:label "ExhaustFan 1 Inlet Temp" ;
-.
-IBAL:ExhaustFan-2-InletFlow
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "25"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
-  rdfs:label "ExhaustFan 2 Inlet Flow" ;
-.
-IBAL:ExhaustFan-2-InletPressure
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "21730"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
-  qudt:value "21730" ;
-  rdfs:label "ExhaustFan 2 InletPressure" ;
-.
-IBAL:ExhaustFan-2-InletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "70"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "70" ;
-  rdfs:label "ExhaustFan 2 Inlet Temp" ;
-.
 IBAL:Exhaust_Fan_1_Connection_2
   a s223:Connection ;
   s223:connectsAt IBAL:Damper_7_ICP ;
@@ -1000,45 +1590,9 @@ IBAL:Fan_5_OCP
 IBAL:Fan_5_VFD_5
   a s223:Connection ;
   s223:cnx IBAL:Fan_5_E_ICP ;
-  s223:cnx IBAL:VFD_5_ICP ;
+  s223:cnx IBAL:VFD_5_OCP ;
   s223:hasMedium s223:Medium-Electricity ;
   rdfs:label "Fan 5 VFD 5" ;
-.
-IBAL:Flow_1
-  a s223:FlowSensor ;
-  s223:hasObservationLocation IBAL:Segment_2 ;
-  s223:observes IBAL:Damper-2-InletFlow ;
-  rdfs:label "Flow 1" ;
-.
-IBAL:Flow_11
-  a s223:FlowSensor ;
-  s223:hasObservationLocation IBAL:Segment_27 ;
-  s223:observes IBAL:ExhaustFan-1-InletFlow ;
-  rdfs:label "Flow 11" ;
-.
-IBAL:Flow_12
-  a s223:FlowSensor ;
-  s223:hasObservationLocation IBAL:Segment_30 ;
-  s223:observes IBAL:ExhaustFan-2-InletFlow ;
-  rdfs:label "Flow 12" ;
-.
-IBAL:Flow_2
-  a s223:FlowSensor ;
-  s223:hasObservationLocation IBAL:Segment_4 ;
-  s223:observes IBAL:Damper-2-InletFlow ;
-  rdfs:label "Flow 2" ;
-.
-IBAL:Flow_3
-  a s223:FlowSensor ;
-  s223:hasObservationLocation IBAL:Segment_7 ;
-  s223:observes IBAL:Damper-3-InletFlow ;
-  rdfs:label "Flow 3" ;
-.
-IBAL:Flow_4
-  a s223:FlowSensor ;
-  s223:hasObservationLocation IBAL:Segment_10 ;
-  s223:observes IBAL:Damper-4-InletFlow ;
-  rdfs:label "Flow 4" ;
 .
 IBAL:Flow_6
   a s223:FlowSensor ;
@@ -1052,20 +1606,6 @@ IBAL:Flow_7
   s223:observes IBAL:HC-5-OutletFlow ;
   rdfs:label "Flow 7" ;
 .
-IBAL:Flow_9
-  a s223:FlowSensor ;
-  s223:hasObservationLocation IBAL:Segment_20 ;
-  s223:observes IBAL:ReturnAir-1-Flow ;
-  rdfs:label "Flow 9" ;
-.
-IBAL:HC-1-InletHumidity
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "70"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
-  qudt:value "70" ;
-  rdfs:label "HC 1 InletHumidity" ;
-.
 IBAL:HC-1-InletTemp
   a s223:QuantifiableObservableProperty ;
   s223:hasValue "40"^^xsd:decimal ;
@@ -1073,13 +1613,6 @@ IBAL:HC-1-InletTemp
   qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
   qudt:value "40" ;
   rdfs:label "HC 1 InletTemp" ;
-.
-IBAL:HC-2-OutletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "70"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  rdfs:label "HC 2 OutletTemp" ;
 .
 IBAL:HC-3-OutletFlow
   a s223:QuantifiableObservableProperty ;
@@ -1089,14 +1622,6 @@ IBAL:HC-3-OutletFlow
   qudt:value "500" ;
   rdfs:label "HC 3 OutletFlow" ;
 .
-IBAL:HC-3-OutletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "85"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "85" ;
-  rdfs:label "HC 3 OutletTemp" ;
-.
 IBAL:HC-5-OutletFlow
   a s223:QuantifiableObservableProperty ;
   s223:hasValue "20"^^xsd:decimal ;
@@ -1104,21 +1629,6 @@ IBAL:HC-5-OutletFlow
   qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
   qudt:value "20" ;
   rdfs:label "HC 5 OutletFlow" ;
-.
-IBAL:HC-5-OutletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "70"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "70" ;
-  rdfs:label "HC 5 OutletTemp" ;
-.
-IBAL:HC-7-InletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "45"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  rdfs:label "HC 7 InletTemp" ;
 .
 IBAL:HC_1_E_ICP
   a s223:InletConnectionPoint ;
@@ -1141,6 +1651,11 @@ IBAL:HC_1_W_ICP
   s223:hasMedium s223:Medium-Water ;
   rdfs:label "HC 1 W ICP" ;
 .
+IBAL:HC_1_W_OCP
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Medium-Water ;
+  rdfs:label "HC 1 W OCP" ;
+.
 IBAL:HC_2_E_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Medium-Electricity ;
@@ -1159,8 +1674,13 @@ IBAL:HC_2_OCP
 .
 IBAL:HC_2_W_ICP
   a s223:InletConnectionPoint ;
-  s223:hasMedium s223:Medium-Air ;
+  s223:hasMedium s223:Medium-Water ;
   rdfs:label "HC 2 W ICP" ;
+.
+IBAL:HC_2_W_OCP
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Medium-Water ;
+  rdfs:label "HC 2 W OCP" ;
 .
 IBAL:HC_3_E_ICP
   a s223:InletConnectionPoint ;
@@ -1183,6 +1703,11 @@ IBAL:HC_3_W_ICP
   s223:hasMedium s223:Medium-Air ;
   rdfs:label "HC 3 W ICP" ;
 .
+IBAL:HC_3_W_OCP
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Medium-Water ;
+  rdfs:label "HC 3 W OCP" ;
+.
 IBAL:HC_4_E_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Medium-Electricity ;
@@ -1203,6 +1728,11 @@ IBAL:HC_4_W_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Medium-Air ;
   rdfs:label "HC 4 W ICP" ;
+.
+IBAL:HC_4_W_OCP
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Medium-Water ;
+  rdfs:label "HC 4 W OCP" ;
 .
 IBAL:HC_5_E_ICP
   a s223:InletConnectionPoint ;
@@ -1225,6 +1755,11 @@ IBAL:HC_5_W_ICP
   s223:hasMedium s223:Medium-Water ;
   rdfs:label "HC 5 W ICP" ;
 .
+IBAL:HC_5_W_OCP
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Medium-Water ;
+  rdfs:label "HC 5 W OCP" ;
+.
 IBAL:HC_6_E_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Medium-Electricity ;
@@ -1245,6 +1780,11 @@ IBAL:HC_6_W_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Medium-Water ;
   rdfs:label "HC 6 W ICP" ;
+.
+IBAL:HC_6_W_OCP
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Medium-Water ;
+  rdfs:label "HC 6 W OCP" ;
 .
 IBAL:HC_7_E_ICP
   a s223:InletConnectionPoint ;
@@ -1267,104 +1807,17 @@ IBAL:HC_7_W_ICP
   s223:hasMedium s223:Medium-Air ;
   rdfs:label "HC 7 W ICP" ;
 .
-IBAL:HVACSpace-1-OutletHumidity
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "80"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
-  qudt:value "80" ;
-  rdfs:label "HVAC Space 1 OutletHumidity" ;
-.
-IBAL:HVACSpace-1-OutletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "80"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "80" ;
-  rdfs:label "HVAC Space 1 OutletTemp" ;
-.
-IBAL:HVACSpace-1-Temp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "66"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "66" ;
-  rdfs:label "HVAC Space 1 Temp" ;
-.
-IBAL:HVACSpace-2-OutletHumidity
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "50"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
-  rdfs:label "HVAC Space 2 OutletHumidity" ;
-.
-IBAL:HVACSpace-2-OutletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "65"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "65" ;
-  rdfs:label "HVAC Space 2 OutletTemp" ;
-.
-IBAL:HVACSpace-2-Temp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "70"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "70" ;
-  rdfs:label "HVAC Space 2 Temp" ;
-.
-IBAL:HVACSpace-3-OutletHumidity
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "50"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
-  rdfs:label "HVAC Space 3 OutletHumidity" ;
-.
-IBAL:HVACSpace-3-OutletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "72"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "72" ;
-  rdfs:label "HVAC Space 3 OutletTemp" ;
-.
-IBAL:HVACSpace-3-Temp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "66"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "66" ;
-  rdfs:label "HVAC Space 3 Temp" ;
-.
-IBAL:HVACSpace-4-OutletHumidity
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "30"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
-  rdfs:label "HVAC Space 4 OutletHumidity" ;
-.
-IBAL:HVACSpace-4-OutletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "80"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "80" ;
-  rdfs:label "HVAC Space 4 OutletTemp" ;
-.
-IBAL:HVACSpace-4-Temp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "68"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "68" ;
-  rdfs:label "HVAC Space 4 Temp" ;
+IBAL:HC_7_W_OCP
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Medium-Water ;
+  rdfs:label "HC 7 W OCP" ;
 .
 IBAL:HVACSpace_1
   a s223:DomainSpace ;
   s223:hasConnectionPoint IBAL:HVAC_Space_1_ICP ;
   s223:hasConnectionPoint IBAL:HVAC_Space_1_OCP ;
   s223:hasDomain s223:Domain-HVAC ;
+  s223:hasProperty IBAL:zs1_t_sp_f ;
   rdfs:label "HVACSpace 1" ;
 .
 IBAL:HVACSpace_2
@@ -1372,6 +1825,7 @@ IBAL:HVACSpace_2
   s223:hasConnectionPoint IBAL:HVAC_Space_2_ICP ;
   s223:hasConnectionPoint IBAL:HVAC_Space_2_OCP ;
   s223:hasDomain s223:Domain-HVAC ;
+  s223:hasProperty IBAL:zs2_t_sp_f ;
   rdfs:label "HVACSpace 2" ;
 .
 IBAL:HVACSpace_3
@@ -1379,6 +1833,7 @@ IBAL:HVACSpace_3
   s223:hasConnectionPoint IBAL:HVAC_Space_3_ICP ;
   s223:hasConnectionPoint IBAL:HVAC_Space_3_OCP ;
   s223:hasDomain s223:Domain-HVAC ;
+  s223:hasProperty IBAL:zs3_t_sp_f ;
   rdfs:label "HVACSpace 3" ;
 .
 IBAL:HVACSpace_4
@@ -1386,6 +1841,7 @@ IBAL:HVACSpace_4
   s223:hasConnectionPoint IBAL:HVAC_Space_4_ICP ;
   s223:hasConnectionPoint IBAL:HVAC_Space_4_OCP ;
   s223:hasDomain s223:Domain-HVAC ;
+  s223:hasProperty IBAL:zs4_t_sp_f ;
   rdfs:label "HVACSpace 4" ;
 .
 IBAL:HVACZone_1
@@ -1470,19 +1926,13 @@ IBAL:HeatExchange_Connection
   s223:hasMedium s223:Water-ChilledWater ;
   rdfs:label "Heat Exchange Connection" ;
 .
-IBAL:HeatExchange_Connection_Temp
-  a s223:QuantifiableObservableProperty ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "72" ;
-  rdfs:label "HeatExchange_Connection_Temp" ;
-.
 IBAL:HeatingCoil_1
   a s223:HeatingCoil ;
   s223:hasConnectionPoint IBAL:HC_1_E_ICP ;
   s223:hasConnectionPoint IBAL:HC_1_ICP ;
   s223:hasConnectionPoint IBAL:HC_1_OCP ;
   s223:hasConnectionPoint IBAL:HC_1_W_ICP ;
+  s223:hasConnectionPoint IBAL:HC_1_W_OCP ;
   rdfs:label "Heating coil 1" ;
 .
 IBAL:HeatingCoil_2
@@ -1491,6 +1941,7 @@ IBAL:HeatingCoil_2
   s223:hasConnectionPoint IBAL:HC_2_ICP ;
   s223:hasConnectionPoint IBAL:HC_2_OCP ;
   s223:hasConnectionPoint IBAL:HC_2_W_ICP ;
+  s223:hasConnectionPoint IBAL:HC_2_W_OCP ;
   rdfs:label "Heating coil 2" ;
 .
 IBAL:HeatingCoil_3
@@ -1499,6 +1950,7 @@ IBAL:HeatingCoil_3
   s223:hasConnectionPoint IBAL:HC_3_ICP ;
   s223:hasConnectionPoint IBAL:HC_3_OCP ;
   s223:hasConnectionPoint IBAL:HC_3_W_ICP ;
+  s223:hasConnectionPoint IBAL:HC_3_W_OCP ;
   rdfs:label "Heating coil 3" ;
 .
 IBAL:HeatingCoil_4
@@ -1507,6 +1959,7 @@ IBAL:HeatingCoil_4
   s223:hasConnectionPoint IBAL:HC_4_ICP ;
   s223:hasConnectionPoint IBAL:HC_4_OCP ;
   s223:hasConnectionPoint IBAL:HC_4_W_ICP ;
+  s223:hasConnectionPoint IBAL:HC_4_W_OCP ;
   rdfs:label "Heating coil 4" ;
 .
 IBAL:HeatingCoil_5
@@ -1515,6 +1968,7 @@ IBAL:HeatingCoil_5
   s223:hasConnectionPoint IBAL:HC_5_ICP ;
   s223:hasConnectionPoint IBAL:HC_5_OCP ;
   s223:hasConnectionPoint IBAL:HC_5_W_ICP ;
+  s223:hasConnectionPoint IBAL:HC_5_W_OCP ;
   rdfs:label "Heating coil 5" ;
 .
 IBAL:HeatingCoil_6
@@ -1523,6 +1977,7 @@ IBAL:HeatingCoil_6
   s223:hasConnectionPoint IBAL:HC_6_ICP ;
   s223:hasConnectionPoint IBAL:HC_6_OCP ;
   s223:hasConnectionPoint IBAL:HC_6_W_ICP ;
+  s223:hasConnectionPoint IBAL:HC_6_W_OCP ;
   s223:mapsTo "IBAL:VAV4_OCP" ;
   rdfs:label "Heating coil 6" ;
 .
@@ -1532,48 +1987,8 @@ IBAL:HeatingCoil_7
   s223:hasConnectionPoint IBAL:HC_7_ICP ;
   s223:hasConnectionPoint IBAL:HC_7_OCP ;
   s223:hasConnectionPoint IBAL:HC_7_W_ICP ;
+  s223:hasConnectionPoint IBAL:HC_7_W_OCP ;
   rdfs:label "Heating coil 7" ;
-.
-IBAL:Humidity_1
-  a s223:HumiditySensor ;
-  s223:hasObservationLocation IBAL:HC_1_ICP ;
-  s223:observes IBAL:HC-1-InletHumidity ;
-  rdfs:label "Humidity 1" ;
-.
-IBAL:Humidity_2
-  a s223:HumiditySensor ;
-  s223:observes IBAL:VFD-1-OutletHumidity ;
-  rdfs:label "Humidity 2" ;
-.
-IBAL:Humidity_3
-  a s223:HumiditySensor ;
-  s223:hasObservationLocation IBAL:Segment_12 ;
-  s223:observes IBAL:HVACSpace-1-OutletHumidity ;
-  rdfs:label "Humidity 3" ;
-.
-IBAL:Humidity_6
-  a s223:HumiditySensor ;
-  s223:hasObservationLocation IBAL:Segment_14 ;
-  s223:observes IBAL:HVACSpace-2-OutletHumidity ;
-  rdfs:label "Humidity 6" ;
-.
-IBAL:Humidity_7
-  a s223:HumiditySensor ;
-  s223:hasObservationLocation IBAL:Segment_16 ;
-  s223:observes IBAL:HVACSpace-3-OutletHumidity ;
-  rdfs:label "Humidity 7" ;
-.
-IBAL:Humidity_8
-  a s223:HumiditySensor ;
-  s223:hasObservationLocation IBAL:Segment_18 ;
-  s223:observes IBAL:HVACSpace-4-OutletHumidity ;
-  rdfs:label "Humidity 8" ;
-.
-IBAL:Humidity_9
-  a s223:HumiditySensor ;
-  s223:hasObservationLocation IBAL:Segment_44 ;
-  s223:observes IBAL:Segment_44_Humidity ;
-  rdfs:label "Humidity 9" ;
 .
 IBAL:Hydronic
   a s223:System ;
@@ -1584,6 +1999,7 @@ IBAL:Hydronic
   s223:hasMember IBAL:ThermalStorage_1 ;
   s223:hasMember IBAL:WaterChiller_1 ;
   s223:hasMember IBAL:WaterChiller_2 ;
+  rdfs:label "Hydronic" ;
 .
 IBAL:Jnc1-ICP
   a s223:InletConnectionPoint ;
@@ -1624,6 +2040,11 @@ IBAL:Jnc11-ICP2
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Medium-Air ;
   rdfs:label "Jnc11-ICP2" ;
+.
+IBAL:Jnc11-OCP
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Medium-Air ;
+  rdfs:label "Jnc11-OCP" ;
 .
 IBAL:Jnc12-ICP
   a s223:InletConnectionPoint ;
@@ -1786,6 +2207,11 @@ IBAL:Jnc20-OCP
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Jnc20-OCP" ;
 .
+IBAL:Jnc20-OCP2
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Water-GlycolSolution ;
+  rdfs:label "Jnc20-OCP2" ;
+.
 IBAL:Jnc21-ICP1
   a s223:InletConnectionPoint ;
   s223:cnx IBAL:Segment_61 ;
@@ -1923,6 +2349,11 @@ IBAL:Jnc29-OCP
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Jnc29-OCP" ;
 .
+IBAL:Jnc29-OCP2
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Water-GlycolSolution ;
+  rdfs:label "Jnc29-OCP2" ;
+.
 IBAL:Jnc3-ICP1
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Medium-Air ;
@@ -1942,6 +2373,11 @@ IBAL:Jnc30-ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Jnc30-ICP" ;
+.
+IBAL:Jnc30-ICP2
+  a s223:InletConnectionPoint ;
+  s223:hasMedium s223:Water-GlycolSolution ;
+  rdfs:label "Jnc30-ICP2" ;
 .
 IBAL:Jnc30-OCP
   a s223:OutletConnectionPoint ;
@@ -2076,6 +2512,11 @@ IBAL:Jnc38-OCP
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Jnc38-OCP" ;
 .
+IBAL:Jnc38-OCP2
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Water-GlycolSolution ;
+  rdfs:label "Jnc38-OCP2" ;
+.
 IBAL:Jnc4-ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Medium-Air ;
@@ -2188,6 +2629,7 @@ IBAL:Junction_11
   a s223:Junction ;
   s223:cnx IBAL:Jnc11-ICP1 ;
   s223:cnx IBAL:Jnc11-ICP2 ;
+  s223:cnx IBAL:Jnc11-OCP ;
   s223:hasMedium s223:Medium-Air ;
   rdfs:label "Junction 11" ;
 .
@@ -2267,6 +2709,7 @@ IBAL:Junction_20
   a s223:Junction ;
   s223:cnx IBAL:Jnc20-ICP ;
   s223:cnx IBAL:Jnc20-OCP ;
+  s223:cnx IBAL:Jnc20-OCP2 ;
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Junction 20" ;
 .
@@ -2338,6 +2781,7 @@ IBAL:Junction_29
   a s223:Junction ;
   s223:cnx IBAL:Jnc29-ICP ;
   s223:cnx IBAL:Jnc29-OCP ;
+  s223:cnx IBAL:Jnc29-OCP2 ;
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Junction 29" ;
 .
@@ -2352,6 +2796,7 @@ IBAL:Junction_3
 IBAL:Junction_30
   a s223:Junction ;
   s223:cnx IBAL:Jnc30-ICP ;
+  s223:cnx IBAL:Jnc30-ICP2 ;
   s223:cnx IBAL:Jnc30-OCP ;
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Junction 30" ;
@@ -2416,6 +2861,7 @@ IBAL:Junction_38
   a s223:Junction ;
   s223:cnx IBAL:Jnc38-ICP ;
   s223:cnx IBAL:Jnc38-OCP ;
+  s223:cnx IBAL:Jnc38-OCP2 ;
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Junction 38" ;
 .
@@ -2627,6 +3073,7 @@ IBAL:MotorizedDamper_3
 .
 IBAL:MotorizedDamper_4
   a s223:Damper ;
+  s223:commandedByProperty IBAL:d18_pos_c ;
   s223:hasConnectionPoint IBAL:Damper_4_ICP ;
   s223:hasConnectionPoint IBAL:Damper_4_OCP ;
   s223:mapsTo "IBAL:VAV4_ICP" ;
@@ -2800,13 +3247,6 @@ IBAL:PlateHeatExchange_1_ConnectionTemperature
   qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
   rdfs:label "Plate heat exchange 1 Connection temperature" ;
 .
-IBAL:PlateHeatExchange_1_Connection_Temp
-  a s223:QuantifiableObservableProperty ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "70" ;
-  rdfs:label "PlateHeatExchange_1_Connection_Temp" ;
-.
 IBAL:PlateHeatExchange_1_Lower_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Medium-Water ;
@@ -2869,41 +3309,6 @@ IBAL:PlateHetExchange_1_Bypass_Connection
   s223:connectsAt IBAL:MotorizedThreeWayValve_3_ICP_2 ;
   s223:hasMedium s223:Water-ChilledWater ;
   rdfs:label "Plate Heat Exchange 1 Bypass Connection" ;
-.
-IBAL:Pressure_1
-  a s223:PressureSensor ;
-  s223:hasObservationLocation IBAL:AHU_1_Connection_3 ;
-  s223:observes IBAL:VFD-1-InletPressure ;
-  rdfs:label "Pressure 1" ;
-.
-IBAL:Pressure_4
-  a s223:PressureSensor ;
-  s223:observes IBAL:VFD-2-OutletPressure ;
-  rdfs:label "Pressure 4" ;
-.
-IBAL:Pressure_5
-  a s223:PressureSensor ;
-  s223:hasObservationLocation IBAL:Segment_27 ;
-  s223:observes IBAL:ExhaustFan-1-InletPressure ;
-  rdfs:label "Pressure 5" ;
-.
-IBAL:Pressure_6
-  a s223:PressureSensor ;
-  s223:hasObservationLocation IBAL:Segment_30 ;
-  s223:observes IBAL:ExhaustFan-2-InletPressure ;
-  rdfs:label "Pressure 6" ;
-.
-IBAL:Pressure_7
-  a s223:PressureSensor ;
-  s223:hasObservationLocation IBAL:AHU_3_Connection_3 ;
-  s223:observes IBAL:VFD-5-InletPressure ;
-  rdfs:label "Pressure 7" ;
-.
-IBAL:Pressure_8
-  a s223:PressureSensor ;
-  s223:hasObservationLocation IBAL:Segment_44 ;
-  s223:observes IBAL:VFD-5-OutletPressure ;
-  rdfs:label "Pressure 8" ;
 .
 IBAL:ReturnAir-1-Flow
   a s223:QuantifiableObservableProperty ;
@@ -3202,13 +3607,6 @@ IBAL:Segment_44
   s223:hasMedium s223:Medium-Air ;
   rdfs:label "Segment 44" ;
 .
-IBAL:Segment_44_Humidity
-  a s223:QuantifiableObservableProperty ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
-  qudt:value "80" ;
-  rdfs:label "Segment 44 Property" ;
-.
 IBAL:Segment_45
   a s223:Connection ;
   s223:cnx IBAL:Damper_15_ICP ;
@@ -3341,13 +3739,6 @@ IBAL:Segment_67
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Segment 67" ;
 .
-IBAL:Segment_67_Temp
-  a s223:QuantifiableObservableProperty ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "64" ;
-  rdfs:label "Segment_67_Temp" ;
-.
 IBAL:Segment_68
   a s223:Connection ;
   s223:cnx IBAL:Jnc24-OCP1 ;
@@ -3362,13 +3753,6 @@ IBAL:Segment_69
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Segment 69" ;
 .
-IBAL:Segment_69_Temp
-  a s223:QuantifiableObservableProperty ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "65" ;
-  rdfs:label "Segment_69_Temp" ;
-.
 IBAL:Segment_7
   a s223:Connection ;
   s223:cnx IBAL:Jnc3-OCP ;
@@ -3382,13 +3766,6 @@ IBAL:Segment_70
   s223:cnx IBAL:PlateHeatExchange_2_Lower_ICP ;
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Segment 70" ;
-.
-IBAL:Segment_70_Temp
-  a s223:QuantifiableObservableProperty ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "68" ;
-  rdfs:label "Segment_70_Temp" ;
 .
 IBAL:Segment_71
   a s223:Connection ;
@@ -3544,13 +3921,6 @@ IBAL:Segment_92
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Segment 92" ;
 .
-IBAL:Segment_92_Temp
-  a s223:QuantifiableObservableProperty ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "67" ;
-  rdfs:label "Segment_92_Temp" ;
-.
 IBAL:Segment_93
   a s223:Connection ;
   s223:cnx IBAL:Jnc34-OCP1 ;
@@ -3607,127 +3977,14 @@ IBAL:Segment_99
   s223:hasMedium s223:Water-GlycolSolution ;
   rdfs:label "Segment 99" ;
 .
-IBAL:Temp_1
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:HC_1_ICP ;
-  s223:observes IBAL:HC-1-InletTemp ;
-  rdfs:label "Temp 1" ;
-.
-IBAL:Temp_14
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:VAV_3_Connection_2 ;
-  s223:observes IBAL:HC-5-OutletTemp ;
-  rdfs:label "Temp 14" ;
-.
-IBAL:Temp_15
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:HVAC_Space_3_ICP ;
-  s223:observes IBAL:HVACSpace-3-Temp ;
-  rdfs:label "Temp 15" ;
-.
-IBAL:Temp_16
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_16 ;
-  s223:observes IBAL:HVACSpace-3-OutletTemp ;
-  rdfs:label "Temp 16" ;
-.
-IBAL:Temp_18
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:HVAC_Space_4_ICP ;
-  s223:observes IBAL:HVACSpace-4-Temp ;
-  rdfs:label "Temp 18" ;
-.
-IBAL:Temp_19
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_14 ;
-  s223:observes IBAL:HVACSpace-2-OutletTemp ;
-  rdfs:label "Temp 19" ;
-.
-IBAL:Temp_2
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:AHU_1_Connection_2 ;
-  rdfs:label "Temp 2" ;
-.
-IBAL:Temp_20
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_18 ;
-  s223:observes IBAL:HVACSpace-4-OutletTemp ;
-  rdfs:label "Temp 20" ;
-.
-IBAL:Temp_21
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_27 ;
-  s223:observes IBAL:ExhaustFan-1-InletTemp ;
-  rdfs:label "Temp 21" ;
-.
-IBAL:Temp_22
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_30 ;
-  s223:observes IBAL:ExhaustFan-2-InletTemp ;
-  rdfs:label "Temp 22" ;
-.
-IBAL:Temp_23
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_52 ;
-  rdfs:label "Temp 23" ;
-.
-IBAL:Temp_24
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:AHU_3_Connection_2 ;
-  s223:observes IBAL:HC-7-InletTemp ;
-  rdfs:label "Temp 24" ;
-.
-IBAL:Temp_25
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:AHU_3_Connection_3 ;
-  s223:observes IBAL:VFD-5-InletTemp ;
-  rdfs:label "Temp 25" ;
-.
-IBAL:Temp_26
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_44 ;
-  s223:observes IBAL:VFD-5-OutletTemp ;
-  rdfs:label "Temp 26" ;
-.
-IBAL:Temp_3
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:AHU_1_Connection_3 ;
-  s223:observes IBAL:VFD-1-InletTemp ;
-  rdfs:label "Temp 3" ;
-.
-IBAL:Temp_5
-  a s223:TemperatureSensor ;
-  s223:observes IBAL:HC-2-OutletTemp ;
-  rdfs:label "Temp 5" ;
-.
-IBAL:Temp_6
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:HVAC_Space_1_ICP ;
-  s223:observes IBAL:HVACSpace-1-Temp ;
-  rdfs:label "Temp 6" ;
-.
 IBAL:Temp_7
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_12 ;
-  s223:observes IBAL:HVACSpace-1-OutletTemp ;
-  rdfs:label "Temp 7" ;
-.
-IBAL:Temp_8
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:VAV_2_Connection_2 ;
-  s223:observes IBAL:HC-3-OutletTemp ;
-  rdfs:label "Temp 8" ;
-.
-IBAL:Temp_9
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:HVAC_Space_2_ICP ;
-  s223:observes IBAL:HVACSpace-2-Temp ;
-  rdfs:label "Temp 9" ;
+  rdfs:label "Channel 106" ;
 .
 IBAL:ThermalStorage_1
   a s223:Equipment ;
   s223:hasConnectionPoint IBAL:ThermalStorage_1_ICP ;
   s223:hasConnectionPoint IBAL:ThermalStorage_1_OCP ;
+  rdfs:label "ThermalStorage 1" ;
 .
 IBAL:ThermalStorage_1_ICP
   a s223:InletConnectionPoint ;
@@ -3740,8 +3997,58 @@ IBAL:ThermalStorage_1_OCP
   s223:hasMedium s223:Water-ChilledWater ;
   rdfs:label "Thermal Storage 1 OCP" ;
 .
+IBAL:VAV1_FnB
+  a s223:FunctionBlock ;
+  s223:hasInput IBAL:d15_pos_fb ;
+  s223:hasInput IBAL:vav1_f ;
+  s223:hasInput IBAL:vav1_out_rtd ;
+  s223:hasInput IBAL:vav1_t_in ;
+  s223:hasInput IBAL:zs1_out_rtd ;
+  s223:hasInput IBAL:zs1_t_sp_f ;
+  s223:hasOutput IBAL:d15_pos_c ;
+  s223:hasOutput IBAL:vav1_heat_c ;
+  rdfs:label "VAV1 Fn b" ;
+.
+IBAL:VAV2_FnB
+  a s223:FunctionBlock ;
+  s223:hasInput IBAL:d16_pos_fb ;
+  s223:hasInput IBAL:vav2_f ;
+  s223:hasInput IBAL:vav2_out_rtd ;
+  s223:hasInput IBAL:vav2_t_in ;
+  s223:hasInput IBAL:zs2_out_rtd ;
+  s223:hasInput IBAL:zs2_t_sp_f ;
+  s223:hasOutput IBAL:d16_pos_c ;
+  s223:hasOutput IBAL:vav2_heat_c ;
+  rdfs:label "VAV2 Fn b" ;
+.
+IBAL:VAV3_FnB
+  a s223:FunctionBlock ;
+  s223:hasInput IBAL:d17_pos_fb ;
+  s223:hasInput IBAL:vav3_f ;
+  s223:hasInput IBAL:vav3_out_rtd ;
+  s223:hasInput IBAL:vav3_t_in ;
+  s223:hasInput IBAL:zs3_out_rtd ;
+  s223:hasInput IBAL:zs3_t_sp_f ;
+  s223:hasOutput IBAL:d17_pos_c ;
+  s223:hasOutput IBAL:vav3_heat_c ;
+  rdfs:label "VAV3 Fn b" ;
+.
+IBAL:VAV4_FnB
+  a s223:FunctionBlock ;
+  s223:hasInput IBAL:d18_pos_fb ;
+  s223:hasInput IBAL:vav4_f ;
+  s223:hasInput IBAL:vav4_out_rtd ;
+  s223:hasInput IBAL:vav4_t_in ;
+  s223:hasInput IBAL:zs4_out_rtd ;
+  s223:hasInput IBAL:zs4_t_sp_f ;
+  s223:hasOutput IBAL:d18_pos_c ;
+  s223:hasOutput IBAL:vav4_heat_c ;
+  rdfs:label "VAV4 Fn b" ;
+.
 IBAL:VAV_1
+  a bacnet:BACnetDevice ;
   a s223:TerminalUnit ;
+  bacnet:hasPort bacnet:P_47811 ;
   s223:contains IBAL:HeatingCoil_2 ;
   s223:contains IBAL:MotorizedDamper_1 ;
   s223:hasConnectionPoint IBAL:VAV_1_ICP ;
@@ -3774,7 +4081,9 @@ IBAL:VAV_1_OCP
   rdfs:label "VAV 1 OCP" ;
 .
 IBAL:VAV_2
+  a bacnet:BACnetDevice ;
   a s223:TerminalUnit ;
+  bacnet:hasPort bacnet:P_47812 ;
   s223:contains IBAL:HeatingCoil_3 ;
   s223:contains IBAL:MotorizedDamper_2 ;
   s223:hasConnectionPoint IBAL:VAV_2_ICP ;
@@ -3806,7 +4115,9 @@ IBAL:VAV_2_OCP
   rdfs:label "VAV 2 OCP" ;
 .
 IBAL:VAV_3
+  a bacnet:BACnetDevice ;
   a s223:TerminalUnit ;
+  bacnet:hasPort bacnet:P_47813 ;
   s223:contains IBAL:HeatingCoil_5 ;
   s223:contains IBAL:MotorizedDamper_3 ;
   s223:hasConnectionPoint IBAL:VAV_3_ICP ;
@@ -3838,7 +4149,9 @@ IBAL:VAV_3_OCP
   rdfs:label "VAV 3 OCP" ;
 .
 IBAL:VAV_4
+  a bacnet:BACnetDevice ;
   a s223:TerminalUnit ;
+  bacnet:hasPort bacnet:P_47814 ;
   s223:contains IBAL:HeatingCoil_6 ;
   s223:contains IBAL:MotorizedDamper_4 ;
   s223:hasConnectionPoint IBAL:VAV_4_ICP ;
@@ -3870,80 +4183,10 @@ IBAL:VAV_4_OCP
   s223:hasMedium s223:Medium-Air ;
   rdfs:label "VAV 4 OCP" ;
 .
-IBAL:VFD-1-InletPressure
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "11297"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
-  qudt:value "11297" ;
-  rdfs:label "VFD 1 InletPressure" ;
-.
-IBAL:VFD-1-InletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "70"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  rdfs:label "VFD 1 InletTemp" ;
-.
-IBAL:VFD-1-OutletHumidity
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "30"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
-  rdfs:label "VFD 1 OutletHumidity" ;
-.
-IBAL:VFD-2-OutletPressure
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "11254"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
-  qudt:value "11254" ;
-  rdfs:label "VFD 2 OutletPressure" ;
-.
-IBAL:VFD-5-InletPressure
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "11297"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
-  qudt:value "11297" ;
-  rdfs:label "VFD 5 InletPressure" ;
-.
-IBAL:VFD-5-InletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "60"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "60" ;
-  rdfs:label "VFD 5 InletTemp" ;
-.
-IBAL:VFD-5-OutletHumidity
-  a s223:QuantifiableObservableProperty ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
-  qudt:value "50" ;
-  rdfs:label "VFD 5 OutletHumidity" ;
-.
-IBAL:VFD-5-OutletPressure
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "11270"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
-  qudt:value "11270" ;
-  rdfs:label "VFD 5 OutletPressure" ;
-.
-IBAL:VFD-5-OutletTemp
-  a s223:QuantifiableObservableProperty ;
-  s223:hasValue "45"^^xsd:decimal ;
-  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "45" ;
-  rdfs:label "VFD 5 OutletTemp" ;
-.
 IBAL:VFD_1
   a s223:VariableFrequencyDrive ;
   s223:hasConnectionPoint IBAL:VFD_1_ICP ;
   s223:hasConnectionPoint IBAL:VFD_1_OCP ;
-  s223:hasProperty IBAL:ahu1_fan_power ;
   rdfs:label "VFD 1" ;
 .
 IBAL:VFD_1_ICP
@@ -3975,7 +4218,6 @@ IBAL:VFD_2_OCP
 .
 IBAL:VFD_3
   a s223:VariableFrequencyDrive ;
-  s223:connected IBAL:MotorizedDamper_10 ;
   s223:hasConnectionPoint IBAL:VFD_3_ICP ;
   s223:hasConnectionPoint IBAL:VFD_3_OCP ;
   rdfs:label "VFD 3" ;
@@ -4102,75 +4344,11 @@ IBAL:WaterPump_4_OCP
   s223:hasMedium s223:Medium-Water ;
   rdfs:label "Water pump 4 OCP" ;
 .
-IBAL:WaterTempSensor
-  a s223:Class ;
-  a sh:NodeShape ;
-  rdfs:label "Water Temperature Sensor" ;
-  rdfs:subClassOf s223:Sensor ;
-.
-IBAL:WaterTempSensor_10
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Chiller_2_Lower_Connection ;
-  rdfs:label "Water Temp Sensor 10" ;
-.
-IBAL:WaterTempSensor_11
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_88 ;
-  s223:observes IBAL:Segment_88_Temp ;
-  rdfs:label "Water Temp Sensor 11" ;
-.
-IBAL:WaterTempSensor_12
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_92 ;
-  s223:observes IBAL:Segment_92_Temp ;
-  rdfs:label "Water Temp Sensor 12" ;
-.
 IBAL:WaterTempSensor_13
   a s223:TemperatureSensor ;
   s223:hasObservationLocation IBAL:Segment_97 ;
   s223:observes IBAL:Segment_97_Temp ;
   rdfs:label "Water Temp Sensor 13" ;
-.
-IBAL:WaterTempSensor_3
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:PlateHeatExchange_1_Connection ;
-  s223:observes IBAL:PlateHeatExchange_1_Connection_Temp ;
-  rdfs:label "Water Temp Sensor 3" ;
-.
-IBAL:WaterTempSensor_4
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_67 ;
-  s223:observes IBAL:Segment_67_Temp ;
-  rdfs:label "Water Temp Sensor 4" ;
-.
-IBAL:WaterTempSensor_5
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_69 ;
-  s223:observes IBAL:Segment_69_Temp ;
-  rdfs:label "Water Temp Sensor 5" ;
-.
-IBAL:WaterTempSensor_6
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_70 ;
-  s223:observes IBAL:Segment_70_Temp ;
-  rdfs:label "Water Temp Sensor 6" ;
-.
-IBAL:WaterTempSensor_7
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:HeatExchange_Connection ;
-  s223:observes IBAL:HeatExchange_Connection_Temp ;
-  rdfs:label "Water Temp Sensor 7" ;
-.
-IBAL:WaterTempSensor_8
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Segment_76 ;
-  s223:observes IBAL:Segment_76temp ;
-  rdfs:label "Water Temp Sensor 8" ;
-.
-IBAL:WaterTempSensor_9
-  a s223:TemperatureSensor ;
-  s223:hasObservationLocation IBAL:Chiller_1_Lower_Connection ;
-  rdfs:label "Water Temp Sensor 9" ;
 .
 IBAL:ahu1_cc_out_rtd
   a s223:QuantifiableObservableProperty ;
@@ -4247,19 +4425,29 @@ IBAL:ahu1_on
   rdfs:label "ahu1 on" ;
 .
 IBAL:ahu1_out_rtd
+  a bacnet:AnalogInputObject ;
   a s223:QuantifiableObservableProperty ;
-  s223:hasValue "70"^^xsd:decimal ;
+  bacnet:description "AHU1 Supply Air Temperature" ;
+  bacnet:object-identifier "analog-input,2" ;
+  bacnet:object-name "ahu1_out_rtd" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:AHU_2 ;
+  bacnet:present-value "70"^^xsd:float ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
-  qudt:value "70" ;
   rdfs:label "AHU 1 Out RTD" ;
 .
 IBAL:ahu1_p_down
+  a bacnet:AnalogInputObject ;
   a s223:QuantifiableObservableProperty ;
-  s223:hasValue "11297"^^xsd:decimal ;
+  bacnet:description "Static Pressure Measurement Downstream Fan" ;
+  bacnet:object-identifier "analog-input,3" ;
+  bacnet:object-name "ahu1_p_down" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:AHU_2 ;
+  bacnet:present-value "0"^^xsd:float ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
-  qudt:value "11297" ;
   rdfs:label "AHU 1 P Down" ;
 .
 IBAL:ahu1_p_up
@@ -4301,10 +4489,314 @@ IBAL:ahu1_t_sa
   rdfs:label "AHU 1 T SA" ;
 .
 IBAL:ahu1_vfd
+  a bacnet:AnalogOutputObject ;
   a s223:QuantifiableObservableProperty ;
+  bacnet:description "AHU1 Fan Speed" ;
+  bacnet:object-identifier "analog-output,1" ;
+  bacnet:object-name "ahu1_vfd" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:AHU_2 ;
+  bacnet:present-value "30"^^xsd:float ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
   rdfs:label "ahu1 vfd" ;
+.
+IBAL:ahu2_cc_in_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ahu2 cc in rtd" ;
+.
+IBAL:ahu2_cc_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ahu2 cc out rtd" ;
+.
+IBAL:ahu2_cc_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ahu2 cc rtd" ;
+.
+IBAL:ahu2_f_cc_mag
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> ;
+  rdfs:label "ahu2 f cc mag" ;
+.
+IBAL:ahu2_f_ra
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
+  rdfs:label "ahu2 f ra" ;
+.
+IBAL:ahu2_f_sa
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
+  rdfs:label "ahu2 f sa" ;
+.
+IBAL:ahu2_fan_power
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricPower> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
+  rdfs:label "ahu2 fan power" ;
+.
+IBAL:ahu2_heat_c
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "ahu2 heat c" ;
+.
+IBAL:ahu2_heat_power
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricPower> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
+  rdfs:label "ahu2 heat power" ;
+.
+IBAL:ahu2_heat_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ahu2 heat rtd" ;
+.
+IBAL:ahu2_in_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ahu2 in rtd" ;
+.
+IBAL:ahu2_on
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "ahu2 on" ;
+.
+IBAL:ahu2_out_rtd
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "AHU2 Supply Air Temperature" ;
+  bacnet:object-identifier "analog-input,2" ;
+  bacnet:object-name "ahu2_out_rtd" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:AHU_1 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ahu2 out rtd" ;
+.
+IBAL:ahu2_p_down
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "Static Pressure Measurement Downstream Fan" ;
+  bacnet:object-identifier "analog-input,3" ;
+  bacnet:object-name "ahu2_p_down" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:AHU_1 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
+  rdfs:label "ahu2 p down" ;
+.
+IBAL:ahu2_p_up
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
+  rdfs:label "ahu2 p up" ;
+.
+IBAL:ahu2_rh_down
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
+  rdfs:label "ahu2 rh down" ;
+.
+IBAL:ahu2_rh_up
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
+  rdfs:label "ahu2 rh up" ;
+.
+IBAL:ahu2_t_ra
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ahu2 t ra" ;
+.
+IBAL:ahu2_t_sa
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ahu 2 t sa" ;
+.
+IBAL:ahu2_vfd
+  a bacnet:AnalogOutputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "AHU2 Fan Speed" ;
+  bacnet:object-identifier "analog-output,1" ;
+  bacnet:object-name "ahu1_vfd" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:AHU_1 ;
+  bacnet:present-value "30"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "ahu2 vfd" ;
+.
+IBAL:ch1_e_in_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ch1 e in rtd" ;
+.
+IBAL:ch1_e_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ch1 e out rtd" ;
+.
+IBAL:ch1_f_e
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> ;
+  rdfs:label "ch1 f e" ;
+.
+IBAL:ch1_power
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricPower> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
+  rdfs:label "ch1 power" ;
+.
+IBAL:ch2_e_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ch2 e out rtd" ;
+.
+IBAL:d10_pos_c
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/A> ;
+  rdfs:label "d10 pos c" ;
+.
+IBAL:d10_pos_fb
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/PositionVector> ;
+  rdfs:label "d10 pos fb" ;
+.
+IBAL:d11_pos_c
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/A> ;
+  rdfs:label "d11 pos c" ;
+.
+IBAL:d11_pos_fb
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/PositionVector> ;
+  rdfs:label "d11 pos fb" ;
+.
+IBAL:d15_pos_c
+  a bacnet:AnalogOutputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV1 Damper Control Signal" ;
+  bacnet:object-identifier "analog-output,2" ;
+  bacnet:object-name "d15_pos_c" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:VAV_1 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "d15 pos c" ;
+.
+IBAL:d15_pos_fb
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV1 Damper Feedback Signal" ;
+  bacnet:object-identifier "analog-input,1" ;
+  bacnet:object-name "d15_pos_fb" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_1 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "d15 pos fb" ;
+.
+IBAL:d16_pos_c
+  a bacnet:AnalogOutputObject ;
+  a s223:QuantifiableActuatableProperty ;
+  bacnet:description "VAV2 Damper Control Signal" ;
+  bacnet:object-identifier "analog-output,2" ;
+  bacnet:object-name "d16_pos_c" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:VAV_2 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/A> ;
+  rdfs:label "d16 pos c" ;
+.
+IBAL:d16_pos_fb
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV2 Damper Feedback Signal" ;
+  bacnet:object-identifier "analog-input,1" ;
+  bacnet:object-name "d16_pos_fb" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_2 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "d16 pos fb" ;
+.
+IBAL:d17_pos_c
+  a bacnet:AnalogOutputObject ;
+  a s223:QuantifiableActuatableProperty ;
+  bacnet:description "VAV3 Damper Control Signal" ;
+  bacnet:object-identifier "analog-output,2" ;
+  bacnet:object-name "d17_pos_c" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:VAV_3 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "d17 pos c" ;
+.
+IBAL:d17_pos_fb
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV3 Damper Feedback Signal" ;
+  bacnet:object-identifier "analog-input,1" ;
+  bacnet:object-name "d17_pos_fb" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_3 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "d17 pos fb" ;
+.
+IBAL:d18_pos_c
+  a bacnet:AnalogOutputObject ;
+  a s223:QuantifiableActuatableProperty ;
+  bacnet:description "VAV4 Damper Control Signal" ;
+  bacnet:object-identifier "analog-output,2" ;
+  bacnet:object-name "d18_pos_c" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:VAV_4 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "d18 pos c" ;
+.
+IBAL:d18_pos_fb
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV4 Damper Feedback Signal" ;
+  bacnet:object-identifier "analog-input,1" ;
+  bacnet:object-name "d18_pos_fb" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_4 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "d18 pos fb" ;
 .
 IBAL:d5_pos_c
   a s223:QuantifiableObservableProperty ;
@@ -4326,15 +4818,665 @@ IBAL:d6_pos_fb
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/PositionVector> ;
   rdfs:label "d6 pos fb" ;
 .
-IBAL:v12_pos_c
+IBAL:d7_pos_c
   a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/PositionVector> ;
+  rdfs:label "d7 pos c" ;
+.
+IBAL:d7_pos_fb
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/PositionVector> ;
+  rdfs:label "d7 pos fb" ;
+.
+IBAL:d8_pos_c
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/PositionVector> ;
+  rdfs:label "d8 pos c" ;
+.
+IBAL:d8_pos_fb
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/PositionVector> ;
+  rdfs:label "d8 pos fb" ;
+.
+IBAL:exf1_f
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
+  rdfs:label "exf1 f" ;
+.
+IBAL:exf1_on
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "exf1 on" ;
+.
+IBAL:exf1_p_down
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
+  rdfs:label "exf1 p down" ;
+.
+IBAL:exf1_p_up
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
+  rdfs:label "exf1 p up" ;
+.
+IBAL:exf1_power
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
+  rdfs:label "exf1 power" ;
+.
+IBAL:exf1_t_in
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "exf1 t in" ;
+.
+IBAL:exf1_vfd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "exf1 vfd" ;
+.
+IBAL:exf2_f
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
+  rdfs:label "exf2 f" ;
+.
+IBAL:exf2_on
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "exf2 on" ;
+.
+IBAL:exf2_p_down
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
+  rdfs:label "exf2 p down" ;
+.
+IBAL:exf2_p_up
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
+  rdfs:label "exf2 p up" ;
+.
+IBAL:exf2_power
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricPower> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
+  rdfs:label "exf2 power" ;
+.
+IBAL:exf2_t_in
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "exf2 t in" ;
+.
+IBAL:exf2_vfd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "exf2 vfd" ;
+.
+IBAL:hx1_pg_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  qudt:value "70" ;
+  rdfs:label "hx1_hw_rtd" ;
+.
+IBAL:hx3_pg_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  qudt:value "72" ;
+  rdfs:label "hx1 pg rtd" ;
+.
+IBAL:oau_cc_rtd
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "45"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "oau cc rtd" ;
+.
+IBAL:oau_hs_rtd
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "60"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  qudt:value "60" ;
+  rdfs:label "oau hs rt" ;
+.
+IBAL:oau_in_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "oau in rtd" ;
+.
+IBAL:oau_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "45"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  qudt:value "45" ;
+  rdfs:label "oau out rtd" ;
+.
+IBAL:oau_p_down
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "11270"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
+  qudt:value "11270" ;
+  rdfs:label "oau p down" ;
+.
+IBAL:oau_p_up
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "11297"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PA> ;
+  qudt:value "11297" ;
+  rdfs:label "oau p up" ;
+.
+IBAL:oau_rh
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
+  qudt:value "80" ;
+  rdfs:label "oau rh" ;
+.
+IBAL:pl_f
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> ;
+  rdfs:label "pl f" ;
+.
+IBAL:pl_in_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  qudt:value "68" ;
+  rdfs:label "pl in rtd" ;
+.
+IBAL:pl_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "pl out rtd" ;
+.
+IBAL:sl_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  qudt:value "64" ;
+  rdfs:label "sl out rtd" ;
+.
+IBAL:ts_in_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ts in rtd" ;
+.
+IBAL:ts_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "ts out rtd" ;
+.
+IBAL:v12_pos_c
+  a bacnet:AnalogOutputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "AHU1 Cooling Coil Valve Control Signal" ;
+  bacnet:object-identifier "analog-output,2" ;
+  bacnet:object-name "v12_pos_c" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:AHU_2 ;
+  bacnet:present-value "0"^^xsd:float ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
   rdfs:label "v12 pos c" ;
 .
 IBAL:v12_pos_fb
+  a bacnet:AnalogInputObject ;
   a s223:QuantifiableObservableProperty ;
+  bacnet:description "AHU1 Cooling Coil Feedback Signal" ;
+  bacnet:object-identifier "analog-input,2" ;
+  bacnet:object-name "v12_pos_fb" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:AHU_2 ;
+  bacnet:present-value "0"^^xsd:float ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
   rdfs:label "v12 pos fb" ;
+.
+IBAL:v13_pos_c
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "v13 pos c" ;
+.
+IBAL:v13_pos_fb
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "AHU2 Cooling Coil Feedback Signal" ;
+  bacnet:object-identifier "analog-input,2" ;
+  bacnet:object-name "v13_pos_fb" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:AHU_1 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "v13 pos fb" ;
+.
+IBAL:v8_pos_c
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "v8 pos c" ;
+.
+IBAL:v8_pos_fb
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "v8 pos fb" ;
+.
+IBAL:vav1_f
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV1 Airflow Rate" ;
+  bacnet:object-identifier "analog-input,4" ;
+  bacnet:object-name "VAV1-Airflow" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_1 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
+  rdfs:label "VAV1 F" ;
+.
+IBAL:vav1_heat_c
+  a bacnet:AnalogOutputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV1 Heater Control Signal" ;
+  bacnet:object-identifier "analog-output,1" ;
+  bacnet:object-name "vav1_heat_c" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:VAV_1 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "vav1 heat c" ;
+.
+IBAL:vav1_heat_power
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricPower> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
+  rdfs:label "vav1 heat power" ;
+.
+IBAL:vav1_out_rtd
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV1 Discharge Temperature" ;
+  bacnet:object-identifier "analog-input,2" ;
+  bacnet:object-name "vav1_out_rtd" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_1 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "vav1 out rtd" ;
+.
+IBAL:vav1_t_in
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV1 Supply Air Temperature" ;
+  bacnet:object-identifier "analog-input,3" ;
+  bacnet:object-name "vav1_t_in" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_1 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "vav1 t in" ;
+.
+IBAL:vav2_f
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV2 Airflow Rate" ;
+  bacnet:object-identifier "analog-input,4" ;
+  bacnet:object-name "vav2_f" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_2 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
+  rdfs:label "vav2 f" ;
+.
+IBAL:vav2_heat_c
+  a s223:AnalogOutputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV1 Heater Control Signal" ;
+  bacnet:object-identifier "analog-output,1" ;
+  bacnet:object-name "vav2_heat_c" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:VAV_2 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "vav2 heat c" ;
+.
+IBAL:vav2_heat_power
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricPower> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
+  rdfs:label "vav2 heat power" ;
+.
+IBAL:vav2_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV2 Discharge Temperature" ;
+  bacnet:object-identifier "analog-input,2" ;
+  bacnet:object-name "vav2_out_rtd" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_2 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "vav2 out rtd" ;
+.
+IBAL:vav2_t_in
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV2 Supply Air Temperature" ;
+  bacnet:object-identifier "analog-input,3" ;
+  bacnet:object-name "vav2_t_in" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_2 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "vav2 t in" ;
+.
+IBAL:vav3_f
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV3 Airflow Rate" ;
+  bacnet:object-identifier "analog-input,4" ;
+  bacnet:object-name "vav3_f" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_3 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
+  rdfs:label "vav3 f" ;
+.
+IBAL:vav3_heat_c
+  a s223:AnalogOutputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV3 Heater Control Signal" ;
+  bacnet:object-identifier "analog-output,1" ;
+  bacnet:object-name "vav3_heat_c" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:VAV_3 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "vav3 heat c" ;
+.
+IBAL:vav3_heat_power
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricPower> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
+  rdfs:label "vav3 heat power" ;
+.
+IBAL:vav3_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV3 Discharge Temperature" ;
+  bacnet:object-identifier "analog-input,89" ;
+  bacnet:object-name "VAV3-T" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_3 ;
+  bacnet:present-value "55"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "vav3 out rtd" ;
+.
+IBAL:vav3_t_in
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV3 Supply Air Temperature" ;
+  bacnet:object-identifier "analog-input,3" ;
+  bacnet:object-name "vav3_t_in" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_3 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "vav3 t in" ;
+.
+IBAL:vav4_f
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV4 Airflow Rate" ;
+  bacnet:object-identifier "analog-input,4" ;
+  bacnet:object-name "vav4_f" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_4 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> ;
+  rdfs:label "vav4 f" ;
+.
+IBAL:vav4_heat_c
+  a bacnet:AnalogOutputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV4 Heater Control Signal" ;
+  bacnet:object-identifier "analog-output,1" ;
+  bacnet:object-name "vav4_heat_c" ;
+  bacnet:object-type "analog-output" ;
+  bacnet:objectOf IBAL:VAV_4 ;
+  bacnet:present-value "0"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
+  rdfs:label "vav4 heat c" ;
+.
+IBAL:vav4_heat_power
+  a s223:QuantifiableObservableProperty ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricPower> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
+  rdfs:label "vav4 heat power" ;
+.
+IBAL:vav4_out_rtd
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV4 Discharge Temperature" ;
+  bacnet:object-identifier "analog-input,2" ;
+  bacnet:object-name "vav4_out_rtd" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_4 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "vav4 out rtd" ;
+.
+IBAL:vav4_t_in
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "VAV4 Supply Air Temperature" ;
+  bacnet:object-identifier "analog-input,3" ;
+  bacnet:object-name "vav4_t_in" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_4 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "vav4 t in" ;
+.
+IBAL:zs1_heat_rtd
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "66"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  qudt:value "66" ;
+  rdfs:label "zs1 heat rtd" ;
+.
+IBAL:zs1_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "Zone1 Temperature" ;
+  bacnet:object-identifier "analog-input,5" ;
+  bacnet:object-name "zs1_out_rtd" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:HVACZone_1 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "zs1_out_rtd" ;
+.
+IBAL:zs1_rh
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "80"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
+  qudt:value "80" ;
+  rdfs:label "zs1_rh" ;
+.
+IBAL:zs1_t_sp_f
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableProperty ;
+  bacnet:description "Zone1 Temperature Setpoint" ;
+  bacnet:object-identifier "analog-input,6" ;
+  bacnet:object-name "zs1_t_sp_f" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_1 ;
+  bacnet:present-value "74"^^xsd:float ;
+  s223:hasAspect s223:Aspect-Setpoint ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "zs1 t sp f" ;
+.
+IBAL:zs2_heat_rtd
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "70"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  qudt:value "70" ;
+  rdfs:label "zs2 heat rtd" ;
+.
+IBAL:zs2_out_rtd
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "Zone2 Temperature" ;
+  bacnet:object-identifier "analog-input,5" ;
+  bacnet:object-name "Zone2 Temperature" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_2 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "zs2 out rtd" ;
+.
+IBAL:zs2_rh
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "50"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
+  rdfs:label "zs2 rh" ;
+.
+IBAL:zs2_t_sp_f
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableProperty ;
+  bacnet:description "Zone2 Temperature Setpoint" ;
+  bacnet:object-identifier "analog-input,6" ;
+  bacnet:object-name "zs2_t_sp_f" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_2 ;
+  bacnet:present-value "74"^^xsd:float ;
+  s223:hasAspect s223:Aspect-Setpoint ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "zs2 t sp f" ;
+.
+IBAL:zs3_heat_rtd
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "66"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  qudt:value "66" ;
+  rdfs:label "zs3 heat rtd" ;
+.
+IBAL:zs3_out_rtd
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "Zone3 Temperature" ;
+  bacnet:object-identifier "analog-input,5" ;
+  bacnet:object-name "zs3_out_rtd" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:HVACZone_3 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "zs3 out rtd" ;
+.
+IBAL:zs3_rh
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "50"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
+  rdfs:label "zs3 rh" ;
+.
+IBAL:zs3_t_sp_f
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableProperty ;
+  bacnet:description "Zone3 Temperature Setpoint" ;
+  bacnet:object-identifier "analog-input,6" ;
+  bacnet:object-name "zs3_t_sp_f" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_3 ;
+  bacnet:present-value "74"^^xsd:float ;
+  s223:hasAspect s223:Aspect-Setpoint ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "zs3 t sp f" ;
+.
+IBAL:zs4_heat_rtd
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "68"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  qudt:value "68" ;
+  rdfs:label "zs4 heat rtd" ;
+.
+IBAL:zs4_out_rtd
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableObservableProperty ;
+  bacnet:description "Zone4 Temperature" ;
+  bacnet:object-identifier "analog-input,5" ;
+  bacnet:object-name "zs4_out_rtd" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:HVACZone_4 ;
+  bacnet:present-value "70"^^xsd:float ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "zs4_out_rtd" ;
+.
+IBAL:zs4_rh
+  a s223:QuantifiableObservableProperty ;
+  s223:hasValue "30"^^xsd:decimal ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> ;
+  rdfs:label "zsh4 rh" ;
+.
+IBAL:zs4_t_sp_f
+  a bacnet:AnalogInputObject ;
+  a s223:QuantifiableProperty ;
+  bacnet:description "Zone4 Temperature Setpoint" ;
+  bacnet:object-identifier "analog-input,6" ;
+  bacnet:object-name "zs4_t_sp_f" ;
+  bacnet:object-type "analog-input" ;
+  bacnet:objectOf IBAL:VAV_4 ;
+  bacnet:present-value "74"^^xsd:float ;
+  s223:hasAspect s223:Aspect-Setpoint ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+  qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
+  rdfs:label "zs4 t sp f" ;
 .
