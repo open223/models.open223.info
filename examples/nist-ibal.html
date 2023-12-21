@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/ibal';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/nist-ibal';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ASHRAE Guideline 36-2021 4.1 VAV Terminal Unit with Cooling Only" href="guideline36-2021-4.1.html" />
-    <link rel="prev" title="NREL Example Building" href="NREL-example.html" />
+    <link rel="next" title="NREL Example Building" href="NREL-example.html" />
+    <link rel="prev" title="LBNL Example Building" href="lbnl-example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,8 +165,8 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Buildings</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lbnl-example.html">LBNL Example Building</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NREL-example.html">NREL Example Building</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">NIST Intelligent Buildings Agents Laboratory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NREL-example.html">NREL Example Building</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Systems</span></p>
 <ul class="nav bd-sidenav">
@@ -248,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/open223/models.open223.info/issues/new?title=Issue%20on%20page%20%2Fexamples/ibal.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/open223/models.open223.info/issues/new?title=Issue%20on%20page%20%2Fexamples/nist-ibal.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/examples/ibal.md" target="_blank"
+      <li><a href="../_sources/examples/nist-ibal.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,12 +389,12 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="nist-intelligent-buildings-agents-laboratory">
 <h1>NIST Intelligent Buildings Agents Laboratory<a class="headerlink" href="#nist-intelligent-buildings-agents-laboratory" title="Permalink to this heading">#</a></h1>
 <p>This is a model of the Intelligent Buildings Agents Laboratory (IBAL) at NIST.</p>
-<p>The schematics of the air and hydronic systems can be found <a class="reference download internal" download="" href="../_downloads/09f3e0cf55f1d2eef91168d10e35a859/ibal.pdf"><span class="xref download myst">here</span></a></p>
+<p>The schematics of the air and hydronic systems can be found <a class="reference download internal" download="" href="../_downloads/3bea39bdfd69b31bd126369ad30339d0/nist-ibal.pdf"><span class="xref download myst">here</span></a></p>
 <section id="downloads">
 <h2>Downloads<a class="headerlink" href="#downloads" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a href="/ibal.ttl">Turtle file</a></p></li>
-<li><p><a href="/ibal.jsonld">JSON-LD file</a></p></li>
+<li><p><a href="/nist-ibal.ttl">Turtle file</a></p></li>
+<li><p><a href="/nist-ibal.jsonld">JSON-LD file</a></p></li>
 </ul>
 </section>
 <section id="queries">
@@ -407,7 +407,7 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Zone/room temperature sensors</p></td>
-<td><p><a class="reference external" href="https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+SELECT+%3Flocation+%3Fsensor+WHERE+%7B+++++%3Fsensor+rdf%3Atype%2Frdfs%3AsubClassOf%2A+s223%3ASensor+.+++++%3Fsensor+s223%3Aobserves+%3Fproperty+.+++++%3Fproperty+qudt%3AhasQuantityKind+quantitykind%3ATemperature+.+++++%3Fsensor+s223%3AhasObservationLocation+%3Flocation+%7D+&amp;url=https://models.open223.info/ibal.ttl">Query Link</a></p></td>
+<td><p><a class="reference external" href="https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+SELECT+%3Flocation+%3Fsensor+WHERE+%7B+++++%3Fsensor+rdf%3Atype%2Frdfs%3AsubClassOf%2A+s223%3ASensor+.+++++%3Fsensor+s223%3Aobserves+%3Fproperty+.+++++%3Fproperty+qudt%3AhasQuantityKind+quantitykind%3ATemperature+.+++++%3Fsensor+s223%3AhasObservationLocation+%3Flocation+%7D+&amp;url=https://models.open223.info/nist-ibal.ttl">Query Link</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -566,20 +566,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="NREL-example.html"
+       href="lbnl-example.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">NREL Example Building</p>
+        <p class="prev-next-title">LBNL Example Building</p>
       </div>
     </a>
     <a class="right-next"
-       href="guideline36-2021-4.1.html"
+       href="NREL-example.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ASHRAE Guideline 36-2021 4.1 VAV Terminal Unit with Cooling Only</p>
+        <p class="prev-next-title">NREL Example Building</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
