@@ -1,45 +1,50 @@
 [
     {
-        "@id": "urn:ex/hot-water-out-connection",
+        "@id": "urn:ex/damper",
         "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Pipe"
+            "http://data.ashrae.org/standard223#Damper",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
         ],
-        "http://data.ashrae.org/standard223#hasMedium": [
+        "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+                "@id": "urn:ex/damper-in"
+            },
+            {
+                "@id": "urn:ex/damper-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/damper-command"
+            },
+            {
+                "@id": "urn:ex/damper-position"
             }
         ]
     },
     {
-        "@id": "urn:ex/vav-reheat",
+        "@id": "urn:ex/reheat-coil",
         "@type": [
-            "http://data.ashrae.org/standard223#SingleDuctTerminal",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#VAVWithReheat"
+            "http://data.ashrae.org/standard223#HeatingCoil",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/air-in"
+                "@id": "urn:ex/reheat-coil-air-in"
             },
             {
-                "@id": "urn:ex/air-out"
+                "@id": "urn:ex/reheat-coil-air-out"
             },
             {
-                "@id": "urn:ex/hot-water-in"
+                "@id": "urn:ex/reheat-coil-water-in"
             },
             {
-                "@id": "urn:ex/hot-water-out"
+                "@id": "urn:ex/reheat-coil-water-out"
             }
         ],
-        "http://data.ashrae.org/standard223#contains": [
+        "http://data.ashrae.org/standard223#hasRole": [
             {
-                "@id": "urn:ex/damper"
-            },
-            {
-                "@id": "urn:ex/reheat-coil"
-            },
-            {
-                "@id": "urn:ex/reheat-coil-valve"
+                "@id": "http://data.ashrae.org/standard223#Role-Heating"
             }
         ]
     },
@@ -56,59 +61,9 @@
         ]
     },
     {
-        "@id": "urn:ex/discharge-air-flow-sensor",
+        "@id": "urn:ex/",
         "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "urn:ex/air-in"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/discharge-air-flow"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/damper-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-after-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/air-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/air-out-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/discharge-air-flow"
-            },
-            {
-                "@id": "urn:ex/discharge-air-temp"
-            }
+            "http://www.w3.org/2002/07/owl#Ontology"
         ]
     },
     {
@@ -145,39 +100,71 @@
         ]
     },
     {
-        "@id": "urn:ex/damper-in",
+        "@id": "urn:ex/reheat-coil-valve-out",
         "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/air-in-connection"
+                "@id": "urn:ex/hot-water-out-connection"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
             }
         ],
         "http://data.ashrae.org/standard223#mapsTo": [
             {
-                "@id": "urn:ex/air-in"
+                "@id": "urn:ex/hot-water-out"
             }
         ]
     },
     {
-        "@id": "urn:ex/reheat-coil-valve-actuator",
+        "@id": "urn:ex/vav-reheat",
         "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
+            "http://data.ashrae.org/standard223#SingleDuctTerminal",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#VAVWithReheat"
         ],
-        "http://data.ashrae.org/standard223#actuates": [
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/air-in"
+            },
+            {
+                "@id": "urn:ex/air-out"
+            },
+            {
+                "@id": "urn:ex/hot-water-in"
+            },
+            {
+                "@id": "urn:ex/hot-water-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#contains": [
+            {
+                "@id": "urn:ex/damper"
+            },
+            {
+                "@id": "urn:ex/reheat-coil"
+            },
             {
                 "@id": "urn:ex/reheat-coil-valve"
             }
+        ]
+    },
+    {
+        "@id": "urn:ex/hot-water-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
-        "http://data.ashrae.org/standard223#commandedByProperty": [
+        "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/reheat-coil-valve-command"
+                "@id": "urn:ex/hot-water-out-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
             }
         ]
     },
@@ -210,48 +197,6 @@
         ]
     },
     {
-        "@id": "urn:ex/discharge-air-temp",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Discharge"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/DEG_C"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/reheat-coil-valve-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/hot-water-out-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "urn:ex/hot-water-out"
-            }
-        ]
-    },
-    {
         "@id": "urn:ex/air-in",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
@@ -268,32 +213,14 @@
         ]
     },
     {
-        "@id": "urn:ex/damper",
+        "@id": "urn:ex/reheat-coil-valve-command",
         "@type": [
-            "http://data.ashrae.org/standard223#Damper",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
+        "http://data.ashrae.org/standard223#hasAspect": [
             {
-                "@id": "urn:ex/damper-in"
-            },
-            {
-                "@id": "urn:ex/damper-out"
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
             }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/damper-command"
-            },
-            {
-                "@id": "urn:ex/damper-position"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/reheat-coil-valve-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
         ],
         "http://qudt.org/schema/qudt/hasQuantityKind": [
             {
@@ -303,6 +230,18 @@
         "http://qudt.org/schema/qudt/hasUnit": [
             {
                 "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/hot-water-out-connection",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Pipe"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
             }
         ]
     },
@@ -328,18 +267,34 @@
         ]
     },
     {
-        "@id": "urn:ex/reheat-coil-water-out",
+        "@id": "urn:ex/discharge-air-temp-sensor",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+            "http://data.ashrae.org/standard223#Sensor"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
             {
-                "@id": "urn:ex/pipe-hot-water-return-before-valve"
+                "@id": "urn:ex/air-out"
             }
         ],
-        "http://data.ashrae.org/standard223#hasMedium": [
+        "http://data.ashrae.org/standard223#observes": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+                "@id": "urn:ex/discharge-air-temp"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/damper-position",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
             }
         ]
     },
@@ -356,18 +311,139 @@
         ]
     },
     {
-        "@id": "urn:ex/hot-water-in",
+        "@id": "urn:ex/reheat-coil-valve-position",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/discharge-air-temp",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Discharge"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/DEG_C"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/damper-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-after-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/air-in-connection",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/discharge-air-flow-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/air-in"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/discharge-air-flow"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/air-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/air-out-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/discharge-air-flow"
+            },
+            {
+                "@id": "urn:ex/discharge-air-temp"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/reheat-coil-air-in",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/hot-water-in-connection"
+                "@id": "urn:ex/duct-after-damper"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/reheat-coil-valve-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "urn:ex/reheat-coil-valve"
+            }
+        ],
+        "http://data.ashrae.org/standard223#commandedByProperty": [
+            {
+                "@id": "urn:ex/reheat-coil-valve-command"
             }
         ]
     },
@@ -389,6 +465,96 @@
         "http://qudt.org/schema/qudt/hasUnit": [
             {
                 "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/reheat-coil-air-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/air-out-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "urn:ex/air-out"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/hot-water-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/hot-water-in-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/damper-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/air-in-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "urn:ex/air-in"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/reheat-coil-valve-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/pipe-hot-water-return-before-valve"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/reheat-coil-water-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/pipe-hot-water-return-before-valve"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
             }
         ]
     },
@@ -417,172 +583,6 @@
         "http://data.ashrae.org/standard223#commandedByProperty": [
             {
                 "@id": "urn:ex/damper-command"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/discharge-air-temp-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "urn:ex/air-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/discharge-air-temp"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/",
-        "@type": [
-            "http://www.w3.org/2002/07/owl#Ontology"
-        ]
-    },
-    {
-        "@id": "urn:ex/hot-water-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/hot-water-out-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/reheat-coil-valve-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/pipe-hot-water-return-before-valve"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/reheat-coil",
-        "@type": [
-            "http://data.ashrae.org/standard223#HeatingCoil",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/reheat-coil-air-in"
-            },
-            {
-                "@id": "urn:ex/reheat-coil-air-out"
-            },
-            {
-                "@id": "urn:ex/reheat-coil-water-in"
-            },
-            {
-                "@id": "urn:ex/reheat-coil-water-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Heating"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/reheat-coil-air-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/air-out-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "urn:ex/air-out"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/air-in-connection",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/reheat-coil-air-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-after-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/damper-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/reheat-coil-valve-command",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
             }
         ]
     }

@@ -1,86 +1,9 @@
 [
     {
-        "@id": "urn:ex/duct-after-minimum-oa-damper",
+        "@id": "urn:ex/duct-after-htg-coil",
         "@type": [
             "http://data.ashrae.org/standard223#Connection",
             "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-after-economizer-oa-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-flow",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-before-ea-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/supply-duct-static-pressure",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Supply"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/Pressure"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/IN_H2O"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/return-exhaust-junction-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-after-ra-fan"
-            }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -105,407 +28,6 @@
         ]
     },
     {
-        "@id": "urn:ex/pipe-hot-water-return-after-valve",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Pipe"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-after-htg-coil",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-after-ra-fan",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/htg-coil-valve",
-        "@type": [
-            "http://data.ashrae.org/standard223#Valve",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/htg-coil-valve-in"
-            },
-            {
-                "@id": "urn:ex/htg-coil-valve-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Water-HotWater"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/htg-coil-valve-command"
-            },
-            {
-                "@id": "urn:ex/htg-coil-valve-position"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-fan-speed-cmd",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Speed"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ea-out-connection",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/sa-fan-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/sa-out-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "urn:ex/sa-out"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-fan-static-pressure-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "urn:ex/duct-after-ra-fan"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/ra-fan-discharge-static-pressure"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/htg-coil-valve-command",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/sa-fan-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-after-clg-coil"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/sa-temp-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "urn:ex/sa-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/sa-temp"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/clg-coil",
-        "@type": [
-            "http://data.ashrae.org/standard223#CoolingCoil",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterCoil"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/clg-coil-air-in"
-            },
-            {
-                "@id": "urn:ex/clg-coil-air-out"
-            },
-            {
-                "@id": "urn:ex/clg-coil-water-in"
-            },
-            {
-                "@id": "urn:ex/clg-coil-water-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Cooling"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Damper",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/ra-damper-in"
-            },
-            {
-                "@id": "urn:ex/ra-damper-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/ra-damper-command"
-            },
-            {
-                "@id": "urn:ex/ra-damper-position"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Return"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-fan-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/ra-in-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "urn:ex/ra-in"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ea-damper-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/minimum-oa-damper-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
-            {
-                "@id": "urn:ex/minimum-oa-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#commandedByProperty": [
-            {
-                "@id": "urn:ex/minimum-oa-damper-command"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/outside-supply-junction-in-2",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-after-minimum-oa-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/pipe-chilled-water-supply",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Pipe"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/htg-coil-valve-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/pipe-hot-water-return-before-valve"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-damper-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/minimum-oa-damper-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-damper-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-before-ra-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/oa-flow",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
-            }
-        ]
-    },
-    {
         "@id": "urn:ex/return-exhaust-junction-out-1",
         "@type": [
             "http://data.ashrae.org/standard223#OutletConnectionPoint"
@@ -522,109 +44,7 @@
         ]
     },
     {
-        "@id": "urn:ex/ra-damper-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-after-ra-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/oa-temp-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "urn:ex/minimum-oa-damper-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/oa-temp"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ea-damper-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
-            {
-                "@id": "urn:ex/ea-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#commandedByProperty": [
-            {
-                "@id": "urn:ex/ea-damper-command"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/clg-coil-valve-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/pipe-chilled-water-return-after-valve"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/sa-fan-start-cmd",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-fan-start-status",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ma-temp-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "urn:ex/filter-in"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/ma-temp"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-before-economizer-oa-damper",
+        "@id": "urn:ex/duct-before-minimum-oa-damper",
         "@type": [
             "http://data.ashrae.org/standard223#Connection",
             "http://data.ashrae.org/standard223#Duct"
@@ -636,146 +56,13 @@
         ]
     },
     {
-        "@id": "urn:ex/filter",
-        "@type": [
-            "http://data.ashrae.org/standard223#Filter",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#Filter"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/filter-in"
-            },
-            {
-                "@id": "urn:ex/filter-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/filter-differential-pressure"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-fan-start-cmd",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/minimum-oa-damper-out",
+        "@id": "urn:ex/htg-coil-water-out",
         "@type": [
             "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/duct-after-minimum-oa-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/oa-flow"
-            },
-            {
-                "@id": "urn:ex/oa-temp"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/pipe-chilled-water-return-after-valve",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Pipe"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/sa-fan",
-        "@type": [
-            "http://data.ashrae.org/standard223#Fan",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/sa-fan-in"
-            },
-            {
-                "@id": "urn:ex/sa-fan-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/sa-fan-speed-cmd"
-            },
-            {
-                "@id": "urn:ex/sa-fan-start-cmd"
-            },
-            {
-                "@id": "urn:ex/sa-fan-start-status"
-            },
-            {
-                "@id": "urn:ex/sa-flow"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Supply"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/outside-supply-junction-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-before-filter"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/clg-coil-air-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-after-clg-coil"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/htg-coil-water-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/pipe-hot-water-return-after-valve"
+                "@id": "urn:ex/pipe-hot-water-supply"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -801,55 +88,39 @@
         ]
     },
     {
-        "@id": "urn:ex/clg-coil-valve-in",
+        "@id": "urn:ex/economizer-oa-damper-in",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/pipe-chilled-water-return-before-valve"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/filter-differential-pressure",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/Pressure"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/IN_H2O"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/outside-air-junction-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/oa-in-connection"
+                "@id": "urn:ex/duct-before-economizer-oa-damper"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#Medium-Air"
             }
+        ]
+    },
+    {
+        "@id": "urn:ex/oa-temp",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
         ],
-        "http://data.ashrae.org/standard223#mapsTo": [
+        "http://data.ashrae.org/standard223#hasAspect": [
             {
-                "@id": "urn:ex/oa-in"
+                "@id": "http://data.ashrae.org/standard223#Role-Outside"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/DEG_C"
             }
         ]
     },
@@ -879,9 +150,14 @@
         ]
     },
     {
-        "@id": "urn:ex/sa-out-connection",
+        "@id": "urn:ex/outside-air-junction-out-1",
         "@type": [
-            "http://data.ashrae.org/standard223#Connection"
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-before-minimum-oa-damper"
+            }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -890,24 +166,123 @@
         ]
     },
     {
-        "@id": "urn:ex/outside-air-junction",
+        "@id": "urn:ex/duct-after-clg-coil",
         "@type": [
-            "http://data.ashrae.org/standard223#Junction"
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-fan-start-cmd",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/sa-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/outside-air-junction-in"
-            },
-            {
-                "@id": "urn:ex/outside-air-junction-out-1"
-            },
-            {
-                "@id": "urn:ex/outside-air-junction-out-2"
+                "@id": "urn:ex/sa-out-connection"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/sa-temp"
+            },
+            {
+                "@id": "urn:ex/supply-duct-static-pressure"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/ra-in-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/ra-temp"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ma-temp-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/filter-in"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/ma-temp"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/filter-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-before-filter"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/ma-temp"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/clg-coil-valve-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/pipe-chilled-water-return-before-valve"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
             }
         ]
     },
@@ -940,6 +315,80 @@
         ]
     },
     {
+        "@id": "urn:ex/sa-fan-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/sa-out-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "urn:ex/sa-out"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/filter-differential-pressure",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/Pressure"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/IN_H2O"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/sa-temp",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Supply"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/DEG_C"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/heat-coil-air-temp",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/DEG_C"
+            }
+        ]
+    },
+    {
         "@id": "urn:ex/outside-supply-junction-in-3",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
@@ -956,13 +405,41 @@
         ]
     },
     {
-        "@id": "urn:ex/htg-coil-water-out",
+        "@id": "urn:ex/duct-before-economizer-oa-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/heat-coil-air-temp-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/duct-after-htg-coil"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/heat-coil-air-temp"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/htg-coil-valve-out",
         "@type": [
             "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/pipe-hot-water-supply"
+                "@id": "urn:ex/pipe-hot-water-return-after-valve"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -972,18 +449,45 @@
         ]
     },
     {
-        "@id": "urn:ex/ra-flow-sensor",
+        "@id": "urn:ex/return-exhaust-junction-in",
         "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
+        "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/ra-fan"
+                "@id": "urn:ex/duct-after-ra-fan"
             }
         ],
-        "http://data.ashrae.org/standard223#observes": [
+        "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "urn:ex/ra-flow"
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/sa-out-connection",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-damper-position",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
             }
         ]
     },
@@ -1010,10 +514,14 @@
         ]
     },
     {
-        "@id": "urn:ex/duct-before-minimum-oa-damper",
+        "@id": "urn:ex/filter-out",
         "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-after-filter"
+            }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -1022,7 +530,23 @@
         ]
     },
     {
-        "@id": "urn:ex/minimum-oa-damper-command",
+        "@id": "urn:ex/economizer-oa-damper-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "urn:ex/economizer-oa-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#commandedByProperty": [
+            {
+                "@id": "urn:ex/economizer-oa-damper-command"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/htg-coil-valve-command",
         "@type": [
             "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
         ],
@@ -1039,50 +563,6 @@
         "http://qudt.org/schema/qudt/hasUnit": [
             {
                 "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/outside-air-junction-out-2",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-before-economizer-oa-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/outside-supply-junction-in-1",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-after-ra-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/pipe-hot-water-supply",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Pipe"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
             }
         ]
     },
@@ -1099,62 +579,31 @@
         ]
     },
     {
-        "@id": "urn:ex/clg-coil-water-out",
+        "@id": "urn:ex/",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/pipe-chilled-water-supply"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
+            "http://www.w3.org/2002/07/owl#Ontology"
         ]
     },
     {
-        "@id": "urn:ex/heat-coil-air-temp-sensor",
+        "@id": "urn:ex/supply-duct-static-pressure-sensor",
         "@type": [
             "http://data.ashrae.org/standard223#Sensor"
         ],
         "http://data.ashrae.org/standard223#hasObservationLocation": [
             {
-                "@id": "urn:ex/duct-after-htg-coil"
+                "@id": "urn:ex/sa-out-connection"
             }
         ],
         "http://data.ashrae.org/standard223#observes": [
             {
-                "@id": "urn:ex/heat-coil-air-temp"
+                "@id": "urn:ex/supply-duct-static-pressure"
             }
         ]
     },
     {
-        "@id": "urn:ex/oa-flow-measurement-station",
+        "@id": "urn:ex/ea-damper-position",
         "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "urn:ex/minimum-oa-damper-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/oa-flow"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/clg-coil-valve-command",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
-            }
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
         ],
         "http://qudt.org/schema/qudt/hasQuantityKind": [
             {
@@ -1164,6 +613,94 @@
         "http://qudt.org/schema/qudt/hasUnit": [
             {
                 "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/duct-before-ra-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/minimum-oa-damper-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-before-minimum-oa-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/pipe-chilled-water-return-after-valve",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Pipe"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-damper-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-before-ra-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/minimum-oa-damper-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "urn:ex/minimum-oa-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#commandedByProperty": [
+            {
+                "@id": "urn:ex/minimum-oa-damper-command"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/clg-coil-water-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/pipe-chilled-water-return-after-valve"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
             }
         ]
     },
@@ -1189,13 +726,13 @@
         ]
     },
     {
-        "@id": "urn:ex/economizer-oa-damper-out",
+        "@id": "urn:ex/outside-supply-junction-in-2",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/duct-after-economizer-oa-damper"
+                "@id": "urn:ex/duct-after-minimum-oa-damper"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -1205,71 +742,7 @@
         ]
     },
     {
-        "@id": "urn:ex/supply-duct-static-pressure-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "urn:ex/sa-out-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/supply-duct-static-pressure"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-temp-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "urn:ex/ra-in"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/ra-temp"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/clg-coil-water-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/pipe-chilled-water-return-after-valve"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/economizer-oa-damper-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-before-filter",
+        "@id": "urn:ex/duct-after-ra-fan",
         "@type": [
             "http://data.ashrae.org/standard223#Connection",
             "http://data.ashrae.org/standard223#Duct"
@@ -1281,9 +754,10 @@
         ]
     },
     {
-        "@id": "urn:ex/ra-in-connection",
+        "@id": "urn:ex/duct-after-ra-damper",
         "@type": [
-            "http://data.ashrae.org/standard223#Connection"
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -1292,48 +766,42 @@
         ]
     },
     {
-        "@id": "urn:ex/htg-coil-valve-out",
+        "@id": "urn:ex/minimum-oa-damper-out",
         "@type": [
             "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/pipe-hot-water-return-after-valve"
+                "@id": "urn:ex/duct-after-minimum-oa-damper"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/oa-flow"
+            },
+            {
+                "@id": "urn:ex/oa-temp"
             }
         ]
     },
     {
-        "@id": "urn:ex/filter-differential-pressure-sensor",
+        "@id": "urn:ex/oa-flow",
         "@type": [
-            "http://data.ashrae.org/standard223#DifferentialSensor",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#DifferentialPressureSensor"
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
         ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
             {
-                "@id": "urn:ex/filter-in"
-            },
-            {
-                "@id": "urn:ex/filter-out"
+                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
             }
         ],
-        "http://data.ashrae.org/standard223#hasObservationLocationHigh": [
+        "http://qudt.org/schema/qudt/hasUnit": [
             {
-                "@id": "urn:ex/filter-in"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocationLow": [
-            {
-                "@id": "urn:ex/filter-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/filter-differential-pressure"
+                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
             }
         ]
     },
@@ -1359,7 +827,110 @@
         ]
     },
     {
-        "@id": "urn:ex/duct-after-ra-damper",
+        "@id": "urn:ex/ra-flow",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-temp-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/ra-in"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/ra-temp"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/sa-fan-speed-cmd",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Speed"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/outside-air-junction",
+        "@type": [
+            "http://data.ashrae.org/standard223#Junction"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/outside-air-junction-in"
+            },
+            {
+                "@id": "urn:ex/outside-air-junction-out-1"
+            },
+            {
+                "@id": "urn:ex/outside-air-junction-out-2"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/pipe-chilled-water-supply",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Pipe"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ea-damper-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "urn:ex/ea-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#commandedByProperty": [
+            {
+                "@id": "urn:ex/ea-damper-command"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/duct-after-minimum-oa-damper",
         "@type": [
             "http://data.ashrae.org/standard223#Connection",
             "http://data.ashrae.org/standard223#Duct"
@@ -1371,9 +942,70 @@
         ]
     },
     {
-        "@id": "urn:ex/filter-in",
+        "@id": "urn:ex/ra-fan",
         "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
+            "http://data.ashrae.org/standard223#Fan",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/ra-fan-in"
+            },
+            {
+                "@id": "urn:ex/ra-fan-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/ra-fan-speed-cmd"
+            },
+            {
+                "@id": "urn:ex/ra-fan-start-cmd"
+            },
+            {
+                "@id": "urn:ex/ra-fan-start-status"
+            },
+            {
+                "@id": "urn:ex/ra-flow"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Return"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/oa-in-connection",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/htg-coil-valve-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "urn:ex/htg-coil-valve"
+            }
+        ],
+        "http://data.ashrae.org/standard223#commandedByProperty": [
+            {
+                "@id": "urn:ex/htg-coil-valve-command"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/outside-supply-junction-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
@@ -1384,15 +1016,112 @@
             {
                 "@id": "http://data.ashrae.org/standard223#Medium-Air"
             }
+        ]
+    },
+    {
+        "@id": "urn:ex/outside-supply-junction-in-1",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
-        "http://data.ashrae.org/standard223#hasProperty": [
+        "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/ma-temp"
+                "@id": "urn:ex/duct-after-ra-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
             }
         ]
     },
     {
-        "@id": "urn:ex/ea-damper-command",
+        "@id": "urn:ex/ra-flow-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/ra-fan"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/ra-flow"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/htg-coil",
+        "@type": [
+            "http://data.ashrae.org/standard223#HeatingCoil",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/htg-coil-air-in"
+            },
+            {
+                "@id": "urn:ex/htg-coil-air-out"
+            },
+            {
+                "@id": "urn:ex/htg-coil-water-in"
+            },
+            {
+                "@id": "urn:ex/htg-coil-water-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Heating"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ea-damper-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/ea-out-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "urn:ex/ea-out"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/duct-after-filter",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-in-connection",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/clg-coil-valve-command",
         "@type": [
             "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
         ],
@@ -1413,34 +1142,39 @@
         ]
     },
     {
-        "@id": "urn:ex/clg-coil-valve-actuator",
+        "@id": "urn:ex/ra-fan-speed-cmd",
         "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
         ],
-        "http://data.ashrae.org/standard223#actuates": [
+        "http://data.ashrae.org/standard223#hasAspect": [
             {
-                "@id": "urn:ex/clg-coil-valve"
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Speed"
             }
         ],
-        "http://data.ashrae.org/standard223#commandedByProperty": [
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
             {
-                "@id": "urn:ex/clg-coil-valve-command"
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
             }
         ]
     },
     {
-        "@id": "urn:ex/sa-flow-sensor",
+        "@id": "urn:ex/clg-coil-valve-position",
         "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
         ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
             {
-                "@id": "urn:ex/sa-fan"
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
             }
         ],
-        "http://data.ashrae.org/standard223#observes": [
+        "http://qudt.org/schema/qudt/hasUnit": [
             {
-                "@id": "urn:ex/sa-flow"
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
             }
         ]
     },
@@ -1469,6 +1203,127 @@
         "http://data.ashrae.org/standard223#hasRole": [
             {
                 "@id": "http://data.ashrae.org/standard223#Role-Outside"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/clg-coil-valve-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "urn:ex/clg-coil-valve"
+            }
+        ],
+        "http://data.ashrae.org/standard223#commandedByProperty": [
+            {
+                "@id": "urn:ex/clg-coil-valve-command"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/pipe-hot-water-return-after-valve",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Pipe"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ea-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Damper",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/ea-damper-in"
+            },
+            {
+                "@id": "urn:ex/ea-damper-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/ea-damper-command"
+            },
+            {
+                "@id": "urn:ex/ea-damper-position"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Exhaust"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/clg-coil-valve",
+        "@type": [
+            "http://data.ashrae.org/standard223#Valve",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/clg-coil-valve-in"
+            },
+            {
+                "@id": "urn:ex/clg-coil-valve-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Water-ChilledWater"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/clg-coil-valve-command"
+            },
+            {
+                "@id": "urn:ex/clg-coil-valve-position"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/htg-coil-valve-position",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/minimum-oa-damper-command",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
             }
         ]
     },
@@ -1538,88 +1393,18 @@
         ]
     },
     {
-        "@id": "urn:ex/ea-out",
+        "@id": "urn:ex/clg-coil-air-out",
         "@type": [
             "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/ea-out-connection"
+                "@id": "urn:ex/duct-after-clg-coil"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/",
-        "@type": [
-            "http://www.w3.org/2002/07/owl#Ontology"
-        ]
-    },
-    {
-        "@id": "urn:ex/economizer-oa-damper-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-before-economizer-oa-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/return-exhaust-junction-out-2",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-before-ra-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/outside-air-junction-out-1",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-before-minimum-oa-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/heat-coil-air-temp",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/DEG_C"
             }
         ]
     },
@@ -1640,14 +1425,25 @@
         ]
     },
     {
-        "@id": "urn:ex/sa-fan-speed-cmd",
+        "@id": "urn:ex/oa-temp-sensor",
         "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
+            "http://data.ashrae.org/standard223#Sensor"
         ],
-        "http://data.ashrae.org/standard223#hasAspect": [
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
             {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Speed"
+                "@id": "urn:ex/minimum-oa-damper-out"
             }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/oa-temp"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/minimum-oa-damper-position",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
         ],
         "http://qudt.org/schema/qudt/hasQuantityKind": [
             {
@@ -1661,18 +1457,30 @@
         ]
     },
     {
-        "@id": "urn:ex/htg-coil-valve-position",
+        "@id": "urn:ex/htg-coil-valve",
         "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+            "http://data.ashrae.org/standard223#Valve",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve"
         ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
+        "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+                "@id": "urn:ex/htg-coil-valve-in"
+            },
+            {
+                "@id": "urn:ex/htg-coil-valve-out"
             }
         ],
-        "http://qudt.org/schema/qudt/hasUnit": [
+        "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
+                "@id": "http://data.ashrae.org/standard223#Water-HotWater"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/htg-coil-valve-command"
+            },
+            {
+                "@id": "urn:ex/htg-coil-valve-position"
             }
         ]
     },
@@ -1698,14 +1506,26 @@
         ]
     },
     {
-        "@id": "urn:ex/filter-out",
+        "@id": "urn:ex/ra-fan-static-pressure-sensor",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+            "http://data.ashrae.org/standard223#Sensor"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
             {
-                "@id": "urn:ex/duct-after-filter"
+                "@id": "urn:ex/duct-after-ra-fan"
             }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/ra-fan-discharge-static-pressure"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/duct-before-ea-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -1714,7 +1534,7 @@
         ]
     },
     {
-        "@id": "urn:ex/ea-damper-out",
+        "@id": "urn:ex/ea-out",
         "@type": [
             "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
@@ -1727,284 +1547,17 @@
             {
                 "@id": "http://data.ashrae.org/standard223#Medium-Air"
             }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "urn:ex/ea-out"
-            }
         ]
     },
     {
-        "@id": "urn:ex/ra-damper-command",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/sa-flow",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-in",
+        "@id": "urn:ex/htg-coil-valve-in",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/ra-in-connection"
+                "@id": "urn:ex/pipe-hot-water-return-before-valve"
             }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/ra-temp"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/minimum-oa-damper-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-before-minimum-oa-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/sa-temp",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Supply"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/DEG_C"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/ra-fan",
-        "@type": [
-            "http://data.ashrae.org/standard223#Fan",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/ra-fan-in"
-            },
-            {
-                "@id": "urn:ex/ra-fan-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/ra-fan-speed-cmd"
-            },
-            {
-                "@id": "urn:ex/ra-fan-start-cmd"
-            },
-            {
-                "@id": "urn:ex/ra-fan-start-status"
-            },
-            {
-                "@id": "urn:ex/ra-flow"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Return"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/oa-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/oa-in-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/htg-coil-valve-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
-            {
-                "@id": "urn:ex/htg-coil-valve"
-            }
-        ],
-        "http://data.ashrae.org/standard223#commandedByProperty": [
-            {
-                "@id": "urn:ex/htg-coil-valve-command"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/clg-coil-valve",
-        "@type": [
-            "http://data.ashrae.org/standard223#Valve",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/clg-coil-valve-in"
-            },
-            {
-                "@id": "urn:ex/clg-coil-valve-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Water-ChilledWater"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/clg-coil-valve-command"
-            },
-            {
-                "@id": "urn:ex/clg-coil-valve-position"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-before-ra-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-after-filter",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/clg-coil-valve-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/sa-fan-start-status",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/htg-coil",
-        "@type": [
-            "http://data.ashrae.org/standard223#HeatingCoil",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/htg-coil-air-in"
-            },
-            {
-                "@id": "urn:ex/htg-coil-air-out"
-            },
-            {
-                "@id": "urn:ex/htg-coil-water-in"
-            },
-            {
-                "@id": "urn:ex/htg-coil-water-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Heating"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/pipe-hot-water-return-before-valve",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Pipe"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -2013,18 +1566,36 @@
         ]
     },
     {
-        "@id": "urn:ex/ra-damper-actuator",
+        "@id": "urn:ex/sa-fan",
         "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
+            "http://data.ashrae.org/standard223#Fan",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD"
         ],
-        "http://data.ashrae.org/standard223#actuates": [
+        "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/ra-damper"
+                "@id": "urn:ex/sa-fan-in"
+            },
+            {
+                "@id": "urn:ex/sa-fan-out"
             }
         ],
-        "http://data.ashrae.org/standard223#commandedByProperty": [
+        "http://data.ashrae.org/standard223#hasProperty": [
             {
-                "@id": "urn:ex/ra-damper-command"
+                "@id": "urn:ex/sa-fan-speed-cmd"
+            },
+            {
+                "@id": "urn:ex/sa-fan-start-cmd"
+            },
+            {
+                "@id": "urn:ex/sa-fan-start-status"
+            },
+            {
+                "@id": "urn:ex/sa-flow"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Supply"
             }
         ]
     },
@@ -2050,35 +1621,104 @@
         ]
     },
     {
-        "@id": "urn:ex/ea-damper",
+        "@id": "urn:ex/clg-coil-valve-out",
         "@type": [
-            "http://data.ashrae.org/standard223#Damper",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/ea-damper-in"
-            },
-            {
-                "@id": "urn:ex/ea-damper-out"
+                "@id": "urn:ex/pipe-chilled-water-return-after-valve"
             }
         ],
-        "http://data.ashrae.org/standard223#hasProperty": [
+        "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "urn:ex/ea-damper-command"
-            },
-            {
-                "@id": "urn:ex/ea-damper-position"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Exhaust"
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
             }
         ]
     },
     {
-        "@id": "urn:ex/oa-in-connection",
+        "@id": "urn:ex/oa-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/oa-in-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/sa-temp-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/sa-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/sa-temp"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/oa-flow-measurement-station",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/minimum-oa-damper-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/oa-flow"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/duct-after-economizer-oa-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-fan-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/ra-in-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "urn:ex/ra-in"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ea-out-connection",
         "@type": [
             "http://data.ashrae.org/standard223#Connection"
         ],
@@ -2089,18 +1729,339 @@
         ]
     },
     {
-        "@id": "urn:ex/ma-temp",
+        "@id": "urn:ex/supply-duct-static-pressure",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Supply"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/Pressure"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/IN_H2O"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-damper-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "urn:ex/ra-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#commandedByProperty": [
+            {
+                "@id": "urn:ex/ra-damper-command"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/pipe-hot-water-return-before-valve",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Pipe"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-damper-command",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-damper-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-after-ra-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/pipe-hot-water-supply",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Pipe"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/outside-air-junction-out-2",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-before-economizer-oa-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-fan-start-status",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/sa-flow-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/sa-fan"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/sa-flow"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/sa-flow",
         "@type": [
             "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
         ],
         "http://qudt.org/schema/qudt/hasQuantityKind": [
             {
-                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
+                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
             }
         ],
         "http://qudt.org/schema/qudt/hasUnit": [
             {
-                "@id": "http://qudt.org/vocab/unit/DEG_C"
+                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/clg-coil-water-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/pipe-chilled-water-supply"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/filter-differential-pressure-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#DifferentialSensor",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#DifferentialPressureSensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/filter-in"
+            },
+            {
+                "@id": "urn:ex/filter-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocationHigh": [
+            {
+                "@id": "urn:ex/filter-in"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocationLow": [
+            {
+                "@id": "urn:ex/filter-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/filter-differential-pressure"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/outside-air-junction-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/oa-in-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "urn:ex/oa-in"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/clg-coil",
+        "@type": [
+            "http://data.ashrae.org/standard223#CoolingCoil",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterCoil"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/clg-coil-air-in"
+            },
+            {
+                "@id": "urn:ex/clg-coil-air-out"
+            },
+            {
+                "@id": "urn:ex/clg-coil-water-in"
+            },
+            {
+                "@id": "urn:ex/clg-coil-water-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Cooling"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/return-exhaust-junction-out-2",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-before-ra-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/sa-fan-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-after-clg-coil"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/economizer-oa-damper-position",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/htg-coil-water-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/pipe-hot-water-return-after-valve"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Water"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/sa-fan-start-status",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/duct-before-filter",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
             }
         ]
     },
@@ -2121,14 +2082,105 @@
         ]
     },
     {
-        "@id": "urn:ex/oa-temp",
+        "@id": "urn:ex/filter",
         "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+            "http://data.ashrae.org/standard223#Filter",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#Filter"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/filter-in"
+            },
+            {
+                "@id": "urn:ex/filter-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/filter-differential-pressure"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ra-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Damper",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/ra-damper-in"
+            },
+            {
+                "@id": "urn:ex/ra-damper-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/ra-damper-command"
+            },
+            {
+                "@id": "urn:ex/ra-damper-position"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Return"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ea-damper-command",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
         ],
         "http://data.ashrae.org/standard223#hasAspect": [
             {
-                "@id": "http://data.ashrae.org/standard223#Role-Outside"
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
             }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/sa-fan-start-cmd",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/economizer-oa-damper-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-after-economizer-oa-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/ma-temp",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
         ],
         "http://qudt.org/schema/qudt/hasQuantityKind": [
             {
@@ -2138,58 +2190,6 @@
         "http://qudt.org/schema/qudt/hasUnit": [
             {
                 "@id": "http://qudt.org/vocab/unit/DEG_C"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/economizer-oa-damper-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
-            {
-                "@id": "urn:ex/economizer-oa-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#commandedByProperty": [
-            {
-                "@id": "urn:ex/economizer-oa-damper-command"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-after-clg-coil",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/sa-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/sa-out-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/sa-temp"
-            },
-            {
-                "@id": "urn:ex/supply-duct-static-pressure"
             }
         ]
     }
