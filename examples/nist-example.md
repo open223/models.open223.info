@@ -1,13 +1,13 @@
-# NIST Intelligent Buildings Agents Laboratory
+# NIST Example Building
 
 This is a model of the Intelligent Buildings Agents Laboratory (IBAL) at NIST.
 
-The schematics of the air and hydronic systems can be found [here](../_static/schematics/nist-ibal.pdf)
+The schematics of the air and hydronic systems can be found [here](../_static/schematics/nist-example.pdf)
 
 ## Downloads
 
-- <a href="/nist-ibal.ttl">Turtle file</a>
-- <a href="/nist-ibal.jsonld">JSON-LD file</a>
+- <a href="../models/nist-example.ttl">Turtle file</a>
+- <a href="../models/nist-example.jsonld">JSON-LD file</a>
     
 ## Queries
 | Description | Query URL |
