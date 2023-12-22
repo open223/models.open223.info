@@ -72,9 +72,28 @@ SELECT ?channel ?property_id ?unit WHERE {
 [[nist-example]]
 description="Find the downstream equipment for AHU1."
 query="""
-SELECT ?segment ?channel ?property_id WHERE {
-    ?segment a s223:Connection .
-    ?channel a/rdfs:subClassOf* s223:Sensor .
-    ?channel s223:observes ?property_id .
+SELECT ?connectionDown ?connectionDown2 WHERE {
+    BIND(IBAL:AHU_1 as ?ahu) {
+	}
+	UNION {
+	?ahu s223:hasConnectionPoint ?connectionPoint .
+	?connectionPoint a s223:OutletConnectionPoint .
+	?connectionPoint s223:hasMedium s223:Medium-Air .
+	?connectionPoint s223:connectsThrough ?segment .
+	?segment s223:connectsTo ?junction .
+    ?junction s223:connectedTo ?connectionDown .
+    ?connectionDown a s223:TerminalUnit .
+	}
+	UNION {
+	?ahu s223:hasConnectionPoint ?connectionPoint .
+	?connectionPoint a s223:OutletConnectionPoint .
+	?connectionPoint s223:hasMedium s223:Medium-Air .
+	?connectionPoint s223:connectsThrough ?segment .
+	?segment s223:connectsTo ?junction .
+    ?junction s223:connectedTo ?connectionDown .
+    ?connectionDown a s223:Junction .
+	?connectionDown s223:connectedTo ?connectionDown2 .
+	?connectionDown2 a s223:TerminalUnit .
+	}
 }
 """
