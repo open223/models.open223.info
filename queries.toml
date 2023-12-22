@@ -32,33 +32,49 @@ SELECT ?location ?sensor WHERE {
 """
 
 [[nist-example]]
-description="Sensors in Connections"
+description="Search for all the sensors along the connections and the associated property they're observing."
 query="""
-SELECT ?segment ?channel ?id WHERE {
+SELECT ?segment ?channel ?property_id WHERE {
     ?segment a s223:Connection .
     ?channel a/rdfs:subClassOf* s223:Sensor .
-    ?channel s223:observes ?id .
+    ?channel s223:observes ?property_id .
 }
 """
 
 [[nist-example]]
-description="Sensors in AHU 1 and what units they are measured in"
+description="Sensors in AHU1 and what units the properties are measured in"
 query="""
-SELECT ?channel ?id ?unit WHERE {
+SELECT ?channel ?property_id ?unit WHERE {
     BIND(IBAL:AHU_1 as ?ahu) {
     }
     UNION {
         ?ahu s223:contains ?equipment .
         ?channel s223:hasObservationLocation ?equipment .
-        ?channel s223:observes ?id .
-        ?id qudt:hasUnit ?unit .
+        ?channel s223:observes ?property_id .
+        ?property_id qudt:hasUnit ?unit .
     }
     UNION {
         ?ahu s223:contains ?equipment .
-        ?equipment s223:connectedThrough ?connnection .
+        ?equipment s223:connectedThrough ?connection .
         ?channel s223:hasObservationLocation ?connection .
-        ?channel s223:observes ?id .
-        ?id qudt:hasUnit ?u .
+        ?channel s223:observes ?property_id .
+        ?property_id qudt:hasUnit ?unit .
     }
+    UNION {
+        ?ahu s223:contains ?equipment .
+        ?equipment s223:hasConnectionPoint ?connectionPoint .
+        ?channel s223:hasObservationLocation ?connectionPoint .
+        ?channel s223:observes ?property_id .
+        ?property_id qudt:hasUnit ?unit .
+    }
+}
+"""
+[[nist-example]]
+description="Find the downstream equipment for AHU1."
+query="""
+SELECT ?segment ?channel ?property_id WHERE {
+    ?segment a s223:Connection .
+    ?channel a/rdfs:subClassOf* s223:Sensor .
+    ?channel s223:observes ?property_id .
 }
 """
