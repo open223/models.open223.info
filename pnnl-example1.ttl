@@ -1,0 +1,1531 @@
+# baseURI: http://srr/test
+# imports: http://data.ashrae.org/standard223/1.0/model/all
+# prefix: test
+
+@prefix afn: <http://jena.apache.org/ARQ/function#> .
+@prefix agg: <http://jena.apache.org/ARQ/function/aggregate#> .
+@prefix apf: <http://jena.apache.org/ARQ/property#> .
+@prefix array: <http://www.w3.org/2005/xpath-functions/array> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions> .
+@prefix g36: <http://data.ashrae.org/standard223/1.0/extensions/g36#> .
+@prefix geoext: <http://rdf.useekm.com/ext#> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix graphdb: <http://www.ontotext.com/config/graphdb#> .
+@prefix list: <http://jena.apache.org/ARQ/list#> .
+@prefix map: <http://www.w3.org/2005/xpath-functions/map> .
+@prefix math: <http://www.w3.org/2005/xpath-functions/math> .
+@prefix ofn: <http://www.ontotext.com/sparql/functions/> .
+@prefix omgeo: <http://www.ontotext.com/owlim/geo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix path: <http://www.ontotext.com/path#> .
+@prefix psm: <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rep: <http://www.openrdf.org/config/repository#> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+@prefix sail: <http://www.openrdf.org/config/sail#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix sr: <http://www.openrdf.org/config/repository/sail#> .
+@prefix test: <http://srr/test#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902>
+  a s223:DomainSpace ;
+  s223:cnx <urn:anon:uuid:5ac22b7f-6fef-4a66-aaab-70ac707b5334> ;
+  s223:cnx <urn:anon:uuid:7f3d871f-66c0-4b24-8525-79a53922b9b5> ;
+  s223:connected <http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765> ;
+  s223:connected <http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba> ;
+  s223:connectedFrom <http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765> ;
+  s223:connectedFrom <http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba> ;
+  s223:connectedThrough <urn:anon:uuid:3df43ba7-e1b8-442d-bcbc-f88fb9f0976c> ;
+  s223:connectedThrough <urn:anon:uuid:c9850b89-d89f-4e0d-ade3-9d01530cea6e> ;
+  s223:hasConnectionPoint <urn:anon:uuid:5ac22b7f-6fef-4a66-aaab-70ac707b5334> ;
+  s223:hasConnectionPoint <urn:anon:uuid:7f3d871f-66c0-4b24-8525-79a53922b9b5> ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasProperty <http://speckle.systems/a2c2a5feadf56d138ece34afc7fa34dd> ;
+  s223:hasProperty <urn:anon:uuid:9b600188-988b-4ff0-97af-3f1f0c7890c7> ;
+  rdfs:label "LightingSpace6 6" ;
+.
+<http://speckle.systems/05749166d93671bedf16efb52636ce38>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/c6267519c296551e3d74704d80369cb9> ;
+  s223:cnx <urn:anon:uuid:f9dd0ad1-5b5b-4bc6-8cc5-d7cadc3e8068> ;
+  s223:connected <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  s223:connected <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedThrough <urn:anon:uuid:050ae45d-ce38-44e1-9d34-1f683969ae0d> ;
+  s223:connectedThrough <urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f> ;
+  s223:connectedTo <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  s223:hasConnectionPoint <http://speckle.systems/c6267519c296551e3d74704d80369cb9> ;
+  s223:hasConnectionPoint <urn:anon:uuid:f9dd0ad1-5b5b-4bc6-8cc5-d7cadc3e8068> ;
+  s223:hasPhysicalLocation <http://speckle.systems/bf45d7221dfb200823eae08710bcd8a5> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/557801e2f2af7a958f8695cea79d0ccf> <urn:anon:uuid:b8a8780d-28f7-4600-a4db-5d940a48760a> ;
+  rdfs:label "Luminaire5" ;
+.
+<http://speckle.systems/09b9d2616eec93c51fed15a337b8f676>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 112.4444 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/09c967d9e3e0ed6b4350105a6ebd1246>
+  a s223:OccupantMotionSensor ;
+  s223:hasObservationLocation <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  s223:hasPhysicalLocation <http://speckle.systems/bf45d7221dfb200823eae08710bcd8a5> ;
+  s223:observes <urn:anon:uuid:ac460e0f-1be9-4468-a049-d71b0f87826f> ;
+  rdfs:label "Ceiling Occupancy Sensor - Dual Relay - Regular Voltage" ;
+.
+<http://speckle.systems/0a8ed6d561b158c49d4145abf05044a7>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/fb5be382923ff6b15149c342d2af601c> ;
+  s223:cnx <urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae> ;
+  s223:connectsThrough <urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/fb5be382923ff6b15149c342d2af601c> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/0d693228e1e46738efa9a20a427e0324>
+  a s223:Zone ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasDomainSpace <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  rdfs:label "LightingZone3" ;
+.
+<http://speckle.systems/11c04c42e073d0d0b9c2a00aadf4901b>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/e9d83bcd0340d3b2c702a83acd90a597> ;
+  s223:cnx <urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec> ;
+  s223:connectsThrough <urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/e9d83bcd0340d3b2c702a83acd90a597> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<http://speckle.systems/125328da567f42d45b3db70fc114453c>
+  a s223:DomainSpace ;
+  s223:hasDomain s223:Domain-HVAC ;
+  s223:hasProperty <http://speckle.systems/09b9d2616eec93c51fed15a337b8f676> ;
+  rdfs:label "HVACSpace6 6" ;
+.
+<http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/752235573d372d87cbd69a21539496fc> ;
+  s223:cnx <urn:anon:uuid:acece836-1a1c-4d4d-a44f-0e4ac829bee2> ;
+  s223:connected <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  s223:connected <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedThrough <urn:anon:uuid:54ed52b1-7dd3-4caf-82df-19cff3f45e6e> ;
+  s223:connectedThrough <urn:anon:uuid:cb1a3251-d580-4e22-92e7-09f7fb5f28a3> ;
+  s223:connectedTo <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  s223:hasConnectionPoint <http://speckle.systems/752235573d372d87cbd69a21539496fc> ;
+  s223:hasConnectionPoint <urn:anon:uuid:acece836-1a1c-4d4d-a44f-0e4ac829bee2> ;
+  s223:hasPhysicalLocation <http://speckle.systems/bf45d7221dfb200823eae08710bcd8a5> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/557801e2f2af7a958f8695cea79d0ccf> <urn:anon:uuid:af46adec-c8fc-474f-b386-78c1ffda5447> ;
+  rdfs:label "Luminaire6" ;
+.
+<http://speckle.systems/19901540a18560afe307f03df5f1b47a>
+  a s223:DomainSpace ;
+  s223:hasDomain s223:Domain-HVAC ;
+  s223:hasProperty <http://speckle.systems/1b89da9c68b935d6375d5fe0e90febab> ;
+  rdfs:label "HVACSpace5 5" ;
+.
+<http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6>
+  a s223:DomainSpace ;
+  s223:cnx <urn:anon:uuid:1f9f708f-2761-4486-a68c-69651fd33594> ;
+  s223:cnx <urn:anon:uuid:ad61a6a6-1c6b-42de-b13e-49e3ae88486e> ;
+  s223:connected <http://speckle.systems/374038c273236b43838a8c20018321ff> ;
+  s223:connected <http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7> ;
+  s223:connectedFrom <http://speckle.systems/374038c273236b43838a8c20018321ff> ;
+  s223:connectedFrom <http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7> ;
+  s223:connectedThrough <urn:anon:uuid:41e5e388-ad94-499f-985a-4d82b5d9bd4a> ;
+  s223:connectedThrough <urn:anon:uuid:7a52a1a8-5e51-4eef-88be-2ae19ab7dcca> ;
+  s223:hasConnectionPoint <urn:anon:uuid:1f9f708f-2761-4486-a68c-69651fd33594> ;
+  s223:hasConnectionPoint <urn:anon:uuid:ad61a6a6-1c6b-42de-b13e-49e3ae88486e> ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasProperty <http://speckle.systems/ea132dc6f9ffb48fcaa86607ff4b65b3> ;
+  s223:hasProperty <urn:anon:uuid:2b1e0b83-5990-40f2-9cdd-76b295b90b23> ;
+  rdfs:label "LightingSpace4 4" ;
+.
+<http://speckle.systems/1b89da9c68b935d6375d5fe0e90febab>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 36.55556 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/1c5c543a6f7f2fe54028685db9cfc6bf>
+  a s223:OccupantMotionSensor ;
+  s223:hasObservationLocation <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  s223:hasPhysicalLocation <http://speckle.systems/349399722cf147403127919a17f05ed1> ;
+  s223:observes <urn:anon:uuid:4e3eb90b-de00-4ff5-abf5-aaad7e35b878> ;
+  rdfs:label "Ceiling Occupancy Sensor - Dual Relay - Regular Voltage" ;
+.
+<http://speckle.systems/1ea0fcdfbd27598801ae88e7054e3375>
+  a s223:OccupantMotionSensor ;
+  s223:hasObservationLocation <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  s223:hasPhysicalLocation <http://speckle.systems/6d17784757d33ab12665eb12c2010ba3> ;
+  s223:observes <urn:anon:uuid:2b1e0b83-5990-40f2-9cdd-76b295b90b23> ;
+  rdfs:label "Ceiling Occupancy Sensor - Dual Relay - Regular Voltage" ;
+.
+<http://speckle.systems/2c2a82563c8143440dd69b135ae21b40>
+  a s223:DomainSpace ;
+  s223:hasDomain s223:Domain-HVAC ;
+  s223:hasProperty <http://speckle.systems/e179351fa4b9a853d5c32e30f0a5b81b> ;
+  rdfs:label "HVACSpace4 4" ;
+.
+<http://speckle.systems/2ec6c777b3ca86655677fc5ef4dd0242>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4> ;
+  s223:cnx <urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0> ;
+  s223:connectsThrough <urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/349399722cf147403127919a17f05ed1>
+  a s223:PhysicalSpace ;
+  s223:encloses <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  s223:encloses <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  s223:encloses <http://speckle.systems/e2d2158f74816df285bd7cdca1361b1b> ;
+  s223:hasProperty <http://speckle.systems/e7583f67f85b0f6389e10c50c39b2ce5> ;
+  rdfs:label <https://w3id.org/rec#OfficeRoom> ;
+.
+<http://speckle.systems/370bcf049d82f09604c111bd8b6ed730>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 66.621530000000008192 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/374038c273236b43838a8c20018321ff>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/76fcb9d9e1b00b636de89b477b0b25e8> ;
+  s223:cnx <urn:anon:uuid:e3aa97c1-1726-4551-b4f3-ef37ca81e8dc> ;
+  s223:connected <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  s223:connected <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedThrough <urn:anon:uuid:41e5e388-ad94-499f-985a-4d82b5d9bd4a> ;
+  s223:connectedThrough <urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba> ;
+  s223:connectedTo <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  s223:hasConnectionPoint <http://speckle.systems/76fcb9d9e1b00b636de89b477b0b25e8> ;
+  s223:hasConnectionPoint <urn:anon:uuid:e3aa97c1-1726-4551-b4f3-ef37ca81e8dc> ;
+  s223:hasPhysicalLocation <http://speckle.systems/6d17784757d33ab12665eb12c2010ba3> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/557801e2f2af7a958f8695cea79d0ccf> <urn:anon:uuid:61be919a-5837-4151-81cb-866625d93f6d> ;
+  rdfs:label "Luminaire7" ;
+.
+<http://speckle.systems/3a2dac267747a410f1146caf20e19624>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765> ;
+  s223:cnx <urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5> ;
+  s223:connectsThrough <urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/44531f11cb0626bac97aa43d6732fdf2>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/e2684126ff114d569384c6d3a21f953b> ;
+  s223:cnx <urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c> ;
+  s223:connectsThrough <urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/e2684126ff114d569384c6d3a21f953b> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<http://speckle.systems/492d19a52147a4cb446c1fa2f36c4d2c>
+  a s223:Zone ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasDomainSpace <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  rdfs:label "LightingZone1" ;
+.
+<http://speckle.systems/4a446fc2b9c8224a66df446fc40b2f54>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 583.4444 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/51e8fb17f82da1e78889646f5a91e60d>
+  a s223:DomainSpace ;
+  s223:hasDomain s223:Domain-HVAC ;
+  s223:hasProperty <http://speckle.systems/a4d3df27db1cc0ca04e2d34b221b87d5> ;
+  rdfs:label "HVACSpace3 3" ;
+.
+<http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/9dd35c17e7f147c29adbfcf900c4b590> ;
+  s223:cnx <urn:anon:uuid:3e6d2b17-232c-4998-97d5-246e3758a8bf> ;
+  s223:connected <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  s223:connected <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedThrough <urn:anon:uuid:baad889c-3682-4005-bb02-49583bc4fc24> ;
+  s223:connectedThrough <urn:anon:uuid:f215cc32-796a-4f51-9ef9-9db344cbb0c6> ;
+  s223:connectedTo <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  s223:hasConnectionPoint <http://speckle.systems/9dd35c17e7f147c29adbfcf900c4b590> ;
+  s223:hasConnectionPoint <urn:anon:uuid:3e6d2b17-232c-4998-97d5-246e3758a8bf> ;
+  s223:hasPhysicalLocation <http://speckle.systems/6bea7df122ce7b9057ace53c8144bd91> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/557801e2f2af7a958f8695cea79d0ccf> <urn:anon:uuid:0ce839e5-dfc6-4df3-acfc-caf7b5e2e9b1> ;
+  rdfs:label "Luminaire9" ;
+.
+<http://speckle.systems/562255d59fd4f64f254dbafb117ee7af>
+  a s223:DomainSpace ;
+  s223:cnx <urn:anon:uuid:4ccc8bf6-f274-47dd-9d93-1ec17000a9b5> ;
+  s223:cnx <urn:anon:uuid:b286fc16-381e-44c8-b22b-8a22f8d8f884> ;
+  s223:connected <http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d> ;
+  s223:connected <http://speckle.systems/fb5be382923ff6b15149c342d2af601c> ;
+  s223:connectedFrom <http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d> ;
+  s223:connectedFrom <http://speckle.systems/fb5be382923ff6b15149c342d2af601c> ;
+  s223:connectedThrough <urn:anon:uuid:4cf2febf-95eb-4ca6-9a68-7cd4b6d935cc> ;
+  s223:connectedThrough <urn:anon:uuid:baad889c-3682-4005-bb02-49583bc4fc24> ;
+  s223:hasConnectionPoint <urn:anon:uuid:4ccc8bf6-f274-47dd-9d93-1ec17000a9b5> ;
+  s223:hasConnectionPoint <urn:anon:uuid:b286fc16-381e-44c8-b22b-8a22f8d8f884> ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasProperty <http://speckle.systems/e7cb45f8083fac1804a9f98b64d7c27c> ;
+  s223:hasProperty <urn:anon:uuid:acc4f4e0-a41d-461d-9a54-daa35a13a3a4> ;
+  rdfs:label "LightingSpace5 5" ;
+.
+<http://speckle.systems/57b9c0e1669bb1909e70616872f4e9a6>
+  a s223:PhysicalSpace ;
+  s223:encloses <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  s223:encloses <http://speckle.systems/125328da567f42d45b3db70fc114453c> ;
+  s223:hasProperty <http://speckle.systems/6cd35c4f0b85ce96efb182c7f19d4394> ;
+  rdfs:label <https://w3id.org/rec#CookingRoom> ;
+.
+<http://speckle.systems/5a9c3d36b6a148f5cdd1b2536580513f>
+  a s223:Zone ;
+  s223:hasDomain s223:Domain-HVAC ;
+  s223:hasDomainSpace <http://speckle.systems/2c2a82563c8143440dd69b135ae21b40> ;
+  s223:hasDomainSpace <http://speckle.systems/51e8fb17f82da1e78889646f5a91e60d> ;
+  s223:hasDomainSpace <http://speckle.systems/e2d2158f74816df285bd7cdca1361b1b> ;
+  s223:hasDomainSpace <http://speckle.systems/e8da8729e64c6631dd75d8521b207b02> ;
+  rdfs:label "HVACZone1" ;
+.
+<http://speckle.systems/5f824b38a3005d7a877a46f3acfd8ce2>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/d6e912ed2be0ff94dc43dac184751099> ;
+  s223:cnx <urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13> ;
+  s223:connectsThrough <urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/d6e912ed2be0ff94dc43dac184751099> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/69962dede1bb7985d7d34dbb8e6cd3fb>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 10.76127 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/6bea7df122ce7b9057ace53c8144bd91>
+  a s223:PhysicalSpace ;
+  s223:encloses <http://speckle.systems/19901540a18560afe307f03df5f1b47a> ;
+  s223:encloses <http://speckle.systems/2c2a82563c8143440dd69b135ae21b40> ;
+  s223:encloses <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  s223:hasProperty <http://speckle.systems/69962dede1bb7985d7d34dbb8e6cd3fb> ;
+  rdfs:label <https://w3id.org/rec#Hallway> ;
+.
+<http://speckle.systems/6cd35c4f0b85ce96efb182c7f19d4394>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 11.14836 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/6d17784757d33ab12665eb12c2010ba3>
+  a s223:PhysicalSpace ;
+  s223:encloses <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  s223:encloses <http://speckle.systems/51e8fb17f82da1e78889646f5a91e60d> ;
+  s223:hasProperty <http://speckle.systems/7427f4edf3217904298499200651e74d> ;
+  rdfs:label <https://w3id.org/rec#OfficeRoom> ;
+.
+<http://speckle.systems/72e691110ad3c29f15b67f759efe7f12>
+  a s223:Zone ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasDomainSpace <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  rdfs:label "LightingZone6" ;
+.
+<http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 39.29 ;
+  qudt:hasQuantityKind qudtqk:RadiantFlux ;
+  qudt:hasUnit unit:W ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/7427f4edf3217904298499200651e74d>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 13.93546 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/752235573d372d87cbd69a21539496fc>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9> ;
+  s223:cnx <urn:anon:uuid:54ed52b1-7dd3-4caf-82df-19cff3f45e6e> ;
+  s223:connectsThrough <urn:anon:uuid:54ed52b1-7dd3-4caf-82df-19cff3f45e6e> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/76fcb9d9e1b00b636de89b477b0b25e8>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/374038c273236b43838a8c20018321ff> ;
+  s223:cnx <urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba> ;
+  s223:connectsThrough <urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/374038c273236b43838a8c20018321ff> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/7dd75f093c0714b7e12fd42700a05617>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7> ;
+  s223:cnx <urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c> ;
+  s223:connectsThrough <urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/7e89fafcc8db5a9bf685f49ee58196e0>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d> ;
+  s223:cnx <urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963> ;
+  s223:connectsThrough <urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/94524186447a8326f0bdb024328582e5>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba> ;
+  s223:cnx <urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e> ;
+  s223:connectsThrough <urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb>
+  a s223:DomainSpace ;
+  s223:cnx <urn:anon:uuid:5d916fd6-70ed-44ce-8b50-35cccfcb3fd9> ;
+  s223:cnx <urn:anon:uuid:921cc707-511d-4495-b866-64b97d5fd653> ;
+  s223:connected <http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363> ;
+  s223:connected <http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d> ;
+  s223:connectedFrom <http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363> ;
+  s223:connectedFrom <http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d> ;
+  s223:connectedThrough <urn:anon:uuid:04387b1b-2ebb-4f4d-85f8-e09dff75e277> ;
+  s223:connectedThrough <urn:anon:uuid:e308506d-6975-41a4-8fc4-3b424acc4089> ;
+  s223:hasConnectionPoint <urn:anon:uuid:5d916fd6-70ed-44ce-8b50-35cccfcb3fd9> ;
+  s223:hasConnectionPoint <urn:anon:uuid:921cc707-511d-4495-b866-64b97d5fd653> ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasProperty <http://speckle.systems/fd1eba64d7bac4ac23691283c56da903> ;
+  s223:hasProperty <urn:anon:uuid:1d52b196-f0fa-4c4f-a562-6dd3269a4aa8> ;
+  rdfs:label "LightingSpace2 2" ;
+.
+<http://speckle.systems/95f72a7878f64d58ca63eddfae7af25d>
+  a s223:Zone ;
+  s223:hasDomain s223:Domain-HVAC ;
+  s223:hasDomainSpace <http://speckle.systems/125328da567f42d45b3db70fc114453c> ;
+  s223:hasDomainSpace <http://speckle.systems/19901540a18560afe307f03df5f1b47a> ;
+  rdfs:label "HVACZone2" ;
+.
+<http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c>
+  a s223:DomainSpace ;
+  s223:cnx <urn:anon:uuid:1389344b-31be-4ef0-9d50-a6fc2a4b1607> ;
+  s223:cnx <urn:anon:uuid:b24c6918-078b-4208-bd18-e03934c7e9ec> ;
+  s223:connected <http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4> ;
+  s223:connected <http://speckle.systems/d6e912ed2be0ff94dc43dac184751099> ;
+  s223:connectedFrom <http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4> ;
+  s223:connectedFrom <http://speckle.systems/d6e912ed2be0ff94dc43dac184751099> ;
+  s223:connectedThrough <urn:anon:uuid:7c9441e0-b9f7-469d-aee9-5f25423af467> ;
+  s223:connectedThrough <urn:anon:uuid:94cc6ff7-3988-482a-8ed1-014ed22410c0> ;
+  s223:hasConnectionPoint <urn:anon:uuid:1389344b-31be-4ef0-9d50-a6fc2a4b1607> ;
+  s223:hasConnectionPoint <urn:anon:uuid:b24c6918-078b-4208-bd18-e03934c7e9ec> ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasProperty <http://speckle.systems/f91a946c0b6ab24039e09bdc954504af> ;
+  s223:hasProperty <urn:anon:uuid:4e3eb90b-de00-4ff5-abf5-aaad7e35b878> ;
+  rdfs:label "LightingSpace1 1" ;
+.
+<http://speckle.systems/9dd35c17e7f147c29adbfcf900c4b590>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d> ;
+  s223:cnx <urn:anon:uuid:f215cc32-796a-4f51-9ef9-9db344cbb0c6> ;
+  s223:connectsThrough <urn:anon:uuid:f215cc32-796a-4f51-9ef9-9db344cbb0c6> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/9f3779e39d4c089f32113f64c1c217b7>
+  a s223:Zone ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasDomainSpace <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  rdfs:label "LightingZone5" ;
+.
+<http://speckle.systems/a2c2a5feadf56d138ece34afc7fa34dd>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 10.44643 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/a4d3df27db1cc0ca04e2d34b221b87d5>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 141.777800000000016384 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/3a2dac267747a410f1146caf20e19624> ;
+  s223:cnx <urn:anon:uuid:eab6f5b3-bd72-4cd4-b28c-e85792758498> ;
+  s223:connected <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  s223:connected <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedThrough <urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5> ;
+  s223:connectedThrough <urn:anon:uuid:c9850b89-d89f-4e0d-ade3-9d01530cea6e> ;
+  s223:connectedTo <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  s223:hasConnectionPoint <http://speckle.systems/3a2dac267747a410f1146caf20e19624> ;
+  s223:hasConnectionPoint <urn:anon:uuid:eab6f5b3-bd72-4cd4-b28c-e85792758498> ;
+  s223:hasPhysicalLocation <http://speckle.systems/57b9c0e1669bb1909e70616872f4e9a6> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/557801e2f2af7a958f8695cea79d0ccf> <urn:anon:uuid:54b8a5c6-657c-401c-8be7-83d02784f9bf> ;
+  rdfs:label "Luminaire11" ;
+.
+<http://speckle.systems/ad7fb21709463c2b8d619900e7323362>
+  a s223:Zone ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasDomainSpace <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  rdfs:label "LightingZone4" ;
+.
+<http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/cfde270f1c3574c36afefa90a75d3a74> ;
+  s223:cnx <urn:anon:uuid:8b2df890-df92-44af-9b2e-0cf1b63d3f19> ;
+  s223:connected <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  s223:connected <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectedFrom <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectedThrough <urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab> ;
+  s223:connectedThrough <urn:anon:uuid:e308506d-6975-41a4-8fc4-3b424acc4089> ;
+  s223:connectedTo <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  s223:hasConnectionPoint <http://speckle.systems/cfde270f1c3574c36afefa90a75d3a74> ;
+  s223:hasConnectionPoint <urn:anon:uuid:8b2df890-df92-44af-9b2e-0cf1b63d3f19> ;
+  s223:hasPhysicalLocation <http://speckle.systems/349399722cf147403127919a17f05ed1> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/cf61289f76bfa19d7beac12ddb186eb7> <urn:anon:uuid:59a98328-8ca4-46c7-9664-3656aa6760c8> ;
+  rdfs:label "Luminaire4" ;
+.
+<http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/2ec6c777b3ca86655677fc5ef4dd0242> ;
+  s223:cnx <urn:anon:uuid:612c70ce-3388-40ff-9ded-050181c4fc7c> ;
+  s223:connected <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  s223:connected <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectedFrom <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectedThrough <urn:anon:uuid:7c9441e0-b9f7-469d-aee9-5f25423af467> ;
+  s223:connectedThrough <urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0> ;
+  s223:connectedTo <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  s223:hasConnectionPoint <http://speckle.systems/2ec6c777b3ca86655677fc5ef4dd0242> ;
+  s223:hasConnectionPoint <urn:anon:uuid:612c70ce-3388-40ff-9ded-050181c4fc7c> ;
+  s223:hasPhysicalLocation <http://speckle.systems/349399722cf147403127919a17f05ed1> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/cf61289f76bfa19d7beac12ddb186eb7> <urn:anon:uuid:4f300be0-9e5e-4670-925d-4de724578d5d> ;
+  rdfs:label "Luminaire2" ;
+.
+<http://speckle.systems/ba96efc7e5394be487f7fa443496ad99>
+  a s223:OccupantMotionSensor ;
+  s223:hasObservationLocation <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  s223:hasPhysicalLocation <http://speckle.systems/349399722cf147403127919a17f05ed1> ;
+  s223:observes <urn:anon:uuid:1d52b196-f0fa-4c4f-a562-6dd3269a4aa8> ;
+  rdfs:label "Ceiling Occupancy Sensor - Dual Relay - Regular Voltage" ;
+.
+<http://speckle.systems/bf45d7221dfb200823eae08710bcd8a5>
+  a s223:PhysicalSpace ;
+  s223:encloses <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  s223:encloses <http://speckle.systems/e8da8729e64c6631dd75d8521b207b02> ;
+  s223:hasProperty <http://speckle.systems/dc7fc4c0daab77ddb84ca1a1f5c61e62> ;
+  rdfs:label <https://w3id.org/rec#Bathroom> ;
+.
+<http://speckle.systems/c6267519c296551e3d74704d80369cb9>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/05749166d93671bedf16efb52636ce38> ;
+  s223:cnx <urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f> ;
+  s223:connectsThrough <urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/05749166d93671bedf16efb52636ce38> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/7e89fafcc8db5a9bf685f49ee58196e0> ;
+  s223:cnx <urn:anon:uuid:1005667e-b35b-4fdd-bd93-5ad769b52b76> ;
+  s223:connected <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  s223:connected <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectedFrom <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectedThrough <urn:anon:uuid:04387b1b-2ebb-4f4d-85f8-e09dff75e277> ;
+  s223:connectedThrough <urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963> ;
+  s223:connectedTo <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  s223:hasConnectionPoint <http://speckle.systems/7e89fafcc8db5a9bf685f49ee58196e0> ;
+  s223:hasConnectionPoint <urn:anon:uuid:1005667e-b35b-4fdd-bd93-5ad769b52b76> ;
+  s223:hasPhysicalLocation <http://speckle.systems/349399722cf147403127919a17f05ed1> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/cf61289f76bfa19d7beac12ddb186eb7> <urn:anon:uuid:811eabab-593e-4752-9373-7fa96e31f22c> ;
+  rdfs:label "Luminaire3" ;
+.
+<http://speckle.systems/c99202312957ab2cda5c607438d19879>
+  a s223:OccupantMotionSensor ;
+  s223:hasObservationLocation <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  s223:hasPhysicalLocation <http://speckle.systems/57b9c0e1669bb1909e70616872f4e9a6> ;
+  s223:observes <urn:anon:uuid:9b600188-988b-4ff0-97af-3f1f0c7890c7> ;
+  rdfs:label "Ceiling Occupancy Sensor - Dual Relay - Regular Voltage" ;
+.
+<http://speckle.systems/cfde270f1c3574c36afefa90a75d3a74>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363> ;
+  s223:cnx <urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab> ;
+  s223:connectsThrough <urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/7dd75f093c0714b7e12fd42700a05617> ;
+  s223:cnx <urn:anon:uuid:3c8b46af-5157-4ab0-aa2f-f18654fca413> ;
+  s223:connected <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  s223:connected <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedThrough <urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c> ;
+  s223:connectedThrough <urn:anon:uuid:7a52a1a8-5e51-4eef-88be-2ae19ab7dcca> ;
+  s223:connectedTo <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  s223:hasConnectionPoint <http://speckle.systems/7dd75f093c0714b7e12fd42700a05617> ;
+  s223:hasConnectionPoint <urn:anon:uuid:3c8b46af-5157-4ab0-aa2f-f18654fca413> ;
+  s223:hasPhysicalLocation <http://speckle.systems/6d17784757d33ab12665eb12c2010ba3> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/557801e2f2af7a958f8695cea79d0ccf> <urn:anon:uuid:ee9555ed-6e6f-4823-8b2c-34b57260dcff> ;
+  rdfs:label "Luminaire8" ;
+.
+<http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0>
+  a s223:DomainSpace ;
+  s223:cnx <urn:anon:uuid:0437f78d-48dc-48cb-9bf8-9da8873c95cc> ;
+  s223:cnx <urn:anon:uuid:59c30214-6db2-4971-8d09-9b013543caf1> ;
+  s223:connected <http://speckle.systems/05749166d93671bedf16efb52636ce38> ;
+  s223:connected <http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9> ;
+  s223:connectedFrom <http://speckle.systems/05749166d93671bedf16efb52636ce38> ;
+  s223:connectedFrom <http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9> ;
+  s223:connectedThrough <urn:anon:uuid:050ae45d-ce38-44e1-9d34-1f683969ae0d> ;
+  s223:connectedThrough <urn:anon:uuid:cb1a3251-d580-4e22-92e7-09f7fb5f28a3> ;
+  s223:hasConnectionPoint <urn:anon:uuid:0437f78d-48dc-48cb-9bf8-9da8873c95cc> ;
+  s223:hasConnectionPoint <urn:anon:uuid:59c30214-6db2-4971-8d09-9b013543caf1> ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasProperty <http://speckle.systems/eafe74d79e1ab2386bcd74cfe7380ef0> ;
+  s223:hasProperty <urn:anon:uuid:ac460e0f-1be9-4468-a049-d71b0f87826f> ;
+  rdfs:label "LightingSpace3 3" ;
+.
+<http://speckle.systems/d6e912ed2be0ff94dc43dac184751099>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/5f824b38a3005d7a877a46f3acfd8ce2> ;
+  s223:cnx <urn:anon:uuid:b766ec0c-b7f9-429a-8692-a86839752b25> ;
+  s223:connected <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  s223:connected <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectedFrom <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectedThrough <urn:anon:uuid:94cc6ff7-3988-482a-8ed1-014ed22410c0> ;
+  s223:connectedThrough <urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13> ;
+  s223:connectedTo <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  s223:hasConnectionPoint <http://speckle.systems/5f824b38a3005d7a877a46f3acfd8ce2> ;
+  s223:hasConnectionPoint <urn:anon:uuid:b766ec0c-b7f9-429a-8692-a86839752b25> ;
+  s223:hasPhysicalLocation <http://speckle.systems/349399722cf147403127919a17f05ed1> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/cf61289f76bfa19d7beac12ddb186eb7> <urn:anon:uuid:10951683-ddf8-4dfb-94dd-e9fbe2554bcc> ;
+  rdfs:label "Luminaire1" ;
+.
+<http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/94524186447a8326f0bdb024328582e5> ;
+  s223:cnx <urn:anon:uuid:6cb70a9d-3a3a-467c-9ef8-d37a983ce65a> ;
+  s223:connected <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  s223:connected <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedThrough <urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e> ;
+  s223:connectedThrough <urn:anon:uuid:3df43ba7-e1b8-442d-bcbc-f88fb9f0976c> ;
+  s223:connectedTo <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  s223:hasConnectionPoint <http://speckle.systems/94524186447a8326f0bdb024328582e5> ;
+  s223:hasConnectionPoint <urn:anon:uuid:6cb70a9d-3a3a-467c-9ef8-d37a983ce65a> ;
+  s223:hasPhysicalLocation <http://speckle.systems/57b9c0e1669bb1909e70616872f4e9a6> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/557801e2f2af7a958f8695cea79d0ccf> <urn:anon:uuid:3bd1d510-0e5d-4708-8d7e-6f285f169064> ;
+  rdfs:label "Luminaire12" ;
+.
+<http://speckle.systems/dc7fc4c0daab77ddb84ca1a1f5c61e62>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 6.967728 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/de373ec944cbda8f9e5e336106ac1bb8>
+  a s223:PhysicalSpace ;
+  s223:contains <http://speckle.systems/349399722cf147403127919a17f05ed1> ;
+  s223:contains <http://speckle.systems/57b9c0e1669bb1909e70616872f4e9a6> ;
+  s223:contains <http://speckle.systems/6bea7df122ce7b9057ace53c8144bd91> ;
+  s223:contains <http://speckle.systems/6d17784757d33ab12665eb12c2010ba3> ;
+  s223:contains <http://speckle.systems/bf45d7221dfb200823eae08710bcd8a5> ;
+  rdfs:label "Level 1" ;
+.
+<http://speckle.systems/e179351fa4b9a853d5c32e30f0a5b81b>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 70.777780000000008192 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/e2684126ff114d569384c6d3a21f953b>
+  a s223:ElectricBreaker ;
+  s223:cnx <http://speckle.systems/44531f11cb0626bac97aa43d6732fdf2> ;
+  s223:connected <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedThrough <urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c> ;
+  s223:connectedTo <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:hasConnectionPoint <http://speckle.systems/44531f11cb0626bac97aa43d6732fdf2> ;
+  rdfs:label "Panel 2" ;
+.
+<http://speckle.systems/e2d2158f74816df285bd7cdca1361b1b>
+  a s223:DomainSpace ;
+  s223:hasDomain s223:Domain-HVAC ;
+  s223:hasProperty <http://speckle.systems/4a446fc2b9c8224a66df446fc40b2f54> ;
+  rdfs:label "HVACSpace1 1" ;
+.
+<http://speckle.systems/e7583f67f85b0f6389e10c50c39b2ce5>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 55.6644 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/e7889732040d3cbea26a18b9455b74ed>
+  a s223:OccupantMotionSensor ;
+  s223:hasObservationLocation <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  s223:hasPhysicalLocation <http://speckle.systems/6bea7df122ce7b9057ace53c8144bd91> ;
+  s223:observes <urn:anon:uuid:acc4f4e0-a41d-461d-9a54-daa35a13a3a4> ;
+  rdfs:label "Ceiling Occupancy Sensor - Dual Relay - Regular Voltage" ;
+.
+<http://speckle.systems/e7cb45f8083fac1804a9f98b64d7c27c>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 9.971593 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/e8da8729e64c6631dd75d8521b207b02>
+  a s223:DomainSpace ;
+  s223:hasDomain s223:Domain-HVAC ;
+  s223:hasProperty <http://speckle.systems/370bcf049d82f09604c111bd8b6ed730> ;
+  rdfs:label "HVACSpace2 2" ;
+.
+<http://speckle.systems/e9d83bcd0340d3b2c702a83acd90a597>
+  a s223:ElectricBreaker ;
+  s223:cnx <http://speckle.systems/11c04c42e073d0d0b9c2a00aadf4901b> ;
+  s223:connected <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectedThrough <urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec> ;
+  s223:connectedTo <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:hasConnectionPoint <http://speckle.systems/11c04c42e073d0d0b9c2a00aadf4901b> ;
+  rdfs:label "Panel 1" ;
+.
+<http://speckle.systems/ea132dc6f9ffb48fcaa86607ff4b65b3>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 13.17159 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/eafe74d79e1ab2386bcd74cfe7380ef0>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 6.189342 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/f91a946c0b6ab24039e09bdc954504af>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 27.10188 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/fb5be382923ff6b15149c342d2af601c>
+  a s223:Luminaire ;
+  s223:cnx <http://speckle.systems/0a8ed6d561b158c49d4145abf05044a7> ;
+  s223:cnx <urn:anon:uuid:10debc0f-cb41-46df-b77d-d5098e0064c2> ;
+  s223:connected <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  s223:connected <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectedThrough <urn:anon:uuid:4cf2febf-95eb-4ca6-9a68-7cd4b6d935cc> ;
+  s223:connectedThrough <urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae> ;
+  s223:connectedTo <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  s223:hasConnectionPoint <http://speckle.systems/0a8ed6d561b158c49d4145abf05044a7> ;
+  s223:hasConnectionPoint <urn:anon:uuid:10debc0f-cb41-46df-b77d-d5098e0064c2> ;
+  s223:hasPhysicalLocation <http://speckle.systems/6bea7df122ce7b9057ace53c8144bd91> ;
+  s223:hasProperty <http://speckle.systems/73abeca540415fb5cc14ce1b47d9591f> ;
+  <http://speckle.systems/557801e2f2af7a958f8695cea79d0ccf> <urn:anon:uuid:f063ee43-dae3-43df-b700-29e912870a95> ;
+  rdfs:label "Luminaire10" ;
+.
+<http://speckle.systems/fd1eba64d7bac4ac23691283c56da903>
+  a s223:QuantifiableProperty ;
+  s223:hasValue 27.10188 ;
+  qudt:hasQuantityKind qudtqk:Area ;
+  qudt:hasUnit unit:M2 ;
+  rdfs:label "QuantifiableProperty" ;
+.
+<http://speckle.systems/ff91a7215190baa32561f76355dc5679>
+  a s223:Zone ;
+  s223:hasDomain s223:Domain-Lighting ;
+  s223:hasDomainSpace <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  rdfs:label "LightingZone2" ;
+.
+<http://srr/test>
+  a owl:Ontology ;
+  owl:imports <http://data.ashrae.org/standard223/1.0/model/all> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+<urn:anon:uuid:0437f78d-48dc-48cb-9bf8-9da8873c95cc>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  s223:cnx <urn:anon:uuid:cb1a3251-d580-4e22-92e7-09f7fb5f28a3> ;
+  s223:connectsThrough <urn:anon:uuid:cb1a3251-d580-4e22-92e7-09f7fb5f28a3> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:04387b1b-2ebb-4f4d-85f8-e09dff75e277>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:1005667e-b35b-4fdd-bd93-5ad769b52b76> ;
+  s223:cnx <urn:anon:uuid:5d916fd6-70ed-44ce-8b50-35cccfcb3fd9> ;
+  s223:connectsAt <urn:anon:uuid:1005667e-b35b-4fdd-bd93-5ad769b52b76> ;
+  s223:connectsAt <urn:anon:uuid:5d916fd6-70ed-44ce-8b50-35cccfcb3fd9> ;
+  s223:connectsFrom <http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d> ;
+  s223:connectsTo <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:050ae45d-ce38-44e1-9d34-1f683969ae0d>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:59c30214-6db2-4971-8d09-9b013543caf1> ;
+  s223:cnx <urn:anon:uuid:f9dd0ad1-5b5b-4bc6-8cc5-d7cadc3e8068> ;
+  s223:connectsAt <urn:anon:uuid:59c30214-6db2-4971-8d09-9b013543caf1> ;
+  s223:connectsAt <urn:anon:uuid:f9dd0ad1-5b5b-4bc6-8cc5-d7cadc3e8068> ;
+  s223:connectsFrom <http://speckle.systems/05749166d93671bedf16efb52636ce38> ;
+  s223:connectsTo <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/cfde270f1c3574c36afefa90a75d3a74> ;
+  s223:cnx <urn:anon:uuid:59a98328-8ca4-46c7-9664-3656aa6760c8> ;
+  s223:connectsAt <http://speckle.systems/cfde270f1c3574c36afefa90a75d3a74> ;
+  s223:connectsAt <urn:anon:uuid:59a98328-8ca4-46c7-9664-3656aa6760c8> ;
+  s223:connectsFrom <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectsTo <http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:0ce839e5-dfc6-4df3-acfc-caf7b5e2e9b1>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:cnx <urn:anon:uuid:f215cc32-796a-4f51-9ef9-9db344cbb0c6> ;
+  s223:connectsThrough <urn:anon:uuid:f215cc32-796a-4f51-9ef9-9db344cbb0c6> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:1005667e-b35b-4fdd-bd93-5ad769b52b76>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d> ;
+  s223:cnx <urn:anon:uuid:04387b1b-2ebb-4f4d-85f8-e09dff75e277> ;
+  s223:connectsThrough <urn:anon:uuid:04387b1b-2ebb-4f4d-85f8-e09dff75e277> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:10951683-ddf8-4dfb-94dd-e9fbe2554bcc>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:cnx <urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13> ;
+  s223:connectsThrough <urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:10debc0f-cb41-46df-b77d-d5098e0064c2>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/fb5be382923ff6b15149c342d2af601c> ;
+  s223:cnx <urn:anon:uuid:4cf2febf-95eb-4ca6-9a68-7cd4b6d935cc> ;
+  s223:connectsThrough <urn:anon:uuid:4cf2febf-95eb-4ca6-9a68-7cd4b6d935cc> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/fb5be382923ff6b15149c342d2af601c> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:1389344b-31be-4ef0-9d50-a6fc2a4b1607>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  s223:cnx <urn:anon:uuid:94cc6ff7-3988-482a-8ed1-014ed22410c0> ;
+  s223:connectsThrough <urn:anon:uuid:94cc6ff7-3988-482a-8ed1-014ed22410c0> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/7dd75f093c0714b7e12fd42700a05617> ;
+  s223:cnx <urn:anon:uuid:ee9555ed-6e6f-4823-8b2c-34b57260dcff> ;
+  s223:connectsAt <http://speckle.systems/7dd75f093c0714b7e12fd42700a05617> ;
+  s223:connectsAt <urn:anon:uuid:ee9555ed-6e6f-4823-8b2c-34b57260dcff> ;
+  s223:connectsFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsTo <http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:1d52b196-f0fa-4c4f-a562-6dd3269a4aa8>
+  a s223:EnumeratedObservableProperty ;
+  s223:hasEnumerationKind s223:Occupancy-Motion ;
+  rdfs:label "Enumerated observable property" ;
+.
+<urn:anon:uuid:1f9f708f-2761-4486-a68c-69651fd33594>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  s223:cnx <urn:anon:uuid:41e5e388-ad94-499f-985a-4d82b5d9bd4a> ;
+  s223:connectsThrough <urn:anon:uuid:41e5e388-ad94-499f-985a-4d82b5d9bd4a> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:2b1e0b83-5990-40f2-9cdd-76b295b90b23>
+  a s223:EnumeratedObservableProperty ;
+  s223:hasEnumerationKind s223:Occupancy-Motion ;
+  rdfs:label "Enumerated observable property" ;
+.
+<urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/94524186447a8326f0bdb024328582e5> ;
+  s223:cnx <urn:anon:uuid:3bd1d510-0e5d-4708-8d7e-6f285f169064> ;
+  s223:connectsAt <http://speckle.systems/94524186447a8326f0bdb024328582e5> ;
+  s223:connectsAt <urn:anon:uuid:3bd1d510-0e5d-4708-8d7e-6f285f169064> ;
+  s223:connectsFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsTo <http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/44531f11cb0626bac97aa43d6732fdf2> ;
+  s223:cnx <urn:anon:uuid:51c17882-0889-4a0c-a469-338b2b209674> ;
+  s223:connectsAt <http://speckle.systems/44531f11cb0626bac97aa43d6732fdf2> ;
+  s223:connectsAt <urn:anon:uuid:51c17882-0889-4a0c-a469-338b2b209674> ;
+  s223:connectsFrom <http://speckle.systems/e2684126ff114d569384c6d3a21f953b> ;
+  s223:connectsTo <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "Panel 2" ;
+.
+<urn:anon:uuid:3bd1d510-0e5d-4708-8d7e-6f285f169064>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e> ;
+  s223:cnx <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsThrough <urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:3c8b46af-5157-4ab0-aa2f-f18654fca413>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7> ;
+  s223:cnx <urn:anon:uuid:7a52a1a8-5e51-4eef-88be-2ae19ab7dcca> ;
+  s223:connectsThrough <urn:anon:uuid:7a52a1a8-5e51-4eef-88be-2ae19ab7dcca> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:3df43ba7-e1b8-442d-bcbc-f88fb9f0976c>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:5ac22b7f-6fef-4a66-aaab-70ac707b5334> ;
+  s223:cnx <urn:anon:uuid:6cb70a9d-3a3a-467c-9ef8-d37a983ce65a> ;
+  s223:connectsAt <urn:anon:uuid:5ac22b7f-6fef-4a66-aaab-70ac707b5334> ;
+  s223:connectsAt <urn:anon:uuid:6cb70a9d-3a3a-467c-9ef8-d37a983ce65a> ;
+  s223:connectsFrom <http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba> ;
+  s223:connectsTo <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:3e6d2b17-232c-4998-97d5-246e3758a8bf>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d> ;
+  s223:cnx <urn:anon:uuid:baad889c-3682-4005-bb02-49583bc4fc24> ;
+  s223:connectsThrough <urn:anon:uuid:baad889c-3682-4005-bb02-49583bc4fc24> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:41e5e388-ad94-499f-985a-4d82b5d9bd4a>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:1f9f708f-2761-4486-a68c-69651fd33594> ;
+  s223:cnx <urn:anon:uuid:e3aa97c1-1726-4551-b4f3-ef37ca81e8dc> ;
+  s223:connectsAt <urn:anon:uuid:1f9f708f-2761-4486-a68c-69651fd33594> ;
+  s223:connectsAt <urn:anon:uuid:e3aa97c1-1726-4551-b4f3-ef37ca81e8dc> ;
+  s223:connectsFrom <http://speckle.systems/374038c273236b43838a8c20018321ff> ;
+  s223:connectsTo <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/76fcb9d9e1b00b636de89b477b0b25e8> ;
+  s223:cnx <urn:anon:uuid:61be919a-5837-4151-81cb-866625d93f6d> ;
+  s223:connectsAt <http://speckle.systems/76fcb9d9e1b00b636de89b477b0b25e8> ;
+  s223:connectsAt <urn:anon:uuid:61be919a-5837-4151-81cb-866625d93f6d> ;
+  s223:connectsFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsTo <http://speckle.systems/374038c273236b43838a8c20018321ff> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:4ccc8bf6-f274-47dd-9d93-1ec17000a9b5>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  s223:cnx <urn:anon:uuid:4cf2febf-95eb-4ca6-9a68-7cd4b6d935cc> ;
+  s223:connectsThrough <urn:anon:uuid:4cf2febf-95eb-4ca6-9a68-7cd4b6d935cc> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:4cf2febf-95eb-4ca6-9a68-7cd4b6d935cc>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:10debc0f-cb41-46df-b77d-d5098e0064c2> ;
+  s223:cnx <urn:anon:uuid:4ccc8bf6-f274-47dd-9d93-1ec17000a9b5> ;
+  s223:connectsAt <urn:anon:uuid:10debc0f-cb41-46df-b77d-d5098e0064c2> ;
+  s223:connectsAt <urn:anon:uuid:4ccc8bf6-f274-47dd-9d93-1ec17000a9b5> ;
+  s223:connectsFrom <http://speckle.systems/fb5be382923ff6b15149c342d2af601c> ;
+  s223:connectsTo <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:4e3eb90b-de00-4ff5-abf5-aaad7e35b878>
+  a s223:EnumeratedObservableProperty ;
+  s223:hasEnumerationKind s223:Occupancy-Motion ;
+  rdfs:label "Enumerated observable property" ;
+.
+<urn:anon:uuid:4f300be0-9e5e-4670-925d-4de724578d5d>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:cnx <urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0> ;
+  s223:connectsThrough <urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:51c17882-0889-4a0c-a469-338b2b209674>
+  a s223:InletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c> ;
+  s223:cnx <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsThrough <urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:54b8a5c6-657c-401c-8be7-83d02784f9bf>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:cnx <urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5> ;
+  s223:connectsThrough <urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:54ed52b1-7dd3-4caf-82df-19cff3f45e6e>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/752235573d372d87cbd69a21539496fc> ;
+  s223:cnx <urn:anon:uuid:af46adec-c8fc-474f-b386-78c1ffda5447> ;
+  s223:connectsAt <http://speckle.systems/752235573d372d87cbd69a21539496fc> ;
+  s223:connectsAt <urn:anon:uuid:af46adec-c8fc-474f-b386-78c1ffda5447> ;
+  s223:connectsFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsTo <http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904>
+  a s223:Junction ;
+  s223:cnx <urn:anon:uuid:0ce839e5-dfc6-4df3-acfc-caf7b5e2e9b1> ;
+  s223:cnx <urn:anon:uuid:3bd1d510-0e5d-4708-8d7e-6f285f169064> ;
+  s223:cnx <urn:anon:uuid:51c17882-0889-4a0c-a469-338b2b209674> ;
+  s223:cnx <urn:anon:uuid:54b8a5c6-657c-401c-8be7-83d02784f9bf> ;
+  s223:cnx <urn:anon:uuid:61be919a-5837-4151-81cb-866625d93f6d> ;
+  s223:cnx <urn:anon:uuid:af46adec-c8fc-474f-b386-78c1ffda5447> ;
+  s223:cnx <urn:anon:uuid:b8a8780d-28f7-4600-a4db-5d940a48760a> ;
+  s223:cnx <urn:anon:uuid:ee9555ed-6e6f-4823-8b2c-34b57260dcff> ;
+  s223:cnx <urn:anon:uuid:f063ee43-dae3-43df-b700-29e912870a95> ;
+  s223:connected <http://speckle.systems/05749166d93671bedf16efb52636ce38> ;
+  s223:connected <http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9> ;
+  s223:connected <http://speckle.systems/374038c273236b43838a8c20018321ff> ;
+  s223:connected <http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d> ;
+  s223:connected <http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765> ;
+  s223:connected <http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7> ;
+  s223:connected <http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba> ;
+  s223:connected <http://speckle.systems/e2684126ff114d569384c6d3a21f953b> ;
+  s223:connected <http://speckle.systems/fb5be382923ff6b15149c342d2af601c> ;
+  s223:connectedFrom <http://speckle.systems/e2684126ff114d569384c6d3a21f953b> ;
+  s223:connectedThrough <urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c> ;
+  s223:connectedThrough <urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e> ;
+  s223:connectedThrough <urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c> ;
+  s223:connectedThrough <urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba> ;
+  s223:connectedThrough <urn:anon:uuid:54ed52b1-7dd3-4caf-82df-19cff3f45e6e> ;
+  s223:connectedThrough <urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae> ;
+  s223:connectedThrough <urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f> ;
+  s223:connectedThrough <urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5> ;
+  s223:connectedThrough <urn:anon:uuid:f215cc32-796a-4f51-9ef9-9db344cbb0c6> ;
+  s223:connectedTo <http://speckle.systems/05749166d93671bedf16efb52636ce38> ;
+  s223:connectedTo <http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9> ;
+  s223:connectedTo <http://speckle.systems/374038c273236b43838a8c20018321ff> ;
+  s223:connectedTo <http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d> ;
+  s223:connectedTo <http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765> ;
+  s223:connectedTo <http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7> ;
+  s223:connectedTo <http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba> ;
+  s223:connectedTo <http://speckle.systems/fb5be382923ff6b15149c342d2af601c> ;
+  s223:hasConnectionPoint <urn:anon:uuid:0ce839e5-dfc6-4df3-acfc-caf7b5e2e9b1> ;
+  s223:hasConnectionPoint <urn:anon:uuid:3bd1d510-0e5d-4708-8d7e-6f285f169064> ;
+  s223:hasConnectionPoint <urn:anon:uuid:51c17882-0889-4a0c-a469-338b2b209674> ;
+  s223:hasConnectionPoint <urn:anon:uuid:54b8a5c6-657c-401c-8be7-83d02784f9bf> ;
+  s223:hasConnectionPoint <urn:anon:uuid:61be919a-5837-4151-81cb-866625d93f6d> ;
+  s223:hasConnectionPoint <urn:anon:uuid:af46adec-c8fc-474f-b386-78c1ffda5447> ;
+  s223:hasConnectionPoint <urn:anon:uuid:b8a8780d-28f7-4600-a4db-5d940a48760a> ;
+  s223:hasConnectionPoint <urn:anon:uuid:ee9555ed-6e6f-4823-8b2c-34b57260dcff> ;
+  s223:hasConnectionPoint <urn:anon:uuid:f063ee43-dae3-43df-b700-29e912870a95> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "Junction" ;
+.
+<urn:anon:uuid:59a98328-8ca4-46c7-9664-3656aa6760c8>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab> ;
+  s223:cnx <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectsThrough <urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:59c30214-6db2-4971-8d09-9b013543caf1>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  s223:cnx <urn:anon:uuid:050ae45d-ce38-44e1-9d34-1f683969ae0d> ;
+  s223:connectsThrough <urn:anon:uuid:050ae45d-ce38-44e1-9d34-1f683969ae0d> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:5ac22b7f-6fef-4a66-aaab-70ac707b5334>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  s223:cnx <urn:anon:uuid:3df43ba7-e1b8-442d-bcbc-f88fb9f0976c> ;
+  s223:connectsThrough <urn:anon:uuid:3df43ba7-e1b8-442d-bcbc-f88fb9f0976c> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:5d916fd6-70ed-44ce-8b50-35cccfcb3fd9>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  s223:cnx <urn:anon:uuid:04387b1b-2ebb-4f4d-85f8-e09dff75e277> ;
+  s223:connectsThrough <urn:anon:uuid:04387b1b-2ebb-4f4d-85f8-e09dff75e277> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:612c70ce-3388-40ff-9ded-050181c4fc7c>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4> ;
+  s223:cnx <urn:anon:uuid:7c9441e0-b9f7-469d-aee9-5f25423af467> ;
+  s223:connectsThrough <urn:anon:uuid:7c9441e0-b9f7-469d-aee9-5f25423af467> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:61be919a-5837-4151-81cb-866625d93f6d>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba> ;
+  s223:cnx <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsThrough <urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/0a8ed6d561b158c49d4145abf05044a7> ;
+  s223:cnx <urn:anon:uuid:f063ee43-dae3-43df-b700-29e912870a95> ;
+  s223:connectsAt <http://speckle.systems/0a8ed6d561b158c49d4145abf05044a7> ;
+  s223:connectsAt <urn:anon:uuid:f063ee43-dae3-43df-b700-29e912870a95> ;
+  s223:connectsFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsTo <http://speckle.systems/fb5be382923ff6b15149c342d2af601c> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:6cb70a9d-3a3a-467c-9ef8-d37a983ce65a>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba> ;
+  s223:cnx <urn:anon:uuid:3df43ba7-e1b8-442d-bcbc-f88fb9f0976c> ;
+  s223:connectsThrough <urn:anon:uuid:3df43ba7-e1b8-442d-bcbc-f88fb9f0976c> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/dbb04c32b57dc0fbb22bf408cbe423ba> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:7a52a1a8-5e51-4eef-88be-2ae19ab7dcca>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:3c8b46af-5157-4ab0-aa2f-f18654fca413> ;
+  s223:cnx <urn:anon:uuid:ad61a6a6-1c6b-42de-b13e-49e3ae88486e> ;
+  s223:connectsAt <urn:anon:uuid:3c8b46af-5157-4ab0-aa2f-f18654fca413> ;
+  s223:connectsAt <urn:anon:uuid:ad61a6a6-1c6b-42de-b13e-49e3ae88486e> ;
+  s223:connectsFrom <http://speckle.systems/d298411089a72ef2a4bc13240ba28ab7> ;
+  s223:connectsTo <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:7c9441e0-b9f7-469d-aee9-5f25423af467>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:612c70ce-3388-40ff-9ded-050181c4fc7c> ;
+  s223:cnx <urn:anon:uuid:b24c6918-078b-4208-bd18-e03934c7e9ec> ;
+  s223:connectsAt <urn:anon:uuid:612c70ce-3388-40ff-9ded-050181c4fc7c> ;
+  s223:connectsAt <urn:anon:uuid:b24c6918-078b-4208-bd18-e03934c7e9ec> ;
+  s223:connectsFrom <http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4> ;
+  s223:connectsTo <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/7e89fafcc8db5a9bf685f49ee58196e0> ;
+  s223:cnx <urn:anon:uuid:811eabab-593e-4752-9373-7fa96e31f22c> ;
+  s223:connectsAt <http://speckle.systems/7e89fafcc8db5a9bf685f49ee58196e0> ;
+  s223:connectsAt <urn:anon:uuid:811eabab-593e-4752-9373-7fa96e31f22c> ;
+  s223:connectsFrom <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectsTo <http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:7f3d871f-66c0-4b24-8525-79a53922b9b5>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  s223:cnx <urn:anon:uuid:c9850b89-d89f-4e0d-ade3-9d01530cea6e> ;
+  s223:connectsThrough <urn:anon:uuid:c9850b89-d89f-4e0d-ade3-9d01530cea6e> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/c6267519c296551e3d74704d80369cb9> ;
+  s223:cnx <urn:anon:uuid:b8a8780d-28f7-4600-a4db-5d940a48760a> ;
+  s223:connectsAt <http://speckle.systems/c6267519c296551e3d74704d80369cb9> ;
+  s223:connectsAt <urn:anon:uuid:b8a8780d-28f7-4600-a4db-5d940a48760a> ;
+  s223:connectsFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsTo <http://speckle.systems/05749166d93671bedf16efb52636ce38> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:811eabab-593e-4752-9373-7fa96e31f22c>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963> ;
+  s223:cnx <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectsThrough <urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:8b2df890-df92-44af-9b2e-0cf1b63d3f19>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363> ;
+  s223:cnx <urn:anon:uuid:e308506d-6975-41a4-8fc4-3b424acc4089> ;
+  s223:connectsThrough <urn:anon:uuid:e308506d-6975-41a4-8fc4-3b424acc4089> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:921cc707-511d-4495-b866-64b97d5fd653>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  s223:cnx <urn:anon:uuid:e308506d-6975-41a4-8fc4-3b424acc4089> ;
+  s223:connectsThrough <urn:anon:uuid:e308506d-6975-41a4-8fc4-3b424acc4089> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:94cc6ff7-3988-482a-8ed1-014ed22410c0>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:1389344b-31be-4ef0-9d50-a6fc2a4b1607> ;
+  s223:cnx <urn:anon:uuid:b766ec0c-b7f9-429a-8692-a86839752b25> ;
+  s223:connectsAt <urn:anon:uuid:1389344b-31be-4ef0-9d50-a6fc2a4b1607> ;
+  s223:connectsAt <urn:anon:uuid:b766ec0c-b7f9-429a-8692-a86839752b25> ;
+  s223:connectsFrom <http://speckle.systems/d6e912ed2be0ff94dc43dac184751099> ;
+  s223:connectsTo <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/3a2dac267747a410f1146caf20e19624> ;
+  s223:cnx <urn:anon:uuid:54b8a5c6-657c-401c-8be7-83d02784f9bf> ;
+  s223:connectsAt <http://speckle.systems/3a2dac267747a410f1146caf20e19624> ;
+  s223:connectsAt <urn:anon:uuid:54b8a5c6-657c-401c-8be7-83d02784f9bf> ;
+  s223:connectsFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsTo <http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:9b600188-988b-4ff0-97af-3f1f0c7890c7>
+  a s223:EnumeratedObservableProperty ;
+  s223:hasEnumerationKind s223:Occupancy-Motion ;
+  rdfs:label "Enumerated observable property" ;
+.
+<urn:anon:uuid:ac460e0f-1be9-4468-a049-d71b0f87826f>
+  a s223:EnumeratedObservableProperty ;
+  s223:hasEnumerationKind s223:Occupancy-Motion ;
+  rdfs:label "Enumerated observable property" ;
+.
+<urn:anon:uuid:acc4f4e0-a41d-461d-9a54-daa35a13a3a4>
+  a s223:EnumeratedObservableProperty ;
+  s223:hasEnumerationKind s223:Occupancy-Motion ;
+  rdfs:label "Enumerated observable property" ;
+.
+<urn:anon:uuid:acece836-1a1c-4d4d-a44f-0e4ac829bee2>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9> ;
+  s223:cnx <urn:anon:uuid:cb1a3251-d580-4e22-92e7-09f7fb5f28a3> ;
+  s223:connectsThrough <urn:anon:uuid:cb1a3251-d580-4e22-92e7-09f7fb5f28a3> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:ad61a6a6-1c6b-42de-b13e-49e3ae88486e>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  s223:cnx <urn:anon:uuid:7a52a1a8-5e51-4eef-88be-2ae19ab7dcca> ;
+  s223:connectsThrough <urn:anon:uuid:7a52a1a8-5e51-4eef-88be-2ae19ab7dcca> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/1ab8739f934598804951e7e9a87d6bc6> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:af46adec-c8fc-474f-b386-78c1ffda5447>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:54ed52b1-7dd3-4caf-82df-19cff3f45e6e> ;
+  s223:cnx <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsThrough <urn:anon:uuid:54ed52b1-7dd3-4caf-82df-19cff3f45e6e> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:b24c6918-078b-4208-bd18-e03934c7e9ec>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  s223:cnx <urn:anon:uuid:7c9441e0-b9f7-469d-aee9-5f25423af467> ;
+  s223:connectsThrough <urn:anon:uuid:7c9441e0-b9f7-469d-aee9-5f25423af467> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/9c55540bd83fb1a20d7e954dddd03c7c> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:b286fc16-381e-44c8-b22b-8a22f8d8f884>
+  a s223:InletConnectionPoint ;
+  s223:cnx <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  s223:cnx <urn:anon:uuid:baad889c-3682-4005-bb02-49583bc4fc24> ;
+  s223:connectsThrough <urn:anon:uuid:baad889c-3682-4005-bb02-49583bc4fc24> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:b766ec0c-b7f9-429a-8692-a86839752b25>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/d6e912ed2be0ff94dc43dac184751099> ;
+  s223:cnx <urn:anon:uuid:94cc6ff7-3988-482a-8ed1-014ed22410c0> ;
+  s223:connectsThrough <urn:anon:uuid:94cc6ff7-3988-482a-8ed1-014ed22410c0> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/d6e912ed2be0ff94dc43dac184751099> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:b8a8780d-28f7-4600-a4db-5d940a48760a>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:cnx <urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f> ;
+  s223:connectsThrough <urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:baad889c-3682-4005-bb02-49583bc4fc24>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:3e6d2b17-232c-4998-97d5-246e3758a8bf> ;
+  s223:cnx <urn:anon:uuid:b286fc16-381e-44c8-b22b-8a22f8d8f884> ;
+  s223:connectsAt <urn:anon:uuid:3e6d2b17-232c-4998-97d5-246e3758a8bf> ;
+  s223:connectsAt <urn:anon:uuid:b286fc16-381e-44c8-b22b-8a22f8d8f884> ;
+  s223:connectsFrom <http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d> ;
+  s223:connectsTo <http://speckle.systems/562255d59fd4f64f254dbafb117ee7af> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1>
+  a s223:Junction ;
+  s223:cnx <urn:anon:uuid:10951683-ddf8-4dfb-94dd-e9fbe2554bcc> ;
+  s223:cnx <urn:anon:uuid:4f300be0-9e5e-4670-925d-4de724578d5d> ;
+  s223:cnx <urn:anon:uuid:59a98328-8ca4-46c7-9664-3656aa6760c8> ;
+  s223:cnx <urn:anon:uuid:811eabab-593e-4752-9373-7fa96e31f22c> ;
+  s223:cnx <urn:anon:uuid:c6bba9ad-d815-46df-bb37-7f2e9c619986> ;
+  s223:connected <http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363> ;
+  s223:connected <http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4> ;
+  s223:connected <http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d> ;
+  s223:connected <http://speckle.systems/d6e912ed2be0ff94dc43dac184751099> ;
+  s223:connected <http://speckle.systems/e9d83bcd0340d3b2c702a83acd90a597> ;
+  s223:connectedFrom <http://speckle.systems/e9d83bcd0340d3b2c702a83acd90a597> ;
+  s223:connectedThrough <urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab> ;
+  s223:connectedThrough <urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963> ;
+  s223:connectedThrough <urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec> ;
+  s223:connectedThrough <urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0> ;
+  s223:connectedThrough <urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13> ;
+  s223:connectedTo <http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363> ;
+  s223:connectedTo <http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4> ;
+  s223:connectedTo <http://speckle.systems/c67a5d0f55aefafca601a742e8dd601d> ;
+  s223:connectedTo <http://speckle.systems/d6e912ed2be0ff94dc43dac184751099> ;
+  s223:hasConnectionPoint <urn:anon:uuid:10951683-ddf8-4dfb-94dd-e9fbe2554bcc> ;
+  s223:hasConnectionPoint <urn:anon:uuid:4f300be0-9e5e-4670-925d-4de724578d5d> ;
+  s223:hasConnectionPoint <urn:anon:uuid:59a98328-8ca4-46c7-9664-3656aa6760c8> ;
+  s223:hasConnectionPoint <urn:anon:uuid:811eabab-593e-4752-9373-7fa96e31f22c> ;
+  s223:hasConnectionPoint <urn:anon:uuid:c6bba9ad-d815-46df-bb37-7f2e9c619986> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "Junction" ;
+.
+<urn:anon:uuid:c6bba9ad-d815-46df-bb37-7f2e9c619986>
+  a s223:InletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:cnx <urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec> ;
+  s223:connectsThrough <urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  rdfs:label "InletConnectionPoint" ;
+.
+<urn:anon:uuid:c9850b89-d89f-4e0d-ade3-9d01530cea6e>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:7f3d871f-66c0-4b24-8525-79a53922b9b5> ;
+  s223:cnx <urn:anon:uuid:eab6f5b3-bd72-4cd4-b28c-e85792758498> ;
+  s223:connectsAt <urn:anon:uuid:7f3d871f-66c0-4b24-8525-79a53922b9b5> ;
+  s223:connectsAt <urn:anon:uuid:eab6f5b3-bd72-4cd4-b28c-e85792758498> ;
+  s223:connectsFrom <http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765> ;
+  s223:connectsTo <http://speckle.systems/007b5bfe549fd68a27e2bddee6a22902> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:cb1a3251-d580-4e22-92e7-09f7fb5f28a3>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:0437f78d-48dc-48cb-9bf8-9da8873c95cc> ;
+  s223:cnx <urn:anon:uuid:acece836-1a1c-4d4d-a44f-0e4ac829bee2> ;
+  s223:connectsAt <urn:anon:uuid:0437f78d-48dc-48cb-9bf8-9da8873c95cc> ;
+  s223:connectsAt <urn:anon:uuid:acece836-1a1c-4d4d-a44f-0e4ac829bee2> ;
+  s223:connectsFrom <http://speckle.systems/13805a3e92df5e0a5341842c8f015cc9> ;
+  s223:connectsTo <http://speckle.systems/d4726c9d3e54772908eaf557b6ca57b0> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/11c04c42e073d0d0b9c2a00aadf4901b> ;
+  s223:cnx <urn:anon:uuid:c6bba9ad-d815-46df-bb37-7f2e9c619986> ;
+  s223:connectsAt <http://speckle.systems/11c04c42e073d0d0b9c2a00aadf4901b> ;
+  s223:connectsAt <urn:anon:uuid:c6bba9ad-d815-46df-bb37-7f2e9c619986> ;
+  s223:connectsFrom <http://speckle.systems/e9d83bcd0340d3b2c702a83acd90a597> ;
+  s223:connectsTo <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "Panel 1" ;
+.
+<urn:anon:uuid:e308506d-6975-41a4-8fc4-3b424acc4089>
+  a s223:Connection ;
+  s223:cnx <urn:anon:uuid:8b2df890-df92-44af-9b2e-0cf1b63d3f19> ;
+  s223:cnx <urn:anon:uuid:921cc707-511d-4495-b866-64b97d5fd653> ;
+  s223:connectsAt <urn:anon:uuid:8b2df890-df92-44af-9b2e-0cf1b63d3f19> ;
+  s223:connectsAt <urn:anon:uuid:921cc707-511d-4495-b866-64b97d5fd653> ;
+  s223:connectsFrom <http://speckle.systems/b66563b7bfe4102bce3ef8e985bd0363> ;
+  s223:connectsTo <http://speckle.systems/95309677f7c98fddeafbe2a3e3166bcb> ;
+  s223:hasMedium s223:Light-Visible ;
+  rdfs:label "Connection" ;
+.
+<urn:anon:uuid:e3aa97c1-1726-4551-b4f3-ef37ca81e8dc>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/374038c273236b43838a8c20018321ff> ;
+  s223:cnx <urn:anon:uuid:41e5e388-ad94-499f-985a-4d82b5d9bd4a> ;
+  s223:connectsThrough <urn:anon:uuid:41e5e388-ad94-499f-985a-4d82b5d9bd4a> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/374038c273236b43838a8c20018321ff> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/2ec6c777b3ca86655677fc5ef4dd0242> ;
+  s223:cnx <urn:anon:uuid:4f300be0-9e5e-4670-925d-4de724578d5d> ;
+  s223:connectsAt <http://speckle.systems/2ec6c777b3ca86655677fc5ef4dd0242> ;
+  s223:connectsAt <urn:anon:uuid:4f300be0-9e5e-4670-925d-4de724578d5d> ;
+  s223:connectsFrom <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectsTo <http://speckle.systems/b93ca42c908da93fdbb7c0c85280caa4> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/5f824b38a3005d7a877a46f3acfd8ce2> ;
+  s223:cnx <urn:anon:uuid:10951683-ddf8-4dfb-94dd-e9fbe2554bcc> ;
+  s223:connectsAt <http://speckle.systems/5f824b38a3005d7a877a46f3acfd8ce2> ;
+  s223:connectsAt <urn:anon:uuid:10951683-ddf8-4dfb-94dd-e9fbe2554bcc> ;
+  s223:connectsFrom <urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1> ;
+  s223:connectsTo <http://speckle.systems/d6e912ed2be0ff94dc43dac184751099> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:eab6f5b3-bd72-4cd4-b28c-e85792758498>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765> ;
+  s223:cnx <urn:anon:uuid:c9850b89-d89f-4e0d-ade3-9d01530cea6e> ;
+  s223:connectsThrough <urn:anon:uuid:c9850b89-d89f-4e0d-ade3-9d01530cea6e> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/a6289d648cce40322bcc57cd2d0ce765> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:ee9555ed-6e6f-4823-8b2c-34b57260dcff>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c> ;
+  s223:cnx <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsThrough <urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:f063ee43-dae3-43df-b700-29e912870a95>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:cnx <urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae> ;
+  s223:connectsThrough <urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae> ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+  s223:isConnectionPointOf <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
+<urn:anon:uuid:f215cc32-796a-4f51-9ef9-9db344cbb0c6>
+  a s223:ElectricWire ;
+  s223:cnx <http://speckle.systems/9dd35c17e7f147c29adbfcf900c4b590> ;
+  s223:cnx <urn:anon:uuid:0ce839e5-dfc6-4df3-acfc-caf7b5e2e9b1> ;
+  s223:connectsAt <http://speckle.systems/9dd35c17e7f147c29adbfcf900c4b590> ;
+  s223:connectsAt <urn:anon:uuid:0ce839e5-dfc6-4df3-acfc-caf7b5e2e9b1> ;
+  s223:connectsFrom <urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904> ;
+  s223:connectsTo <http://speckle.systems/51ea7fcbe7115215d07d377c50ea741d> ;
+  s223:hasMedium s223:Medium-Electricity ;
+  rdfs:label "ElectricWire" ;
+.
+<urn:anon:uuid:f9dd0ad1-5b5b-4bc6-8cc5-d7cadc3e8068>
+  a s223:OutletConnectionPoint ;
+  s223:cnx <http://speckle.systems/05749166d93671bedf16efb52636ce38> ;
+  s223:cnx <urn:anon:uuid:050ae45d-ce38-44e1-9d34-1f683969ae0d> ;
+  s223:connectsThrough <urn:anon:uuid:050ae45d-ce38-44e1-9d34-1f683969ae0d> ;
+  s223:hasMedium s223:Light-Visible ;
+  s223:isConnectionPointOf <http://speckle.systems/05749166d93671bedf16efb52636ce38> ;
+  rdfs:label "OutletConnectionPoint" ;
+.
