@@ -1,8 +1,6 @@
-# ASHRAE Guideline 36-2021 4.4 Dual Duct Terminal Unit With Inlet Sensors
+# ASHRAE Guideline 36-2021 A-7 Dual Duct Terminal Unit with Inlet Sensors
 
-This component model is an example of the dual dut terminal unit with inlet sensors from Guideline 36-2021 Section 4.4, illustrated in Figure A-7.
-
-![](../_static/images/guideline36-2021-4.4.png)
+This component model is an example of the dual duct terminal unit with inlet sensors from Guideline 36-2021, Appendix A, Figure A-7.
 
 ## Downloads
 
