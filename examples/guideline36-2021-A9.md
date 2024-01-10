@@ -1,8 +1,6 @@
-# ASHRAE Guideline 36-2021 4.6 Multiple-Zone Air-Handling Unit
+# ASHRAE Guideline 36-2021 A-9 Multiple Zone VAV Air Handling Unit
 
-This component model is an example of the multiple-zone AHU from Guideline 36-2021 Section 4.6, illustrated in Figure A-9.
-
-![](../_static/images/guideline36-2021-4.6.png)
+This component model is an example of the multiple zone VAV air handling unit _with return fan and OA measurement station_ from Guideline 36-2021, Appendix A, Figure A-9.
 
 ## Downloads
 
