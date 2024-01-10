@@ -1,8 +1,6 @@
-# ASHRAE Guideline 36-2021 4.3 Parallel Fan Powered Unit With Variable Fan
+# ASHRAE Guideline 36-2021 A-4 Parallel Fan-Powered Terminal Unit, Variable Volume Fan
 
-This component model is an example of the parallel fan powered unit with variable fan from Guideline 36-2021 Section 4.3, illustrated in Figure A-4.
-
-![](../_static/images/guideline36-2021-4.3-parallel-variable.png)
+This component model is an example of the parallel fan-powered terminal unit with variable volume fan from Guideline 36-2021, Appendix A, Figure A-4.
 
 ## Downloads
 
