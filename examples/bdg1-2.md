@@ -1,10 +1,10 @@
 # Example Building 1-2
 
-This is model of a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.
+Example Building 1 is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.
 
-The reference building was developed for and first described in the journal article ["Metadata Schemas and Ontologies for Building Energy Applications: A Critical Review and Use Case Analysis"](https://doi.org/10.3390/en14072024).
+This reference building was developed for and first described in the journal article ["Metadata Schemas and Ontologies for Building Energy Applications: A Critical Review and Use Case Analysis"](https://doi.org/10.3390/en14072024).
 
-This example building model is provided by Pacific Northwest National Laboratory.
+This example Building 1-2 model is provided by Pacific Northwest National Laboratory.
 
 ### Schematic view
 
