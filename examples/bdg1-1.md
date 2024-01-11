@@ -10,9 +10,13 @@ This example Building 1-1 model is provided by current and former NIST staff and
 
 ![image](https://github.com/steveraysteveray/models.open223.info/assets/1130189/a586b8cd-c699-42c1-9b49-0c3f8a81de55)
 
-## Source
+## Contents
 
 The model contains a representation of the building architecture, mechanical system, and electrical/lighting system.
+
+## Source
+
+The model was created using TopBraid EDG, from [TopQuadrant](https://www.topquadrant.com/).
 
 ## Downloads
 
