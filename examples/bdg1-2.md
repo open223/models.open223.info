@@ -12,7 +12,7 @@ This example building model is provided by Pacific Northwest National Laboratory
 
 ## Contents
 
-The model contains a representation of the building architecture and electrica/lighting system.
+The model contains a representation of the building architecture and electrical/lighting system.
 
 In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types.
 
