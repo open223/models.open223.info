@@ -1,4 +1,4 @@
-# Example Building 1-1
+# Example Building 1-2
 
 This is model of a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.
 
@@ -7,6 +7,8 @@ The reference building was developed for and first described in the journal arti
 This example building model is provided by Pacific Northwest National Laboratory.
 
 ### Schematic view
+
+![image](https://github.com/steveraysteveray/models.open223.info/assets/1130189/a586b8cd-c699-42c1-9b49-0c3f8a81de55)
 
 ## Contents
 
