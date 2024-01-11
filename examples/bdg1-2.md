@@ -18,7 +18,7 @@ In addition to the s223 ontology, the model uses the [Real Estate Core ontology]
 
 ## Source
 
-The model was created from souce data consisting of a Revit building information model (BIM) exported via a [Speckle](https://speckle.systems/) interface.
+The model was created from source data consisting of a building information model (BIM) created using [Autodesk](https://www.autodesk.com/) Revit, and exported via a [Speckle](https://speckle.systems/) interface.
 
 ### Speckle view of rooms and lighting fixtures
 <img width="1212" alt="image" src="https://github.com/open223/models.open223.info/assets/22898727/92b1afd2-b3c3-492b-a7c7-61dea827a246">
