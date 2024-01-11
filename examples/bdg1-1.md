@@ -12,7 +12,7 @@ This example building model is provided by current and former NIST staff and Pac
 
 ## Source
 
-
+The model contains a representation of the building architecture, mechanical system, and electrical/lighting system.
 
 ## Downloads
 
