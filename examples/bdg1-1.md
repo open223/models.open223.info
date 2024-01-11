@@ -16,7 +16,7 @@ The model contains a representation of the building architecture, mechanical sys
 
 ## Source
 
-The model was created using [TopQuadrant](https://www.topquadrant.com/) TopBraid EDG.
+The model was created using [TopQuadrant](https://www.topquadrant.com/) TopBraid Composer Maestro Edition.
 
 ## Downloads
 
