@@ -14,7 +14,13 @@ This example Building 1 model 2 is provided by Pacific Northwest National Labora
 
 The model contains a representation of the building architecture and electrical/lighting system.
 
-In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types.
+In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types. The Real Estate Core ontology is extended by defining 2 subclasses for rec:Office.
+``` ttl
+recx:OpenOffice rdfs:subClassOf rec:Office;
+  rdfs:label "Open Office".
+recx:PrivateOffice rdfs:subClassOf rec:Office;
+  rdfs:label "Private Office".
+```
 
 ## Source
 
@@ -25,11 +31,11 @@ The model was created from source data consisting of a building information mode
 
 Model instance data have a prefix that is resolvable to a Speckle URL.
 ``` ttl
-@prefix bdg1: <http://speckle.xyz/streams/1fed8e620e/objects/>
+@prefix bdg1-2: <http://speckle.xyz/streams/1fed8e620e/objects/>
 ```
 
 For example, the following luminaire resolves to https://speckle.xyz/streams/1fed8e620e/objects/05749166d93671bedf16efb52636ce38.
-```ttl
+``` ttl
 bdg1:05749166d93671bedf16efb52636ce38 a s223:Luminaire
 ```
 
