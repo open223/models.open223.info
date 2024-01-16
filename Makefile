@@ -19,7 +19,7 @@ refresh-ontoenv:
 # 'tools/compile.py' ensures the compile script is present, but should be a prerequisite only if you want to track changes on it.
 # 'ontologies/*.ttl' captures changes in any .ttl file in the ontologies directory.
 models/compiled/%.ttl: models/%.ttl tools/compile.py refresh-ontoenv
-	python tools/compile.py -r -i -o $@ $< ../query.open223.info/ontologies/223p.ttl
+	python tools/compile.py -r -i -o $@ $< ontologies/223p.ttl
 
 # The compile-models target will "make" all of the COMPILED_MODELS.
 compile-models: $(COMPILED_MODELS)
