@@ -1,3 +1,6 @@
+#!/bin/bash
+set -x
+
 # run the tools/make_model_formats.py script on the models directory
 python tools/make_model_formats.py models
 
@@ -26,3 +29,7 @@ done
 
 # build queries
 python tools/generate-queries.py
+
+# for each filename in the models/ directory, run tools/compile.py -o models/compiled/<filename>.ttl
+mkdir -p models/compiled
+make compile-models

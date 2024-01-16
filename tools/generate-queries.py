@@ -60,11 +60,11 @@ for key in toml_data:
         encoded_query += "PREFIX qudt: <http://qudt.org/schema/qudt/> "                                  
         encoded_query += "PREFIX sh: <http://www.w3.org/ns/shacl#> "                                     
         encoded_query += "PREFIX owl: <http://www.w3.org/2002/07/owl#> "                                 
-        encoded_query += raw_query.replace('\n', ' ')                                                    
+        encoded_query += raw_query
                                                     
         query_url = f"{base_url}?query={urllib.parse.quote_plus(encoded_query)}"
         # add a url parameter which points to models.open223.info/models/<key>.ttl
-        query_url += f"&url=https://models.open223.info/{key.lower()}.ttl"
+        query_url += f"&url=https://models.open223.info/compiled/{key.lower()}.ttl"
 
 
         # Add a row to the markdown table
