@@ -78,7 +78,7 @@ for md in glob.glob('examples/*.md'):
     file_name = os.path.basename(md).lower()
     # create the markdown with the links in a <a> tag
     markdown_content = f"""
-- <a href="/{file_name.replace('.md', '.ttl')}">Turtle file</a>
+- <a href="/{file_name.replace('.md', '.ttl')}">Turtle file</a> (<a href="/compiled/{file_name.replace('.md', '.ttl')}">compiled</a>)
 - <a href="/{file_name.replace('.md', '.jsonld')}">JSON-LD file</a>
     """
     replace_section_in_markdown(md, '## Downloads', markdown_content)
