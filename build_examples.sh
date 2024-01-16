@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 # run the tools/make_model_formats.py script on the models directory
 python tools/make_model_formats.py models
