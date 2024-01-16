@@ -28,6 +28,12 @@ jobs:
       run: |
         pip install -r requirements.txt
 
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
     - name: build examples
       run: |
         bash build_examples.sh
