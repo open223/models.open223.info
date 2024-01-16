@@ -3,6 +3,7 @@ import string
 import random
 import argparse
 import brickschema
+from brickschema import topquadrant_shacl
 import ontoenv
 import rdflib
 
@@ -34,6 +35,7 @@ if __name__ == "__main__":
     graph.bind("qudtprefix", rdflib.Namespace("http://qudt.org/vocab/prefix/"))
 
     if args.reason:
+        topquadrant_shacl._MAX_EXTERNAL_LOOPS = 0
         graph.expand(profile="shacl", backend="topquadrant")
         valid, _, report = graph.validate(engine="topquadrant")
         if not valid:
