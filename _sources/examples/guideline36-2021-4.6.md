@@ -6,8 +6,8 @@ This component model is an example of the multiple-zone AHU from Guideline 36-20
 
 ## Downloads
 
-- <a href="/guideline36-2021-4.6.ttl">Turtle file</a>
-- <a href="/guideline36-2021-4.6.jsonld">JSON-LD file</a>
+- <a href="/compiled/guideline36-2021-4.6.ttl">Turtle file (compiled)</a> (<a href="/guideline36-2021-4.6.ttl">original</a>)
+- <a href="/guideline36-2021-4.6.jsonld">JSON-LD file (original)</a>
     
 ## Model Components
 | Parent Class | Class | Instances |

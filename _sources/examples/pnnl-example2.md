@@ -29,8 +29,8 @@ bdg1:05749166d93671bedf16efb52636ce38 a s223:Luminaire
 
 ## Downloads
 
-- <a href="/pnnl-example2.ttl">Turtle file</a>
-- <a href="/pnnl-example2.jsonld">JSON-LD file</a>
+- <a href="/compiled/pnnl-example2.ttl">Turtle file (compiled)</a> (<a href="/pnnl-example2.ttl">original</a>)
+- <a href="/pnnl-example2.jsonld">JSON-LD file (original)</a>
     
 ## Queries
 

@@ -6,8 +6,8 @@ This component model is an example of the parallel fan powered unit with variabl
 
 ## Downloads
 
-- <a href="/guideline36-2021-4.3-parallel-variable.ttl">Turtle file</a>
-- <a href="/guideline36-2021-4.3-parallel-variable.jsonld">JSON-LD file</a>
+- <a href="/compiled/guideline36-2021-4.3-parallel-variable.ttl">Turtle file (compiled)</a> (<a href="/guideline36-2021-4.3-parallel-variable.ttl">original</a>)
+- <a href="/guideline36-2021-4.3-parallel-variable.jsonld">JSON-LD file (original)</a>
     
 ## Model Components
 | Parent Class | Class | Instances |

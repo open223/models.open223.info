@@ -20,8 +20,8 @@ The model was created using [TopQuadrant](https://www.topquadrant.com/) TopBraid
 
 ## Downloads
 
-- <a href="/bdg1-1.ttl">Turtle file</a>
-- <a href="/bdg1-1.jsonld">JSON-LD file</a>
+- <a href="/compiled/bdg1-1.ttl">Turtle file (compiled)</a> (<a href="/bdg1-1.ttl">original</a>)
+- <a href="/bdg1-1.jsonld">JSON-LD file (original)</a>
     
 ## Queries
 
