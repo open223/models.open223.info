@@ -1,8 +1,6 @@
-# ASHRAE Guideline 36-2021 4.5 Dual Duct Terminal Unit With Discharge Sensor
+# ASHRAE Guideline 36-2021 A-8 Dual Duct Terminal Unit with Discharge Sensor
 
-This component model is an example of the dual duct terminal unit with discharge sensor from Guideline 36-2021 Section 4.5, illustrated in Figure A-8.
-
-![](../_static/images/guideline36-2021-4.5.png)
+This component model is an example of the dual duct terminal unit with discharge sensor from Guideline 36-2021, Appendix A, Figure A-8.
 
 ## Downloads
 

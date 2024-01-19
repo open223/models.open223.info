@@ -1,8 +1,6 @@
-# ASHRAE Guideline 36-2021 4.1 VAV Terminal Unit with Cooling Only
+# ASHRAE Guideline 36-2021 A-1 VAV Terminal Unit, Cooling Only
 
-This component model is an example of the variable air volume (VAV) terminal unit with cooling only from Guideline 36-2021 Section 4.1, illustrated in Figure A-1.
-
-![](../_static/images/g36-4.1.png)
+This component model is an example of the variable air volume (VAV) terminal unit with cooling only from Guideline 36-2021, Appendix A, Figure A-1.
 
 ## Downloads
 
