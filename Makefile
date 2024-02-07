@@ -1,17 +1,14 @@
-.PHONY: all environment compile-models clean refresh-ontoenv
+.PHONY: all environment compile-models clean
                                                                                                                                                                                                                   
 # Assuming 'all' should build everything. If 'environment' is a task that should be run,
 # you need to add a corresponding recipe for it.
-all: refresh-ontoenv compile-models
+all: compile-models
 
 # MODEL_SOURCES will find all .ttl files in the models directory.
 MODEL_SOURCES := $(wildcard models/*.ttl)
 
 # COMPILED_MODELS will be the list of files but in the models/compiled folder.
 COMPILED_MODELS := $(patsubst models/%.ttl,models/compiled/%.ttl,$(MODEL_SOURCES))
-
-refresh-ontoenv:
-	ontoenv init -s ontologies/ -v
 
 # Rule to compile each model.
 # The prerequisite 'models/%.ttl' means it will match each .ttl file in the models directory.

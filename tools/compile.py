@@ -4,10 +4,8 @@ import random
 import argparse
 import brickschema
 from brickschema import topquadrant_shacl
-import ontoenv
 import rdflib
 
-env = ontoenv.OntoEnv(initialize=True, search_dirs=["./ontologies/"])
 graph = brickschema.Graph()
 
 if __name__ == "__main__":
@@ -23,12 +21,14 @@ if __name__ == "__main__":
         "-i", "--do-import", help="Perform imports", action="store_true"
     )
     args = parser.parse_args()
+    print(f"Input files: {args.input}")
 
     for f in args.input:
         graph.parse(f, format=rdflib.util.guess_format(f))
 
     if args.do_import:
-        env.import_dependencies(graph)
+        graph.parse("ontologies/223p.ttl")
+        graph.serialize("output.ttl", format="turtle")
 
     # remove QUDT prefix because it breaks things
     graph.bind("qudtprefix21", rdflib.Namespace("http://qudt.org/2.1/vocab/prefix/"))
@@ -40,6 +40,7 @@ if __name__ == "__main__":
         valid, _, report = graph.validate(engine="topquadrant")
         if not valid:
             print(report)
+            raise Exception("Validation failed: {}".format(report))
     if args.output:
         graph.serialize(args.output, format="turtle")
     else:
