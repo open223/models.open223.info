@@ -26,18 +26,20 @@ if __name__ == "__main__":
     for f in args.input:
         graph.parse(f, format=rdflib.util.guess_format(f))
 
+
+    s223 = rdflib.Graph()
     if args.do_import:
-        graph.parse("ontologies/223p.ttl")
-        graph.serialize("output.ttl", format="turtle")
+        s223.parse("ontologies/223p.ttl")
 
     # remove QUDT prefix because it breaks things
     graph.bind("qudtprefix21", rdflib.Namespace("http://qudt.org/2.1/vocab/prefix/"))
     graph.bind("qudtprefix", rdflib.Namespace("http://qudt.org/vocab/prefix/"))
 
     if args.reason:
-        topquadrant_shacl._MAX_EXTERNAL_LOOPS = 0
-        graph.expand(profile="shacl", backend="topquadrant")
-        valid, _, report = graph.validate(engine="topquadrant")
+        #topquadrant_shacl._MAX_EXTERNAL_LOOPS = 2
+        graph = topquadrant_shacl.infer(graph, s223)
+        #graph.expand(profile="shacl", backend="topquadrant")
+        valid, _, report = topquadrant_shacl.validate(graph, s223)
         if not valid:
             print(report)
             raise Exception("Validation failed: {}".format(report))
