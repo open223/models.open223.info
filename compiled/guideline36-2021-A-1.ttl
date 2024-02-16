@@ -1,0 +1,102 @@
+@prefix ns1: <http://data.ashrae.org/standard223#> .
+@prefix ns2: <http://qudt.org/schema/qudt/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<urn:ex/> a owl:Ontology .
+
+<urn:ex/damper-actuator> a ns1:Actuator ;
+    ns1:actuates <urn:ex/damper> ;
+    ns1:commandedByProperty <urn:ex/damper-command> .
+
+<urn:ex/discharge-air-flow-sensor> a ns1:Sensor ;
+    ns1:hasObservationLocation <urn:ex/out> ;
+    ns1:observes <urn:ex/discharge-air-flow> .
+
+<urn:ex/damper-position> a ns1:QuantifiableObservableProperty ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<urn:ex/damper-command> a ns1:QuantifiableActuatableProperty ;
+    ns1:hasAspect ns1:EnumerationKind-Position ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<urn:ex/discharge-air-flow> a ns1:QuantifiableObservableProperty ;
+    ns1:hasAspect ns1:Role-Discharge ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+
+<urn:ex/duct-after-damper> a ns1:Connection,
+        ns1:Duct ;
+    ns1:cnx <urn:ex/damper-out> ;
+    ns1:connectsAt <urn:ex/damper-out> ;
+    ns1:connectsFrom <urn:ex/damper> ;
+    ns1:hasMedium ns1:Medium-Air .
+
+<urn:ex/duct-before-damper> a ns1:Connection,
+        ns1:Duct ;
+    ns1:cnx <urn:ex/damper-in> ;
+    ns1:connectsAt <urn:ex/damper-in> ;
+    ns1:connectsTo <urn:ex/damper> ;
+    ns1:hasMedium ns1:Medium-Air .
+
+<urn:ex/in-connection> a ns1:Connection ;
+    ns1:cnx <urn:ex/in> ;
+    ns1:connectsAt <urn:ex/in> ;
+    ns1:connectsTo <urn:ex/vav-cooling-only> ;
+    ns1:hasMedium ns1:Medium-Air .
+
+<urn:ex/out-connection> a ns1:Connection ;
+    ns1:cnx <urn:ex/out> ;
+    ns1:connectsAt <urn:ex/out> ;
+    ns1:connectsFrom <urn:ex/vav-cooling-only> ;
+    ns1:hasMedium ns1:Medium-Air .
+
+<urn:ex/damper-in> a ns1:InletConnectionPoint ;
+    ns1:cnx <urn:ex/damper>,
+        <urn:ex/duct-before-damper> ;
+    ns1:connectsThrough <urn:ex/duct-before-damper> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/damper> ;
+    ns1:mapsTo <urn:ex/in> .
+
+<urn:ex/damper-out> a ns1:OutletConnectionPoint ;
+    ns1:cnx <urn:ex/damper>,
+        <urn:ex/duct-after-damper> ;
+    ns1:connectsThrough <urn:ex/duct-after-damper> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/damper> ;
+    ns1:mapsTo <urn:ex/out> .
+
+<urn:ex/in> a ns1:InletConnectionPoint ;
+    ns1:cnx <urn:ex/in-connection>,
+        <urn:ex/vav-cooling-only> ;
+    ns1:connectsThrough <urn:ex/in-connection> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/vav-cooling-only> .
+
+<urn:ex/out> a ns1:OutletConnectionPoint ;
+    ns1:cnx <urn:ex/out-connection>,
+        <urn:ex/vav-cooling-only> ;
+    ns1:connectsThrough <urn:ex/out-connection> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasProperty <urn:ex/discharge-air-flow> ;
+    ns1:isConnectionPointOf <urn:ex/vav-cooling-only> .
+
+<urn:ex/vav-cooling-only> a ns1:SingleDuctTerminal,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#VAV> ;
+    ns1:cnx <urn:ex/in>,
+        <urn:ex/out> ;
+    ns1:contains <urn:ex/damper> ;
+    ns1:hasConnectionPoint <urn:ex/in>,
+        <urn:ex/out> .
+
+<urn:ex/damper> a ns1:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    ns1:cnx <urn:ex/damper-in>,
+        <urn:ex/damper-out> ;
+    ns1:hasConnectionPoint <urn:ex/damper-in>,
+        <urn:ex/damper-out> ;
+    ns1:hasProperty <urn:ex/damper-command>,
+        <urn:ex/damper-position> .
+
