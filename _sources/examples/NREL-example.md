@@ -4,8 +4,8 @@ This is an example building provided by the National Renewable Energy Laboratory
 
 ## Downloads
 
-- <a href="/compiled/nrel-example.ttl">Turtle file (compiled)</a> (<a href="/nrel-example.ttl">original</a>)
-- <a href="/nrel-example.jsonld">JSON-LD file (original)</a>
+- <a href="/compiled/NREL-example.ttl">Turtle file (compiled)</a> (<a href="/NREL-example.ttl">original</a>)
+- <a href="/NREL-example.jsonld">JSON-LD file (original)</a>
     
 ## Queries
 | Description | Query URL |

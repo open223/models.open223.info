@@ -4,8 +4,8 @@ This component model is an example of the dual duct terminal unit with inlet sen
 
 ## Downloads
 
-- <a href="/compiled/guideline36-2021-a-7.ttl">Turtle file (compiled)</a> (<a href="/guideline36-2021-a-7.ttl">original</a>)
-- <a href="/guideline36-2021-a-7.jsonld">JSON-LD file (original)</a>
+- <a href="/compiled/guideline36-2021-A-7.ttl">Turtle file (compiled)</a> (<a href="/guideline36-2021-A-7.ttl">original</a>)
+- <a href="/guideline36-2021-A-7.jsonld">JSON-LD file (original)</a>
     
 ## Model Components
 | Parent Class | Class | Instances |
