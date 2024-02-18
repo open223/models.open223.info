@@ -1,131 +1,6 @@
 [
     {
-        "@id": "urn:ex/discharge-air-flow",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Discharge"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/cold-deck-damper-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-before-cold-deck-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "urn:ex/cold-deck-in"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/",
-        "@type": [
-            "http://www.w3.org/2002/07/owl#Ontology"
-        ]
-    },
-    {
-        "@id": "urn:ex/junction-in-1",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-after-hot-deck-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/cold-deck-damper-command",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/cold-deck-damper-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
-            {
-                "@id": "urn:ex/cold-deck-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#commandedByProperty": [
-            {
-                "@id": "urn:ex/cold-deck-damper-command"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-before-hot-deck-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-before-cold-deck-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/out-connection",
+        "@id": "urn:ex/hot-deck-in-connection",
         "@type": [
             "http://data.ashrae.org/standard223#Connection"
         ],
@@ -152,59 +27,59 @@
         ]
     },
     {
-        "@id": "urn:ex/cold-deck-damper",
+        "@id": "urn:ex/cold-deck-in-connection",
         "@type": [
-            "http://data.ashrae.org/standard223#Damper",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/cold-deck-damper-in"
-            },
-            {
-                "@id": "urn:ex/cold-deck-damper-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "urn:ex/cold-deck-damper-command"
-            },
-            {
-                "@id": "urn:ex/cold-deck-damper-position"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Cooling"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Supply"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/hot-deck-damper-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-before-hot-deck-damper"
-            }
+            "http://data.ashrae.org/standard223#Connection"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#Medium-Air"
             }
+        ]
+    },
+    {
+        "@id": "urn:ex/dual-duct-terminal-unit-with-discharge-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#DualDuctTerminal",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithDischargeSensor"
         ],
-        "http://data.ashrae.org/standard223#mapsTo": [
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/cold-deck-in"
+            },
             {
                 "@id": "urn:ex/hot-deck-in"
+            },
+            {
+                "@id": "urn:ex/out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#contains": [
+            {
+                "@id": "urn:ex/cold-deck-damper"
+            },
+            {
+                "@id": "urn:ex/hot-deck-damper"
+            },
+            {
+                "@id": "urn:ex/junction"
             }
         ]
     },
     {
-        "@id": "urn:ex/hot-deck-in-connection",
+        "@id": "urn:ex/duct-after-cold-deck-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/out-connection",
         "@type": [
             "http://data.ashrae.org/standard223#Connection"
         ],
@@ -231,34 +106,7 @@
         ]
     },
     {
-        "@id": "urn:ex/cold-deck-in-connection",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/discharge-air-flow-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "urn:ex/out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "urn:ex/discharge-air-flow"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-after-hot-deck-damper",
+        "@id": "urn:ex/duct-before-cold-deck-damper",
         "@type": [
             "http://data.ashrae.org/standard223#Connection",
             "http://data.ashrae.org/standard223#Duct"
@@ -266,6 +114,118 @@
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/hot-deck-damper-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-before-hot-deck-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "urn:ex/hot-deck-in"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/hot-deck-damper-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-after-hot-deck-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Ontology"
+        ]
+    },
+    {
+        "@id": "urn:ex/junction-in-1",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/duct-after-hot-deck-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/junction-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/out-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "urn:ex/out"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/hot-deck-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/hot-deck-in-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/cold-deck-damper-position",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
             }
         ]
     },
@@ -297,6 +257,135 @@
             },
             {
                 "@id": "http://data.ashrae.org/standard223#Role-Supply"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/duct-after-hot-deck-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/cold-deck-damper-command",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/hot-deck-damper-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "urn:ex/hot-deck-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#commandedByProperty": [
+            {
+                "@id": "urn:ex/hot-deck-damper-command"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/hot-deck-damper-command",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/discharge-air-flow",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Discharge"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/junction",
+        "@type": [
+            "http://data.ashrae.org/standard223#Junction"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/junction-in-1"
+            },
+            {
+                "@id": "urn:ex/junction-in-2"
+            },
+            {
+                "@id": "urn:ex/junction-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/discharge-air-flow-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/discharge-air-flow"
             }
         ]
     },
@@ -338,45 +427,28 @@
         ]
     },
     {
-        "@id": "urn:ex/hot-deck-in",
+        "@id": "urn:ex/cold-deck-damper-in",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/hot-deck-in-connection"
+                "@id": "urn:ex/duct-before-cold-deck-damper"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#Medium-Air"
             }
-        ]
-    },
-    {
-        "@id": "urn:ex/junction",
-        "@type": [
-            "http://data.ashrae.org/standard223#Junction"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
+        "http://data.ashrae.org/standard223#mapsTo": [
             {
-                "@id": "urn:ex/junction-in-1"
-            },
-            {
-                "@id": "urn:ex/junction-in-2"
-            },
-            {
-                "@id": "urn:ex/junction-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+                "@id": "urn:ex/cold-deck-in"
             }
         ]
     },
     {
-        "@id": "urn:ex/duct-after-cold-deck-damper",
+        "@id": "urn:ex/duct-before-hot-deck-damper",
         "@type": [
             "http://data.ashrae.org/standard223#Connection",
             "http://data.ashrae.org/standard223#Duct"
@@ -384,6 +456,53 @@
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#Medium-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/cold-deck-damper-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "urn:ex/cold-deck-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#commandedByProperty": [
+            {
+                "@id": "urn:ex/cold-deck-damper-command"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/cold-deck-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Damper",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/cold-deck-damper-in"
+            },
+            {
+                "@id": "urn:ex/cold-deck-damper-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "urn:ex/cold-deck-damper-command"
+            },
+            {
+                "@id": "urn:ex/cold-deck-damper-position"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Cooling"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Supply"
             }
         ]
     },
@@ -400,125 +519,6 @@
         "http://qudt.org/schema/qudt/hasUnit": [
             {
                 "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/cold-deck-damper-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/dual-duct-terminal-unit-with-discharge-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#DualDuctTerminal",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithDischargeSensor"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/cold-deck-in"
-            },
-            {
-                "@id": "urn:ex/hot-deck-in"
-            },
-            {
-                "@id": "urn:ex/out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#contains": [
-            {
-                "@id": "urn:ex/cold-deck-damper"
-            },
-            {
-                "@id": "urn:ex/hot-deck-damper"
-            },
-            {
-                "@id": "urn:ex/junction"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/hot-deck-damper-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
-            {
-                "@id": "urn:ex/hot-deck-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#commandedByProperty": [
-            {
-                "@id": "urn:ex/hot-deck-damper-command"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/hot-deck-damper-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/duct-after-hot-deck-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/hot-deck-damper-command",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/junction-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/out-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "urn:ex/out"
             }
         ]
     }
