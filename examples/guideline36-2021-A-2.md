@@ -4,8 +4,8 @@ This component model is an example of the variable air volume (VAV) terminal uni
 
 ## Downloads
 
-- <a href="/guideline36-2021-4.2.ttl">Turtle file</a>
-- <a href="/guideline36-2021-4.2.jsonld">JSON-LD file</a>
+- <a href="/compiled/guideline36-2021-A-2.ttl">Turtle file (compiled)</a> (<a href="/guideline36-2021-A-2.ttl">original</a>)
+- <a href="/guideline36-2021-A-2.jsonld">JSON-LD file (original)</a>
     
 ## Queries
 

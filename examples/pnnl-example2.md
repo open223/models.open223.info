@@ -28,7 +28,21 @@ bdg1:05749166d93671bedf16efb52636ce38 a s223:Luminaire
 ```
 
 ## Downloads
+
+- <a href="/compiled/pnnl-example2.ttl">Turtle file (compiled)</a> (<a href="/pnnl-example2.ttl">original</a>)
+- <a href="/pnnl-example2.jsonld">JSON-LD file (original)</a>
     
 ## Queries
 
 ## Model Components
+| Parent Class | Class | Instances |
+|------------|-------|----------------|
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Luminaire](https://explore.open223.info/s223/Luminaire.html) | 853 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [ElectricBreaker](https://explore.open223.info/s223/ElectricBreaker.html) | 3 |
+| [Connection](https://explore.open223.info/s223/Connection.html) | [ElectricWire](https://explore.open223.info/s223/ElectricWire.html) | 856 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 1709 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 1709 |
+| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 311 |
+| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 220 |
+| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 394 |
+

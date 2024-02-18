@@ -64,7 +64,9 @@ for key in toml_data:
                                                     
         query_url = f"{base_url}?query={urllib.parse.quote_plus(encoded_query)}"
         # add a url parameter which points to models.open223.info/models/<key>.ttl
-        query_url += f"&url=https://models.open223.info/compiled/{key.lower()}.ttl"
+        url_param = f"https://models.open223.info/compiled/{key.lower()}.ttl"
+        
+        query_url += f"&url={urllib.parse.quote_plus(url_param)}"
 
 
         # Add a row to the markdown table

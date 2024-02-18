@@ -4,8 +4,8 @@ This component model is an example of the parallel fan-powered terminal unit wit
 
 ## Downloads
 
-- <a href="/guideline36-2021-4.3-parallel-variable.ttl">Turtle file</a>
-- <a href="/guideline36-2021-4.3-parallel-variable.jsonld">JSON-LD file</a>
+- <a href="/compiled/guideline36-2021-A-4.ttl">Turtle file (compiled)</a> (<a href="/guideline36-2021-A-4.ttl">original</a>)
+- <a href="/guideline36-2021-A-4.jsonld">JSON-LD file (original)</a>
     
 ## Model Components
 | Parent Class | Class | Instances |
