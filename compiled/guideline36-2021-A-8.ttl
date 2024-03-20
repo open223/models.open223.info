@@ -1,213 +1,213 @@
-@prefix ns1: <http://qudt.org/schema/qudt/> .
-@prefix ns2: <http://data.ashrae.org/standard223#> .
+@prefix ns1: <http://data.ashrae.org/standard223#> .
+@prefix ns2: <http://qudt.org/schema/qudt/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 <urn:ex/> a owl:Ontology .
 
-<urn:ex/cold-deck-damper-actuator> a ns2:Actuator ;
-    ns2:actuates <urn:ex/cold-deck-damper> ;
-    ns2:commandedByProperty <urn:ex/cold-deck-damper-command> .
+<urn:ex/cold-deck-damper-actuator> a ns1:Actuator ;
+    ns1:actuates <urn:ex/cold-deck-damper> ;
+    ns1:commandedByProperty <urn:ex/cold-deck-damper-command> .
 
-<urn:ex/discharge-air-flow-sensor> a ns2:Sensor ;
-    ns2:hasObservationLocation <urn:ex/out> ;
-    ns2:observes <urn:ex/discharge-air-flow> .
+<urn:ex/discharge-air-flow-sensor> a ns1:Sensor ;
+    ns1:hasObservationLocation <urn:ex/out> ;
+    ns1:observes <urn:ex/discharge-air-flow> .
 
-<urn:ex/hot-deck-damper-actuator> a ns2:Actuator ;
-    ns2:actuates <urn:ex/hot-deck-damper> ;
-    ns2:commandedByProperty <urn:ex/hot-deck-damper-command> .
+<urn:ex/hot-deck-damper-actuator> a ns1:Actuator ;
+    ns1:actuates <urn:ex/hot-deck-damper> ;
+    ns1:commandedByProperty <urn:ex/hot-deck-damper-command> .
 
-<urn:ex/cold-deck-damper-position> a ns2:QuantifiableObservableProperty ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+<urn:ex/cold-deck-damper-position> a ns1:QuantifiableObservableProperty ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/hot-deck-damper-position> a ns2:QuantifiableObservableProperty ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+<urn:ex/hot-deck-damper-position> a ns1:QuantifiableObservableProperty ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/cold-deck-damper-command> a ns2:QuantifiableActuatableProperty ;
-    ns2:hasAspect ns2:EnumerationKind-Position ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+<urn:ex/cold-deck-damper-command> a ns1:QuantifiableActuatableProperty ;
+    ns1:hasAspect ns1:EnumerationKind-Position ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/cold-deck-in-connection> a ns2:Connection ;
-    ns2:cnx <urn:ex/cold-deck-in> ;
-    ns2:connectsAt <urn:ex/cold-deck-in> ;
-    ns2:connectsTo <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> ;
-    ns2:hasMedium ns2:Medium-Air .
+<urn:ex/cold-deck-in-connection> a ns1:Connection ;
+    ns1:cnx <urn:ex/cold-deck-in> ;
+    ns1:connectsAt <urn:ex/cold-deck-in> ;
+    ns1:connectsTo <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> ;
+    ns1:hasMedium ns1:Medium-Air .
 
-<urn:ex/discharge-air-flow> a ns2:QuantifiableObservableProperty ;
-    ns2:hasRole ns2:Role-Discharge ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+<urn:ex/discharge-air-flow> a ns1:QuantifiableObservableProperty ;
+    ns1:hasRole ns1:Role-Discharge ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
-<urn:ex/duct-before-cold-deck-damper> a ns2:Connection,
-        ns2:Duct ;
-    ns2:cnx <urn:ex/cold-deck-damper-in> ;
-    ns2:connectsAt <urn:ex/cold-deck-damper-in> ;
-    ns2:connectsTo <urn:ex/cold-deck-damper> ;
-    ns2:hasMedium ns2:Medium-Air .
+<urn:ex/duct-before-cold-deck-damper> a ns1:Connection,
+        ns1:Duct ;
+    ns1:cnx <urn:ex/cold-deck-damper-in> ;
+    ns1:connectsAt <urn:ex/cold-deck-damper-in> ;
+    ns1:connectsTo <urn:ex/cold-deck-damper> ;
+    ns1:hasMedium ns1:Medium-Air .
 
-<urn:ex/duct-before-hot-deck-damper> a ns2:Connection,
-        ns2:Duct ;
-    ns2:cnx <urn:ex/hot-deck-damper-in> ;
-    ns2:connectsAt <urn:ex/hot-deck-damper-in> ;
-    ns2:connectsTo <urn:ex/hot-deck-damper> ;
-    ns2:hasMedium ns2:Medium-Air .
+<urn:ex/duct-before-hot-deck-damper> a ns1:Connection,
+        ns1:Duct ;
+    ns1:cnx <urn:ex/hot-deck-damper-in> ;
+    ns1:connectsAt <urn:ex/hot-deck-damper-in> ;
+    ns1:connectsTo <urn:ex/hot-deck-damper> ;
+    ns1:hasMedium ns1:Medium-Air .
 
-<urn:ex/hot-deck-damper-command> a ns2:QuantifiableActuatableProperty ;
-    ns2:hasAspect ns2:EnumerationKind-Position ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+<urn:ex/hot-deck-damper-command> a ns1:QuantifiableActuatableProperty ;
+    ns1:hasAspect ns1:EnumerationKind-Position ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/hot-deck-in-connection> a ns2:Connection ;
-    ns2:cnx <urn:ex/hot-deck-in> ;
-    ns2:connectsAt <urn:ex/hot-deck-in> ;
-    ns2:connectsTo <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> ;
-    ns2:hasMedium ns2:Medium-Air .
+<urn:ex/hot-deck-in-connection> a ns1:Connection ;
+    ns1:cnx <urn:ex/hot-deck-in> ;
+    ns1:connectsAt <urn:ex/hot-deck-in> ;
+    ns1:connectsTo <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> ;
+    ns1:hasMedium ns1:Medium-Air .
 
-<urn:ex/cold-deck-damper-in> a ns2:InletConnectionPoint ;
-    ns2:cnx <urn:ex/cold-deck-damper>,
+<urn:ex/cold-deck-damper-in> a ns1:InletConnectionPoint ;
+    ns1:cnx <urn:ex/cold-deck-damper>,
         <urn:ex/duct-before-cold-deck-damper> ;
-    ns2:connectsThrough <urn:ex/duct-before-cold-deck-damper> ;
-    ns2:hasMedium ns2:Medium-Air ;
-    ns2:isConnectionPointOf <urn:ex/cold-deck-damper> ;
-    ns2:mapsTo <urn:ex/cold-deck-in> .
+    ns1:connectsThrough <urn:ex/duct-before-cold-deck-damper> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/cold-deck-damper> ;
+    ns1:mapsTo <urn:ex/cold-deck-in> .
 
-<urn:ex/cold-deck-damper-out> a ns2:OutletConnectionPoint ;
-    ns2:cnx <urn:ex/cold-deck-damper>,
+<urn:ex/cold-deck-damper-out> a ns1:OutletConnectionPoint ;
+    ns1:cnx <urn:ex/cold-deck-damper>,
         <urn:ex/duct-after-cold-deck-damper> ;
-    ns2:connectsThrough <urn:ex/duct-after-cold-deck-damper> ;
-    ns2:hasMedium ns2:Medium-Air ;
-    ns2:isConnectionPointOf <urn:ex/cold-deck-damper> .
+    ns1:connectsThrough <urn:ex/duct-after-cold-deck-damper> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/cold-deck-damper> .
 
-<urn:ex/duct-after-cold-deck-damper> a ns2:Connection,
-        ns2:Duct ;
-    ns2:cnx <urn:ex/cold-deck-damper-out>,
+<urn:ex/duct-after-cold-deck-damper> a ns1:Connection,
+        ns1:Duct ;
+    ns1:cnx <urn:ex/cold-deck-damper-out>,
         <urn:ex/junction-in-2> ;
-    ns2:connectsAt <urn:ex/cold-deck-damper-out>,
+    ns1:connectsAt <urn:ex/cold-deck-damper-out>,
         <urn:ex/junction-in-2> ;
-    ns2:connectsFrom <urn:ex/cold-deck-damper> ;
-    ns2:connectsTo <urn:ex/junction> ;
-    ns2:hasMedium ns2:Medium-Air .
+    ns1:connectsFrom <urn:ex/cold-deck-damper> ;
+    ns1:connectsTo <urn:ex/junction> ;
+    ns1:hasMedium ns1:Medium-Air .
 
-<urn:ex/duct-after-hot-deck-damper> a ns2:Connection,
-        ns2:Duct ;
-    ns2:cnx <urn:ex/hot-deck-damper-out>,
+<urn:ex/duct-after-hot-deck-damper> a ns1:Connection,
+        ns1:Duct ;
+    ns1:cnx <urn:ex/hot-deck-damper-out>,
         <urn:ex/junction-in-1> ;
-    ns2:connectsAt <urn:ex/hot-deck-damper-out>,
+    ns1:connectsAt <urn:ex/hot-deck-damper-out>,
         <urn:ex/junction-in-1> ;
-    ns2:connectsFrom <urn:ex/hot-deck-damper> ;
-    ns2:connectsTo <urn:ex/junction> ;
-    ns2:hasMedium ns2:Medium-Air .
+    ns1:connectsFrom <urn:ex/hot-deck-damper> ;
+    ns1:connectsTo <urn:ex/junction> ;
+    ns1:hasMedium ns1:Medium-Air .
 
-<urn:ex/hot-deck-damper-in> a ns2:InletConnectionPoint ;
-    ns2:cnx <urn:ex/duct-before-hot-deck-damper>,
+<urn:ex/hot-deck-damper-in> a ns1:InletConnectionPoint ;
+    ns1:cnx <urn:ex/duct-before-hot-deck-damper>,
         <urn:ex/hot-deck-damper> ;
-    ns2:connectsThrough <urn:ex/duct-before-hot-deck-damper> ;
-    ns2:hasMedium ns2:Medium-Air ;
-    ns2:isConnectionPointOf <urn:ex/hot-deck-damper> ;
-    ns2:mapsTo <urn:ex/hot-deck-in> .
+    ns1:connectsThrough <urn:ex/duct-before-hot-deck-damper> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/hot-deck-damper> ;
+    ns1:mapsTo <urn:ex/hot-deck-in> .
 
-<urn:ex/hot-deck-damper-out> a ns2:OutletConnectionPoint ;
-    ns2:cnx <urn:ex/duct-after-hot-deck-damper>,
+<urn:ex/hot-deck-damper-out> a ns1:OutletConnectionPoint ;
+    ns1:cnx <urn:ex/duct-after-hot-deck-damper>,
         <urn:ex/hot-deck-damper> ;
-    ns2:connectsThrough <urn:ex/duct-after-hot-deck-damper> ;
-    ns2:hasMedium ns2:Medium-Air ;
-    ns2:isConnectionPointOf <urn:ex/hot-deck-damper> .
+    ns1:connectsThrough <urn:ex/duct-after-hot-deck-damper> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/hot-deck-damper> .
 
-<urn:ex/junction-in-1> a ns2:InletConnectionPoint ;
-    ns2:cnx <urn:ex/duct-after-hot-deck-damper>,
+<urn:ex/junction-in-1> a ns1:InletConnectionPoint ;
+    ns1:cnx <urn:ex/duct-after-hot-deck-damper>,
         <urn:ex/junction> ;
-    ns2:connectsThrough <urn:ex/duct-after-hot-deck-damper> ;
-    ns2:hasMedium ns2:Medium-Air ;
-    ns2:isConnectionPointOf <urn:ex/junction> .
+    ns1:connectsThrough <urn:ex/duct-after-hot-deck-damper> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/junction> .
 
-<urn:ex/junction-in-2> a ns2:InletConnectionPoint ;
-    ns2:cnx <urn:ex/duct-after-cold-deck-damper>,
+<urn:ex/junction-in-2> a ns1:InletConnectionPoint ;
+    ns1:cnx <urn:ex/duct-after-cold-deck-damper>,
         <urn:ex/junction> ;
-    ns2:connectsThrough <urn:ex/duct-after-cold-deck-damper> ;
-    ns2:hasMedium ns2:Medium-Air ;
-    ns2:isConnectionPointOf <urn:ex/junction> .
+    ns1:connectsThrough <urn:ex/duct-after-cold-deck-damper> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/junction> .
 
-<urn:ex/junction-out> a ns2:OutletConnectionPoint ;
-    ns2:cnx <urn:ex/junction>,
+<urn:ex/junction-out> a ns1:OutletConnectionPoint ;
+    ns1:cnx <urn:ex/junction>,
         <urn:ex/out-connection> ;
-    ns2:connectsThrough <urn:ex/out-connection> ;
-    ns2:hasMedium ns2:Medium-Air ;
-    ns2:isConnectionPointOf <urn:ex/junction> ;
-    ns2:mapsTo <urn:ex/out> .
+    ns1:connectsThrough <urn:ex/out-connection> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/junction> ;
+    ns1:mapsTo <urn:ex/out> .
 
-<urn:ex/out-connection> a ns2:Connection ;
-    ns2:cnx <urn:ex/junction-out>,
+<urn:ex/out-connection> a ns1:Connection ;
+    ns1:cnx <urn:ex/junction-out>,
         <urn:ex/out> ;
-    ns2:connectsAt <urn:ex/junction-out>,
+    ns1:connectsAt <urn:ex/junction-out>,
         <urn:ex/out> ;
-    ns2:connectsFrom <urn:ex/dual-duct-terminal-unit-with-discharge-sensor>,
+    ns1:connectsFrom <urn:ex/dual-duct-terminal-unit-with-discharge-sensor>,
         <urn:ex/junction> ;
-    ns2:hasMedium ns2:Medium-Air .
+    ns1:hasMedium ns1:Medium-Air .
 
-<urn:ex/cold-deck-in> a ns2:InletConnectionPoint ;
-    ns2:cnx <urn:ex/cold-deck-in-connection>,
+<urn:ex/cold-deck-in> a ns1:InletConnectionPoint ;
+    ns1:cnx <urn:ex/cold-deck-in-connection>,
         <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> ;
-    ns2:connectsThrough <urn:ex/cold-deck-in-connection> ;
-    ns2:hasMedium ns2:Medium-Air ;
-    ns2:isConnectionPointOf <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> .
+    ns1:connectsThrough <urn:ex/cold-deck-in-connection> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> .
 
-<urn:ex/hot-deck-in> a ns2:InletConnectionPoint ;
-    ns2:cnx <urn:ex/dual-duct-terminal-unit-with-discharge-sensor>,
+<urn:ex/hot-deck-in> a ns1:InletConnectionPoint ;
+    ns1:cnx <urn:ex/dual-duct-terminal-unit-with-discharge-sensor>,
         <urn:ex/hot-deck-in-connection> ;
-    ns2:connectsThrough <urn:ex/hot-deck-in-connection> ;
-    ns2:hasMedium ns2:Medium-Air ;
-    ns2:isConnectionPointOf <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> .
+    ns1:connectsThrough <urn:ex/hot-deck-in-connection> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:isConnectionPointOf <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> .
 
-<urn:ex/out> a ns2:OutletConnectionPoint ;
-    ns2:cnx <urn:ex/dual-duct-terminal-unit-with-discharge-sensor>,
+<urn:ex/out> a ns1:OutletConnectionPoint ;
+    ns1:cnx <urn:ex/dual-duct-terminal-unit-with-discharge-sensor>,
         <urn:ex/out-connection> ;
-    ns2:connectsThrough <urn:ex/out-connection> ;
-    ns2:hasMedium ns2:Medium-Air ;
-    ns2:hasProperty <urn:ex/discharge-air-flow> ;
-    ns2:isConnectionPointOf <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> .
+    ns1:connectsThrough <urn:ex/out-connection> ;
+    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasProperty <urn:ex/discharge-air-flow> ;
+    ns1:isConnectionPointOf <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> .
 
-<urn:ex/cold-deck-damper> a ns2:Damper,
+<urn:ex/cold-deck-damper> a ns1:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    ns2:cnx <urn:ex/cold-deck-damper-in>,
+    ns1:cnx <urn:ex/cold-deck-damper-in>,
         <urn:ex/cold-deck-damper-out> ;
-    ns2:hasConnectionPoint <urn:ex/cold-deck-damper-in>,
+    ns1:hasConnectionPoint <urn:ex/cold-deck-damper-in>,
         <urn:ex/cold-deck-damper-out> ;
-    ns2:hasProperty <urn:ex/cold-deck-damper-command>,
+    ns1:hasProperty <urn:ex/cold-deck-damper-command>,
         <urn:ex/cold-deck-damper-position> ;
-    ns2:hasRole ns2:Role-Cooling,
-        ns2:Role-Supply .
+    ns1:hasRole ns1:Role-Cooling,
+        ns1:Role-Supply .
 
-<urn:ex/hot-deck-damper> a ns2:Damper,
+<urn:ex/hot-deck-damper> a ns1:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    ns2:cnx <urn:ex/hot-deck-damper-in>,
+    ns1:cnx <urn:ex/hot-deck-damper-in>,
         <urn:ex/hot-deck-damper-out> ;
-    ns2:hasConnectionPoint <urn:ex/hot-deck-damper-in>,
+    ns1:hasConnectionPoint <urn:ex/hot-deck-damper-in>,
         <urn:ex/hot-deck-damper-out> ;
-    ns2:hasProperty <urn:ex/hot-deck-damper-command>,
+    ns1:hasProperty <urn:ex/hot-deck-damper-command>,
         <urn:ex/hot-deck-damper-position> ;
-    ns2:hasRole ns2:Role-Heating,
-        ns2:Role-Supply .
+    ns1:hasRole ns1:Role-Heating,
+        ns1:Role-Supply .
 
-<urn:ex/dual-duct-terminal-unit-with-discharge-sensor> a ns2:DualDuctTerminal,
+<urn:ex/dual-duct-terminal-unit-with-discharge-sensor> a ns1:DualDuctTerminal,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithDischargeSensor> ;
-    ns2:cnx <urn:ex/cold-deck-in>,
+    ns1:cnx <urn:ex/cold-deck-in>,
         <urn:ex/hot-deck-in>,
         <urn:ex/out> ;
-    ns2:contains <urn:ex/cold-deck-damper>,
+    ns1:contains <urn:ex/cold-deck-damper>,
         <urn:ex/hot-deck-damper>,
         <urn:ex/junction> ;
-    ns2:hasConnectionPoint <urn:ex/cold-deck-in>,
+    ns1:hasConnectionPoint <urn:ex/cold-deck-in>,
         <urn:ex/hot-deck-in>,
         <urn:ex/out> .
 
-<urn:ex/junction> a ns2:Junction ;
-    ns2:cnx <urn:ex/junction-in-1>,
+<urn:ex/junction> a ns1:Junction ;
+    ns1:cnx <urn:ex/junction-in-1>,
         <urn:ex/junction-in-2>,
         <urn:ex/junction-out> ;
-    ns2:hasConnectionPoint <urn:ex/junction-in-1>,
+    ns1:hasConnectionPoint <urn:ex/junction-in-1>,
         <urn:ex/junction-in-2>,
         <urn:ex/junction-out> ;
-    ns2:hasMedium ns2:Medium-Air .
+    ns1:hasMedium ns1:Medium-Air .
 
