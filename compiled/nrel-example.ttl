@@ -14,6 +14,8 @@ ns1:EnumerationKind-Overridden a ns1:EnumerationKind-AlarmStatus,
     rdfs:label "AlarmStatus-Ok"@en,
         "Override-Overridden"@en .
 
+<urn:ex/VS01-OutsideAirSpace> ns1:hasProperty <urn:ex/VS01-OutsideAirTemperature> .
+
 <urn:nrel_example/nrel00000010> a ns1:Sensor ;
     rdfs:label "nrel00000010" ;
     ns1:hasObservationLocation <urn:nrel_example/nrel00000818> ;
@@ -4281,6 +4283,28 @@ ns1:HeatRecoveryCoil rdfs:subClassOf ns1:Coil .
     ns1:hasMedium ns1:Medium-Water ;
     ns1:isConnectionPointOf <urn:nrel_example/nrel00000630> .
 
+<urn:ex/KV01-DistrictColdWaterSupplyConnection> ns1:cnx <urn:ex/KV01-MeterInlet> ;
+    ns1:connectsAt <urn:ex/KV01-MeterInlet> ;
+    ns1:connectsTo <urn:ex/KV01-DistrictColdWaterSupplyMeter> .
+
+<urn:ex/VP01-DistrictHeatReturnConnection> ns1:cnx <urn:ex/VP01-MeterOutlet> ;
+    ns1:connectsAt <urn:ex/VP01-MeterOutlet> ;
+    ns1:connectsFrom <urn:ex/VP01-DHSupplyPowerMeter> .
+
+<urn:ex/VS01-BuildingHeatingWaterSupplyConnection> ns1:cnx <urn:ex/VS01-PumpOutlet> ;
+    ns1:connectsAt <urn:ex/VS01-PumpOutlet> ;
+    ns1:connectsFrom <urn:ex/VS01-Pump> ;
+    ns1:hasProperty <urn:ex/VS01-HeatingWaterSupplyTemperature> .
+
+<urn:ex/VS01-ExpansionTank> ns1:cnx <urn:ex/VS01-ExpansionTankConnectionPoint> ;
+    ns1:connected <urn:ex/VS01-HeatExchanger> ;
+    ns1:connectedThrough <urn:ex/VS01-BuildingHeatingWaterReturnConnection> ;
+    ns1:hasConnectionPoint <urn:ex/VS01-ExpansionTankConnectionPoint> .
+
+<urn:ex/VV01-BuildingDomesticHotWaterSupplyConnection> ns1:cnx <urn:ex/VV01-BuildingDomesticHotWaterSupplyOutlet> ;
+    ns1:connectsAt <urn:ex/VV01-BuildingDomesticHotWaterSupplyOutlet> ;
+    ns1:connectsFrom <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> .
+
 <urn:nrel_example/nrel00000000> a ns1:InletConnectionPoint ;
     rdfs:label "nrel00000000" ;
     ns1:cnx <urn:nrel_example/nrel00001232> ;
@@ -5208,6 +5232,141 @@ ns1:HeatRecoveryCoil rdfs:subClassOf ns1:Coil .
     rdfs:label "nrel00001307" ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<urn:ex/KV01-MeterInlet> ns1:cnx <urn:ex/KV01-DistrictColdWaterSupplyConnection>,
+        <urn:ex/KV01-DistrictColdWaterSupplyMeter> ;
+    ns1:connectsThrough <urn:ex/KV01-DistrictColdWaterSupplyConnection> ;
+    ns1:isConnectionPointOf <urn:ex/KV01-DistrictColdWaterSupplyMeter> .
+
+<urn:ex/KV01-MeterOutlet> ns1:cnx <urn:ex/KV01-BuildingColdWaterSupplyConnection>,
+        <urn:ex/KV01-DistrictColdWaterSupplyMeter> ;
+    ns1:connectsThrough <urn:ex/KV01-BuildingColdWaterSupplyConnection> ;
+    ns1:isConnectionPointOf <urn:ex/KV01-DistrictColdWaterSupplyMeter> .
+
+<urn:ex/VP01-MeterInlet> ns1:cnx <urn:ex/VP01-DHSupplyPowerMeter>,
+        <urn:ex/VV01-HeatExchangerPrimaryOutletConnection> ;
+    ns1:connectsThrough <urn:ex/VV01-HeatExchangerPrimaryOutletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VP01-DHSupplyPowerMeter> .
+
+<urn:ex/VP01-MeterOutlet> ns1:cnx <urn:ex/VP01-DHSupplyPowerMeter>,
+        <urn:ex/VP01-DistrictHeatReturnConnection> ;
+    ns1:connectsThrough <urn:ex/VP01-DistrictHeatReturnConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VP01-DHSupplyPowerMeter> .
+
+<urn:ex/VS01-ExpansionTankConnectionPoint> ns1:cnx <urn:ex/VS01-BuildingHeatingWaterReturnConnection>,
+        <urn:ex/VS01-ExpansionTank> ;
+    ns1:connectsThrough <urn:ex/VS01-BuildingHeatingWaterReturnConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VS01-ExpansionTank> .
+
+<urn:ex/VS01-HeatExchangerPrimaryInlet> ns1:cnx <urn:ex/VS01-HeatExchanger>,
+        <urn:ex/VS01-HeatExchangerPrimaryInletConnection> ;
+    ns1:connectsThrough <urn:ex/VS01-HeatExchangerPrimaryInletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VS01-HeatExchanger> .
+
+<urn:ex/VS01-HeatExchangerPrimaryOutlet> ns1:cnx <urn:ex/VS01-HeatExchanger>,
+        <urn:ex/VS01-HeatExchangerPrimaryOutletConnection> ;
+    ns1:connectsThrough <urn:ex/VS01-HeatExchangerPrimaryOutletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VS01-HeatExchanger> .
+
+<urn:ex/VS01-HeatExchangerSecondaryInlet> ns1:cnx <urn:ex/VS01-BuildingHeatingWaterReturnConnection>,
+        <urn:ex/VS01-HeatExchanger> ;
+    ns1:connectsThrough <urn:ex/VS01-BuildingHeatingWaterReturnConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VS01-HeatExchanger> .
+
+<urn:ex/VS01-HeatExchangerSecondaryOutlet> ns1:cnx <urn:ex/VS01-HeatExchanger>,
+        <urn:ex/VS01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:connectsThrough <urn:ex/VS01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VS01-HeatExchanger> .
+
+<urn:ex/VS01-InletValveInlet> ns1:cnx <urn:ex/VP01-DistrictHeatSupplyConnection>,
+        <urn:ex/VS01-InletValve> ;
+    ns1:connectsThrough <urn:ex/VP01-DistrictHeatSupplyConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VS01-InletValve> .
+
+<urn:ex/VS01-InletValveOutlet> ns1:cnx <urn:ex/VS01-HeatExchangerPrimaryInletConnection>,
+        <urn:ex/VS01-InletValve> ;
+    ns1:connectsThrough <urn:ex/VS01-HeatExchangerPrimaryInletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VS01-InletValve> .
+
+<urn:ex/VS01-PumpInlet> ns1:cnx <urn:ex/VS01-HeatExchangerSecondaryOutletConnection>,
+        <urn:ex/VS01-Pump> ;
+    ns1:connectsThrough <urn:ex/VS01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VS01-Pump> .
+
+<urn:ex/VS01-PumpOutlet> ns1:cnx <urn:ex/VS01-BuildingHeatingWaterSupplyConnection>,
+        <urn:ex/VS01-Pump> ;
+    ns1:connectsThrough <urn:ex/VS01-BuildingHeatingWaterSupplyConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VS01-Pump> .
+
+<urn:ex/VV01-BuildingDomesticHotWaterRecirculation> ns1:cnx <urn:ex/VV01-BuildingDomesticHotWaterRecirculationConnection>,
+        <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> ;
+    ns1:connectsThrough <urn:ex/VV01-BuildingDomesticHotWaterRecirculationConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> .
+
+<urn:ex/VV01-BuildingDomesticHotWaterSupplyInlet> ns1:cnx <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction>,
+        <urn:ex/VV01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:connectsThrough <urn:ex/VV01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> .
+
+<urn:ex/VV01-BuildingDomesticHotWaterSupplyOutlet> ns1:cnx <urn:ex/VV01-BuildingDomesticHotWaterSupplyConnection>,
+        <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> ;
+    ns1:connectsThrough <urn:ex/VV01-BuildingDomesticHotWaterSupplyConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> .
+
+<urn:ex/VV01-HeatExchangerPrimaryCenterInlet> ns1:cnx <urn:ex/VS01-HeatExchangerPrimaryOutletConnection>,
+        <urn:ex/VV01-HeatExchanger> ;
+    ns1:connectsThrough <urn:ex/VS01-HeatExchangerPrimaryOutletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-HeatExchanger> .
+
+<urn:ex/VV01-HeatExchangerPrimaryInlet> ns1:cnx <urn:ex/VV01-HeatExchanger>,
+        <urn:ex/VV01-HeatExchangerPrimaryInletConnection> ;
+    ns1:connectsThrough <urn:ex/VV01-HeatExchangerPrimaryInletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-HeatExchanger> .
+
+<urn:ex/VV01-HeatExchangerPrimaryOutlet> ns1:cnx <urn:ex/VV01-HeatExchanger>,
+        <urn:ex/VV01-HeatExchangerPrimaryOutletConnection> ;
+    ns1:connectsThrough <urn:ex/VV01-HeatExchangerPrimaryOutletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-HeatExchanger> .
+
+<urn:ex/VV01-HeatExchangerSecondaryInlet> ns1:cnx <urn:ex/VV01-HeatExchanger>,
+        <urn:ex/VV01-HeatExchangerSecondaryInletConnection> ;
+    ns1:connectsThrough <urn:ex/VV01-HeatExchangerSecondaryInletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-HeatExchanger> .
+
+<urn:ex/VV01-HeatExchangerSecondaryOutlet> ns1:cnx <urn:ex/VV01-HeatExchanger>,
+        <urn:ex/VV01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:connectsThrough <urn:ex/VV01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-HeatExchanger> .
+
+<urn:ex/VV01-InletValveInlet> ns1:cnx <urn:ex/VP01-DistrictHeatSupplyConnection>,
+        <urn:ex/VV01-InletValve> ;
+    ns1:connectsThrough <urn:ex/VP01-DistrictHeatSupplyConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-InletValve> .
+
+<urn:ex/VV01-InletValveOutlet> ns1:cnx <urn:ex/VV01-HeatExchangerPrimaryInletConnection>,
+        <urn:ex/VV01-InletValve> ;
+    ns1:connectsThrough <urn:ex/VV01-HeatExchangerPrimaryInletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-InletValve> .
+
+<urn:ex/VV01-MeterInlet> ns1:cnx <urn:ex/KV01-BuildingColdWaterSupplyConnection>,
+        <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter> ;
+    ns1:connectsThrough <urn:ex/KV01-BuildingColdWaterSupplyConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter> .
+
+<urn:ex/VV01-MeterOutlet> ns1:cnx <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter>,
+        <urn:ex/VV01-HeatExchangerSecondaryInletConnection> ;
+    ns1:connectsThrough <urn:ex/VV01-HeatExchangerSecondaryInletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter> .
+
+<urn:ex/VV01-PumpInlet> ns1:cnx <urn:ex/VV01-BuildingDomesticHotWaterRecirculationConnection>,
+        <urn:ex/VV01-Pump> ;
+    ns1:connectsThrough <urn:ex/VV01-BuildingDomesticHotWaterRecirculationConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-Pump> .
+
+<urn:ex/VV01-PumpOutlet> ns1:cnx <urn:ex/VV01-HeatExchangerSecondaryInletConnection>,
+        <urn:ex/VV01-Pump> ;
+    ns1:connectsThrough <urn:ex/VV01-HeatExchangerSecondaryInletConnection> ;
+    ns1:isConnectionPointOf <urn:ex/VV01-Pump> .
 
 <urn:nrel_example/nrel00000001> a ns1:OutletConnectionPoint ;
     rdfs:label "nrel00000001" ;
@@ -6939,6 +7098,81 @@ ns1:HeatRecoveryCoil rdfs:subClassOf ns1:Coil .
     ns1:connectsTo <urn:nrel_example/nrel00001096> ;
     ns1:hasMedium ns1:Medium-Air .
 
+<urn:ex/KV01-BuildingColdWaterSupplyConnection> ns1:cnx <urn:ex/KV01-MeterOutlet>,
+        <urn:ex/VV01-MeterInlet> ;
+    ns1:connectsAt <urn:ex/KV01-MeterOutlet>,
+        <urn:ex/VV01-MeterInlet> ;
+    ns1:connectsFrom <urn:ex/KV01-DistrictColdWaterSupplyMeter> ;
+    ns1:connectsTo <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter> .
+
+<urn:ex/VP01-DistrictHeatSupplyConnection> ns1:cnx <urn:ex/VS01-InletValveInlet>,
+        <urn:ex/VV01-InletValveInlet> ;
+    ns1:connectsAt <urn:ex/VS01-InletValveInlet>,
+        <urn:ex/VV01-InletValveInlet> ;
+    ns1:connectsTo <urn:ex/VS01-InletValve>,
+        <urn:ex/VV01-InletValve> ;
+    ns1:hasProperty <urn:ex/VP01-DHSupplyTemperature> .
+
+<urn:ex/VS01-BuildingHeatingWaterReturnConnection> ns1:cnx <urn:ex/VS01-ExpansionTankConnectionPoint>,
+        <urn:ex/VS01-HeatExchangerSecondaryInlet> ;
+    ns1:connectsAt <urn:ex/VS01-ExpansionTankConnectionPoint>,
+        <urn:ex/VS01-HeatExchangerSecondaryInlet> ;
+    ns1:connectsTo <urn:ex/VS01-HeatExchanger> ;
+    ns1:hasProperty <urn:ex/VS01-HeatingWaterReturnPressure>,
+        <urn:ex/VS01-HeatingWaterReturnTemperature> .
+
+<urn:ex/VS01-HeatExchangerPrimaryInletConnection> ns1:cnx <urn:ex/VS01-HeatExchangerPrimaryInlet>,
+        <urn:ex/VS01-InletValveOutlet> ;
+    ns1:connectsAt <urn:ex/VS01-HeatExchangerPrimaryInlet>,
+        <urn:ex/VS01-InletValveOutlet> ;
+    ns1:connectsFrom <urn:ex/VS01-InletValve> ;
+    ns1:connectsTo <urn:ex/VS01-HeatExchanger> .
+
+<urn:ex/VS01-HeatExchangerPrimaryOutletConnection> ns1:cnx <urn:ex/VS01-HeatExchangerPrimaryOutlet>,
+        <urn:ex/VV01-HeatExchangerPrimaryCenterInlet> ;
+    ns1:connectsAt <urn:ex/VS01-HeatExchangerPrimaryOutlet>,
+        <urn:ex/VV01-HeatExchangerPrimaryCenterInlet> ;
+    ns1:connectsFrom <urn:ex/VS01-HeatExchanger> ;
+    ns1:connectsTo <urn:ex/VV01-HeatExchanger> .
+
+<urn:ex/VS01-HeatExchangerSecondaryOutletConnection> ns1:cnx <urn:ex/VS01-HeatExchangerSecondaryOutlet>,
+        <urn:ex/VS01-PumpInlet> ;
+    ns1:connectsAt <urn:ex/VS01-HeatExchangerSecondaryOutlet>,
+        <urn:ex/VS01-PumpInlet> ;
+    ns1:connectsFrom <urn:ex/VS01-HeatExchanger> ;
+    ns1:connectsTo <urn:ex/VS01-Pump> .
+
+<urn:ex/VV01-BuildingDomesticHotWaterRecirculationConnection> ns1:cnx <urn:ex/VV01-BuildingDomesticHotWaterRecirculation>,
+        <urn:ex/VV01-PumpInlet> ;
+    ns1:connectsAt <urn:ex/VV01-BuildingDomesticHotWaterRecirculation>,
+        <urn:ex/VV01-PumpInlet> ;
+    ns1:connectsFrom <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> ;
+    ns1:connectsTo <urn:ex/VV01-Pump> ;
+    ns1:hasProperty <urn:ex/VV01-DomesticHotWaterReturnTemperature> .
+
+<urn:ex/VV01-HeatExchangerPrimaryInletConnection> ns1:cnx <urn:ex/VV01-HeatExchangerPrimaryInlet>,
+        <urn:ex/VV01-InletValveOutlet> ;
+    ns1:connectsAt <urn:ex/VV01-HeatExchangerPrimaryInlet>,
+        <urn:ex/VV01-InletValveOutlet> ;
+    ns1:connectsFrom <urn:ex/VV01-InletValve> ;
+    ns1:connectsTo <urn:ex/VV01-HeatExchanger> .
+
+<urn:ex/VV01-HeatExchangerPrimaryOutletConnection> ns1:cnx <urn:ex/VP01-MeterInlet>,
+        <urn:ex/VV01-HeatExchangerPrimaryOutlet> ;
+    ns1:connectsAt <urn:ex/VP01-MeterInlet>,
+        <urn:ex/VV01-HeatExchangerPrimaryOutlet> ;
+    ns1:connectsFrom <urn:ex/VV01-HeatExchanger> ;
+    ns1:connectsTo <urn:ex/VP01-DHSupplyPowerMeter> ;
+    ns1:hasProperty <urn:ex/VP01-DHReturnTemperature> .
+
+<urn:ex/VV01-HeatExchangerSecondaryOutletConnection> ns1:cnx <urn:ex/VV01-BuildingDomesticHotWaterSupplyInlet>,
+        <urn:ex/VV01-HeatExchangerSecondaryOutlet> ;
+    ns1:connectsAt <urn:ex/VV01-BuildingDomesticHotWaterSupplyInlet>,
+        <urn:ex/VV01-HeatExchangerSecondaryOutlet> ;
+    ns1:connectsFrom <urn:ex/VV01-HeatExchanger> ;
+    ns1:connectsTo <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> ;
+    ns1:hasProperty <urn:ex/VV01-DomesticHotWaterSupplyTemperature> .
+
 <urn:nrel_example/nrel00000022> a ns1:Duct ;
     rdfs:label "nrel00000022" ;
     ns1:cnx <urn:nrel_example/nrel00000190>,
@@ -7723,6 +7957,33 @@ ns1:HeatRecoveryCoil rdfs:subClassOf ns1:Coil .
     ns1:hasProperty <urn:nrel_example/nrel00000695>,
         <urn:nrel_example/nrel00001271> .
 
+<urn:ex/KV01-DistrictColdWaterSupplyMeter> ns1:cnx <urn:ex/KV01-MeterInlet>,
+        <urn:ex/KV01-MeterOutlet> ;
+    ns1:connected <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter> ;
+    ns1:connectedThrough <urn:ex/KV01-BuildingColdWaterSupplyConnection>,
+        <urn:ex/KV01-DistrictColdWaterSupplyConnection> ;
+    ns1:connectedTo <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter> ;
+    ns1:hasConnectionPoint <urn:ex/KV01-MeterInlet>,
+        <urn:ex/KV01-MeterOutlet> .
+
+<urn:ex/VP01-DHSupplyPowerMeter> ns1:cnx <urn:ex/VP01-MeterInlet>,
+        <urn:ex/VP01-MeterOutlet> ;
+    ns1:connected <urn:ex/VV01-HeatExchanger> ;
+    ns1:connectedFrom <urn:ex/VV01-HeatExchanger> ;
+    ns1:connectedThrough <urn:ex/VP01-DistrictHeatReturnConnection>,
+        <urn:ex/VV01-HeatExchangerPrimaryOutletConnection> ;
+    ns1:hasConnectionPoint <urn:ex/VP01-MeterInlet>,
+        <urn:ex/VP01-MeterOutlet> .
+
+<urn:ex/VS01-Pump> ns1:cnx <urn:ex/VS01-PumpInlet>,
+        <urn:ex/VS01-PumpOutlet> ;
+    ns1:connected <urn:ex/VS01-HeatExchanger> ;
+    ns1:connectedFrom <urn:ex/VS01-HeatExchanger> ;
+    ns1:connectedThrough <urn:ex/VS01-BuildingHeatingWaterSupplyConnection>,
+        <urn:ex/VS01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:hasConnectionPoint <urn:ex/VS01-PumpInlet>,
+        <urn:ex/VS01-PumpOutlet> .
+
 <urn:nrel_example/nrel00000038> a ns1:FanCoilUnit ;
     rdfs:label "nrel00000038" ;
     ns1:cnx <urn:nrel_example/nrel00000420>,
@@ -8104,6 +8365,36 @@ ns1:HeatRecoveryCoil rdfs:subClassOf ns1:Coil .
         <urn:nrel_example/nrel00001272>,
         <urn:nrel_example/nrel00001273>,
         <urn:nrel_example/nrel00001331> .
+
+<urn:ex/VS01-InletValve> ns1:cnx <urn:ex/VS01-InletValveInlet>,
+        <urn:ex/VS01-InletValveOutlet> ;
+    ns1:connected <urn:ex/VS01-HeatExchanger>,
+        <urn:ex/VV01-InletValve> ;
+    ns1:connectedThrough <urn:ex/VP01-DistrictHeatSupplyConnection>,
+        <urn:ex/VS01-HeatExchangerPrimaryInletConnection> ;
+    ns1:connectedTo <urn:ex/VS01-HeatExchanger> ;
+    ns1:hasConnectionPoint <urn:ex/VS01-InletValveInlet>,
+        <urn:ex/VS01-InletValveOutlet> .
+
+<urn:ex/VV01-HeatExchangerSecondaryInletConnection> ns1:cnx <urn:ex/VV01-HeatExchangerSecondaryInlet>,
+        <urn:ex/VV01-MeterOutlet>,
+        <urn:ex/VV01-PumpOutlet> ;
+    ns1:connectsAt <urn:ex/VV01-HeatExchangerSecondaryInlet>,
+        <urn:ex/VV01-MeterOutlet>,
+        <urn:ex/VV01-PumpOutlet> ;
+    ns1:connectsFrom <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter>,
+        <urn:ex/VV01-Pump> ;
+    ns1:connectsTo <urn:ex/VV01-HeatExchanger> .
+
+<urn:ex/VV01-InletValve> ns1:cnx <urn:ex/VV01-InletValveInlet>,
+        <urn:ex/VV01-InletValveOutlet> ;
+    ns1:connected <urn:ex/VS01-InletValve>,
+        <urn:ex/VV01-HeatExchanger> ;
+    ns1:connectedThrough <urn:ex/VP01-DistrictHeatSupplyConnection>,
+        <urn:ex/VV01-HeatExchangerPrimaryInletConnection> ;
+    ns1:connectedTo <urn:ex/VV01-HeatExchanger> ;
+    ns1:hasConnectionPoint <urn:ex/VV01-InletValveInlet>,
+        <urn:ex/VV01-InletValveOutlet> .
 
 <urn:nrel_example/nrel00000003> a ns1:HeatingCoil ;
     rdfs:label "nrel00000003" ;
@@ -8680,6 +8971,30 @@ ns1:EnumerationKind-FlowStatus a ns1:Class,
     rdfs:label "EnumerationKind FlowStatus" ;
     rdfs:subClassOf ns1:EnumerationKind .
 
+<urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter> ns1:cnx <urn:ex/VV01-MeterInlet>,
+        <urn:ex/VV01-MeterOutlet> ;
+    ns1:connected <urn:ex/KV01-DistrictColdWaterSupplyMeter>,
+        <urn:ex/VV01-HeatExchanger>,
+        <urn:ex/VV01-Pump> ;
+    ns1:connectedFrom <urn:ex/KV01-DistrictColdWaterSupplyMeter> ;
+    ns1:connectedThrough <urn:ex/KV01-BuildingColdWaterSupplyConnection>,
+        <urn:ex/VV01-HeatExchangerSecondaryInletConnection> ;
+    ns1:connectedTo <urn:ex/VV01-HeatExchanger> ;
+    ns1:hasConnectionPoint <urn:ex/VV01-MeterInlet>,
+        <urn:ex/VV01-MeterOutlet> .
+
+<urn:ex/VV01-Pump> ns1:cnx <urn:ex/VV01-PumpInlet>,
+        <urn:ex/VV01-PumpOutlet> ;
+    ns1:connected <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction>,
+        <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter>,
+        <urn:ex/VV01-HeatExchanger> ;
+    ns1:connectedFrom <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> ;
+    ns1:connectedThrough <urn:ex/VV01-BuildingDomesticHotWaterRecirculationConnection>,
+        <urn:ex/VV01-HeatExchangerSecondaryInletConnection> ;
+    ns1:connectedTo <urn:ex/VV01-HeatExchanger> ;
+    ns1:hasConnectionPoint <urn:ex/VV01-PumpInlet>,
+        <urn:ex/VV01-PumpOutlet> .
+
 <urn:nrel_example/nrel00000084> a ns1:HeatingCoil ;
     rdfs:label "nrel00000084" ;
     ns1:cnx <urn:nrel_example/nrel00000151>,
@@ -8891,6 +9206,20 @@ ns1:EnumerationKind-Override a ns1:Class,
     ns1:hasProperty <urn:nrel_example/nrel00000182>,
         <urn:nrel_example/nrel00001178> .
 
+<urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> ns1:cnx <urn:ex/VV01-BuildingDomesticHotWaterRecirculation>,
+        <urn:ex/VV01-BuildingDomesticHotWaterSupplyInlet>,
+        <urn:ex/VV01-BuildingDomesticHotWaterSupplyOutlet> ;
+    ns1:connected <urn:ex/VV01-HeatExchanger>,
+        <urn:ex/VV01-Pump> ;
+    ns1:connectedFrom <urn:ex/VV01-HeatExchanger> ;
+    ns1:connectedThrough <urn:ex/VV01-BuildingDomesticHotWaterRecirculationConnection>,
+        <urn:ex/VV01-BuildingDomesticHotWaterSupplyConnection>,
+        <urn:ex/VV01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:connectedTo <urn:ex/VV01-Pump> ;
+    ns1:hasConnectionPoint <urn:ex/VV01-BuildingDomesticHotWaterRecirculation>,
+        <urn:ex/VV01-BuildingDomesticHotWaterSupplyInlet>,
+        <urn:ex/VV01-BuildingDomesticHotWaterSupplyOutlet> .
+
 <urn:nrel_example/nrel00000007> a ns1:HeatingCoil ;
     rdfs:label "nrel00000007" ;
     ns1:cnx <urn:nrel_example/nrel00000430>,
@@ -9034,6 +9363,26 @@ ns1:EnumerationKind-Override a ns1:Class,
         <urn:nrel_example/nrel00001242> ;
     ns1:hasMedium ns1:Medium-Air .
 
+<urn:ex/VS01-HeatExchanger> ns1:cnx <urn:ex/VS01-HeatExchangerPrimaryInlet>,
+        <urn:ex/VS01-HeatExchangerPrimaryOutlet>,
+        <urn:ex/VS01-HeatExchangerSecondaryInlet>,
+        <urn:ex/VS01-HeatExchangerSecondaryOutlet> ;
+    ns1:connected <urn:ex/VS01-ExpansionTank>,
+        <urn:ex/VS01-InletValve>,
+        <urn:ex/VS01-Pump>,
+        <urn:ex/VV01-HeatExchanger> ;
+    ns1:connectedFrom <urn:ex/VS01-InletValve> ;
+    ns1:connectedThrough <urn:ex/VS01-BuildingHeatingWaterReturnConnection>,
+        <urn:ex/VS01-HeatExchangerPrimaryInletConnection>,
+        <urn:ex/VS01-HeatExchangerPrimaryOutletConnection>,
+        <urn:ex/VS01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:connectedTo <urn:ex/VS01-Pump>,
+        <urn:ex/VV01-HeatExchanger> ;
+    ns1:hasConnectionPoint <urn:ex/VS01-HeatExchangerPrimaryInlet>,
+        <urn:ex/VS01-HeatExchangerPrimaryOutlet>,
+        <urn:ex/VS01-HeatExchangerSecondaryInlet>,
+        <urn:ex/VS01-HeatExchangerSecondaryOutlet> .
+
 <urn:nrel_example/nrel00001267> a ns1:DomainSpace ;
     rdfs:label "nrel00001267" ;
     ns1:cnx <urn:nrel_example/nrel00000186>,
@@ -9055,6 +9404,34 @@ ns1:EnumerationKind-Override a ns1:Class,
     ns1:hasDomain ns1:Domain-HVAC ;
     ns1:hasProperty <urn:nrel_example/nrel00000184>,
         <urn:nrel_example/nrel00000743> .
+
+<urn:ex/VV01-HeatExchanger> ns1:cnx <urn:ex/VV01-HeatExchangerPrimaryCenterInlet>,
+        <urn:ex/VV01-HeatExchangerPrimaryInlet>,
+        <urn:ex/VV01-HeatExchangerPrimaryOutlet>,
+        <urn:ex/VV01-HeatExchangerSecondaryInlet>,
+        <urn:ex/VV01-HeatExchangerSecondaryOutlet> ;
+    ns1:connected <urn:ex/VP01-DHSupplyPowerMeter>,
+        <urn:ex/VS01-HeatExchanger>,
+        <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction>,
+        <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter>,
+        <urn:ex/VV01-InletValve>,
+        <urn:ex/VV01-Pump> ;
+    ns1:connectedFrom <urn:ex/VS01-HeatExchanger>,
+        <urn:ex/VV01-DomesticHotWaterMakeupColdWaterMeter>,
+        <urn:ex/VV01-InletValve>,
+        <urn:ex/VV01-Pump> ;
+    ns1:connectedThrough <urn:ex/VS01-HeatExchangerPrimaryOutletConnection>,
+        <urn:ex/VV01-HeatExchangerPrimaryInletConnection>,
+        <urn:ex/VV01-HeatExchangerPrimaryOutletConnection>,
+        <urn:ex/VV01-HeatExchangerSecondaryInletConnection>,
+        <urn:ex/VV01-HeatExchangerSecondaryOutletConnection> ;
+    ns1:connectedTo <urn:ex/VP01-DHSupplyPowerMeter>,
+        <urn:ex/VV01-BuildingDomesticHotWaterSupplyJunction> ;
+    ns1:hasConnectionPoint <urn:ex/VV01-HeatExchangerPrimaryCenterInlet>,
+        <urn:ex/VV01-HeatExchangerPrimaryInlet>,
+        <urn:ex/VV01-HeatExchangerPrimaryOutlet>,
+        <urn:ex/VV01-HeatExchangerSecondaryInlet>,
+        <urn:ex/VV01-HeatExchangerSecondaryOutlet> .
 
 ns1:EnumerationKind-AlarmStatus a ns1:Class,
         ns1:EnumerationKind-AlarmStatus,
