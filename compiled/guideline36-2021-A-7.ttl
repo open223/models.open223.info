@@ -1,47 +1,57 @@
 @prefix ns1: <http://data.ashrae.org/standard223#> .
 @prefix ns2: <http://qudt.org/schema/qudt/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <urn:ex/> a owl:Ontology .
 
 <urn:ex/VS01-OutsideAirSpace> ns1:hasProperty <urn:ex/VS01-OutsideAirTemperature> .
 
 <urn:ex/cold-deck-damper-actuator> a ns1:Actuator ;
+    rdfs:label "cold deck damper actuator" ;
     ns1:actuates <urn:ex/cold-deck-damper> ;
     ns1:commandedByProperty <urn:ex/cold-deck-damper-command> .
 
 <urn:ex/cold-deck-supply-air-flow-sensor> a ns1:Sensor ;
+    rdfs:label "cold deck supply air flow sensor" ;
     ns1:hasObservationLocation <urn:ex/cold-deck-in> ;
     ns1:observes <urn:ex/cold-deck-supply-air-flow> .
 
 <urn:ex/hot-deck-damper-actuator> a ns1:Actuator ;
+    rdfs:label "hot deck damper actuator" ;
     ns1:actuates <urn:ex/hot-deck-damper> ;
     ns1:commandedByProperty <urn:ex/hot-deck-damper-command> .
 
 <urn:ex/hot-deck-supply-air-flow-sensor> a ns1:Sensor ;
+    rdfs:label "hot deck supply air flow sensor" ;
     ns1:hasObservationLocation <urn:ex/hot-deck-in> ;
     ns1:observes <urn:ex/hot-deck-supply-air-flow> .
 
 <urn:ex/cold-deck-damper-position> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "cold deck damper position" ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <urn:ex/hot-deck-damper-position> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "hot deck damper position" ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <urn:ex/cold-deck-damper-command> a ns1:QuantifiableActuatableProperty ;
+    rdfs:label "cold deck damper command" ;
     ns1:hasAspect ns1:EnumerationKind-Position ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <urn:ex/cold-deck-in-connection> a ns1:Connection ;
+    rdfs:label "cold deck in connection" ;
     ns1:cnx <urn:ex/cold-deck-in> ;
     ns1:connectsAt <urn:ex/cold-deck-in> ;
     ns1:connectsTo <urn:ex/dual-duct-terminal-unit-with-inlet-sensors> ;
     ns1:hasMedium ns1:Medium-Air .
 
 <urn:ex/cold-deck-supply-air-flow> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "cold deck supply air flow" ;
     ns1:hasRole ns1:Role-Cooling,
         ns1:Role-Supply ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
@@ -49,6 +59,7 @@
 
 <urn:ex/duct-before-cold-deck-damper> a ns1:Connection,
         ns1:Duct ;
+    rdfs:label "duct before cold deck damper" ;
     ns1:cnx <urn:ex/cold-deck-damper-in> ;
     ns1:connectsAt <urn:ex/cold-deck-damper-in> ;
     ns1:connectsTo <urn:ex/cold-deck-damper> ;
@@ -56,23 +67,27 @@
 
 <urn:ex/duct-before-hot-deck-damper> a ns1:Connection,
         ns1:Duct ;
+    rdfs:label "duct before hot deck damper" ;
     ns1:cnx <urn:ex/hot-deck-damper-in> ;
     ns1:connectsAt <urn:ex/hot-deck-damper-in> ;
     ns1:connectsTo <urn:ex/hot-deck-damper> ;
     ns1:hasMedium ns1:Medium-Air .
 
 <urn:ex/hot-deck-damper-command> a ns1:QuantifiableActuatableProperty ;
+    rdfs:label "hot deck damper command" ;
     ns1:hasAspect ns1:EnumerationKind-Position ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <urn:ex/hot-deck-in-connection> a ns1:Connection ;
+    rdfs:label "hot deck in connection" ;
     ns1:cnx <urn:ex/hot-deck-in> ;
     ns1:connectsAt <urn:ex/hot-deck-in> ;
     ns1:connectsTo <urn:ex/dual-duct-terminal-unit-with-inlet-sensors> ;
     ns1:hasMedium ns1:Medium-Air .
 
 <urn:ex/hot-deck-supply-air-flow> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "hot deck supply air flow" ;
     ns1:hasRole ns1:Role-Heating,
         ns1:Role-Supply ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
@@ -236,6 +251,7 @@
     ns1:isConnectionPointOf <urn:ex/VV01-Pump> .
 
 <urn:ex/cold-deck-damper-in> a ns1:InletConnectionPoint ;
+    rdfs:label "cold deck damper in" ;
     ns1:cnx <urn:ex/cold-deck-damper>,
         <urn:ex/duct-before-cold-deck-damper> ;
     ns1:connectsThrough <urn:ex/duct-before-cold-deck-damper> ;
@@ -244,6 +260,7 @@
     ns1:mapsTo <urn:ex/cold-deck-in> .
 
 <urn:ex/cold-deck-damper-out> a ns1:OutletConnectionPoint ;
+    rdfs:label "cold deck damper out" ;
     ns1:cnx <urn:ex/cold-deck-damper>,
         <urn:ex/duct-after-cold-deck-damper> ;
     ns1:connectsThrough <urn:ex/duct-after-cold-deck-damper> ;
@@ -252,6 +269,7 @@
 
 <urn:ex/duct-after-cold-deck-damper> a ns1:Connection,
         ns1:Duct ;
+    rdfs:label "duct after cold deck damper" ;
     ns1:cnx <urn:ex/cold-deck-damper-out>,
         <urn:ex/junction-in-2> ;
     ns1:connectsAt <urn:ex/cold-deck-damper-out>,
@@ -262,6 +280,7 @@
 
 <urn:ex/duct-after-hot-deck-damper> a ns1:Connection,
         ns1:Duct ;
+    rdfs:label "duct after hot deck damper" ;
     ns1:cnx <urn:ex/hot-deck-damper-out>,
         <urn:ex/junction-in-1> ;
     ns1:connectsAt <urn:ex/hot-deck-damper-out>,
@@ -271,6 +290,7 @@
     ns1:hasMedium ns1:Medium-Air .
 
 <urn:ex/hot-deck-damper-in> a ns1:InletConnectionPoint ;
+    rdfs:label "hot deck damper in" ;
     ns1:cnx <urn:ex/duct-before-hot-deck-damper>,
         <urn:ex/hot-deck-damper> ;
     ns1:connectsThrough <urn:ex/duct-before-hot-deck-damper> ;
@@ -279,6 +299,7 @@
     ns1:mapsTo <urn:ex/hot-deck-in> .
 
 <urn:ex/hot-deck-damper-out> a ns1:OutletConnectionPoint ;
+    rdfs:label "hot deck damper out" ;
     ns1:cnx <urn:ex/duct-after-hot-deck-damper>,
         <urn:ex/hot-deck-damper> ;
     ns1:connectsThrough <urn:ex/duct-after-hot-deck-damper> ;
@@ -286,6 +307,7 @@
     ns1:isConnectionPointOf <urn:ex/hot-deck-damper> .
 
 <urn:ex/junction-in-1> a ns1:InletConnectionPoint ;
+    rdfs:label "junction in 1" ;
     ns1:cnx <urn:ex/duct-after-hot-deck-damper>,
         <urn:ex/junction> ;
     ns1:connectsThrough <urn:ex/duct-after-hot-deck-damper> ;
@@ -293,6 +315,7 @@
     ns1:isConnectionPointOf <urn:ex/junction> .
 
 <urn:ex/junction-in-2> a ns1:InletConnectionPoint ;
+    rdfs:label "junction in 2" ;
     ns1:cnx <urn:ex/duct-after-cold-deck-damper>,
         <urn:ex/junction> ;
     ns1:connectsThrough <urn:ex/duct-after-cold-deck-damper> ;
@@ -300,6 +323,7 @@
     ns1:isConnectionPointOf <urn:ex/junction> .
 
 <urn:ex/junction-out> a ns1:OutletConnectionPoint ;
+    rdfs:label "junction out" ;
     ns1:cnx <urn:ex/junction>,
         <urn:ex/out-connection> ;
     ns1:connectsThrough <urn:ex/out-connection> ;
@@ -308,6 +332,7 @@
     ns1:mapsTo <urn:ex/out> .
 
 <urn:ex/out-connection> a ns1:Connection ;
+    rdfs:label "out connection" ;
     ns1:cnx <urn:ex/junction-out>,
         <urn:ex/out> ;
     ns1:connectsAt <urn:ex/junction-out>,
@@ -317,6 +342,7 @@
     ns1:hasMedium ns1:Medium-Air .
 
 <urn:ex/out> a ns1:OutletConnectionPoint ;
+    rdfs:label "out" ;
     ns1:cnx <urn:ex/dual-duct-terminal-unit-with-inlet-sensors>,
         <urn:ex/out-connection> ;
     ns1:connectsThrough <urn:ex/out-connection> ;
@@ -399,6 +425,7 @@
     ns1:hasProperty <urn:ex/VV01-DomesticHotWaterSupplyTemperature> .
 
 <urn:ex/cold-deck-in> a ns1:InletConnectionPoint ;
+    rdfs:label "cold deck in" ;
     ns1:cnx <urn:ex/cold-deck-in-connection>,
         <urn:ex/dual-duct-terminal-unit-with-inlet-sensors> ;
     ns1:connectsThrough <urn:ex/cold-deck-in-connection> ;
@@ -407,6 +434,7 @@
     ns1:isConnectionPointOf <urn:ex/dual-duct-terminal-unit-with-inlet-sensors> .
 
 <urn:ex/hot-deck-in> a ns1:InletConnectionPoint ;
+    rdfs:label "hot deck in" ;
     ns1:cnx <urn:ex/dual-duct-terminal-unit-with-inlet-sensors>,
         <urn:ex/hot-deck-in-connection> ;
     ns1:connectsThrough <urn:ex/hot-deck-in-connection> ;
@@ -443,6 +471,7 @@
 
 <urn:ex/cold-deck-damper> a ns1:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    rdfs:label "cold deck damper" ;
     ns1:cnx <urn:ex/cold-deck-damper-in>,
         <urn:ex/cold-deck-damper-out> ;
     ns1:hasConnectionPoint <urn:ex/cold-deck-damper-in>,
@@ -454,6 +483,7 @@
 
 <urn:ex/hot-deck-damper> a ns1:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    rdfs:label "hot deck damper" ;
     ns1:cnx <urn:ex/hot-deck-damper-in>,
         <urn:ex/hot-deck-damper-out> ;
     ns1:hasConnectionPoint <urn:ex/hot-deck-damper-in>,
@@ -495,6 +525,7 @@
 
 <urn:ex/dual-duct-terminal-unit-with-inlet-sensors> a ns1:DualDuctTerminal,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithInletSensors> ;
+    rdfs:label "dual duct terminal unit with inlet sensors" ;
     ns1:cnx <urn:ex/cold-deck-in>,
         <urn:ex/hot-deck-in>,
         <urn:ex/out> ;
@@ -506,6 +537,7 @@
         <urn:ex/out> .
 
 <urn:ex/junction> a ns1:Junction ;
+    rdfs:label "junction" ;
     ns1:cnx <urn:ex/junction-in-1>,
         <urn:ex/junction-in-2>,
         <urn:ex/junction-out> ;
