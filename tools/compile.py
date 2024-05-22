@@ -32,10 +32,12 @@ if __name__ == "__main__":
         s223.parse("ontologies/223p.ttl")
 
     # remove QUDT prefix because it breaks things
-    graph.bind("qudtprefix21", rdflib.Namespace("http://qudt.org/2.1/vocab/prefix/"))
-    graph.bind("qudtprefix", rdflib.Namespace("http://qudt.org/vocab/prefix/"))
+    #graph.bind("qudtprefix21", rdflib.Namespace("http://qudt.org/2.1/vocab/prefix/"))
+    #graph.bind("qudtprefix", rdflib.Namespace("http://qudt.org/vocab/prefix/"))
 
     if args.reason:
+        graph.remove((None, rdflib.OWL.imports, None))
+        s223.remove((None, rdflib.OWL.imports, None))
         #topquadrant_shacl._MAX_EXTERNAL_LOOPS = 2
         graph = topquadrant_shacl.infer(graph, s223)
         #graph.expand(profile="shacl", backend="topquadrant")
