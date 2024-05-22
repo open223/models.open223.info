@@ -857,22 +857,6 @@
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<urn:ex/pipe-chilled-water-return-before-valve> ns1:cnx <urn:ex/clg-coil-valve-in> ;
-    ns1:connectsAt <urn:ex/clg-coil-valve-in> ;
-    ns1:connectsTo <urn:ex/clg-coil-valve> .
-
-<urn:ex/pipe-chilled-water-supply> ns1:cnx <urn:ex/clg-coil-water-out> ;
-    ns1:connectsAt <urn:ex/clg-coil-water-out> ;
-    ns1:connectsFrom <urn:ex/clg-coil> .
-
-<urn:ex/pipe-hot-water-return-before-valve> ns1:cnx <urn:ex/htg-coil-valve-in> ;
-    ns1:connectsAt <urn:ex/htg-coil-valve-in> ;
-    ns1:connectsTo <urn:ex/htg-coil-valve> .
-
-<urn:ex/pipe-hot-water-supply> ns1:cnx <urn:ex/htg-coil-water-out> ;
-    ns1:connectsAt <urn:ex/htg-coil-water-out> ;
-    ns1:connectsFrom <urn:ex/htg-coil> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR1InletConnectionPoint> a ns1:InletConnectionPoint ;
     rdfs:label "BR1Inlet connection point" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker1>,
@@ -1761,213 +1745,6 @@
     ns1:hasMedium ns1:Medium-Air ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00061> .
 
-<urn:ex/clg-coil-air-in> ns1:cnx <urn:ex/clg-coil>,
-        <urn:ex/duct-after-htg-coil> ;
-    ns1:connectsThrough <urn:ex/duct-after-htg-coil> ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil> .
-
-<urn:ex/clg-coil-air-out> ns1:cnx <urn:ex/clg-coil>,
-        <urn:ex/duct-after-clg-coil> ;
-    ns1:connectsThrough <urn:ex/duct-after-clg-coil> ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil> .
-
-<urn:ex/clg-coil-valve-in> ns1:cnx <urn:ex/clg-coil-valve>,
-        <urn:ex/pipe-chilled-water-return-before-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-chilled-water-return-before-valve> ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil-valve> .
-
-<urn:ex/clg-coil-valve-out> ns1:cnx <urn:ex/clg-coil-valve>,
-        <urn:ex/pipe-chilled-water-return-after-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-chilled-water-return-after-valve> ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil-valve> .
-
-<urn:ex/clg-coil-water-in> ns1:cnx <urn:ex/clg-coil>,
-        <urn:ex/pipe-chilled-water-return-after-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-chilled-water-return-after-valve> ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil> .
-
-<urn:ex/clg-coil-water-out> ns1:cnx <urn:ex/clg-coil>,
-        <urn:ex/pipe-chilled-water-supply> ;
-    ns1:connectsThrough <urn:ex/pipe-chilled-water-supply> ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil> .
-
-<urn:ex/ea-damper-in> ns1:cnx <urn:ex/duct-before-ea-damper>,
-        <urn:ex/ea-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-ea-damper> ;
-    ns1:isConnectionPointOf <urn:ex/ea-damper> .
-
-<urn:ex/ea-damper-out> ns1:cnx <urn:ex/ea-damper>,
-        <urn:ex/ea-out-connection> ;
-    ns1:connectsThrough <urn:ex/ea-out-connection> ;
-    ns1:isConnectionPointOf <urn:ex/ea-damper> .
-
-<urn:ex/ea-out> ns1:cnx <urn:ex/ea-out-connection>,
-        <urn:ex/multiple-zone-ahu> ;
-    ns1:connectsThrough <urn:ex/ea-out-connection> ;
-    ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
-
-<urn:ex/economizer-oa-damper-in> ns1:cnx <urn:ex/duct-before-economizer-oa-damper>,
-        <urn:ex/economizer-oa-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-economizer-oa-damper> ;
-    ns1:isConnectionPointOf <urn:ex/economizer-oa-damper> .
-
-<urn:ex/economizer-oa-damper-out> ns1:cnx <urn:ex/duct-after-economizer-oa-damper>,
-        <urn:ex/economizer-oa-damper> ;
-    ns1:connectsThrough <urn:ex/duct-after-economizer-oa-damper> ;
-    ns1:isConnectionPointOf <urn:ex/economizer-oa-damper> .
-
-<urn:ex/filter-in> ns1:cnx <urn:ex/duct-before-filter>,
-        <urn:ex/filter> ;
-    ns1:connectsThrough <urn:ex/duct-before-filter> ;
-    ns1:hasProperty <urn:ex/filter-differential-pressure>,
-        <urn:ex/ma-temp> ;
-    ns1:isConnectionPointOf <urn:ex/filter> .
-
-<urn:ex/filter-out> ns1:cnx <urn:ex/duct-after-filter>,
-        <urn:ex/filter> ;
-    ns1:connectsThrough <urn:ex/duct-after-filter> ;
-    ns1:hasProperty <urn:ex/filter-differential-pressure> ;
-    ns1:isConnectionPointOf <urn:ex/filter> .
-
-<urn:ex/htg-coil-air-in> ns1:cnx <urn:ex/duct-after-filter>,
-        <urn:ex/htg-coil> ;
-    ns1:connectsThrough <urn:ex/duct-after-filter> ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil> .
-
-<urn:ex/htg-coil-air-out> ns1:cnx <urn:ex/duct-after-htg-coil>,
-        <urn:ex/htg-coil> ;
-    ns1:connectsThrough <urn:ex/duct-after-htg-coil> ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil> .
-
-<urn:ex/htg-coil-valve-in> ns1:cnx <urn:ex/htg-coil-valve>,
-        <urn:ex/pipe-hot-water-return-before-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-return-before-valve> ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil-valve> .
-
-<urn:ex/htg-coil-valve-out> ns1:cnx <urn:ex/htg-coil-valve>,
-        <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil-valve> .
-
-<urn:ex/htg-coil-water-in> ns1:cnx <urn:ex/htg-coil>,
-        <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil> .
-
-<urn:ex/htg-coil-water-out> ns1:cnx <urn:ex/htg-coil>,
-        <urn:ex/pipe-hot-water-supply> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-supply> ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil> .
-
-<urn:ex/minimum-oa-damper-in> ns1:cnx <urn:ex/duct-before-minimum-oa-damper>,
-        <urn:ex/minimum-oa-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-minimum-oa-damper> ;
-    ns1:isConnectionPointOf <urn:ex/minimum-oa-damper> .
-
-<urn:ex/minimum-oa-damper-out> ns1:cnx <urn:ex/duct-after-minimum-oa-damper>,
-        <urn:ex/minimum-oa-damper> ;
-    ns1:connectsThrough <urn:ex/duct-after-minimum-oa-damper> ;
-    ns1:hasProperty <urn:ex/oa-flow>,
-        <urn:ex/oa-temp> ;
-    ns1:isConnectionPointOf <urn:ex/minimum-oa-damper> .
-
-<urn:ex/oa-in> ns1:cnx <urn:ex/multiple-zone-ahu>,
-        <urn:ex/oa-in-connection> ;
-    ns1:connectsThrough <urn:ex/oa-in-connection> ;
-    ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
-
-<urn:ex/outside-air-junction-in> ns1:cnx <urn:ex/oa-in-connection>,
-        <urn:ex/outside-air-junction> ;
-    ns1:connectsThrough <urn:ex/oa-in-connection> ;
-    ns1:isConnectionPointOf <urn:ex/outside-air-junction> .
-
-<urn:ex/outside-air-junction-out-1> ns1:cnx <urn:ex/duct-before-minimum-oa-damper>,
-        <urn:ex/outside-air-junction> ;
-    ns1:connectsThrough <urn:ex/duct-before-minimum-oa-damper> ;
-    ns1:isConnectionPointOf <urn:ex/outside-air-junction> .
-
-<urn:ex/outside-air-junction-out-2> ns1:cnx <urn:ex/duct-before-economizer-oa-damper>,
-        <urn:ex/outside-air-junction> ;
-    ns1:connectsThrough <urn:ex/duct-before-economizer-oa-damper> ;
-    ns1:isConnectionPointOf <urn:ex/outside-air-junction> .
-
-<urn:ex/outside-supply-junction-in-1> ns1:cnx <urn:ex/duct-after-ra-damper>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectsThrough <urn:ex/duct-after-ra-damper> ;
-    ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
-
-<urn:ex/outside-supply-junction-in-2> ns1:cnx <urn:ex/duct-after-minimum-oa-damper>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectsThrough <urn:ex/duct-after-minimum-oa-damper> ;
-    ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
-
-<urn:ex/outside-supply-junction-in-3> ns1:cnx <urn:ex/duct-after-economizer-oa-damper>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectsThrough <urn:ex/duct-after-economizer-oa-damper> ;
-    ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
-
-<urn:ex/outside-supply-junction-out> ns1:cnx <urn:ex/duct-before-filter>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectsThrough <urn:ex/duct-before-filter> ;
-    ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
-
-<urn:ex/ra-damper-in> ns1:cnx <urn:ex/duct-before-ra-damper>,
-        <urn:ex/ra-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-ra-damper> ;
-    ns1:isConnectionPointOf <urn:ex/ra-damper> .
-
-<urn:ex/ra-damper-out> ns1:cnx <urn:ex/duct-after-ra-damper>,
-        <urn:ex/ra-damper> ;
-    ns1:connectsThrough <urn:ex/duct-after-ra-damper> ;
-    ns1:isConnectionPointOf <urn:ex/ra-damper> .
-
-<urn:ex/ra-fan-in> ns1:cnx <urn:ex/ra-fan>,
-        <urn:ex/ra-in-connection> ;
-    ns1:connectsThrough <urn:ex/ra-in-connection> ;
-    ns1:isConnectionPointOf <urn:ex/ra-fan> .
-
-<urn:ex/ra-fan-out> ns1:cnx <urn:ex/duct-after-ra-fan>,
-        <urn:ex/ra-fan> ;
-    ns1:connectsThrough <urn:ex/duct-after-ra-fan> ;
-    ns1:isConnectionPointOf <urn:ex/ra-fan> .
-
-<urn:ex/ra-in> ns1:cnx <urn:ex/multiple-zone-ahu>,
-        <urn:ex/ra-in-connection> ;
-    ns1:connectsThrough <urn:ex/ra-in-connection> ;
-    ns1:hasProperty <urn:ex/ra-temp> ;
-    ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
-
-<urn:ex/return-exhaust-junction-in> ns1:cnx <urn:ex/duct-after-ra-fan>,
-        <urn:ex/return-exhaust-junction> ;
-    ns1:connectsThrough <urn:ex/duct-after-ra-fan> ;
-    ns1:isConnectionPointOf <urn:ex/return-exhaust-junction> .
-
-<urn:ex/return-exhaust-junction-out-1> ns1:cnx <urn:ex/duct-before-ea-damper>,
-        <urn:ex/return-exhaust-junction> ;
-    ns1:connectsThrough <urn:ex/duct-before-ea-damper> ;
-    ns1:isConnectionPointOf <urn:ex/return-exhaust-junction> .
-
-<urn:ex/return-exhaust-junction-out-2> ns1:cnx <urn:ex/duct-before-ra-damper>,
-        <urn:ex/return-exhaust-junction> ;
-    ns1:connectsThrough <urn:ex/duct-before-ra-damper> ;
-    ns1:isConnectionPointOf <urn:ex/return-exhaust-junction> .
-
-<urn:ex/sa-fan-in> ns1:cnx <urn:ex/duct-after-clg-coil>,
-        <urn:ex/sa-fan> ;
-    ns1:connectsThrough <urn:ex/duct-after-clg-coil> ;
-    ns1:isConnectionPointOf <urn:ex/sa-fan> .
-
-<urn:ex/sa-fan-out> ns1:cnx <urn:ex/sa-fan>,
-        <urn:ex/sa-out-connection> ;
-    ns1:connectsThrough <urn:ex/sa-out-connection> ;
-    ns1:isConnectionPointOf <urn:ex/sa-fan> .
-
-<urn:ex/sa-out> ns1:cnx <urn:ex/multiple-zone-ahu>,
-        <urn:ex/sa-out-connection> ;
-    ns1:connectsThrough <urn:ex/sa-out-connection> ;
-    ns1:hasProperty <urn:ex/sa-temp> ;
-    ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUChilledWaterInlet> a ns1:InletConnectionPoint ;
     rdfs:label "AHUChilled water inlet" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#PipeFromChiller>,
@@ -2329,7 +2106,8 @@
     ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnAirFlowRate> ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00051> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustFan> a ns1:Fan ;
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustFan> a ns1:Fan,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Fan> ;
     rdfs:label "Bathroom exhaust fan" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#FanInletConnectionPoint>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#FanOutletConnectionPoint> ;
@@ -2642,135 +2420,6 @@
     ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExteriorAir> ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:ex/duct-after-clg-coil> ns1:cnx <urn:ex/clg-coil-air-out>,
-        <urn:ex/sa-fan-in> ;
-    ns1:connectsAt <urn:ex/clg-coil-air-out>,
-        <urn:ex/sa-fan-in> ;
-    ns1:connectsFrom <urn:ex/clg-coil> ;
-    ns1:connectsTo <urn:ex/sa-fan> .
-
-<urn:ex/duct-after-economizer-oa-damper> ns1:cnx <urn:ex/economizer-oa-damper-out>,
-        <urn:ex/outside-supply-junction-in-3> ;
-    ns1:connectsAt <urn:ex/economizer-oa-damper-out>,
-        <urn:ex/outside-supply-junction-in-3> ;
-    ns1:connectsFrom <urn:ex/economizer-oa-damper> ;
-    ns1:connectsTo <urn:ex/outside-supply-junction> .
-
-<urn:ex/duct-after-filter> ns1:cnx <urn:ex/filter-out>,
-        <urn:ex/htg-coil-air-in> ;
-    ns1:connectsAt <urn:ex/filter-out>,
-        <urn:ex/htg-coil-air-in> ;
-    ns1:connectsFrom <urn:ex/filter> ;
-    ns1:connectsTo <urn:ex/htg-coil> .
-
-<urn:ex/duct-after-htg-coil> ns1:cnx <urn:ex/clg-coil-air-in>,
-        <urn:ex/htg-coil-air-out> ;
-    ns1:connectsAt <urn:ex/clg-coil-air-in>,
-        <urn:ex/htg-coil-air-out> ;
-    ns1:connectsFrom <urn:ex/htg-coil> ;
-    ns1:connectsTo <urn:ex/clg-coil> ;
-    ns1:hasProperty <urn:ex/heat-coil-air-temp> .
-
-<urn:ex/duct-after-minimum-oa-damper> ns1:cnx <urn:ex/minimum-oa-damper-out>,
-        <urn:ex/outside-supply-junction-in-2> ;
-    ns1:connectsAt <urn:ex/minimum-oa-damper-out>,
-        <urn:ex/outside-supply-junction-in-2> ;
-    ns1:connectsFrom <urn:ex/minimum-oa-damper> ;
-    ns1:connectsTo <urn:ex/outside-supply-junction> .
-
-<urn:ex/duct-after-ra-damper> ns1:cnx <urn:ex/outside-supply-junction-in-1>,
-        <urn:ex/ra-damper-out> ;
-    ns1:connectsAt <urn:ex/outside-supply-junction-in-1>,
-        <urn:ex/ra-damper-out> ;
-    ns1:connectsFrom <urn:ex/ra-damper> ;
-    ns1:connectsTo <urn:ex/outside-supply-junction> .
-
-<urn:ex/duct-after-ra-fan> ns1:cnx <urn:ex/ra-fan-out>,
-        <urn:ex/return-exhaust-junction-in> ;
-    ns1:connectsAt <urn:ex/ra-fan-out>,
-        <urn:ex/return-exhaust-junction-in> ;
-    ns1:connectsFrom <urn:ex/ra-fan> ;
-    ns1:connectsTo <urn:ex/return-exhaust-junction> ;
-    ns1:hasProperty <urn:ex/ra-fan-discharge-static-pressure> .
-
-<urn:ex/duct-before-ea-damper> ns1:cnx <urn:ex/ea-damper-in>,
-        <urn:ex/return-exhaust-junction-out-1> ;
-    ns1:connectsAt <urn:ex/ea-damper-in>,
-        <urn:ex/return-exhaust-junction-out-1> ;
-    ns1:connectsFrom <urn:ex/return-exhaust-junction> ;
-    ns1:connectsTo <urn:ex/ea-damper> .
-
-<urn:ex/duct-before-economizer-oa-damper> ns1:cnx <urn:ex/economizer-oa-damper-in>,
-        <urn:ex/outside-air-junction-out-2> ;
-    ns1:connectsAt <urn:ex/economizer-oa-damper-in>,
-        <urn:ex/outside-air-junction-out-2> ;
-    ns1:connectsFrom <urn:ex/outside-air-junction> ;
-    ns1:connectsTo <urn:ex/economizer-oa-damper> .
-
-<urn:ex/duct-before-filter> ns1:cnx <urn:ex/filter-in>,
-        <urn:ex/outside-supply-junction-out> ;
-    ns1:connectsAt <urn:ex/filter-in>,
-        <urn:ex/outside-supply-junction-out> ;
-    ns1:connectsFrom <urn:ex/outside-supply-junction> ;
-    ns1:connectsTo <urn:ex/filter> .
-
-<urn:ex/duct-before-minimum-oa-damper> ns1:cnx <urn:ex/minimum-oa-damper-in>,
-        <urn:ex/outside-air-junction-out-1> ;
-    ns1:connectsAt <urn:ex/minimum-oa-damper-in>,
-        <urn:ex/outside-air-junction-out-1> ;
-    ns1:connectsFrom <urn:ex/outside-air-junction> ;
-    ns1:connectsTo <urn:ex/minimum-oa-damper> .
-
-<urn:ex/duct-before-ra-damper> ns1:cnx <urn:ex/ra-damper-in>,
-        <urn:ex/return-exhaust-junction-out-2> ;
-    ns1:connectsAt <urn:ex/ra-damper-in>,
-        <urn:ex/return-exhaust-junction-out-2> ;
-    ns1:connectsFrom <urn:ex/return-exhaust-junction> ;
-    ns1:connectsTo <urn:ex/ra-damper> .
-
-<urn:ex/ea-out-connection> ns1:cnx <urn:ex/ea-damper-out>,
-        <urn:ex/ea-out> ;
-    ns1:connectsAt <urn:ex/ea-damper-out>,
-        <urn:ex/ea-out> ;
-    ns1:connectsFrom <urn:ex/ea-damper>,
-        <urn:ex/multiple-zone-ahu> .
-
-<urn:ex/oa-in-connection> ns1:cnx <urn:ex/oa-in>,
-        <urn:ex/outside-air-junction-in> ;
-    ns1:connectsAt <urn:ex/oa-in>,
-        <urn:ex/outside-air-junction-in> ;
-    ns1:connectsTo <urn:ex/multiple-zone-ahu>,
-        <urn:ex/outside-air-junction> .
-
-<urn:ex/pipe-chilled-water-return-after-valve> ns1:cnx <urn:ex/clg-coil-valve-out>,
-        <urn:ex/clg-coil-water-in> ;
-    ns1:connectsAt <urn:ex/clg-coil-valve-out>,
-        <urn:ex/clg-coil-water-in> ;
-    ns1:connectsFrom <urn:ex/clg-coil-valve> ;
-    ns1:connectsTo <urn:ex/clg-coil> .
-
-<urn:ex/pipe-hot-water-return-after-valve> ns1:cnx <urn:ex/htg-coil-valve-out>,
-        <urn:ex/htg-coil-water-in> ;
-    ns1:connectsAt <urn:ex/htg-coil-valve-out>,
-        <urn:ex/htg-coil-water-in> ;
-    ns1:connectsFrom <urn:ex/htg-coil-valve> ;
-    ns1:connectsTo <urn:ex/htg-coil> .
-
-<urn:ex/ra-in-connection> ns1:cnx <urn:ex/ra-fan-in>,
-        <urn:ex/ra-in> ;
-    ns1:connectsAt <urn:ex/ra-fan-in>,
-        <urn:ex/ra-in> ;
-    ns1:connectsTo <urn:ex/multiple-zone-ahu>,
-        <urn:ex/ra-fan> .
-
-<urn:ex/sa-out-connection> ns1:cnx <urn:ex/sa-fan-out>,
-        <urn:ex/sa-out> ;
-    ns1:connectsAt <urn:ex/sa-fan-out>,
-        <urn:ex/sa-out> ;
-    ns1:connectsFrom <urn:ex/multiple-zone-ahu>,
-        <urn:ex/sa-fan> ;
-    ns1:hasProperty <urn:ex/supply-duct-static-pressure> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomLight1> a ns1:Connection ;
     rdfs:label "Bathroom light1" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomLightInletCP>,
@@ -2900,7 +2549,8 @@
     ns1:hasMedium ns1:Medium-Air ;
     ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilOutletTemperature> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00051> a ns1:Fan ;
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00051> a ns1:Fan,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Fan> ;
     rdfs:label "A-9.return_fan" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00052>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00053> ;
@@ -2992,53 +2642,6 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00024> ;
     ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00022> .
 
-<urn:ex/clg-coil-valve> ns1:cnx <urn:ex/clg-coil-valve-in>,
-        <urn:ex/clg-coil-valve-out> ;
-    ns1:connected <urn:ex/clg-coil> ;
-    ns1:connectedThrough <urn:ex/pipe-chilled-water-return-after-valve>,
-        <urn:ex/pipe-chilled-water-return-before-valve> ;
-    ns1:connectedTo <urn:ex/clg-coil> ;
-    ns1:hasConnectionPoint <urn:ex/clg-coil-valve-in>,
-        <urn:ex/clg-coil-valve-out> .
-
-<urn:ex/ea-damper> ns1:cnx <urn:ex/ea-damper-in>,
-        <urn:ex/ea-damper-out> ;
-    ns1:connected <urn:ex/return-exhaust-junction> ;
-    ns1:connectedFrom <urn:ex/return-exhaust-junction> ;
-    ns1:connectedThrough <urn:ex/duct-before-ea-damper>,
-        <urn:ex/ea-out-connection> ;
-    ns1:hasConnectionPoint <urn:ex/ea-damper-in>,
-        <urn:ex/ea-damper-out> .
-
-<urn:ex/htg-coil-valve> ns1:cnx <urn:ex/htg-coil-valve-in>,
-        <urn:ex/htg-coil-valve-out> ;
-    ns1:connected <urn:ex/htg-coil> ;
-    ns1:connectedThrough <urn:ex/pipe-hot-water-return-after-valve>,
-        <urn:ex/pipe-hot-water-return-before-valve> ;
-    ns1:connectedTo <urn:ex/htg-coil> ;
-    ns1:hasConnectionPoint <urn:ex/htg-coil-valve-in>,
-        <urn:ex/htg-coil-valve-out> .
-
-<urn:ex/ra-fan> ns1:cnx <urn:ex/ra-fan-in>,
-        <urn:ex/ra-fan-out> ;
-    ns1:connected <urn:ex/return-exhaust-junction> ;
-    ns1:connectedThrough <urn:ex/duct-after-ra-fan>,
-        <urn:ex/ra-in-connection> ;
-    ns1:connectedTo <urn:ex/return-exhaust-junction> ;
-    ns1:hasConnectionPoint <urn:ex/ra-fan-in>,
-        <urn:ex/ra-fan-out> ;
-    ns1:hasProperty <urn:ex/ra-flow> .
-
-<urn:ex/sa-fan> ns1:cnx <urn:ex/sa-fan-in>,
-        <urn:ex/sa-fan-out> ;
-    ns1:connected <urn:ex/clg-coil> ;
-    ns1:connectedFrom <urn:ex/clg-coil> ;
-    ns1:connectedThrough <urn:ex/duct-after-clg-coil>,
-        <urn:ex/sa-out-connection> ;
-    ns1:hasConnectionPoint <urn:ex/sa-fan-in>,
-        <urn:ex/sa-fan-out> ;
-    ns1:hasProperty <urn:ex/sa-flow> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalBoiler> a ns1:Boiler ;
     rdfs:label "External boiler" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalBoilerInletCP>,
@@ -3083,7 +2686,8 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OAJunctionOutletToMin> ;
     ns1:hasMedium ns1:Medium-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00047> a ns1:Fan ;
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00047> a ns1:Fan,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Fan> ;
     rdfs:label "A-9.supply_fan" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanElectricInCP>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00048>,
@@ -3192,50 +2796,6 @@
     ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalBoiler> ;
     ns1:hasMedium ns1:Water-HotWater .
 
-<urn:ex/economizer-oa-damper> ns1:cnx <urn:ex/economizer-oa-damper-in>,
-        <urn:ex/economizer-oa-damper-out> ;
-    ns1:connected <urn:ex/outside-air-junction>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectedFrom <urn:ex/outside-air-junction> ;
-    ns1:connectedThrough <urn:ex/duct-after-economizer-oa-damper>,
-        <urn:ex/duct-before-economizer-oa-damper> ;
-    ns1:connectedTo <urn:ex/outside-supply-junction> ;
-    ns1:hasConnectionPoint <urn:ex/economizer-oa-damper-in>,
-        <urn:ex/economizer-oa-damper-out> .
-
-<urn:ex/filter> ns1:cnx <urn:ex/filter-in>,
-        <urn:ex/filter-out> ;
-    ns1:connected <urn:ex/htg-coil>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectedFrom <urn:ex/outside-supply-junction> ;
-    ns1:connectedThrough <urn:ex/duct-after-filter>,
-        <urn:ex/duct-before-filter> ;
-    ns1:connectedTo <urn:ex/htg-coil> ;
-    ns1:hasConnectionPoint <urn:ex/filter-in>,
-        <urn:ex/filter-out> .
-
-<urn:ex/minimum-oa-damper> ns1:cnx <urn:ex/minimum-oa-damper-in>,
-        <urn:ex/minimum-oa-damper-out> ;
-    ns1:connected <urn:ex/outside-air-junction>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectedFrom <urn:ex/outside-air-junction> ;
-    ns1:connectedThrough <urn:ex/duct-after-minimum-oa-damper>,
-        <urn:ex/duct-before-minimum-oa-damper> ;
-    ns1:connectedTo <urn:ex/outside-supply-junction> ;
-    ns1:hasConnectionPoint <urn:ex/minimum-oa-damper-in>,
-        <urn:ex/minimum-oa-damper-out> .
-
-<urn:ex/ra-damper> ns1:cnx <urn:ex/ra-damper-in>,
-        <urn:ex/ra-damper-out> ;
-    ns1:connected <urn:ex/outside-supply-junction>,
-        <urn:ex/return-exhaust-junction> ;
-    ns1:connectedFrom <urn:ex/return-exhaust-junction> ;
-    ns1:connectedThrough <urn:ex/duct-after-ra-damper>,
-        <urn:ex/duct-before-ra-damper> ;
-    ns1:connectedTo <urn:ex/outside-supply-junction> ;
-    ns1:hasConnectionPoint <urn:ex/ra-damper-in>,
-        <urn:ex/ra-damper-out> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2HeatingCoil> a ns1:HeatingCoil ;
     rdfs:label "VAVBox2Heating coil" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletReheatCoilCP>,
@@ -3327,19 +2887,6 @@
     ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00021> ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:ex/multiple-zone-ahu> ns1:cnx <urn:ex/ea-out>,
-        <urn:ex/oa-in>,
-        <urn:ex/ra-in>,
-        <urn:ex/sa-out> ;
-    ns1:connectedThrough <urn:ex/ea-out-connection>,
-        <urn:ex/oa-in-connection>,
-        <urn:ex/ra-in-connection>,
-        <urn:ex/sa-out-connection> ;
-    ns1:hasConnectionPoint <urn:ex/ea-out>,
-        <urn:ex/oa-in>,
-        <urn:ex/ra-in>,
-        <urn:ex/sa-out> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00025> a ns1:HeatingCoil ;
     rdfs:label "A-9.hot_water_coil" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00026>,
@@ -3370,20 +2917,6 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00040> ;
     ns1:hasRole ns1:Role-Cooling .
 
-<urn:ex/outside-air-junction> ns1:cnx <urn:ex/outside-air-junction-in>,
-        <urn:ex/outside-air-junction-out-1>,
-        <urn:ex/outside-air-junction-out-2> ;
-    ns1:connected <urn:ex/economizer-oa-damper>,
-        <urn:ex/minimum-oa-damper> ;
-    ns1:connectedThrough <urn:ex/duct-before-economizer-oa-damper>,
-        <urn:ex/duct-before-minimum-oa-damper>,
-        <urn:ex/oa-in-connection> ;
-    ns1:connectedTo <urn:ex/economizer-oa-damper>,
-        <urn:ex/minimum-oa-damper> ;
-    ns1:hasConnectionPoint <urn:ex/outside-air-junction-in>,
-        <urn:ex/outside-air-junction-out-1>,
-        <urn:ex/outside-air-junction-out-2> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpace4> a ns1:DomainSpace ;
     rdfs:label "HVACSpace4" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorInletConnectionPointPO>,
@@ -3401,22 +2934,6 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorOutletConnectionPointOO>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#InletIntraCorridor4CP> ;
     ns1:hasDomain ns1:Domain-HVAC .
-
-<urn:ex/return-exhaust-junction> ns1:cnx <urn:ex/return-exhaust-junction-in>,
-        <urn:ex/return-exhaust-junction-out-1>,
-        <urn:ex/return-exhaust-junction-out-2> ;
-    ns1:connected <urn:ex/ea-damper>,
-        <urn:ex/ra-damper>,
-        <urn:ex/ra-fan> ;
-    ns1:connectedFrom <urn:ex/ra-fan> ;
-    ns1:connectedThrough <urn:ex/duct-after-ra-fan>,
-        <urn:ex/duct-before-ea-damper>,
-        <urn:ex/duct-before-ra-damper> ;
-    ns1:connectedTo <urn:ex/ea-damper>,
-        <urn:ex/ra-damper> ;
-    ns1:hasConnectionPoint <urn:ex/return-exhaust-junction-in>,
-        <urn:ex/return-exhaust-junction-out-1>,
-        <urn:ex/return-exhaust-junction-out-2> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit2> a ns1:ElectricWire ;
     rdfs:label "Electric Circuit 2" ;
@@ -3463,67 +2980,6 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerOutCP3>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerOutCP4>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerOutCP5> .
-
-<urn:ex/clg-coil> ns1:cnx <urn:ex/clg-coil-air-in>,
-        <urn:ex/clg-coil-air-out>,
-        <urn:ex/clg-coil-water-in>,
-        <urn:ex/clg-coil-water-out> ;
-    ns1:connected <urn:ex/clg-coil-valve>,
-        <urn:ex/htg-coil>,
-        <urn:ex/sa-fan> ;
-    ns1:connectedFrom <urn:ex/clg-coil-valve>,
-        <urn:ex/htg-coil> ;
-    ns1:connectedThrough <urn:ex/duct-after-clg-coil>,
-        <urn:ex/duct-after-htg-coil>,
-        <urn:ex/pipe-chilled-water-return-after-valve>,
-        <urn:ex/pipe-chilled-water-supply> ;
-    ns1:connectedTo <urn:ex/sa-fan> ;
-    ns1:hasConnectionPoint <urn:ex/clg-coil-air-in>,
-        <urn:ex/clg-coil-air-out>,
-        <urn:ex/clg-coil-water-in>,
-        <urn:ex/clg-coil-water-out> ;
-    ns1:hasRole ns1:Role-Cooling .
-
-<urn:ex/htg-coil> ns1:cnx <urn:ex/htg-coil-air-in>,
-        <urn:ex/htg-coil-air-out>,
-        <urn:ex/htg-coil-water-in>,
-        <urn:ex/htg-coil-water-out> ;
-    ns1:connected <urn:ex/clg-coil>,
-        <urn:ex/filter>,
-        <urn:ex/htg-coil-valve> ;
-    ns1:connectedFrom <urn:ex/filter>,
-        <urn:ex/htg-coil-valve> ;
-    ns1:connectedThrough <urn:ex/duct-after-filter>,
-        <urn:ex/duct-after-htg-coil>,
-        <urn:ex/pipe-hot-water-return-after-valve>,
-        <urn:ex/pipe-hot-water-supply> ;
-    ns1:connectedTo <urn:ex/clg-coil> ;
-    ns1:hasConnectionPoint <urn:ex/htg-coil-air-in>,
-        <urn:ex/htg-coil-air-out>,
-        <urn:ex/htg-coil-water-in>,
-        <urn:ex/htg-coil-water-out> ;
-    ns1:hasRole ns1:Role-Heating .
-
-<urn:ex/outside-supply-junction> ns1:cnx <urn:ex/outside-supply-junction-in-1>,
-        <urn:ex/outside-supply-junction-in-2>,
-        <urn:ex/outside-supply-junction-in-3>,
-        <urn:ex/outside-supply-junction-out> ;
-    ns1:connected <urn:ex/economizer-oa-damper>,
-        <urn:ex/filter>,
-        <urn:ex/minimum-oa-damper>,
-        <urn:ex/ra-damper> ;
-    ns1:connectedFrom <urn:ex/economizer-oa-damper>,
-        <urn:ex/minimum-oa-damper>,
-        <urn:ex/ra-damper> ;
-    ns1:connectedThrough <urn:ex/duct-after-economizer-oa-damper>,
-        <urn:ex/duct-after-minimum-oa-damper>,
-        <urn:ex/duct-after-ra-damper>,
-        <urn:ex/duct-before-filter> ;
-    ns1:connectedTo <urn:ex/filter> ;
-    ns1:hasConnectionPoint <urn:ex/outside-supply-junction-in-1>,
-        <urn:ex/outside-supply-junction-in-2>,
-        <urn:ex/outside-supply-junction-in-3>,
-        <urn:ex/outside-supply-junction-out> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00001> a ns1:AirHandlingUnit ;
     rdfs:label "AHU" ;
