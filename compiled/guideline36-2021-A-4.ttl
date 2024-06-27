@@ -1,386 +1,386 @@
-@prefix ns1: <http://data.ashrae.org/standard223#> .
-@prefix ns2: <http://qudt.org/schema/qudt/> .
+@prefix ns1: <http://qudt.org/schema/qudt/> .
+@prefix ns2: <http://data.ashrae.org/standard223#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <urn:ex/> a owl:Ontology .
 
-<urn:ex/damper-actuator> a ns1:Actuator ;
+<urn:ex/damper-actuator> a ns2:Actuator ;
     rdfs:label "damper actuator" ;
-    ns1:actuates <urn:ex/damper> ;
-    ns1:commandedByProperty <urn:ex/damper-command> .
+    ns2:actuates <urn:ex/damper> ;
+    ns2:commandedByProperty <urn:ex/damper-command> .
 
-<urn:ex/discharge-air-temp-sensor> a ns1:Sensor ;
+<urn:ex/discharge-air-temp-sensor> a ns2:Sensor ;
     rdfs:label "discharge air temp sensor" ;
-    ns1:hasObservationLocation <urn:ex/out> ;
-    ns1:observes <urn:ex/discharge-air-temp> .
+    ns2:hasObservationLocation <urn:ex/out> ;
+    ns2:observes <urn:ex/discharge-air-temp> .
 
-<urn:ex/reheat-coil-valve-actuator> a ns1:Actuator ;
+<urn:ex/reheat-coil-valve-actuator> a ns2:Actuator ;
     rdfs:label "reheat coil valve actuator" ;
-    ns1:actuates <urn:ex/reheat-coil-valve> ;
-    ns1:commandedByProperty <urn:ex/reheat-coil-valve-command> .
+    ns2:actuates <urn:ex/reheat-coil-valve> ;
+    ns2:commandedByProperty <urn:ex/reheat-coil-valve-command> .
 
-<urn:ex/supply-air-flow-sensor> a ns1:Sensor ;
+<urn:ex/supply-air-flow-sensor> a ns2:Sensor ;
     rdfs:label "supply air flow sensor" ;
-    ns1:hasObservationLocation <urn:ex/supply-air-in> ;
-    ns1:observes <urn:ex/supply-air-flow> .
+    ns2:hasObservationLocation <urn:ex/supply-air-in> ;
+    ns2:observes <urn:ex/supply-air-flow> .
 
-<urn:ex/damper-position> a ns1:QuantifiableObservableProperty ;
+<urn:ex/damper-position> a ns2:QuantifiableObservableProperty ;
     rdfs:label "damper position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/fan-speed-cmd> a ns1:QuantifiableActuatableProperty ;
+<urn:ex/fan-speed-cmd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "fan speed cmd" ;
-    ns1:hasAspect ns1:EnumerationKind-Speed ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns2:hasAspect ns2:EnumerationKind-Speed ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/fan-speed-status> a ns1:QuantifiableObservableProperty ;
+<urn:ex/fan-speed-status> a ns2:QuantifiableObservableProperty ;
     rdfs:label "fan speed status" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/fan-start-cmd> a ns1:EnumeratedActuatableProperty ;
+<urn:ex/fan-start-cmd> a ns2:EnumeratedActuatableProperty ;
     rdfs:label "fan start cmd" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+    ns2:hasEnumerationKind ns2:EnumerationKind-OnOff .
 
-<urn:ex/fan-start-status> a ns1:EnumeratedObservableProperty ;
+<urn:ex/fan-start-status> a ns2:EnumeratedObservableProperty ;
     rdfs:label "fan start status" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+    ns2:hasEnumerationKind ns2:EnumerationKind-OnOff .
 
-<urn:ex/reheat-coil-valve-position> a ns1:QuantifiableObservableProperty ;
+<urn:ex/reheat-coil-valve-position> a ns2:QuantifiableObservableProperty ;
     rdfs:label "reheat coil valve position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/damper-command> a ns1:QuantifiableActuatableProperty ;
+<urn:ex/damper-command> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "damper command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/discharge-air-temp> a ns1:QuantifiableObservableProperty ;
+<urn:ex/discharge-air-temp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "discharge air temp" ;
-    ns1:hasRole ns1:Role-Discharge ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+    ns2:hasRole ns2:Role-Discharge ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
 
-<urn:ex/duct-before-damper> a ns1:Connection,
-        ns1:Duct ;
+<urn:ex/duct-before-damper> a ns2:Connection,
+        ns2:Duct ;
     rdfs:label "duct before damper" ;
-    ns1:cnx <urn:ex/damper-in> ;
-    ns1:connectsAt <urn:ex/damper-in> ;
-    ns1:connectsTo <urn:ex/damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:cnx <urn:ex/damper-in> ;
+    ns2:connectsAt <urn:ex/damper-in> ;
+    ns2:connectsTo <urn:ex/damper> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/duct-before-reheat-coil> a ns1:Connection,
-        ns1:Duct ;
+<urn:ex/duct-before-reheat-coil> a ns2:Connection,
+        ns2:Duct ;
     rdfs:label "duct before reheat coil" ;
-    ns1:cnx <urn:ex/reheat-coil-in> ;
-    ns1:connectsAt <urn:ex/reheat-coil-in> ;
-    ns1:connectsTo <urn:ex/reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:cnx <urn:ex/reheat-coil-in> ;
+    ns2:connectsAt <urn:ex/reheat-coil-in> ;
+    ns2:connectsTo <urn:ex/reheat-coil> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/pipe-hot-water-return-before-valve> a ns1:Connection,
-        ns1:Pipe ;
+<urn:ex/pipe-hot-water-return-before-valve> a ns2:Connection,
+        ns2:Pipe ;
     rdfs:label "pipe hot water return before valve" ;
-    ns1:cnx <urn:ex/reheat-coil-valve-in> ;
-    ns1:connectsAt <urn:ex/reheat-coil-valve-in> ;
-    ns1:connectsTo <urn:ex/reheat-coil-valve> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns2:cnx <urn:ex/reheat-coil-valve-in> ;
+    ns2:connectsAt <urn:ex/reheat-coil-valve-in> ;
+    ns2:connectsTo <urn:ex/reheat-coil-valve> ;
+    ns2:hasMedium ns2:Medium-Water .
 
-<urn:ex/pipe-hot-water-supply> a ns1:Connection,
-        ns1:Pipe ;
+<urn:ex/pipe-hot-water-supply> a ns2:Connection,
+        ns2:Pipe ;
     rdfs:label "pipe hot water supply" ;
-    ns1:cnx <urn:ex/reheat-coil-water-out> ;
-    ns1:connectsAt <urn:ex/reheat-coil-water-out> ;
-    ns1:connectsFrom <urn:ex/reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns2:cnx <urn:ex/reheat-coil-water-out> ;
+    ns2:connectsAt <urn:ex/reheat-coil-water-out> ;
+    ns2:connectsFrom <urn:ex/reheat-coil> ;
+    ns2:hasMedium ns2:Medium-Water .
 
-<urn:ex/reheat-coil-valve-command> a ns1:QuantifiableActuatableProperty ;
+<urn:ex/reheat-coil-valve-command> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "reheat coil valve command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/return-air-from-plenum-in-connection> a ns1:Connection ;
+<urn:ex/return-air-from-plenum-in-connection> a ns2:Connection ;
     rdfs:label "return air from plenum in connection" ;
-    ns1:cnx <urn:ex/return-air-from-plenum-in> ;
-    ns1:connectsAt <urn:ex/return-air-from-plenum-in> ;
-    ns1:connectsTo <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:cnx <urn:ex/return-air-from-plenum-in> ;
+    ns2:connectsAt <urn:ex/return-air-from-plenum-in> ;
+    ns2:connectsTo <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/supply-air-flow> a ns1:QuantifiableObservableProperty ;
+<urn:ex/supply-air-flow> a ns2:QuantifiableObservableProperty ;
     rdfs:label "supply air flow" ;
-    ns1:hasRole ns1:Role-Supply ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns2:hasRole ns2:Role-Supply ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
-<urn:ex/supply-air-in-connection> a ns1:Connection ;
+<urn:ex/supply-air-in-connection> a ns2:Connection ;
     rdfs:label "supply air in connection" ;
-    ns1:cnx <urn:ex/supply-air-in> ;
-    ns1:connectsAt <urn:ex/supply-air-in> ;
-    ns1:connectsTo <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:cnx <urn:ex/supply-air-in> ;
+    ns2:connectsAt <urn:ex/supply-air-in> ;
+    ns2:connectsTo <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/damper-in> a ns1:InletConnectionPoint ;
+<urn:ex/damper-in> a ns2:InletConnectionPoint ;
     rdfs:label "damper in" ;
-    ns1:cnx <urn:ex/damper>,
+    ns2:cnx <urn:ex/damper>,
         <urn:ex/duct-before-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/damper> ;
-    ns1:mapsTo <urn:ex/supply-air-in> .
+    ns2:connectsThrough <urn:ex/duct-before-damper> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/damper> ;
+    ns2:mapsTo <urn:ex/supply-air-in> .
 
-<urn:ex/damper-out> a ns1:OutletConnectionPoint ;
+<urn:ex/damper-out> a ns2:OutletConnectionPoint ;
     rdfs:label "damper out" ;
-    ns1:cnx <urn:ex/damper>,
+    ns2:cnx <urn:ex/damper>,
         <urn:ex/duct-after-damper> ;
-    ns1:connectsThrough <urn:ex/duct-after-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/damper> .
+    ns2:connectsThrough <urn:ex/duct-after-damper> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/damper> .
 
-<urn:ex/duct-after-damper> a ns1:Connection,
-        ns1:Duct ;
+<urn:ex/duct-after-damper> a ns2:Connection,
+        ns2:Duct ;
     rdfs:label "duct after damper" ;
-    ns1:cnx <urn:ex/damper-out>,
+    ns2:cnx <urn:ex/damper-out>,
         <urn:ex/junction-in-1> ;
-    ns1:connectsAt <urn:ex/damper-out>,
+    ns2:connectsAt <urn:ex/damper-out>,
         <urn:ex/junction-in-1> ;
-    ns1:connectsFrom <urn:ex/damper> ;
-    ns1:connectsTo <urn:ex/junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:connectsFrom <urn:ex/damper> ;
+    ns2:connectsTo <urn:ex/junction> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/duct-after-fan> a ns1:Connection,
-        ns1:Duct ;
+<urn:ex/duct-after-fan> a ns2:Connection,
+        ns2:Duct ;
     rdfs:label "duct after fan" ;
-    ns1:cnx <urn:ex/fan-out>,
+    ns2:cnx <urn:ex/fan-out>,
         <urn:ex/junction-in-2> ;
-    ns1:connectsAt <urn:ex/fan-out>,
+    ns2:connectsAt <urn:ex/fan-out>,
         <urn:ex/junction-in-2> ;
-    ns1:connectsFrom <urn:ex/fan> ;
-    ns1:connectsTo <urn:ex/junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:connectsFrom <urn:ex/fan> ;
+    ns2:connectsTo <urn:ex/junction> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/duct-after-reheat-coil> a ns1:Connection,
-        ns1:Duct ;
+<urn:ex/duct-after-reheat-coil> a ns2:Connection,
+        ns2:Duct ;
     rdfs:label "duct after reheat coil" ;
-    ns1:cnx <urn:ex/fan-in>,
+    ns2:cnx <urn:ex/fan-in>,
         <urn:ex/reheat-coil-air-out> ;
-    ns1:connectsAt <urn:ex/fan-in>,
+    ns2:connectsAt <urn:ex/fan-in>,
         <urn:ex/reheat-coil-air-out> ;
-    ns1:connectsFrom <urn:ex/reheat-coil> ;
-    ns1:connectsTo <urn:ex/fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:connectsFrom <urn:ex/reheat-coil> ;
+    ns2:connectsTo <urn:ex/fan> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/fan-in> a ns1:InletConnectionPoint ;
+<urn:ex/fan-in> a ns2:InletConnectionPoint ;
     rdfs:label "fan in" ;
-    ns1:cnx <urn:ex/duct-after-reheat-coil>,
+    ns2:cnx <urn:ex/duct-after-reheat-coil>,
         <urn:ex/fan> ;
-    ns1:connectsThrough <urn:ex/duct-after-reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/fan> .
+    ns2:connectsThrough <urn:ex/duct-after-reheat-coil> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/fan> .
 
-<urn:ex/fan-out> a ns1:OutletConnectionPoint ;
+<urn:ex/fan-out> a ns2:OutletConnectionPoint ;
     rdfs:label "fan out" ;
-    ns1:cnx <urn:ex/duct-after-fan>,
+    ns2:cnx <urn:ex/duct-after-fan>,
         <urn:ex/fan> ;
-    ns1:connectsThrough <urn:ex/duct-after-fan> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/fan> .
+    ns2:connectsThrough <urn:ex/duct-after-fan> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/fan> .
 
-<urn:ex/junction-in-1> a ns1:InletConnectionPoint ;
+<urn:ex/junction-in-1> a ns2:InletConnectionPoint ;
     rdfs:label "junction in 1" ;
-    ns1:cnx <urn:ex/duct-after-damper>,
+    ns2:cnx <urn:ex/duct-after-damper>,
         <urn:ex/junction> ;
-    ns1:connectsThrough <urn:ex/duct-after-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/junction> .
+    ns2:connectsThrough <urn:ex/duct-after-damper> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/junction> .
 
-<urn:ex/junction-in-2> a ns1:InletConnectionPoint ;
+<urn:ex/junction-in-2> a ns2:InletConnectionPoint ;
     rdfs:label "junction in 2" ;
-    ns1:cnx <urn:ex/duct-after-fan>,
+    ns2:cnx <urn:ex/duct-after-fan>,
         <urn:ex/junction> ;
-    ns1:connectsThrough <urn:ex/duct-after-fan> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/junction> .
+    ns2:connectsThrough <urn:ex/duct-after-fan> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/junction> .
 
-<urn:ex/junction-out> a ns1:OutletConnectionPoint ;
+<urn:ex/junction-out> a ns2:OutletConnectionPoint ;
     rdfs:label "junction out" ;
-    ns1:cnx <urn:ex/junction>,
+    ns2:cnx <urn:ex/junction>,
         <urn:ex/out-connection> ;
-    ns1:connectsThrough <urn:ex/out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/junction> ;
-    ns1:mapsTo <urn:ex/out> .
+    ns2:connectsThrough <urn:ex/out-connection> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/junction> ;
+    ns2:mapsTo <urn:ex/out> .
 
-<urn:ex/out-connection> a ns1:Connection ;
+<urn:ex/out-connection> a ns2:Connection ;
     rdfs:label "out connection" ;
-    ns1:cnx <urn:ex/junction-out>,
+    ns2:cnx <urn:ex/junction-out>,
         <urn:ex/out> ;
-    ns1:connectsAt <urn:ex/junction-out>,
+    ns2:connectsAt <urn:ex/junction-out>,
         <urn:ex/out> ;
-    ns1:connectsFrom <urn:ex/junction>,
+    ns2:connectsFrom <urn:ex/junction>,
         <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/pipe-hot-water-return-after-valve> a ns1:Connection,
-        ns1:Pipe ;
+<urn:ex/pipe-hot-water-return-after-valve> a ns2:Connection,
+        ns2:Pipe ;
     rdfs:label "pipe hot water return after valve" ;
-    ns1:cnx <urn:ex/reheat-coil-valve-out>,
+    ns2:cnx <urn:ex/reheat-coil-valve-out>,
         <urn:ex/reheat-coil-water-in> ;
-    ns1:connectsAt <urn:ex/reheat-coil-valve-out>,
+    ns2:connectsAt <urn:ex/reheat-coil-valve-out>,
         <urn:ex/reheat-coil-water-in> ;
-    ns1:connectsFrom <urn:ex/reheat-coil-valve> ;
-    ns1:connectsTo <urn:ex/reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns2:connectsFrom <urn:ex/reheat-coil-valve> ;
+    ns2:connectsTo <urn:ex/reheat-coil> ;
+    ns2:hasMedium ns2:Medium-Water .
 
-<urn:ex/reheat-coil-air-out> a ns1:OutletConnectionPoint ;
+<urn:ex/reheat-coil-air-out> a ns2:OutletConnectionPoint ;
     rdfs:label "reheat coil air out" ;
-    ns1:cnx <urn:ex/duct-after-reheat-coil>,
+    ns2:cnx <urn:ex/duct-after-reheat-coil>,
         <urn:ex/reheat-coil> ;
-    ns1:connectsThrough <urn:ex/duct-after-reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/reheat-coil> .
+    ns2:connectsThrough <urn:ex/duct-after-reheat-coil> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/reheat-coil> .
 
-<urn:ex/reheat-coil-in> a ns1:InletConnectionPoint ;
+<urn:ex/reheat-coil-in> a ns2:InletConnectionPoint ;
     rdfs:label "reheat coil in" ;
-    ns1:cnx <urn:ex/duct-before-reheat-coil>,
+    ns2:cnx <urn:ex/duct-before-reheat-coil>,
         <urn:ex/reheat-coil> ;
-    ns1:connectsThrough <urn:ex/duct-before-reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/reheat-coil> ;
-    ns1:mapsTo <urn:ex/return-air-from-plenum-in> .
+    ns2:connectsThrough <urn:ex/duct-before-reheat-coil> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/reheat-coil> ;
+    ns2:mapsTo <urn:ex/return-air-from-plenum-in> .
 
-<urn:ex/reheat-coil-valve-in> a ns1:InletConnectionPoint ;
+<urn:ex/reheat-coil-valve-in> a ns2:InletConnectionPoint ;
     rdfs:label "reheat coil valve in" ;
-    ns1:cnx <urn:ex/pipe-hot-water-return-before-valve>,
+    ns2:cnx <urn:ex/pipe-hot-water-return-before-valve>,
         <urn:ex/reheat-coil-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-return-before-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
-    ns1:isConnectionPointOf <urn:ex/reheat-coil-valve> .
+    ns2:connectsThrough <urn:ex/pipe-hot-water-return-before-valve> ;
+    ns2:hasMedium ns2:Medium-Water ;
+    ns2:isConnectionPointOf <urn:ex/reheat-coil-valve> .
 
-<urn:ex/reheat-coil-valve-out> a ns1:OutletConnectionPoint ;
+<urn:ex/reheat-coil-valve-out> a ns2:OutletConnectionPoint ;
     rdfs:label "reheat coil valve out" ;
-    ns1:cnx <urn:ex/pipe-hot-water-return-after-valve>,
+    ns2:cnx <urn:ex/pipe-hot-water-return-after-valve>,
         <urn:ex/reheat-coil-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
-    ns1:isConnectionPointOf <urn:ex/reheat-coil-valve> .
+    ns2:connectsThrough <urn:ex/pipe-hot-water-return-after-valve> ;
+    ns2:hasMedium ns2:Medium-Water ;
+    ns2:isConnectionPointOf <urn:ex/reheat-coil-valve> .
 
-<urn:ex/reheat-coil-water-in> a ns1:InletConnectionPoint ;
+<urn:ex/reheat-coil-water-in> a ns2:InletConnectionPoint ;
     rdfs:label "reheat coil water in" ;
-    ns1:cnx <urn:ex/pipe-hot-water-return-after-valve>,
+    ns2:cnx <urn:ex/pipe-hot-water-return-after-valve>,
         <urn:ex/reheat-coil> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
-    ns1:isConnectionPointOf <urn:ex/reheat-coil> .
+    ns2:connectsThrough <urn:ex/pipe-hot-water-return-after-valve> ;
+    ns2:hasMedium ns2:Medium-Water ;
+    ns2:isConnectionPointOf <urn:ex/reheat-coil> .
 
-<urn:ex/reheat-coil-water-out> a ns1:OutletConnectionPoint ;
+<urn:ex/reheat-coil-water-out> a ns2:OutletConnectionPoint ;
     rdfs:label "reheat coil water out" ;
-    ns1:cnx <urn:ex/pipe-hot-water-supply>,
+    ns2:cnx <urn:ex/pipe-hot-water-supply>,
         <urn:ex/reheat-coil> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-supply> ;
-    ns1:hasMedium ns1:Medium-Water ;
-    ns1:isConnectionPointOf <urn:ex/reheat-coil> .
+    ns2:connectsThrough <urn:ex/pipe-hot-water-supply> ;
+    ns2:hasMedium ns2:Medium-Water ;
+    ns2:isConnectionPointOf <urn:ex/reheat-coil> .
 
-<urn:ex/return-air-from-plenum-in> a ns1:InletConnectionPoint ;
+<urn:ex/return-air-from-plenum-in> a ns2:InletConnectionPoint ;
     rdfs:label "return air from plenum in" ;
-    ns1:cnx <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan>,
+    ns2:cnx <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan>,
         <urn:ex/return-air-from-plenum-in-connection> ;
-    ns1:connectsThrough <urn:ex/return-air-from-plenum-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> .
+    ns2:connectsThrough <urn:ex/return-air-from-plenum-in-connection> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> .
 
-<urn:ex/out> a ns1:OutletConnectionPoint ;
+<urn:ex/out> a ns2:OutletConnectionPoint ;
     rdfs:label "out" ;
-    ns1:cnx <urn:ex/out-connection>,
+    ns2:cnx <urn:ex/out-connection>,
         <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> ;
-    ns1:connectsThrough <urn:ex/out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <urn:ex/discharge-air-temp> ;
-    ns1:isConnectionPointOf <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> .
+    ns2:connectsThrough <urn:ex/out-connection> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:hasProperty <urn:ex/discharge-air-temp> ;
+    ns2:isConnectionPointOf <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> .
 
-<urn:ex/supply-air-in> a ns1:InletConnectionPoint ;
+<urn:ex/supply-air-in> a ns2:InletConnectionPoint ;
     rdfs:label "supply air in" ;
-    ns1:cnx <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan>,
+    ns2:cnx <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan>,
         <urn:ex/supply-air-in-connection> ;
-    ns1:connectsThrough <urn:ex/supply-air-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <urn:ex/supply-air-flow> ;
-    ns1:isConnectionPointOf <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> .
+    ns2:connectsThrough <urn:ex/supply-air-in-connection> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:hasProperty <urn:ex/supply-air-flow> ;
+    ns2:isConnectionPointOf <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> .
 
-<urn:ex/fan> a ns1:Fan,
+<urn:ex/fan> a ns2:Fan,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Fan>,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD> ;
     rdfs:label "fan" ;
-    ns1:cnx <urn:ex/fan-in>,
+    ns2:cnx <urn:ex/fan-in>,
         <urn:ex/fan-out> ;
-    ns1:hasConnectionPoint <urn:ex/fan-in>,
+    ns2:hasConnectionPoint <urn:ex/fan-in>,
         <urn:ex/fan-out> ;
-    ns1:hasProperty <urn:ex/fan-speed-cmd>,
+    ns2:hasProperty <urn:ex/fan-speed-cmd>,
         <urn:ex/fan-speed-status>,
         <urn:ex/fan-start-cmd>,
         <urn:ex/fan-start-status> .
 
-<urn:ex/damper> a ns1:Damper,
+<urn:ex/damper> a ns2:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
     rdfs:label "damper" ;
-    ns1:cnx <urn:ex/damper-in>,
+    ns2:cnx <urn:ex/damper-in>,
         <urn:ex/damper-out> ;
-    ns1:hasConnectionPoint <urn:ex/damper-in>,
+    ns2:hasConnectionPoint <urn:ex/damper-in>,
         <urn:ex/damper-out> ;
-    ns1:hasProperty <urn:ex/damper-command>,
+    ns2:hasProperty <urn:ex/damper-command>,
         <urn:ex/damper-position> .
 
-<urn:ex/reheat-coil-valve> a ns1:Valve,
+<urn:ex/reheat-coil-valve> a ns2:Valve,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve>,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
     rdfs:label "reheat coil valve" ;
-    ns1:cnx <urn:ex/reheat-coil-valve-in>,
+    ns2:cnx <urn:ex/reheat-coil-valve-in>,
         <urn:ex/reheat-coil-valve-out> ;
-    ns1:hasConnectionPoint <urn:ex/reheat-coil-valve-in>,
+    ns2:hasConnectionPoint <urn:ex/reheat-coil-valve-in>,
         <urn:ex/reheat-coil-valve-out> ;
-    ns1:hasMedium ns1:Water-HotWater ;
-    ns1:hasProperty <urn:ex/reheat-coil-valve-command>,
+    ns2:hasMedium ns2:Water-HotWater ;
+    ns2:hasProperty <urn:ex/reheat-coil-valve-command>,
         <urn:ex/reheat-coil-valve-position> .
 
-<urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> a ns1:FanPoweredTerminal,
+<urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> a ns2:FanPoweredTerminal,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#FanPoweredTerminal> ;
     rdfs:label "parallel fan powered terminal unit variable volume fan" ;
-    ns1:cnx <urn:ex/out>,
+    ns2:cnx <urn:ex/out>,
         <urn:ex/return-air-from-plenum-in>,
         <urn:ex/supply-air-in> ;
-    ns1:contains <urn:ex/damper>,
+    ns2:contains <urn:ex/damper>,
         <urn:ex/fan>,
         <urn:ex/junction>,
         <urn:ex/reheat-coil>,
         <urn:ex/reheat-coil-valve> ;
-    ns1:hasConnectionPoint <urn:ex/out>,
+    ns2:hasConnectionPoint <urn:ex/out>,
         <urn:ex/return-air-from-plenum-in>,
         <urn:ex/supply-air-in> .
 
-<urn:ex/junction> a ns1:Junction ;
+<urn:ex/junction> a ns2:Junction ;
     rdfs:label "junction" ;
-    ns1:cnx <urn:ex/junction-in-1>,
+    ns2:cnx <urn:ex/junction-in-1>,
         <urn:ex/junction-in-2>,
         <urn:ex/junction-out> ;
-    ns1:hasConnectionPoint <urn:ex/junction-in-1>,
+    ns2:hasConnectionPoint <urn:ex/junction-in-1>,
         <urn:ex/junction-in-2>,
         <urn:ex/junction-out> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/reheat-coil> a ns1:HeatingCoil,
+<urn:ex/reheat-coil> a ns2:HeatingCoil,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;
     rdfs:label "reheat coil" ;
-    ns1:cnx <urn:ex/reheat-coil-air-out>,
+    ns2:cnx <urn:ex/reheat-coil-air-out>,
         <urn:ex/reheat-coil-in>,
         <urn:ex/reheat-coil-water-in>,
         <urn:ex/reheat-coil-water-out> ;
-    ns1:hasConnectionPoint <urn:ex/reheat-coil-air-out>,
+    ns2:hasConnectionPoint <urn:ex/reheat-coil-air-out>,
         <urn:ex/reheat-coil-in>,
         <urn:ex/reheat-coil-water-in>,
         <urn:ex/reheat-coil-water-out> ;
-    ns1:hasRole ns1:Role-Heating .
+    ns2:hasRole ns2:Role-Heating .
 
