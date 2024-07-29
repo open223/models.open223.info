@@ -1,3 +1,14 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 # Design Patterns
 
 This file contains the Turtle code supporting the set of design patterns presented in the User Documentation site, in the section titled ["Modeling Design Patterns"](https://docs.open223.info/guides/design-patterns.html#)

@@ -1,3 +1,14 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 # ASHRAE Guideline 36-2021 A-9 Multiple Zone VAV Air Handling Unit
 
 This component model is an example of the multiple zone VAV air handling unit _with return fan and OA measurement station_ from Guideline 36-2021, Appendix A, Figure A-9.

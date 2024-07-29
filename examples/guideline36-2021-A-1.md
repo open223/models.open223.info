@@ -1,3 +1,14 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 # ASHRAE Guideline 36-2021 A-1 VAV Terminal Unit, Cooling Only
 
 This component model is an example of the variable air volume (VAV) terminal unit with cooling only from Guideline 36-2021, Appendix A, Figure A-1.
