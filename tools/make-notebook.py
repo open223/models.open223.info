@@ -4,15 +4,13 @@ import pathlib
 
 def generate_python_code(location):
     # rewrite the 'models/bdg1-1.ttl' location to 'compiled/bdg1-1.ttl'
-    model_name = pathlib.Path(location).name
-    location = pathlib.Path('compiled') / model_name
+    model_path = pathlib.Path(location).name
+    location = pathlib.Path('compiled') / model_path
+
+    # remove the extension from model_name
+    model_name = pathlib.Path(location).stem
 
     code_content = f"""\
-# the command below requires Java to be installed. If you don't have java, comment
-# the line below and use the other command
-# !pip install 'buildingmotif[topquadrant] @ git+https://github.com/NREL/buildingmotif.git@develop'
-#!pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop'
-
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
 import logging
@@ -25,7 +23,7 @@ bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ER
 s223 = Library.load(ontology_graph="https://github.com/open223/models.open223.info/raw/main/ontologies/223p.ttl")
 
 # load the model into the BuildingMOTIF instance
-model = Model.create("urn:example/")
+model = Model.create("urn:{model_name}")
 model.graph.parse("https://models.open223.info/{location}")
 
 # validate the model against 223P ontology
@@ -40,7 +38,10 @@ This code uses the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) librar
 It then validates the model against the ontology. If the model is invalid, it will print the validation report.
 
 To run this code, you need to have Java installed on your system. If you do not have Java installed, you can remove the `shacl_engine='topquadrant'` parameter from the `BuildingMOTIF` constructor.
+Be warned that without the `shacl_engine='topquadrant'` parameter, the validation process will be slower.
 
+````{note} BuildingMOTIF installation
+:class: dropdown
 To install the `buildingmotif` library, you can use the following command:
 
 ```shell
@@ -52,8 +53,7 @@ If you do not have Java installed, you can use the following command to install 
 ```shell
 pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop'
 ```
-
-Be warned that without the `shacl_engine='topquadrant'` parameter, the validation process will be slower.
+````
 """
 
 def add_code_to_markdown(markdown_file_path, code_content):
