@@ -1,3 +1,14 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 # Design Patterns
 
 This file contains the Turtle code supporting the set of design patterns presented in the User Documentation site, in the section titled ["Modeling Design Patterns"](https://docs.open223.info/guides/design-patterns.html#)
@@ -31,3 +42,50 @@ The model was created using [TopQuadrant](https://www.topquadrant.com/) TopBraid
 | [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedObservableProperty](https://explore.open223.info/s223/EnumeratedObservableProperty.html) | 4 |
 | [Property](https://explore.open223.info/s223/Property.html) | [EnumerableProperty](https://explore.open223.info/s223/EnumerableProperty.html) | 3 |
 
+
+## Load and Validate Model
+
+This code uses the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) library to load the 223P ontology and the model file into a temporary in-memory instance.
+It then validates the model against the ontology. If the model is invalid, it will print the validation report.
+
+To run this code, you need to have Java installed on your system. If you do not have Java installed, you can remove the `shacl_engine='topquadrant'` parameter from the `BuildingMOTIF` constructor.
+Be warned that without the `shacl_engine='topquadrant'` parameter, the validation process will be slower.
+
+````{note} BuildingMOTIF installation
+:class: dropdown
+To install the `buildingmotif` library, you can use the following command:
+
+```shell
+pip install 'buildingmotif[topquadrant] @ git+https://github.com/NREL/buildingmotif.git@develop'
+```
+
+If you do not have Java installed, you can use the following command to install the library:
+
+```shell
+pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop'
+```
+````
+
+
+```{code-cell} ipython3
+from buildingmotif import BuildingMOTIF
+from buildingmotif.dataclasses import Library, Model
+import logging
+
+# Create a BuildingMOTIF object. If you do not have Java installed, remove the "shacl_engine" parameter
+bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ERROR)
+
+# load 223P library. We will load a recent copy from the models.open223.info
+# git repository; later, we will load this from the location of the actual standard
+s223 = Library.load(ontology_graph="https://github.com/open223/models.open223.info/raw/main/ontologies/223p.ttl")
+
+# load the model into the BuildingMOTIF instance
+model = Model.create("urn:design-patterns")
+model.graph.parse("https://models.open223.info/compiled/design-patterns.ttl")
+
+# validate the model against 223P ontology
+ctx = model.validate([s223.get_shape_collection()], error_on_missing_imports=False)
+if not ctx.valid:
+    print(ctx.report_string)
+
+```

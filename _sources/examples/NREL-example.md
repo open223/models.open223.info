@@ -1,3 +1,14 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 # NREL Example Building
 
 This is an example building provided by the National Renewable Energy Laboratory, built with the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) tool.
