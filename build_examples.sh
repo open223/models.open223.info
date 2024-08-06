@@ -25,6 +25,7 @@ for filename in examples/*.md; do
     echo "  Writing to $md_filename"
 
     python tools/make_count_table.py "$ttl_filename" "$md_filename"
+    python tools/make-notebook.py "$ttl_filename" "$md_filename"
 done
 
 # build queries
