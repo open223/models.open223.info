@@ -35,8 +35,21 @@ model.graph.parse("https://models.open223.info/compiled/guideline36-2021-A-3.ttl
 
 # validate the model against 223P ontology
 ctx = model.validate([s223.get_shape_collection()], error_on_missing_imports=False)
+
+# print the validation result
+print(f"Model is valid: {ctx.valid}")
+
+# if the model is invalid, print the validation report
 if not ctx.valid:
-    print(ctx.report_string)
+    print(ctx.report_string[:1000]) # first 1000 characters of the report
+
+# BuildingMOTIF can also interpret the report to provide recommendations on fixes
+for focus_node, diffs in ctx.get_reasons_with_severity("Violation").items():
+    if len(diffs) == 0:
+        continue
+    print(focus_node)
+    for diff in diffs:
+        print("  - " + diff.reason())
 
 ------------------
 
