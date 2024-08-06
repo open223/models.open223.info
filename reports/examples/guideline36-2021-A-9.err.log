@@ -1,65 +1,47 @@
 Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/client.py", line 780, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/util.py", line 97, in ensure_async
+    result = await obj
+             ^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/jupyter_client/channels.py", line 313, in get_msg
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/client.py", line 1314, in execute
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/client.py", line 1269, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
-    return loop.run_until_complete(inner)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/util.py", line 85, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/util.py", line 60, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/client.py", line 707, in async_execute
     await self.async_execute_cell(
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-from buildingmotif import BuildingMOTIF
-from buildingmotif.dataclasses import Library, Model
-import logging
-
-# Create a BuildingMOTIF object. If you do not have Java installed, remove the "shacl_engine" parameter
-bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ERROR)
-
-# load 223P library. We will load a recent copy from the models.open223.info
-# git repository; later, we will load this from the location of the actual standard
-s223 = Library.load(ontology_graph="https://github.com/open223/models.open223.info/raw/main/ontologies/223p.ttl")
-
-# load the model into the BuildingMOTIF instance
-model = Model.create("urn:guideline36-2021-A-9")
-model.graph.parse("https://models.open223.info/compiled/guideline36-2021-A-9.ttl")
-
-# validate the model against 223P ontology
-ctx = model.validate([s223.get_shape_collection()], error_on_missing_imports=False)
-
-# print the validation result
-print(f"Model is valid: {ctx.valid}")
-
-# if the model is invalid, print the validation report
-if not ctx.valid:
-    print(ctx.report_string[:1000]) # first 1000 characters of the report
-
-# BuildingMOTIF can also interpret the report to provide recommendations on fixes
-for focus_node, diffs in ctx.get_reasons_with_severity("Violation").items():
-    if len(diffs) == 0:
-        continue
-    print(focus_node)
-    for diff in diffs:
-        print("  - " + diff.reason())
-
-------------------
-
-
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbuildingmotif[39;00m [38;5;28;01mimport[39;00m BuildingMOTIF
-[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbuildingmotif[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdataclasses[39;00m [38;5;28;01mimport[39;00m Library, Model
-[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mlogging[39;00m
-
-[0;31mModuleNotFoundError[0m: No module named 'buildingmotif'
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/client.py", line 1006, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/client.py", line 804, in _async_poll_for_reply
+    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 300 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+['from buildingmotif import BuildingMOTIF', 'from buildingmotif.dataclasses import Library, Model', 'import logging', '', '# Create a BuildingMOTIF object. If you do not have Java installed, remove the "shacl_engine" parameter']
+...
+['    if len(diffs) == 0:', '        continue', '    print(focus_node)', '    for diff in diffs:', '        print("  - " + diff.reason())']
+-------------------
 

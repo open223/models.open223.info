@@ -589,14 +589,60 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/pyshacl/extras/__init__.py:46: Warning: Extra &quot;js&quot; is not satisfied because requirement pyduktape2 is not installed.
+  warn(Warning(f&quot;Extra \&quot;{extra_name}\&quot; is not satisfied because requirement {req} is not installed.&quot;))
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">buildingmotif</span> <span class="kn">import</span> <span class="n">BuildingMOTIF</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">buildingmotif.dataclasses</span> <span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">logging</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/compiled/lbnl-example-2.ttl&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># validate the model against 223P ontology</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span> <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># print the validation result</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model is valid: </span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;buildingmotif&#39;
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/buildingmotif/dataclasses/model.py:192,</span> in <span class="ni">Model.validate</span><span class="nt">(self, shape_collections, error_on_missing_imports)</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span> <span class="n">shapeg</span> <span class="o">=</span> <span class="n">skolemize_shapes</span><span class="p">(</span><span class="n">shapeg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="c1"># TODO: do we want to preserve the materialized triples added to data_graph via reasoning?</span>
+<span class="ne">--&gt; </span><span class="mi">192</span> <span class="n">data_graph</span> <span class="o">=</span> <span class="n">copy_graph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="c1"># remove imports from data graph</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="n">data_graph</span><span class="o">.</span><span class="n">remove</span><span class="p">((</span><span class="kc">None</span><span class="p">,</span> <span class="n">OWL</span><span class="o">.</span><span class="n">imports</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/buildingmotif/utils.py:95,</span> in <span class="ni">copy_graph</span><span class="nt">(g, preserve_blank_nodes)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">BNode</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>             <span class="n">o</span> <span class="o">=</span> <span class="n">BNode</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">new_prefix</span> <span class="o">+</span> <span class="n">o</span><span class="o">.</span><span class="n">toPython</span><span class="p">())</span>
+<span class="ne">---&gt; </span><span class="mi">95</span>     <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span> <span class="k">return</span> <span class="n">c</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/graph.py:533,</span> in <span class="ni">Graph.add</span><span class="nt">(self, triple)</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Node</span><span class="p">),</span> <span class="s2">&quot;Predicate </span><span class="si">%s</span><span class="s2"> must be an rdflib term&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">p</span><span class="p">,)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">Node</span><span class="p">),</span> <span class="s2">&quot;Object </span><span class="si">%s</span><span class="s2"> must be an rdflib term&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">o</span><span class="p">,)</span>
+<span class="ne">--&gt; </span><span class="mi">533</span> <span class="bp">self</span><span class="o">.</span><span class="n">__store</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span><span class="p">),</span> <span class="bp">self</span><span class="p">,</span> <span class="n">quoted</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">534</span> <span class="k">return</span> <span class="bp">self</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/plugins/stores/memory.py:351,</span> in <span class="ni">Memory.add</span><span class="nt">(self, triple, context, quoted)</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span>     <span class="n">o</span><span class="p">[</span><span class="n">object_</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>     <span class="n">triple_exists</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="ne">--&gt; </span><span class="mi">351</span> <span class="bp">self</span><span class="o">.</span><span class="n">__add_triple_context</span><span class="p">(</span><span class="n">triple</span><span class="p">,</span> <span class="n">triple_exists</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">quoted</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span> <span class="k">if</span> <span class="n">triple_exists</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>     <span class="c1"># No need to insert twice this triple.</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span>     <span class="k">return</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/plugins/stores/memory.py:597,</span> in <span class="ni">Memory.__add_triple_context</span><span class="nt">(self, triple, triple_exists, context, quoted)</span>
+<span class="g g-Whitespace">    </span><span class="mi">594</span>             <span class="k">pass</span>  <span class="c1"># we didn&#39;t know this graph, no problem</span>
+<span class="g g-Whitespace">    </span><span class="mi">596</span> <span class="c1"># internal utility methods below</span>
+<span class="ne">--&gt; </span><span class="mi">597</span> <span class="k">def</span> <span class="nf">__add_triple_context</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">598</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">599</span>     <span class="n">triple</span><span class="p">:</span> <span class="s2">&quot;_TripleType&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">600</span>     <span class="n">triple_exists</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">601</span>     <span class="n">context</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;_ContextType&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">602</span>     <span class="n">quoted</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;add the given context to the set of contexts for the triple&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">605</span>     <span class="n">ctx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ctx_to_str</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
