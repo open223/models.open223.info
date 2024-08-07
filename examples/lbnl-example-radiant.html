@@ -529,97 +529,668 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/pyshacl/extras/__init__.py:46: Warning: Extra &quot;js&quot; is not satisfied because requirement pyduktape2 is not installed.
-  warn(Warning(f&quot;Extra \&quot;{extra_name}\&quot; is not satisfied because requirement {req} is not installed.&quot;))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/4ZlBaNBL6C3&gt; ;
+            sh:resultMessage &quot;Less than 1 values have shape &lt;urn:well-known/4766326f&gt;&quot; ;
+            sh:resultPath ns2:hasRole ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/ec3f93b4&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/RSbmL4EpaNBik&gt; ;
+            sh:resultMessage &quot;Value must be an instance of ns2:Property&quot; ;
+            sh:resultPath ns2:hasProperty ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/75d93988&gt; ;
+            sh:value &lt;urn
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/compiled/lbnl-example-radiant.ttl&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># validate the model against 223P ontology</span>
-<span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span> <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># print the validation result</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model is valid: </span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/buildingmotif/dataclasses/model.py:182,</span> in <span class="ni">Model.validate</span><span class="nt">(self, shape_collections, error_on_missing_imports)</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">shapeg</span> <span class="o">+=</span> <span class="n">sc</span><span class="o">.</span><span class="n">resolve_imports</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>         <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="n">error_on_missing_imports</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="p">)</span><span class="o">.</span><span class="n">graph</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="c1"># inline sh:node for interpretability</span>
-<span class="ne">--&gt; </span><span class="mi">182</span> <span class="n">shapeg</span> <span class="o">=</span> <span class="n">rewrite_shape_graph</span><span class="p">(</span><span class="n">shapeg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span> <span class="c1"># remove imports from sg</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="n">shapeg</span><span class="o">.</span><span class="n">remove</span><span class="p">((</span><span class="kc">None</span><span class="p">,</span> <span class="n">OWL</span><span class="o">.</span><span class="n">imports</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/buildingmotif/utils.py:545,</span> in <span class="ni">rewrite_shape_graph</span><span class="nt">(g)</span>
-<span class="g g-Whitespace">    </span><span class="mi">536</span> <span class="k">def</span> <span class="nf">rewrite_shape_graph</span><span class="p">(</span><span class="n">g</span><span class="p">:</span> <span class="n">Graph</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Graph</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span><span class="sd">     Rewrites the input graph to make the resulting validation report more useful.</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span><span class="sd">     :rtype: Graph</span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">545</span>     <span class="n">sg</span> <span class="o">=</span> <span class="n">copy_graph</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">547</span>     <span class="n">previous_size</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">548</span>     <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">sg</span><span class="p">)</span> <span class="o">!=</span> <span class="n">previous_size</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/buildingmotif/utils.py:85,</span> in <span class="ni">copy_graph</span><span class="nt">(g, preserve_blank_nodes)</span>
-<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span> <span class="n">new_prefix</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">85</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">triples</span><span class="p">((</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)):</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span>     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span>     <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span> <span class="o">=</span> <span class="n">t</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/graph.py:592,</span> in <span class="ni">Graph.triples</span><span class="nt">(self, triple)</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span>         <span class="k">yield</span> <span class="n">_s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">_o</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">592</span>     <span class="k">for</span> <span class="p">(</span><span class="n">_s</span><span class="p">,</span> <span class="n">_p</span><span class="p">,</span> <span class="n">_o</span><span class="p">),</span> <span class="n">cg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__store</span><span class="o">.</span><span class="n">triples</span><span class="p">((</span><span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span><span class="p">),</span> <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">593</span>         <span class="k">yield</span> <span class="n">_s</span><span class="p">,</span> <span class="n">_p</span><span class="p">,</span> <span class="n">_o</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/plugins/stores/memory.py:436,</span> in <span class="ni">Memory.triples</span><span class="nt">(self, triple_pattern, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">434</span>         <span class="k">return</span>
-<span class="g g-Whitespace">    </span><span class="mi">435</span>     <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__contextTriples</span><span class="p">[</span><span class="n">req_ctx</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">436</span>         <span class="k">yield</span> <span class="n">triple</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__contexts</span><span class="p">(</span><span class="n">triple</span><span class="p">)</span>
-<span class="nn">    438 # optimize &quot;triple</span> in <span class="ni">graph&quot; case </span><span class="nt">(all parts given)</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span> <span class="k">elif</span> <span class="n">subject</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">predicate</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">object_</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="nn">    440     # type error: Incompatible types</span> in <span class="ni">assignment </span><span class="nt">(expression has type &quot;Tuple[Optional[IdentifiedNode], Optional[IdentifiedNode], Optional[Identifier]]&quot;, variable has type &quot;Tuple[IdentifiedNode, IdentifiedNode, Identifier]&quot;)</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="c1"># NOTE on type error: at this point, all elements of triple_pattern</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="c1"># is not None, so it has the same type as triple</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/plugins/stores/memory.py:718,</span> in <span class="ni">Memory.__contexts</span><span class="nt">(self, triple)</span>
-<span class="g g-Whitespace">    </span><span class="mi">713</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;return a generator for all the non-quoted contexts</span>
-<span class="g g-Whitespace">    </span><span class="mi">714</span><span class="sd"> (dereferenced) the encoded triple appears in&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">715</span> <span class="c1"># type error: Argument 2 to &quot;get&quot; of &quot;Mapping&quot; has incompatible type &quot;str&quot;; expected &quot;Optional[Graph]&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">716</span> <span class="k">return</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="bp">self</span><span class="o">.</span><span class="n">__context_obj_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ctx_str</span><span class="p">,</span> <span class="n">ctx_str</span><span class="p">)</span>  <span class="c1"># type: ignore[arg-type]</span>
-<span class="nn">--&gt; 718     for ctx_str</span> in <span class="ni">self.__get_context_for_triple</span><span class="nt">(triple, skipQuoted=True)</span>
-<span class="g g-Whitespace">    </span><span class="mi">719</span>     <span class="k">if</span> <span class="n">ctx_str</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">720</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/plugins/stores/memory.py:656,</span> in <span class="ni">Memory.__get_context_for_triple</span><span class="nt">(self, triple, skipQuoted)</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span> <span class="k">def</span> <span class="nf">__get_context_for_triple</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">651</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">triple</span><span class="p">:</span> <span class="s2">&quot;_TripleType&quot;</span><span class="p">,</span> <span class="n">skipQuoted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># noqa: N803</span>
-<span class="g g-Whitespace">    </span><span class="mi">652</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Collection</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;return a list of contexts (str) for the triple, skipping</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span><span class="sd">     quoted contexts if skipQuoted==True&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">656</span>     <span class="n">ctxs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__tripleContexts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">triple</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__defaultContexts</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">skipQuoted</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span>         <span class="c1"># type error: Item &quot;None&quot; of &quot;Optional[Dict[Optional[str], bool]]&quot; has no attribute &quot;keys&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span>         <span class="k">return</span> <span class="n">ctxs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>  <span class="c1"># type: ignore[union-attr]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/term.py:1256,</span> in <span class="ni">Literal.__hash__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1227</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1228</span><span class="sd"> &gt;&gt;&gt; from rdflib.namespace import XSD</span>
-<span class="g g-Whitespace">   </span><span class="mi">1229</span><span class="sd"> &gt;&gt;&gt; a = {Literal(&#39;1&#39;, datatype=XSD.integer):&#39;one&#39;}</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1253</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1254</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span> <span class="c1"># don&#39;t use super()... for efficiency reasons, see Identifier.__hash__</span>
-<span class="ne">-&gt; </span><span class="mi">1256</span> <span class="n">res</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1257</span> <span class="c1"># Directly accessing the member is faster than the property.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1258</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_language</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/hD6X93JD0xWx1
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/hD6X93JD0xWx1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/hD6X93JD0xWx1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/hD6X93JD0xWx1 needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/kSqjtK2uAh8rz
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/kSqjtK2uAh8rz needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW
+  - urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW needs between 1 and 1 instances of http://data.ashrae.org/standard223#EnumerationKind-Domain on path http://data.ashrae.org/standard223#hasDomain
+  - urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW needs between 1 and None instances of http://data.ashrae.org/standard223#DomainSpace on path http://data.ashrae.org/standard223#hasDomainSpace
+  - urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/y3WYlY8gGUDneMo0HuzAE3XVui3zW needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/wAwKUm7oT2ADy
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wAwKUm7oT2ADy needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/Oj8En0OoxRau0c6TtN5qXUbQRdkf needs to be a http://data.ashrae.org/standard223#Connectable
+urn:ex/x1M7yoj2qaURm
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/x1M7yoj2qaURm needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/XlFoyFw99XuQD
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/XlFoyFw99XuQD needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/XlFoyFw99XuQD needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/7lGV3yNBQrC26
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/7lGV3yNBQrC26 needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/Jt7YptcLzXA
+  - urn:ex/Jt7YptcLzXA needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/Jt7YptcLzXA needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/TWakE4ioGvY4d3oq15EtG02lGZE1
+  - urn:ex/TWakE4ioGvY4d3oq15EtG02lGZE1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/TWakE4ioGvY4d3oq15EtG02lGZE1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/TWakE4ioGvY4d3oq15EtG02lGZE1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/TWakE4ioGvY4d3oq15EtG02lGZE1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/TWakE4ioGvY4d3oq15EtG02lGZE1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/TWakE4ioGvY4d3oq15EtG02lGZE1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/TWakE4ioGvY4d3oq15EtG02lGZE1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/TWakE4ioGvY4d3oq15EtG02lGZE1 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/TWakE4ioGvY4d3oq15EtG02lGZE1 needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/fakNkBW95H1nvDsEpAqOUMtCg1YT
+  - urn:ex/fakNkBW95H1nvDsEpAqOUMtCg1YT needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/fakNkBW95H1nvDsEpAqOUMtCg1YT needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/fakNkBW95H1nvDsEpAqOUMtCg1YT needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/fakNkBW95H1nvDsEpAqOUMtCg1YT needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/fakNkBW95H1nvDsEpAqOUMtCg1YT needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/fakNkBW95H1nvDsEpAqOUMtCg1YT needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/fakNkBW95H1nvDsEpAqOUMtCg1YT needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/fakNkBW95H1nvDsEpAqOUMtCg1YT needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/fakNkBW95H1nvDsEpAqOUMtCg1YT needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/NUnsYyATHM39waGR3L9BYVvytEUz
+  - urn:ex/NUnsYyATHM39waGR3L9BYVvytEUz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/NUnsYyATHM39waGR3L9BYVvytEUz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/NUnsYyATHM39waGR3L9BYVvytEUz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/NUnsYyATHM39waGR3L9BYVvytEUz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/NUnsYyATHM39waGR3L9BYVvytEUz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/NUnsYyATHM39waGR3L9BYVvytEUz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/NUnsYyATHM39waGR3L9BYVvytEUz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/NUnsYyATHM39waGR3L9BYVvytEUz needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/NUnsYyATHM39waGR3L9BYVvytEUz needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/RSbmL4EpaNBik
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/RSbmL4EpaNBik needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/DekoeACEhKXHI
+  - urn:ex/DekoeACEhKXHI needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/DekoeACEhKXHI needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/Kr1E0o5SFqmvOtQFTVbDIRq
+  - urn:ex/Kr1E0o5SFqmvOtQFTVbDIRq needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/Kr1E0o5SFqmvOtQFTVbDIRq needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/Kr1E0o5SFqmvOtQFTVbDIRq needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/Kr1E0o5SFqmvOtQFTVbDIRq needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/Kr1E0o5SFqmvOtQFTVbDIRq needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/Kr1E0o5SFqmvOtQFTVbDIRq needs to be a http://data.ashrae.org/standard223#Connectable
+urn:ex/t6ihFY6ppy3aWSVnO6AK35VI1dns
+  - urn:ex/t6ihFY6ppy3aWSVnO6AK35VI1dns needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/t6ihFY6ppy3aWSVnO6AK35VI1dns needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/t6ihFY6ppy3aWSVnO6AK35VI1dns needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/t6ihFY6ppy3aWSVnO6AK35VI1dns needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/wikY2cJaW5J
+  - urn:ex/wikY2cJaW5J needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/wikY2cJaW5J needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/lceyCJSXmC9aqvzx3cradO1s6IHQavH3mTXSx
+  - urn:ex/lceyCJSXmC9aqvzx3cradO1s6IHQavH3mTXSx needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/lceyCJSXmC9aqvzx3cradO1s6IHQavH3mTXSx needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/lceyCJSXmC9aqvzx3cradO1s6IHQavH3mTXSx needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/lceyCJSXmC9aqvzx3cradO1s6IHQavH3mTXSx needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/lceyCJSXmC9aqvzx3cradO1s6IHQavH3mTXSx needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/lceyCJSXmC9aqvzx3cradO1s6IHQavH3mTXSx needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/lceyCJSXmC9aqvzx3cradO1s6IHQavH3mTXSx needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/lceyCJSXmC9aqvzx3cradO1s6IHQavH3mTXSx needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/zTjcrls70bl20UsjS6CFkVRZyHNm
+  - urn:ex/zTjcrls70bl20UsjS6CFkVRZyHNm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/zTjcrls70bl20UsjS6CFkVRZyHNm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/zTjcrls70bl20UsjS6CFkVRZyHNm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/zTjcrls70bl20UsjS6CFkVRZyHNm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/zTjcrls70bl20UsjS6CFkVRZyHNm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/zTjcrls70bl20UsjS6CFkVRZyHNm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/zTjcrls70bl20UsjS6CFkVRZyHNm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/zTjcrls70bl20UsjS6CFkVRZyHNm needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/zTjcrls70bl20UsjS6CFkVRZyHNm needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/KIWNeqUC7vdlfGge07sHjAExotigeOSh5JH5H
+  - urn:ex/KIWNeqUC7vdlfGge07sHjAExotigeOSh5JH5H needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/KIWNeqUC7vdlfGge07sHjAExotigeOSh5JH5H needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/KIWNeqUC7vdlfGge07sHjAExotigeOSh5JH5H needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7
+  - urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7 needs between 1 and None instances of http://data.ashrae.org/standard223#DomainSpace on path http://data.ashrae.org/standard223#hasDomainSpace
+  - urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7 needs between 1 and 1 instances of http://data.ashrae.org/standard223#EnumerationKind-Domain on path http://data.ashrae.org/standard223#hasDomain
+  - urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7 needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/sEygcVUGZAN8gGWyEgMGVTpJpkfD7 needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/wv76zdAvdBrr0MWSh9jl
+  - urn:ex/wv76zdAvdBrr0MWSh9jl needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wv76zdAvdBrr0MWSh9jl needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wv76zdAvdBrr0MWSh9jl needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wv76zdAvdBrr0MWSh9jl needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wv76zdAvdBrr0MWSh9jl needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wv76zdAvdBrr0MWSh9jl needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wv76zdAvdBrr0MWSh9jl needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/wv76zdAvdBrr0MWSh9jl needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E
+  - urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E needs between 1 and None instances of http://data.ashrae.org/standard223#DomainSpace on path http://data.ashrae.org/standard223#hasDomainSpace
+  - urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E needs between 1 and 1 instances of http://data.ashrae.org/standard223#EnumerationKind-Domain on path http://data.ashrae.org/standard223#hasDomain
+  - urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/PSxchsOcK00QB0ZDkNX5uxUvd6j3E needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/ArmyrsKj7tQmyL5aqqUFjzCsawQv needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/49RUrj1eByJ
+  - urn:ex/49RUrj1eByJ needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/49RUrj1eByJ needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/UfEJYP5IJ
+  - urn:ex/UfEJYP5IJ needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/UfEJYP5IJ needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/UfEJYP5IJ needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/UfEJYP5IJ needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/uPakaVNy2gK
+  - urn:ex/uPakaVNy2gK needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/uPakaVNy2gK needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/ZnJs9KYMd0K5eXRtxiFHz1CVLVtn
+  - urn:ex/ZnJs9KYMd0K5eXRtxiFHz1CVLVtn needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/ZnJs9KYMd0K5eXRtxiFHz1CVLVtn needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/ZnJs9KYMd0K5eXRtxiFHz1CVLVtn needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/ZnJs9KYMd0K5eXRtxiFHz1CVLVtn needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/ZnJs9KYMd0K5eXRtxiFHz1CVLVtn needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/ZnJs9KYMd0K5eXRtxiFHz1CVLVtn needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/ZnJs9KYMd0K5eXRtxiFHz1CVLVtn needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/ZnJs9KYMd0K5eXRtxiFHz1CVLVtn needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/ZnJs9KYMd0K5eXRtxiFHz1CVLVtn needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/aTJPByAZ0ZA
+  - urn:ex/aTJPByAZ0ZA needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/aTJPByAZ0ZA needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/85wHjtBpj3y
+  - urn:ex/85wHjtBpj3y needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/85wHjtBpj3y needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/TIMxy826q
+  - urn:ex/TIMxy826q needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/TIMxy826q needs to be a http://data.ashrae.org/standard223#Connectable
+  - urn:ex/TIMxy826q needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/TIMxy826q needs to be a http://data.ashrae.org/standard223#Connectable
+urn:ex/3Ee1GtNUakl
+  - urn:ex/3Ee1GtNUakl needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/3Ee1GtNUakl needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/pAJrzOw19df71Y1Oc2oMb6NlXTvR
+  - urn:ex/pAJrzOw19df71Y1Oc2oMb6NlXTvR needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/pAJrzOw19df71Y1Oc2oMb6NlXTvR needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/pAJrzOw19df71Y1Oc2oMb6NlXTvR needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/pAJrzOw19df71Y1Oc2oMb6NlXTvR needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/pAJrzOw19df71Y1Oc2oMb6NlXTvR needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/pAJrzOw19df71Y1Oc2oMb6NlXTvR needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/pAJrzOw19df71Y1Oc2oMb6NlXTvR needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/pAJrzOw19df71Y1Oc2oMb6NlXTvR needs to be a http://data.ashrae.org/standard223#Property
+  - urn:ex/pAJrzOw19df71Y1Oc2oMb6NlXTvR needs to be a http://data.ashrae.org/standard223#Property
+urn:ex/sJYne6iAI31
+  - urn:ex/sJYne6iAI31 needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/sJYne6iAI31 needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/NyC0ncv6T88HnViHa
+  - urn:ex/NyC0ncv6T88HnViHa needs between 4 and None uses of path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/mrr38F3ddz1
+  - urn:ex/mrr38F3ddz1 needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/mrr38F3ddz1 needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/F85n2NByLNw
+  - urn:ex/F85n2NByLNw needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/F85n2NByLNw needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/Y036LZkVYy6
+  - urn:ex/Y036LZkVYy6 needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/Y036LZkVYy6 needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/o6egKWgoQzZ
+  - urn:ex/o6egKWgoQzZ needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/o6egKWgoQzZ needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/whCPcxHjDw695CFwJ8wMN
+  - urn:ex/whCPcxHjDw695CFwJ8wMN needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/whCPcxHjDw695CFwJ8wMN needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/whCPcxHjDw695CFwJ8wMN needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/whCPcxHjDw695CFwJ8wMN needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/pBQOhd2xYeH
+  - urn:ex/pBQOhd2xYeH needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/pBQOhd2xYeH needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/A90NSNch73j
+  - urn:ex/A90NSNch73j needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/A90NSNch73j needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+urn:ex/4ZlBaNBL6C3
+  - urn:ex/4ZlBaNBL6C3 needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
+  - urn:ex/4ZlBaNBL6C3 needs between 1 and None instances of http://data.ashrae.org/standard223#Role-Heating on path http://data.ashrae.org/standard223#hasRole
 </pre></div>
 </div>
 </div>
