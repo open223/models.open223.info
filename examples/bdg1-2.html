@@ -412,7 +412,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="example-building-1-model-2">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This model has not been updated since the last update of the 223P ontology. It may fail validation.
+223P was last updated on 2024-08-17 02:46:39. The model file was last updated on 2024-08-17 02:46:39</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="example-building-1-model-2">
 <h1>Example Building 1 model 2<a class="headerlink" href="#example-building-1-model-2" title="Link to this heading">#</a></h1>
 <p>Example Building 1 is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.</p>
 <p>This reference building was developed for and first described in the journal article <a class="reference external" href="https://doi.org/10.3390/en14072024">“Metadata Schemas and Ontologies for Building Energy Applications: A Critical Review and Use Case Analysis”</a>.</p>
@@ -545,7 +550,7 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 
 <span class="c1"># load the model into the BuildingMOTIF instance</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;urn:bdg1-2&quot;</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/compiled/bdg1-2.ttl&quot;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/bdg1-2.ttl&quot;</span><span class="p">)</span>
 
 <span class="c1"># validate the model against 223P ontology</span>
 <span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span> <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -569,72 +574,71 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1&gt; ;
-            sh:resultMessage &quot;s223: A Junction must be associated with exactly one EnumerationKind-Medium using the relation hasMedium.&quot; ;
-            sh:resultPath ns3:hasMedium ;
+            sh:focusNode &lt;urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f&gt; ;
+            sh:resultMessage &quot;s223: Connection &lt;urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f&gt; with Medium ns2:Medium-Electricity is incompatible with &lt;urn:anon:uuid:b8a8780d-28f7-4600-a4db-5d940a48760a&gt; with Medium ns2:AC-120VLN-1Ph-60Hz.&quot; ;
+            sh:resultPath ns2:hasMedium ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/23477171&gt; ;
-            sh:value ns3:Medium-Electricity ],
+            sh:sourceConstraint _:n251262c7aa1340839898853828a69144b3 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/6c080611&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec&gt; ;
-            sh:resultMessage &quot;s223: An ElectricWire must be associated with exactly one Constituent-Electricity using the relation hasMedium.&quot; ;
-            sh:resultP
+            sh:focusNode &lt;urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae&gt; ;
+            sh:resultMessage &quot;s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f
-  - urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f needs to be a http://data.ashrae.org/standard223#Substance-Medium
-  - urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
-urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c
-  - urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
-  - urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e
-  - urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e needs to be a http://data.ashrae.org/standard223#Substance-Medium
-  - urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
-urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13
-  - urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13 needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
-  - urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec
-  - urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
-  - urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab
-  - urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab needs to be a http://data.ashrae.org/standard223#Substance-Medium
-  - urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
-urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5
-  - urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-  - urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5 needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
-urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c
-  - urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c needs to be a http://data.ashrae.org/standard223#Substance-Medium
-  - urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0
+  - urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+  - urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0 needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1
+  - urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:anon:uuid:f215cc32-796a-4f51-9ef9-9db344cbb0c6
   - urn:anon:uuid:f215cc32-796a-4f51-9ef9-9db344cbb0c6 needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
   - urn:anon:uuid:f215cc32-796a-4f51-9ef9-9db344cbb0c6 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0
-  - urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-  - urn:anon:uuid:e4ba2421-39ed-4aed-b1e9-e2384a7b30a0 needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
-urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963
-  - urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-  - urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963 needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
-urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae
-  - urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae needs to be a http://data.ashrae.org/standard223#Substance-Medium
-  - urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
 urn:anon:uuid:54ed52b1-7dd3-4caf-82df-19cff3f45e6e
   - urn:anon:uuid:54ed52b1-7dd3-4caf-82df-19cff3f45e6e needs to be a http://data.ashrae.org/standard223#Substance-Medium
   - urn:anon:uuid:54ed52b1-7dd3-4caf-82df-19cff3f45e6e needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec
+  - urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+  - urn:anon:uuid:d72b7939-889c-48bf-a1d1-26d940b390ec needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963
+  - urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963 needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+  - urn:anon:uuid:7d8ae7be-cb25-499b-9931-f030a23d9963 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f
+  - urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+  - urn:anon:uuid:7fb62c19-b090-480e-96db-459952c6b32f needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba
-  - urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba needs to be a http://data.ashrae.org/standard223#Substance-Medium
   - urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
-urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1
-  - urn:anon:uuid:bb63ef48-2005-46f6-aeb9-13129539a8e1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+  - urn:anon:uuid:4c251bac-c1a3-4cb1-a117-449921cfacba needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c
+  - urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+  - urn:anon:uuid:175c95b7-d680-4c20-8247-ba3acfe47f7c needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5
+  - urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+  - urn:anon:uuid:990f90c6-44a2-40eb-bcd3-1e0015a7e6a5 needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e
+  - urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+  - urn:anon:uuid:385f4da7-af2d-4e4c-9457-e12939ce685e needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae
+  - urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae needs to be a http://data.ashrae.org/standard223#Substance-Medium
+  - urn:anon:uuid:6ca5838d-23f6-49d0-bff7-bea099bef2ae needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
 urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904
   - urn:anon:uuid:56bd4b6d-6653-4482-9eeb-6c7e06d91904 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab
+  - urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+  - urn:anon:uuid:0644c6bf-f126-47c8-927b-cb017a1044ab needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c
+  - urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+  - urn:anon:uuid:387e2a78-1798-4d67-81e2-338d09097a2c needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13
+  - urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13 needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+  - urn:anon:uuid:e6ba7afb-2017-483f-842f-4659d9d9cd13 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 </pre></div>
 </div>
 </div>

@@ -407,7 +407,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="design-patterns">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This model has not been updated since the last update of the 223P ontology. It may fail validation.
+223P was last updated on 2024-08-17 02:46:39. The model file was last updated on 2024-08-17 02:46:39</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="design-patterns">
 <h1>Design Patterns<a class="headerlink" href="#design-patterns" title="Link to this heading">#</a></h1>
 <p>This file contains the Turtle code supporting the set of design patterns presented in the User Documentation site, in the section titled <a class="reference external" href="https://docs.open223.info/guides/design-patterns.html#">“Modeling Design Patterns”</a></p>
 <section id="source">
@@ -527,7 +532,7 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 
 <span class="c1"># load the model into the BuildingMOTIF instance</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;urn:design-patterns&quot;</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/compiled/design-patterns.ttl&quot;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/design-patterns.ttl&quot;</span><span class="p">)</span>
 
 <span class="c1"># validate the model against 223P ontology</span>
 <span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span> <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -558,62 +563,63 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator&gt; ;
-            sh:resultMessage &quot;s223: Predicate ns2:commandedByProperty is not defined for instance &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator&gt;.&quot; ;
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3&gt; ;
+            sh:resultMessage &quot;s223: A Connection must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
+            sh:resultPath ns2:hasMedium ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:naea00e9ae2c14f51b7b2f19645794ad5b11 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape ns2:ClosedWorldShape ;
-            sh:value &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator&gt; ],
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/3583cc44&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junctio
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3&gt; ;
+            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
+            sh:re
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Constituent-Electricity on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Constituent-Electricity on path http://data.ashrae.org/standard223#hasMedium
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LightActuator
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LightActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Constituent-Electricity on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Constituent-Electricity on path http://data.ashrae.org/standard223#hasMedium
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Constituent-Electricity on path http://data.ashrae.org/standard223#hasMedium
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
 http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction
   - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
 http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3InletCP
   - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3InletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Constituent-Electricity on path http://data.ashrae.org/standard223#hasMedium
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Constituent-Electricity on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Constituent-Electricity on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Constituent-Electricity on path http://data.ashrae.org/standard223#hasMedium
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LightActuator
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LightActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP
   - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Constituent-Electricity on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
 http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP
   - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
 </pre></div>
 </div>
 </div>

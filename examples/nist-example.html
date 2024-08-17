@@ -406,7 +406,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="nist-example-building">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This model has not been updated since the last update of the 223P ontology. It may fail validation.
+223P was last updated on 2024-08-17 02:46:39. The model file was last updated on 2024-08-17 02:46:39</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="nist-example-building">
 <h1>NIST Example Building<a class="headerlink" href="#nist-example-building" title="Link to this heading">#</a></h1>
 <p>This is a model of the Intelligent Buildings Agents Laboratory (IBAL) at NIST.</p>
 <p>The schematics of the air and hydronic systems can be found <a class="reference download internal" download="" href="../_downloads/daf8222614f679eb5abd1e41d88f5f10/nist-example.pdf"><span class="xref download myst">here</span></a></p>
@@ -597,7 +602,7 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 
 <span class="c1"># load the model into the BuildingMOTIF instance</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;urn:nist-example&quot;</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/compiled/nist-example.ttl&quot;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/nist-example.ttl&quot;</span><span class="p">)</span>
 
 <span class="c1"># validate the model against 223P ontology</span>
 <span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span> <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -629,807 +634,807 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#Segment_63&gt; ;
-            sh:resultMessage &quot;s223: &lt;http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP&gt; with Medium ns2:Medium-Water is incompatible with &lt;http://example.org/IBAL#Jnc22-OCP1&gt; with Medium ns2:Water-GlycolSolution.&quot; ;
-            sh:resultPath ns2:hasMedium ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:n6d98f36f355b49da8e11e6d7aab535adb11 ;
+            sh:focusNode &lt;http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP&gt; ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP&gt; probably needs an association with a Connection.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
+            sh:resultSeverity sh:Info ;
+            sh:sourceConstraint _:n7237ae9e57954053a5754d0ebf675feab33 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/1574733c&gt; ],
+            sh:sourceShape &lt;urn:well-known/598f2ad8&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#Segment_24&gt; ;
-            sh:resultMessage &quot;s223: A Connec
+            sh:focusNode &lt;http://example.org/IBAL#ManualTwoWayValve_5_OCP&gt; ;
+            sh:resultMessage &quot;s223: A ConnectionPoint must be associate
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/IBAL#Junction_13
-  - http://example.org/IBAL#Junction_13 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_7_OCP
-  - http://example.org/IBAL#HC_7_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_1
-  - http://example.org/IBAL#MotorizedDamper_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Segment_24
-  - http://example.org/IBAL#Segment_24 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HVAC_Space_2_ICP
-  - http://example.org/IBAL#HVAC_Space_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_40
-  - http://example.org/IBAL#Segment_40 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ManualTwoWayValve_1_OCP
-  - http://example.org/IBAL#ManualTwoWayValve_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_19
-  - http://example.org/IBAL#MotorizedDamper_19 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_19 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#ManualTwoWayValve_3_OCP
-  - http://example.org/IBAL#ManualTwoWayValve_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#PlateHeatExchange_1_Upper_ICP
-  - http://example.org/IBAL#PlateHeatExchange_1_Upper_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc8-OCP1
-  - http://example.org/IBAL#Jnc8-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#AHU_1_Connection_2
-  - http://example.org/IBAL#AHU_1_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CoolingCoil_2
-  - http://example.org/IBAL#CoolingCoil_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#CoolingCoil_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Segment_36
-  - http://example.org/IBAL#Segment_36 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#d17_pos_c
-  - http://example.org/IBAL#d17_pos_c needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#VAV_4
-  - http://example.org/IBAL#VAV_4 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#VAV_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#AHU_1_Connection_3
-  - http://example.org/IBAL#AHU_1_Connection_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_35
-  - http://example.org/IBAL#Segment_35 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_2_ICP
-  - http://example.org/IBAL#VAV_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_6_ICP
-  - http://example.org/IBAL#Damper_6_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ManualTwoWayValve_1_ICP
-  - http://example.org/IBAL#ManualTwoWayValve_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_4
-  - http://example.org/IBAL#MotorizedDamper_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_4 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#HC_4_E_ICP
-  - http://example.org/IBAL#HC_4_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_16_OCP
-  - http://example.org/IBAL#Damper_16_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_3_E_ICP
-  - http://example.org/IBAL#Fan_3_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_2
-  - http://example.org/IBAL#VFD_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#HC_2_OCP
-  - http://example.org/IBAL#HC_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ahu1_vfd
-  - http://example.org/IBAL#ahu1_vfd needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#Damper_2_ICP
-  - http://example.org/IBAL#Damper_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HeatingCoil_4
-  - http://example.org/IBAL#HeatingCoil_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#HeatingCoil_4 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#VAV_3_ICP
-  - http://example.org/IBAL#VAV_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_6_W_OCP
-  - http://example.org/IBAL#HC_6_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_3_W_ICP
-  - http://example.org/IBAL#HC_3_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_1_Connection_1
-  - http://example.org/IBAL#VAV_1_Connection_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_25
-  - http://example.org/IBAL#Segment_25 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_5_OCP
-  - http://example.org/IBAL#HC_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_42
-  - http://example.org/IBAL#Segment_42 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#AHU_3_ICP
-  - http://example.org/IBAL#AHU_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc7-ICP
-  - http://example.org/IBAL#Jnc7-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc3-OCP
-  - http://example.org/IBAL#Jnc3-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HeatingCoil_7
-  - http://example.org/IBAL#HeatingCoil_7 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#HeatingCoil_7 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Jnc13-ICP1
-  - http://example.org/IBAL#Jnc13-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_11
-  - http://example.org/IBAL#MotorizedDamper_11 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_11 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#WaterPump_2_ICP
-  - http://example.org/IBAL#WaterPump_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_17_ICP
-  - http://example.org/IBAL#Damper_17_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterPump_4
-  - http://example.org/IBAL#WaterPump_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#WaterPump_4 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Fan_5
-  - http://example.org/IBAL#Fan_5 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#Fan_5 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#d15_pos_c
-  - http://example.org/IBAL#d15_pos_c needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#Segment_43
-  - http://example.org/IBAL#Segment_43 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterPump_1_OCP
-  - http://example.org/IBAL#WaterPump_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#vav4_heat_c
-  - http://example.org/IBAL#vav4_heat_c needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#MotorizedThreeWayValve_3_ICP_1
-  - http://example.org/IBAL#MotorizedThreeWayValve_3_ICP_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HeatingCoil_2
-  - http://example.org/IBAL#HeatingCoil_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#HeatingCoil_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#WaterPump_3_OCP
-  - http://example.org/IBAL#WaterPump_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_33
-  - http://example.org/IBAL#Segment_33 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc12-ICP
-  - http://example.org/IBAL#Jnc12-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc5-ICP1
-  - http://example.org/IBAL#Jnc5-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HVAC_Space_4_OCP
-  - http://example.org/IBAL#HVAC_Space_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CC_1_ICP
-  - http://example.org/IBAL#CC_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#AHU_2
-  - http://example.org/IBAL#AHU_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#AHU_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#MotorizedThreeWayValve_5_ICP_1
-  - http://example.org/IBAL#MotorizedThreeWayValve_5_ICP_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_6
-  - http://example.org/IBAL#MotorizedDamper_6 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_6 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#HVAC_Space_1_OCP
-  - http://example.org/IBAL#HVAC_Space_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_49
-  - http://example.org/IBAL#Segment_49 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_16
-  - http://example.org/IBAL#Junction_16 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_10_ICP
-  - http://example.org/IBAL#Damper_10_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CoolingCoil_1
-  - http://example.org/IBAL#CoolingCoil_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#CoolingCoil_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#HC_4_OCP
-  - http://example.org/IBAL#HC_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_2_Connection_1
-  - http://example.org/IBAL#VAV_2_Connection_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CC_3_OCP
-  - http://example.org/IBAL#CC_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_15
-  - http://example.org/IBAL#MotorizedDamper_15 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_15 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Fan_3
-  - http://example.org/IBAL#Fan_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#Fan_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#HC_5_ICP
-  - http://example.org/IBAL#HC_5_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterPump_1
-  - http://example.org/IBAL#WaterPump_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#WaterPump_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#ManualTwoWayValve_2_ICP
-  - http://example.org/IBAL#ManualTwoWayValve_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_14_ICP
-  - http://example.org/IBAL#Damper_14_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_5
-  - http://example.org/IBAL#MotorizedDamper_5 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_5 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#AHU_3_OCP
-  - http://example.org/IBAL#AHU_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_4
-  - http://example.org/IBAL#Fan_4 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#Fan_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#VAV_3
-  - http://example.org/IBAL#VAV_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#VAV_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Junction_14
-  - http://example.org/IBAL#Junction_14 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterPump_3
-  - http://example.org/IBAL#WaterPump_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#WaterPump_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#AHU_3_Connection_2
-  - http://example.org/IBAL#AHU_3_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_46
-  - http://example.org/IBAL#Segment_46 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc15-ICP
-  - http://example.org/IBAL#Jnc15-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_7
-  - http://example.org/IBAL#MotorizedDamper_7 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_7 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#WaterPump_2
-  - http://example.org/IBAL#WaterPump_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#WaterPump_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#HC_2_ICP
-  - http://example.org/IBAL#HC_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_2_OCP
-  - http://example.org/IBAL#Fan_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_9_ICP
-  - http://example.org/IBAL#Damper_9_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_12
-  - http://example.org/IBAL#Segment_12 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_9_OCP
-  - http://example.org/IBAL#Damper_9_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc5-OCP
-  - http://example.org/IBAL#Jnc5-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ThermalStorage_1_ICP
-  - http://example.org/IBAL#ThermalStorage_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc4-OCP1
-  - http://example.org/IBAL#Jnc4-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/IBAL#Jnc14-ICP1
+  - http://example.org/IBAL#Jnc14-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 http://example.org/IBAL#Jnc11-OCP
   - http://example.org/IBAL#Jnc11-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP
-  - http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc14-OCP
-  - http://example.org/IBAL#Jnc14-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc17-ICP
-  - http://example.org/IBAL#Jnc17-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#vav3_heat_c
-  - http://example.org/IBAL#vav3_heat_c needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#Jnc5-ICP2
-  - http://example.org/IBAL#Jnc5-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_9
-  - http://example.org/IBAL#Junction_9 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_21
-  - http://example.org/IBAL#Segment_21 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_37
-  - http://example.org/IBAL#Segment_37 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc6-ICP2
-  - http://example.org/IBAL#Jnc6-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_15_ICP
-  - http://example.org/IBAL#Damper_15_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_1_E_ICP
-  - http://example.org/IBAL#HC_1_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc7-OCP2
-  - http://example.org/IBAL#Jnc7-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ManualTwoWayValve_4_OCP
-  - http://example.org/IBAL#ManualTwoWayValve_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_10
-  - http://example.org/IBAL#Segment_10 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_7
-  - http://example.org/IBAL#Junction_7 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc6-ICP1
-  - http://example.org/IBAL#Jnc6-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_3_OCP
-  - http://example.org/IBAL#Fan_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_4_OCP
-  - http://example.org/IBAL#VFD_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_3
-  - http://example.org/IBAL#VFD_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#MotorizedDamper_12
-  - http://example.org/IBAL#MotorizedDamper_12 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_12 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#AHU_3
-  - http://example.org/IBAL#AHU_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#AHU_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#VAV_2_Connection_2
-  - http://example.org/IBAL#VAV_2_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_8
-  - http://example.org/IBAL#MotorizedDamper_8 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_8 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Segment_7
-  - http://example.org/IBAL#Segment_7 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedThreeWayValve_5_ICP_2
-  - http://example.org/IBAL#MotorizedThreeWayValve_5_ICP_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_1_OCP
-  - http://example.org/IBAL#Fan_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#v12_pos_c
-  - http://example.org/IBAL#v12_pos_c needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#HC_6_ICP
-  - http://example.org/IBAL#HC_6_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_4_W_OCP
-  - http://example.org/IBAL#HC_4_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_1_W_OCP
-  - http://example.org/IBAL#HC_1_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_10
-  - http://example.org/IBAL#Junction_10 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_9
-  - http://example.org/IBAL#MotorizedDamper_9 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_9 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#AHU_2_Connection_2
-  - http://example.org/IBAL#AHU_2_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_3_Connection_1
-  - http://example.org/IBAL#VAV_3_Connection_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc10-OCP
-  - http://example.org/IBAL#Jnc10-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_13_ICP
-  - http://example.org/IBAL#Damper_13_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_6_E_ICP
-  - http://example.org/IBAL#HC_6_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_2_VFD_2
-  - http://example.org/IBAL#Fan_2_VFD_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_10_OCP
-  - http://example.org/IBAL#Damper_10_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_3_OCP
-  - http://example.org/IBAL#Damper_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_4_ICP
-  - http://example.org/IBAL#Fan_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_18_ICP
-  - http://example.org/IBAL#Damper_18_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HVAC_Space_1_ICP
-  - http://example.org/IBAL#HVAC_Space_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc13-OCP
-  - http://example.org/IBAL#Jnc13-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterPump_1_ICP
-  - http://example.org/IBAL#WaterPump_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_5_OCP
-  - http://example.org/IBAL#Fan_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_7_W_ICP
-  - http://example.org/IBAL#HC_7_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_13_OCP
-  - http://example.org/IBAL#Damper_13_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CC_1_Water_ICP
-  - http://example.org/IBAL#CC_1_Water_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_5_OCP
-  - http://example.org/IBAL#Damper_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc9-OCP2
-  - http://example.org/IBAL#Jnc9-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ahu2_vfd
-  - http://example.org/IBAL#ahu2_vfd needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#MotorizedThreeWayValve_4_ICP_2
-  - http://example.org/IBAL#MotorizedThreeWayValve_4_ICP_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#v8_pos_c
-  - http://example.org/IBAL#v8_pos_c needs between None and 1 uses of path n6d98f36f355b49da8e11e6d7aab535adb753
-http://example.org/IBAL#Fan_2_ICP
-  - http://example.org/IBAL#Fan_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_5_E_ICP
-  - http://example.org/IBAL#HC_5_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_18
-  - http://example.org/IBAL#Segment_18 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_4_W_ICP
-  - http://example.org/IBAL#HC_4_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_7_ICP
-  - http://example.org/IBAL#Damper_7_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc14-ICP2
-  - http://example.org/IBAL#Jnc14-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CC_2_ICP
-  - http://example.org/IBAL#CC_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_5
-  - http://example.org/IBAL#Segment_5 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#AHU_2_ICP
-  - http://example.org/IBAL#AHU_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterChiller_1
-  - http://example.org/IBAL#WaterChiller_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Fan_3_ICP
-  - http://example.org/IBAL#Fan_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc13-ICP2
-  - http://example.org/IBAL#Jnc13-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HeatingCoil_3
-  - http://example.org/IBAL#HeatingCoil_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#HeatingCoil_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#CC_1_Water_OCP
-  - http://example.org/IBAL#CC_1_Water_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_5
-  - http://example.org/IBAL#Junction_5 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc12-OCP2
-  - http://example.org/IBAL#Jnc12-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_2_ICP
-  - http://example.org/IBAL#VFD_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterPump_2_OCP
-  - http://example.org/IBAL#WaterPump_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc14-ICP1
-  - http://example.org/IBAL#Jnc14-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_4
-  - http://example.org/IBAL#Segment_4 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_2
-  - http://example.org/IBAL#Fan_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#Fan_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Jnc2-ICP
-  - http://example.org/IBAL#Jnc2-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HeatingCoil_5
-  - http://example.org/IBAL#HeatingCoil_5 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#HeatingCoil_5 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Chiller_2_Lower_ICP
-  - http://example.org/IBAL#Chiller_2_Lower_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_1
-  - http://example.org/IBAL#VAV_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#VAV_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#VAV_1_ICP
-  - http://example.org/IBAL#VAV_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#v13_pos_c
-  - http://example.org/IBAL#v13_pos_c needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#CC_2_Water_ICP
-  - http://example.org/IBAL#CC_2_Water_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#d16_pos_c
-  - http://example.org/IBAL#d16_pos_c needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#Segment_27
-  - http://example.org/IBAL#Segment_27 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_7_W_OCP
-  - http://example.org/IBAL#HC_7_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc2-OCP1
-  - http://example.org/IBAL#Jnc2-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc11-ICP1
-  - http://example.org/IBAL#Jnc11-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_2_W_ICP
-  - http://example.org/IBAL#HC_2_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_4_Connection_1
-  - http://example.org/IBAL#VAV_4_Connection_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_5
-  - http://example.org/IBAL#VFD_5 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Junction_17
-  - http://example.org/IBAL#Junction_17 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc16-OCP1
-  - http://example.org/IBAL#Jnc16-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_2_E_ICP
-  - http://example.org/IBAL#HC_2_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_4_ICP
-  - http://example.org/IBAL#Damper_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_57
-  - http://example.org/IBAL#Segment_57 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_17
-  - http://example.org/IBAL#MotorizedDamper_17 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_17 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Jnc10-ICP2
-  - http://example.org/IBAL#Jnc10-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_12_OCP
-  - http://example.org/IBAL#Damper_12_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedThreeWayValve_3_ICP_2
-  - http://example.org/IBAL#MotorizedThreeWayValve_3_ICP_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_47
-  - http://example.org/IBAL#Segment_47 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_50
-  - http://example.org/IBAL#Segment_50 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_16
-  - http://example.org/IBAL#Segment_16 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc9-OCP
-  - http://example.org/IBAL#Jnc9-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_1_ICP
-  - http://example.org/IBAL#Fan_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_10
-  - http://example.org/IBAL#MotorizedDamper_10 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_10 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Jnc3-ICP2
-  - http://example.org/IBAL#Jnc3-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ManualTwoWayValve_3_ICP
-  - http://example.org/IBAL#ManualTwoWayValve_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_3_OCP
-  - http://example.org/IBAL#VFD_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterPump_4_OCP
-  - http://example.org/IBAL#WaterPump_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_11_ICP
-  - http://example.org/IBAL#Damper_11_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_2
-  - http://example.org/IBAL#VAV_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#VAV_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Segment_3
-  - http://example.org/IBAL#Segment_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_4
-  - http://example.org/IBAL#VFD_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#MotorizedDamper_3
-  - http://example.org/IBAL#MotorizedDamper_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#MotorizedThreeWayValve_4_ICP_1
-  - http://example.org/IBAL#MotorizedThreeWayValve_4_ICP_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_5_E_ICP
-  - http://example.org/IBAL#Fan_5_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_30
-  - http://example.org/IBAL#Segment_30 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_39
-  - http://example.org/IBAL#Segment_39 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_2
-  - http://example.org/IBAL#MotorizedDamper_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#HC_1_W_ICP
-  - http://example.org/IBAL#HC_1_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CC_3_ICP
-  - http://example.org/IBAL#CC_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc4-ICP
-  - http://example.org/IBAL#Jnc4-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_5_W_OCP
-  - http://example.org/IBAL#HC_5_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_4_VFD_4
-  - http://example.org/IBAL#Fan_4_VFD_4 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc1-ICP
-  - http://example.org/IBAL#Jnc1-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_19
-  - http://example.org/IBAL#Segment_19 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#AHU_1
-  - http://example.org/IBAL#AHU_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#AHU_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Jnc8-ICP
-  - http://example.org/IBAL#Jnc8-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_19_ICP
-  - http://example.org/IBAL#Damper_19_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc1-OCP2
-  - http://example.org/IBAL#Jnc1-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_20
-  - http://example.org/IBAL#Segment_20 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_29
-  - http://example.org/IBAL#Segment_29 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_4_OCP
-  - http://example.org/IBAL#Fan_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_13
-  - http://example.org/IBAL#MotorizedDamper_13 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_13 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP
-  - http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ManualTwoWayValve_4_ICP
-  - http://example.org/IBAL#ManualTwoWayValve_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_6_OCP
-  - http://example.org/IBAL#Damper_6_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_3_OCP
-  - http://example.org/IBAL#VAV_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_17_OCP
-  - http://example.org/IBAL#Damper_17_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_6_W_ICP
-  - http://example.org/IBAL#HC_6_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#AHU_2_Connection_3
-  - http://example.org/IBAL#AHU_2_Connection_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_4_E_ICP
-  - http://example.org/IBAL#Fan_4_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_1_Connection_2
-  - http://example.org/IBAL#VAV_1_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_6_OCP
-  - http://example.org/IBAL#HC_6_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterPump_4_ICP
-  - http://example.org/IBAL#WaterPump_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HeatingCoil_1
-  - http://example.org/IBAL#HeatingCoil_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#HeatingCoil_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
 http://example.org/IBAL#Fan_1
   - http://example.org/IBAL#Fan_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
   - http://example.org/IBAL#Fan_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#HC_7_ICP
-  - http://example.org/IBAL#HC_7_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_16
-  - http://example.org/IBAL#MotorizedDamper_16 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_16 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Junction_4
-  - http://example.org/IBAL#Junction_4 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_9
-  - http://example.org/IBAL#Segment_9 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ManualTwoWayValve_5_OCP
-  - http://example.org/IBAL#ManualTwoWayValve_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_7_E_ICP
-  - http://example.org/IBAL#HC_7_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_11
-  - http://example.org/IBAL#Junction_11 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_3_W_OCP
-  - http://example.org/IBAL#HC_3_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc15-OCP2
-  - http://example.org/IBAL#Jnc15-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_4_ICP
-  - http://example.org/IBAL#VFD_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc7-OCP1
-  - http://example.org/IBAL#Jnc7-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc1-OCP1
-  - http://example.org/IBAL#Jnc1-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_4_OCP
-  - http://example.org/IBAL#Damper_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_1_OCP
-  - http://example.org/IBAL#VAV_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_2_W_OCP
-  - http://example.org/IBAL#HC_2_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_1
-  - http://example.org/IBAL#Segment_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc9-ICP
-  - http://example.org/IBAL#Jnc9-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_3_ICP
-  - http://example.org/IBAL#Damper_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_2_OCP
-  - http://example.org/IBAL#VAV_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_5_ICP
-  - http://example.org/IBAL#Fan_5_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_19_OCP
-  - http://example.org/IBAL#Damper_19_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedThreeWayValve_3_OCP
-  - http://example.org/IBAL#MotorizedThreeWayValve_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_18_OCP
-  - http://example.org/IBAL#Damper_18_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_28
-  - http://example.org/IBAL#Segment_28 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_1_OCP
-  - http://example.org/IBAL#Damper_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_3_VFD_3
-  - http://example.org/IBAL#Fan_3_VFD_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_32
-  - http://example.org/IBAL#Segment_32 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 http://example.org/IBAL#Segment_45
   - http://example.org/IBAL#Segment_45 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_14_OCP
-  - http://example.org/IBAL#Damper_14_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CC_3_ICP
+  - http://example.org/IBAL#CC_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_5
+  - http://example.org/IBAL#MotorizedDamper_5 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_5 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_20
+  - http://example.org/IBAL#Segment_20 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc9-ICP
+  - http://example.org/IBAL#Jnc9-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterPump_1_OCP
+  - http://example.org/IBAL#WaterPump_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_6_ICP
+  - http://example.org/IBAL#Damper_6_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc6-OCP
+  - http://example.org/IBAL#Jnc6-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_5
+  - http://example.org/IBAL#Fan_5 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#Fan_5 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_9
+  - http://example.org/IBAL#Segment_9 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CoolingCoil_3
+  - http://example.org/IBAL#CoolingCoil_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#CoolingCoil_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Fan_1_OCP
+  - http://example.org/IBAL#Fan_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc6-ICP1
+  - http://example.org/IBAL#Jnc6-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ManualTwoWayValve_5_ICP
+  - http://example.org/IBAL#ManualTwoWayValve_5_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedThreeWayValve_1_OCP
+  - http://example.org/IBAL#MotorizedThreeWayValve_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_7_OCP
+  - http://example.org/IBAL#HC_7_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_3
+  - http://example.org/IBAL#MotorizedDamper_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_51
+  - http://example.org/IBAL#Segment_51 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HVAC_Space_3_ICP
+  - http://example.org/IBAL#HVAC_Space_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_2_ICP
+  - http://example.org/IBAL#Fan_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VFD_2_OCP
+  - http://example.org/IBAL#VFD_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_6_OCP
+  - http://example.org/IBAL#Damper_6_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_2
+  - http://example.org/IBAL#Fan_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#Fan_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_22
+  - http://example.org/IBAL#Segment_22 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_4
+  - http://example.org/IBAL#VAV_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#VAV_4 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Damper_17_ICP
+  - http://example.org/IBAL#Damper_17_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#vav1_heat_c
+  - http://example.org/IBAL#vav1_heat_c needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#Exhaust_Fan_1_Connection_2
+  - http://example.org/IBAL#Exhaust_Fan_1_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_3_E_ICP
+  - http://example.org/IBAL#HC_3_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_1_W_OCP
+  - http://example.org/IBAL#HC_1_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_7
+  - http://example.org/IBAL#MotorizedDamper_7 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_7 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_30
+  - http://example.org/IBAL#Segment_30 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VFD_2
+  - http://example.org/IBAL#VFD_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#MotorizedDamper_17
+  - http://example.org/IBAL#MotorizedDamper_17 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_17 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#HeatingCoil_1
+  - http://example.org/IBAL#HeatingCoil_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#HeatingCoil_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#HC_6_OCP
+  - http://example.org/IBAL#HC_6_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc16-OCP2
+  - http://example.org/IBAL#Jnc16-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#AHU_2_OCP
+  - http://example.org/IBAL#AHU_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_6
+  - http://example.org/IBAL#Segment_6 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc7-OCP1
+  - http://example.org/IBAL#Jnc7-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HeatingCoil_3
+  - http://example.org/IBAL#HeatingCoil_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#HeatingCoil_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Exhaust_Fan_2_Connection_2
+  - http://example.org/IBAL#Exhaust_Fan_2_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_9
+  - http://example.org/IBAL#MotorizedDamper_9 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_9 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Jnc14-OCP
+  - http://example.org/IBAL#Jnc14-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_13
+  - http://example.org/IBAL#MotorizedDamper_13 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_13 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#MotorizedThreeWayValve_3_OCP
+  - http://example.org/IBAL#MotorizedThreeWayValve_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_4
+  - http://example.org/IBAL#Fan_4 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#Fan_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP
+  - http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_24
+  - http://example.org/IBAL#Segment_24 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_11
+  - http://example.org/IBAL#MotorizedDamper_11 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_11 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Jnc2-OCP2
+  - http://example.org/IBAL#Jnc2-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_16
+  - http://example.org/IBAL#MotorizedDamper_16 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_16 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#VFD_4
+  - http://example.org/IBAL#VFD_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Junction_15
+  - http://example.org/IBAL#Junction_15 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_1
+  - http://example.org/IBAL#VAV_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#VAV_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#AHU_3_OCP
+  - http://example.org/IBAL#AHU_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_3
+  - http://example.org/IBAL#Junction_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HVAC_Space_1_OCP
+  - http://example.org/IBAL#HVAC_Space_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Chiller_1_Lower_ICP
+  - http://example.org/IBAL#Chiller_1_Lower_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_6
+  - http://example.org/IBAL#MotorizedDamper_6 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_6 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#AHU_3_ICP
+  - http://example.org/IBAL#AHU_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_2_ICP
+  - http://example.org/IBAL#HC_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#AHU_1
+  - http://example.org/IBAL#AHU_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#AHU_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Jnc9-OCP
+  - http://example.org/IBAL#Jnc9-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc1-OCP2
+  - http://example.org/IBAL#Jnc1-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Chiller_2_Lower_ICP
+  - http://example.org/IBAL#Chiller_2_Lower_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_3_E_ICP
+  - http://example.org/IBAL#Fan_3_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc4-ICP
+  - http://example.org/IBAL#Jnc4-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_15
+  - http://example.org/IBAL#MotorizedDamper_15 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_15 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#VFD_1_ICP
+  - http://example.org/IBAL#VFD_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc2-OCP1
+  - http://example.org/IBAL#Jnc2-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_10_OCP
+  - http://example.org/IBAL#Damper_10_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HeatingCoil_6
+  - http://example.org/IBAL#HeatingCoil_6 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#HeatingCoil_6 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Jnc15-OCP1
+  - http://example.org/IBAL#Jnc15-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_1_OCP
+  - http://example.org/IBAL#Damper_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc12-ICP
+  - http://example.org/IBAL#Jnc12-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CC_1_Water_OCP
+  - http://example.org/IBAL#CC_1_Water_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_3
+  - http://example.org/IBAL#Fan_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#Fan_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#MotorizedDamper_10
+  - http://example.org/IBAL#MotorizedDamper_10 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_10 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_47
+  - http://example.org/IBAL#Segment_47 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_18
+  - http://example.org/IBAL#MotorizedDamper_18 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_18 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#AHU_2_Connection_2
+  - http://example.org/IBAL#AHU_2_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VFD_3
+  - http://example.org/IBAL#VFD_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Jnc7-ICP
+  - http://example.org/IBAL#Jnc7-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_7_ICP
+  - http://example.org/IBAL#Damper_7_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_16
+  - http://example.org/IBAL#Junction_16 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_6
+  - http://example.org/IBAL#Junction_6 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc10-ICP1
+  - http://example.org/IBAL#Jnc10-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_4_Connection_1
+  - http://example.org/IBAL#VAV_4_Connection_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc8-OCP1
+  - http://example.org/IBAL#Jnc8-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_17_OCP
+  - http://example.org/IBAL#Damper_17_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ThermalStorage_1_ICP
+  - http://example.org/IBAL#ThermalStorage_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedThreeWayValve_1_ICP_2
+  - http://example.org/IBAL#MotorizedThreeWayValve_1_ICP_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_6_E_ICP
+  - http://example.org/IBAL#HC_6_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Chiller_2_Lower_OCP
+  - http://example.org/IBAL#Chiller_2_Lower_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VFD_5_ICP
+  - http://example.org/IBAL#VFD_5_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_13_ICP
+  - http://example.org/IBAL#Damper_13_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CoolingCoil_2
+  - http://example.org/IBAL#CoolingCoil_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#CoolingCoil_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Jnc13-OCP
+  - http://example.org/IBAL#Jnc13-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HeatingCoil_7
+  - http://example.org/IBAL#HeatingCoil_7 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#HeatingCoil_7 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#HC_4_W_OCP
+  - http://example.org/IBAL#HC_4_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedThreeWayValve_1_ICP_1
+  - http://example.org/IBAL#MotorizedThreeWayValve_1_ICP_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedThreeWayValve_3_ICP_1
+  - http://example.org/IBAL#MotorizedThreeWayValve_3_ICP_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ManualTwoWayValve_3_ICP
+  - http://example.org/IBAL#ManualTwoWayValve_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_46
+  - http://example.org/IBAL#Segment_46 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_12
+  - http://example.org/IBAL#Segment_12 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CC_1_ICP
+  - http://example.org/IBAL#CC_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_12_OCP
+  - http://example.org/IBAL#Damper_12_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_2_W_OCP
+  - http://example.org/IBAL#HC_2_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc11-ICP2
+  - http://example.org/IBAL#Jnc11-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_4_OCP
+  - http://example.org/IBAL#Damper_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CC_2_OCP
+  - http://example.org/IBAL#CC_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_2_OCP
+  - http://example.org/IBAL#Damper_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterPump_1
+  - http://example.org/IBAL#WaterPump_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#WaterPump_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Damper_15_OCP
+  - http://example.org/IBAL#Damper_15_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
 http://example.org/IBAL#MotorizedDamper_14
   - http://example.org/IBAL#MotorizedDamper_14 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
   - http://example.org/IBAL#MotorizedDamper_14 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Segment_48
-  - http://example.org/IBAL#Segment_48 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_3_Connection_2
-  - http://example.org/IBAL#VAV_3_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_2
-  - http://example.org/IBAL#Junction_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Chiller_2_Lower_OCP
-  - http://example.org/IBAL#Chiller_2_Lower_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_1_ICP
-  - http://example.org/IBAL#Damper_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HVAC_Space_3_OCP
-  - http://example.org/IBAL#HVAC_Space_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#AHU_2_OCP
-  - http://example.org/IBAL#AHU_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_3_E_ICP
-  - http://example.org/IBAL#HC_3_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Fan_5_VFD_5
-  - http://example.org/IBAL#Fan_5_VFD_5 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_23
-  - http://example.org/IBAL#Segment_23 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CC_1_OCP
-  - http://example.org/IBAL#CC_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HVAC_Space_3_ICP
-  - http://example.org/IBAL#HVAC_Space_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_3_OCP
-  - http://example.org/IBAL#HC_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_44
-  - http://example.org/IBAL#Segment_44 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_3_ICP
-  - http://example.org/IBAL#VFD_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HVAC_Space_4_ICP
-  - http://example.org/IBAL#HVAC_Space_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_2
-  - http://example.org/IBAL#Segment_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterPump_3_ICP
-  - http://example.org/IBAL#WaterPump_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc2-OCP2
-  - http://example.org/IBAL#Jnc2-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_4_ICP
-  - http://example.org/IBAL#VAV_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ManualTwoWayValve_5_ICP
-  - http://example.org/IBAL#ManualTwoWayValve_5_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_5_ICP
-  - http://example.org/IBAL#VFD_5_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_15
-  - http://example.org/IBAL#Junction_15 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#AHU_1_ICP
-  - http://example.org/IBAL#AHU_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc15-OCP1
-  - http://example.org/IBAL#Jnc15-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_5_W_ICP
-  - http://example.org/IBAL#HC_5_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_1_ICP
-  - http://example.org/IBAL#HC_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedDamper_18
-  - http://example.org/IBAL#MotorizedDamper_18 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#MotorizedDamper_18 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP
-  - http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc4-OCP2
-  - http://example.org/IBAL#Jnc4-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_3_ICP
-  - http://example.org/IBAL#HC_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Chiller_1_Lower_ICP
-  - http://example.org/IBAL#Chiller_1_Lower_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CC_3_W_OCP
-  - http://example.org/IBAL#CC_3_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_8_OCP
-  - http://example.org/IBAL#Damper_8_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_51
-  - http://example.org/IBAL#Segment_51 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Exhaust_Fan_1_Connection_2
-  - http://example.org/IBAL#Exhaust_Fan_1_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_3
-  - http://example.org/IBAL#Junction_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc16-ICP
-  - http://example.org/IBAL#Jnc16-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_2_OCP
-  - http://example.org/IBAL#VFD_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_2_OCP
-  - http://example.org/IBAL#Damper_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc6-OCP
-  - http://example.org/IBAL#Jnc6-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_8
-  - http://example.org/IBAL#Junction_8 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Chiller_1_Upper_ICP
-  - http://example.org/IBAL#Chiller_1_Upper_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#vav2_heat_c
-  - http://example.org/IBAL#vav2_heat_c needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#MotorizedThreeWayValve_1_OCP
-  - http://example.org/IBAL#MotorizedThreeWayValve_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_52
-  - http://example.org/IBAL#Segment_52 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedThreeWayValve_1_ICP_1
-  - http://example.org/IBAL#MotorizedThreeWayValve_1_ICP_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_38
-  - http://example.org/IBAL#Segment_38 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_6
-  - http://example.org/IBAL#Junction_6 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_15_OCP
-  - http://example.org/IBAL#Damper_15_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_11_OCP
-  - http://example.org/IBAL#Damper_11_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VAV_4_Connection_2
-  - http://example.org/IBAL#VAV_4_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_12_ICP
-  - http://example.org/IBAL#Damper_12_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#AHU_1_OCP
-  - http://example.org/IBAL#AHU_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#vav1_heat_c
-  - http://example.org/IBAL#vav1_heat_c needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#Jnc2-OCP
-  - http://example.org/IBAL#Jnc2-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc8-OCP2
-  - http://example.org/IBAL#Jnc8-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_7_OCP
-  - http://example.org/IBAL#Damper_7_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedThreeWayValve_5_OCP
-  - http://example.org/IBAL#MotorizedThreeWayValve_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc12-OCP1
-  - http://example.org/IBAL#Jnc12-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#MotorizedThreeWayValve_1_ICP_2
-  - http://example.org/IBAL#MotorizedThreeWayValve_1_ICP_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_5_OCP
-  - http://example.org/IBAL#VFD_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#d18_pos_c
-  - http://example.org/IBAL#d18_pos_c needs to be a http://data.ashrae.org/standard223#Function
-http://example.org/IBAL#Jnc10-ICP1
-  - http://example.org/IBAL#Jnc10-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#VFD_1_ICP
-  - http://example.org/IBAL#VFD_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP
-  - http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc11-ICP2
-  - http://example.org/IBAL#Jnc11-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_8_ICP
-  - http://example.org/IBAL#Damper_8_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_5_ICP
-  - http://example.org/IBAL#Damper_5_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_1_OCP
-  - http://example.org/IBAL#HC_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Exhaust_Fan_2_Connection_2
-  - http://example.org/IBAL#Exhaust_Fan_2_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc17-OCP
-  - http://example.org/IBAL#Jnc17-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_14
-  - http://example.org/IBAL#Segment_14 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc17-ICP1
-  - http://example.org/IBAL#Jnc17-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#ManualTwoWayValve_2_OCP
-  - http://example.org/IBAL#ManualTwoWayValve_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Damper_16_ICP
-  - http://example.org/IBAL#Damper_16_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc17-ICP2
-  - http://example.org/IBAL#Jnc17-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_6
-  - http://example.org/IBAL#Segment_6 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#AHU_3_Connection_3
-  - http://example.org/IBAL#AHU_3_Connection_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterChiller_2
+  - http://example.org/IBAL#WaterChiller_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#HeatingCoil_4
+  - http://example.org/IBAL#HeatingCoil_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#HeatingCoil_4 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_10
+  - http://example.org/IBAL#Segment_10 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterPump_2_ICP
+  - http://example.org/IBAL#WaterPump_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_1_ICP
+  - http://example.org/IBAL#VAV_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#AHU_1_Connection_3
+  - http://example.org/IBAL#AHU_1_Connection_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP
   - http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Jnc3-ICP1
-  - http://example.org/IBAL#Jnc3-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Chiller_2_Upper_ICP
-  - http://example.org/IBAL#Chiller_2_Upper_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HeatingCoil_6
-  - http://example.org/IBAL#HeatingCoil_6 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#HeatingCoil_6 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Junction_1
-  - http://example.org/IBAL#Junction_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_22
-  - http://example.org/IBAL#Segment_22 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CoolingCoil_3
-  - http://example.org/IBAL#CoolingCoil_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://example.org/IBAL#CoolingCoil_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://example.org/IBAL#Jnc16-OCP2
-  - http://example.org/IBAL#Jnc16-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CC_3_W_OCP
+  - http://example.org/IBAL#CC_3_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CC_3_W_ICP
+  - http://example.org/IBAL#CC_3_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_3_OCP
+  - http://example.org/IBAL#VAV_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_4_VFD_4
+  - http://example.org/IBAL#Fan_4_VFD_4 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterPump_1_ICP
+  - http://example.org/IBAL#WaterPump_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_7
+  - http://example.org/IBAL#Junction_7 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CC_1_OCP
+  - http://example.org/IBAL#CC_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_5_OCP
+  - http://example.org/IBAL#Fan_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_7_ICP
+  - http://example.org/IBAL#HC_7_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_4_E_ICP
+  - http://example.org/IBAL#HC_4_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc16-ICP
+  - http://example.org/IBAL#Jnc16-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_4_E_ICP
+  - http://example.org/IBAL#Fan_4_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#AHU_1_OCP
+  - http://example.org/IBAL#AHU_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ahu1_vfd
+  - http://example.org/IBAL#ahu1_vfd needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#AHU_1_ICP
+  - http://example.org/IBAL#AHU_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc7-OCP2
+  - http://example.org/IBAL#Jnc7-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterChiller_1
+  - http://example.org/IBAL#WaterChiller_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#VAV_3_ICP
+  - http://example.org/IBAL#VAV_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#AHU_3_Connection_3
+  - http://example.org/IBAL#AHU_3_Connection_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#PlateHeatExchange_1_Upper_ICP
+  - http://example.org/IBAL#PlateHeatExchange_1_Upper_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#v13_pos_c
+  - http://example.org/IBAL#v13_pos_c needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#Jnc3-OCP
+  - http://example.org/IBAL#Jnc3-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
 http://example.org/IBAL#Segment_41
   - http://example.org/IBAL#Segment_41 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Junction_12
-  - http://example.org/IBAL#Junction_12 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_14_ICP
+  - http://example.org/IBAL#Damper_14_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_25
+  - http://example.org/IBAL#Segment_25 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HeatingCoil_5
+  - http://example.org/IBAL#HeatingCoil_5 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#HeatingCoil_5 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_2
+  - http://example.org/IBAL#Segment_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_19
+  - http://example.org/IBAL#MotorizedDamper_19 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_19 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#CoolingCoil_1
+  - http://example.org/IBAL#CoolingCoil_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#CoolingCoil_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_8
+  - http://example.org/IBAL#Segment_8 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_4_ICP
+  - http://example.org/IBAL#HC_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#v12_pos_c
+  - http://example.org/IBAL#v12_pos_c needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#Jnc11-ICP1
+  - http://example.org/IBAL#Jnc11-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc5-ICP2
+  - http://example.org/IBAL#Jnc5-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_21
+  - http://example.org/IBAL#Segment_21 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_11
+  - http://example.org/IBAL#Junction_11 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#vav4_heat_c
+  - http://example.org/IBAL#vav4_heat_c needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#VAV_2_ICP
+  - http://example.org/IBAL#VAV_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ManualTwoWayValve_1_ICP
+  - http://example.org/IBAL#ManualTwoWayValve_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_16_OCP
+  - http://example.org/IBAL#Damper_16_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc14-ICP2
+  - http://example.org/IBAL#Jnc14-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CC_2_Water_ICP
+  - http://example.org/IBAL#CC_2_Water_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc10-ICP2
+  - http://example.org/IBAL#Jnc10-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterPump_2
+  - http://example.org/IBAL#WaterPump_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#WaterPump_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#CC_2_ICP
+  - http://example.org/IBAL#CC_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Chiller_1_Upper_ICP
+  - http://example.org/IBAL#Chiller_1_Upper_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc2-ICP
+  - http://example.org/IBAL#Jnc2-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterPump_4_ICP
+  - http://example.org/IBAL#WaterPump_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_8
+  - http://example.org/IBAL#MotorizedDamper_8 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_8 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Fan_5_VFD_5
+  - http://example.org/IBAL#Fan_5_VFD_5 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_5_ICP
+  - http://example.org/IBAL#Damper_5_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_4_ICP
+  - http://example.org/IBAL#Fan_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ahu2_vfd
+  - http://example.org/IBAL#ahu2_vfd needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#Damper_18_ICP
+  - http://example.org/IBAL#Damper_18_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CC_1_Water_ICP
+  - http://example.org/IBAL#CC_1_Water_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_2
+  - http://example.org/IBAL#MotorizedDamper_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#v8_pos_c
+  - http://example.org/IBAL#v8_pos_c needs between None and 1 uses of path n7237ae9e57954053a5754d0ebf675feab495
 http://example.org/IBAL#Segment_13
   - http://example.org/IBAL#Segment_13 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP
-  - http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_13
+  - http://example.org/IBAL#Junction_13 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_16
+  - http://example.org/IBAL#Segment_16 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_42
+  - http://example.org/IBAL#Segment_42 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedThreeWayValve_5_ICP_2
+  - http://example.org/IBAL#MotorizedThreeWayValve_5_ICP_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedThreeWayValve_5_OCP
+  - http://example.org/IBAL#MotorizedThreeWayValve_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HeatingCoil_2
+  - http://example.org/IBAL#HeatingCoil_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#HeatingCoil_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#HC_1_W_ICP
+  - http://example.org/IBAL#HC_1_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc5-ICP1
+  - http://example.org/IBAL#Jnc5-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#AHU_2
+  - http://example.org/IBAL#AHU_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#AHU_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#VFD_4_ICP
+  - http://example.org/IBAL#VFD_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_2
+  - http://example.org/IBAL#VAV_2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#VAV_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#WaterPump_4_OCP
+  - http://example.org/IBAL#WaterPump_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_5_W_OCP
+  - http://example.org/IBAL#HC_5_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP
+  - http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HVAC_Space_2_ICP
+  - http://example.org/IBAL#HVAC_Space_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedThreeWayValve_3_ICP_2
+  - http://example.org/IBAL#MotorizedThreeWayValve_3_ICP_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VFD_5_OCP
+  - http://example.org/IBAL#VFD_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_26
+  - http://example.org/IBAL#Segment_26 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_7_W_OCP
+  - http://example.org/IBAL#HC_7_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_9_OCP
+  - http://example.org/IBAL#Damper_9_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_4_OCP
+  - http://example.org/IBAL#Fan_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc17-ICP1
+  - http://example.org/IBAL#Jnc17-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_2_ICP
+  - http://example.org/IBAL#Damper_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_15_ICP
+  - http://example.org/IBAL#Damper_15_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_52
+  - http://example.org/IBAL#Segment_52 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_17
+  - http://example.org/IBAL#Junction_17 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_2_Connection_2
+  - http://example.org/IBAL#VAV_2_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_5_ICP
+  - http://example.org/IBAL#HC_5_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_19_ICP
+  - http://example.org/IBAL#Damper_19_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_2_OCP
+  - http://example.org/IBAL#Fan_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_7_W_ICP
+  - http://example.org/IBAL#HC_7_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP
+  - http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterPump_3
+  - http://example.org/IBAL#WaterPump_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#WaterPump_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_18
+  - http://example.org/IBAL#Segment_18 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_33
+  - http://example.org/IBAL#Segment_33 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_19
+  - http://example.org/IBAL#Segment_19 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_1
+  - http://example.org/IBAL#Segment_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_1_Connection_2
+  - http://example.org/IBAL#VAV_1_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterPump_2_OCP
+  - http://example.org/IBAL#WaterPump_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#vav2_heat_c
+  - http://example.org/IBAL#vav2_heat_c needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#Junction_4
+  - http://example.org/IBAL#Junction_4 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_4_W_ICP
+  - http://example.org/IBAL#HC_4_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_37
+  - http://example.org/IBAL#Segment_37 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_3_W_OCP
+  - http://example.org/IBAL#HC_3_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc13-ICP1
+  - http://example.org/IBAL#Jnc13-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc17-ICP2
+  - http://example.org/IBAL#Jnc17-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_3
+  - http://example.org/IBAL#VAV_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#VAV_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Jnc13-ICP2
+  - http://example.org/IBAL#Jnc13-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_3_OCP
+  - http://example.org/IBAL#Fan_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_14_OCP
+  - http://example.org/IBAL#Damper_14_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_4_ICP
+  - http://example.org/IBAL#VAV_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_43
+  - http://example.org/IBAL#Segment_43 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_1
+  - http://example.org/IBAL#Junction_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_1_Connection_1
+  - http://example.org/IBAL#VAV_1_Connection_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_3_ICP
+  - http://example.org/IBAL#HC_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc4-OCP1
+  - http://example.org/IBAL#Jnc4-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_1
+  - http://example.org/IBAL#MotorizedDamper_1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_28
+  - http://example.org/IBAL#Segment_28 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedThreeWayValve_5_ICP_1
+  - http://example.org/IBAL#MotorizedThreeWayValve_5_ICP_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_19_OCP
+  - http://example.org/IBAL#Damper_19_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#d16_pos_c
+  - http://example.org/IBAL#d16_pos_c needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#HVAC_Space_4_ICP
+  - http://example.org/IBAL#HVAC_Space_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_5_ICP
+  - http://example.org/IBAL#Fan_5_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_8_OCP
+  - http://example.org/IBAL#Damper_8_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_7_E_ICP
+  - http://example.org/IBAL#HC_7_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc15-OCP2
+  - http://example.org/IBAL#Jnc15-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#d18_pos_c
+  - http://example.org/IBAL#d18_pos_c needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#d17_pos_c
+  - http://example.org/IBAL#d17_pos_c needs to be a http://data.ashrae.org/standard223#Function
 http://example.org/IBAL#HVAC_Space_2_OCP
   - http://example.org/IBAL#HVAC_Space_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
 http://example.org/IBAL#VAV_4_OCP
   - http://example.org/IBAL#VAV_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CC_2_OCP
-  - http://example.org/IBAL#CC_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#CC_3_W_ICP
-  - http://example.org/IBAL#CC_3_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_26
-  - http://example.org/IBAL#Segment_26 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#HC_4_ICP
-  - http://example.org/IBAL#HC_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#Segment_8
-  - http://example.org/IBAL#Segment_8 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://example.org/IBAL#WaterChiller_2
-  - http://example.org/IBAL#WaterChiller_2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_36
+  - http://example.org/IBAL#Segment_36 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_8
+  - http://example.org/IBAL#Junction_8 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#AHU_3_Connection_2
+  - http://example.org/IBAL#AHU_3_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_14
+  - http://example.org/IBAL#Segment_14 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_2_VFD_2
+  - http://example.org/IBAL#Fan_2_VFD_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_4_ICP
+  - http://example.org/IBAL#Damper_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc17-OCP
+  - http://example.org/IBAL#Jnc17-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_35
+  - http://example.org/IBAL#Segment_35 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_3_ICP
+  - http://example.org/IBAL#Damper_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_5_OCP
+  - http://example.org/IBAL#HC_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_1_E_ICP
+  - http://example.org/IBAL#HC_1_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_6_ICP
+  - http://example.org/IBAL#HC_6_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc1-ICP
+  - http://example.org/IBAL#Jnc1-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_11_OCP
+  - http://example.org/IBAL#Damper_11_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_13_OCP
+  - http://example.org/IBAL#Damper_13_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_5_W_ICP
+  - http://example.org/IBAL#HC_5_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_48
+  - http://example.org/IBAL#Segment_48 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_16_ICP
+  - http://example.org/IBAL#Damper_16_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_3_ICP
+  - http://example.org/IBAL#Fan_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_3_VFD_3
+  - http://example.org/IBAL#Fan_3_VFD_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_12
+  - http://example.org/IBAL#Junction_12 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_9_ICP
+  - http://example.org/IBAL#Damper_9_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_6_W_OCP
+  - http://example.org/IBAL#HC_6_W_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_3_W_ICP
+  - http://example.org/IBAL#HC_3_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc12-OCP2
+  - http://example.org/IBAL#Jnc12-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_2_E_ICP
+  - http://example.org/IBAL#HC_2_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ManualTwoWayValve_4_OCP
+  - http://example.org/IBAL#ManualTwoWayValve_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_39
+  - http://example.org/IBAL#Segment_39 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc9-OCP2
+  - http://example.org/IBAL#Jnc9-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#AHU_2_Connection_3
+  - http://example.org/IBAL#AHU_2_Connection_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_38
+  - http://example.org/IBAL#Segment_38 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP
+  - http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_7
+  - http://example.org/IBAL#Segment_7 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_5
+  - http://example.org/IBAL#Junction_5 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc1-OCP1
+  - http://example.org/IBAL#Jnc1-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_32
+  - http://example.org/IBAL#Segment_32 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedThreeWayValve_4_ICP_2
+  - http://example.org/IBAL#MotorizedThreeWayValve_4_ICP_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_3
+  - http://example.org/IBAL#Segment_3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_57
+  - http://example.org/IBAL#Segment_57 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ManualTwoWayValve_2_OCP
+  - http://example.org/IBAL#ManualTwoWayValve_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_10
+  - http://example.org/IBAL#Junction_10 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ManualTwoWayValve_5_OCP
+  - http://example.org/IBAL#ManualTwoWayValve_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc6-ICP2
+  - http://example.org/IBAL#Jnc6-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc10-OCP
+  - http://example.org/IBAL#Jnc10-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_3_OCP
+  - http://example.org/IBAL#Damper_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc15-ICP
+  - http://example.org/IBAL#Jnc15-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_3_Connection_2
+  - http://example.org/IBAL#VAV_3_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_6_W_ICP
+  - http://example.org/IBAL#HC_6_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#AHU_1_Connection_2
+  - http://example.org/IBAL#AHU_1_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc17-ICP
+  - http://example.org/IBAL#Jnc17-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc8-ICP
+  - http://example.org/IBAL#Jnc8-ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterPump_4
+  - http://example.org/IBAL#WaterPump_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#WaterPump_4 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Segment_5
+  - http://example.org/IBAL#Segment_5 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc12-OCP1
+  - http://example.org/IBAL#Jnc12-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_9
+  - http://example.org/IBAL#Junction_9 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc3-ICP2
+  - http://example.org/IBAL#Jnc3-ICP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_1_ICP
+  - http://example.org/IBAL#HC_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_11_ICP
+  - http://example.org/IBAL#Damper_11_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_29
+  - http://example.org/IBAL#Segment_29 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VFD_3_ICP
+  - http://example.org/IBAL#VFD_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_2
+  - http://example.org/IBAL#Junction_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_2_W_ICP
+  - http://example.org/IBAL#HC_2_W_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#vav3_heat_c
+  - http://example.org/IBAL#vav3_heat_c needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#AHU_3
+  - http://example.org/IBAL#AHU_3 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#AHU_3 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#WaterPump_3_ICP
+  - http://example.org/IBAL#WaterPump_3_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_3_OCP
+  - http://example.org/IBAL#HC_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_49
+  - http://example.org/IBAL#Segment_49 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Junction_14
+  - http://example.org/IBAL#Junction_14 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_2_Connection_1
+  - http://example.org/IBAL#VAV_2_Connection_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_3_Connection_1
+  - http://example.org/IBAL#VAV_3_Connection_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc3-ICP1
+  - http://example.org/IBAL#Jnc3-ICP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_12
+  - http://example.org/IBAL#MotorizedDamper_12 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_12 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Jnc16-OCP1
+  - http://example.org/IBAL#Jnc16-OCP1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedDamper_4
+  - http://example.org/IBAL#MotorizedDamper_4 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://example.org/IBAL#MotorizedDamper_4 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#VFD_5
+  - http://example.org/IBAL#VFD_5 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://example.org/IBAL#Damper_18_OCP
+  - http://example.org/IBAL#Damper_18_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HVAC_Space_3_OCP
+  - http://example.org/IBAL#HVAC_Space_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HVAC_Space_4_OCP
+  - http://example.org/IBAL#HVAC_Space_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_4_Connection_2
+  - http://example.org/IBAL#VAV_4_Connection_2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_23
+  - http://example.org/IBAL#Segment_23 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#d15_pos_c
+  - http://example.org/IBAL#d15_pos_c needs to be a http://data.ashrae.org/standard223#Function
+http://example.org/IBAL#Damper_10_ICP
+  - http://example.org/IBAL#Damper_10_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_7_OCP
+  - http://example.org/IBAL#Damper_7_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ManualTwoWayValve_1_OCP
+  - http://example.org/IBAL#ManualTwoWayValve_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_40
+  - http://example.org/IBAL#Segment_40 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_5_E_ICP
+  - http://example.org/IBAL#Fan_5_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ManualTwoWayValve_4_ICP
+  - http://example.org/IBAL#ManualTwoWayValve_4_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VFD_2_ICP
+  - http://example.org/IBAL#VFD_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc5-OCP
+  - http://example.org/IBAL#Jnc5-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_1_OCP
+  - http://example.org/IBAL#VAV_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_5_E_ICP
+  - http://example.org/IBAL#HC_5_E_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_27
+  - http://example.org/IBAL#Segment_27 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_8_ICP
+  - http://example.org/IBAL#Damper_8_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ManualTwoWayValve_3_OCP
+  - http://example.org/IBAL#ManualTwoWayValve_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#CC_3_OCP
+  - http://example.org/IBAL#CC_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_5_OCP
+  - http://example.org/IBAL#Damper_5_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_12_ICP
+  - http://example.org/IBAL#Damper_12_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP
+  - http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_50
+  - http://example.org/IBAL#Segment_50 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_4_OCP
+  - http://example.org/IBAL#HC_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#AHU_2_ICP
+  - http://example.org/IBAL#AHU_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#MotorizedThreeWayValve_4_ICP_1
+  - http://example.org/IBAL#MotorizedThreeWayValve_4_ICP_1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VAV_2_OCP
+  - http://example.org/IBAL#VAV_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#WaterPump_3_OCP
+  - http://example.org/IBAL#WaterPump_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VFD_3_OCP
+  - http://example.org/IBAL#VFD_3_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#VFD_4_OCP
+  - http://example.org/IBAL#VFD_4_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HVAC_Space_1_ICP
+  - http://example.org/IBAL#HVAC_Space_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_2_OCP
+  - http://example.org/IBAL#HC_2_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Chiller_2_Upper_ICP
+  - http://example.org/IBAL#Chiller_2_Upper_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc2-OCP
+  - http://example.org/IBAL#Jnc2-OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#HC_1_OCP
+  - http://example.org/IBAL#HC_1_OCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc8-OCP2
+  - http://example.org/IBAL#Jnc8-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#ManualTwoWayValve_2_ICP
+  - http://example.org/IBAL#ManualTwoWayValve_2_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_44
+  - http://example.org/IBAL#Segment_44 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Jnc4-OCP2
+  - http://example.org/IBAL#Jnc4-OCP2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Damper_1_ICP
+  - http://example.org/IBAL#Damper_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Fan_1_ICP
+  - http://example.org/IBAL#Fan_1_ICP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://example.org/IBAL#Segment_4
+  - http://example.org/IBAL#Segment_4 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 </pre></div>
 </div>
 </div>

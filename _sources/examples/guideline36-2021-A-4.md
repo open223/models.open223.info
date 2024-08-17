@@ -9,6 +9,12 @@ kernelspec:
   language: python
   name: python3
 ---
+
+```{warning}
+This model has not been updated since the last update of the 223P ontology. It may fail validation.
+223P was last updated on 2024-08-17 02:46:39. The model file was last updated on 2024-08-17 02:46:39
+```
+        
 # ASHRAE Guideline 36-2021 A-4 Parallel Fan-Powered Terminal Unit, Variable Volume Fan
 
 This component model is an example of the parallel fan-powered terminal unit with variable volume fan from Guideline 36-2021, Appendix A, Figure A-4.
@@ -63,7 +69,7 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@devel
 ````
 
 
-```{code-cell} ipython3
+```{code-cell} python3
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
 import logging
@@ -77,7 +83,7 @@ s223 = Library.load(ontology_graph="https://github.com/open223/models.open223.in
 
 # load the model into the BuildingMOTIF instance
 model = Model.create("urn:guideline36-2021-A-4")
-model.graph.parse("https://models.open223.info/compiled/guideline36-2021-A-4.ttl")
+model.graph.parse("https://models.open223.info/guideline36-2021-A-4.ttl")
 
 # validate the model against 223P ontology
 ctx = model.validate([s223.get_shape_collection()], error_on_missing_imports=False)

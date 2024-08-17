@@ -9,6 +9,12 @@ kernelspec:
   language: python
   name: python3
 ---
+
+```{warning}
+This model has not been updated since the last update of the 223P ontology. It may fail validation.
+223P was last updated on 2024-08-17 02:46:39. The model file was last updated on 2024-08-17 02:46:39
+```
+        
 # LBNL Example SMB Radiant
 
 This is a reference model provided by LBNL of a medium office building using a radiant system. Labels have been anonymized, and may not be interpretable.
@@ -59,7 +65,7 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@devel
 ````
 
 
-```{code-cell} ipython3
+```{code-cell} python3
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
 import logging
@@ -73,7 +79,7 @@ s223 = Library.load(ontology_graph="https://github.com/open223/models.open223.in
 
 # load the model into the BuildingMOTIF instance
 model = Model.create("urn:lbnl-example-radiant")
-model.graph.parse("https://models.open223.info/compiled/lbnl-example-radiant.ttl")
+model.graph.parse("https://models.open223.info/lbnl-example-radiant.ttl")
 
 # validate the model against 223P ontology
 ctx = model.validate([s223.get_shape_collection()], error_on_missing_imports=False)

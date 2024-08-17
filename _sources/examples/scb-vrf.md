@@ -1,3 +1,20 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+```{warning}
+This model has not been updated since the last update of the 223P ontology. It may fail validation.
+223P was last updated on 2024-08-17 02:46:39. The model file was last updated on 2024-08-17 02:46:39
+```
+        
 # LBNL Example SCB VRF
 
 This is a reference model provided by LBNL of a small office building using a VRF Heat Recovery System. Labels have been anonymized, and may not be interpretable.
@@ -61,7 +78,7 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@devel
 ````
 
 
-```{code-cell} ipython3
+```{code-cell} python3
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
 import logging
@@ -75,7 +92,7 @@ s223 = Library.load(ontology_graph="https://github.com/open223/models.open223.in
 
 # load the model into the BuildingMOTIF instance
 model = Model.create("urn:scb-vrf")
-model.graph.parse("https://models.open223.info/compiled/scb-vrf.ttl")
+model.graph.parse("https://models.open223.info/scb-vrf.ttl")
 
 # validate the model against 223P ontology
 ctx = model.validate([s223.get_shape_collection()], error_on_missing_imports=False)
