@@ -11,7 +11,7 @@ def generate_python_code(model_file_path):
         model_last_updated_formatted = datetime.datetime.fromtimestamp(model_last_updated).strftime('%Y-%m-%d %H:%M:%S')
         return f"""
 ```{{warning}}
-This model has not been updated since the last update of the 223P ontology. It may fail validation.
+This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
 223P was last updated on {s223_last_updated_formatted}. The model file was last updated on {model_last_updated_formatted}
 ```
         """
