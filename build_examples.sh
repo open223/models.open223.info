@@ -26,6 +26,7 @@ for filename in examples/*.md; do
 
     python tools/make_count_table.py "$ttl_filename" "$md_filename"
     python tools/make-notebook.py "$ttl_filename" "$md_filename"
+    python tools/mark-out-of-date.py "$ttl_filename" "$md_filename"
 done
 
 # build queries

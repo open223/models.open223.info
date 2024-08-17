@@ -1,11 +1,12 @@
-import sys
 import re
+import sys
 import pathlib
 
 def generate_python_code(location):
     # rewrite the 'models/bdg1-1.ttl' location to 'compiled/bdg1-1.ttl'
     model_path = pathlib.Path(location).name
-    location = pathlib.Path('compiled') / model_path
+    #location = pathlib.Path('compiled') / model_path
+    location = model_path
 
     # remove the extension from model_name
     model_name = pathlib.Path(location).stem
@@ -81,7 +82,7 @@ def add_code_to_markdown(markdown_file_path, code_content):
     # ```
     # ````
     # """
-    code_block = f"\n```{{code-cell}} ipython3\n{code_content}\n```\n"
+    code_block = f"\n```{{code-cell}} python3\n{code_content}\n```\n"
 
     header = "## Load and Validate Model"
     new_content = f"\n{header}\n{description}\n{code_block}"

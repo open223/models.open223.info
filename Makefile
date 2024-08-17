@@ -21,6 +21,9 @@ models/compiled/%.ttl: models/%.ttl tools/compile.py
 # The compile-models target will "make" all of the COMPILED_MODELS.
 compile-models: $(COMPILED_MODELS)
 
+install-kernel:
+	python -m ipykernel install --user --name=python3
+
 # Rule to clean up the compiled models.
 clean:
 	rm -f models/compiled/*.ttl
