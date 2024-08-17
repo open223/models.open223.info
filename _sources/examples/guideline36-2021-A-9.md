@@ -11,8 +11,8 @@ kernelspec:
 ---
 
 ```{warning}
-This model has not been updated since the last update of the 223P ontology. It may fail validation.
-223P was last updated on 2024-08-17 02:46:39. The model file was last updated on 2024-08-17 02:46:39
+This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
+223P was last updated on 2024-08-17 05:46:12. The model file was last updated on 2024-08-17 05:46:12
 ```
         
 # ASHRAE Guideline 36-2021 A-9 Multiple Zone VAV Air Handling Unit

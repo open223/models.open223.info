@@ -407,8 +407,8 @@ document.write(`
                   
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This model has not been updated since the last update of the 223P ontology. It may fail validation.
-223P was last updated on 2024-08-17 02:46:39. The model file was last updated on 2024-08-17 02:46:39</p>
+<p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
+223P was last updated on 2024-08-17 05:46:12. The model file was last updated on 2024-08-17 05:46:12</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="ashrae-guideline-36-2021-a-1-vav-terminal-unit-cooling-only">
 <h1>ASHRAE Guideline 36-2021 A-1 VAV Terminal Unit, Cooling Only<a class="headerlink" href="#ashrae-guideline-36-2021-a-1-vav-terminal-unit-cooling-only" title="Link to this heading">#</a></h1>
@@ -545,34 +545,34 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
             sh:sourceShape ns3:ConnectionCnxShape ;
             sh:value &lt;urn:ex/in-connection&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/vav-cooling-only&gt; ;
-            sh:resultMessage &quot;Less than 1 values have shape &lt;urn:well-known/17c1d127&gt;&quot; ;
-            sh:resultPath ns3:hasConnectionPoint ;
+            sh:focusNode &lt;urn:ex/damper-actuator&gt; ;
+            sh:resultMessage &quot;Property needs to have at least 1 value&quot; ;
+            sh:resultPath ns3:actuatedByProperty ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
-  
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/vav-cooling-only
-  - urn:ex/vav-cooling-only needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/vav-cooling-only needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/in
-  - urn:ex/in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/out-connection
-  - urn:ex/out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/in-connection
-  - urn:ex/in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/damper-actuator
+  - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 urn:ex/duct-after-damper
   - urn:ex/duct-after-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/out-connection
+  - urn:ex/out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/vav-cooling-only
+  - urn:ex/vav-cooling-only needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/vav-cooling-only needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
 urn:ex/damper
-  - urn:ex/damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
   - urn:ex/damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/damper-in
-  - urn:ex/damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+  - urn:ex/damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/in
+  - urn:ex/in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/in-connection
+  - urn:ex/in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/duct-before-damper
   - urn:ex/duct-before-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/damper-actuator
-  - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/damper-in
+  - urn:ex/damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/damper-out
   - urn:ex/damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/out
