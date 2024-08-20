@@ -1,0 +1,1865 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NREL Example Building &#8212; Open223 Models</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/nrel-example';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PNNL Example Building 2" href="pnnl-example2.html" />
+    <link rel="prev" title="NIST Example Building" href="nist-example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Open223 Models</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Open223 Models
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Buildings</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bdg1-1.html">Example Building 1 model 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdg1-2.html">Example Building 1 model 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lbnl-example.html">LBNL Example Building</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lbnl-example-2.html">LBNL Example Building 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nist-example.html">NIST Example Building</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">NREL Example Building</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pnnl-example2.html">PNNL Example Building 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scb-rtu.html">LBNL Example SCB RTU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scb-vrf.html">LBNL Example SCB VRF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lbnl-example-radiant.html">LBNL Example SMB Radiant</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Systems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="design-patterns.html">Design Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guideline36-2021-A-1.html">ASHRAE Guideline 36-2021 A-1 VAV Terminal Unit, Cooling Only</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guideline36-2021-A-2.html">ASHRAE Guideline 36-2021 A-2 VAV Terminal Unit with Reheat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guideline36-2021-A-3.html">ASHRAE Guideline 36-2021 A-3 Parallel Fan-Powered Terminal Unit, Constant Volume Fan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guideline36-2021-A-4.html">ASHRAE Guideline 36-2021 A-4 Parallel Fan-Powered Terminal Unit, Variable Volume Fan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guideline36-2021-A-7.html">ASHRAE Guideline 36-2021 A-7 Dual Duct Terminal Unit with Inlet Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guideline36-2021-A-8.html">ASHRAE Guideline 36-2021 A-8 Dual Duct Terminal Unit with Discharge Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guideline36-2021-A-9.html">ASHRAE Guideline 36-2021 A-9 Multiple Zone VAV Air Handling Unit</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/open223/models.open223.info" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/open223/models.open223.info/issues/new?title=Issue%20on%20page%20%2Fexamples/nrel-example.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/examples/nrel-example.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>NREL Example Building</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloads">Downloads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queries">Queries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-validate-model">Load and Validate Model</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
+223P was last updated on 2024-08-20 22:45:44. The model file was last updated on 2024-08-20 22:45:44</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="nrel-example-building">
+<h1>NREL Example Building<a class="headerlink" href="#nrel-example-building" title="Link to this heading">#</a></h1>
+<p>This is an example building provided by the National Renewable Energy Laboratory, built with the <a class="reference external" href="https://github.com/NREL/BuildingMOTIF">BuildingMOTIF</a> tool.</p>
+<section id="downloads">
+<h2>Downloads<a class="headerlink" href="#downloads" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a href="/compiled/nrel-example.ttl">Turtle file (compiled)</a> (<a href="/nrel-example.ttl">original</a>)</p></li>
+<li><p><a href="/nrel-example.jsonld">JSON-LD file (original)</a></p></li>
+</ul>
+</section>
+<section id="queries">
+<h2>Queries<a class="headerlink" href="#queries" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Query URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Zone/room temperature sensors</p></td>
+<td><p><a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+SELECT+%3Flocation+%3Fsensor+WHERE+%7B%0A++++%3Fsensor+rdf%3Atype%2Frdfs%3AsubClassOf%2A+s223%3ASensor+.%0A++++%3Fsensor+s223%3Aobserves+%3Fproperty+.%0A++++%3Fproperty+qudt%3AhasQuantityKind+quantitykind%3ATemperature+.%0A++++%3Fsensor+s223%3AhasObservationLocation+%3Flocation%0A%7D%0A&url=https%3A%2F%2Fmodels.open223.info%2Fcompiled%2Fnrel-example.ttl'>Query Link</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="model-components">
+<h2>Model Components<a class="headerlink" href="#model-components" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parent Class</p></th>
+<th class="head"><p>Class</p></th>
+<th class="head"><p>Instances</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/Sensor.html">Sensor</a></p></td>
+<td><p>131</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/Valve.html">Valve</a></p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/HeatingCoil.html">HeatingCoil</a></p></td>
+<td><p>19</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/Fan.html">Fan</a></p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/Pump.html">Pump</a></p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/CoolingCoil.html">CoolingCoil</a></p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/FanCoilUnit.html">FanCoilUnit</a></p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/TerminalUnit.html">TerminalUnit</a></p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/Filter.html">Filter</a></p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/Damper.html">Damper</a></p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/HeatExchanger.html">HeatExchanger</a></p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/HeatRecoveryCoil.html">HeatRecoveryCoil</a></p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/AirHandlingUnit.html">AirHandlingUnit</a></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connection</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/Duct.html">Duct</a></p></td>
+<td><p>57</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/OutletConnectionPoint.html">OutletConnectionPoint</a></p></td>
+<td><p>196</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/InletConnectionPoint.html">InletConnectionPoint</a></p></td>
+<td><p>187</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/DomainSpace.html">DomainSpace</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Zone.html">Zone</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableObservableProperty.html">QuantifiableObservableProperty</a></p></td>
+<td><p>381</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/EnumeratedObservableProperty.html">EnumeratedObservableProperty</a></p></td>
+<td><p>119</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/EnumeratedActuatableProperty.html">EnumeratedActuatableProperty</a></p></td>
+<td><p>66</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableActuatableProperty.html">QuantifiableActuatableProperty</a></p></td>
+<td><p>29</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a></p></td>
+<td><p>6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="load-and-validate-model">
+<h2>Load and Validate Model<a class="headerlink" href="#load-and-validate-model" title="Link to this heading">#</a></h2>
+<p>This code uses the <a class="reference external" href="https://github.com/NREL/BuildingMOTIF">BuildingMOTIF</a> library to load the 223P ontology and the model file into a temporary in-memory instance.
+It then validates the model against the ontology. If the model is invalid, it will print the validation report.</p>
+<p>To run this code, you need to have Java installed on your system. If you do not have Java installed, you can remove the <code class="docutils literal notranslate"><span class="pre">shacl_engine='topquadrant'</span></code> parameter from the <code class="docutils literal notranslate"><span class="pre">BuildingMOTIF</span></code> constructor.
+Be warned that without the <code class="docutils literal notranslate"><span class="pre">shacl_engine='topquadrant'</span></code> parameter, the validation process will be slower.</p>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
+<p>BuildingMOTIF installation
+To install the <code class="docutils literal notranslate"><span class="pre">buildingmotif</span></code> library, you can use the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;buildingmotif[topquadrant] @ git+https://github.com/NREL/buildingmotif.git@develop&#39;</span>
+</pre></div>
+</div>
+<p>If you do not have Java installed, you can use the following command to install the library:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">buildingmotif</span> <span class="kn">import</span> <span class="n">BuildingMOTIF</span>
+<span class="kn">from</span> <span class="nn">buildingmotif.dataclasses</span> <span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
+<span class="n">bm</span> <span class="o">=</span> <span class="n">BuildingMOTIF</span><span class="p">(</span><span class="s1">&#39;sqlite://&#39;</span><span class="p">,</span> <span class="n">shacl_engine</span><span class="o">=</span><span class="s1">&#39;topquadrant&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
+
+<span class="c1"># load 223P library. We will load a recent copy from the models.open223.info</span>
+<span class="c1"># git repository; later, we will load this from the location of the actual standard</span>
+<span class="n">s223</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ontology_graph</span><span class="o">=</span><span class="s2">&quot;https://github.com/open223/models.open223.info/raw/main/ontologies/223p.ttl&quot;</span><span class="p">)</span>
+
+<span class="c1"># load the model into the BuildingMOTIF instance</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;urn:nrel-example&quot;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/nrel-example.ttl&quot;</span><span class="p">)</span>
+
+<span class="c1"># validate the model against 223P ontology</span>
+<span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span> <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># print the validation result</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model is valid: </span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># if the model is invalid, print the validation report</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">report_string</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span> <span class="c1"># first 1000 characters of the report</span>
+
+<span class="c1"># BuildingMOTIF can also interpret the report to provide recommendations on fixes</span>
+<span class="k">for</span> <span class="n">focus_node</span><span class="p">,</span> <span class="n">diffs</span> <span class="ow">in</span> <span class="n">ctx</span><span class="o">.</span><span class="n">get_reasons_with_severity</span><span class="p">(</span><span class="s2">&quot;Violation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">diffs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">focus_node</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">diff</span> <span class="ow">in</span> <span class="n">diffs</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - &quot;</span> <span class="o">+</span> <span class="n">diff</span><span class="o">.</span><span class="n">reason</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
+@prefix ns1: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:nrel_example/nrel00000237&gt; ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;urn:nrel_example/nrel00000237&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;urn:nrel_example/nrel00000839&gt; because it is associated with a Junction or Equipment that is contained by &lt;urn:nrel_example/nrel00000839&gt;.&quot; ;
+            sh:resultPath ns1:mapsTo ;
+            sh:resultSeverity sh:Info ;
+            sh:sourceConstraint _:ndeb096ba4a8545198b9a7c34d0bc6db8b5 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/8298d968&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:nrel_example/nrel00001111&gt; ;
+            sh:resultMessage &quot;s223: Connect
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:nrel_example/nrel00000251
+  - urn:nrel_example/nrel00000251 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001112
+  - urn:nrel_example/nrel00001112 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000882
+  - urn:nrel_example/nrel00000882 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000783
+  - urn:nrel_example/nrel00000783 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000533
+  - urn:nrel_example/nrel00000533 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000533 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000226
+  - urn:nrel_example/nrel00000226 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000226 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001270
+  - urn:nrel_example/nrel00001270 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000841
+  - urn:nrel_example/nrel00000841 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000221
+  - urn:nrel_example/nrel00000221 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000970
+  - urn:nrel_example/nrel00000970 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001294
+  - urn:nrel_example/nrel00001294 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001185
+  - urn:nrel_example/nrel00001185 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001185 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000381
+  - urn:nrel_example/nrel00000381 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000381 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001068
+  - urn:nrel_example/nrel00001068 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000220
+  - urn:nrel_example/nrel00000220 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000838
+  - urn:nrel_example/nrel00000838 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000438
+  - urn:nrel_example/nrel00000438 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000261
+  - urn:nrel_example/nrel00000261 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000346
+  - urn:nrel_example/nrel00000346 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000269
+  - urn:nrel_example/nrel00000269 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000801
+  - urn:nrel_example/nrel00000801 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000439
+  - urn:nrel_example/nrel00000439 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000437
+  - urn:nrel_example/nrel00000437 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000362
+  - urn:nrel_example/nrel00000362 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000362 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000059
+  - urn:nrel_example/nrel00000059 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000065
+  - urn:nrel_example/nrel00000065 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000000
+  - urn:nrel_example/nrel00000000 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000836
+  - urn:nrel_example/nrel00000836 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000183
+  - urn:nrel_example/nrel00000183 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000526
+  - urn:nrel_example/nrel00000526 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000162
+  - urn:nrel_example/nrel00000162 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001321
+  - urn:nrel_example/nrel00001321 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000784
+  - urn:nrel_example/nrel00000784 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000264
+  - urn:nrel_example/nrel00000264 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000019
+  - urn:nrel_example/nrel00000019 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000826
+  - urn:nrel_example/nrel00000826 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001193
+  - urn:nrel_example/nrel00001193 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000770
+  - urn:nrel_example/nrel00000770 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000770 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001051
+  - urn:nrel_example/nrel00001051 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000834
+  - urn:nrel_example/nrel00000834 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000635
+  - urn:nrel_example/nrel00000635 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000320
+  - urn:nrel_example/nrel00000320 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001186
+  - urn:nrel_example/nrel00001186 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000780
+  - urn:nrel_example/nrel00000780 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000780 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001139
+  - urn:nrel_example/nrel00001139 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000043
+  - urn:nrel_example/nrel00000043 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000568
+  - urn:nrel_example/nrel00000568 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000568 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000912
+  - urn:nrel_example/nrel00000912 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000207
+  - urn:nrel_example/nrel00000207 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000365
+  - urn:nrel_example/nrel00000365 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000365 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001007
+  - urn:nrel_example/nrel00001007 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001308
+  - urn:nrel_example/nrel00001308 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001308 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001241
+  - urn:nrel_example/nrel00001241 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000055
+  - urn:nrel_example/nrel00000055 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000055 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000894
+  - urn:nrel_example/nrel00000894 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001300
+  - urn:nrel_example/nrel00001300 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000870
+  - urn:nrel_example/nrel00000870 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000870 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001305
+  - urn:nrel_example/nrel00001305 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000179
+  - urn:nrel_example/nrel00000179 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000179 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000625
+  - urn:nrel_example/nrel00000625 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001144
+  - urn:nrel_example/nrel00001144 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000448
+  - urn:nrel_example/nrel00000448 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000466
+  - urn:nrel_example/nrel00000466 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000579
+  - urn:nrel_example/nrel00000579 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000830
+  - urn:nrel_example/nrel00000830 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000830 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000701
+  - urn:nrel_example/nrel00000701 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000864
+  - urn:nrel_example/nrel00000864 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000233
+  - urn:nrel_example/nrel00000233 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000233 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000949
+  - urn:nrel_example/nrel00000949 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000413
+  - urn:nrel_example/nrel00000413 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000413 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000386
+  - urn:nrel_example/nrel00000386 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000407
+  - urn:nrel_example/nrel00000407 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000505
+  - urn:nrel_example/nrel00000505 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000505 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000366
+  - urn:nrel_example/nrel00000366 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001062
+  - urn:nrel_example/nrel00001062 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001115
+  - urn:nrel_example/nrel00001115 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001115 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000589
+  - urn:nrel_example/nrel00000589 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000131
+  - urn:nrel_example/nrel00000131 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000271
+  - urn:nrel_example/nrel00000271 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000420
+  - urn:nrel_example/nrel00000420 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001046
+  - urn:nrel_example/nrel00001046 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000485
+  - urn:nrel_example/nrel00000485 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001207
+  - urn:nrel_example/nrel00001207 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001187
+  - urn:nrel_example/nrel00001187 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001187 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000961
+  - urn:nrel_example/nrel00000961 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000776
+  - urn:nrel_example/nrel00000776 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000371
+  - urn:nrel_example/nrel00000371 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000371 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001074
+  - urn:nrel_example/nrel00001074 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000777
+  - urn:nrel_example/nrel00000777 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000777 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001276
+  - urn:nrel_example/nrel00001276 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001276 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000775
+  - urn:nrel_example/nrel00000775 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001161
+  - urn:nrel_example/nrel00001161 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001034
+  - urn:nrel_example/nrel00001034 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000361
+  - urn:nrel_example/nrel00000361 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000361 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000938
+  - urn:nrel_example/nrel00000938 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000938 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000522
+  - urn:nrel_example/nrel00000522 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000522 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001105
+  - urn:nrel_example/nrel00001105 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000615
+  - urn:nrel_example/nrel00000615 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000629
+  - urn:nrel_example/nrel00000629 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000629 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000208
+  - urn:nrel_example/nrel00000208 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001325
+  - urn:nrel_example/nrel00001325 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000502
+  - urn:nrel_example/nrel00000502 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001183
+  - urn:nrel_example/nrel00001183 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001080
+  - urn:nrel_example/nrel00001080 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001182
+  - urn:nrel_example/nrel00001182 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001050
+  - urn:nrel_example/nrel00001050 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000725
+  - urn:nrel_example/nrel00000725 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001072
+  - urn:nrel_example/nrel00001072 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001174
+  - urn:nrel_example/nrel00001174 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001174 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000731
+  - urn:nrel_example/nrel00000731 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000099
+  - urn:nrel_example/nrel00000099 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000099 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000591
+  - urn:nrel_example/nrel00000591 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000591 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000586
+  - urn:nrel_example/nrel00000586 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000222
+  - urn:nrel_example/nrel00000222 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000724
+  - urn:nrel_example/nrel00000724 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000580
+  - urn:nrel_example/nrel00000580 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000580 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001024
+  - urn:nrel_example/nrel00001024 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001278
+  - urn:nrel_example/nrel00001278 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000627
+  - urn:nrel_example/nrel00000627 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000273
+  - urn:nrel_example/nrel00000273 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000273 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000554
+  - urn:nrel_example/nrel00000554 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000291
+  - urn:nrel_example/nrel00000291 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000291 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000597
+  - urn:nrel_example/nrel00000597 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000760
+  - urn:nrel_example/nrel00000760 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000508
+  - urn:nrel_example/nrel00000508 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000189
+  - urn:nrel_example/nrel00000189 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000351
+  - urn:nrel_example/nrel00000351 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000290
+  - urn:nrel_example/nrel00000290 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000022
+  - urn:nrel_example/nrel00000022 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000630
+  - urn:nrel_example/nrel00000630 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000630 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000707
+  - urn:nrel_example/nrel00000707 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000707 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000469
+  - urn:nrel_example/nrel00000469 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000211
+  - urn:nrel_example/nrel00000211 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000235
+  - urn:nrel_example/nrel00000235 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000235 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000574
+  - urn:nrel_example/nrel00000574 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000578
+  - urn:nrel_example/nrel00000578 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000525
+  - urn:nrel_example/nrel00000525 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001260
+  - urn:nrel_example/nrel00001260 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000187
+  - urn:nrel_example/nrel00000187 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000187 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001291
+  - urn:nrel_example/nrel00001291 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001291 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000001
+  - urn:nrel_example/nrel00000001 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000161
+  - urn:nrel_example/nrel00000161 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000495
+  - urn:nrel_example/nrel00000495 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000495 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001242
+  - urn:nrel_example/nrel00001242 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000130
+  - urn:nrel_example/nrel00000130 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000040
+  - urn:nrel_example/nrel00000040 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001129
+  - urn:nrel_example/nrel00001129 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000158
+  - urn:nrel_example/nrel00000158 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000975
+  - urn:nrel_example/nrel00000975 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000317
+  - urn:nrel_example/nrel00000317 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000465
+  - urn:nrel_example/nrel00000465 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000435
+  - urn:nrel_example/nrel00000435 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000435 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000490
+  - urn:nrel_example/nrel00000490 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001020
+  - urn:nrel_example/nrel00001020 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000996
+  - urn:nrel_example/nrel00000996 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000240
+  - urn:nrel_example/nrel00000240 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000079
+  - urn:nrel_example/nrel00000079 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001091
+  - urn:nrel_example/nrel00001091 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000940
+  - urn:nrel_example/nrel00000940 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000676
+  - urn:nrel_example/nrel00000676 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001040
+  - urn:nrel_example/nrel00001040 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000088
+  - urn:nrel_example/nrel00000088 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000460
+  - urn:nrel_example/nrel00000460 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000460 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000682
+  - urn:nrel_example/nrel00000682 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000807
+  - urn:nrel_example/nrel00000807 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000112
+  - urn:nrel_example/nrel00000112 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000112 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000983
+  - urn:nrel_example/nrel00000983 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000397
+  - urn:nrel_example/nrel00000397 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000306
+  - urn:nrel_example/nrel00000306 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000104
+  - urn:nrel_example/nrel00000104 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000822
+  - urn:nrel_example/nrel00000822 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001232
+  - urn:nrel_example/nrel00001232 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001232 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001250
+  - urn:nrel_example/nrel00001250 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000904
+  - urn:nrel_example/nrel00000904 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000904 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000487
+  - urn:nrel_example/nrel00000487 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000782
+  - urn:nrel_example/nrel00000782 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000782 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001104
+  - urn:nrel_example/nrel00001104 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000223
+  - urn:nrel_example/nrel00000223 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000390
+  - urn:nrel_example/nrel00000390 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000396
+  - urn:nrel_example/nrel00000396 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000100
+  - urn:nrel_example/nrel00000100 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000549
+  - urn:nrel_example/nrel00000549 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001268
+  - urn:nrel_example/nrel00001268 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000406
+  - urn:nrel_example/nrel00000406 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001316
+  - urn:nrel_example/nrel00001316 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000491
+  - urn:nrel_example/nrel00000491 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000227
+  - urn:nrel_example/nrel00000227 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000003
+  - urn:nrel_example/nrel00000003 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000003 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000045
+  - urn:nrel_example/nrel00000045 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001096
+  - urn:nrel_example/nrel00001096 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001043
+  - urn:nrel_example/nrel00001043 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000399
+  - urn:nrel_example/nrel00000399 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000058
+  - urn:nrel_example/nrel00000058 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001021
+  - urn:nrel_example/nrel00001021 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000509
+  - urn:nrel_example/nrel00000509 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000374
+  - urn:nrel_example/nrel00000374 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000430
+  - urn:nrel_example/nrel00000430 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000737
+  - urn:nrel_example/nrel00000737 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001149
+  - urn:nrel_example/nrel00001149 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000004
+  - urn:nrel_example/nrel00000004 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000570
+  - urn:nrel_example/nrel00000570 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001142
+  - urn:nrel_example/nrel00001142 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001142 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000924
+  - urn:nrel_example/nrel00000924 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000806
+  - urn:nrel_example/nrel00000806 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000280
+  - urn:nrel_example/nrel00000280 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000280 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001285
+  - urn:nrel_example/nrel00001285 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000712
+  - urn:nrel_example/nrel00000712 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000944
+  - urn:nrel_example/nrel00000944 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000619
+  - urn:nrel_example/nrel00000619 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000026
+  - urn:nrel_example/nrel00000026 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000278
+  - urn:nrel_example/nrel00000278 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001157
+  - urn:nrel_example/nrel00001157 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000663
+  - urn:nrel_example/nrel00000663 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001277
+  - urn:nrel_example/nrel00001277 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000198
+  - urn:nrel_example/nrel00000198 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000512
+  - urn:nrel_example/nrel00000512 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000035
+  - urn:nrel_example/nrel00000035 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000035 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000742
+  - urn:nrel_example/nrel00000742 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000874
+  - urn:nrel_example/nrel00000874 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000810
+  - urn:nrel_example/nrel00000810 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000514
+  - urn:nrel_example/nrel00000514 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000691
+  - urn:nrel_example/nrel00000691 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000209
+  - urn:nrel_example/nrel00000209 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000209 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000380
+  - urn:nrel_example/nrel00000380 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000014
+  - urn:nrel_example/nrel00000014 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000516
+  - urn:nrel_example/nrel00000516 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000942
+  - urn:nrel_example/nrel00000942 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001297
+  - urn:nrel_example/nrel00001297 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001297 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000254
+  - urn:nrel_example/nrel00000254 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000254 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000685
+  - urn:nrel_example/nrel00000685 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000248
+  - urn:nrel_example/nrel00000248 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000839
+  - urn:nrel_example/nrel00000839 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000839 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000799
+  - urn:nrel_example/nrel00000799 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000799 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000006
+  - urn:nrel_example/nrel00000006 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000025
+  - urn:nrel_example/nrel00000025 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000007
+  - urn:nrel_example/nrel00000007 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000007 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000798
+  - urn:nrel_example/nrel00000798 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000069
+  - urn:nrel_example/nrel00000069 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000447
+  - urn:nrel_example/nrel00000447 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000447 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001056
+  - urn:nrel_example/nrel00001056 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000779
+  - urn:nrel_example/nrel00000779 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000902
+  - urn:nrel_example/nrel00000902 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000265
+  - urn:nrel_example/nrel00000265 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000408
+  - urn:nrel_example/nrel00000408 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000998
+  - urn:nrel_example/nrel00000998 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000252
+  - urn:nrel_example/nrel00000252 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000096
+  - urn:nrel_example/nrel00000096 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000449
+  - urn:nrel_example/nrel00000449 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000449 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000459
+  - urn:nrel_example/nrel00000459 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000768
+  - urn:nrel_example/nrel00000768 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000846
+  - urn:nrel_example/nrel00000846 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000595
+  - urn:nrel_example/nrel00000595 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000715
+  - urn:nrel_example/nrel00000715 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001169
+  - urn:nrel_example/nrel00001169 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000076
+  - urn:nrel_example/nrel00000076 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000424
+  - urn:nrel_example/nrel00000424 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001069
+  - urn:nrel_example/nrel00001069 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000678
+  - urn:nrel_example/nrel00000678 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000960
+  - urn:nrel_example/nrel00000960 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000960 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000903
+  - urn:nrel_example/nrel00000903 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000723
+  - urn:nrel_example/nrel00000723 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000995
+  - urn:nrel_example/nrel00000995 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001018
+  - urn:nrel_example/nrel00001018 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001164
+  - urn:nrel_example/nrel00001164 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001117
+  - urn:nrel_example/nrel00001117 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000808
+  - urn:nrel_example/nrel00000808 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000958
+  - urn:nrel_example/nrel00000958 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000958 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001299
+  - urn:nrel_example/nrel00001299 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000677
+  - urn:nrel_example/nrel00000677 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001063
+  - urn:nrel_example/nrel00001063 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000426
+  - urn:nrel_example/nrel00000426 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000423
+  - urn:nrel_example/nrel00000423 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001199
+  - urn:nrel_example/nrel00001199 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001199 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000038
+  - urn:nrel_example/nrel00000038 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000038 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000953
+  - urn:nrel_example/nrel00000953 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000364
+  - urn:nrel_example/nrel00000364 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001302
+  - urn:nrel_example/nrel00001302 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000296
+  - urn:nrel_example/nrel00000296 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000869
+  - urn:nrel_example/nrel00000869 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001136
+  - urn:nrel_example/nrel00001136 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000612
+  - urn:nrel_example/nrel00000612 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000063
+  - urn:nrel_example/nrel00000063 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001262
+  - urn:nrel_example/nrel00001262 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001025
+  - urn:nrel_example/nrel00001025 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000982
+  - urn:nrel_example/nrel00000982 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000982 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000355
+  - urn:nrel_example/nrel00000355 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000748
+  - urn:nrel_example/nrel00000748 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000053
+  - urn:nrel_example/nrel00000053 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000053 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000735
+  - urn:nrel_example/nrel00000735 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000236
+  - urn:nrel_example/nrel00000236 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000947
+  - urn:nrel_example/nrel00000947 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000640
+  - urn:nrel_example/nrel00000640 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001111
+  - urn:nrel_example/nrel00001111 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001228
+  - urn:nrel_example/nrel00001228 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000107
+  - urn:nrel_example/nrel00000107 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001200
+  - urn:nrel_example/nrel00001200 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000756
+  - urn:nrel_example/nrel00000756 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000444
+  - urn:nrel_example/nrel00000444 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000474
+  - urn:nrel_example/nrel00000474 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000078
+  - urn:nrel_example/nrel00000078 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001323
+  - urn:nrel_example/nrel00001323 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000167
+  - urn:nrel_example/nrel00000167 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001210
+  - urn:nrel_example/nrel00001210 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000991
+  - urn:nrel_example/nrel00000991 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000971
+  - urn:nrel_example/nrel00000971 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000095
+  - urn:nrel_example/nrel00000095 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000095 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000389
+  - urn:nrel_example/nrel00000389 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001274
+  - urn:nrel_example/nrel00001274 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001032
+  - urn:nrel_example/nrel00001032 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001008
+  - urn:nrel_example/nrel00001008 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001008 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001099
+  - urn:nrel_example/nrel00001099 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000789
+  - urn:nrel_example/nrel00000789 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000789 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001180
+  - urn:nrel_example/nrel00001180 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000249
+  - urn:nrel_example/nrel00000249 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000973
+  - urn:nrel_example/nrel00000973 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000135
+  - urn:nrel_example/nrel00000135 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000135 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000950
+  - urn:nrel_example/nrel00000950 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000151
+  - urn:nrel_example/nrel00000151 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001101
+  - urn:nrel_example/nrel00001101 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001107
+  - urn:nrel_example/nrel00001107 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001229
+  - urn:nrel_example/nrel00001229 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000892
+  - urn:nrel_example/nrel00000892 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000722
+  - urn:nrel_example/nrel00000722 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000699
+  - urn:nrel_example/nrel00000699 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000376
+  - urn:nrel_example/nrel00000376 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000957
+  - urn:nrel_example/nrel00000957 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001122
+  - urn:nrel_example/nrel00001122 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001198
+  - urn:nrel_example/nrel00001198 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000967
+  - urn:nrel_example/nrel00000967 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001064
+  - urn:nrel_example/nrel00001064 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000908
+  - urn:nrel_example/nrel00000908 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000017
+  - urn:nrel_example/nrel00000017 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000172
+  - urn:nrel_example/nrel00000172 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000302
+  - urn:nrel_example/nrel00000302 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001123
+  - urn:nrel_example/nrel00001123 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000759
+  - urn:nrel_example/nrel00000759 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000084
+  - urn:nrel_example/nrel00000084 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000084 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000898
+  - urn:nrel_example/nrel00000898 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000388
+  - urn:nrel_example/nrel00000388 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000285
+  - urn:nrel_example/nrel00000285 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000931
+  - urn:nrel_example/nrel00000931 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000530
+  - urn:nrel_example/nrel00000530 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000790
+  - urn:nrel_example/nrel00000790 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000149
+  - urn:nrel_example/nrel00000149 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001009
+  - urn:nrel_example/nrel00001009 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001203
+  - urn:nrel_example/nrel00001203 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000802
+  - urn:nrel_example/nrel00000802 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000622
+  - urn:nrel_example/nrel00000622 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000704
+  - urn:nrel_example/nrel00000704 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000120
+  - urn:nrel_example/nrel00000120 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000620
+  - urn:nrel_example/nrel00000620 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001159
+  - urn:nrel_example/nrel00001159 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000393
+  - urn:nrel_example/nrel00000393 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000532
+  - urn:nrel_example/nrel00000532 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001284
+  - urn:nrel_example/nrel00001284 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000840
+  - urn:nrel_example/nrel00000840 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000786
+  - urn:nrel_example/nrel00000786 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000729
+  - urn:nrel_example/nrel00000729 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000729 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000590
+  - urn:nrel_example/nrel00000590 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001194
+  - urn:nrel_example/nrel00001194 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000305
+  - urn:nrel_example/nrel00000305 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000331
+  - urn:nrel_example/nrel00000331 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000015
+  - urn:nrel_example/nrel00000015 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000074
+  - urn:nrel_example/nrel00000074 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001176
+  - urn:nrel_example/nrel00001176 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001176 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001089
+  - urn:nrel_example/nrel00001089 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001089 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000891
+  - urn:nrel_example/nrel00000891 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000461
+  - urn:nrel_example/nrel00000461 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000658
+  - urn:nrel_example/nrel00000658 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001328
+  - urn:nrel_example/nrel00001328 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000245
+  - urn:nrel_example/nrel00000245 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000061
+  - urn:nrel_example/nrel00000061 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000061 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001264
+  - urn:nrel_example/nrel00001264 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000876
+  - urn:nrel_example/nrel00000876 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000200
+  - urn:nrel_example/nrel00000200 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000434
+  - urn:nrel_example/nrel00000434 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000150
+  - urn:nrel_example/nrel00000150 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000703
+  - urn:nrel_example/nrel00000703 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000703 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000219
+  - urn:nrel_example/nrel00000219 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001036
+  - urn:nrel_example/nrel00001036 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000897
+  - urn:nrel_example/nrel00000897 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000873
+  - urn:nrel_example/nrel00000873 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001304
+  - urn:nrel_example/nrel00001304 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000093
+  - urn:nrel_example/nrel00000093 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000757
+  - urn:nrel_example/nrel00000757 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000757 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000415
+  - urn:nrel_example/nrel00000415 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000281
+  - urn:nrel_example/nrel00000281 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001279
+  - urn:nrel_example/nrel00001279 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000754
+  - urn:nrel_example/nrel00000754 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000754 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000032
+  - urn:nrel_example/nrel00000032 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000976
+  - urn:nrel_example/nrel00000976 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000353
+  - urn:nrel_example/nrel00000353 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000621
+  - urn:nrel_example/nrel00000621 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001311
+  - urn:nrel_example/nrel00001311 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000153
+  - urn:nrel_example/nrel00000153 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001086
+  - urn:nrel_example/nrel00001086 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000463
+  - urn:nrel_example/nrel00000463 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001254
+  - urn:nrel_example/nrel00001254 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001254 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001234
+  - urn:nrel_example/nrel00001234 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001196
+  - urn:nrel_example/nrel00001196 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001172
+  - urn:nrel_example/nrel00001172 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000852
+  - urn:nrel_example/nrel00000852 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000913
+  - urn:nrel_example/nrel00000913 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000668
+  - urn:nrel_example/nrel00000668 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001301
+  - urn:nrel_example/nrel00001301 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000927
+  - urn:nrel_example/nrel00000927 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000087
+  - urn:nrel_example/nrel00000087 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001077
+  - urn:nrel_example/nrel00001077 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000588
+  - urn:nrel_example/nrel00000588 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000797
+  - urn:nrel_example/nrel00000797 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001240
+  - urn:nrel_example/nrel00001240 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000618
+  - urn:nrel_example/nrel00000618 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000482
+  - urn:nrel_example/nrel00000482 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001049
+  - urn:nrel_example/nrel00001049 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000318
+  - urn:nrel_example/nrel00000318 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000134
+  - urn:nrel_example/nrel00000134 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000875
+  - urn:nrel_example/nrel00000875 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000655
+  - urn:nrel_example/nrel00000655 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000297
+  - urn:nrel_example/nrel00000297 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000255
+  - urn:nrel_example/nrel00000255 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000984
+  - urn:nrel_example/nrel00000984 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000899
+  - urn:nrel_example/nrel00000899 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001108
+  - urn:nrel_example/nrel00001108 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000642
+  - urn:nrel_example/nrel00000642 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000714
+  - urn:nrel_example/nrel00000714 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000923
+  - urn:nrel_example/nrel00000923 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000964
+  - urn:nrel_example/nrel00000964 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001047
+  - urn:nrel_example/nrel00001047 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000328
+  - urn:nrel_example/nrel00000328 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000848
+  - urn:nrel_example/nrel00000848 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000848 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000814
+  - urn:nrel_example/nrel00000814 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000262
+  - urn:nrel_example/nrel00000262 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000262 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00001023
+  - urn:nrel_example/nrel00001023 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000077
+  - urn:nrel_example/nrel00000077 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001143
+  - urn:nrel_example/nrel00001143 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000907
+  - urn:nrel_example/nrel00000907 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000596
+  - urn:nrel_example/nrel00000596 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000792
+  - urn:nrel_example/nrel00000792 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000344
+  - urn:nrel_example/nrel00000344 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00000344 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000948
+  - urn:nrel_example/nrel00000948 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001211
+  - urn:nrel_example/nrel00001211 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000321
+  - urn:nrel_example/nrel00000321 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001208
+  - urn:nrel_example/nrel00001208 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000539
+  - urn:nrel_example/nrel00000539 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000638
+  - urn:nrel_example/nrel00000638 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000428
+  - urn:nrel_example/nrel00000428 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000955
+  - urn:nrel_example/nrel00000955 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000688
+  - urn:nrel_example/nrel00000688 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000215
+  - urn:nrel_example/nrel00000215 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000030
+  - urn:nrel_example/nrel00000030 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000914
+  - urn:nrel_example/nrel00000914 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000660
+  - urn:nrel_example/nrel00000660 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000911
+  - urn:nrel_example/nrel00000911 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001119
+  - urn:nrel_example/nrel00001119 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:nrel_example/nrel00001119 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:nrel_example/nrel00000888
+  - urn:nrel_example/nrel00000888 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001141
+  - urn:nrel_example/nrel00001141 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001013
+  - urn:nrel_example/nrel00001013 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000720
+  - urn:nrel_example/nrel00000720 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001166
+  - urn:nrel_example/nrel00001166 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000098
+  - urn:nrel_example/nrel00000098 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001102
+  - urn:nrel_example/nrel00001102 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000432
+  - urn:nrel_example/nrel00000432 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000821
+  - urn:nrel_example/nrel00000821 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001256
+  - urn:nrel_example/nrel00001256 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001192
+  - urn:nrel_example/nrel00001192 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000354
+  - urn:nrel_example/nrel00000354 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000763
+  - urn:nrel_example/nrel00000763 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001189
+  - urn:nrel_example/nrel00001189 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000932
+  - urn:nrel_example/nrel00000932 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000146
+  - urn:nrel_example/nrel00000146 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000535
+  - urn:nrel_example/nrel00000535 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000178
+  - urn:nrel_example/nrel00000178 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000287
+  - urn:nrel_example/nrel00000287 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000504
+  - urn:nrel_example/nrel00000504 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000171
+  - urn:nrel_example/nrel00000171 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000605
+  - urn:nrel_example/nrel00000605 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000781
+  - urn:nrel_example/nrel00000781 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000018
+  - urn:nrel_example/nrel00000018 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000237
+  - urn:nrel_example/nrel00000237 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000462
+  - urn:nrel_example/nrel00000462 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000229
+  - urn:nrel_example/nrel00000229 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001226
+  - urn:nrel_example/nrel00001226 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000441
+  - urn:nrel_example/nrel00000441 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000050
+  - urn:nrel_example/nrel00000050 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000905
+  - urn:nrel_example/nrel00000905 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000467
+  - urn:nrel_example/nrel00000467 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000075
+  - urn:nrel_example/nrel00000075 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000082
+  - urn:nrel_example/nrel00000082 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000577
+  - urn:nrel_example/nrel00000577 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000901
+  - urn:nrel_example/nrel00000901 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000745
+  - urn:nrel_example/nrel00000745 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000858
+  - urn:nrel_example/nrel00000858 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001265
+  - urn:nrel_example/nrel00001265 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000893
+  - urn:nrel_example/nrel00000893 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001219
+  - urn:nrel_example/nrel00001219 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000165
+  - urn:nrel_example/nrel00000165 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000480
+  - urn:nrel_example/nrel00000480 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000827
+  - urn:nrel_example/nrel00000827 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000785
+  - urn:nrel_example/nrel00000785 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000169
+  - urn:nrel_example/nrel00000169 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000051
+  - urn:nrel_example/nrel00000051 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000921
+  - urn:nrel_example/nrel00000921 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000603
+  - urn:nrel_example/nrel00000603 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000813
+  - urn:nrel_example/nrel00000813 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000517
+  - urn:nrel_example/nrel00000517 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000186
+  - urn:nrel_example/nrel00000186 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000258
+  - urn:nrel_example/nrel00000258 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000541
+  - urn:nrel_example/nrel00000541 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001052
+  - urn:nrel_example/nrel00001052 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001259
+  - urn:nrel_example/nrel00001259 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000138
+  - urn:nrel_example/nrel00000138 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001298
+  - urn:nrel_example/nrel00001298 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001113
+  - urn:nrel_example/nrel00001113 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000705
+  - urn:nrel_example/nrel00000705 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001033
+  - urn:nrel_example/nrel00001033 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000190
+  - urn:nrel_example/nrel00000190 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000307
+  - urn:nrel_example/nrel00000307 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000339
+  - urn:nrel_example/nrel00000339 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001135
+  - urn:nrel_example/nrel00001135 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001275
+  - urn:nrel_example/nrel00001275 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000356
+  - urn:nrel_example/nrel00000356 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00000986
+  - urn:nrel_example/nrel00000986 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:nrel_example/nrel00001057
+  - urn:nrel_example/nrel00001057 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./examples"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="nist-example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">NIST Example Building</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pnnl-example2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PNNL Example Building 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloads">Downloads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queries">Queries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-validate-model">Load and Validate Model</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
