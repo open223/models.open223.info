@@ -12,7 +12,7 @@ kernelspec:
 
 ```{warning}
 This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2024-08-20 22:45:44. The model file was last updated on 2024-08-20 22:45:44
+223P was last updated on 2024-08-21 16:19:15. The model file was last updated on 2024-08-21 16:19:15
 ```
         
 # ASHRAE Guideline 36-2021 A-1 VAV Terminal Unit, Cooling Only
