@@ -6,6 +6,7 @@
     - `## Downloads`
     - `## Queries`
     - `## Model Components`
+    - there should also be a "header" section at the top of the file which allows executable code to be embedded in the markdown file (see below)
 3. Add this `.md` file to the `_toc.yml` file under the appropriate section (Building or System)
 4. If you want to add queries to the model, add them in `queries.toml`. The section name should have the same base name as the `.ttl` and `.md` file.
 
@@ -19,6 +20,17 @@ For a model called `mybuilding.ttl`, the following files would be created:
 The `examples/mybuilding.md` file would look like this:
 
 ```
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 # My Example Building
 
 <description of the building>
