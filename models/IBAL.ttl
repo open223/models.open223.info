@@ -71,6 +71,7 @@ IBAL:AHU_1
   a s223:AirHandlingUnit ;
   s223:contains IBAL:CoolingCoil_1 ;
   s223:contains IBAL:Fan_1 ;
+  s223:contains IBAL:Filter_1 ;
   s223:contains IBAL:HeatingCoil_1 ;
   s223:contains IBAL:VFD_1 ;
   s223:hasConnectionPoint IBAL:AHU_1_E2_ICP ;
@@ -91,10 +92,17 @@ IBAL:AHU_1_Connection_2
 .
 IBAL:AHU_1_Connection_3
   a s223:Connection ;
-  s223:connectsAt IBAL:CC_1_OCP ;
   s223:connectsAt IBAL:Fan_1_ICP ;
+  s223:connectsAt IBAL:Filter_1_OCP ;
   s223:hasMedium s223:Fluid-Air ;
   rdfs:label "AHU 1 Connection 3" ;
+.
+IBAL:AHU_1_Connection_4
+  a s223:Connection ;
+  s223:cnx IBAL:CC_1_OCP ;
+  s223:cnx IBAL:Filter_1_ICP ;
+  s223:hasMedium s223:Fluid-Air ;
+  rdfs:label "AHU 1 Connection 4" ;
 .
 IBAL:AHU_1_E2_ICP
   a s223:InletConnectionPoint ;
@@ -143,6 +151,7 @@ IBAL:AHU_2
   bacnet:hasPort bacnet:P_47815 ;
   s223:contains IBAL:CoolingCoil_2 ;
   s223:contains IBAL:Fan_2 ;
+  s223:contains IBAL:Filter_2 ;
   s223:contains IBAL:HeatingCoil_4 ;
   s223:contains IBAL:VFD_2 ;
   s223:hasConnectionPoint IBAL:AHU_2_E2_ICP ;
@@ -163,10 +172,16 @@ IBAL:AHU_2_Connection_2
 .
 IBAL:AHU_2_Connection_3
   a s223:Connection ;
-  s223:connectsAt IBAL:CC_2_OCP ;
   s223:connectsAt IBAL:Fan_2_ICP ;
+  s223:connectsAt IBAL:Filter_2_OCP ;
   s223:hasMedium s223:Fluid-Air ;
   rdfs:label "AHU 2 Connection 3" ;
+.
+IBAL:AHU_2_Connection_4
+  a s223:Connection ;
+  s223:cnx IBAL:Filter_2_ICP ;
+  s223:hasMedium s223:Fluid-Air ;
+  rdfs:label "AHU 2 Connection 4" ;
 .
 IBAL:AHU_2_E2_ICP
   a s223:InletConnectionPoint ;
@@ -352,6 +367,7 @@ IBAL:CC_2_ICP
 .
 IBAL:CC_2_OCP
   a s223:OutletConnectionPoint ;
+  s223:cnx IBAL:AHU_2_Connection_4 ;
   s223:hasMedium s223:Fluid-Air ;
   s223:isConnectionPointOf IBAL:CoolingCoil_2 ;
   rdfs:label " CC 2 OCP" ;
@@ -2280,6 +2296,39 @@ IBAL:Fan_5_VFD_5
   s223:cnx IBAL:VFD_5_OCP ;
   s223:hasMedium s223:Constituent-Electricity ;
   rdfs:label "Fan 5 VFD 5" ;
+.
+IBAL:Filter_1
+  a s223:Filter ;
+  s223:cnx IBAL:Filter_1_ICP ;
+  s223:cnx IBAL:Filter_1_OCP ;
+  rdfs:label "Filter 1" ;
+.
+IBAL:Filter_1_ICP
+  a s223:InletConnectionPoint ;
+  s223:cnx IBAL:AHU_1_Connection_4 ;
+  s223:hasMedium s223:Fluid-Air ;
+  rdfs:label "Filter 1 ICP" ;
+.
+IBAL:Filter_1_OCP
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Fluid-Air ;
+  rdfs:label "Filter 1 OCP" ;
+.
+IBAL:Filter_2
+  a s223:Filter ;
+  s223:cnx IBAL:Filter_2_ICP ;
+  s223:cnx IBAL:Filter_2_OCP ;
+  rdfs:label "Filter 2" ;
+.
+IBAL:Filter_2_ICP
+  a s223:InletConnectionPoint ;
+  s223:hasMedium s223:Fluid-Air ;
+  rdfs:label "Filter 2 ICP" ;
+.
+IBAL:Filter_2_OCP
+  a s223:OutletConnectionPoint ;
+  s223:hasMedium s223:Fluid-Air ;
+  rdfs:label "Filter 2 OCP" ;
 .
 IBAL:Flow_6
   a s223:FlowSensor ;
