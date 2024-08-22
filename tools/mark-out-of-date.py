@@ -3,12 +3,16 @@ import datetime
 import os
 
 
+def get_git_last_modified_date(file_path):
+    return datetime.datetime.strptime(os.popen(f"git log -1 --date=format:'%Y-%m-%d %H:%M:%S' --format=%cd -- {file_path}").read().strip(), '%Y-%m-%d %H:%M:%S')
+
 def generate_python_code(model_file_path):
-    s223_last_updated = os.path.getmtime("ontologies/223p.ttl")
-    model_last_updated = os.path.getmtime(model_file_path)
+    s223_last_updated = get_git_last_modified_date("ontologies/223p.ttl")
+    model_last_updated = get_git_last_modified_date(model_file_path)
+    print(f"223P last updated: {s223_last_updated} Model last updated: {model_last_updated}")
     if model_last_updated < s223_last_updated:
-        s223_last_updated_formatted = datetime.datetime.fromtimestamp(s223_last_updated).strftime('%Y-%m-%d %H:%M:%S')
-        model_last_updated_formatted = datetime.datetime.fromtimestamp(model_last_updated).strftime('%Y-%m-%d %H:%M:%S')
+        s223_last_updated_formatted = s223_last_updated.strftime('%Y-%m-%d %H:%M:%S')
+        model_last_updated_formatted = model_last_updated.strftime('%Y-%m-%d %H:%M:%S')
         return f"""
 ```{{warning}}
 This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
