@@ -10,11 +10,6 @@ kernelspec:
   name: python3
 ---
 
-```{warning}
-This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2024-08-21 17:06:22. The model file was last updated on 2024-08-21 17:06:22
-```
-        
 # ASHRAE Guideline 36-2021 A-9 Multiple Zone VAV Air Handling Unit
 
 This component model is an example of the multiple zone VAV air handling unit _with return fan and OA measurement station_ from Guideline 36-2021, Appendix A, Figure A-9.

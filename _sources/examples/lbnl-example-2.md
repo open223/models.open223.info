@@ -10,11 +10,6 @@ kernelspec:
   name: python3
 ---
 
-```{warning}
-This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2024-08-21 17:06:22. The model file was last updated on 2024-08-21 17:06:22
-```
-        
 # LBNL Example Building 2
 
 This is a reference model provided by LBNL of a medium-sized office building with two office floors. It uses an underfloor air distribution system with fan-powered terminal reheat coils for perimeter zones. Four roof-top units with VAV are located on the roof. Labels have been anonymized, and are not interpretable.
