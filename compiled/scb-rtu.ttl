@@ -2483,6 +2483,16 @@ ns3:45500 a ns1:ObservableProperty,
         ns1:QuantifiableProperty ;
     rdfs:label ".main_service.kWh_import_diff_register" .
 
+ns3:45536 a ns1:ObservableProperty,
+        ns1:Property,
+        ns1:QuantifiableObservableProperty,
+        ns1:QuantifiableProperty,
+        ns2:Temperature ;
+    rdfs:label "sensor.Temperature" ;
+    ns1:ofMedium <http://data.ashrae.org/proposal-to-standard223#Fluid-Air> ;
+    ns4:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns4:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+
 ns3:45578 a ns1:ObservableProperty,
         ns1:Property,
         ns1:QuantifiableObservableProperty,
@@ -2494,6 +2504,16 @@ ns3:45590 a ns1:ObservableProperty,
         ns1:QuantifiableObservableProperty,
         ns1:QuantifiableProperty ;
     rdfs:label ".main_service.KW_B_5Second" .
+
+ns3:45605 a ns1:ObservableProperty,
+        ns1:Property,
+        ns1:QuantifiableObservableProperty,
+        ns1:QuantifiableProperty,
+        ns2:Temperature ;
+    rdfs:label "sensor.Temperature" ;
+    ns1:ofMedium <http://data.ashrae.org/proposal-to-standard223#Fluid-Air> ;
+    ns4:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns4:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 ns3:45648 a ns1:Property ;
     rdfs:label ".5177991.hsp_eff" .
@@ -5801,26 +5821,6 @@ ns3:34500 a ns1:ConnectionPoint,
     ns1:isConnectionPointOf ns3:12387 ;
     ns1:mapsTo ns3:23459 .
 
-ns3:45536 a ns1:ObservableProperty,
-        ns1:Property,
-        ns1:QuantifiableObservableProperty,
-        ns1:QuantifiableProperty,
-        ns2:Temperature ;
-    rdfs:label "sensor.Temperature" ;
-    ns1:ofMedium <http://data.ashrae.org/proposal-to-standard223#Fluid-Air> ;
-    ns4:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns4:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
-
-ns3:45605 a ns1:ObservableProperty,
-        ns1:Property,
-        ns1:QuantifiableObservableProperty,
-        ns1:QuantifiableProperty,
-        ns2:Temperature ;
-    rdfs:label "sensor.Temperature" ;
-    ns1:ofMedium <http://data.ashrae.org/proposal-to-standard223#Fluid-Air> ;
-    ns4:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns4:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
-
 ns3:56653 a ns1:ConnectionPoint,
         ns1:InletConnectionPoint,
         ns2:AirConnectionPoint ;
@@ -6893,7 +6893,6 @@ ns3:34426 a ns1:Connectable,
     ns1:hasConnectionPoint ns3:12215,
         ns3:34438,
         ns3:34439 ;
-    ns1:hasProperty ns3:45536 ;
     ns3:outsideAirInlet ns3:34438 ;
     ns3:returnAirInlet ns3:12215 ;
     ns3:supplyAirOutlet ns3:34439 .
@@ -6917,7 +6916,6 @@ ns3:45606 a ns1:Connectable,
     ns1:hasConnectionPoint ns3:34507,
         ns3:45619,
         ns3:90152 ;
-    ns1:hasProperty ns3:45605 ;
     ns3:outsideAirInlet ns3:34507 ;
     ns3:returnAirInlet ns3:90152 ;
     ns3:supplyAirOutlet ns3:45619 .

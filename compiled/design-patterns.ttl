@@ -74,6 +74,10 @@ pt6: Updated Luminaire controlled by a combination of a smart switch and a motio
     rdfs:label "Test room" ;
     ns1:encloses <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace> .
 
+<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#MotionProperty> a ns1:EnumeratedObservableProperty ;
+    rdfs:label "Motion property" ;
+    ns1:hasEnumerationKind ns1:Occupancy-Motion .
+
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Controller> a ns1:Controller ;
     rdfs:label "Controller" ;
     ns1:executes <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Function1> ;
@@ -103,9 +107,17 @@ pt6: Updated Luminaire controlled by a combination of a smart switch and a motio
     rdfs:label "Luminaire command" ;
     ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
 
+<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#MotionProperty> a ns1:EnumeratedObservableProperty ;
+    rdfs:label "Motion property" ;
+    ns1:hasEnumerationKind ns1:Occupancy-Motion .
+
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand> a ns1:EnumeratedActuatableProperty ;
     rdfs:label "Luminaire command" ;
     ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+
+<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty> a ns1:EnumeratedObservableProperty ;
+    rdfs:label "Motion property" ;
+    ns1:hasEnumerationKind ns1:Occupancy-Motion .
 
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty> a ns1:EnumerableProperty ;
     rdfs:label "UserSwitchProperty" ;
@@ -131,10 +143,6 @@ pt6: Updated Luminaire controlled by a combination of a smart switch and a motio
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP> .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#MotionProperty> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "Motion property" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Motion .
-
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty> a ns1:EnumerableProperty ;
     rdfs:label "SmartSwitchProperty" ;
     ns1:hasEnumerationKind ns1:EnumerationKind-OnOff ;
@@ -149,6 +157,10 @@ pt6: Updated Luminaire controlled by a combination of a smart switch and a motio
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand> a ns1:EnumeratedActuatableProperty ;
     rdfs:label "Luminaire command" ;
     ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+
+<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty> a ns1:EnumeratedObservableProperty ;
+    rdfs:label "Motion property" ;
+    ns1:hasEnumerationKind ns1:Occupancy-Motion .
 
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayInletCP> a ns1:InletConnectionPoint ;
     rdfs:label "RelayInlet CP" ;
@@ -174,26 +186,14 @@ pt6: Updated Luminaire controlled by a combination of a smart switch and a motio
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP> .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#MotionProperty> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "Motion property" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Motion .
-
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricBreaker_1> a ns1:ElectricBreaker ;
     rdfs:label "Electric breaker 1" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1> .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "Motion property" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Motion .
-
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand> a ns1:EnumeratedActuatableProperty ;
     rdfs:label "Luminaire command" ;
     ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
-
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "Motion property" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Motion .
 
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Breaker> a ns1:ElectricBreaker ;
     rdfs:label "Breaker" ;
@@ -625,8 +625,7 @@ pt6: Updated Luminaire controlled by a combination of a smart switch and a motio
     rdfs:label "Domain space" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP> ;
-    ns1:hasDomain ns1:Domain-Lighting ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty> .
+    ns1:hasDomain ns1:Domain-Lighting .
 
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker> a ns1:ElectricWire ;
     rdfs:label "ElectricWireFromBreaker" ;
@@ -709,8 +708,7 @@ pt6: Updated Luminaire controlled by a combination of a smart switch and a motio
     rdfs:label "Domain space" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP> ;
-    ns1:hasDomain ns1:Domain-Lighting ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#MotionProperty> .
+    ns1:hasDomain ns1:Domain-Lighting .
 
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Luminaire> a ns1:Equipment ;
     rdfs:label "Luminaire" ;
@@ -744,8 +742,7 @@ pt6: Updated Luminaire controlled by a combination of a smart switch and a motio
     ns1:connected <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> ;
     ns1:connectedFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpaceInletCP> ;
-    ns1:hasDomain ns1:Domain-Lighting ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#MotionProperty> .
+    ns1:hasDomain ns1:Domain-Lighting .
 
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace> a ns1:DomainSpace ;
     rdfs:label "Domain space" ;
@@ -754,8 +751,7 @@ pt6: Updated Luminaire controlled by a combination of a smart switch and a motio
     ns1:connectedFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire> ;
     ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OpticalPath> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP> ;
-    ns1:hasDomain ns1:Domain-Lighting ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty> .
+    ns1:hasDomain ns1:Domain-Lighting .
 
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire> a ns1:Luminaire ;
     rdfs:label "Luminaire" ;

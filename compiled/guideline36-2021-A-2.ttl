@@ -41,6 +41,12 @@
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
+<urn:ex/discharge-air-flow> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "discharge air flow" ;
+    ns1:hasAspect ns1:Role-Discharge ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+
 <urn:ex/discharge-air-temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "discharge air temp" ;
     ns1:hasAspect ns1:Role-Discharge ;
@@ -52,12 +58,6 @@
     ns1:hasAspect ns1:EnumerationKind-Position ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/discharge-air-flow> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "discharge air flow" ;
-    ns1:hasAspect ns1:Role-Discharge ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <urn:ex/air-in-connection> a ns1:Connection,
         ns1:Duct ;
@@ -215,7 +215,6 @@
         <urn:ex/vav-reheat> ;
     ns1:connectsThrough <urn:ex/air-in-connection> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <urn:ex/discharge-air-flow> ;
     ns1:isConnectionPointOf <urn:ex/vav-reheat> .
 
 <urn:ex/air-out> a ns1:OutletConnectionPoint ;

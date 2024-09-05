@@ -290,6 +290,18 @@
     ns1:hasEnumerationKind ns1:Aspect-ElectricalPhaseIdentifier ;
     ns1:hasValue ns1:ElectricalPhaseIdentifier-A .
 
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ChilledWaterInletTemp> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Chilled water inlet temp" ;
+    ns1:ofMedium ns1:Water-ChilledWater ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilOutletTemperature> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Cooling coil outlet temperature" ;
+    ns1:hasValue 65.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilValvePosition> a ns1:QuantifiableActuatableProperty ;
     rdfs:label "Cooling coil valve position" ;
     ns1:hasValue 50.0 ;
@@ -307,11 +319,28 @@
     ns1:hasEnumerationKind ns1:EnumerationKind-OnOff ;
     ns1:hasValue ns1:OnOff-On .
 
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpaceTemp> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "HVACSpace temp" ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1TemperatureSensor> a ns1:TemperatureSensor ;
     rdfs:label "TH1" ;
     ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpace1> ;
     ns1:hasPhysicalLocation <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOffice> ;
     ns1:observes <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Temperature> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone2Temperature> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "HVACZone2Temperature" ;
+    ns1:hasValue 73.2 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilOutletTemperature> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Heating coil outlet temperature" ;
+    ns1:hasValue 80.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilValvePosition> a ns1:QuantifiableActuatableProperty ;
     rdfs:label "Heating coil valve position" ;
@@ -380,10 +409,36 @@
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirPressure> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Mixed air pressure" ;
+    ns1:hasValue 15.5 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PSI> .
+
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccSensor5> a ns1:OccupantPresenceSensor ;
     rdfs:label "O5" ;
     ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancySpace5> ;
     ns1:observes <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp5> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp2> a ns1:EnumeratedObservableProperty ;
+    rdfs:label "Occupancy prop2" ;
+    ns1:hasEnumerationKind ns1:Occupancy-Motion ;
+    ns1:hasValue ns1:Motion-True .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp3> a ns1:EnumeratedObservableProperty ;
+    rdfs:label "Occupancy prop3" ;
+    ns1:hasEnumerationKind ns1:Occupancy-Presence ;
+    ns1:hasValue ns1:Presence-True .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp4> a ns1:EnumeratedObservableProperty ;
+    rdfs:label "Occupancy prop4" ;
+    ns1:hasEnumerationKind ns1:Occupancy-Motion ;
+    ns1:hasValue ns1:Motion-True .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp5> a ns1:EnumeratedObservableProperty ;
+    rdfs:label "Occupancy prop5" ;
+    ns1:hasEnumerationKind ns1:Occupancy-Presence ;
+    ns1:hasValue ns1:Presence-True .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirDamperPosition> a ns1:QuantifiableActuatableProperty ;
     rdfs:label "Outside air damper position" ;
@@ -396,6 +451,12 @@
     ns1:encloses <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpace3>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#LightingSpace4>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancySpace3> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnAirFlowRate> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Return air flow rate" ;
+    ns1:hasValue 129.3 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanSpeed> a ns1:QuantifiableActuatableProperty ;
     rdfs:label "Return fan speed" ;
@@ -418,6 +479,30 @@
     rdfs:label "Supply fan status" ;
     ns1:hasEnumerationKind ns1:EnumerationKind-OnOff ;
     ns1:hasValue ns1:OnOff-On .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletFlow> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "VAV1Inlet flow" ;
+    ns1:hasValue 135.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OutletTemperature> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "VAV1 Outlet Temperature" ;
+    ns1:hasValue 72.3 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletFlow> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "VAV2Inlet flow" ;
+    ns1:hasValue 250.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperatureProperty> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "VAV2Outlet temperature property" ;
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1DamperPosition> a ns1:QuantifiableActuatableProperty ;
     rdfs:label "VAVBox1Damper position" ;
@@ -503,6 +588,12 @@
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#sap> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Supply Air Pressure" ;
+    ns1:hasValue 15.6 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PSI> .
+
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR4OutletConnectionPoint> a ns1:OutletConnectionPoint ;
     rdfs:label "BR4Outlet connection point" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker4> ;
@@ -521,18 +612,6 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#LightingSpace3>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancySpace2> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ChilledWaterInletTemp> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "Chilled water inlet temp" ;
-    ns1:ofMedium ns1:Water-ChilledWater ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilOutletTemperature> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "Cooling coil outlet temperature" ;
-    ns1:hasValue 65.0 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Corridor> a ns1:PhysicalSpace ;
     rdfs:label "Corridor" ;
     ns1:encloses <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpace4>,
@@ -547,8 +626,9 @@
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Driver1> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1Inlet> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpaceTemp> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "HVACSpace temp" ;
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Temperature> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "HVACZone1Temperature" ;
+    ns1:hasValue 69.7 ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
@@ -556,18 +636,6 @@
     rdfs:label "HVACZone1Temperature setpoint" ;
     ns1:hasAspect ns1:Aspect-Setpoint ;
     ns1:hasValue 73.0 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone2Temperature> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "HVACZone2Temperature" ;
-    ns1:hasValue 73.2 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilOutletTemperature> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "Heating coil outlet temperature" ;
-    ns1:hasValue 80.0 ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
@@ -610,12 +678,6 @@
     ns1:hasEnumerationKind ns1:EnumerationKind-OnOff ;
     ns1:hasValue ns1:OnOff-Off .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirPressure> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "Mixed air pressure" ;
-    ns1:hasValue 15.5 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PSI> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OAJunctionInlet> a ns1:InletConnectionPoint ;
     rdfs:label "OAJunction inlet" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirJunction> ;
@@ -623,56 +685,25 @@
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirJunction> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUOAInlet> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp2> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "Occupancy prop2" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Motion ;
-    ns1:hasValue ns1:Motion-True .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp3> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "Occupancy prop3" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Presence ;
-    ns1:hasValue ns1:Presence-True .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp4> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "Occupancy prop4" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Motion ;
-    ns1:hasValue ns1:Motion-True .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp5> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "Occupancy prop5" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Presence ;
-    ns1:hasValue ns1:Presence-True .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancySpace1> a ns1:DomainSpace ;
     rdfs:label "Occupancy space1" ;
-    ns1:hasDomain ns1:Domain-Occupancy ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp1> .
+    ns1:hasDomain ns1:Domain-Occupancy .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancySpace2> a ns1:DomainSpace ;
     rdfs:label "Occupancy space2" ;
-    ns1:hasDomain ns1:Domain-Occupancy ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp2> .
+    ns1:hasDomain ns1:Domain-Occupancy .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancySpace3> a ns1:DomainSpace ;
     rdfs:label "Occupancy space3" ;
-    ns1:hasDomain ns1:Domain-Occupancy ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp3> .
+    ns1:hasDomain ns1:Domain-Occupancy .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancySpace4> a ns1:DomainSpace ;
     rdfs:label "Occupancy space4" ;
-    ns1:hasDomain ns1:Domain-Occupancy ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp4> .
+    ns1:hasDomain ns1:Domain-Occupancy .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancySpace5> a ns1:DomainSpace ;
     rdfs:label "OccupancySpace5" ;
-    ns1:hasDomain ns1:Domain-Occupancy ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp5> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnAirFlowRate> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "Return air flow rate" ;
-    ns1:hasValue 129.3 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasDomain ns1:Domain-Occupancy .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanElectricInCP> a ns1:InletConnectionPoint ;
     rdfs:label "Supply fan electric in CP" ;
@@ -705,36 +736,12 @@
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1MotorizedDamper> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1Inlet> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletFlow> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "VAV1Inlet flow" ;
-    ns1:hasValue 135.0 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OutletTemperature> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "VAV1 Outlet Temperature" ;
-    ns1:hasValue 72.3 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1ReheatCoilSupplyFluidOutlet> a ns1:OutletConnectionPoint ;
     rdfs:label "VAV1Reheat coil supply fluid outlet" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1HeatingCoil> ;
     ns1:hasMedium ns1:Water-HotWater ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1HeatingCoil> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1BoxSupplyFluidOutlet> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletFlow> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "VAV2Inlet flow" ;
-    ns1:hasValue 250.0 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperatureProperty> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "VAV2Outlet temperature property" ;
-    ns1:hasValue 70.0 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2ReheatCoilSupplyFluidInlet> a ns1:InletConnectionPoint ;
     rdfs:label "VAV2Reheat coil supply fluid inlet" ;
@@ -784,15 +791,13 @@
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#sap> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "Supply Air Pressure" ;
-    ns1:hasValue 15.6 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PSI> .
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#oatmp> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Outside Air Temperature" ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Temperature> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "HVACZone1Temperature" ;
-    ns1:hasValue 69.7 ;
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ratmp> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Return Air Temperature" ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
@@ -807,11 +812,15 @@
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainGridConnectionPoint> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainGridConnectionPoint> .
 
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeDaylightLevel> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Open office daylight level" ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Illuminance> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/LUX> .
+
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OuletReheatCoilCP> a ns1:OutletConnectionPoint ;
     rdfs:label "VAV1Oulet reheat coil CP" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1HeatingCoil> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OutletTemperature> ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1HeatingCoil> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1Outlet> .
 
@@ -819,7 +828,6 @@
     rdfs:label "VAV2Oulet reheat coil CP" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2HeatingCoil> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperatureProperty> ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2HeatingCoil> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2Outlet> .
 
@@ -827,7 +835,6 @@
     rdfs:label "A-9.chilled_water_coil.chilledWaterSupply" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00036> ;
     ns1:hasMedium ns1:Water-ChilledWater ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ChilledWaterInletTemp> ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00036> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUChilledWaterInlet> .
 
@@ -835,7 +842,6 @@
     rdfs:label "A-9.supply_fan.airOutlet" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00047> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#sap> ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00047> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUSupplyOutlet> .
 
@@ -843,19 +849,8 @@
     rdfs:label "A-9.return_fan.airInlet" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00051> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ratmp> ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00051> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUReturnInlet> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#oatmp> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "Outside Air Temperature" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ratmp> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "Return Air Temperature" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR1InletConnectionPoint> a ns1:InletConnectionPoint ;
     rdfs:label "BR1Inlet connection point" ;
@@ -1468,6 +1463,12 @@
     ns1:hasMedium ns1:Medium-Air ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirJunction> .
 
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp1> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Occupancy prop1" ;
+    ns1:hasValue 5.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Population> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/NUM> .
+
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OfficeWindowDaylightCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Office window daylight CP" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#DLightPath1>,
@@ -1490,11 +1491,6 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#LightingSpace1>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#LightingSpace2>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancySpace1> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeDaylightLevel> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "Open office daylight level" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Illuminance> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/LUX> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeInletConnectionPoint> a ns1:InletConnectionPoint ;
     rdfs:label "Open office inlet connection point" ;
@@ -1588,8 +1584,6 @@
     rdfs:label "VAV2Damper inlet CP" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2MotorizedDamper> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletFlow>,
-        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletFlow> ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2MotorizedDamper> ;
     ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2Inlet> .
 
@@ -1929,12 +1923,6 @@
     ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00007> ;
     ns1:hasMedium ns1:Medium-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp1> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "Occupancy prop1" ;
-    ns1:hasValue 5.0 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Population> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/NUM> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#PipeFromChiller> a ns1:Connection ;
     rdfs:label "Pipe from chiller" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUChilledWaterInlet>,
@@ -2066,7 +2054,6 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00015> ;
     ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00015> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#oatmp> ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00011> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00023> a ns1:InletConnectionPoint ;
@@ -2084,7 +2071,6 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00035> ;
     ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00035> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirPressure> ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00021> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00045> a ns1:Connection ;
@@ -2103,7 +2089,6 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00055> ;
     ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00055> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnAirFlowRate> ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00051> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustFan> a ns1:Fan,
@@ -2535,8 +2520,7 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00037> ;
     ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00025> ;
     ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00036> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilOutletTemperature> .
+    ns1:hasMedium ns1:Medium-Air .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00050> a ns1:Connection ;
     rdfs:label "Connection from Cooling Coil" ;
@@ -2546,8 +2530,7 @@
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00048> ;
     ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00036> ;
     ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00047> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilOutletTemperature> .
+    ns1:hasMedium ns1:Medium-Air .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00051> a ns1:Fan,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Fan> ;
@@ -2672,8 +2655,7 @@
     ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ELightPath1> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#LIghtingSpace1DLInlet>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#LightingSpace1ELInlet> ;
-    ns1:hasDomain ns1:Domain-Lighting ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeDaylightLevel> .
+    ns1:hasDomain ns1:Domain-Lighting .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirJunction> a ns1:Junction ;
     rdfs:label "Outside air junction" ;
@@ -2738,8 +2720,7 @@
     ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpeningCOO> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeInletConnectionPoint>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeOutletConnectionPoint> ;
-    ns1:hasDomain ns1:Domain-HVAC ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Temperature> .
+    ns1:hasDomain ns1:Domain-HVAC .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpace5> a ns1:DomainSpace ;
     rdfs:label "HVACSpace5" ;
@@ -2749,8 +2730,7 @@
     ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpeningKC> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorInletConnectionPointK>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutletIntraCorridor5CP> ;
-    ns1:hasDomain ns1:Domain-HVAC ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone2Temperature> .
+    ns1:hasDomain ns1:Domain-HVAC .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpace6> a ns1:DomainSpace ;
     rdfs:label "HVACSpace6" ;
@@ -2761,8 +2741,7 @@
     ns1:connectedTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpace5> ;
     ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#KitchenetteInletConnectionPoint>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#KitchenetteOutletConnectionPoint> ;
-    ns1:hasDomain ns1:Domain-HVAC ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpaceTemp> .
+    ns1:hasDomain ns1:Domain-HVAC .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#PipeFromBoiler> a ns1:Connection ;
     rdfs:label "Pipe from boiler" ;

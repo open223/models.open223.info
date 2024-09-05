@@ -542,530 +542,531 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns2: &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix ns1: &lt;http://qudt.org/schema/qudt/&gt; .
 @prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns4: &lt;http://data.ashrae.org/standard223/data/scb-rtu#&gt; .
+@prefix ns6: &lt;http://data.ashrae.org/standard223/data/scb-rtu#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns4:23395 ;
-            sh:resultMessage &quot;s223: &lt;http://data.ashrae.org/standard223/data/scb-rtu#23395&gt; must have a mapsTo an OutletConnectionPoint of &lt;http://data.ashrae.org/standard223/data/scb-rtu#67723&gt; and not an external Connection to &lt;http://data.ashrae.org/standard223/data/scb-rtu#34426&gt;.&quot; ;
-            sh:resultPath ns3:mapsTo ;
+            sh:focusNode ns6:35370 ;
+            sh:resultMessage &quot;s223: A QuantifiableProperty must be associated with a QuantityKind using the relation hasQuantityKind.&quot; ;
+            sh:resultPath ns1:hasQuantityKind ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:neacd18443b39447f942287a5a1b9d05eb11 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/767dc881&gt; ],
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/70de5e05&gt; ],
         [ a sh:ValidationResult ;
-   
+            sh:focusNode ns6:89057 ;
+            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
+            sh:resultPath ns3:hasMedium 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-rtu#12290
-  - http://data.ashrae.org/standard223/data/scb-rtu#12290 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#56798
-  - http://data.ashrae.org/standard223/data/scb-rtu#56798 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#56798 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#67666
-  - http://data.ashrae.org/standard223/data/scb-rtu#67666 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#80875
-  - http://data.ashrae.org/standard223/data/scb-rtu#80875 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-rtu#79708
+  - http://data.ashrae.org/standard223/data/scb-rtu#79708 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78948
+  - http://data.ashrae.org/standard223/data/scb-rtu#78948 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#45536
+  - http://data.ashrae.org/standard223/data/scb-rtu#45536 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#78851
+  - http://data.ashrae.org/standard223/data/scb-rtu#78851 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#78851 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#56653
+  - http://data.ashrae.org/standard223/data/scb-rtu#56653 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#34358
+  - http://data.ashrae.org/standard223/data/scb-rtu#34358 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23459
+  - http://data.ashrae.org/standard223/data/scb-rtu#23459 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 http://data.ashrae.org/standard223/data/scb-rtu#23471
   - http://data.ashrae.org/standard223/data/scb-rtu#23471 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#67703
-  - http://data.ashrae.org/standard223/data/scb-rtu#67703 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#24296
-  - http://data.ashrae.org/standard223/data/scb-rtu#24296 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#89043
-  - http://data.ashrae.org/standard223/data/scb-rtu#89043 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#24200
-  - http://data.ashrae.org/standard223/data/scb-rtu#24200 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#67723
-  - http://data.ashrae.org/standard223/data/scb-rtu#67723 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#67723 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#91961
-  - http://data.ashrae.org/standard223/data/scb-rtu#91961 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#35368
-  - http://data.ashrae.org/standard223/data/scb-rtu#35368 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23466
-  - http://data.ashrae.org/standard223/data/scb-rtu#23466 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#35370
-  - http://data.ashrae.org/standard223/data/scb-rtu#35370 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#12347
-  - http://data.ashrae.org/standard223/data/scb-rtu#12347 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#12347 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#23312
-  - http://data.ashrae.org/standard223/data/scb-rtu#23312 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#23494
-  - http://data.ashrae.org/standard223/data/scb-rtu#23494 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#57587
-  - http://data.ashrae.org/standard223/data/scb-rtu#57587 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#91970
-  - http://data.ashrae.org/standard223/data/scb-rtu#91970 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#67817
-  - http://data.ashrae.org/standard223/data/scb-rtu#67817 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#67817 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#67817 needs between 4 and None uses of path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#45590
+  - http://data.ashrae.org/standard223/data/scb-rtu#45590 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34439
+  - http://data.ashrae.org/standard223/data/scb-rtu#34439 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 http://data.ashrae.org/standard223/data/scb-rtu#24251
   - http://data.ashrae.org/standard223/data/scb-rtu#24251 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23379
-  - http://data.ashrae.org/standard223/data/scb-rtu#23379 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#12384
-  - http://data.ashrae.org/standard223/data/scb-rtu#12384 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#34408
-  - http://data.ashrae.org/standard223/data/scb-rtu#34408 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#67718
-  - http://data.ashrae.org/standard223/data/scb-rtu#67718 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34426
-  - http://data.ashrae.org/standard223/data/scb-rtu#34426 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/data/scb-rtu#91947
-  - http://data.ashrae.org/standard223/data/scb-rtu#91947 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34481
-  - http://data.ashrae.org/standard223/data/scb-rtu#34481 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#89937
-  - http://data.ashrae.org/standard223/data/scb-rtu#89937 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#56557
-  - http://data.ashrae.org/standard223/data/scb-rtu#56557 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34438
-  - http://data.ashrae.org/standard223/data/scb-rtu#34438 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#01238
-  - http://data.ashrae.org/standard223/data/scb-rtu#01238 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89892
-  - http://data.ashrae.org/standard223/data/scb-rtu#89892 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#57521
-  - http://data.ashrae.org/standard223/data/scb-rtu#57521 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#45605
-  - http://data.ashrae.org/standard223/data/scb-rtu#45605 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89960
-  - http://data.ashrae.org/standard223/data/scb-rtu#89960 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#89960 needs between 4 and None uses of path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#89960 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#46414
-  - http://data.ashrae.org/standard223/data/scb-rtu#46414 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#46490
-  - http://data.ashrae.org/standard223/data/scb-rtu#46490 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#68623
-  - http://data.ashrae.org/standard223/data/scb-rtu#68623 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#90908
-  - http://data.ashrae.org/standard223/data/scb-rtu#90908 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#46411
-  - http://data.ashrae.org/standard223/data/scb-rtu#46411 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#56696
-  - http://data.ashrae.org/standard223/data/scb-rtu#56696 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#89923
+  - http://data.ashrae.org/standard223/data/scb-rtu#89923 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#79699
+  - http://data.ashrae.org/standard223/data/scb-rtu#79699 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#13154
+  - http://data.ashrae.org/standard223/data/scb-rtu#13154 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34562
+  - http://data.ashrae.org/standard223/data/scb-rtu#34562 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#45463
+  - http://data.ashrae.org/standard223/data/scb-rtu#45463 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#90995
+  - http://data.ashrae.org/standard223/data/scb-rtu#90995 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
 http://data.ashrae.org/standard223/data/scb-rtu#34421
   - http://data.ashrae.org/standard223/data/scb-rtu#34421 needs between 4 and None uses of path http://data.ashrae.org/standard223#hasConnectionPoint
   - http://data.ashrae.org/standard223/data/scb-rtu#34421 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
   - http://data.ashrae.org/standard223/data/scb-rtu#34421 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#89926
-  - http://data.ashrae.org/standard223/data/scb-rtu#89926 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34484
-  - http://data.ashrae.org/standard223/data/scb-rtu#34484 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#67655
-  - http://data.ashrae.org/standard223/data/scb-rtu#67655 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23459
-  - http://data.ashrae.org/standard223/data/scb-rtu#23459 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12101
-  - http://data.ashrae.org/standard223/data/scb-rtu#12101 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#89896
-  - http://data.ashrae.org/standard223/data/scb-rtu#89896 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#13154
-  - http://data.ashrae.org/standard223/data/scb-rtu#13154 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#01140
-  - http://data.ashrae.org/standard223/data/scb-rtu#01140 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#91973
-  - http://data.ashrae.org/standard223/data/scb-rtu#91973 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78848
-  - http://data.ashrae.org/standard223/data/scb-rtu#78848 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#78848 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#13165
-  - http://data.ashrae.org/standard223/data/scb-rtu#13165 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#90910
-  - http://data.ashrae.org/standard223/data/scb-rtu#90910 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#45545
-  - http://data.ashrae.org/standard223/data/scb-rtu#45545 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#45681
-  - http://data.ashrae.org/standard223/data/scb-rtu#45681 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#56730
-  - http://data.ashrae.org/standard223/data/scb-rtu#56730 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#13107
-  - http://data.ashrae.org/standard223/data/scb-rtu#13107 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#01268
-  - http://data.ashrae.org/standard223/data/scb-rtu#01268 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89057
-  - http://data.ashrae.org/standard223/data/scb-rtu#89057 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#45619
-  - http://data.ashrae.org/standard223/data/scb-rtu#45619 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#01003
-  - http://data.ashrae.org/standard223/data/scb-rtu#01003 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#57535
-  - http://data.ashrae.org/standard223/data/scb-rtu#57535 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#89899
-  - http://data.ashrae.org/standard223/data/scb-rtu#89899 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#24291
-  - http://data.ashrae.org/standard223/data/scb-rtu#24291 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#56561
-  - http://data.ashrae.org/standard223/data/scb-rtu#56561 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#90912
-  - http://data.ashrae.org/standard223/data/scb-rtu#90912 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#89035
-  - http://data.ashrae.org/standard223/data/scb-rtu#89035 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#89035 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#34358
-  - http://data.ashrae.org/standard223/data/scb-rtu#34358 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78948
-  - http://data.ashrae.org/standard223/data/scb-rtu#78948 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#78844
-  - http://data.ashrae.org/standard223/data/scb-rtu#78844 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#78844 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#78887
-  - http://data.ashrae.org/standard223/data/scb-rtu#78887 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12397
-  - http://data.ashrae.org/standard223/data/scb-rtu#12397 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#35397
-  - http://data.ashrae.org/standard223/data/scb-rtu#35397 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#12223
-  - http://data.ashrae.org/standard223/data/scb-rtu#12223 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#90049
-  - http://data.ashrae.org/standard223/data/scb-rtu#90049 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23391
-  - http://data.ashrae.org/standard223/data/scb-rtu#23391 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#01017
-  - http://data.ashrae.org/standard223/data/scb-rtu#01017 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#89911
-  - http://data.ashrae.org/standard223/data/scb-rtu#89911 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#12121
-  - http://data.ashrae.org/standard223/data/scb-rtu#12121 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#89950
+  - http://data.ashrae.org/standard223/data/scb-rtu#89950 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#34475
+  - http://data.ashrae.org/standard223/data/scb-rtu#34475 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78850
+  - http://data.ashrae.org/standard223/data/scb-rtu#78850 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#34334
+  - http://data.ashrae.org/standard223/data/scb-rtu#34334 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78870
+  - http://data.ashrae.org/standard223/data/scb-rtu#78870 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 http://data.ashrae.org/standard223/data/scb-rtu#45578
   - http://data.ashrae.org/standard223/data/scb-rtu#45578 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23387
-  - http://data.ashrae.org/standard223/data/scb-rtu#23387 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#68629
-  - http://data.ashrae.org/standard223/data/scb-rtu#68629 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#02095
-  - http://data.ashrae.org/standard223/data/scb-rtu#02095 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34492
-  - http://data.ashrae.org/standard223/data/scb-rtu#34492 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12215
-  - http://data.ashrae.org/standard223/data/scb-rtu#12215 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#56617
-  - http://data.ashrae.org/standard223/data/scb-rtu#56617 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12365
-  - http://data.ashrae.org/standard223/data/scb-rtu#12365 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12353
-  - http://data.ashrae.org/standard223/data/scb-rtu#12353 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89808
-  - http://data.ashrae.org/standard223/data/scb-rtu#89808 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#57478
-  - http://data.ashrae.org/standard223/data/scb-rtu#57478 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#01252
-  - http://data.ashrae.org/standard223/data/scb-rtu#01252 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#56712
+  - http://data.ashrae.org/standard223/data/scb-rtu#56712 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#56712 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#56712 needs between 4 and None uses of path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#90912
+  - http://data.ashrae.org/standard223/data/scb-rtu#90912 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34491
+  - http://data.ashrae.org/standard223/data/scb-rtu#34491 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#45619
+  - http://data.ashrae.org/standard223/data/scb-rtu#45619 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#78760
+  - http://data.ashrae.org/standard223/data/scb-rtu#78760 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#56735
+  - http://data.ashrae.org/standard223/data/scb-rtu#56735 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#34488
+  - http://data.ashrae.org/standard223/data/scb-rtu#34488 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#80865
+  - http://data.ashrae.org/standard223/data/scb-rtu#80865 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23398
+  - http://data.ashrae.org/standard223/data/scb-rtu#23398 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#89960
+  - http://data.ashrae.org/standard223/data/scb-rtu#89960 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#89960 needs between 4 and None uses of path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#89960 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#12115
+  - http://data.ashrae.org/standard223/data/scb-rtu#12115 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#01231
+  - http://data.ashrae.org/standard223/data/scb-rtu#01231 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#24282
+  - http://data.ashrae.org/standard223/data/scb-rtu#24282 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#56798
+  - http://data.ashrae.org/standard223/data/scb-rtu#56798 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#56798 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#34438
+  - http://data.ashrae.org/standard223/data/scb-rtu#34438 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#89924
+  - http://data.ashrae.org/standard223/data/scb-rtu#89924 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#80847
+  - http://data.ashrae.org/standard223/data/scb-rtu#80847 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#80824
+  - http://data.ashrae.org/standard223/data/scb-rtu#80824 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23366
+  - http://data.ashrae.org/standard223/data/scb-rtu#23366 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#45551
+  - http://data.ashrae.org/standard223/data/scb-rtu#45551 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#24208
+  - http://data.ashrae.org/standard223/data/scb-rtu#24208 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#91948
+  - http://data.ashrae.org/standard223/data/scb-rtu#91948 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12387
+  - http://data.ashrae.org/standard223/data/scb-rtu#12387 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/data/scb-rtu#13156
+  - http://data.ashrae.org/standard223/data/scb-rtu#13156 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12274
+  - http://data.ashrae.org/standard223/data/scb-rtu#12274 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#12350
+  - http://data.ashrae.org/standard223/data/scb-rtu#12350 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#12223
+  - http://data.ashrae.org/standard223/data/scb-rtu#12223 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#57535
+  - http://data.ashrae.org/standard223/data/scb-rtu#57535 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#89919
+  - http://data.ashrae.org/standard223/data/scb-rtu#89919 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#24291
+  - http://data.ashrae.org/standard223/data/scb-rtu#24291 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23466
+  - http://data.ashrae.org/standard223/data/scb-rtu#23466 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#67666
+  - http://data.ashrae.org/standard223/data/scb-rtu#67666 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
 http://data.ashrae.org/standard223/data/scb-rtu#01246
   - http://data.ashrae.org/standard223/data/scb-rtu#01246 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
   - http://data.ashrae.org/standard223/data/scb-rtu#01246 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#01160
-  - http://data.ashrae.org/standard223/data/scb-rtu#01160 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#78857
-  - http://data.ashrae.org/standard223/data/scb-rtu#78857 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#67747
-  - http://data.ashrae.org/standard223/data/scb-rtu#67747 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#90042
-  - http://data.ashrae.org/standard223/data/scb-rtu#90042 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#01170
-  - http://data.ashrae.org/standard223/data/scb-rtu#01170 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#56654
-  - http://data.ashrae.org/standard223/data/scb-rtu#56654 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#34507
-  - http://data.ashrae.org/standard223/data/scb-rtu#34507 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#35316
-  - http://data.ashrae.org/standard223/data/scb-rtu#35316 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#91923
-  - http://data.ashrae.org/standard223/data/scb-rtu#91923 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#46417
-  - http://data.ashrae.org/standard223/data/scb-rtu#46417 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#80824
-  - http://data.ashrae.org/standard223/data/scb-rtu#80824 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34334
-  - http://data.ashrae.org/standard223/data/scb-rtu#34334 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34562
-  - http://data.ashrae.org/standard223/data/scb-rtu#34562 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#78851
-  - http://data.ashrae.org/standard223/data/scb-rtu#78851 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#78851 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#80826
-  - http://data.ashrae.org/standard223/data/scb-rtu#80826 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#12369
-  - http://data.ashrae.org/standard223/data/scb-rtu#12369 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#23300
-  - http://data.ashrae.org/standard223/data/scb-rtu#23300 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#23300 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#35388
-  - http://data.ashrae.org/standard223/data/scb-rtu#35388 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78870
-  - http://data.ashrae.org/standard223/data/scb-rtu#78870 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#34439
-  - http://data.ashrae.org/standard223/data/scb-rtu#34439 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#90155
-  - http://data.ashrae.org/standard223/data/scb-rtu#90155 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#90995
-  - http://data.ashrae.org/standard223/data/scb-rtu#90995 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#57502
-  - http://data.ashrae.org/standard223/data/scb-rtu#57502 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#90096
-  - http://data.ashrae.org/standard223/data/scb-rtu#90096 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/data/scb-rtu#13177
-  - http://data.ashrae.org/standard223/data/scb-rtu#13177 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#35391
-  - http://data.ashrae.org/standard223/data/scb-rtu#35391 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23235
-  - http://data.ashrae.org/standard223/data/scb-rtu#23235 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#13149
-  - http://data.ashrae.org/standard223/data/scb-rtu#13149 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#13031
-  - http://data.ashrae.org/standard223/data/scb-rtu#13031 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78782
-  - http://data.ashrae.org/standard223/data/scb-rtu#78782 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#46406
-  - http://data.ashrae.org/standard223/data/scb-rtu#46406 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78883
-  - http://data.ashrae.org/standard223/data/scb-rtu#78883 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12395
-  - http://data.ashrae.org/standard223/data/scb-rtu#12395 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#13176
-  - http://data.ashrae.org/standard223/data/scb-rtu#13176 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23455
-  - http://data.ashrae.org/standard223/data/scb-rtu#23455 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#23455 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#56577
-  - http://data.ashrae.org/standard223/data/scb-rtu#56577 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#80829
-  - http://data.ashrae.org/standard223/data/scb-rtu#80829 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#46405
-  - http://data.ashrae.org/standard223/data/scb-rtu#46405 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78850
-  - http://data.ashrae.org/standard223/data/scb-rtu#78850 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12274
-  - http://data.ashrae.org/standard223/data/scb-rtu#12274 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#56653
-  - http://data.ashrae.org/standard223/data/scb-rtu#56653 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#91948
-  - http://data.ashrae.org/standard223/data/scb-rtu#91948 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#67770
-  - http://data.ashrae.org/standard223/data/scb-rtu#67770 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#56572
-  - http://data.ashrae.org/standard223/data/scb-rtu#56572 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#01136
-  - http://data.ashrae.org/standard223/data/scb-rtu#01136 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#67709
-  - http://data.ashrae.org/standard223/data/scb-rtu#67709 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#45531
-  - http://data.ashrae.org/standard223/data/scb-rtu#45531 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#67834
-  - http://data.ashrae.org/standard223/data/scb-rtu#67834 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#24297
-  - http://data.ashrae.org/standard223/data/scb-rtu#24297 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34419
-  - http://data.ashrae.org/standard223/data/scb-rtu#34419 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89010
-  - http://data.ashrae.org/standard223/data/scb-rtu#89010 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89028
-  - http://data.ashrae.org/standard223/data/scb-rtu#89028 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#89028 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#67684
-  - http://data.ashrae.org/standard223/data/scb-rtu#67684 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#90083
-  - http://data.ashrae.org/standard223/data/scb-rtu#90083 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12352
-  - http://data.ashrae.org/standard223/data/scb-rtu#12352 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89950
-  - http://data.ashrae.org/standard223/data/scb-rtu#89950 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#45463
-  - http://data.ashrae.org/standard223/data/scb-rtu#45463 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#13156
-  - http://data.ashrae.org/standard223/data/scb-rtu#13156 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34488
-  - http://data.ashrae.org/standard223/data/scb-rtu#34488 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#01130
-  - http://data.ashrae.org/standard223/data/scb-rtu#01130 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#80830
-  - http://data.ashrae.org/standard223/data/scb-rtu#80830 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#13151
-  - http://data.ashrae.org/standard223/data/scb-rtu#13151 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23398
-  - http://data.ashrae.org/standard223/data/scb-rtu#23398 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89919
-  - http://data.ashrae.org/standard223/data/scb-rtu#89919 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#12116
-  - http://data.ashrae.org/standard223/data/scb-rtu#12116 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#24273
-  - http://data.ashrae.org/standard223/data/scb-rtu#24273 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#24255
-  - http://data.ashrae.org/standard223/data/scb-rtu#24255 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#90901
-  - http://data.ashrae.org/standard223/data/scb-rtu#90901 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#89942
-  - http://data.ashrae.org/standard223/data/scb-rtu#89942 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#45500
-  - http://data.ashrae.org/standard223/data/scb-rtu#45500 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#13105
-  - http://data.ashrae.org/standard223/data/scb-rtu#13105 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#45590
-  - http://data.ashrae.org/standard223/data/scb-rtu#45590 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#12350
-  - http://data.ashrae.org/standard223/data/scb-rtu#12350 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#23400
-  - http://data.ashrae.org/standard223/data/scb-rtu#23400 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12361
-  - http://data.ashrae.org/standard223/data/scb-rtu#12361 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#23395
-  - http://data.ashrae.org/standard223/data/scb-rtu#23395 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12370
-  - http://data.ashrae.org/standard223/data/scb-rtu#12370 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#79708
-  - http://data.ashrae.org/standard223/data/scb-rtu#79708 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#24293
-  - http://data.ashrae.org/standard223/data/scb-rtu#24293 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#01231
-  - http://data.ashrae.org/standard223/data/scb-rtu#01231 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#79699
-  - http://data.ashrae.org/standard223/data/scb-rtu#79699 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78886
-  - http://data.ashrae.org/standard223/data/scb-rtu#78886 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#90145
-  - http://data.ashrae.org/standard223/data/scb-rtu#90145 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#80865
-  - http://data.ashrae.org/standard223/data/scb-rtu#80865 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#12356
-  - http://data.ashrae.org/standard223/data/scb-rtu#12356 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#56712
-  - http://data.ashrae.org/standard223/data/scb-rtu#56712 needs between 4 and None uses of path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#56712 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#56712 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#45606
-  - http://data.ashrae.org/standard223/data/scb-rtu#45606 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/data/scb-rtu#34331
-  - http://data.ashrae.org/standard223/data/scb-rtu#34331 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#24208
-  - http://data.ashrae.org/standard223/data/scb-rtu#24208 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#90137
-  - http://data.ashrae.org/standard223/data/scb-rtu#90137 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#56735
-  - http://data.ashrae.org/standard223/data/scb-rtu#56735 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#67845
-  - http://data.ashrae.org/standard223/data/scb-rtu#67845 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#90152
-  - http://data.ashrae.org/standard223/data/scb-rtu#90152 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89952
-  - http://data.ashrae.org/standard223/data/scb-rtu#89952 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - http://data.ashrae.org/standard223/data/scb-rtu#89952 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-http://data.ashrae.org/standard223/data/scb-rtu#78802
-  - http://data.ashrae.org/standard223/data/scb-rtu#78802 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#56708
-  - http://data.ashrae.org/standard223/data/scb-rtu#56708 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#34503
-  - http://data.ashrae.org/standard223/data/scb-rtu#34503 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#68641
-  - http://data.ashrae.org/standard223/data/scb-rtu#68641 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#24282
-  - http://data.ashrae.org/standard223/data/scb-rtu#24282 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23350
-  - http://data.ashrae.org/standard223/data/scb-rtu#23350 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#12207
-  - http://data.ashrae.org/standard223/data/scb-rtu#12207 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#01255
-  - http://data.ashrae.org/standard223/data/scb-rtu#01255 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#34330
-  - http://data.ashrae.org/standard223/data/scb-rtu#34330 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23309
-  - http://data.ashrae.org/standard223/data/scb-rtu#23309 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#34475
-  - http://data.ashrae.org/standard223/data/scb-rtu#34475 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#45544
-  - http://data.ashrae.org/standard223/data/scb-rtu#45544 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#02042
-  - http://data.ashrae.org/standard223/data/scb-rtu#02042 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23246
-  - http://data.ashrae.org/standard223/data/scb-rtu#23246 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#80847
-  - http://data.ashrae.org/standard223/data/scb-rtu#80847 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#67896
-  - http://data.ashrae.org/standard223/data/scb-rtu#67896 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12387
-  - http://data.ashrae.org/standard223/data/scb-rtu#12387 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://data.ashrae.org/standard223/data/scb-rtu#91967
-  - http://data.ashrae.org/standard223/data/scb-rtu#91967 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78958
-  - http://data.ashrae.org/standard223/data/scb-rtu#78958 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#67705
-  - http://data.ashrae.org/standard223/data/scb-rtu#67705 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78760
-  - http://data.ashrae.org/standard223/data/scb-rtu#78760 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#89980
-  - http://data.ashrae.org/standard223/data/scb-rtu#89980 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89924
-  - http://data.ashrae.org/standard223/data/scb-rtu#89924 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#57476
-  - http://data.ashrae.org/standard223/data/scb-rtu#57476 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#89923
-  - http://data.ashrae.org/standard223/data/scb-rtu#89923 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#24272
-  - http://data.ashrae.org/standard223/data/scb-rtu#24272 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#90088
-  - http://data.ashrae.org/standard223/data/scb-rtu#90088 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#80831
-  - http://data.ashrae.org/standard223/data/scb-rtu#80831 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78776
-  - http://data.ashrae.org/standard223/data/scb-rtu#78776 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#67727
-  - http://data.ashrae.org/standard223/data/scb-rtu#67727 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#67793
-  - http://data.ashrae.org/standard223/data/scb-rtu#67793 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#12222
-  - http://data.ashrae.org/standard223/data/scb-rtu#12222 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#12115
-  - http://data.ashrae.org/standard223/data/scb-rtu#12115 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34500
-  - http://data.ashrae.org/standard223/data/scb-rtu#34500 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#67741
-  - http://data.ashrae.org/standard223/data/scb-rtu#67741 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#45551
-  - http://data.ashrae.org/standard223/data/scb-rtu#45551 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#45559
-  - http://data.ashrae.org/standard223/data/scb-rtu#45559 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#89932
-  - http://data.ashrae.org/standard223/data/scb-rtu#89932 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#34491
-  - http://data.ashrae.org/standard223/data/scb-rtu#34491 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#91978
-  - http://data.ashrae.org/standard223/data/scb-rtu#91978 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
 http://data.ashrae.org/standard223/data/scb-rtu#90021
   - http://data.ashrae.org/standard223/data/scb-rtu#90021 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#02037
-  - http://data.ashrae.org/standard223/data/scb-rtu#02037 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#02082
-  - http://data.ashrae.org/standard223/data/scb-rtu#02082 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#01178
-  - http://data.ashrae.org/standard223/data/scb-rtu#01178 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#90980
-  - http://data.ashrae.org/standard223/data/scb-rtu#90980 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#56547
-  - http://data.ashrae.org/standard223/data/scb-rtu#56547 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#78793
-  - http://data.ashrae.org/standard223/data/scb-rtu#78793 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#80827
-  - http://data.ashrae.org/standard223/data/scb-rtu#80827 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#45536
-  - http://data.ashrae.org/standard223/data/scb-rtu#45536 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-http://data.ashrae.org/standard223/data/scb-rtu#46470
-  - http://data.ashrae.org/standard223/data/scb-rtu#46470 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#46488
-  - http://data.ashrae.org/standard223/data/scb-rtu#46488 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
-http://data.ashrae.org/standard223/data/scb-rtu#23366
-  - http://data.ashrae.org/standard223/data/scb-rtu#23366 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34408
+  - http://data.ashrae.org/standard223/data/scb-rtu#34408 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#01136
+  - http://data.ashrae.org/standard223/data/scb-rtu#01136 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12347
+  - http://data.ashrae.org/standard223/data/scb-rtu#12347 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#12347 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#89035
+  - http://data.ashrae.org/standard223/data/scb-rtu#89035 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#89035 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#13151
+  - http://data.ashrae.org/standard223/data/scb-rtu#13151 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#24255
+  - http://data.ashrae.org/standard223/data/scb-rtu#24255 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23379
+  - http://data.ashrae.org/standard223/data/scb-rtu#23379 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#67684
+  - http://data.ashrae.org/standard223/data/scb-rtu#67684 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#89057
+  - http://data.ashrae.org/standard223/data/scb-rtu#89057 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#34492
+  - http://data.ashrae.org/standard223/data/scb-rtu#34492 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#23312
+  - http://data.ashrae.org/standard223/data/scb-rtu#23312 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#45531
+  - http://data.ashrae.org/standard223/data/scb-rtu#45531 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#23235
+  - http://data.ashrae.org/standard223/data/scb-rtu#23235 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#67655
+  - http://data.ashrae.org/standard223/data/scb-rtu#67655 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#90155
+  - http://data.ashrae.org/standard223/data/scb-rtu#90155 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#89937
+  - http://data.ashrae.org/standard223/data/scb-rtu#89937 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78857
+  - http://data.ashrae.org/standard223/data/scb-rtu#78857 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#13165
+  - http://data.ashrae.org/standard223/data/scb-rtu#13165 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#90901
+  - http://data.ashrae.org/standard223/data/scb-rtu#90901 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#80875
+  - http://data.ashrae.org/standard223/data/scb-rtu#80875 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#89926
+  - http://data.ashrae.org/standard223/data/scb-rtu#89926 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#24273
+  - http://data.ashrae.org/standard223/data/scb-rtu#24273 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#01130
+  - http://data.ashrae.org/standard223/data/scb-rtu#01130 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
 http://data.ashrae.org/standard223/data/scb-rtu#34462
   - http://data.ashrae.org/standard223/data/scb-rtu#34462 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#91973
+  - http://data.ashrae.org/standard223/data/scb-rtu#91973 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#56577
+  - http://data.ashrae.org/standard223/data/scb-rtu#56577 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#13176
+  - http://data.ashrae.org/standard223/data/scb-rtu#13176 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12101
+  - http://data.ashrae.org/standard223/data/scb-rtu#12101 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#45545
+  - http://data.ashrae.org/standard223/data/scb-rtu#45545 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#89028
+  - http://data.ashrae.org/standard223/data/scb-rtu#89028 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#89028 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#57502
+  - http://data.ashrae.org/standard223/data/scb-rtu#57502 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#90980
+  - http://data.ashrae.org/standard223/data/scb-rtu#90980 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#80829
+  - http://data.ashrae.org/standard223/data/scb-rtu#80829 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#56557
+  - http://data.ashrae.org/standard223/data/scb-rtu#56557 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#01170
+  - http://data.ashrae.org/standard223/data/scb-rtu#01170 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#24297
+  - http://data.ashrae.org/standard223/data/scb-rtu#24297 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12207
+  - http://data.ashrae.org/standard223/data/scb-rtu#12207 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#56696
+  - http://data.ashrae.org/standard223/data/scb-rtu#56696 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78844
+  - http://data.ashrae.org/standard223/data/scb-rtu#78844 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#78844 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#78886
+  - http://data.ashrae.org/standard223/data/scb-rtu#78886 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#12395
+  - http://data.ashrae.org/standard223/data/scb-rtu#12395 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#89952
+  - http://data.ashrae.org/standard223/data/scb-rtu#89952 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#89952 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#89932
+  - http://data.ashrae.org/standard223/data/scb-rtu#89932 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34331
+  - http://data.ashrae.org/standard223/data/scb-rtu#34331 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23300
+  - http://data.ashrae.org/standard223/data/scb-rtu#23300 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#23300 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#89010
+  - http://data.ashrae.org/standard223/data/scb-rtu#89010 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#34426
+  - http://data.ashrae.org/standard223/data/scb-rtu#34426 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/data/scb-rtu#57478
+  - http://data.ashrae.org/standard223/data/scb-rtu#57478 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#67834
+  - http://data.ashrae.org/standard223/data/scb-rtu#67834 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 http://data.ashrae.org/standard223/data/scb-rtu#80818
   - http://data.ashrae.org/standard223/data/scb-rtu#80818 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#02042
+  - http://data.ashrae.org/standard223/data/scb-rtu#02042 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#35391
+  - http://data.ashrae.org/standard223/data/scb-rtu#35391 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#90083
+  - http://data.ashrae.org/standard223/data/scb-rtu#90083 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#12290
+  - http://data.ashrae.org/standard223/data/scb-rtu#12290 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#45544
+  - http://data.ashrae.org/standard223/data/scb-rtu#45544 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#45606
+  - http://data.ashrae.org/standard223/data/scb-rtu#45606 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/data/scb-rtu#67723
+  - http://data.ashrae.org/standard223/data/scb-rtu#67723 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#67723 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#23494
+  - http://data.ashrae.org/standard223/data/scb-rtu#23494 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#01238
+  - http://data.ashrae.org/standard223/data/scb-rtu#01238 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#46414
+  - http://data.ashrae.org/standard223/data/scb-rtu#46414 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#46411
+  - http://data.ashrae.org/standard223/data/scb-rtu#46411 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#89911
+  - http://data.ashrae.org/standard223/data/scb-rtu#89911 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#80826
+  - http://data.ashrae.org/standard223/data/scb-rtu#80826 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#89896
+  - http://data.ashrae.org/standard223/data/scb-rtu#89896 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#67896
+  - http://data.ashrae.org/standard223/data/scb-rtu#67896 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#35316
+  - http://data.ashrae.org/standard223/data/scb-rtu#35316 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#89892
+  - http://data.ashrae.org/standard223/data/scb-rtu#89892 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78848
+  - http://data.ashrae.org/standard223/data/scb-rtu#78848 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#78848 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#12353
+  - http://data.ashrae.org/standard223/data/scb-rtu#12353 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#89043
+  - http://data.ashrae.org/standard223/data/scb-rtu#89043 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#67705
+  - http://data.ashrae.org/standard223/data/scb-rtu#67705 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78793
+  - http://data.ashrae.org/standard223/data/scb-rtu#78793 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23350
+  - http://data.ashrae.org/standard223/data/scb-rtu#23350 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#24296
+  - http://data.ashrae.org/standard223/data/scb-rtu#24296 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#45500
+  - http://data.ashrae.org/standard223/data/scb-rtu#45500 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#90096
+  - http://data.ashrae.org/standard223/data/scb-rtu#90096 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://data.ashrae.org/standard223/data/scb-rtu#67817
+  - http://data.ashrae.org/standard223/data/scb-rtu#67817 needs between 4 and None uses of path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#67817 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#67817 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#90137
+  - http://data.ashrae.org/standard223/data/scb-rtu#90137 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#12222
+  - http://data.ashrae.org/standard223/data/scb-rtu#12222 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#89942
+  - http://data.ashrae.org/standard223/data/scb-rtu#89942 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#67718
+  - http://data.ashrae.org/standard223/data/scb-rtu#67718 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12365
+  - http://data.ashrae.org/standard223/data/scb-rtu#12365 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#46417
+  - http://data.ashrae.org/standard223/data/scb-rtu#46417 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#01003
+  - http://data.ashrae.org/standard223/data/scb-rtu#01003 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#80831
+  - http://data.ashrae.org/standard223/data/scb-rtu#80831 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#01255
+  - http://data.ashrae.org/standard223/data/scb-rtu#01255 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#45605
+  - http://data.ashrae.org/standard223/data/scb-rtu#45605 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#90910
+  - http://data.ashrae.org/standard223/data/scb-rtu#90910 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#91947
+  - http://data.ashrae.org/standard223/data/scb-rtu#91947 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#46470
+  - http://data.ashrae.org/standard223/data/scb-rtu#46470 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12215
+  - http://data.ashrae.org/standard223/data/scb-rtu#12215 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#34500
+  - http://data.ashrae.org/standard223/data/scb-rtu#34500 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#91970
+  - http://data.ashrae.org/standard223/data/scb-rtu#91970 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#89899
+  - http://data.ashrae.org/standard223/data/scb-rtu#89899 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#35388
+  - http://data.ashrae.org/standard223/data/scb-rtu#35388 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12352
+  - http://data.ashrae.org/standard223/data/scb-rtu#12352 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#68629
+  - http://data.ashrae.org/standard223/data/scb-rtu#68629 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#56708
+  - http://data.ashrae.org/standard223/data/scb-rtu#56708 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#68641
+  - http://data.ashrae.org/standard223/data/scb-rtu#68641 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34330
+  - http://data.ashrae.org/standard223/data/scb-rtu#34330 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#56654
+  - http://data.ashrae.org/standard223/data/scb-rtu#56654 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#56547
+  - http://data.ashrae.org/standard223/data/scb-rtu#56547 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#01017
+  - http://data.ashrae.org/standard223/data/scb-rtu#01017 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23455
+  - http://data.ashrae.org/standard223/data/scb-rtu#23455 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/data/scb-rtu#23455 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/data/scb-rtu#56730
+  - http://data.ashrae.org/standard223/data/scb-rtu#56730 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#01252
+  - http://data.ashrae.org/standard223/data/scb-rtu#01252 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#67727
+  - http://data.ashrae.org/standard223/data/scb-rtu#67727 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#13105
+  - http://data.ashrae.org/standard223/data/scb-rtu#13105 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#57476
+  - http://data.ashrae.org/standard223/data/scb-rtu#57476 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34484
+  - http://data.ashrae.org/standard223/data/scb-rtu#34484 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#01268
+  - http://data.ashrae.org/standard223/data/scb-rtu#01268 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#24293
+  - http://data.ashrae.org/standard223/data/scb-rtu#24293 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#68623
+  - http://data.ashrae.org/standard223/data/scb-rtu#68623 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#90088
+  - http://data.ashrae.org/standard223/data/scb-rtu#90088 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#56561
+  - http://data.ashrae.org/standard223/data/scb-rtu#56561 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34419
+  - http://data.ashrae.org/standard223/data/scb-rtu#34419 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#12121
+  - http://data.ashrae.org/standard223/data/scb-rtu#12121 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#24272
+  - http://data.ashrae.org/standard223/data/scb-rtu#24272 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#67741
+  - http://data.ashrae.org/standard223/data/scb-rtu#67741 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#24200
+  - http://data.ashrae.org/standard223/data/scb-rtu#24200 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#02037
+  - http://data.ashrae.org/standard223/data/scb-rtu#02037 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#13107
+  - http://data.ashrae.org/standard223/data/scb-rtu#13107 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#56572
+  - http://data.ashrae.org/standard223/data/scb-rtu#56572 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#67793
+  - http://data.ashrae.org/standard223/data/scb-rtu#67793 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78958
+  - http://data.ashrae.org/standard223/data/scb-rtu#78958 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#13177
+  - http://data.ashrae.org/standard223/data/scb-rtu#13177 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12356
+  - http://data.ashrae.org/standard223/data/scb-rtu#12356 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#46405
+  - http://data.ashrae.org/standard223/data/scb-rtu#46405 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23391
+  - http://data.ashrae.org/standard223/data/scb-rtu#23391 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#78776
+  - http://data.ashrae.org/standard223/data/scb-rtu#78776 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#45559
+  - http://data.ashrae.org/standard223/data/scb-rtu#45559 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#57521
+  - http://data.ashrae.org/standard223/data/scb-rtu#57521 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23246
+  - http://data.ashrae.org/standard223/data/scb-rtu#23246 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#35370
+  - http://data.ashrae.org/standard223/data/scb-rtu#35370 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#46488
+  - http://data.ashrae.org/standard223/data/scb-rtu#46488 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#13031
+  - http://data.ashrae.org/standard223/data/scb-rtu#13031 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12369
+  - http://data.ashrae.org/standard223/data/scb-rtu#12369 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#90049
+  - http://data.ashrae.org/standard223/data/scb-rtu#90049 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#01178
+  - http://data.ashrae.org/standard223/data/scb-rtu#01178 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#23387
+  - http://data.ashrae.org/standard223/data/scb-rtu#23387 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#80830
+  - http://data.ashrae.org/standard223/data/scb-rtu#80830 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34481
+  - http://data.ashrae.org/standard223/data/scb-rtu#34481 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#67770
+  - http://data.ashrae.org/standard223/data/scb-rtu#67770 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#45681
+  - http://data.ashrae.org/standard223/data/scb-rtu#45681 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#12361
+  - http://data.ashrae.org/standard223/data/scb-rtu#12361 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#46406
+  - http://data.ashrae.org/standard223/data/scb-rtu#46406 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#67703
+  - http://data.ashrae.org/standard223/data/scb-rtu#67703 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#57587
+  - http://data.ashrae.org/standard223/data/scb-rtu#57587 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23309
+  - http://data.ashrae.org/standard223/data/scb-rtu#23309 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#90145
+  - http://data.ashrae.org/standard223/data/scb-rtu#90145 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#46490
+  - http://data.ashrae.org/standard223/data/scb-rtu#46490 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78883
+  - http://data.ashrae.org/standard223/data/scb-rtu#78883 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#91923
+  - http://data.ashrae.org/standard223/data/scb-rtu#91923 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#90152
+  - http://data.ashrae.org/standard223/data/scb-rtu#90152 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#12116
+  - http://data.ashrae.org/standard223/data/scb-rtu#12116 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#67747
+  - http://data.ashrae.org/standard223/data/scb-rtu#67747 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#02082
+  - http://data.ashrae.org/standard223/data/scb-rtu#02082 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#90908
+  - http://data.ashrae.org/standard223/data/scb-rtu#90908 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#56617
+  - http://data.ashrae.org/standard223/data/scb-rtu#56617 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#90042
+  - http://data.ashrae.org/standard223/data/scb-rtu#90042 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#35397
+  - http://data.ashrae.org/standard223/data/scb-rtu#35397 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#13149
+  - http://data.ashrae.org/standard223/data/scb-rtu#13149 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12370
+  - http://data.ashrae.org/standard223/data/scb-rtu#12370 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#89808
+  - http://data.ashrae.org/standard223/data/scb-rtu#89808 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78782
+  - http://data.ashrae.org/standard223/data/scb-rtu#78782 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#01160
+  - http://data.ashrae.org/standard223/data/scb-rtu#01160 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#23395
+  - http://data.ashrae.org/standard223/data/scb-rtu#23395 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#35368
+  - http://data.ashrae.org/standard223/data/scb-rtu#35368 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34507
+  - http://data.ashrae.org/standard223/data/scb-rtu#34507 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#67709
+  - http://data.ashrae.org/standard223/data/scb-rtu#67709 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#89980
+  - http://data.ashrae.org/standard223/data/scb-rtu#89980 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#67845
+  - http://data.ashrae.org/standard223/data/scb-rtu#67845 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#80827
+  - http://data.ashrae.org/standard223/data/scb-rtu#80827 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#12384
+  - http://data.ashrae.org/standard223/data/scb-rtu#12384 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#91978
+  - http://data.ashrae.org/standard223/data/scb-rtu#91978 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#01140
+  - http://data.ashrae.org/standard223/data/scb-rtu#01140 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#23400
+  - http://data.ashrae.org/standard223/data/scb-rtu#23400 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#78802
+  - http://data.ashrae.org/standard223/data/scb-rtu#78802 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#02095
+  - http://data.ashrae.org/standard223/data/scb-rtu#02095 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#78887
+  - http://data.ashrae.org/standard223/data/scb-rtu#78887 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#91961
+  - http://data.ashrae.org/standard223/data/scb-rtu#91961 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
+http://data.ashrae.org/standard223/data/scb-rtu#34503
+  - http://data.ashrae.org/standard223/data/scb-rtu#34503 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#12397
+  - http://data.ashrae.org/standard223/data/scb-rtu#12397 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/data/scb-rtu#91967
+  - http://data.ashrae.org/standard223/data/scb-rtu#91967 needs between 1 and 1 instances of http://qudt.org/schema/qudt/QuantityKind on path http://qudt.org/schema/qudt/hasQuantityKind
 </pre></div>
 </div>
 </div>

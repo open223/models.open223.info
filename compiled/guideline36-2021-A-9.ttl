@@ -169,6 +169,16 @@
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
+<urn:ex/filter-differential-pressure> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "filter differential pressure" ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
+
+<urn:ex/heat-coil-air-temp> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "heat coil air temp" ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
 <urn:ex/htg-coil-valve-command> a ns1:QuantifiableActuatableProperty ;
     rdfs:label "htg coil valve command" ;
     ns1:hasAspect ns1:EnumerationKind-Position ;
@@ -235,6 +245,11 @@
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
+<urn:ex/ra-fan-discharge-static-pressure> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "ra fan discharge static pressure" ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
+
 <urn:ex/ra-flow> a ns1:QuantifiableObservableProperty ;
     rdfs:label "ra flow" ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
@@ -256,16 +271,6 @@
     ns1:hasAspect ns1:Role-Supply ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
-
-<urn:ex/heat-coil-air-temp> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "heat coil air temp" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
-
-<urn:ex/ra-fan-discharge-static-pressure> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "ra fan discharge static pressure" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
 
 <urn:ex/supply-duct-static-pressure> a ns1:QuantifiableObservableProperty ;
     rdfs:label "supply duct static pressure" ;
@@ -473,11 +478,6 @@
     ns1:connectsThrough <urn:ex/duct-after-economizer-oa-damper> ;
     ns1:hasMedium ns1:Medium-Air ;
     ns1:isConnectionPointOf <urn:ex/economizer-oa-damper> .
-
-<urn:ex/filter-differential-pressure> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "filter differential pressure" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
 
 <urn:ex/htg-coil-air-in> a ns1:InletConnectionPoint ;
     rdfs:label "htg coil air in" ;
@@ -719,8 +719,7 @@
         <urn:ex/htg-coil-air-out> ;
     ns1:connectsFrom <urn:ex/htg-coil> ;
     ns1:connectsTo <urn:ex/clg-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <urn:ex/heat-coil-air-temp> .
+    ns1:hasMedium ns1:Medium-Air .
 
 <urn:ex/duct-after-ra-fan> a ns1:Connection,
         ns1:Duct ;
@@ -731,8 +730,7 @@
         <urn:ex/return-exhaust-junction-in> ;
     ns1:connectsFrom <urn:ex/ra-fan> ;
     ns1:connectsTo <urn:ex/return-exhaust-junction> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <urn:ex/ra-fan-discharge-static-pressure> .
+    ns1:hasMedium ns1:Medium-Air .
 
 <urn:ex/ea-out> a ns1:OutletConnectionPoint ;
     rdfs:label "ea out" ;
@@ -758,8 +756,7 @@
         <urn:ex/sa-out> ;
     ns1:connectsFrom <urn:ex/multiple-zone-ahu>,
         <urn:ex/sa-fan> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <urn:ex/supply-duct-static-pressure> .
+    ns1:hasMedium ns1:Medium-Air .
 
 <urn:ex/filter-out> a ns1:OutletConnectionPoint ;
     rdfs:label "filter out" ;
@@ -767,7 +764,6 @@
         <urn:ex/filter> ;
     ns1:connectsThrough <urn:ex/duct-after-filter> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <urn:ex/filter-differential-pressure> ;
     ns1:isConnectionPointOf <urn:ex/filter> .
 
 <urn:ex/minimum-oa-damper-out> a ns1:OutletConnectionPoint ;
@@ -814,8 +810,7 @@
         <urn:ex/filter> ;
     ns1:connectsThrough <urn:ex/duct-before-filter> ;
     ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <urn:ex/filter-differential-pressure>,
-        <urn:ex/ma-temp> ;
+    ns1:hasProperty <urn:ex/ma-temp> ;
     ns1:isConnectionPointOf <urn:ex/filter> .
 
 <urn:ex/clg-coil-valve> a ns1:Valve,
