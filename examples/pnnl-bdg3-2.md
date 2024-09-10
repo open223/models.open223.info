@@ -37,16 +37,14 @@ The model was created from souce data consisting of a Revit building information
 ### Speckle view of rooms and lighting fixtures
 <img width="1378" alt="image" src="https://github.com/user-attachments/assets/57981a65-937a-4c4b-9151-978073976d14">
 
-<img width="1178" alt="image" src="https://github.com/open223/models.open223.info/assets/22898727/5a5dcecb-9b87-4e84-8261-6a3a315e1265">
-
 Model instance data have a prefix that is resolvable to a Speckle URL.
 ``` ttl
-@prefix bdg1: <http://speckle.xyz/streams/1fed8e620e/objects/>
+@prefix bdg1: <http://speckle.xyz/streams/bf7685a6aa/objects/>
 ```
 
-For example, the following luminaire resolves to https://speckle.xyz/streams/1fed8e620e/objects/05749166d93671bedf16efb52636ce38 :
+For example, the following luminaire resolves to http://speckle.xyz/streams/bf7685a6aa/objects/978e64f766e711a6cc73f3a4d4c0a3e9 :
 ```ttl
-bdg1:05749166d93671bedf16efb52636ce38 a s223:Luminaire
+bdg1:978e64f766e711a6cc73f3a4d4c0a3e9 a s223:Luminaire
 ```
 
 ## Downloads
