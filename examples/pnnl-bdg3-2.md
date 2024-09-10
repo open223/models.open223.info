@@ -16,6 +16,7 @@ It uses an underfloor air distribution system with fan-powered terminal reheat c
 Four roof-top units with VAV are located on the roof. Labels have been anonymized, and are not interpretable.
 
 Example Building 3 Model 2 is provided by Pacific Northwest National Laboratory.
+See [Building 3 model 1](../lbnl-bdg3-2.md) for a different modeling approach for the same building.
 
 The model contains a representation of the building architecture and lighting system.
 
