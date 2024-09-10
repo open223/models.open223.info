@@ -43,12 +43,12 @@ The model was created from source data consisting of a building information mode
 
 Model instance data have a prefix that is resolvable to a Speckle URL.
 ``` ttl
-@prefix bdg1-2: <http://speckle.xyz/streams/1fed8e620e/objects/>
+@prefix bdg1: <http://speckle.xyz/streams/59e5e3c6a8/objects/>
 ```
 
-For example, the following luminaire resolves to https://speckle.xyz/streams/1fed8e620e/objects/05749166d93671bedf16efb52636ce38.
+For example, the following luminaire resolves to http://speckle.xyz/streams/59e5e3c6a8/objects/e2164e3d14db5fcb6915a4a2c8474579 :
 ``` ttl
-bdg1:05749166d93671bedf16efb52636ce38 a s223:Luminaire
+bdg1:e2164e3d14db5fcb6915a4a2c8474579 a s223:Luminaire
 ```
 
 ## Downloads
