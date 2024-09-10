@@ -15,7 +15,8 @@ Example Building 1 is a simplistic, reference tiny office building consisting of
 
 This reference building was developed for and first described in the journal article ["Metadata Schemas and Ontologies for Building Energy Applications: A Critical Review and Use Case Analysis"](https://doi.org/10.3390/en14072024).
 
-Example Building 1 model 2 is provided by Pacific Northwest National Laboratory. See also [Building 1 model 1](../nist-bdg1-1.md) for a different modeling approach for the same building.
+Example Building 1 model 2 is provided by Pacific Northwest National Laboratory. 
+See [Building 1 model 1](../nist-bdg1-1.md) for a different modeling approach for the same building.
 
 ### Schematic view
 
