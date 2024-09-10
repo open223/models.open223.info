@@ -11,16 +11,16 @@ kernelspec:
 ---
 # PNNL Example Building 3 Model 2
 
-Exammple Building 3 is a medium-sized office building with two office floors. 
-It uses an underfloor air distribution system with fan-powered terminal reheat coils for perimeter zones. 
-Four roof-top units with VAV are located on the roof. Labels have been anonymized, and are not interpretable.
+Exammple Building 3 is a real-world medium-sized office building with two office floors. Labels have been anonymized, and are not interpretable. 
+It uses an underfloor air distribution system with fan-powered terminal reheat coils for perimeter zones. Four roof-top units with VAV are located on the roof. 
+The lighting system...
 
 Example Building 3 Model 2 is provided by Pacific Northwest National Laboratory.
 See [Building 3 model 1](../lbnl-bdg3-2.md) for a different modeling approach for the same building.
 
 ## Contents
 
-The model contains a representation of the building architecture and electrical/lighting system.
+This model contains a representation of the building architecture and electrical/lighting system.
 
 In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types. The Real Estate Core ontology is extended by defining 2 subclasses for rec:Office.
 ``` ttl
