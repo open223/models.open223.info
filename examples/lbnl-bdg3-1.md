@@ -15,7 +15,7 @@ Example Building 3 is a medium-sized office building with two office floors. Lab
 It uses an underfloor air distribution system with fan-powered terminal reheat coils for perimeter zones. Four roof-top units with VAV are located on the roof. 
 
 Example Building 3 Model 1 is provided by LBNL.
-See [PNNL Building 3 model 2](../pnnl-bdg3-2.md) for a different modeling approach for the same building.
+See [PNNL Example Building 3 model 2](../pnnl-bdg3-2.md) for a different modeling approach for the same building.
 
 ## Contents
 This model contains a representation of the HVAC system.
