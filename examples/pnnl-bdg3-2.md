@@ -39,12 +39,12 @@ The model was created from souce data consisting of a Revit building information
 
 Model instance data have a prefix that is resolvable to a Speckle URL.
 ``` ttl
-@prefix bdg1: <http://speckle.xyz/streams/bf7685a6aa/objects/>
+@prefix bdg3: <http://speckle.xyz/streams/bf7685a6aa/objects/>
 ```
 
 For example, the following luminaire resolves to http://speckle.xyz/streams/bf7685a6aa/objects/978e64f766e711a6cc73f3a4d4c0a3e9 :
 ```ttl
-bdg1:978e64f766e711a6cc73f3a4d4c0a3e9 a s223:Luminaire
+bdg3:978e64f766e711a6cc73f3a4d4c0a3e9 a s223:Luminaire
 ```
 
 ## Downloads
