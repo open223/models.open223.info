@@ -41,9 +41,9 @@ Model instance data have a prefix that is resolvable to a Speckle URL.
 @prefix bdg1: <http://speckle.xyz/streams/1fed8e620e/objects/>
 ```
 
-For example, the following luminaire resolves to https://speckle.xyz/streams/1fed8e620e/objects/05749166d93671bedf16efb52636ce38 :
+For example, the following luminaire resolves to http://speckle.xyz/streams/1fed8e620e/objects/b504da73194fd2dafccc5e91651e2066 :
 ```ttl
-bdg1:05749166d93671bedf16efb52636ce38 a s223:Luminaire
+bdg2:b504da73194fd2dafccc5e91651e2066 a s223:Luminaire
 ```
 
 ## Downloads
