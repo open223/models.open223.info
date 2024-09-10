@@ -17,9 +17,17 @@ and designing a lighting layout that complies with the ASHRAE 90.1-2019 energy c
 
 Example Building 2 Model 1 is provided by Pacific Northwest National Laboratory.
 
-The model contains a representation of the building architecture and lighting system.
+## Contents
 
-In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types.
+The model contains a representation of the building architecture and electrical/lighting system.
+
+In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types. The Real Estate Core ontology is extended by defining 2 subclasses for rec:Office.
+``` ttl
+recx:OpenOffice rdfs:subClassOf rec:Office;
+  rdfs:label "Open Office".
+recx:PrivateOffice rdfs:subClassOf rec:Office;
+  rdfs:label "Private Office".
+```
 
 ## Source
 
