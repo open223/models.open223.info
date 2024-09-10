@@ -9,13 +9,13 @@ kernelspec:
   language: python
   name: python3
 ---
-# PNNL Example Building 2
+# Example Building 2 Model 1
 
-This is an example building model provided by Pacific Northwest National Laboratory.
-
-The model is based on a [Department of Energy Prototype Builiding](https://www.energycodes.gov/prototype-building-models) model. 
+Exammple Building 2 is based on a [Department of Energy Prototype Builiding](https://www.energycodes.gov/prototype-building-models) model. 
 Specifically, the DOE Prototype Medium Office Building was extended by creating unique detailed building architecture for each of the three building floors,
 and designing a lighting layout that complies with the ASHRAE 90.1-2019 energy code.
+
+Example Building 2 Model 1 is provided by Pacific Northwest National Laboratory.
 
 The model contains a representation of the building architecture and lighting system.
 
@@ -40,8 +40,8 @@ bdg1:05749166d93671bedf16efb52636ce38 a s223:Luminaire
 
 ## Downloads
 
-- <a href="/compiled/pnnl-example2.ttl">Turtle file (compiled)</a> (<a href="/pnnl-example2.ttl">original</a>)
-- <a href="/pnnl-example2.jsonld">JSON-LD file (original)</a>
+- <a href="/compiled/pnnl-bdg2-1.ttl">Turtle file (compiled)</a> (<a href="/pnnl-bdg2-1.ttl">original</a>)
+- <a href="/pnnl-bdg2-1.jsonld">JSON-LD file (original)</a>
     
 ## Queries
 
