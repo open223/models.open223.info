@@ -35,6 +35,8 @@ recx:PrivateOffice rdfs:subClassOf rec:Office;
 The model was created from souce data consisting of a Revit building information model (BIM) exported via a [Speckle](https://speckle.systems/) interface.
 
 ### Speckle view of rooms and lighting fixtures
+<img width="1378" alt="image" src="https://github.com/user-attachments/assets/57981a65-937a-4c4b-9151-978073976d14">
+
 <img width="1178" alt="image" src="https://github.com/open223/models.open223.info/assets/22898727/5a5dcecb-9b87-4e84-8261-6a3a315e1265">
 
 Model instance data have a prefix that is resolvable to a Speckle URL.
