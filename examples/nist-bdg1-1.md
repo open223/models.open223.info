@@ -15,7 +15,7 @@ Example Building 1 is a simplistic, reference tiny office building consisting of
 
 This reference building was developed for and first described in the journal article ["Metadata Schemas and Ontologies for Building Energy Applications: A Critical Review and Use Case Analysis"](https://doi.org/10.3390/en14072024).
 
-This example Building 1 model 1 is provided by current and former NIST staff and Pacific Northwest National Laboratory. See also [Building 1 model 2](../bdg1-2.md) for a different modeling approach for the same building.
+This example Building 1 model 1 is provided by current and former NIST staff and Pacific Northwest National Laboratory. See also [Building 1 model 2](../pnnl-bdg1-2.md) for a different modeling approach for the same building.
 
 ### Schematic view
 
@@ -31,8 +31,8 @@ The model was created using [TopQuadrant](https://www.topquadrant.com/) TopBraid
 
 ## Downloads
 
-- <a href="/compiled/bdg1-1.ttl">Turtle file (compiled)</a> (<a href="/bdg1-1.ttl">original</a>)
-- <a href="/bdg1-1.jsonld">JSON-LD file (original)</a>
+- <a href="/compiled/nist-bdg1-1.ttl">Turtle file (compiled)</a> (<a href="/nist-bdg1-1.ttl">original</a>)
+- <a href="/nist-bdg1-1.jsonld">JSON-LD file (original)</a>
     
 ## Queries
 
