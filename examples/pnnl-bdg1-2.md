@@ -9,7 +9,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# Example Building 1 Model 2
+# PNNL Example Building 1 Model 2
 
 Example Building 1 is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.
 
