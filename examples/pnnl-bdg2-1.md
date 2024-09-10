@@ -9,7 +9,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# Example Building 2 Model 1
+# PNNL Example Building 2 Model 1
 
 Exammple Building 2 is based on a [Department of Energy Prototype Builiding](https://www.energycodes.gov/prototype-building-models) model. 
 Specifically, the DOE Prototype Medium Office Building was extended by creating unique detailed building architecture for each of the three building floors,
@@ -33,7 +33,7 @@ recx:PrivateOffice rdfs:subClassOf rec:Office;
 
 The model was created from souce data consisting of a Revit building information model (BIM) exported via a [Speckle](https://speckle.systems/) interface.
 
-### The Speckle view of rooms and lighting fixtures
+### Speckle view of rooms and lighting fixtures
 <img width="1178" alt="image" src="https://github.com/open223/models.open223.info/assets/22898727/5a5dcecb-9b87-4e84-8261-6a3a315e1265">
 
 Model instance data have a prefix that is resolvable to a Speckle URL.
