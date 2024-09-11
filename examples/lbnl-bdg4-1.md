@@ -11,7 +11,7 @@ kernelspec:
 ---
 # LBNL Example Building 4 Model 1
 
-Example Building 4 is a real-world medium-sized office building.
+Example Building 4 is a real-world large-sized office building.
 
 Example Building 4 Model 1 is provided by Lawrence Berkeley National Laboratory.
 
@@ -24,8 +24,8 @@ This model contains a representation of the HVAC system.
 
 ## Downloads
 
-- <a href="/compiled/lbnl-example.ttl">Turtle file (compiled)</a> (<a href="/lbnl-example.ttl">original</a>)
-- <a href="/lbnl-example.jsonld">JSON-LD file (original)</a>
+- <a href="/compiled/lbnl-bdg4-1.ttl">Turtle file (compiled)</a> (<a href="/lbnl-bdg4-1.ttl">original</a>)
+- <a href="/lbnl-bdg4-1.jsonld">JSON-LD file (original)</a>
     
 ## Queries
 | Description | Query URL |
