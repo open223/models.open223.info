@@ -12,7 +12,7 @@ kernelspec:
 # PNNL Example Building 2 Model 1
 
 Exammple Building 2 is based on the [Department of Energy Prototype Medium Office Builiding](https://www.energycodes.gov/prototype-building-models). 
-The baseline Medium Office Building is approximately 50,000 square feet in size, contains 3 identical floors, and 5 HVAC zones per floor (1 core, 4 perimeter). The baseline model was extended by a) creating unique detailed building architecture for each of the 3 building floors, making use of 12 space types, and b) designing a lighting system that complies with the ASHRAE 90.1-2019 energy code, and is comprised of 863 luminaires and 205 lighting zones.
+The baseline Medium Office Building is approximately 50,000 square feet in size, contains 3 identical floors, and 5 HVAC zones per floor (1 core, 4 perimeter). The baseline model was extended by a) creating unique detailed building architecture for each of the 3 building floors, making use of 12 space types to define 107 rooms, and b) designing a lighting system that complies with the ASHRAE 90.1-2019 energy code, and is comprised of 863 luminaires and 205 lighting zones.
 
 Example Building 2 Model 1 is provided by Pacific Northwest National Laboratory.
 
