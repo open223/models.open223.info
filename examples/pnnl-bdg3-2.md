@@ -14,7 +14,7 @@ kernelspec:
 Exammple Building 3 is a real-world medium-sized office building. 
 It is approximately 67,000 square feet in size, contains 2 floors, 27 space types, and 469 rooms. Labels have been anonymized, and are not interpretable. 
 It uses an underfloor air distribution system with fan-powered terminal reheat coils for perimeter zones. Four roof-top units with VAV are located on the roof. 
-The lighting system uses primariliy uses fluorescent luminaires and zone-based lighting controllers that communicate with user interface devices and wireless gatetways over DALI networks. The gateways collect occupancy and light sensor data over an ISM-band wireless network. 
+The lighting system primariliy uses fluorescent luminaires and zone-based lighting controllers that communicate with user interface devices and wireless gatetways over DALI networks. The gateways collect occupancy and light sensor data over an ISM-band wireless network. 
 
 Example Building 3 Model 2 is provided by Pacific Northwest National Laboratory.
 See [LBNL Example Building 3 model 1](../lbnl-bdg3-2.md) for a different modeling approach for the same building.
