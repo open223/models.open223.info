@@ -9,12 +9,18 @@ kernelspec:
   language: python
   name: python3
 ---
-# LBNL Example Building
+# LBNL Example Building 4 Model 1
 
-This is an example building provided by Lawrence Berkeley National Laboratory
+Example Building 4 is a real-world medium-sized office building.
+
+Example Building 4 Model 1 is provided by Lawrence Berkeley National Laboratory.
+
+### Schematic view
 
 ![lbnl-example](../_static/images/lbnl-example.png)
 
+## Contents
+This model contains a representation of the HVAC system.
 
 ## Downloads
 
