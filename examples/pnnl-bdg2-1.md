@@ -11,15 +11,14 @@ kernelspec:
 ---
 # PNNL Example Building 2 Model 1
 
-Exammple Building 2 is based on a [Department of Energy Prototype Builiding](https://www.energycodes.gov/prototype-building-models) model. 
-Specifically, the DOE Prototype Medium Office Building was extended by creating unique detailed building architecture for each of the three building floors,
-and designing a lighting layout that complies with the ASHRAE 90.1-2019 energy code.
+Exammple Building 2 is based on the [Department of Energy Prototype Medium Office Builiding](https://www.energycodes.gov/prototype-building-models). 
+The baseline Medium Office Building is approximately 50,000 square feet in size, contains 3 identical floors, and 5 HVAC zones per floor (1 core, 4 perimeter). The baseline model was extended by a) creating unique detailed building architecture for each of the 3 building floors, making use of 12 space types, and b) designing a lighting system that complies with the ASHRAE 90.1-2019 energy code, and is comprised of 863 luminaires and 205 lighting zones.
 
 Example Building 2 Model 1 is provided by Pacific Northwest National Laboratory.
 
 ## Contents
 
-This model contains a representation of the building architecture and electrical/lighting system.
+This model contains a complete representation of the building architecture and the electrical/lighting system, and a partial representation of the lighting control system.
 
 In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types. The Real Estate Core ontology is extended by defining 2 subclasses for rec:Office.
 ``` ttl
