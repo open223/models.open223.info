@@ -11,7 +11,8 @@ kernelspec:
 ---
 # PNNL Example Building 3 Model 2
 
-Exammple Building 3 is a real-world medium-sized office building with two office floors. Labels have been anonymized, and are not interpretable. 
+Exammple Building 3 is a real-world medium-sized office building. 
+It is approximately 67,000 square feet in size, contains 2 floors, 27 space types, and 469 rooms. Labels have been anonymized, and are not interpretable. 
 It uses an underfloor air distribution system with fan-powered terminal reheat coils for perimeter zones. Four roof-top units with VAV are located on the roof. 
 The lighting system uses primariliy uses fluorescent luminaires and zone-based lighting controllers that communicate with user interface devices and wireless gatetways over DALI networks. The gateways collect occupancy and light sensor data over an ISM-band wireless network. 
 
@@ -20,7 +21,7 @@ See [LBNL Example Building 3 model 1](../lbnl-bdg3-2.md) for a different modelin
 
 ## Contents
 
-This model contains a representation of the building architecture and electrical/lighting system.
+This model contains a complete representation of the building architecture and electrical/lighting system, and a partial representation of the lighting control system.
 
 In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types. The Real Estate Core ontology is extended by defining 2 subclasses for rec:Office.
 ``` ttl
