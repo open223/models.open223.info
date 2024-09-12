@@ -561,199 +561,200 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/duct-before-filter&gt; ;
+            sh:focusNode &lt;urn:ex/ea-out-connection&gt; ;
             sh:resultMessage &quot;s223: A Connection must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
-            sh:resultPath ns3:hasMedium ;
+            sh:resultPath ns2:hasMedium ;
             sh:resultSeverity sh:Violation ;
             sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/faa0f017&gt; ;
-            sh:value ns3:Medium-Air ],
+            sh:sourceShape &lt;urn:well-known/bcbb95e1&gt; ;
+            sh:value ns2:Medium-Air ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/pipe-hot-water-return-before-valve&gt; ;
-            sh:resultMessage &quot;s223: A Connection must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
-            sh:resultPath ns3:hasMedium ;
-            sh:resultSeverity sh:Vio
+            sh:focusNode &lt;urn:ex/ra-fan-out&gt; ;
+            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
+            sh:resultPath ns2:hasMedium ;
+            sh:resultSeverity sh:Violation ;
+           
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/clg-coil-valve-out
-  - urn:ex/clg-coil-valve-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/return-exhaust-junction-in
-  - urn:ex/return-exhaust-junction-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/filter-out
-  - urn:ex/filter-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-chilled-water-return-before-valve
-  - urn:ex/pipe-chilled-water-return-before-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/economizer-oa-damper
-  - urn:ex/economizer-oa-damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/economizer-oa-damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/multiple-zone-ahu
-  - urn:ex/multiple-zone-ahu needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/multiple-zone-ahu needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/pipe-hot-water-return-after-valve
-  - urn:ex/pipe-hot-water-return-after-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/economizer-oa-damper-actuator
-  - urn:ex/economizer-oa-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/clg-coil-air-in
-  - urn:ex/clg-coil-air-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/clg-coil-valve-actuator
-  - urn:ex/clg-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/duct-after-ra-damper
-  - urn:ex/duct-after-ra-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/htg-coil-water-out
-  - urn:ex/htg-coil-water-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-after-minimum-oa-damper
-  - urn:ex/duct-after-minimum-oa-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/minimum-oa-damper-actuator
-  - urn:ex/minimum-oa-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/outside-air-junction
-  - urn:ex/outside-air-junction needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/htg-coil
-  - urn:ex/htg-coil needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/htg-coil needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/return-exhaust-junction
+  - urn:ex/return-exhaust-junction needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/sa-out-connection
   - urn:ex/sa-out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-after-ra-fan
-  - urn:ex/duct-after-ra-fan needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ea-damper-actuator
-  - urn:ex/ea-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/clg-coil-air-out
-  - urn:ex/clg-coil-air-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ra-fan
-  - urn:ex/ra-fan needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/ra-fan needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/ra-damper-out
-  - urn:ex/ra-damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/outside-supply-junction-in-3
-  - urn:ex/outside-supply-junction-in-3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/htg-coil-valve-actuator
-  - urn:ex/htg-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/sa-out
-  - urn:ex/sa-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/htg-coil-air-out
-  - urn:ex/htg-coil-air-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/minimum-oa-damper
-  - urn:ex/minimum-oa-damper needs to be a http://data.ashrae.org/standard223#EnumerationKind-Role
-  - urn:ex/minimum-oa-damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/minimum-oa-damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/outside-supply-junction
-  - urn:ex/outside-supply-junction needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/oa-in
-  - urn:ex/oa-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-hot-water-supply
-  - urn:ex/pipe-hot-water-supply needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-after-htg-coil
-  - urn:ex/duct-after-htg-coil needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ra-damper-in
-  - urn:ex/ra-damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ra-fan-in
-  - urn:ex/ra-fan-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ra-in
-  - urn:ex/ra-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/oa-in-connection
-  - urn:ex/oa-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/clg-coil
-  - urn:ex/clg-coil needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/clg-coil needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/clg-coil-air-in
+  - urn:ex/clg-coil-air-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ea-damper-out
+  - urn:ex/ea-damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/return-exhaust-junction-out-2
   - urn:ex/return-exhaust-junction-out-2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/clg-coil-water-out
   - urn:ex/clg-coil-water-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/outside-air-junction-out-1
-  - urn:ex/outside-air-junction-out-1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-after-economizer-oa-damper
-  - urn:ex/duct-after-economizer-oa-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-before-ea-damper
+  - urn:ex/duct-before-ea-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/htg-coil
+  - urn:ex/htg-coil needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/htg-coil needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/sa-fan
+  - urn:ex/sa-fan needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/sa-fan needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/pipe-chilled-water-return-after-valve
+  - urn:ex/pipe-chilled-water-return-after-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/pipe-chilled-water-return-before-valve
+  - urn:ex/pipe-chilled-water-return-before-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-before-ra-damper
+  - urn:ex/duct-before-ra-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/economizer-oa-damper-out
+  - urn:ex/economizer-oa-damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ea-damper
+  - urn:ex/ea-damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/ea-damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/duct-before-minimum-oa-damper
+  - urn:ex/duct-before-minimum-oa-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/minimum-oa-damper
+  - urn:ex/minimum-oa-damper needs to be a http://data.ashrae.org/standard223#EnumerationKind-Role
+  - urn:ex/minimum-oa-damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/minimum-oa-damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/clg-coil
+  - urn:ex/clg-coil needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/clg-coil needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/pipe-hot-water-return-after-valve
+  - urn:ex/pipe-hot-water-return-after-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/outside-supply-junction-out
+  - urn:ex/outside-supply-junction-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/clg-coil-valve-out
+  - urn:ex/clg-coil-valve-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/minimum-oa-damper-actuator
+  - urn:ex/minimum-oa-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/ra-fan
+  - urn:ex/ra-fan needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/ra-fan needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/duct-after-ra-fan
+  - urn:ex/duct-after-ra-fan needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ra-fan-out
+  - urn:ex/ra-fan-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/filter-in
+  - urn:ex/filter-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/htg-coil-air-out
+  - urn:ex/htg-coil-air-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-after-htg-coil
+  - urn:ex/duct-after-htg-coil needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ra-fan-in
+  - urn:ex/ra-fan-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/economizer-oa-damper
+  - urn:ex/economizer-oa-damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/economizer-oa-damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/minimum-oa-damper-out
+  - urn:ex/minimum-oa-damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/outside-supply-junction-in-2
   - urn:ex/outside-supply-junction-in-2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/htg-coil-valve-in
+  - urn:ex/htg-coil-valve-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ea-out
+  - urn:ex/ea-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/pipe-hot-water-return-before-valve
+  - urn:ex/pipe-hot-water-return-before-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/economizer-oa-damper-in
+  - urn:ex/economizer-oa-damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/htg-coil-water-in
+  - urn:ex/htg-coil-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-after-clg-coil
+  - urn:ex/duct-after-clg-coil needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/outside-supply-junction-in-1
+  - urn:ex/outside-supply-junction-in-1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/clg-coil-water-in
+  - urn:ex/clg-coil-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/clg-coil-valve-actuator
+  - urn:ex/clg-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/duct-after-economizer-oa-damper
+  - urn:ex/duct-after-economizer-oa-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/oa-in
+  - urn:ex/oa-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/multiple-zone-ahu
+  - urn:ex/multiple-zone-ahu needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/multiple-zone-ahu needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/ra-damper
+  - urn:ex/ra-damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/ra-damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/duct-after-ra-damper
+  - urn:ex/duct-after-ra-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/outside-air-junction-out-1
+  - urn:ex/outside-air-junction-out-1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/outside-air-junction-out-2
+  - urn:ex/outside-air-junction-out-2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/return-exhaust-junction-in
+  - urn:ex/return-exhaust-junction-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/outside-air-junction-in
+  - urn:ex/outside-air-junction-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/oa-in-connection
+  - urn:ex/oa-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ra-damper-actuator
+  - urn:ex/ra-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/htg-coil-air-in
+  - urn:ex/htg-coil-air-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/return-exhaust-junction-out-1
+  - urn:ex/return-exhaust-junction-out-1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/economizer-oa-damper-actuator
+  - urn:ex/economizer-oa-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/htg-coil-valve-out
+  - urn:ex/htg-coil-valve-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ra-damper-out
+  - urn:ex/ra-damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/pipe-hot-water-supply
+  - urn:ex/pipe-hot-water-supply needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ra-in
+  - urn:ex/ra-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/clg-coil-valve-in
+  - urn:ex/clg-coil-valve-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/filter-out
+  - urn:ex/filter-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/htg-coil-valve-actuator
+  - urn:ex/htg-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/htg-coil-water-out
+  - urn:ex/htg-coil-water-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/sa-fan-out
+  - urn:ex/sa-fan-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-before-economizer-oa-damper
+  - urn:ex/duct-before-economizer-oa-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/sa-fan-in
+  - urn:ex/sa-fan-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-after-filter
+  - urn:ex/duct-after-filter needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/sa-out
+  - urn:ex/sa-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/outside-supply-junction
+  - urn:ex/outside-supply-junction needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ra-damper-in
+  - urn:ex/ra-damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ea-out-connection
+  - urn:ex/ea-out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/pipe-chilled-water-supply
+  - urn:ex/pipe-chilled-water-supply needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/duct-before-filter
   - urn:ex/duct-before-filter needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/minimum-oa-damper-in
   - urn:ex/minimum-oa-damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ea-damper
-  - urn:ex/ea-damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/ea-damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/ra-damper
-  - urn:ex/ra-damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/ra-damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/outside-air-junction-out-2
-  - urn:ex/outside-air-junction-out-2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-chilled-water-supply
-  - urn:ex/pipe-chilled-water-supply needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-hot-water-return-before-valve
-  - urn:ex/pipe-hot-water-return-before-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-before-ea-damper
-  - urn:ex/duct-before-ea-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-after-clg-coil
-  - urn:ex/duct-after-clg-coil needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/outside-supply-junction-out
-  - urn:ex/outside-supply-junction-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/return-exhaust-junction
-  - urn:ex/return-exhaust-junction needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ra-fan-out
-  - urn:ex/ra-fan-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-after-filter
-  - urn:ex/duct-after-filter needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/outside-supply-junction-in-1
-  - urn:ex/outside-supply-junction-in-1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/htg-coil-valve-in
-  - urn:ex/htg-coil-valve-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/outside-air-junction
+  - urn:ex/outside-air-junction needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-after-minimum-oa-damper
+  - urn:ex/duct-after-minimum-oa-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/ra-in-connection
   - urn:ex/ra-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/filter-in
-  - urn:ex/filter-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ea-damper-out
-  - urn:ex/ea-damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/economizer-oa-damper-in
-  - urn:ex/economizer-oa-damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-chilled-water-return-after-valve
-  - urn:ex/pipe-chilled-water-return-after-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/economizer-oa-damper-out
-  - urn:ex/economizer-oa-damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/sa-fan
-  - urn:ex/sa-fan needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/sa-fan needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/htg-coil-valve-out
-  - urn:ex/htg-coil-valve-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/htg-coil-air-in
-  - urn:ex/htg-coil-air-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/sa-fan-in
-  - urn:ex/sa-fan-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-before-ra-damper
-  - urn:ex/duct-before-ra-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/outside-air-junction-in
-  - urn:ex/outside-air-junction-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-before-economizer-oa-damper
-  - urn:ex/duct-before-economizer-oa-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ea-out-connection
-  - urn:ex/ea-out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-before-minimum-oa-damper
-  - urn:ex/duct-before-minimum-oa-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ra-damper-actuator
-  - urn:ex/ra-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/oa-temp
-  - urn:ex/oa-temp needs to be a http://data.ashrae.org/standard223#EnumerationKind
-urn:ex/clg-coil-water-in
-  - urn:ex/clg-coil-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/outside-supply-junction-in-3
+  - urn:ex/outside-supply-junction-in-3 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/clg-coil-air-out
+  - urn:ex/clg-coil-air-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/ea-damper-actuator
+  - urn:ex/ea-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 urn:ex/ea-damper-in
   - urn:ex/ea-damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/htg-coil-water-in
-  - urn:ex/htg-coil-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/clg-coil-valve-in
-  - urn:ex/clg-coil-valve-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/return-exhaust-junction-out-1
-  - urn:ex/return-exhaust-junction-out-1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/minimum-oa-damper-out
-  - urn:ex/minimum-oa-damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/sa-fan-out
-  - urn:ex/sa-fan-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/ea-out
-  - urn:ex/ea-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/oa-temp
+  - urn:ex/oa-temp needs to be a http://data.ashrae.org/standard223#EnumerationKind
 </pre></div>
 </div>
 </div>

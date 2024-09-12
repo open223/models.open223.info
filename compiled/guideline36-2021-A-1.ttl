@@ -1,118 +1,118 @@
-@prefix ns1: <http://data.ashrae.org/standard223#> .
-@prefix ns2: <http://qudt.org/schema/qudt/> .
+@prefix ns1: <http://qudt.org/schema/qudt/> .
+@prefix ns2: <http://data.ashrae.org/standard223#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <urn:ex/> a owl:Ontology .
 
-<urn:ex/damper-actuator> a ns1:Actuator ;
+<urn:ex/damper-actuator> a ns2:Actuator ;
     rdfs:label "damper actuator" ;
-    ns1:actuates <urn:ex/damper> ;
-    ns1:commandedByProperty <urn:ex/damper-command> .
+    ns2:actuates <urn:ex/damper> ;
+    ns2:commandedByProperty <urn:ex/damper-command> .
 
-<urn:ex/discharge-air-flow-sensor> a ns1:Sensor ;
+<urn:ex/discharge-air-flow-sensor> a ns2:Sensor ;
     rdfs:label "discharge air flow sensor" ;
-    ns1:hasObservationLocation <urn:ex/out> ;
-    ns1:observes <urn:ex/discharge-air-flow> .
+    ns2:hasObservationLocation <urn:ex/out> ;
+    ns2:observes <urn:ex/discharge-air-flow> .
 
-<urn:ex/damper-position> a ns1:QuantifiableObservableProperty ;
+<urn:ex/damper-position> a ns2:QuantifiableObservableProperty ;
     rdfs:label "damper position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/damper-command> a ns1:QuantifiableActuatableProperty ;
+<urn:ex/damper-command> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "damper command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/discharge-air-flow> a ns1:QuantifiableObservableProperty ;
+<urn:ex/discharge-air-flow> a ns2:QuantifiableObservableProperty ;
     rdfs:label "discharge air flow" ;
-    ns1:hasAspect ns1:Role-Discharge ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns2:hasAspect ns2:Role-Discharge ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
-<urn:ex/duct-after-damper> a ns1:Connection,
-        ns1:Duct ;
+<urn:ex/duct-after-damper> a ns2:Connection,
+        ns2:Duct ;
     rdfs:label "duct after damper" ;
-    ns1:cnx <urn:ex/damper-out> ;
-    ns1:connectsAt <urn:ex/damper-out> ;
-    ns1:connectsFrom <urn:ex/damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:cnx <urn:ex/damper-out> ;
+    ns2:connectsAt <urn:ex/damper-out> ;
+    ns2:connectsFrom <urn:ex/damper> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/duct-before-damper> a ns1:Connection,
-        ns1:Duct ;
+<urn:ex/duct-before-damper> a ns2:Connection,
+        ns2:Duct ;
     rdfs:label "duct before damper" ;
-    ns1:cnx <urn:ex/damper-in> ;
-    ns1:connectsAt <urn:ex/damper-in> ;
-    ns1:connectsTo <urn:ex/damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:cnx <urn:ex/damper-in> ;
+    ns2:connectsAt <urn:ex/damper-in> ;
+    ns2:connectsTo <urn:ex/damper> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/in-connection> a ns1:Connection ;
+<urn:ex/in-connection> a ns2:Connection ;
     rdfs:label "in connection" ;
-    ns1:cnx <urn:ex/in> ;
-    ns1:connectsAt <urn:ex/in> ;
-    ns1:connectsTo <urn:ex/vav-cooling-only> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:cnx <urn:ex/in> ;
+    ns2:connectsAt <urn:ex/in> ;
+    ns2:connectsTo <urn:ex/vav-cooling-only> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/out-connection> a ns1:Connection ;
+<urn:ex/out-connection> a ns2:Connection ;
     rdfs:label "out connection" ;
-    ns1:cnx <urn:ex/out> ;
-    ns1:connectsAt <urn:ex/out> ;
-    ns1:connectsFrom <urn:ex/vav-cooling-only> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns2:cnx <urn:ex/out> ;
+    ns2:connectsAt <urn:ex/out> ;
+    ns2:connectsFrom <urn:ex/vav-cooling-only> ;
+    ns2:hasMedium ns2:Medium-Air .
 
-<urn:ex/damper-in> a ns1:InletConnectionPoint ;
+<urn:ex/damper-in> a ns2:InletConnectionPoint ;
     rdfs:label "damper in" ;
-    ns1:cnx <urn:ex/damper>,
+    ns2:cnx <urn:ex/damper>,
         <urn:ex/duct-before-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/damper> ;
-    ns1:mapsTo <urn:ex/in> .
+    ns2:connectsThrough <urn:ex/duct-before-damper> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/damper> ;
+    ns2:mapsTo <urn:ex/in> .
 
-<urn:ex/damper-out> a ns1:OutletConnectionPoint ;
+<urn:ex/damper-out> a ns2:OutletConnectionPoint ;
     rdfs:label "damper out" ;
-    ns1:cnx <urn:ex/damper>,
+    ns2:cnx <urn:ex/damper>,
         <urn:ex/duct-after-damper> ;
-    ns1:connectsThrough <urn:ex/duct-after-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/damper> ;
-    ns1:mapsTo <urn:ex/out> .
+    ns2:connectsThrough <urn:ex/duct-after-damper> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/damper> ;
+    ns2:mapsTo <urn:ex/out> .
 
-<urn:ex/in> a ns1:InletConnectionPoint ;
+<urn:ex/in> a ns2:InletConnectionPoint ;
     rdfs:label "in" ;
-    ns1:cnx <urn:ex/in-connection>,
+    ns2:cnx <urn:ex/in-connection>,
         <urn:ex/vav-cooling-only> ;
-    ns1:connectsThrough <urn:ex/in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:isConnectionPointOf <urn:ex/vav-cooling-only> .
+    ns2:connectsThrough <urn:ex/in-connection> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:isConnectionPointOf <urn:ex/vav-cooling-only> .
 
-<urn:ex/out> a ns1:OutletConnectionPoint ;
+<urn:ex/out> a ns2:OutletConnectionPoint ;
     rdfs:label "out" ;
-    ns1:cnx <urn:ex/out-connection>,
+    ns2:cnx <urn:ex/out-connection>,
         <urn:ex/vav-cooling-only> ;
-    ns1:connectsThrough <urn:ex/out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
-    ns1:hasProperty <urn:ex/discharge-air-flow> ;
-    ns1:isConnectionPointOf <urn:ex/vav-cooling-only> .
+    ns2:connectsThrough <urn:ex/out-connection> ;
+    ns2:hasMedium ns2:Medium-Air ;
+    ns2:hasProperty <urn:ex/discharge-air-flow> ;
+    ns2:isConnectionPointOf <urn:ex/vav-cooling-only> .
 
-<urn:ex/vav-cooling-only> a ns1:SingleDuctTerminal,
+<urn:ex/vav-cooling-only> a ns2:SingleDuctTerminal,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#VAV> ;
     rdfs:label "vav cooling only" ;
-    ns1:cnx <urn:ex/in>,
+    ns2:cnx <urn:ex/in>,
         <urn:ex/out> ;
-    ns1:contains <urn:ex/damper> ;
-    ns1:hasConnectionPoint <urn:ex/in>,
+    ns2:contains <urn:ex/damper> ;
+    ns2:hasConnectionPoint <urn:ex/in>,
         <urn:ex/out> .
 
-<urn:ex/damper> a ns1:Damper,
+<urn:ex/damper> a ns2:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
     rdfs:label "damper" ;
-    ns1:cnx <urn:ex/damper-in>,
+    ns2:cnx <urn:ex/damper-in>,
         <urn:ex/damper-out> ;
-    ns1:hasConnectionPoint <urn:ex/damper-in>,
+    ns2:hasConnectionPoint <urn:ex/damper-in>,
         <urn:ex/damper-out> ;
-    ns1:hasProperty <urn:ex/damper-command>,
+    ns2:hasProperty <urn:ex/damper-command>,
         <urn:ex/damper-position> .
 
