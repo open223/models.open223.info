@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'examples/NIST-IBAL';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LBNL Example SCB RTU" href="scb-rtu.html" />
+    <link rel="next" title="LBNL Example SCB VRF" href="scb-vrf.html" />
     <link rel="prev" title="Heat Pump Laboratory (HPL)" href="NIST-HPL.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="nrel-example.html">NREL Example Building</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NIST-HPL.html">Heat Pump Laboratory (HPL)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Intelligent Buildings Agents Laboratory (IBAL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scb-rtu.html">LBNL Example SCB RTU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scb-vrf.html">LBNL Example SCB VRF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lbnl-example-radiant.html">LBNL Example SMB Radiant</a></li>
 </ul>
@@ -637,31 +636,31 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
 @prefix ns1: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#VAV_3_E_OCP&gt; ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#VAV_3_E_OCP&gt; probably needs an association with a Connection.&quot; ;
-            sh:resultPath ns3:connectsThrough ;
+            sh:focusNode &lt;http://example.org/IBAL#zs3_t_sp_f&gt; ;
+            sh:resultMessage &quot;s223: &lt;http://example.org/IBAL#zs3_t_sp_f&gt; has Aspect-Setpoint but is not referenced by any Property using hasSetpoint.&quot; ;
+            sh:resultPath ns1:hasSetpoint ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n20789f6b672e44acb2e86d548c8f27a3b4 ;
+            sh:sourceConstraint _:n5590cb5f5adf4fe2a823ee0d50575c3fb6 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/3abb9ce2&gt; ],
+            sh:sourceShape &lt;urn:well-known/adaa1266&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#WaterPump_1_S_OCP&gt; ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#WaterPump_1_S_OCP&gt; probably needs an 
+            sh:focusNode &lt;http://example.org/IBAL#HEC2_UpperICP&gt; ;
+            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/IBAL#HEC1_UpperICP
-  - http://example.org/IBAL#HEC1_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/IBAL#HEC2_UpperICP
+  - http://example.org/IBAL#HEC2_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
 http://example.org/IBAL#HEC1_UpperOCP
   - http://example.org/IBAL#HEC1_UpperOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://example.org/IBAL#HEC2_UpperICP
-  - http://example.org/IBAL#HEC2_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://example.org/IBAL#HEC1_UpperICP
+  - http://example.org/IBAL#HEC1_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
 </pre></div>
 </div>
 </div>
@@ -709,11 +708,11 @@ http://example.org/IBAL#HEC2_UpperICP
       </div>
     </a>
     <a class="right-next"
-       href="scb-rtu.html"
+       href="scb-vrf.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LBNL Example SCB RTU</p>
+        <p class="prev-next-title">LBNL Example SCB VRF</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="LBNL Example SMB Radiant" href="lbnl-example-radiant.html" />
-    <link rel="prev" title="LBNL Example SCB RTU" href="scb-rtu.html" />
+    <link rel="prev" title="Intelligent Buildings Agents Laboratory (IBAL)" href="NIST-IBAL.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="nrel-example.html">NREL Example Building</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NIST-HPL.html">Heat Pump Laboratory (HPL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NIST-IBAL.html">Intelligent Buildings Agents Laboratory (IBAL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scb-rtu.html">LBNL Example SCB RTU</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">LBNL Example SCB VRF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lbnl-example-radiant.html">LBNL Example SMB Radiant</a></li>
 </ul>
@@ -588,26 +587,22 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns1: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns3: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns3:00088 ;
-            sh:resultMessage &quot;s223: Number of inlets 1 are not equivalent with number of outlets 3.&quot; ;
-            sh:resultPath ns1:hasConnectionPoint ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraint _:nb9f0cbb9822b4a6abda4396efd692d7eb10 ;
+            sh:focusNode ns2:00035 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00035&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;http://data.ashrae.org/standard223/data/scb-vrf#00005&gt; because it is associated with a Junction or Equipment that is contained by &lt;http://data.ashrae.org/standard223/data/scb-vrf#00005&gt;.&quot; ;
+            sh:resultPath ns3:mapsTo ;
+            sh:resultSeverity sh:Info ;
+            sh:sourceConstraint _:n5cbbb0c7e8c84a7da955307a8c700d71b7 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/819f95b0&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode ns3:00850 ;
-            sh:resultMessage &quot;s223: A DomainSpace must be enclosed by a PhysicalSpace.&quot; ;
-            sh:resultPath [ sh:inversePath ns1:encloses ] ;
-            sh:resultSeverity sh:Info 
+            sh:sourceShape &lt;urn:well-known/c945a1e0&gt; ],
+        [ a sh:Valid
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-vrf#00023
@@ -651,12 +646,12 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="scb-rtu.html"
+       href="NIST-IBAL.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">LBNL Example SCB RTU</p>
+        <p class="prev-next-title">Intelligent Buildings Agents Laboratory (IBAL)</p>
       </div>
     </a>
     <a class="right-next"
