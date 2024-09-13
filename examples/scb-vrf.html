@@ -183,11 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="lbnl-bdg4-1.html">LBNL Example Building 4 Model 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nrel-example.html">NREL Example Building</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NIST-HPL.html">Heat Pump Laboratory (HPL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NIST-IBAL.html">Schematic view</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="NIST-IBAL.html">Intelligent Buildings Agents Laboratory (IBAL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scb-rtu.html">LBNL Example SCB RTU</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">LBNL Example SCB VRF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lbnl-example-radiant.html">LBNL Example SMB Radiant</a></li>
@@ -593,23 +589,26 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
 @prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns4: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns5: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns4:00009 ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00009&gt; probably needs an association with a Connection.&quot; ;
-            sh:resultPath ns2:connectsThrough ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:nba19fadee2774668af0586a6f4a64831b12 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/0d5e3d88&gt; ],
+            sh:focusNode ns5:00023 ;
+            sh:resultMessage &quot;Property needs to have at least 1 value&quot; ;
+            sh:resultPath ns2:hasObservationLocation ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/6d687fe5&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode ns4:00007 ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00007&gt; probably needs an association
+            sh:focusNode ns5:00730 ;
+            sh:resultMessage &quot;s223: Number of inlets 1 are not equivalent with number of outlets 3.&quot; ;
+            sh:resultPath ns2:hasConnectionPoint ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraint _:n6c268cadcb8149c0b3a4aee05c6d28d4b3 ;
+            sh
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-vrf#00023
