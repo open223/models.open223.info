@@ -527,78 +527,31 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/out&gt; ;
-            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
-            sh:resultPath ns2:hasMedium ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/1882422e&gt; ;
-            sh:value ns2:Medium-Air ],
+            sh:focusNode &lt;urn:ex/hot-deck-in-connection&gt; ;
+            sh:resultMessage &quot;s223: A Connection must have two or more connectsAt relations to ConnectionPoints&quot; ;
+            sh:resultPath ns3:connectsAt ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/b8747a79&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/hot-deck-damper-out&gt; ;
-            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
-            sh:resultPath ns2:hasMedium ;
+            sh:focusNode &lt;urn:ex/cold-deck-damper-actuator&gt; ;
+            sh:resultMessage &quot;s223: Predicate ns3:commandedByProperty is not defined for instance &lt;urn:ex/cold-deck-damper-actuator&gt;.&quot; ;
             sh:resultSeverity sh:Violation ;
-           
+            sh:sourceConstraint _:n475f776887324d5ab3256bf85a29ed8eb10 ;
+            sh:sour
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/junction-out
-  - urn:ex/junction-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-after-cold-deck-damper
-  - urn:ex/duct-after-cold-deck-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/cold-deck-damper-actuator
+  - urn:ex/cold-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 urn:ex/hot-deck-damper-actuator
   - urn:ex/hot-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/cold-deck-in-connection
-  - urn:ex/cold-deck-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/hot-deck-in
-  - urn:ex/hot-deck-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/hot-deck-damper-out
-  - urn:ex/hot-deck-damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/cold-deck-damper-actuator
-  - urn:ex/cold-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/duct-before-cold-deck-damper
-  - urn:ex/duct-before-cold-deck-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/hot-deck-damper
-  - urn:ex/hot-deck-damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/hot-deck-damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/cold-deck-in
-  - urn:ex/cold-deck-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/junction-in-2
-  - urn:ex/junction-in-2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-after-hot-deck-damper
-  - urn:ex/duct-after-hot-deck-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/cold-deck-damper-in
-  - urn:ex/cold-deck-damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/hot-deck-damper-in
-  - urn:ex/hot-deck-damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/cold-deck-damper
-  - urn:ex/cold-deck-damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/cold-deck-damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/out-connection
-  - urn:ex/out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/dual-duct-terminal-unit-with-discharge-sensor
-  - urn:ex/dual-duct-terminal-unit-with-discharge-sensor needs between 2 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/dual-duct-terminal-unit-with-discharge-sensor needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/dual-duct-terminal-unit-with-discharge-sensor needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/hot-deck-in-connection
-  - urn:ex/hot-deck-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/cold-deck-damper-out
-  - urn:ex/cold-deck-damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/out
-  - urn:ex/out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-before-hot-deck-damper
-  - urn:ex/duct-before-hot-deck-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/junction
-  - urn:ex/junction needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/junction-in-1
-  - urn:ex/junction-in-1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 </pre></div>
 </div>
 </div>

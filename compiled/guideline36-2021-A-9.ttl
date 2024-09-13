@@ -213,7 +213,7 @@
     ns1:cnx <urn:ex/clg-coil-valve-in> ;
     ns1:connectsAt <urn:ex/clg-coil-valve-in> ;
     ns1:connectsTo <urn:ex/clg-coil-valve> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns1:hasMedium ns1:Fluid-Water .
 
 <urn:ex/pipe-chilled-water-supply> a ns1:Connection,
         ns1:Pipe ;
@@ -221,7 +221,7 @@
     ns1:cnx <urn:ex/clg-coil-water-out> ;
     ns1:connectsAt <urn:ex/clg-coil-water-out> ;
     ns1:connectsFrom <urn:ex/clg-coil> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns1:hasMedium ns1:Fluid-Water .
 
 <urn:ex/pipe-hot-water-return-before-valve> a ns1:Connection,
         ns1:Pipe ;
@@ -229,7 +229,7 @@
     ns1:cnx <urn:ex/htg-coil-valve-in> ;
     ns1:connectsAt <urn:ex/htg-coil-valve-in> ;
     ns1:connectsTo <urn:ex/htg-coil-valve> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns1:hasMedium ns1:Fluid-Water .
 
 <urn:ex/pipe-hot-water-supply> a ns1:Connection,
         ns1:Pipe ;
@@ -237,7 +237,7 @@
     ns1:cnx <urn:ex/htg-coil-water-out> ;
     ns1:connectsAt <urn:ex/htg-coil-water-out> ;
     ns1:connectsFrom <urn:ex/htg-coil> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns1:hasMedium ns1:Fluid-Water .
 
 <urn:ex/ra-damper-command> a ns1:QuantifiableActuatableProperty ;
     rdfs:label "ra damper command" ;
@@ -299,7 +299,7 @@
     ns1:cnx <urn:ex/clg-coil-valve>,
         <urn:ex/pipe-chilled-water-return-before-valve> ;
     ns1:connectsThrough <urn:ex/pipe-chilled-water-return-before-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/clg-coil-valve> .
 
 <urn:ex/clg-coil-valve-out> a ns1:OutletConnectionPoint ;
@@ -307,7 +307,7 @@
     ns1:cnx <urn:ex/clg-coil-valve>,
         <urn:ex/pipe-chilled-water-return-after-valve> ;
     ns1:connectsThrough <urn:ex/pipe-chilled-water-return-after-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/clg-coil-valve> .
 
 <urn:ex/clg-coil-water-in> a ns1:InletConnectionPoint ;
@@ -315,7 +315,7 @@
     ns1:cnx <urn:ex/clg-coil>,
         <urn:ex/pipe-chilled-water-return-after-valve> ;
     ns1:connectsThrough <urn:ex/pipe-chilled-water-return-after-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/clg-coil> .
 
 <urn:ex/clg-coil-water-out> a ns1:OutletConnectionPoint ;
@@ -323,7 +323,7 @@
     ns1:cnx <urn:ex/clg-coil>,
         <urn:ex/pipe-chilled-water-supply> ;
     ns1:connectsThrough <urn:ex/pipe-chilled-water-supply> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/clg-coil> .
 
 <urn:ex/duct-after-clg-coil> a ns1:Connection,
@@ -501,7 +501,7 @@
     ns1:cnx <urn:ex/htg-coil-valve>,
         <urn:ex/pipe-hot-water-return-before-valve> ;
     ns1:connectsThrough <urn:ex/pipe-hot-water-return-before-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/htg-coil-valve> .
 
 <urn:ex/htg-coil-valve-out> a ns1:OutletConnectionPoint ;
@@ -509,7 +509,7 @@
     ns1:cnx <urn:ex/htg-coil-valve>,
         <urn:ex/pipe-hot-water-return-after-valve> ;
     ns1:connectsThrough <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/htg-coil-valve> .
 
 <urn:ex/htg-coil-water-in> a ns1:InletConnectionPoint ;
@@ -517,7 +517,7 @@
     ns1:cnx <urn:ex/htg-coil>,
         <urn:ex/pipe-hot-water-return-after-valve> ;
     ns1:connectsThrough <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/htg-coil> .
 
 <urn:ex/htg-coil-water-out> a ns1:OutletConnectionPoint ;
@@ -525,7 +525,7 @@
     ns1:cnx <urn:ex/htg-coil>,
         <urn:ex/pipe-hot-water-supply> ;
     ns1:connectsThrough <urn:ex/pipe-hot-water-supply> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/htg-coil> .
 
 <urn:ex/minimum-oa-damper-in> a ns1:InletConnectionPoint ;
@@ -612,7 +612,7 @@
         <urn:ex/clg-coil-water-in> ;
     ns1:connectsFrom <urn:ex/clg-coil-valve> ;
     ns1:connectsTo <urn:ex/clg-coil> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns1:hasMedium ns1:Fluid-Water .
 
 <urn:ex/pipe-hot-water-return-after-valve> a ns1:Connection,
         ns1:Pipe ;
@@ -623,7 +623,7 @@
         <urn:ex/htg-coil-water-in> ;
     ns1:connectsFrom <urn:ex/htg-coil-valve> ;
     ns1:connectsTo <urn:ex/htg-coil> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns1:hasMedium ns1:Fluid-Water .
 
 <urn:ex/ra-damper-in> a ns1:InletConnectionPoint ;
     rdfs:label "ra damper in" ;

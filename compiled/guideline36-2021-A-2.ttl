@@ -118,7 +118,7 @@
         <urn:ex/reheat-coil-water-in> ;
     ns1:connectsTo <urn:ex/reheat-coil>,
         <urn:ex/vav-reheat> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns1:hasMedium ns1:Fluid-Water .
 
 <urn:ex/hot-water-out-connection> a ns1:Connection,
         ns1:Pipe ;
@@ -129,7 +129,7 @@
         <urn:ex/reheat-coil-valve-out> ;
     ns1:connectsFrom <urn:ex/reheat-coil-valve>,
         <urn:ex/vav-reheat> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns1:hasMedium ns1:Fluid-Water .
 
 <urn:ex/pipe-hot-water-return-before-valve> a ns1:Connection,
         ns1:Pipe ;
@@ -140,7 +140,7 @@
         <urn:ex/reheat-coil-water-out> ;
     ns1:connectsFrom <urn:ex/reheat-coil> ;
     ns1:connectsTo <urn:ex/reheat-coil-valve> ;
-    ns1:hasMedium ns1:Medium-Water .
+    ns1:hasMedium ns1:Fluid-Water .
 
 <urn:ex/reheat-coil-air-in> a ns1:InletConnectionPoint ;
     rdfs:label "reheat coil air in" ;
@@ -164,7 +164,7 @@
     ns1:cnx <urn:ex/pipe-hot-water-return-before-valve>,
         <urn:ex/reheat-coil-valve> ;
     ns1:connectsThrough <urn:ex/pipe-hot-water-return-before-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/reheat-coil-valve> .
 
 <urn:ex/reheat-coil-valve-out> a ns1:OutletConnectionPoint ;
@@ -172,7 +172,7 @@
     ns1:cnx <urn:ex/hot-water-out-connection>,
         <urn:ex/reheat-coil-valve> ;
     ns1:connectsThrough <urn:ex/hot-water-out-connection> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/reheat-coil-valve> ;
     ns1:mapsTo <urn:ex/hot-water-out> .
 
@@ -181,7 +181,7 @@
     ns1:cnx <urn:ex/hot-water-in-connection>,
         <urn:ex/reheat-coil> ;
     ns1:connectsThrough <urn:ex/hot-water-in-connection> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/reheat-coil> ;
     ns1:mapsTo <urn:ex/hot-water-in> .
 
@@ -190,7 +190,7 @@
     ns1:cnx <urn:ex/pipe-hot-water-return-before-valve>,
         <urn:ex/reheat-coil> ;
     ns1:connectsThrough <urn:ex/pipe-hot-water-return-before-valve> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/reheat-coil> .
 
 <urn:ex/hot-water-in> a ns1:InletConnectionPoint ;
@@ -198,7 +198,7 @@
     ns1:cnx <urn:ex/hot-water-in-connection>,
         <urn:ex/vav-reheat> ;
     ns1:connectsThrough <urn:ex/hot-water-in-connection> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/vav-reheat> .
 
 <urn:ex/hot-water-out> a ns1:OutletConnectionPoint ;
@@ -206,7 +206,7 @@
     ns1:cnx <urn:ex/hot-water-out-connection>,
         <urn:ex/vav-reheat> ;
     ns1:connectsThrough <urn:ex/hot-water-out-connection> ;
-    ns1:hasMedium ns1:Medium-Water ;
+    ns1:hasMedium ns1:Fluid-Water ;
     ns1:isConnectionPointOf <urn:ex/vav-reheat> .
 
 <urn:ex/air-in> a ns1:InletConnectionPoint ;

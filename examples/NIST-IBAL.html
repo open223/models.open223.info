@@ -643,22 +643,22 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#zs3_t_sp_f&gt; ;
-            sh:resultMessage &quot;s223: &lt;http://example.org/IBAL#zs3_t_sp_f&gt; has Aspect-Setpoint but is not referenced by any Property using hasSetpoint.&quot; ;
-            sh:resultPath ns1:hasSetpoint ;
+            sh:focusNode &lt;http://example.org/IBAL#AHU_1_E_OCP&gt; ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#AHU_1_E_OCP&gt; probably needs an association with a Connection.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n5590cb5f5adf4fe2a823ee0d50575c3fb6 ;
+            sh:sourceConstraint _:n27f09821110f4d3e84bcc567f3018a40b3 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/adaa1266&gt; ],
+            sh:sourceShape &lt;urn:well-known/2c60d14f&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#HEC2_UpperICP&gt; ;
-            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using
+            sh:focusNode &lt;http://example.org/IBAL#Valve2_OCP&gt; ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#Valve2_OCP&gt; probably needs an association wi
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/IBAL#HEC2_UpperICP
-  - http://example.org/IBAL#HEC2_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://example.org/IBAL#HEC1_UpperOCP
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/IBAL#HEC1_UpperOCP
   - http://example.org/IBAL#HEC1_UpperOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://example.org/IBAL#HEC2_UpperICP
+  - http://example.org/IBAL#HEC2_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
 http://example.org/IBAL#HEC1_UpperICP
   - http://example.org/IBAL#HEC1_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
 </pre></div>

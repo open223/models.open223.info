@@ -550,69 +550,42 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/air-in-connection&gt; ;
-            sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape ns3:ConnectionCnxShape ;
-            sh:value &lt;urn:ex/air-in-connection&gt; ],
-        [ a sh:ValidationResult ;
             sh:focusNode &lt;urn:ex/reheat-coil&gt; ;
             sh:resultMessage &quot;g36: The HotWaterCoil shall be connected to a HotWaterValve using the relation connectedTo.&quot; ;
             sh:resultPath ns3:connectedTo ;
             sh:resultSeverity ns3:g36 ;
-            sh:sourceConstraintComponent sh:QualifiedMinCo
+            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/4dbfb89c&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/reheat-coil-valve-out&gt; ;
+            sh:resultMessage &quot;s223: &lt;urn:ex/reheat-coil-valve-out&gt; cannot have both a mapsTo &lt;urn:ex/hot-water-out&gt; and a connectsThrough &lt;urn:ex/hot-water-out-connection&gt;.&quot; ;
+            sh:resultPath ns3:mapsTo ;
+            sh:resultSeverity sh:Violation ;
+            
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/vav-reheat
-  - urn:ex/vav-reheat needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/vav-reheat needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/damper-in
-  - urn:ex/damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/reheat-coil-water-in
+  - urn:ex/reheat-coil-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/reheat-coil-water-out
   - urn:ex/reheat-coil-water-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/hot-water-in
-  - urn:ex/hot-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/air-out
-  - urn:ex/air-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/air-out-connection
-  - urn:ex/air-out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/air-in-connection
-  - urn:ex/air-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil
-  - urn:ex/reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/reheat-coil-water-in
-  - urn:ex/reheat-coil-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/hot-water-in-connection
-  - urn:ex/hot-water-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/damper
-  - urn:ex/damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/damper-actuator
-  - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/pipe-hot-water-return-before-valve
-  - urn:ex/pipe-hot-water-return-before-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/damper-out
-  - urn:ex/damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-air-in
-  - urn:ex/reheat-coil-air-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/air-in
-  - urn:ex/air-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-valve-in
-  - urn:ex/reheat-coil-valve-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-valve-actuator
-  - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 urn:ex/hot-water-out
   - urn:ex/hot-water-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/reheat-coil-valve-out
   - urn:ex/reheat-coil-valve-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/hot-water-out-connection
   - urn:ex/hot-water-out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-after-damper
-  - urn:ex/duct-after-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-air-out
-  - urn:ex/reheat-coil-air-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/hot-water-in-connection
+  - urn:ex/hot-water-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/pipe-hot-water-return-before-valve
+  - urn:ex/pipe-hot-water-return-before-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/hot-water-in
+  - urn:ex/hot-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/reheat-coil-valve-in
+  - urn:ex/reheat-coil-valve-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/damper-actuator
+  - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/reheat-coil-valve-actuator
+  - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 </pre></div>
 </div>
 </div>
