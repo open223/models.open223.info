@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="LBNL Example SMB Radiant" href="lbnl-example-radiant.html" />
-    <link rel="prev" title="PNNL Example Building 2" href="pnnl-example2.html" />
+    <link rel="prev" title="LBNL Example SCB RTU" href="scb-rtu.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,10 +175,13 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Buildings</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="bdg1-1.html">Example Building 1 model 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdg1-2.html">Example Building 1 model 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lbnl-example.html">LBNL Example Building</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lbnl-example-2.html">LBNL Example Building 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nist-bdg1-1.html">NIST Example Building 1 Model 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pnnl-bdg1-2.html">PNNL Example Building 1 Model 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pnnl-bdg2-1.html">PNNL Example Building 2 Model 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lbnl-bdg3-1.html">LBNL Example Building 3 Model 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pnnl-bdg3-2.html">PNNL Example Building 3 Model 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lbnl-bdg4-1.html">LBNL Example Building 4 Model 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nrel-example.html">NREL Example Building</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NIST-HPL.html">Schematic view</a></li>
 
 
@@ -189,8 +192,7 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="nrel-example.html">NREL Example Building</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pnnl-example2.html">PNNL Example Building 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scb-rtu.html">LBNL Example SCB RTU</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">LBNL Example SCB VRF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lbnl-example-radiant.html">LBNL Example SMB Radiant</a></li>
 </ul>
@@ -606,14 +608,18 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns5:00042 ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00042&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;http://data.ashrae.org/standard223/data/scb-vrf#00009&gt; because it is associated with a Junction or Equipment that is contained by &lt;http://data.ashrae.org/standard223/data/scb-vrf#00009&gt;.&quot; ;
-            sh:resultPath ns2:mapsTo ;
+            sh:focusNode ns5:00027 ;
+            sh:resultMessage &quot;Property needs to have at least 1 value&quot; ;
+            sh:resultPath ns2:hasObservationLocation ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/a4692797&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode ns5:00051 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00051&gt; probably needs an association with a Connection.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n84ca2599a6b14b598c74d77fdd12346ab5 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/e429c4c3&gt; ],
-        [ a sh:Valid
+            sh:sourceConstraint _:n
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-vrf#00027
@@ -657,12 +663,12 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pnnl-example2.html"
+       href="scb-rtu.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">PNNL Example Building 2</p>
+        <p class="prev-next-title">LBNL Example SCB RTU</p>
       </div>
     </a>
     <a class="right-next"
