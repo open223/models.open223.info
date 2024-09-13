@@ -592,26 +592,24 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
-@prefix ns4: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns4: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns3:00623 ;
-            sh:resultMessage &quot;s223: Number of inlets 1 are not equivalent with number of outlets 3.&quot; ;
-            sh:resultPath ns4:hasConnectionPoint ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraint _:n0720ebd9f0144c0598660ce249eec5c6b9 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/38e98ad7&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode ns3:00957 ;
-            sh:resultMessage &quot;s223: A DomainSpace must be enclosed by a PhysicalSpace.&quot; ;
-            sh:resultPath [ sh:inversePath ns4:encloses ] ;
+            sh:focusNode ns4:00045 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00045&gt; probably needs an association with a Connection.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
             sh:resultSeverity sh:Info ;
+            sh:sourceConstraint _:ndef4540860ee4cdca3763c248d8d2a73b11 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/b0fd4d7b&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode ns4:00205 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00205&gt; could be missing a mapsTo rel
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-vrf#00023

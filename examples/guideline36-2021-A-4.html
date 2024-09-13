@@ -563,93 +563,93 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/reheat-coil-valve-out&gt; ;
-            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
+            sh:focusNode &lt;urn:ex/duct-after-damper&gt; ;
+            sh:resultMessage &quot;s223: A Connection must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
             sh:resultPath ns3:hasMedium ;
             sh:resultSeverity sh:Violation ;
             sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/ea655563&gt; ;
-            sh:value ns3:Medium-Water ],
+            sh:sourceShape &lt;urn:well-known/2a3236a3&gt; ;
+            sh:value ns3:Medium-Air ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/fan&gt; ;
-            sh:resultMessage &quot;Less than 1 values have shape &lt;urn:well-known/0d23cb80&gt;&quot; ;
-            sh:resultPath ns3:hasConnectionPoint ;
+            sh:focusNode &lt;urn:ex/reheat-coil-valve-in&gt; ;
+            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
+            sh:resultPath ns3:hasMedium ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:Quali
+ 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/duct-before-damper
-  - urn:ex/duct-before-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/supply-air-in-connection
-  - urn:ex/supply-air-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-before-reheat-coil
-  - urn:ex/duct-before-reheat-coil needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/fan
-  - urn:ex/fan needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/fan needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/return-air-from-plenum-in-connection
-  - urn:ex/return-air-from-plenum-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-valve-out
-  - urn:ex/reheat-coil-valve-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil
-  - urn:ex/reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-  - urn:ex/reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/duct-after-damper
-  - urn:ex/duct-after-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-hot-water-supply
-  - urn:ex/pipe-hot-water-supply needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan
   - urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
   - urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
-urn:ex/reheat-coil-in
-  - urn:ex/reheat-coil-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/damper-in
-  - urn:ex/damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-air-out
-  - urn:ex/reheat-coil-air-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/fan-in
-  - urn:ex/fan-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-hot-water-return-after-valve
-  - urn:ex/pipe-hot-water-return-after-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/junction-out
+  - urn:ex/junction-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/damper-out
+  - urn:ex/damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-before-damper
+  - urn:ex/duct-before-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/out-connection
+  - urn:ex/out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/return-air-from-plenum-in
+  - urn:ex/return-air-from-plenum-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/pipe-hot-water-return-before-valve
+  - urn:ex/pipe-hot-water-return-before-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/damper
   - urn:ex/damper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
   - urn:ex/damper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/reheat-coil
+  - urn:ex/reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/fan
+  - urn:ex/fan needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - urn:ex/fan needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+urn:ex/pipe-hot-water-return-after-valve
+  - urn:ex/pipe-hot-water-return-after-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-before-reheat-coil
+  - urn:ex/duct-before-reheat-coil needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/reheat-coil-valve-actuator
   - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/damper-actuator
-  - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/duct-after-reheat-coil
-  - urn:ex/duct-after-reheat-coil needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/junction-in-1
-  - urn:ex/junction-in-1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-water-out
-  - urn:ex/reheat-coil-water-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/fan-out
-  - urn:ex/fan-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/out
-  - urn:ex/out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-hot-water-return-before-valve
-  - urn:ex/pipe-hot-water-return-before-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/duct-after-fan
-  - urn:ex/duct-after-fan needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/reheat-coil-valve-in
   - urn:ex/reheat-coil-valve-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/return-air-from-plenum-in
-  - urn:ex/return-air-from-plenum-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/out-connection
-  - urn:ex/out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/supply-air-in
-  - urn:ex/supply-air-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/pipe-hot-water-supply
+  - urn:ex/pipe-hot-water-supply needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/damper-actuator
+  - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/reheat-coil-water-out
+  - urn:ex/reheat-coil-water-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/supply-air-in-connection
+  - urn:ex/supply-air-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/junction-in-1
+  - urn:ex/junction-in-1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/reheat-coil-water-in
   - urn:ex/reheat-coil-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/junction-in-2
-  - urn:ex/junction-in-2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/junction-out
-  - urn:ex/junction-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/junction
   - urn:ex/junction needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/damper-out
-  - urn:ex/damper-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/junction-in-2
+  - urn:ex/junction-in-2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/out
+  - urn:ex/out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/fan-in
+  - urn:ex/fan-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-after-reheat-coil
+  - urn:ex/duct-after-reheat-coil needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/damper-in
+  - urn:ex/damper-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/return-air-from-plenum-in-connection
+  - urn:ex/return-air-from-plenum-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/supply-air-in
+  - urn:ex/supply-air-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/reheat-coil-air-out
+  - urn:ex/reheat-coil-air-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/reheat-coil-in
+  - urn:ex/reheat-coil-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-after-damper
+  - urn:ex/duct-after-damper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/duct-after-fan
+  - urn:ex/duct-after-fan needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/fan-out
+  - urn:ex/fan-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
+urn:ex/reheat-coil-valve-out
+  - urn:ex/reheat-coil-valve-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
 </pre></div>
 </div>
 </div>

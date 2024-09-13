@@ -429,6 +429,25 @@ document.write(`
 </section>
 <section id="queries">
 <h1>Queries<a class="headerlink" href="#queries" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Query URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Zone/room temperature sensors</p></td>
+<td><p><a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+SELECT+%3Flocation+%3Fsensor+WHERE+%7B%0A++++%3Fsensor+rdf%3Atype%2Frdfs%3AsubClassOf%2A+s223%3ASensor+.%0A++++%3Fsensor+s223%3Aobserves+%3Fproperty+.%0A++++%3Fproperty+qudt%3AhasQuantityKind+quantitykind%3ATemperature+.%0A++++%3Fsensor+s223%3AhasObservationLocation+%3Flocation%0A%7D%0A&url=https%3A%2F%2Fmodels.open223.info%2Fcompiled%2Fnist-ibal.ttl'>Query Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Search for all the sensors along the connections and the associated property they’re observing.</p></td>
+<td><p><a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+SELECT+%3Fsegment+%3Fchannel+%3Fproperty_id+WHERE+%7B%0A++++%3Fsegment+a+s223%3AConnection+.%0A++++%3Fchannel+a%2Frdfs%3AsubClassOf%2A+s223%3ASensor+.%0A++++%3Fchannel+s223%3Aobserves+%3Fproperty_id+.%0A%7D%0A&url=https%3A%2F%2Fmodels.open223.info%2Fcompiled%2Fnist-ibal.ttl'>Query Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Sensors in AHU1 and what units the properties are measured in</p></td>
+<td><p><a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+SELECT+%3Fchannel+%3Fproperty_id+%3Funit+WHERE+%7B%0A++++BIND%28IBAL%3AAHU_1+as+%3Fahu%29+%7B%0A++++%7D%0A++++UNION+%7B%0A++++++++%3Fahu+s223%3Acontains+%3Fequipment+.%0A++++++++%3Fchannel+s223%3AhasObservationLocation+%3Fequipment+.%0A++++++++%3Fchannel+s223%3Aobserves+%3Fproperty_id+.%0A++++++++%3Fproperty_id+qudt%3AhasUnit+%3Funit+.%0A++++%7D%0A++++UNION+%7B%0A++++++++%3Fahu+s223%3Acontains+%3Fequipment+.%0A++++++++%3Fequipment+s223%3AconnectedThrough+%3Fconnection+.%0A++++++++%3Fchannel+s223%3AhasObservationLocation+%3Fconnection+.%0A++++++++%3Fchannel+s223%3Aobserves+%3Fproperty_id+.%0A++++++++%3Fproperty_id+qudt%3AhasUnit+%3Funit+.%0A++++%7D%0A++++UNION+%7B%0A++++++++%3Fahu+s223%3Acontains+%3Fequipment+.%0A++++++++%3Fequipment+s223%3AhasConnectionPoint+%3FconnectionPoint+.%0A++++++++%3Fchannel+s223%3AhasObservationLocation+%3FconnectionPoint+.%0A++++++++%3Fchannel+s223%3Aobserves+%3Fproperty_id+.%0A++++++++%3Fproperty_id+qudt%3AhasUnit+%3Funit+.%0A++++%7D%0A%7D%0A&url=https%3A%2F%2Fmodels.open223.info%2Fcompiled%2Fnist-ibal.ttl'>Query Link</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="model-components">
 <h1>Model Components<a class="headerlink" href="#model-components" title="Link to this heading">#</a></h1>
