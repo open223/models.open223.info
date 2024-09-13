@@ -97,11 +97,11 @@ bldg:junction-out a s223:OutletConnectionPoint ;
 
 bldg:pipe-hot-water-return-before-valve a s223:Connection,
         s223:Pipe ;
-    s223:hasMedium s223:Medium-Water .
+    s223:hasMedium s223:Fluid-Water .
 
 bldg:pipe-hot-water-supply a s223:Connection,
         s223:Pipe ;
-    s223:hasMedium s223:Medium-Water .
+    s223:hasMedium s223:Fluid-Water .
 
 bldg:reheat-coil a s223:HeatingCoil,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;
@@ -122,11 +122,11 @@ bldg:reheat-coil-in a s223:InletConnectionPoint ;
 
 bldg:reheat-coil-valve-in a s223:InletConnectionPoint ;
     s223:cnx bldg:pipe-hot-water-return-before-valve ;
-    s223:hasMedium s223:Medium-Water .
+    s223:hasMedium s223:Fluid-Water .
 
 bldg:reheat-coil-valve-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:pipe-hot-water-return-after-valve ;
-    s223:hasMedium s223:Medium-Water .
+    s223:hasMedium s223:Fluid-Water .
 
 bldg:reheat-coil-valve-position a s223:QuantifiableObservableProperty ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
@@ -134,11 +134,11 @@ bldg:reheat-coil-valve-position a s223:QuantifiableObservableProperty ;
 
 bldg:reheat-coil-water-in a s223:InletConnectionPoint ;
     s223:cnx bldg:pipe-hot-water-return-after-valve ;
-    s223:hasMedium s223:Medium-Water .
+    s223:hasMedium s223:Fluid-Water .
 
 bldg:reheat-coil-water-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:pipe-hot-water-supply ;
-    s223:hasMedium s223:Medium-Water .
+    s223:hasMedium s223:Fluid-Water .
 
 bldg:return-air-from-plenum-in-connection a s223:Connection ;
     s223:hasMedium s223:Fluid-Air .
@@ -180,7 +180,7 @@ bldg:out-connection a s223:Connection ;
 
 bldg:pipe-hot-water-return-after-valve a s223:Connection,
         s223:Pipe ;
-    s223:hasMedium s223:Medium-Water .
+    s223:hasMedium s223:Fluid-Water .
 
 bldg:reheat-coil-valve a s223:Valve,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
