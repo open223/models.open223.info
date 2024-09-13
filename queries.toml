@@ -9,7 +9,7 @@ SELECT ?location ?sensor WHERE {
 }
 """
 
-[[lbnl-example]]
+[[lbnl-bdg3-1]]
 description="Zone/room temperature sensors"
 query="""
 SELECT ?location ?sensor WHERE {
@@ -20,7 +20,7 @@ SELECT ?location ?sensor WHERE {
 }
 """
 
-[[nist-example]]
+[[lbnl-bdg4-1]]
 description="Zone/room temperature sensors"
 query="""
 SELECT ?location ?sensor WHERE {
@@ -31,7 +31,18 @@ SELECT ?location ?sensor WHERE {
 }
 """
 
-[[nist-example]]
+[[NIST-IBAL]]
+description="Zone/room temperature sensors"
+query="""
+SELECT ?location ?sensor WHERE {
+    ?sensor rdf:type/rdfs:subClassOf* s223:Sensor .
+    ?sensor s223:observes ?property .
+    ?property qudt:hasQuantityKind quantitykind:Temperature .
+    ?sensor s223:hasObservationLocation ?location
+}
+"""
+
+[[NIST-IBAL]]
 description="Search for all the sensors along the connections and the associated property they're observing."
 query="""
 SELECT ?segment ?channel ?property_id WHERE {
@@ -41,7 +52,7 @@ SELECT ?segment ?channel ?property_id WHERE {
 }
 """
 
-[[nist-example]]
+[[NIST-IBAL]]
 description="Sensors in AHU1 and what units the properties are measured in"
 query="""
 SELECT ?channel ?property_id ?unit WHERE {
@@ -69,7 +80,7 @@ SELECT ?channel ?property_id ?unit WHERE {
     }
 }
 """
-[[nist-example]]
+[[NIST-HPL]]
 description="Find the downstream equipment for AHU1."
 query="""
 SELECT ?connectionDown ?connectionDown2 WHERE {
