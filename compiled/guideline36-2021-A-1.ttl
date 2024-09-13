@@ -38,7 +38,7 @@
     ns1:cnx <urn:ex/damper-out> ;
     ns1:connectsAt <urn:ex/damper-out> ;
     ns1:connectsFrom <urn:ex/damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-before-damper> a ns1:Connection,
         ns1:Duct ;
@@ -46,28 +46,28 @@
     ns1:cnx <urn:ex/damper-in> ;
     ns1:connectsAt <urn:ex/damper-in> ;
     ns1:connectsTo <urn:ex/damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/in-connection> a ns1:Connection ;
     rdfs:label "in connection" ;
     ns1:cnx <urn:ex/in> ;
     ns1:connectsAt <urn:ex/in> ;
     ns1:connectsTo <urn:ex/vav-cooling-only> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/out-connection> a ns1:Connection ;
     rdfs:label "out connection" ;
     ns1:cnx <urn:ex/out> ;
     ns1:connectsAt <urn:ex/out> ;
     ns1:connectsFrom <urn:ex/vav-cooling-only> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/damper-in> a ns1:InletConnectionPoint ;
     rdfs:label "damper in" ;
     ns1:cnx <urn:ex/damper>,
         <urn:ex/duct-before-damper> ;
     ns1:connectsThrough <urn:ex/duct-before-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/damper> ;
     ns1:mapsTo <urn:ex/in> .
 
@@ -76,7 +76,7 @@
     ns1:cnx <urn:ex/damper>,
         <urn:ex/duct-after-damper> ;
     ns1:connectsThrough <urn:ex/duct-after-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/damper> ;
     ns1:mapsTo <urn:ex/out> .
 
@@ -85,7 +85,7 @@
     ns1:cnx <urn:ex/in-connection>,
         <urn:ex/vav-cooling-only> ;
     ns1:connectsThrough <urn:ex/in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/vav-cooling-only> .
 
 <urn:ex/out> a ns1:OutletConnectionPoint ;
@@ -93,7 +93,7 @@
     ns1:cnx <urn:ex/out-connection>,
         <urn:ex/vav-cooling-only> ;
     ns1:connectsThrough <urn:ex/out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/discharge-air-flow> ;
     ns1:isConnectionPointOf <urn:ex/vav-cooling-only> .
 

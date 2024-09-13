@@ -1,15 +1,36 @@
 [
     {
-        "@id": "urn:ex/discharge-air-flow-sensor",
+        "@id": "urn:ex/in",
         "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
+        "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/out"
+                "@id": "urn:ex/in-connection"
             }
         ],
-        "http://data.ashrae.org/standard223#observes": [
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "urn:ex/out-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
             {
                 "@id": "urn:ex/discharge-air-flow"
             }
@@ -27,12 +48,30 @@
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
             }
         ],
         "http://data.ashrae.org/standard223#mapsTo": [
             {
                 "@id": "urn:ex/out"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Ontology"
+        ]
+    },
+    {
+        "@id": "urn:ex/duct-after-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
             }
         ]
     },
@@ -48,129 +87,12 @@
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
             }
         ],
         "http://data.ashrae.org/standard223#mapsTo": [
             {
                 "@id": "urn:ex/in"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/discharge-air-flow",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Discharge"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/vav-cooling-only",
-        "@type": [
-            "http://data.ashrae.org/standard223#SingleDuctTerminal",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#VAV"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/in"
-            },
-            {
-                "@id": "urn:ex/out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#contains": [
-            {
-                "@id": "urn:ex/damper"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/duct-after-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/damper-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
-            {
-                "@id": "urn:ex/damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#commandedByProperty": [
-            {
-                "@id": "urn:ex/damper-command"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/damper-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/out-connection",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/damper-command",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
             }
         ]
     },
@@ -198,23 +120,24 @@
         ]
     },
     {
-        "@id": "urn:ex/out",
+        "@id": "urn:ex/out-connection",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "urn:ex/out-connection"
-            }
+            "http://data.ashrae.org/standard223#Connection"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
             }
+        ]
+    },
+    {
+        "@id": "urn:ex/in-connection",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection"
         ],
-        "http://data.ashrae.org/standard223#hasProperty": [
+        "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "urn:ex/discharge-air-flow"
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
             }
         ]
     },
@@ -226,41 +149,118 @@
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
             }
         ]
     },
     {
-        "@id": "urn:ex/in-connection",
+        "@id": "urn:ex/vav-cooling-only",
         "@type": [
-            "http://data.ashrae.org/standard223#Connection"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
-            }
-        ]
-    },
-    {
-        "@id": "urn:ex/in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
+            "http://data.ashrae.org/standard223#SingleDuctTerminal",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#VAV"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "urn:ex/in-connection"
+                "@id": "urn:ex/in"
+            },
+            {
+                "@id": "urn:ex/out"
             }
         ],
-        "http://data.ashrae.org/standard223#hasMedium": [
+        "http://data.ashrae.org/standard223#contains": [
             {
-                "@id": "http://data.ashrae.org/standard223#Medium-Air"
+                "@id": "urn:ex/damper"
             }
         ]
     },
     {
-        "@id": "urn:ex/",
+        "@id": "urn:ex/damper-command",
         "@type": [
-            "http://www.w3.org/2002/07/owl#Ontology"
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/discharge-air-flow",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Discharge"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/damper-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "urn:ex/damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#commandedByProperty": [
+            {
+                "@id": "urn:ex/damper-command"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/discharge-air-flow-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "urn:ex/out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "urn:ex/discharge-air-flow"
+            }
+        ]
+    },
+    {
+        "@id": "urn:ex/damper-position",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
         ]
     }
 ]

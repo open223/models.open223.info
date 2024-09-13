@@ -72,7 +72,7 @@
     ns1:cnx <urn:ex/damper-in> ;
     ns1:connectsAt <urn:ex/damper-in> ;
     ns1:connectsTo <urn:ex/damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-before-reheat-coil> a ns1:Connection,
         ns1:Duct ;
@@ -80,7 +80,7 @@
     ns1:cnx <urn:ex/reheat-coil-in> ;
     ns1:connectsAt <urn:ex/reheat-coil-in> ;
     ns1:connectsTo <urn:ex/reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/pipe-hot-water-return-before-valve> a ns1:Connection,
         ns1:Pipe ;
@@ -109,7 +109,7 @@
     ns1:cnx <urn:ex/return-air-from-plenum-in> ;
     ns1:connectsAt <urn:ex/return-air-from-plenum-in> ;
     ns1:connectsTo <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/supply-air-flow> a ns1:QuantifiableObservableProperty ;
     rdfs:label "supply air flow" ;
@@ -122,14 +122,14 @@
     ns1:cnx <urn:ex/supply-air-in> ;
     ns1:connectsAt <urn:ex/supply-air-in> ;
     ns1:connectsTo <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/damper-in> a ns1:InletConnectionPoint ;
     rdfs:label "damper in" ;
     ns1:cnx <urn:ex/damper>,
         <urn:ex/duct-before-damper> ;
     ns1:connectsThrough <urn:ex/duct-before-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/damper> ;
     ns1:mapsTo <urn:ex/supply-air-in> .
 
@@ -138,7 +138,7 @@
     ns1:cnx <urn:ex/damper>,
         <urn:ex/duct-after-damper> ;
     ns1:connectsThrough <urn:ex/duct-after-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/damper> .
 
 <urn:ex/duct-after-damper> a ns1:Connection,
@@ -150,7 +150,7 @@
         <urn:ex/junction-in-1> ;
     ns1:connectsFrom <urn:ex/damper> ;
     ns1:connectsTo <urn:ex/junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-after-fan> a ns1:Connection,
         ns1:Duct ;
@@ -161,7 +161,7 @@
         <urn:ex/junction-in-2> ;
     ns1:connectsFrom <urn:ex/fan> ;
     ns1:connectsTo <urn:ex/junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-after-reheat-coil> a ns1:Connection,
         ns1:Duct ;
@@ -172,14 +172,14 @@
         <urn:ex/reheat-coil-air-out> ;
     ns1:connectsFrom <urn:ex/reheat-coil> ;
     ns1:connectsTo <urn:ex/fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/fan-in> a ns1:InletConnectionPoint ;
     rdfs:label "fan in" ;
     ns1:cnx <urn:ex/duct-after-reheat-coil>,
         <urn:ex/fan> ;
     ns1:connectsThrough <urn:ex/duct-after-reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/fan> .
 
 <urn:ex/fan-out> a ns1:OutletConnectionPoint ;
@@ -187,7 +187,7 @@
     ns1:cnx <urn:ex/duct-after-fan>,
         <urn:ex/fan> ;
     ns1:connectsThrough <urn:ex/duct-after-fan> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/fan> .
 
 <urn:ex/junction-in-1> a ns1:InletConnectionPoint ;
@@ -195,7 +195,7 @@
     ns1:cnx <urn:ex/duct-after-damper>,
         <urn:ex/junction> ;
     ns1:connectsThrough <urn:ex/duct-after-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/junction> .
 
 <urn:ex/junction-in-2> a ns1:InletConnectionPoint ;
@@ -203,7 +203,7 @@
     ns1:cnx <urn:ex/duct-after-fan>,
         <urn:ex/junction> ;
     ns1:connectsThrough <urn:ex/duct-after-fan> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/junction> .
 
 <urn:ex/junction-out> a ns1:OutletConnectionPoint ;
@@ -211,7 +211,7 @@
     ns1:cnx <urn:ex/junction>,
         <urn:ex/out-connection> ;
     ns1:connectsThrough <urn:ex/out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/junction> ;
     ns1:mapsTo <urn:ex/out> .
 
@@ -223,7 +223,7 @@
         <urn:ex/out> ;
     ns1:connectsFrom <urn:ex/junction>,
         <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/pipe-hot-water-return-after-valve> a ns1:Connection,
         ns1:Pipe ;
@@ -241,7 +241,7 @@
     ns1:cnx <urn:ex/duct-after-reheat-coil>,
         <urn:ex/reheat-coil> ;
     ns1:connectsThrough <urn:ex/duct-after-reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/reheat-coil> .
 
 <urn:ex/reheat-coil-in> a ns1:InletConnectionPoint ;
@@ -249,7 +249,7 @@
     ns1:cnx <urn:ex/duct-before-reheat-coil>,
         <urn:ex/reheat-coil> ;
     ns1:connectsThrough <urn:ex/duct-before-reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/reheat-coil> ;
     ns1:mapsTo <urn:ex/return-air-from-plenum-in> .
 
@@ -290,7 +290,7 @@
     ns1:cnx <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan>,
         <urn:ex/return-air-from-plenum-in-connection> ;
     ns1:connectsThrough <urn:ex/return-air-from-plenum-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> .
 
 <urn:ex/out> a ns1:OutletConnectionPoint ;
@@ -298,7 +298,7 @@
     ns1:cnx <urn:ex/out-connection>,
         <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> ;
     ns1:connectsThrough <urn:ex/out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/discharge-air-temp> ;
     ns1:isConnectionPointOf <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> .
 
@@ -307,7 +307,7 @@
     ns1:cnx <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan>,
         <urn:ex/supply-air-in-connection> ;
     ns1:connectsThrough <urn:ex/supply-air-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/supply-air-flow> ;
     ns1:isConnectionPointOf <urn:ex/parallel-fan-powered-terminal-unit-variable-volume-fan> .
 
@@ -369,7 +369,7 @@
     ns1:hasConnectionPoint <urn:ex/junction-in-1>,
         <urn:ex/junction-in-2>,
         <urn:ex/junction-out> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/reheat-coil> a ns1:HeatingCoil,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;

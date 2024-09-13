@@ -283,7 +283,7 @@
     ns1:cnx <urn:ex/clg-coil>,
         <urn:ex/duct-after-htg-coil> ;
     ns1:connectsThrough <urn:ex/duct-after-htg-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/clg-coil> .
 
 <urn:ex/clg-coil-air-out> a ns1:OutletConnectionPoint ;
@@ -291,7 +291,7 @@
     ns1:cnx <urn:ex/clg-coil>,
         <urn:ex/duct-after-clg-coil> ;
     ns1:connectsThrough <urn:ex/duct-after-clg-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/clg-coil> .
 
 <urn:ex/clg-coil-valve-in> a ns1:InletConnectionPoint ;
@@ -335,7 +335,7 @@
         <urn:ex/sa-fan-in> ;
     ns1:connectsFrom <urn:ex/clg-coil> ;
     ns1:connectsTo <urn:ex/sa-fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-after-economizer-oa-damper> a ns1:Connection,
         ns1:Duct ;
@@ -346,7 +346,7 @@
         <urn:ex/outside-supply-junction-in-3> ;
     ns1:connectsFrom <urn:ex/economizer-oa-damper> ;
     ns1:connectsTo <urn:ex/outside-supply-junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-after-filter> a ns1:Connection,
         ns1:Duct ;
@@ -357,7 +357,7 @@
         <urn:ex/htg-coil-air-in> ;
     ns1:connectsFrom <urn:ex/filter> ;
     ns1:connectsTo <urn:ex/htg-coil> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-after-minimum-oa-damper> a ns1:Connection,
         ns1:Duct ;
@@ -368,7 +368,7 @@
         <urn:ex/outside-supply-junction-in-2> ;
     ns1:connectsFrom <urn:ex/minimum-oa-damper> ;
     ns1:connectsTo <urn:ex/outside-supply-junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-after-ra-damper> a ns1:Connection,
         ns1:Duct ;
@@ -379,7 +379,7 @@
         <urn:ex/ra-damper-out> ;
     ns1:connectsFrom <urn:ex/ra-damper> ;
     ns1:connectsTo <urn:ex/outside-supply-junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-before-ea-damper> a ns1:Connection,
         ns1:Duct ;
@@ -390,7 +390,7 @@
         <urn:ex/return-exhaust-junction-out-1> ;
     ns1:connectsFrom <urn:ex/return-exhaust-junction> ;
     ns1:connectsTo <urn:ex/ea-damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-before-economizer-oa-damper> a ns1:Connection,
         ns1:Duct ;
@@ -401,7 +401,7 @@
         <urn:ex/outside-air-junction-out-2> ;
     ns1:connectsFrom <urn:ex/outside-air-junction> ;
     ns1:connectsTo <urn:ex/economizer-oa-damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-before-filter> a ns1:Connection,
         ns1:Duct ;
@@ -412,7 +412,7 @@
         <urn:ex/outside-supply-junction-out> ;
     ns1:connectsFrom <urn:ex/outside-supply-junction> ;
     ns1:connectsTo <urn:ex/filter> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-before-minimum-oa-damper> a ns1:Connection,
         ns1:Duct ;
@@ -423,7 +423,7 @@
         <urn:ex/outside-air-junction-out-1> ;
     ns1:connectsFrom <urn:ex/outside-air-junction> ;
     ns1:connectsTo <urn:ex/minimum-oa-damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-before-ra-damper> a ns1:Connection,
         ns1:Duct ;
@@ -434,14 +434,14 @@
         <urn:ex/return-exhaust-junction-out-2> ;
     ns1:connectsFrom <urn:ex/return-exhaust-junction> ;
     ns1:connectsTo <urn:ex/ra-damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/ea-damper-in> a ns1:InletConnectionPoint ;
     rdfs:label "ea damper in" ;
     ns1:cnx <urn:ex/duct-before-ea-damper>,
         <urn:ex/ea-damper> ;
     ns1:connectsThrough <urn:ex/duct-before-ea-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/ea-damper> .
 
 <urn:ex/ea-damper-out> a ns1:OutletConnectionPoint ;
@@ -449,7 +449,7 @@
     ns1:cnx <urn:ex/ea-damper>,
         <urn:ex/ea-out-connection> ;
     ns1:connectsThrough <urn:ex/ea-out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/ea-damper> ;
     ns1:mapsTo <urn:ex/ea-out> .
 
@@ -461,14 +461,14 @@
         <urn:ex/ea-out> ;
     ns1:connectsFrom <urn:ex/ea-damper>,
         <urn:ex/multiple-zone-ahu> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/economizer-oa-damper-in> a ns1:InletConnectionPoint ;
     rdfs:label "economizer oa damper in" ;
     ns1:cnx <urn:ex/duct-before-economizer-oa-damper>,
         <urn:ex/economizer-oa-damper> ;
     ns1:connectsThrough <urn:ex/duct-before-economizer-oa-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/economizer-oa-damper> .
 
 <urn:ex/economizer-oa-damper-out> a ns1:OutletConnectionPoint ;
@@ -476,7 +476,7 @@
     ns1:cnx <urn:ex/duct-after-economizer-oa-damper>,
         <urn:ex/economizer-oa-damper> ;
     ns1:connectsThrough <urn:ex/duct-after-economizer-oa-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/economizer-oa-damper> .
 
 <urn:ex/htg-coil-air-in> a ns1:InletConnectionPoint ;
@@ -484,7 +484,7 @@
     ns1:cnx <urn:ex/duct-after-filter>,
         <urn:ex/htg-coil> ;
     ns1:connectsThrough <urn:ex/duct-after-filter> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/htg-coil> .
 
 <urn:ex/htg-coil-air-out> a ns1:OutletConnectionPoint ;
@@ -492,7 +492,7 @@
     ns1:cnx <urn:ex/duct-after-htg-coil>,
         <urn:ex/htg-coil> ;
     ns1:connectsThrough <urn:ex/duct-after-htg-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/heat-coil-air-temp> ;
     ns1:isConnectionPointOf <urn:ex/htg-coil> .
 
@@ -533,7 +533,7 @@
     ns1:cnx <urn:ex/duct-before-minimum-oa-damper>,
         <urn:ex/minimum-oa-damper> ;
     ns1:connectsThrough <urn:ex/duct-before-minimum-oa-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/minimum-oa-damper> .
 
 <urn:ex/oa-in-connection> a ns1:Connection ;
@@ -544,14 +544,14 @@
         <urn:ex/outside-air-junction-in> ;
     ns1:connectsTo <urn:ex/multiple-zone-ahu>,
         <urn:ex/outside-air-junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/outside-air-junction-in> a ns1:InletConnectionPoint ;
     rdfs:label "outside air junction in" ;
     ns1:cnx <urn:ex/oa-in-connection>,
         <urn:ex/outside-air-junction> ;
     ns1:connectsThrough <urn:ex/oa-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/outside-air-junction> ;
     ns1:mapsTo <urn:ex/oa-in> .
 
@@ -560,7 +560,7 @@
     ns1:cnx <urn:ex/duct-before-minimum-oa-damper>,
         <urn:ex/outside-air-junction> ;
     ns1:connectsThrough <urn:ex/duct-before-minimum-oa-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/outside-air-junction> .
 
 <urn:ex/outside-air-junction-out-2> a ns1:OutletConnectionPoint ;
@@ -568,7 +568,7 @@
     ns1:cnx <urn:ex/duct-before-economizer-oa-damper>,
         <urn:ex/outside-air-junction> ;
     ns1:connectsThrough <urn:ex/duct-before-economizer-oa-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/outside-air-junction> .
 
 <urn:ex/outside-supply-junction-in-1> a ns1:InletConnectionPoint ;
@@ -576,7 +576,7 @@
     ns1:cnx <urn:ex/duct-after-ra-damper>,
         <urn:ex/outside-supply-junction> ;
     ns1:connectsThrough <urn:ex/duct-after-ra-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
 
 <urn:ex/outside-supply-junction-in-2> a ns1:InletConnectionPoint ;
@@ -584,7 +584,7 @@
     ns1:cnx <urn:ex/duct-after-minimum-oa-damper>,
         <urn:ex/outside-supply-junction> ;
     ns1:connectsThrough <urn:ex/duct-after-minimum-oa-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
 
 <urn:ex/outside-supply-junction-in-3> a ns1:InletConnectionPoint ;
@@ -592,7 +592,7 @@
     ns1:cnx <urn:ex/duct-after-economizer-oa-damper>,
         <urn:ex/outside-supply-junction> ;
     ns1:connectsThrough <urn:ex/duct-after-economizer-oa-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
 
 <urn:ex/outside-supply-junction-out> a ns1:OutletConnectionPoint ;
@@ -600,7 +600,7 @@
     ns1:cnx <urn:ex/duct-before-filter>,
         <urn:ex/outside-supply-junction> ;
     ns1:connectsThrough <urn:ex/duct-before-filter> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
 
 <urn:ex/pipe-chilled-water-return-after-valve> a ns1:Connection,
@@ -630,7 +630,7 @@
     ns1:cnx <urn:ex/duct-before-ra-damper>,
         <urn:ex/ra-damper> ;
     ns1:connectsThrough <urn:ex/duct-before-ra-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/ra-damper> .
 
 <urn:ex/ra-damper-out> a ns1:OutletConnectionPoint ;
@@ -638,7 +638,7 @@
     ns1:cnx <urn:ex/duct-after-ra-damper>,
         <urn:ex/ra-damper> ;
     ns1:connectsThrough <urn:ex/duct-after-ra-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/ra-damper> .
 
 <urn:ex/ra-fan-in> a ns1:InletConnectionPoint ;
@@ -646,7 +646,7 @@
     ns1:cnx <urn:ex/ra-fan>,
         <urn:ex/ra-in-connection> ;
     ns1:connectsThrough <urn:ex/ra-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/ra-fan> ;
     ns1:mapsTo <urn:ex/ra-in> .
 
@@ -655,7 +655,7 @@
     ns1:cnx <urn:ex/duct-after-ra-fan>,
         <urn:ex/ra-fan> ;
     ns1:connectsThrough <urn:ex/duct-after-ra-fan> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/ra-fan-discharge-static-pressure> ;
     ns1:isConnectionPointOf <urn:ex/ra-fan> .
 
@@ -667,14 +667,14 @@
         <urn:ex/ra-in> ;
     ns1:connectsTo <urn:ex/multiple-zone-ahu>,
         <urn:ex/ra-fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/return-exhaust-junction-in> a ns1:InletConnectionPoint ;
     rdfs:label "return exhaust junction in" ;
     ns1:cnx <urn:ex/duct-after-ra-fan>,
         <urn:ex/return-exhaust-junction> ;
     ns1:connectsThrough <urn:ex/duct-after-ra-fan> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/return-exhaust-junction> .
 
 <urn:ex/return-exhaust-junction-out-1> a ns1:OutletConnectionPoint ;
@@ -682,7 +682,7 @@
     ns1:cnx <urn:ex/duct-before-ea-damper>,
         <urn:ex/return-exhaust-junction> ;
     ns1:connectsThrough <urn:ex/duct-before-ea-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/return-exhaust-junction> .
 
 <urn:ex/return-exhaust-junction-out-2> a ns1:OutletConnectionPoint ;
@@ -690,7 +690,7 @@
     ns1:cnx <urn:ex/duct-before-ra-damper>,
         <urn:ex/return-exhaust-junction> ;
     ns1:connectsThrough <urn:ex/duct-before-ra-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/return-exhaust-junction> .
 
 <urn:ex/sa-fan-in> a ns1:InletConnectionPoint ;
@@ -698,7 +698,7 @@
     ns1:cnx <urn:ex/duct-after-clg-coil>,
         <urn:ex/sa-fan> ;
     ns1:connectsThrough <urn:ex/duct-after-clg-coil> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/sa-fan> .
 
 <urn:ex/sa-fan-out> a ns1:OutletConnectionPoint ;
@@ -706,7 +706,7 @@
     ns1:cnx <urn:ex/sa-fan>,
         <urn:ex/sa-out-connection> ;
     ns1:connectsThrough <urn:ex/sa-out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/sa-fan> ;
     ns1:mapsTo <urn:ex/sa-out> .
 
@@ -719,7 +719,7 @@
         <urn:ex/htg-coil-air-out> ;
     ns1:connectsFrom <urn:ex/htg-coil> ;
     ns1:connectsTo <urn:ex/clg-coil> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-after-ra-fan> a ns1:Connection,
         ns1:Duct ;
@@ -730,14 +730,14 @@
         <urn:ex/return-exhaust-junction-in> ;
     ns1:connectsFrom <urn:ex/ra-fan> ;
     ns1:connectsTo <urn:ex/return-exhaust-junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/ea-out> a ns1:OutletConnectionPoint ;
     rdfs:label "ea out" ;
     ns1:cnx <urn:ex/ea-out-connection>,
         <urn:ex/multiple-zone-ahu> ;
     ns1:connectsThrough <urn:ex/ea-out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
 
 <urn:ex/oa-in> a ns1:InletConnectionPoint ;
@@ -745,7 +745,7 @@
     ns1:cnx <urn:ex/multiple-zone-ahu>,
         <urn:ex/oa-in-connection> ;
     ns1:connectsThrough <urn:ex/oa-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
 
 <urn:ex/sa-out-connection> a ns1:Connection ;
@@ -756,14 +756,14 @@
         <urn:ex/sa-out> ;
     ns1:connectsFrom <urn:ex/multiple-zone-ahu>,
         <urn:ex/sa-fan> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/filter-out> a ns1:OutletConnectionPoint ;
     rdfs:label "filter out" ;
     ns1:cnx <urn:ex/duct-after-filter>,
         <urn:ex/filter> ;
     ns1:connectsThrough <urn:ex/duct-after-filter> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/filter> .
 
 <urn:ex/minimum-oa-damper-out> a ns1:OutletConnectionPoint ;
@@ -771,7 +771,7 @@
     ns1:cnx <urn:ex/duct-after-minimum-oa-damper>,
         <urn:ex/minimum-oa-damper> ;
     ns1:connectsThrough <urn:ex/duct-after-minimum-oa-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/oa-flow>,
         <urn:ex/oa-temp> ;
     ns1:isConnectionPointOf <urn:ex/minimum-oa-damper> .
@@ -781,7 +781,7 @@
     ns1:cnx <urn:ex/multiple-zone-ahu>,
         <urn:ex/ra-in-connection> ;
     ns1:connectsThrough <urn:ex/ra-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/ra-temp> ;
     ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
 
@@ -790,7 +790,7 @@
     ns1:cnx <urn:ex/multiple-zone-ahu>,
         <urn:ex/sa-out-connection> ;
     ns1:connectsThrough <urn:ex/sa-out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/sa-temp>,
         <urn:ex/supply-duct-static-pressure> ;
     ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
@@ -809,7 +809,7 @@
     ns1:cnx <urn:ex/duct-before-filter>,
         <urn:ex/filter> ;
     ns1:connectsThrough <urn:ex/duct-before-filter> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/ma-temp> ;
     ns1:isConnectionPointOf <urn:ex/filter> .
 
@@ -917,7 +917,7 @@
     ns1:hasConnectionPoint <urn:ex/outside-air-junction-in>,
         <urn:ex/outside-air-junction-out-1>,
         <urn:ex/outside-air-junction-out-2> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/return-exhaust-junction> a ns1:Junction ;
     rdfs:label "return exhaust junction" ;
@@ -927,7 +927,7 @@
     ns1:hasConnectionPoint <urn:ex/return-exhaust-junction-in>,
         <urn:ex/return-exhaust-junction-out-1>,
         <urn:ex/return-exhaust-junction-out-2> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/multiple-zone-ahu> a ns1:AirHandlingUnit,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#MultiZoneVAVAirHandlingUnit> ;
@@ -991,5 +991,5 @@
         <urn:ex/outside-supply-junction-in-2>,
         <urn:ex/outside-supply-junction-in-3>,
         <urn:ex/outside-supply-junction-out> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 

@@ -41,7 +41,7 @@
     ns1:cnx <urn:ex/cold-deck-in> ;
     ns1:connectsAt <urn:ex/cold-deck-in> ;
     ns1:connectsTo <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/discharge-air-flow> a ns1:QuantifiableObservableProperty ;
     rdfs:label "discharge air flow" ;
@@ -55,7 +55,7 @@
     ns1:cnx <urn:ex/cold-deck-damper-in> ;
     ns1:connectsAt <urn:ex/cold-deck-damper-in> ;
     ns1:connectsTo <urn:ex/cold-deck-damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-before-hot-deck-damper> a ns1:Connection,
         ns1:Duct ;
@@ -63,7 +63,7 @@
     ns1:cnx <urn:ex/hot-deck-damper-in> ;
     ns1:connectsAt <urn:ex/hot-deck-damper-in> ;
     ns1:connectsTo <urn:ex/hot-deck-damper> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/hot-deck-damper-command> a ns1:QuantifiableActuatableProperty ;
     rdfs:label "hot deck damper command" ;
@@ -76,14 +76,14 @@
     ns1:cnx <urn:ex/hot-deck-in> ;
     ns1:connectsAt <urn:ex/hot-deck-in> ;
     ns1:connectsTo <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/cold-deck-damper-in> a ns1:InletConnectionPoint ;
     rdfs:label "cold deck damper in" ;
     ns1:cnx <urn:ex/cold-deck-damper>,
         <urn:ex/duct-before-cold-deck-damper> ;
     ns1:connectsThrough <urn:ex/duct-before-cold-deck-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/cold-deck-damper> ;
     ns1:mapsTo <urn:ex/cold-deck-in> .
 
@@ -92,7 +92,7 @@
     ns1:cnx <urn:ex/cold-deck-damper>,
         <urn:ex/duct-after-cold-deck-damper> ;
     ns1:connectsThrough <urn:ex/duct-after-cold-deck-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/cold-deck-damper> .
 
 <urn:ex/duct-after-cold-deck-damper> a ns1:Connection,
@@ -104,7 +104,7 @@
         <urn:ex/junction-in-2> ;
     ns1:connectsFrom <urn:ex/cold-deck-damper> ;
     ns1:connectsTo <urn:ex/junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/duct-after-hot-deck-damper> a ns1:Connection,
         ns1:Duct ;
@@ -115,14 +115,14 @@
         <urn:ex/junction-in-1> ;
     ns1:connectsFrom <urn:ex/hot-deck-damper> ;
     ns1:connectsTo <urn:ex/junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/hot-deck-damper-in> a ns1:InletConnectionPoint ;
     rdfs:label "hot deck damper in" ;
     ns1:cnx <urn:ex/duct-before-hot-deck-damper>,
         <urn:ex/hot-deck-damper> ;
     ns1:connectsThrough <urn:ex/duct-before-hot-deck-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/hot-deck-damper> ;
     ns1:mapsTo <urn:ex/hot-deck-in> .
 
@@ -131,7 +131,7 @@
     ns1:cnx <urn:ex/duct-after-hot-deck-damper>,
         <urn:ex/hot-deck-damper> ;
     ns1:connectsThrough <urn:ex/duct-after-hot-deck-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/hot-deck-damper> .
 
 <urn:ex/junction-in-1> a ns1:InletConnectionPoint ;
@@ -139,7 +139,7 @@
     ns1:cnx <urn:ex/duct-after-hot-deck-damper>,
         <urn:ex/junction> ;
     ns1:connectsThrough <urn:ex/duct-after-hot-deck-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/junction> .
 
 <urn:ex/junction-in-2> a ns1:InletConnectionPoint ;
@@ -147,7 +147,7 @@
     ns1:cnx <urn:ex/duct-after-cold-deck-damper>,
         <urn:ex/junction> ;
     ns1:connectsThrough <urn:ex/duct-after-cold-deck-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/junction> .
 
 <urn:ex/junction-out> a ns1:OutletConnectionPoint ;
@@ -155,7 +155,7 @@
     ns1:cnx <urn:ex/junction>,
         <urn:ex/out-connection> ;
     ns1:connectsThrough <urn:ex/out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/junction> ;
     ns1:mapsTo <urn:ex/out> .
 
@@ -167,14 +167,14 @@
         <urn:ex/out> ;
     ns1:connectsFrom <urn:ex/dual-duct-terminal-unit-with-discharge-sensor>,
         <urn:ex/junction> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/cold-deck-in> a ns1:InletConnectionPoint ;
     rdfs:label "cold deck in" ;
     ns1:cnx <urn:ex/cold-deck-in-connection>,
         <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> ;
     ns1:connectsThrough <urn:ex/cold-deck-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> .
 
 <urn:ex/hot-deck-in> a ns1:InletConnectionPoint ;
@@ -182,7 +182,7 @@
     ns1:cnx <urn:ex/dual-duct-terminal-unit-with-discharge-sensor>,
         <urn:ex/hot-deck-in-connection> ;
     ns1:connectsThrough <urn:ex/hot-deck-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> .
 
 <urn:ex/out> a ns1:OutletConnectionPoint ;
@@ -190,7 +190,7 @@
     ns1:cnx <urn:ex/dual-duct-terminal-unit-with-discharge-sensor>,
         <urn:ex/out-connection> ;
     ns1:connectsThrough <urn:ex/out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/discharge-air-flow> ;
     ns1:isConnectionPointOf <urn:ex/dual-duct-terminal-unit-with-discharge-sensor> .
 
@@ -239,5 +239,5 @@
     ns1:hasConnectionPoint <urn:ex/junction-in-1>,
         <urn:ex/junction-in-2>,
         <urn:ex/junction-out> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 

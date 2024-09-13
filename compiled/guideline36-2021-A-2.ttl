@@ -68,7 +68,7 @@
         <urn:ex/damper-in> ;
     ns1:connectsTo <urn:ex/damper>,
         <urn:ex/vav-reheat> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/air-out-connection> a ns1:Connection,
         ns1:Duct ;
@@ -79,14 +79,14 @@
         <urn:ex/reheat-coil-air-out> ;
     ns1:connectsFrom <urn:ex/reheat-coil>,
         <urn:ex/vav-reheat> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/damper-in> a ns1:InletConnectionPoint ;
     rdfs:label "damper in" ;
     ns1:cnx <urn:ex/air-in-connection>,
         <urn:ex/damper> ;
     ns1:connectsThrough <urn:ex/air-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/damper> ;
     ns1:mapsTo <urn:ex/air-in> .
 
@@ -95,7 +95,7 @@
     ns1:cnx <urn:ex/damper>,
         <urn:ex/duct-after-damper> ;
     ns1:connectsThrough <urn:ex/duct-after-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/damper> .
 
 <urn:ex/duct-after-damper> a ns1:Connection,
@@ -107,7 +107,7 @@
         <urn:ex/reheat-coil-air-in> ;
     ns1:connectsFrom <urn:ex/damper> ;
     ns1:connectsTo <urn:ex/reheat-coil> ;
-    ns1:hasMedium ns1:Medium-Air .
+    ns1:hasMedium ns1:Fluid-Air .
 
 <urn:ex/hot-water-in-connection> a ns1:Connection,
         ns1:Pipe ;
@@ -147,7 +147,7 @@
     ns1:cnx <urn:ex/duct-after-damper>,
         <urn:ex/reheat-coil> ;
     ns1:connectsThrough <urn:ex/duct-after-damper> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/reheat-coil> .
 
 <urn:ex/reheat-coil-air-out> a ns1:OutletConnectionPoint ;
@@ -155,7 +155,7 @@
     ns1:cnx <urn:ex/air-out-connection>,
         <urn:ex/reheat-coil> ;
     ns1:connectsThrough <urn:ex/air-out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/reheat-coil> ;
     ns1:mapsTo <urn:ex/air-out> .
 
@@ -214,7 +214,7 @@
     ns1:cnx <urn:ex/air-in-connection>,
         <urn:ex/vav-reheat> ;
     ns1:connectsThrough <urn:ex/air-in-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <urn:ex/vav-reheat> .
 
 <urn:ex/air-out> a ns1:OutletConnectionPoint ;
@@ -222,7 +222,7 @@
     ns1:cnx <urn:ex/air-out-connection>,
         <urn:ex/vav-reheat> ;
     ns1:connectsThrough <urn:ex/air-out-connection> ;
-    ns1:hasMedium ns1:Medium-Air ;
+    ns1:hasMedium ns1:Fluid-Air ;
     ns1:hasProperty <urn:ex/discharge-air-flow>,
         <urn:ex/discharge-air-temp> ;
     ns1:isConnectionPointOf <urn:ex/vav-reheat> .

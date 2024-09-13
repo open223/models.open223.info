@@ -110,11 +110,11 @@ bldg:clg-coil a s223:CoolingCoil,
 
 bldg:clg-coil-air-in a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-after-htg-coil ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:clg-coil-air-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-after-clg-coil ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:clg-coil-valve-in a s223:InletConnectionPoint ;
     s223:cnx bldg:pipe-chilled-water-return-before-valve ;
@@ -138,11 +138,11 @@ bldg:clg-coil-water-out a s223:OutletConnectionPoint ;
 
 bldg:ea-damper-in a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-before-ea-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:ea-damper-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:ea-out-connection ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:mapsTo bldg:ea-out .
 
 bldg:ea-damper-position a s223:QuantifiableObservableProperty ;
@@ -151,11 +151,11 @@ bldg:ea-damper-position a s223:QuantifiableObservableProperty ;
 
 bldg:economizer-oa-damper-in a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-before-economizer-oa-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:economizer-oa-damper-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-after-economizer-oa-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:economizer-oa-damper-position a s223:QuantifiableObservableProperty ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
@@ -177,11 +177,11 @@ bldg:htg-coil a s223:HeatingCoil,
 
 bldg:htg-coil-air-in a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-after-filter ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:htg-coil-air-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-after-htg-coil ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:hasProperty bldg:heat-coil-air-temp .
 
 bldg:htg-coil-valve-in a s223:InletConnectionPoint ;
@@ -206,7 +206,7 @@ bldg:htg-coil-water-out a s223:OutletConnectionPoint ;
 
 bldg:minimum-oa-damper-in a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-before-minimum-oa-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:minimum-oa-damper-position a s223:QuantifiableObservableProperty ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
@@ -216,43 +216,43 @@ bldg:outside-air-junction a s223:Junction ;
     s223:cnx bldg:outside-air-junction-in,
         bldg:outside-air-junction-out-1,
         bldg:outside-air-junction-out-2 ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:outside-air-junction-in a s223:InletConnectionPoint ;
     s223:cnx bldg:oa-in-connection ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:mapsTo bldg:oa-in .
 
 bldg:outside-air-junction-out-1 a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-before-minimum-oa-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:outside-air-junction-out-2 a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-before-economizer-oa-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:outside-supply-junction a s223:Junction ;
     s223:cnx bldg:outside-supply-junction-in-1,
         bldg:outside-supply-junction-in-2,
         bldg:outside-supply-junction-in-3,
         bldg:outside-supply-junction-out ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:outside-supply-junction-in-1 a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-after-ra-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:outside-supply-junction-in-2 a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-after-minimum-oa-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:outside-supply-junction-in-3 a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-after-economizer-oa-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:outside-supply-junction-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-before-filter ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:pipe-chilled-water-return-before-valve a s223:Connection,
         s223:Pipe ;
@@ -272,11 +272,11 @@ bldg:pipe-hot-water-supply a s223:Connection,
 
 bldg:ra-damper-in a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-before-ra-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:ra-damper-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-after-ra-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:ra-damper-position a s223:QuantifiableObservableProperty ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
@@ -284,12 +284,12 @@ bldg:ra-damper-position a s223:QuantifiableObservableProperty ;
 
 bldg:ra-fan-in a s223:InletConnectionPoint ;
     s223:cnx bldg:ra-in-connection ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:mapsTo bldg:ra-in .
 
 bldg:ra-fan-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-after-ra-fan ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:hasProperty bldg:ra-fan-discharge-static-pressure .
 
 bldg:ra-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
@@ -307,27 +307,27 @@ bldg:return-exhaust-junction a s223:Junction ;
     s223:cnx bldg:return-exhaust-junction-in,
         bldg:return-exhaust-junction-out-1,
         bldg:return-exhaust-junction-out-2 ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:return-exhaust-junction-in a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-after-ra-fan ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:return-exhaust-junction-out-1 a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-before-ea-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:return-exhaust-junction-out-2 a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-before-ra-damper ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:sa-fan-in a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-after-clg-coil ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:sa-fan-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:sa-out-connection ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:mapsTo bldg:sa-out .
 
 bldg:sa-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
@@ -356,43 +356,43 @@ bldg:clg-coil-valve-command a s223:QuantifiableActuatableProperty ;
 
 bldg:duct-after-clg-coil a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-after-economizer-oa-damper a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-after-filter a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-after-minimum-oa-damper a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-after-ra-damper a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-before-ea-damper a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-before-economizer-oa-damper a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-before-filter a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-before-minimum-oa-damper a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-before-ra-damper a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:ea-damper a s223:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
@@ -409,10 +409,10 @@ bldg:ea-damper-command a s223:QuantifiableActuatableProperty ;
 
 bldg:ea-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:ea-out-connection ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:ea-out-connection a s223:Connection ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:economizer-oa-damper a s223:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
@@ -471,10 +471,10 @@ bldg:oa-flow a s223:QuantifiableObservableProperty ;
 
 bldg:oa-in a s223:InletConnectionPoint ;
     s223:cnx bldg:oa-in-connection ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:oa-in-connection a s223:Connection ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:oa-temp a s223:QuantifiableObservableProperty ;
     s223:hasAspect s223:Role-Outside ;
@@ -521,7 +521,7 @@ bldg:ra-flow a s223:QuantifiableObservableProperty ;
     qudt:hasUnit unit:FT3-PER-MIN .
 
 bldg:ra-in-connection a s223:Connection ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:ra-temp a s223:QuantifiableObservableProperty ;
     s223:hasAspect s223:Role-Return ;
@@ -554,38 +554,38 @@ bldg:supply-duct-static-pressure a s223:QuantifiableObservableProperty ;
 
 bldg:duct-after-htg-coil a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-after-ra-fan a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:filter-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-after-filter ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:minimum-oa-damper-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-after-minimum-oa-damper ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:hasProperty bldg:oa-flow,
         bldg:oa-temp .
 
 bldg:ra-in a s223:InletConnectionPoint ;
     s223:cnx bldg:ra-in-connection ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:hasProperty bldg:ra-temp .
 
 bldg:sa-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:sa-out-connection ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:hasProperty bldg:sa-temp,
         bldg:supply-duct-static-pressure .
 
 bldg:sa-out-connection a s223:Connection ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:filter-in a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-before-filter ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:hasProperty bldg:ma-temp .
 
