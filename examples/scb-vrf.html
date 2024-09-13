@@ -182,11 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="pnnl-bdg3-2.html">PNNL Example Building 3 Model 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lbnl-bdg4-1.html">LBNL Example Building 4 Model 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nrel-example.html">NREL Example Building</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NIST-HPL.html">Schematic view</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="NIST-HPL.html">Heat Pump Laboratory (HPL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NIST-IBAL.html">Schematic view</a></li>
 
 
@@ -596,31 +592,31 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns1: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns4: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns3: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns4: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns4:00737 ;
+            sh:focusNode ns3:00623 ;
             sh:resultMessage &quot;s223: Number of inlets 1 are not equivalent with number of outlets 3.&quot; ;
-            sh:resultPath ns1:hasConnectionPoint ;
+            sh:resultPath ns4:hasConnectionPoint ;
             sh:resultSeverity sh:Warning ;
-            sh:sourceConstraint _:n512f1ff1a6db44e2b4b11ef86da5bd87b5 ;
+            sh:sourceConstraint _:n0720ebd9f0144c0598660ce249eec5c6b9 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/169964f9&gt; ],
+            sh:sourceShape &lt;urn:well-known/38e98ad7&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode ns4:01178 ;
+            sh:focusNode ns3:00957 ;
             sh:resultMessage &quot;s223: A DomainSpace must be enclosed by a PhysicalSpace.&quot; ;
-            sh:resultPath [ sh:inversePath ns1:encloses ] ;
+            sh:resultPath [ sh:inversePath ns4:encloses ] ;
             sh:resultSeverity sh:Info ;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-vrf#00027
-  - http://data.ashrae.org/standard223/data/scb-vrf#00027 needs between 1 and 1 uses of path http://data.ashrae.org/standard223#hasObservationLocation
-  - http://data.ashrae.org/standard223/data/scb-vrf#00027 needs between 1 and 1 instances of http://data.ashrae.org/standard223#ObservableProperty on path http://data.ashrae.org/standard223#observes
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-vrf#00023
+  - http://data.ashrae.org/standard223/data/scb-vrf#00023 needs between 1 and 1 instances of http://data.ashrae.org/standard223#ObservableProperty on path http://data.ashrae.org/standard223#observes
+  - http://data.ashrae.org/standard223/data/scb-vrf#00023 needs between 1 and 1 uses of path http://data.ashrae.org/standard223#hasObservationLocation
 </pre></div>
 </div>
 </div>

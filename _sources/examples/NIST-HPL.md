@@ -1,4 +1,17 @@
----Heat Pump Laboratory (HPL)
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+
+#  Heat Pump Laboratory (HPL)
 
 The HPL is a lab at NIST that consists of a bi-directional indoor and outdoor air system.
 
@@ -15,8 +28,7 @@ The HPL is a lab at NIST that consists of a bi-directional indoor and outdoor ai
 
 ## Model Components
 | Parent Class | Class | Instances |
-|---
----------|-------|----------------|
+|------------|-------|----------------|
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [TemperatureSensor](https://explore.open223.info/s223/TemperatureSensor.html) | 34 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [PressureSensor](https://explore.open223.info/s223/PressureSensor.html) | 8 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Sensor](https://explore.open223.info/s223/Sensor.html) | 3 |
