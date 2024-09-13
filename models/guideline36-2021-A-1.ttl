@@ -23,12 +23,12 @@ bldg:vav-cooling-only a s223:SingleDuctTerminal,
 
 bldg:damper-in a s223:InletConnectionPoint ;
     s223:cnx bldg:duct-before-damper ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:mapsTo bldg:in .
 
 bldg:damper-out a s223:OutletConnectionPoint ;
     s223:cnx bldg:duct-after-damper ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:mapsTo bldg:out .
 
 bldg:damper-position a s223:QuantifiableObservableProperty ;
@@ -37,17 +37,17 @@ bldg:damper-position a s223:QuantifiableObservableProperty ;
 
 bldg:duct-after-damper a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:duct-before-damper a s223:Connection,
         s223:Duct ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:in-connection a s223:Connection ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:out-connection a s223:Connection ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:damper a s223:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
@@ -68,10 +68,10 @@ bldg:discharge-air-flow a s223:QuantifiableObservableProperty ;
 
 bldg:in a s223:InletConnectionPoint ;
     s223:cnx bldg:in-connection ;
-    s223:hasMedium s223:Medium-Air .
+    s223:hasMedium s223:Fluid-Air .
 
 bldg:out a s223:OutletConnectionPoint ;
     s223:cnx bldg:out-connection ;
-    s223:hasMedium s223:Medium-Air ;
+    s223:hasMedium s223:Fluid-Air ;
     s223:hasProperty bldg:discharge-air-flow .
 
