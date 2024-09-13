@@ -1,5 +1,5 @@
-@prefix ns1: <http://qudt.org/schema/qudt/> .
-@prefix ns2: <http://data.ashrae.org/standard223#> .
+@prefix ns1: <http://data.ashrae.org/standard223#> .
+@prefix ns2: <http://qudt.org/schema/qudt/> .
 @prefix ns3: <https://brickschema.org/schema/Brick/ref#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -8,1348 +8,1348 @@
 <http://example.org/HPL> a owl:Ontology ;
     owl:versionInfo "Created with TopBraid Composer" .
 
-<http://example.org/HPL#ASHP_Func> a ns2:Function ;
+<http://example.org/HPL#ASHP_Func> a ns1:Function ;
     rdfs:label "ASHP Func" ;
-    ns2:hasInput <http://example.org/HPL#id_power>,
+    ns1:hasInput <http://example.org/HPL#id_power>,
         <http://example.org/HPL#od_power> .
 
-<http://example.org/HPL#OA_Connection_1_Temp_5> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#OA_Connection_1_Temp_5> a ns1:QuantifiableObservableProperty ;
     rdfs:label "OA Connection 1 Temp 5" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#OA_Connection_1_Temp_6> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#OA_Connection_1_Temp_6> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Quantifiable observable property 1" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#Outlet_IA> a ns2:Equipment ;
+<http://example.org/HPL#Outlet_IA> a ns1:Equipment ;
     rdfs:label "Outlet indoor air" .
 
-<http://example.org/HPL#PressureSensor_1> a ns2:PressureSensor ;
+<http://example.org/HPL#PressureSensor_1> a ns1:PressureSensor ;
     rdfs:label "Pressure sensor 1" ;
-    ns2:hasObservationLocation <http://example.org/HPL#Segment_1> ;
-    ns2:observes <http://example.org/HPL#HeatExchanger_R_CP_2_Pres> .
+    ns1:hasObservationLocation <http://example.org/HPL#Segment_1> ;
+    ns1:observes <http://example.org/HPL#HeatExchanger_R_CP_2_Pres> .
 
-<http://example.org/HPL#PressureSensor_2> a ns2:PressureSensor ;
+<http://example.org/HPL#PressureSensor_2> a ns1:PressureSensor ;
     rdfs:label "Pressure sensor 2" ;
-    ns2:hasObservationLocation <http://example.org/HPL#Segment_2> ;
-    ns2:observes <http://example.org/HPL#RV_CP_3_Pres> .
+    ns1:hasObservationLocation <http://example.org/HPL#Segment_2> ;
+    ns1:observes <http://example.org/HPL#RV_CP_3_Pres> .
 
-<http://example.org/HPL#PressureSensor_3> a ns2:PressureSensor ;
+<http://example.org/HPL#PressureSensor_3> a ns1:PressureSensor ;
     rdfs:label "Pressure sensor 3" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_2> ;
-    ns2:observes <http://example.org/HPL#Accumulator_CP_1_Pres> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_2> ;
+    ns1:observes <http://example.org/HPL#Accumulator_CP_1_Pres> .
 
-<http://example.org/HPL#PressureSensor_4> a ns2:PressureSensor ;
+<http://example.org/HPL#PressureSensor_4> a ns1:PressureSensor ;
     rdfs:label "Pressure sensor 4" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_7> ;
-    ns2:observes <http://example.org/HPL#ExpansionValve_1_CP_2_Pres> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_7> ;
+    ns1:observes <http://example.org/HPL#ExpansionValve_1_CP_2_Pres> .
 
-<http://example.org/HPL#PressureSensor_5> a ns2:PressureSensor ;
+<http://example.org/HPL#PressureSensor_5> a ns1:PressureSensor ;
     rdfs:label "Pressure sensor 5" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_10> ;
-    ns2:observes <http://example.org/HPL#SightGlass_CP_2_Pres> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_10> ;
+    ns1:observes <http://example.org/HPL#SightGlass_CP_2_Pres> .
 
-<http://example.org/HPL#PressureSensor_6> a ns2:PressureSensor ;
+<http://example.org/HPL#PressureSensor_6> a ns1:PressureSensor ;
     rdfs:label "Pressure sensor 6" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_11> ;
-    ns2:observes <http://example.org/HPL#HeatExchanger_R_CP_1_Pres> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_11> ;
+    ns1:observes <http://example.org/HPL#HeatExchanger_R_CP_1_Pres> .
 
-<http://example.org/HPL#PressureSensor_7> a ns2:PressureSensor ;
+<http://example.org/HPL#PressureSensor_7> a ns1:PressureSensor ;
     rdfs:label "Pressure sensor 7" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_4> ;
-    ns2:observes <http://example.org/HPL#Compressor_CP_2_Pres> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_4> ;
+    ns1:observes <http://example.org/HPL#Compressor_CP_2_Pres> .
 
-<http://example.org/HPL#PressureSensor_8> a ns2:PressureSensor ;
+<http://example.org/HPL#PressureSensor_8> a ns1:PressureSensor ;
     rdfs:label "Pressure sensor 8" ;
-    ns2:hasObservationLocation <http://example.org/HPL#FinnedHeatExchanger> ;
-    ns2:observes <http://example.org/HPL#FinnedHeatExchanger_R_Pres> .
+    ns1:hasObservationLocation <http://example.org/HPL#FinnedHeatExchanger> ;
+    ns1:observes <http://example.org/HPL#FinnedHeatExchanger_R_Pres> .
 
-<http://example.org/HPL#Sensor_1> a ns2:Sensor ;
+<http://example.org/HPL#Sensor_1> a ns1:Sensor ;
     rdfs:label "Sensor 1" ;
-    ns2:hasObservationLocation <http://example.org/HPL#Compressor_ICP> ;
-    ns2:observes <http://example.org/HPL#Compressor_Power> .
+    ns1:hasObservationLocation <http://example.org/HPL#Compressor_ICP> ;
+    ns1:observes <http://example.org/HPL#Compressor_Power> .
 
-<http://example.org/HPL#TemperatureSensor_1> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_1> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 1" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_1> ;
-    ns2:observes <http://example.org/HPL#TC_1_Temp_1> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_1> ;
+    ns1:observes <http://example.org/HPL#TC_1_Temp_1> .
 
-<http://example.org/HPL#TemperatureSensor_10> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_10> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 10" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_5> ;
-    ns2:observes <http://example.org/HPL#TC_2_Temp_5> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_5> ;
+    ns1:observes <http://example.org/HPL#TC_2_Temp_5> .
 
-<http://example.org/HPL#TemperatureSensor_11> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_11> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 11" ;
-    ns2:hasObservationLocation <http://example.org/HPL#Segment_1> ;
-    ns2:observes <http://example.org/HPL#HeatExchanger_R_CP_2_Temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#Segment_1> ;
+    ns1:observes <http://example.org/HPL#HeatExchanger_R_CP_2_Temp> .
 
-<http://example.org/HPL#TemperatureSensor_11_sat> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_11_sat> a ns1:TemperatureSensor ;
     rdfs:label "TemperatureSensor 11 sat" ;
-    ns2:hasObservationLocation <http://example.org/HPL#Segment_1> ;
-    ns2:observes <http://example.org/HPL#HeatExchanger_R_CP_2_Temp_Sat> .
+    ns1:hasObservationLocation <http://example.org/HPL#Segment_1> ;
+    ns1:observes <http://example.org/HPL#HeatExchanger_R_CP_2_Temp_Sat> .
 
-<http://example.org/HPL#TemperatureSensor_12> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_12> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 12" ;
-    ns2:hasObservationLocation <http://example.org/HPL#Segment_2> ;
-    ns2:observes <http://example.org/HPL#RV_CP_3_Temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#Segment_2> ;
+    ns1:observes <http://example.org/HPL#RV_CP_3_Temp> .
 
-<http://example.org/HPL#TemperatureSensor_13> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_13> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 13" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_2> ;
-    ns2:observes <http://example.org/HPL#Accumulator_CP_1_Temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_2> ;
+    ns1:observes <http://example.org/HPL#Accumulator_CP_1_Temp> .
 
-<http://example.org/HPL#TemperatureSensor_14> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_14> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 14" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_4> ;
-    ns2:observes <http://example.org/HPL#Compressor_CP_2_Temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_4> ;
+    ns1:observes <http://example.org/HPL#Compressor_CP_2_Temp> .
 
-<http://example.org/HPL#TemperatureSensor_15> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_15> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 15" ;
-    ns2:hasObservationLocation <http://example.org/HPL#FinnedHeatExchanger> ;
-    ns2:observes <http://example.org/HPL#FinnedHeatExchanger_R_Temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#FinnedHeatExchanger> ;
+    ns1:observes <http://example.org/HPL#FinnedHeatExchanger_R_Temp> .
 
-<http://example.org/HPL#TemperatureSensor_16> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_16> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 16" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_7> ;
-    ns2:observes <http://example.org/HPL#ExpansionValve_1_CP_2_Temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_7> ;
+    ns1:observes <http://example.org/HPL#ExpansionValve_1_CP_2_Temp> .
 
-<http://example.org/HPL#TemperatureSensor_17> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_17> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 17" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_8> ;
-    ns2:observes <http://example.org/HPL#R_Connection_8_Temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_8> ;
+    ns1:observes <http://example.org/HPL#R_Connection_8_Temp> .
 
-<http://example.org/HPL#TemperatureSensor_18> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_18> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 18" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_9> ;
-    ns2:observes <http://example.org/HPL#R_Connection_9_Temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_9> ;
+    ns1:observes <http://example.org/HPL#R_Connection_9_Temp> .
 
-<http://example.org/HPL#TemperatureSensor_19> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_19> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 19" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_10> ;
-    ns2:observes <http://example.org/HPL#SightGlass_CP_2_Temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_10> ;
+    ns1:observes <http://example.org/HPL#SightGlass_CP_2_Temp> .
 
-<http://example.org/HPL#TemperatureSensor_2> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_2> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 2" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_1> ;
-    ns2:observes <http://example.org/HPL#TC_1_Temp_2> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_1> ;
+    ns1:observes <http://example.org/HPL#TC_1_Temp_2> .
 
-<http://example.org/HPL#TemperatureSensor_20> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_20> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 20" ;
-    ns2:hasObservationLocation <http://example.org/HPL#OA_Connection_1> ;
-    ns2:observes <http://example.org/HPL#OA_Connection_1_Temp_1> .
+    ns1:hasObservationLocation <http://example.org/HPL#OA_Connection_1> ;
+    ns1:observes <http://example.org/HPL#OA_Connection_1_Temp_1> .
 
-<http://example.org/HPL#TemperatureSensor_21> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_21> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 21" ;
-    ns2:hasObservationLocation <http://example.org/HPL#OA_Connection_1> ;
-    ns2:observes <http://example.org/HPL#OA_Connection_1_Temp_2> .
+    ns1:hasObservationLocation <http://example.org/HPL#OA_Connection_1> ;
+    ns1:observes <http://example.org/HPL#OA_Connection_1_Temp_2> .
 
-<http://example.org/HPL#TemperatureSensor_22> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_22> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 22" ;
-    ns2:hasObservationLocation <http://example.org/HPL#OA_Connection_1> ;
-    ns2:observes <http://example.org/HPL#OA_Connection_1_Temp_3> .
+    ns1:hasObservationLocation <http://example.org/HPL#OA_Connection_1> ;
+    ns1:observes <http://example.org/HPL#OA_Connection_1_Temp_3> .
 
-<http://example.org/HPL#TemperatureSensor_23> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_23> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 23" ;
-    ns2:hasObservationLocation <http://example.org/HPL#OA_Connection_1> ;
-    ns2:observes <http://example.org/HPL#OA_Connection_1_Temp_4> .
+    ns1:hasObservationLocation <http://example.org/HPL#OA_Connection_1> ;
+    ns1:observes <http://example.org/HPL#OA_Connection_1_Temp_4> .
 
-<http://example.org/HPL#TemperatureSensor_24> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_24> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 24" ;
-    ns2:hasObservationLocation <http://example.org/HPL#HeatExchanger> ;
-    ns2:observes <http://example.org/HPL#HeatExchanger_Temp_1> .
+    ns1:hasObservationLocation <http://example.org/HPL#HeatExchanger> ;
+    ns1:observes <http://example.org/HPL#HeatExchanger_Temp_1> .
 
-<http://example.org/HPL#TemperatureSensor_25> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_25> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 25" ;
-    ns2:hasObservationLocation <http://example.org/HPL#HeatExchanger> ;
-    ns2:observes <http://example.org/HPL#HeatExchanger_Temp_2> .
+    ns1:hasObservationLocation <http://example.org/HPL#HeatExchanger> ;
+    ns1:observes <http://example.org/HPL#HeatExchanger_Temp_2> .
 
-<http://example.org/HPL#TemperatureSensor_26> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_26> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 26" ;
-    ns2:hasObservationLocation <http://example.org/HPL#OA_Connection_3> ;
-    ns2:observes <http://example.org/HPL#OA_Connection_3_Temp_1> .
+    ns1:hasObservationLocation <http://example.org/HPL#OA_Connection_3> ;
+    ns1:observes <http://example.org/HPL#OA_Connection_3_Temp_1> .
 
-<http://example.org/HPL#TemperatureSensor_27> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_27> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 27" ;
-    ns2:hasObservationLocation <http://example.org/HPL#OA_Connection_3> ;
-    ns2:observes <http://example.org/HPL#OA_Connection_3_Temp_2> .
+    ns1:hasObservationLocation <http://example.org/HPL#OA_Connection_3> ;
+    ns1:observes <http://example.org/HPL#OA_Connection_3_Temp_2> .
 
-<http://example.org/HPL#TemperatureSensor_28> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_28> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 28" ;
-    ns2:hasObservationLocation <http://example.org/HPL#Compressor> ;
-    ns2:observes <http://example.org/HPL#Compressor_Temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#Compressor> ;
+    ns1:observes <http://example.org/HPL#Compressor_Temp> .
 
-<http://example.org/HPL#TemperatureSensor_29> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_29> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 29" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_7> ;
-    ns2:observes <http://example.org/HPL#ExpansionValve_1_CP_2_Temp_Sat> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_7> ;
+    ns1:observes <http://example.org/HPL#ExpansionValve_1_CP_2_Temp_Sat> .
 
-<http://example.org/HPL#TemperatureSensor_3> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_3> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 3" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_1> ;
-    ns2:observes <http://example.org/HPL#TC_1_Temp_3> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_1> ;
+    ns1:observes <http://example.org/HPL#TC_1_Temp_3> .
 
-<http://example.org/HPL#TemperatureSensor_30> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_30> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 30" ;
-    ns2:hasObservationLocation <http://example.org/HPL#FinnedHeatExchanger> ;
-    ns2:observes <http://example.org/HPL#FinnedHeatExchanger_R_Temp_Sat> .
+    ns1:hasObservationLocation <http://example.org/HPL#FinnedHeatExchanger> ;
+    ns1:observes <http://example.org/HPL#FinnedHeatExchanger_R_Temp_Sat> .
 
-<http://example.org/HPL#TemperatureSensor_4> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_4> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 4" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_1> ;
-    ns2:observes <http://example.org/HPL#TC_1_Temp_4> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_1> ;
+    ns1:observes <http://example.org/HPL#TC_1_Temp_4> .
 
-<http://example.org/HPL#TemperatureSensor_5> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_5> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 5" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_1> ;
-    ns2:observes <http://example.org/HPL#TC_1_Temp_5> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_1> ;
+    ns1:observes <http://example.org/HPL#TC_1_Temp_5> .
 
-<http://example.org/HPL#TemperatureSensor_6> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_6> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 6" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_5> ;
-    ns2:observes <http://example.org/HPL#TC_2_Temp_1> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_5> ;
+    ns1:observes <http://example.org/HPL#TC_2_Temp_1> .
 
-<http://example.org/HPL#TemperatureSensor_7> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_7> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 7" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_5> ;
-    ns2:observes <http://example.org/HPL#TC_2_Temp_2> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_5> ;
+    ns1:observes <http://example.org/HPL#TC_2_Temp_2> .
 
-<http://example.org/HPL#TemperatureSensor_8> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_8> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 8" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_5> ;
-    ns2:observes <http://example.org/HPL#TC_2_Temp_3> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_5> ;
+    ns1:observes <http://example.org/HPL#TC_2_Temp_3> .
 
-<http://example.org/HPL#TemperatureSensor_9> a ns2:TemperatureSensor ;
+<http://example.org/HPL#TemperatureSensor_9> a ns1:TemperatureSensor ;
     rdfs:label "Temperature sensor 9" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_5> ;
-    ns2:observes <http://example.org/HPL#TC_2_Temp_4> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_5> ;
+    ns1:observes <http://example.org/HPL#TC_2_Temp_4> .
 
-<http://example.org/HPL#TestRoom> a ns2:PhysicalSpace ;
+<http://example.org/HPL#TestRoom> a ns1:PhysicalSpace ;
     rdfs:label "Test room" ;
-    ns2:encloses <http://example.org/HPL#Chamber_DomainSpace> .
+    ns1:encloses <http://example.org/HPL#Chamber_DomainSpace> .
 
-<http://example.org/HPL#id_power_sens> a ns2:Sensor ;
+<http://example.org/HPL#id_power_sens> a ns1:Sensor ;
     rdfs:label "id power sens" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Unit> ;
-    ns2:observes <http://example.org/HPL#id_power> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Unit> ;
+    ns1:observes <http://example.org/HPL#id_power> .
 
-<http://example.org/HPL#oa_temp_dp_sens> a ns2:HumiditySensor ;
+<http://example.org/HPL#oa_temp_dp_sens> a ns1:HumiditySensor ;
     rdfs:label "oa temp dp sens" ;
-    ns2:hasObservationLocation <http://example.org/HPL#OA_Unit> ;
-    ns2:observes <http://example.org/HPL#oa_temp_dp> .
+    ns1:hasObservationLocation <http://example.org/HPL#OA_Unit> ;
+    ns1:observes <http://example.org/HPL#oa_temp_dp> .
 
-<http://example.org/HPL#oa_temp_sens> a ns2:TemperatureSensor ;
+<http://example.org/HPL#oa_temp_sens> a ns1:TemperatureSensor ;
     rdfs:label "oa temp sens" ;
-    ns2:hasObservationLocation <http://example.org/HPL#OA_Unit> ;
-    ns2:observes <http://example.org/HPL#oa_temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#OA_Unit> ;
+    ns1:observes <http://example.org/HPL#oa_temp> .
 
-<http://example.org/HPL#od_power_sens> a ns2:Sensor ;
+<http://example.org/HPL#od_power_sens> a ns1:Sensor ;
     rdfs:label "od power sens" ;
-    ns2:hasObservationLocation <http://example.org/HPL#OA_Unit> ;
-    ns2:observes <http://example.org/HPL#od_power> .
+    ns1:hasObservationLocation <http://example.org/HPL#OA_Unit> ;
+    ns1:observes <http://example.org/HPL#od_power> .
 
-<http://example.org/HPL#ref_flow_sens> a ns2:FlowSensor ;
+<http://example.org/HPL#ref_flow_sens> a ns1:FlowSensor ;
     rdfs:label "ref flow sens" ;
-    ns2:hasObservationLocation <http://example.org/HPL#R_Connection_6> ;
-    ns2:observes <http://example.org/HPL#ref_flow> .
+    ns1:hasObservationLocation <http://example.org/HPL#R_Connection_6> ;
+    ns1:observes <http://example.org/HPL#ref_flow> .
 
-<http://example.org/HPL#sa_flow_sens> a ns2:FlowSensor ;
+<http://example.org/HPL#sa_flow_sens> a ns1:FlowSensor ;
     rdfs:label "sa flow sens" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_3> ;
-    ns2:observes <http://example.org/HPL#sa_flow> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_3> ;
+    ns1:observes <http://example.org/HPL#sa_flow> .
 
-<http://example.org/HPL#sa_temp_dp_sens> a ns2:HumiditySensor ;
+<http://example.org/HPL#sa_temp_dp_sens> a ns1:HumiditySensor ;
     rdfs:label "sa temp dp sens" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_3> ;
-    ns2:observes <http://example.org/HPL#sa_temp_dp> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_3> ;
+    ns1:observes <http://example.org/HPL#sa_temp_dp> .
 
-<http://example.org/HPL#sa_temp_sens> a ns2:TemperatureSensor ;
+<http://example.org/HPL#sa_temp_sens> a ns1:TemperatureSensor ;
     rdfs:label "sa temp sens" ;
-    ns2:hasObservationLocation <http://example.org/HPL#IA_Connection_3> ;
-    ns2:observes <http://example.org/HPL#sa_temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#IA_Connection_3> ;
+    ns1:observes <http://example.org/HPL#sa_temp> .
 
-<http://example.org/HPL#zn_temp_dp_sens> a ns2:HumiditySensor ;
+<http://example.org/HPL#zn_temp_dp_sens> a ns1:HumiditySensor ;
     rdfs:label "zn temp dp sens" ;
-    ns2:hasObservationLocation <http://example.org/HPL#Chamber_DomainSpace> ;
-    ns2:observes <http://example.org/HPL#zn_temp_dp> .
+    ns1:hasObservationLocation <http://example.org/HPL#Chamber_DomainSpace> ;
+    ns1:observes <http://example.org/HPL#zn_temp_dp> .
 
-<http://example.org/HPL#zn_temp_sens> a ns2:TemperatureSensor ;
+<http://example.org/HPL#zn_temp_sens> a ns1:TemperatureSensor ;
     rdfs:label "zn temp sens" ;
-    ns2:hasObservationLocation <http://example.org/HPL#Chamber_DomainSpace> ;
-    ns2:observes <http://example.org/HPL#zn_temp> .
+    ns1:hasObservationLocation <http://example.org/HPL#Chamber_DomainSpace> ;
+    ns1:observes <http://example.org/HPL#zn_temp> .
 
-<http://example.org/HPL#Accumulator_CP_1_Pres> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#Accumulator_CP_1_Pres> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Accumulator CP 1 Press" ;
-    ns2:hasValue 101325.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasValue 101325.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PA> .
 
-<http://example.org/HPL#Accumulator_CP_1_Temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#Accumulator_CP_1_Temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Accumulator CP 1 Temp" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#Compressor_CP_2_Pres> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#Compressor_CP_2_Pres> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Compressor CP 2 Pres" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PA> .
 
-<http://example.org/HPL#Compressor_CP_2_Temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#Compressor_CP_2_Temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Compressor CP 2 Temp" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#Compressor_Power> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#Compressor_Power> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Compressor Power" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/W> .
 
-<http://example.org/HPL#Compressor_Temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#Compressor_Temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Compressor Temp" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#ExpansionValve_1_CP_2_Pres> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#ExpansionValve_1_CP_2_Pres> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Expansion valve 1 CP 2 Press" ;
-    ns2:hasValue 101325.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasValue 101325.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PA> .
 
-<http://example.org/HPL#ExpansionValve_1_CP_2_Temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#ExpansionValve_1_CP_2_Temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Expansion valve 1 CP 2 Temp" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#ExpansionValve_1_CP_2_Temp_Sat> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#ExpansionValve_1_CP_2_Temp_Sat> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Expansion valve 1 CP 2 Temp Sat" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#FinnedHeatExchanger_R_Pres> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#FinnedHeatExchanger_R_Pres> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Finned heat exchanger R Pres" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PA> .
 
-<http://example.org/HPL#FinnedHeatExchanger_R_Temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#FinnedHeatExchanger_R_Temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Finned heat exchanger R Temp" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#FinnedHeatExchanger_R_Temp_Sat> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#FinnedHeatExchanger_R_Temp_Sat> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Finned heat exchanger R Temp Sat" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#HeatExchanger_R_CP_1_Pres> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#HeatExchanger_R_CP_1_Pres> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Heat exchanger R CP 1 Pres" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PA> .
 
-<http://example.org/HPL#HeatExchanger_R_CP_2_Pres> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#HeatExchanger_R_CP_2_Pres> a ns1:QuantifiableObservableProperty ;
     rdfs:label "CC 1 R CP 2 Pres" ;
-    ns2:hasValue 101325.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasValue 101325.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PA> .
 
-<http://example.org/HPL#HeatExchanger_R_CP_2_Temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#HeatExchanger_R_CP_2_Temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Heat exchanger R CP 2 Temp" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#HeatExchanger_R_CP_2_Temp_Sat> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#HeatExchanger_R_CP_2_Temp_Sat> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Heat exchanger R CP 2 Temp Sat" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#HeatExchanger_Temp_1> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#HeatExchanger_Temp_1> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Heat Exchanger Temp 1" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#HeatExchanger_Temp_2> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#HeatExchanger_Temp_2> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Heat Exchanger Temp 2" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#OA_Connection_1_Temp_1> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#OA_Connection_1_Temp_1> a ns1:QuantifiableObservableProperty ;
     rdfs:label "OA Connection 1 Temp 1" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#OA_Connection_1_Temp_2> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#OA_Connection_1_Temp_2> a ns1:QuantifiableObservableProperty ;
     rdfs:label "OA Connection 1 Temp 2" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#OA_Connection_1_Temp_3> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#OA_Connection_1_Temp_3> a ns1:QuantifiableObservableProperty ;
     rdfs:label "OA Connection 1 Temp 3" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#OA_Connection_1_Temp_4> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#OA_Connection_1_Temp_4> a ns1:QuantifiableObservableProperty ;
     rdfs:label "OA Connection 1 Temp 4" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#OA_Connection_3_Temp_1> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#OA_Connection_3_Temp_1> a ns1:QuantifiableObservableProperty ;
     rdfs:label "OA Connection 3 Temp 1" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#OA_Connection_3_Temp_2> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#OA_Connection_3_Temp_2> a ns1:QuantifiableObservableProperty ;
     rdfs:label "OA Connection 3 Temp 2" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#RV_CP_3_Pres> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#RV_CP_3_Pres> a ns1:QuantifiableObservableProperty ;
     rdfs:label "RV CP 3 Press" ;
-    ns2:hasValue 101325.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasValue 101325.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PA> .
 
-<http://example.org/HPL#RV_CP_3_Temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#RV_CP_3_Temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "RV CP 3 Temp" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#R_Connection_8_Temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#R_Connection_8_Temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "R Connection 8 Temp" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#R_Connection_9_Temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#R_Connection_9_Temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "R Connection 9 Temp" ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#SightGlass_CP_2_Pres> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#SightGlass_CP_2_Pres> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Sight glass CP 2 Pres" ;
-    ns2:hasValue 101325.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasValue 101325.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PA> .
 
-<http://example.org/HPL#SightGlass_CP_2_Temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#SightGlass_CP_2_Temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "Sight glass CP 2 " ;
-    ns2:hasValue 70.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 70.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#TC_1_Temp_1> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#TC_1_Temp_1> a ns1:QuantifiableObservableProperty ;
     rdfs:label "TC 1 Temperature 1" ;
-    ns2:hasValue 72.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 72.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#TC_1_Temp_2> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#TC_1_Temp_2> a ns1:QuantifiableObservableProperty ;
     rdfs:label "TC 1 Temp 2" ;
-    ns2:hasValue 72.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 72.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#TC_1_Temp_3> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#TC_1_Temp_3> a ns1:QuantifiableObservableProperty ;
     rdfs:label "TC 1 Temp 3" ;
-    ns2:hasValue 72.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 72.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#TC_1_Temp_4> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#TC_1_Temp_4> a ns1:QuantifiableObservableProperty ;
     rdfs:label "TC 1 Temp 4" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#TC_1_Temp_5> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#TC_1_Temp_5> a ns1:QuantifiableObservableProperty ;
     rdfs:label "TC 1 Temp 5" ;
-    ns2:hasValue 72.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 72.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#TC_2_Temp_1> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#TC_2_Temp_1> a ns1:QuantifiableObservableProperty ;
     rdfs:label "TC 2 Temp 1" ;
-    ns2:hasValue 74.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 74.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#TC_2_Temp_2> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#TC_2_Temp_2> a ns1:QuantifiableObservableProperty ;
     rdfs:label "TC 2 Temp 2" ;
-    ns2:hasValue 74.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 74.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#TC_2_Temp_3> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#TC_2_Temp_3> a ns1:QuantifiableObservableProperty ;
     rdfs:label "TC 2 Temp 3" ;
-    ns2:hasValue 74.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 74.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#TC_2_Temp_4> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#TC_2_Temp_4> a ns1:QuantifiableObservableProperty ;
     rdfs:label "TC 2 Temp 4" ;
-    ns2:hasValue 74.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 74.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#TC_2_Temp_5> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#TC_2_Temp_5> a ns1:QuantifiableObservableProperty ;
     rdfs:label "TC 2 Temp 5" ;
-    ns2:hasValue 74.0 ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasValue 74.0 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/HPL#oa_temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#oa_temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "oa temp" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> .
 
-<http://example.org/HPL#oa_temp_dp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#oa_temp_dp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "oa temp dp" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> .
 
-<http://example.org/HPL#ref_flow> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#ref_flow> a ns1:QuantifiableObservableProperty ;
     rdfs:label "ref flow" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> .
 
-<http://example.org/HPL#sa_flow> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#sa_flow> a ns1:QuantifiableObservableProperty ;
     rdfs:label "sa flow" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> .
 
-<http://example.org/HPL#sa_temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#sa_temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "sa temp" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> .
 
-<http://example.org/HPL#sa_temp_dp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#sa_temp_dp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "sa temp dp" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> .
 
-<http://example.org/HPL#zn_temp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#zn_temp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "zn temp" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> .
 
-<http://example.org/HPL#zn_temp_dp> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#zn_temp_dp> a ns1:QuantifiableObservableProperty ;
     rdfs:label "zn temp dp" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> .
 
-<http://example.org/HPL#Fan_Indoor_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#Fan_Indoor_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Fan Indoor OCP" ;
-    ns2:cnx <http://example.org/HPL#Fan_Indoor> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Fan_Indoor> ;
-    ns2:mapsTo <http://example.org/HPL#IA_Unit_A_OCP> .
+    ns1:cnx <http://example.org/HPL#Fan_Indoor> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Fan_Indoor> ;
+    ns1:mapsTo <http://example.org/HPL#IA_Unit_A_OCP> .
 
-<http://example.org/HPL#Fan_Outdoor_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#Fan_Outdoor_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Fan Outdoor OCP" ;
-    ns2:cnx <http://example.org/HPL#Fan_Outdoor> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Fan_Outdoor> ;
-    ns2:mapsTo <http://example.org/HPL#OA_Unit_A_OCP> .
+    ns1:cnx <http://example.org/HPL#Fan_Outdoor> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Fan_Outdoor> ;
+    ns1:mapsTo <http://example.org/HPL#OA_Unit_A_OCP> .
 
-<http://example.org/HPL#FinnedHeatExchanger_A_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#FinnedHeatExchanger_A_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "OA ICP" ;
-    ns2:cnx <http://example.org/HPL#FinnedHeatExchanger> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#FinnedHeatExchanger> ;
-    ns2:mapsTo <http://example.org/HPL#OA_Unit_A_ICP> .
+    ns1:cnx <http://example.org/HPL#FinnedHeatExchanger> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#FinnedHeatExchanger> ;
+    ns1:mapsTo <http://example.org/HPL#OA_Unit_A_ICP> .
 
-<http://example.org/HPL#HeatExchanger_A_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#HeatExchanger_A_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Heat exchanger 1 Air ICP" ;
-    ns2:cnx <http://example.org/HPL#HeatExchanger> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#HeatExchanger> ;
-    ns2:mapsTo <http://example.org/HPL#IA_Unit_A_ICP> .
+    ns1:cnx <http://example.org/HPL#HeatExchanger> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#HeatExchanger> ;
+    ns1:mapsTo <http://example.org/HPL#IA_Unit_A_ICP> .
 
-<http://example.org/HPL#Outlet_OA> a ns2:Equipment ;
+<http://example.org/HPL#Outlet_OA> a ns1:Equipment ;
     rdfs:label "Outlet outdoor air" ;
-    ns2:cnx <http://example.org/HPL#Outlet_OA_ICP> ;
-    ns2:connectedThrough <http://example.org/HPL#OA_Connection_3> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Outlet_OA_ICP> .
+    ns1:cnx <http://example.org/HPL#Outlet_OA_ICP> ;
+    ns1:connectedThrough <http://example.org/HPL#OA_Connection_3> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#Outlet_OA_ICP> .
 
-<http://example.org/HPL#id_power> a ns2:QuantifiableObservableProperty ;
+<http://example.org/HPL#id_power> a ns1:QuantifiableObservableProperty ;
     rdfs:label "id power" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> .
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> .
 
-<http://example.org/HPL#od_power> a ns2:QuantifiableObservableProperty,
+<http://example.org/HPL#od_power> a ns1:QuantifiableObservableProperty,
         ns3:csvReference ;
     rdfs:label "od power" ;
-    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
     ns3:csvColumnID "od_power" ;
     ns3:csvFileLocation "https://raw.githubusercontent.com/ZhelunChen/HILFT-ASHP-DEMO/main/data/Atlanta/Eff/Default/data.csv" .
 
-<http://example.org/HPL#Inlet_OA> a ns2:Equipment ;
+<http://example.org/HPL#Inlet_OA> a ns1:Equipment ;
     rdfs:label "Inlet outdoor air" ;
-    ns2:cnx <http://example.org/HPL#Inlet_OA_OCP> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Inlet_OA_OCP> .
+    ns1:cnx <http://example.org/HPL#Inlet_OA_OCP> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#Inlet_OA_OCP> .
 
-<http://example.org/HPL#Accumulator_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#Accumulator_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Accumulator ICP" ;
-    ns2:cnx <http://example.org/HPL#Accumulator>,
+    ns1:cnx <http://example.org/HPL#Accumulator>,
         <http://example.org/HPL#R_Connection_2> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_2> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Accumulator> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_2> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Accumulator> .
 
-<http://example.org/HPL#Accumulator_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#Accumulator_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Accumulator OCP" ;
-    ns2:cnx <http://example.org/HPL#Accumulator>,
+    ns1:cnx <http://example.org/HPL#Accumulator>,
         <http://example.org/HPL#R_Connection_3> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_3> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Accumulator> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_3> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Accumulator> .
 
-<http://example.org/HPL#ChamberBlower_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#ChamberBlower_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Chamber blower ICP" ;
-    ns2:cnx <http://example.org/HPL#ChamberBlower>,
+    ns1:cnx <http://example.org/HPL#ChamberBlower>,
         <http://example.org/HPL#IA_Connection_5> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_5> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#ChamberBlower> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_5> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#ChamberBlower> .
 
-<http://example.org/HPL#ChamberBlower_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#ChamberBlower_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Chamber blower OCP" ;
-    ns2:cnx <http://example.org/HPL#ChamberBlower>,
+    ns1:cnx <http://example.org/HPL#ChamberBlower>,
         <http://example.org/HPL#IA_Connection_6> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_6> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#ChamberBlower> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_6> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#ChamberBlower> .
 
-<http://example.org/HPL#Chamber_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#Chamber_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Chamber ICP" ;
-    ns2:cnx <http://example.org/HPL#Chamber_DomainSpace>,
+    ns1:cnx <http://example.org/HPL#Chamber_DomainSpace>,
         <http://example.org/HPL#IA_Connection_6> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_6> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Chamber_DomainSpace> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_6> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Chamber_DomainSpace> .
 
-<http://example.org/HPL#Chamber_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#Chamber_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Chamber OCP" ;
-    ns2:cnx <http://example.org/HPL#Chamber_DomainSpace>,
+    ns1:cnx <http://example.org/HPL#Chamber_DomainSpace>,
         <http://example.org/HPL#IA_Connection_1> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_1> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Chamber_DomainSpace> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_1> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Chamber_DomainSpace> .
 
-<http://example.org/HPL#Compressor_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#Compressor_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Compressor OCP" ;
-    ns2:cnx <http://example.org/HPL#Compressor>,
+    ns1:cnx <http://example.org/HPL#Compressor>,
         <http://example.org/HPL#R_Connection_4> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_4> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Compressor> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_4> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Compressor> .
 
-<http://example.org/HPL#ExpansionValve_1> a ns2:Valve ;
+<http://example.org/HPL#ExpansionValve_1> a ns1:Valve ;
     rdfs:label "Expansion Valve 1" ;
-    ns2:cnx <http://example.org/HPL#ExpansionValve_1_CP_1>,
+    ns1:cnx <http://example.org/HPL#ExpansionValve_1_CP_1>,
         <http://example.org/HPL#ExpansionValve_1_CP_2> ;
-    ns2:connectedThrough <http://example.org/HPL#R_Connection_6> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#ExpansionValve_1_CP_1>,
+    ns1:connectedThrough <http://example.org/HPL#R_Connection_6> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#ExpansionValve_1_CP_1>,
         <http://example.org/HPL#ExpansionValve_1_CP_2> .
 
-<http://example.org/HPL#ExpansionValve_1_CP_1> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#ExpansionValve_1_CP_1> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Expansion valve 1 CP 1" ;
-    ns2:cnx <http://example.org/HPL#ExpansionValve_1>,
+    ns1:cnx <http://example.org/HPL#ExpansionValve_1>,
         <http://example.org/HPL#R_Connection_6> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_6> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#ExpansionValve_1> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_6> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#ExpansionValve_1> .
 
-<http://example.org/HPL#ExpansionValve_1_CP_2> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#ExpansionValve_1_CP_2> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Expansion valve 1 CP 2" ;
-    ns2:cnx <http://example.org/HPL#ExpansionValve_1>,
+    ns1:cnx <http://example.org/HPL#ExpansionValve_1>,
         <http://example.org/HPL#R_Connection_7> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_7> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#ExpansionValve_1> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_7> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#ExpansionValve_1> .
 
-<http://example.org/HPL#ExpansionValve_2_CP_1> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#ExpansionValve_2_CP_1> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Expansion valve 2 CP 1" ;
-    ns2:cnx <http://example.org/HPL#ExpansionValve_2>,
+    ns1:cnx <http://example.org/HPL#ExpansionValve_2>,
         <http://example.org/HPL#R_Connection_10> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_10> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#ExpansionValve_2> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_10> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#ExpansionValve_2> .
 
-<http://example.org/HPL#ExpansionValve_2_CP_2> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#ExpansionValve_2_CP_2> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Expansion valve 2 CP 2" ;
-    ns2:cnx <http://example.org/HPL#ExpansionValve_2>,
+    ns1:cnx <http://example.org/HPL#ExpansionValve_2>,
         <http://example.org/HPL#R_Connection_11> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_11> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#ExpansionValve_2> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_11> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#ExpansionValve_2> .
 
-<http://example.org/HPL#Fan_Indoor_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#Fan_Indoor_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Fan Indoor ICP" ;
-    ns2:cnx <http://example.org/HPL#Fan_Indoor>,
+    ns1:cnx <http://example.org/HPL#Fan_Indoor>,
         <http://example.org/HPL#IA_Connection_2> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_2> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Fan_Indoor> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_2> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Fan_Indoor> .
 
-<http://example.org/HPL#Fan_Outdoor_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#Fan_Outdoor_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Fan Outdoor ICP" ;
-    ns2:cnx <http://example.org/HPL#Fan_Outdoor>,
+    ns1:cnx <http://example.org/HPL#Fan_Outdoor>,
         <http://example.org/HPL#OA_Connection_2> ;
-    ns2:connectsThrough <http://example.org/HPL#OA_Connection_2> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Fan_Outdoor> .
+    ns1:connectsThrough <http://example.org/HPL#OA_Connection_2> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Fan_Outdoor> .
 
-<http://example.org/HPL#Filter> a ns2:Equipment ;
+<http://example.org/HPL#Filter> a ns1:Equipment ;
     rdfs:label "Filter" ;
-    ns2:cnx <http://example.org/HPL#Filter_CP_1>,
+    ns1:cnx <http://example.org/HPL#Filter_CP_1>,
         <http://example.org/HPL#Filter_CP_2> ;
-    ns2:connectedThrough <http://example.org/HPL#R_Connection_7> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Filter_CP_1>,
+    ns1:connectedThrough <http://example.org/HPL#R_Connection_7> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#Filter_CP_1>,
         <http://example.org/HPL#Filter_CP_2> .
 
-<http://example.org/HPL#Filter_CP_1> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#Filter_CP_1> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Filter CP 1" ;
-    ns2:cnx <http://example.org/HPL#Filter>,
+    ns1:cnx <http://example.org/HPL#Filter>,
         <http://example.org/HPL#R_Connection_7> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_7> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Filter> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_7> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Filter> .
 
-<http://example.org/HPL#Filter_CP_2> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#Filter_CP_2> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Filter CP 2" ;
-    ns2:cnx <http://example.org/HPL#Filter>,
+    ns1:cnx <http://example.org/HPL#Filter>,
         <http://example.org/HPL#R_Connection_8> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_8> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Filter> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_8> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Filter> .
 
-<http://example.org/HPL#FinnedHeatExchanger_A_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#FinnedHeatExchanger_A_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Finned heat exchanger A OCP" ;
-    ns2:cnx <http://example.org/HPL#FinnedHeatExchanger>,
+    ns1:cnx <http://example.org/HPL#FinnedHeatExchanger>,
         <http://example.org/HPL#OA_Connection_2> ;
-    ns2:connectsThrough <http://example.org/HPL#OA_Connection_2> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#FinnedHeatExchanger> .
+    ns1:connectsThrough <http://example.org/HPL#OA_Connection_2> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#FinnedHeatExchanger> .
 
-<http://example.org/HPL#FinnedHeatExchanger_R_CP_1> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#FinnedHeatExchanger_R_CP_1> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Finned heat exchanger R CP 1" ;
-    ns2:cnx <http://example.org/HPL#FinnedHeatExchanger>,
+    ns1:cnx <http://example.org/HPL#FinnedHeatExchanger>,
         <http://example.org/HPL#R_Connection_5> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_5> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#FinnedHeatExchanger> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_5> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#FinnedHeatExchanger> .
 
-<http://example.org/HPL#FinnedHeatExchanger_R_CP_2> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#FinnedHeatExchanger_R_CP_2> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Finned heat exchanger R CP 2" ;
-    ns2:cnx <http://example.org/HPL#FinnedHeatExchanger>,
+    ns1:cnx <http://example.org/HPL#FinnedHeatExchanger>,
         <http://example.org/HPL#R_Connection_6> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_6> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#FinnedHeatExchanger> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_6> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#FinnedHeatExchanger> .
 
-<http://example.org/HPL#FlowMeter> a ns2:Equipment ;
+<http://example.org/HPL#FlowMeter> a ns1:Equipment ;
     rdfs:label "Flow meter" ;
-    ns2:cnx <http://example.org/HPL#FlowMeter_CP_1>,
+    ns1:cnx <http://example.org/HPL#FlowMeter_CP_1>,
         <http://example.org/HPL#FlowMeter_CP_2> ;
-    ns2:connectedThrough <http://example.org/HPL#R_Connection_8> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#FlowMeter_CP_1>,
+    ns1:connectedThrough <http://example.org/HPL#R_Connection_8> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#FlowMeter_CP_1>,
         <http://example.org/HPL#FlowMeter_CP_2> .
 
-<http://example.org/HPL#FlowMeter_CP_1> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#FlowMeter_CP_1> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Flow meter CP 1" ;
-    ns2:cnx <http://example.org/HPL#FlowMeter>,
+    ns1:cnx <http://example.org/HPL#FlowMeter>,
         <http://example.org/HPL#R_Connection_8> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_8> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#FlowMeter> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_8> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#FlowMeter> .
 
-<http://example.org/HPL#FlowMeter_CP_2> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#FlowMeter_CP_2> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Flow meter CP 2" ;
-    ns2:cnx <http://example.org/HPL#FlowMeter>,
+    ns1:cnx <http://example.org/HPL#FlowMeter>,
         <http://example.org/HPL#R_Connection_9> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_9> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#FlowMeter> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_9> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#FlowMeter> .
 
-<http://example.org/HPL#HeatExchanger_A_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#HeatExchanger_A_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Heat Exchanger Return Air Outlet Connection Point" ;
-    ns2:cnx <http://example.org/HPL#HeatExchanger>,
+    ns1:cnx <http://example.org/HPL#HeatExchanger>,
         <http://example.org/HPL#IA_Connection_2> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_2> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#HeatExchanger> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_2> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#HeatExchanger> .
 
-<http://example.org/HPL#HeatExchanger_R_CP_1> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#HeatExchanger_R_CP_1> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Heat Exchanger Refrigerant Connection Point 1" ;
-    ns2:cnx <http://example.org/HPL#HeatExchanger>,
+    ns1:cnx <http://example.org/HPL#HeatExchanger>,
         <http://example.org/HPL#R_Connection_11> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_11> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#HeatExchanger> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_11> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#HeatExchanger> .
 
-<http://example.org/HPL#HeatExchanger_R_CP_2> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#HeatExchanger_R_CP_2> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Heat Exchanger Refrigerant Connection Point 2" ;
-    ns2:cnx <http://example.org/HPL#HeatExchanger>,
+    ns1:cnx <http://example.org/HPL#HeatExchanger>,
         <http://example.org/HPL#Segment_1> ;
-    ns2:connectsThrough <http://example.org/HPL#Segment_1> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#HeatExchanger> .
+    ns1:connectsThrough <http://example.org/HPL#Segment_1> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#HeatExchanger> .
 
-<http://example.org/HPL#IA_Unit_R_CP_1> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#IA_Unit_R_CP_1> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "IA Unit R CP 1" ;
-    ns2:cnx <http://example.org/HPL#IA_Unit>,
+    ns1:cnx <http://example.org/HPL#IA_Unit>,
         <http://example.org/HPL#R_Connection_11> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_11> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#IA_Unit> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_11> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#IA_Unit> .
 
-<http://example.org/HPL#IA_Unit_R_CP_2> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#IA_Unit_R_CP_2> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "IA Unit R CP 2" ;
-    ns2:cnx <http://example.org/HPL#IA_Unit>,
+    ns1:cnx <http://example.org/HPL#IA_Unit>,
         <http://example.org/HPL#Segment_1> ;
-    ns2:connectsThrough <http://example.org/HPL#Segment_1> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#IA_Unit> .
+    ns1:connectsThrough <http://example.org/HPL#Segment_1> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#IA_Unit> .
 
-<http://example.org/HPL#Inlet_OA_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#Inlet_OA_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Inlet OA OCP" ;
-    ns2:cnx <http://example.org/HPL#Inlet_OA>,
+    ns1:cnx <http://example.org/HPL#Inlet_OA>,
         <http://example.org/HPL#OA_Connection_1> ;
-    ns2:connectsThrough <http://example.org/HPL#OA_Connection_1> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Inlet_OA> .
+    ns1:connectsThrough <http://example.org/HPL#OA_Connection_1> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Inlet_OA> .
 
-<http://example.org/HPL#Jnc_1_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#Jnc_1_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Jnc 1 ICP" ;
-    ns2:cnx <http://example.org/HPL#Junction_1>,
+    ns1:cnx <http://example.org/HPL#Junction_1>,
         <http://example.org/HPL#Segment_1> ;
-    ns2:connectsThrough <http://example.org/HPL#Segment_1> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Junction_1> .
+    ns1:connectsThrough <http://example.org/HPL#Segment_1> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Junction_1> .
 
-<http://example.org/HPL#Jnc_1_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#Jnc_1_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Jnc 1 OCP" ;
-    ns2:cnx <http://example.org/HPL#Junction_1>,
+    ns1:cnx <http://example.org/HPL#Junction_1>,
         <http://example.org/HPL#Segment_2> ;
-    ns2:connectsThrough <http://example.org/HPL#Segment_2> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Junction_1> .
+    ns1:connectsThrough <http://example.org/HPL#Segment_2> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Junction_1> .
 
-<http://example.org/HPL#Mixer_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#Mixer_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Mixer ICP" ;
-    ns2:cnx <http://example.org/HPL#IA_Connection_3>,
+    ns1:cnx <http://example.org/HPL#IA_Connection_3>,
         <http://example.org/HPL#Mixer> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_3> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Mixer> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_3> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Mixer> .
 
-<http://example.org/HPL#Mixer_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#Mixer_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Mixer OCP" ;
-    ns2:cnx <http://example.org/HPL#IA_Connection_4>,
+    ns1:cnx <http://example.org/HPL#IA_Connection_4>,
         <http://example.org/HPL#Mixer> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_4> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Mixer> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_4> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Mixer> .
 
-<http://example.org/HPL#OA_Unit_R_CP_1> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#OA_Unit_R_CP_1> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "OA Unit R CP 1" ;
-    ns2:cnx <http://example.org/HPL#OA_Unit>,
+    ns1:cnx <http://example.org/HPL#OA_Unit>,
         <http://example.org/HPL#Segment_2> ;
-    ns2:connectsThrough <http://example.org/HPL#Segment_2> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#OA_Unit> .
+    ns1:connectsThrough <http://example.org/HPL#Segment_2> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#OA_Unit> .
 
-<http://example.org/HPL#OA_Unit_R_CP_2> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#OA_Unit_R_CP_2> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "OA Unit R CP 2" ;
-    ns2:cnx <http://example.org/HPL#OA_Unit>,
+    ns1:cnx <http://example.org/HPL#OA_Unit>,
         <http://example.org/HPL#R_Connection_6> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_6> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#OA_Unit> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_6> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#OA_Unit> .
 
-<http://example.org/HPL#Outlet_OA_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#Outlet_OA_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Outlet OA ICP" ;
-    ns2:cnx <http://example.org/HPL#OA_Connection_3>,
+    ns1:cnx <http://example.org/HPL#OA_Connection_3>,
         <http://example.org/HPL#Outlet_OA> ;
-    ns2:connectsThrough <http://example.org/HPL#OA_Connection_3> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Outlet_OA> .
+    ns1:connectsThrough <http://example.org/HPL#OA_Connection_3> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Outlet_OA> .
 
-<http://example.org/HPL#RV_CP_R_1> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#RV_CP_R_1> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "RV CP R 1" ;
-    ns2:cnx <http://example.org/HPL#RV>,
+    ns1:cnx <http://example.org/HPL#RV>,
         <http://example.org/HPL#Segment_2> ;
-    ns2:connectsThrough <http://example.org/HPL#Segment_2> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#RV> .
+    ns1:connectsThrough <http://example.org/HPL#Segment_2> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#RV> .
 
-<http://example.org/HPL#RV_CP_R_5> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#RV_CP_R_5> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "RV CP R 5" ;
-    ns2:cnx <http://example.org/HPL#RV>,
+    ns1:cnx <http://example.org/HPL#RV>,
         <http://example.org/HPL#R_Connection_5> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_5> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#RV> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_5> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#RV> .
 
-<http://example.org/HPL#RV_ICP_R_4> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#RV_ICP_R_4> a ns1:InletConnectionPoint ;
     rdfs:label "RV ICP R 4" ;
-    ns2:cnx <http://example.org/HPL#RV>,
+    ns1:cnx <http://example.org/HPL#RV>,
         <http://example.org/HPL#R_Connection_4> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_4> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#RV> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_4> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#RV> .
 
-<http://example.org/HPL#RV_OCP_R_2> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#RV_OCP_R_2> a ns1:OutletConnectionPoint ;
     rdfs:label "RV OCP R 2" ;
-    ns2:cnx <http://example.org/HPL#RV>,
+    ns1:cnx <http://example.org/HPL#RV>,
         <http://example.org/HPL#R_Connection_2> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_2> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#RV> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_2> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#RV> .
 
-<http://example.org/HPL#R_Connection_5> a ns2:Pipe ;
+<http://example.org/HPL#R_Connection_5> a ns1:Pipe ;
     rdfs:label "R Connection 5" ;
-    ns2:cnx <http://example.org/HPL#FinnedHeatExchanger_R_CP_1>,
+    ns1:cnx <http://example.org/HPL#FinnedHeatExchanger_R_CP_1>,
         <http://example.org/HPL#RV_CP_R_5> ;
-    ns2:connectsAt <http://example.org/HPL#FinnedHeatExchanger_R_CP_1>,
+    ns1:connectsAt <http://example.org/HPL#FinnedHeatExchanger_R_CP_1>,
         <http://example.org/HPL#RV_CP_R_5> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#SightGlass_CP_1> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#SightGlass_CP_1> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Sight glass CP 1" ;
-    ns2:cnx <http://example.org/HPL#R_Connection_9>,
+    ns1:cnx <http://example.org/HPL#R_Connection_9>,
         <http://example.org/HPL#SightGlass> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_9> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#SightGlass> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_9> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#SightGlass> .
 
-<http://example.org/HPL#SightGlass_CP_2> a ns2:BidirectionalConnectionPoint ;
+<http://example.org/HPL#SightGlass_CP_2> a ns1:BidirectionalConnectionPoint ;
     rdfs:label "Sight glass CP 2" ;
-    ns2:cnx <http://example.org/HPL#R_Connection_10>,
+    ns1:cnx <http://example.org/HPL#R_Connection_10>,
         <http://example.org/HPL#SightGlass> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_10> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#SightGlass> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_10> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#SightGlass> .
 
-<http://example.org/HPL#Straightener_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#Straightener_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Straightener ICP" ;
-    ns2:cnx <http://example.org/HPL#IA_Connection_4>,
+    ns1:cnx <http://example.org/HPL#IA_Connection_4>,
         <http://example.org/HPL#Straightener> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_4> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Straightener> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_4> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Straightener> .
 
-<http://example.org/HPL#Straightener_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#Straightener_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "Straightener OCP" ;
-    ns2:cnx <http://example.org/HPL#IA_Connection_5>,
+    ns1:cnx <http://example.org/HPL#IA_Connection_5>,
         <http://example.org/HPL#Straightener> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_5> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Straightener> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_5> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Straightener> .
 
-<http://example.org/HPL#ChamberBlower> a ns2:Fan ;
+<http://example.org/HPL#ChamberBlower> a ns1:Fan ;
     rdfs:label "Chamber blower" ;
-    ns2:cnx <http://example.org/HPL#ChamberBlower_ICP>,
+    ns1:cnx <http://example.org/HPL#ChamberBlower_ICP>,
         <http://example.org/HPL#ChamberBlower_OCP> ;
-    ns2:connectedThrough <http://example.org/HPL#IA_Connection_5> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#ChamberBlower_ICP>,
+    ns1:connectedThrough <http://example.org/HPL#IA_Connection_5> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#ChamberBlower_ICP>,
         <http://example.org/HPL#ChamberBlower_OCP> .
 
-<http://example.org/HPL#Compressor_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#Compressor_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "Compressor ICP" ;
-    ns2:cnx <http://example.org/HPL#Compressor>,
+    ns1:cnx <http://example.org/HPL#Compressor>,
         <http://example.org/HPL#R_Connection_3> ;
-    ns2:connectsThrough <http://example.org/HPL#R_Connection_3> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:isConnectionPointOf <http://example.org/HPL#Compressor> .
+    ns1:connectsThrough <http://example.org/HPL#R_Connection_3> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:isConnectionPointOf <http://example.org/HPL#Compressor> .
 
-<http://example.org/HPL#ExpansionValve_2> a ns2:Valve ;
+<http://example.org/HPL#ExpansionValve_2> a ns1:Valve ;
     rdfs:label "Expansion valve 2" ;
-    ns2:cnx <http://example.org/HPL#ExpansionValve_2_CP_1>,
+    ns1:cnx <http://example.org/HPL#ExpansionValve_2_CP_1>,
         <http://example.org/HPL#ExpansionValve_2_CP_2> ;
-    ns2:connectedThrough <http://example.org/HPL#R_Connection_10> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#ExpansionValve_2_CP_1>,
+    ns1:connectedThrough <http://example.org/HPL#R_Connection_10> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#ExpansionValve_2_CP_1>,
         <http://example.org/HPL#ExpansionValve_2_CP_2> .
 
-<http://example.org/HPL#Fan_Indoor> a ns2:Fan ;
+<http://example.org/HPL#Fan_Indoor> a ns1:Fan ;
     rdfs:label "Fan 1" ;
-    ns2:cnx <http://example.org/HPL#Fan_Indoor_ICP>,
+    ns1:cnx <http://example.org/HPL#Fan_Indoor_ICP>,
         <http://example.org/HPL#Fan_Indoor_OCP> ;
-    ns2:connectedThrough <http://example.org/HPL#IA_Connection_2> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Fan_Indoor_ICP>,
+    ns1:connectedThrough <http://example.org/HPL#IA_Connection_2> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#Fan_Indoor_ICP>,
         <http://example.org/HPL#Fan_Indoor_OCP> .
 
-<http://example.org/HPL#Fan_Outdoor> a ns2:Fan ;
+<http://example.org/HPL#Fan_Outdoor> a ns1:Fan ;
     rdfs:label "Fan Outdoor" ;
-    ns2:cnx <http://example.org/HPL#Fan_Outdoor_ICP>,
+    ns1:cnx <http://example.org/HPL#Fan_Outdoor_ICP>,
         <http://example.org/HPL#Fan_Outdoor_OCP> ;
-    ns2:connectedThrough <http://example.org/HPL#OA_Connection_2> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Fan_Outdoor_ICP>,
+    ns1:connectedThrough <http://example.org/HPL#OA_Connection_2> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#Fan_Outdoor_ICP>,
         <http://example.org/HPL#Fan_Outdoor_OCP> .
 
-<http://example.org/HPL#IA_Connection_2> a ns2:Duct ;
+<http://example.org/HPL#IA_Connection_2> a ns1:Duct ;
     rdfs:label "IA Connection 2" ;
-    ns2:cnx <http://example.org/HPL#Fan_Indoor_ICP>,
+    ns1:cnx <http://example.org/HPL#Fan_Indoor_ICP>,
         <http://example.org/HPL#HeatExchanger_A_OCP> ;
-    ns2:connectsAt <http://example.org/HPL#Fan_Indoor_ICP>,
+    ns1:connectsAt <http://example.org/HPL#Fan_Indoor_ICP>,
         <http://example.org/HPL#HeatExchanger_A_OCP> ;
-    ns2:connectsFrom <http://example.org/HPL#HeatExchanger> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:hasRole ns2:Role-Supply .
+    ns1:connectsFrom <http://example.org/HPL#HeatExchanger> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:hasRole ns1:Role-Supply .
 
-<http://example.org/HPL#IA_Connection_4> a ns2:Duct ;
+<http://example.org/HPL#IA_Connection_4> a ns1:Duct ;
     rdfs:label "IA Connection 4" ;
-    ns2:cnx <http://example.org/HPL#Mixer_OCP>,
+    ns1:cnx <http://example.org/HPL#Mixer_OCP>,
         <http://example.org/HPL#Straightener_ICP> ;
-    ns2:connectsAt <http://example.org/HPL#Mixer_OCP>,
+    ns1:connectsAt <http://example.org/HPL#Mixer_OCP>,
         <http://example.org/HPL#Straightener_ICP> ;
-    ns2:connectsFrom <http://example.org/HPL#Mixer> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:hasRole ns2:Role-Supply .
+    ns1:connectsFrom <http://example.org/HPL#Mixer> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:hasRole ns1:Role-Supply .
 
-<http://example.org/HPL#IA_Connection_6> a ns2:Duct ;
+<http://example.org/HPL#IA_Connection_6> a ns1:Duct ;
     rdfs:label "IA Connection 6" ;
-    ns2:cnx <http://example.org/HPL#ChamberBlower_OCP>,
+    ns1:cnx <http://example.org/HPL#ChamberBlower_OCP>,
         <http://example.org/HPL#Chamber_ICP> ;
-    ns2:connectsAt <http://example.org/HPL#ChamberBlower_OCP>,
+    ns1:connectsAt <http://example.org/HPL#ChamberBlower_OCP>,
         <http://example.org/HPL#Chamber_ICP> ;
-    ns2:connectsFrom <http://example.org/HPL#ChamberBlower> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:hasRole ns2:Role-Supply .
+    ns1:connectsFrom <http://example.org/HPL#ChamberBlower> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:hasRole ns1:Role-Supply .
 
-<http://example.org/HPL#IA_Unit_A_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#IA_Unit_A_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "IA Unit A ICP" ;
-    ns2:cnx <http://example.org/HPL#IA_Connection_1>,
+    ns1:cnx <http://example.org/HPL#IA_Connection_1>,
         <http://example.org/HPL#IA_Unit> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_1> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#IA_Unit> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_1> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#IA_Unit> .
 
-<http://example.org/HPL#IA_Unit_A_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#IA_Unit_A_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "IA Unit A OCP" ;
-    ns2:cnx <http://example.org/HPL#IA_Connection_3>,
+    ns1:cnx <http://example.org/HPL#IA_Connection_3>,
         <http://example.org/HPL#IA_Unit> ;
-    ns2:connectsThrough <http://example.org/HPL#IA_Connection_3> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#IA_Unit> .
+    ns1:connectsThrough <http://example.org/HPL#IA_Connection_3> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#IA_Unit> .
 
-<http://example.org/HPL#Mixer> a ns2:Equipment ;
+<http://example.org/HPL#Mixer> a ns1:Equipment ;
     rdfs:label "Mixer" ;
-    ns2:cnx <http://example.org/HPL#Mixer_ICP>,
+    ns1:cnx <http://example.org/HPL#Mixer_ICP>,
         <http://example.org/HPL#Mixer_OCP> ;
-    ns2:connectedThrough <http://example.org/HPL#IA_Connection_3> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Mixer_ICP>,
+    ns1:connectedThrough <http://example.org/HPL#IA_Connection_3> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#Mixer_ICP>,
         <http://example.org/HPL#Mixer_OCP> .
 
-<http://example.org/HPL#OA_Connection_2> a ns2:Duct ;
+<http://example.org/HPL#OA_Connection_2> a ns1:Duct ;
     rdfs:label "OA Connection 2" ;
-    ns2:cnx <http://example.org/HPL#Fan_Outdoor_ICP>,
+    ns1:cnx <http://example.org/HPL#Fan_Outdoor_ICP>,
         <http://example.org/HPL#FinnedHeatExchanger_A_OCP> ;
-    ns2:connectsAt <http://example.org/HPL#Fan_Outdoor_ICP>,
+    ns1:connectsAt <http://example.org/HPL#Fan_Outdoor_ICP>,
         <http://example.org/HPL#FinnedHeatExchanger_A_OCP> ;
-    ns2:connectsFrom <http://example.org/HPL#FinnedHeatExchanger> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:hasRole ns2:Role-Discharge .
+    ns1:connectsFrom <http://example.org/HPL#FinnedHeatExchanger> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:hasRole ns1:Role-Discharge .
 
-<http://example.org/HPL#OA_Unit_A_ICP> a ns2:InletConnectionPoint ;
+<http://example.org/HPL#OA_Unit_A_ICP> a ns1:InletConnectionPoint ;
     rdfs:label "OA Unit A ICP" ;
-    ns2:cnx <http://example.org/HPL#OA_Connection_1>,
+    ns1:cnx <http://example.org/HPL#OA_Connection_1>,
         <http://example.org/HPL#OA_Unit> ;
-    ns2:connectsThrough <http://example.org/HPL#OA_Connection_1> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#OA_Unit> .
+    ns1:connectsThrough <http://example.org/HPL#OA_Connection_1> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#OA_Unit> .
 
-<http://example.org/HPL#OA_Unit_A_OCP> a ns2:OutletConnectionPoint ;
+<http://example.org/HPL#OA_Unit_A_OCP> a ns1:OutletConnectionPoint ;
     rdfs:label "OA Unit A OCP" ;
-    ns2:cnx <http://example.org/HPL#OA_Connection_3>,
+    ns1:cnx <http://example.org/HPL#OA_Connection_3>,
         <http://example.org/HPL#OA_Unit> ;
-    ns2:connectsThrough <http://example.org/HPL#OA_Connection_3> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:isConnectionPointOf <http://example.org/HPL#OA_Unit> .
+    ns1:connectsThrough <http://example.org/HPL#OA_Connection_3> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://example.org/HPL#OA_Unit> .
 
-<http://example.org/HPL#R_Connection_3> a ns2:Pipe ;
+<http://example.org/HPL#R_Connection_3> a ns1:Pipe ;
     rdfs:label "R Connection 3" ;
-    ns2:cnx <http://example.org/HPL#Accumulator_OCP>,
+    ns1:cnx <http://example.org/HPL#Accumulator_OCP>,
         <http://example.org/HPL#Compressor_ICP> ;
-    ns2:connectsAt <http://example.org/HPL#Accumulator_OCP>,
+    ns1:connectsAt <http://example.org/HPL#Accumulator_OCP>,
         <http://example.org/HPL#Compressor_ICP> ;
-    ns2:connectsFrom <http://example.org/HPL#Accumulator> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:connectsFrom <http://example.org/HPL#Accumulator> ;
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#SightGlass> a ns2:Equipment ;
+<http://example.org/HPL#SightGlass> a ns1:Equipment ;
     rdfs:label "Sight glass" ;
-    ns2:cnx <http://example.org/HPL#SightGlass_CP_1>,
+    ns1:cnx <http://example.org/HPL#SightGlass_CP_1>,
         <http://example.org/HPL#SightGlass_CP_2> ;
-    ns2:connectedThrough <http://example.org/HPL#R_Connection_9> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#SightGlass_CP_1>,
+    ns1:connectedThrough <http://example.org/HPL#R_Connection_9> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#SightGlass_CP_1>,
         <http://example.org/HPL#SightGlass_CP_2> .
 
-<http://example.org/HPL#Straightener> a ns2:Equipment ;
+<http://example.org/HPL#Straightener> a ns1:Equipment ;
     rdfs:label "Straightener" ;
-    ns2:cnx <http://example.org/HPL#Straightener_ICP>,
+    ns1:cnx <http://example.org/HPL#Straightener_ICP>,
         <http://example.org/HPL#Straightener_OCP> ;
-    ns2:connectedThrough <http://example.org/HPL#IA_Connection_4> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Straightener_ICP>,
+    ns1:connectedThrough <http://example.org/HPL#IA_Connection_4> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#Straightener_ICP>,
         <http://example.org/HPL#Straightener_OCP> .
 
-<http://example.org/HPL#Accumulator> a ns2:Equipment ;
+<http://example.org/HPL#Accumulator> a ns1:Equipment ;
     rdfs:label "Accumulator" ;
-    ns2:cnx <http://example.org/HPL#Accumulator_ICP>,
+    ns1:cnx <http://example.org/HPL#Accumulator_ICP>,
         <http://example.org/HPL#Accumulator_OCP> ;
-    ns2:connectedThrough <http://example.org/HPL#R_Connection_2> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Accumulator_ICP>,
+    ns1:connectedThrough <http://example.org/HPL#R_Connection_2> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#Accumulator_ICP>,
         <http://example.org/HPL#Accumulator_OCP> .
 
-<http://example.org/HPL#Junction_1> a ns2:Junction ;
+<http://example.org/HPL#Junction_1> a ns1:Junction ;
     rdfs:label "Junction 1" ;
-    ns2:cnx <http://example.org/HPL#Jnc_1_ICP>,
+    ns1:cnx <http://example.org/HPL#Jnc_1_ICP>,
         <http://example.org/HPL#Jnc_1_OCP> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Jnc_1_ICP>,
+    ns1:hasConnectionPoint <http://example.org/HPL#Jnc_1_ICP>,
         <http://example.org/HPL#Jnc_1_OCP> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#R_Connection_8> a ns2:Pipe ;
+<http://example.org/HPL#R_Connection_8> a ns1:Pipe ;
     rdfs:label "R Connection 8" ;
-    ns2:cnx <http://example.org/HPL#Filter_CP_2>,
+    ns1:cnx <http://example.org/HPL#Filter_CP_2>,
         <http://example.org/HPL#FlowMeter_CP_1> ;
-    ns2:connectsAt <http://example.org/HPL#Filter_CP_2>,
+    ns1:connectsAt <http://example.org/HPL#Filter_CP_2>,
         <http://example.org/HPL#FlowMeter_CP_1> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#R_Connection_9> a ns2:Pipe ;
+<http://example.org/HPL#R_Connection_9> a ns1:Pipe ;
     rdfs:label "R Connection 9" ;
-    ns2:cnx <http://example.org/HPL#FlowMeter_CP_2>,
+    ns1:cnx <http://example.org/HPL#FlowMeter_CP_2>,
         <http://example.org/HPL#SightGlass_CP_1> ;
-    ns2:connectsAt <http://example.org/HPL#FlowMeter_CP_2>,
+    ns1:connectsAt <http://example.org/HPL#FlowMeter_CP_2>,
         <http://example.org/HPL#SightGlass_CP_1> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#Compressor> a ns2:Equipment ;
+<http://example.org/HPL#Compressor> a ns1:Equipment ;
     rdfs:label "Compressor" ;
-    ns2:cnx <http://example.org/HPL#Compressor_ICP>,
+    ns1:cnx <http://example.org/HPL#Compressor_ICP>,
         <http://example.org/HPL#Compressor_OCP> ;
-    ns2:connectedThrough <http://example.org/HPL#R_Connection_3> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Compressor_ICP>,
+    ns1:connectedThrough <http://example.org/HPL#R_Connection_3> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#Compressor_ICP>,
         <http://example.org/HPL#Compressor_OCP> .
 
-<http://example.org/HPL#OA_Connection_3> a ns2:Duct ;
+<http://example.org/HPL#OA_Connection_3> a ns1:Duct ;
     rdfs:label "OA Connection 3" ;
-    ns2:cnx <http://example.org/HPL#OA_Unit_A_OCP>,
+    ns1:cnx <http://example.org/HPL#OA_Unit_A_OCP>,
         <http://example.org/HPL#Outlet_OA_ICP> ;
-    ns2:connectsAt <http://example.org/HPL#OA_Unit_A_OCP>,
+    ns1:connectsAt <http://example.org/HPL#OA_Unit_A_OCP>,
         <http://example.org/HPL#Outlet_OA_ICP> ;
-    ns2:connectsFrom <http://example.org/HPL#OA_Unit> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:hasRole ns2:Role-Discharge .
+    ns1:connectsFrom <http://example.org/HPL#OA_Unit> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:hasRole ns1:Role-Discharge .
 
-<http://example.org/HPL#R_Connection_10> a ns2:Pipe ;
+<http://example.org/HPL#R_Connection_10> a ns1:Pipe ;
     rdfs:label "R Connection 10" ;
-    ns2:cnx <http://example.org/HPL#ExpansionValve_2_CP_1>,
+    ns1:cnx <http://example.org/HPL#ExpansionValve_2_CP_1>,
         <http://example.org/HPL#SightGlass_CP_2> ;
-    ns2:connectsAt <http://example.org/HPL#ExpansionValve_2_CP_1>,
+    ns1:connectsAt <http://example.org/HPL#ExpansionValve_2_CP_1>,
         <http://example.org/HPL#SightGlass_CP_2> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#R_Connection_2> a ns2:Pipe ;
+<http://example.org/HPL#R_Connection_2> a ns1:Pipe ;
     rdfs:label "R Connection 2" ;
-    ns2:cnx <http://example.org/HPL#Accumulator_ICP>,
+    ns1:cnx <http://example.org/HPL#Accumulator_ICP>,
         <http://example.org/HPL#RV_OCP_R_2> ;
-    ns2:connectsAt <http://example.org/HPL#Accumulator_ICP>,
+    ns1:connectsAt <http://example.org/HPL#Accumulator_ICP>,
         <http://example.org/HPL#RV_OCP_R_2> ;
-    ns2:connectsFrom <http://example.org/HPL#RV> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:connectsFrom <http://example.org/HPL#RV> ;
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#R_Connection_4> a ns2:Pipe ;
+<http://example.org/HPL#R_Connection_4> a ns1:Pipe ;
     rdfs:label "R Connection 4" ;
-    ns2:cnx <http://example.org/HPL#Compressor_OCP>,
+    ns1:cnx <http://example.org/HPL#Compressor_OCP>,
         <http://example.org/HPL#RV_ICP_R_4> ;
-    ns2:connectsAt <http://example.org/HPL#Compressor_OCP>,
+    ns1:connectsAt <http://example.org/HPL#Compressor_OCP>,
         <http://example.org/HPL#RV_ICP_R_4> ;
-    ns2:connectsFrom <http://example.org/HPL#Compressor> ;
-    ns2:hasMedium ns2:Constituent-Glycol ;
-    ns2:hasRole ns2:Role-Discharge .
+    ns1:connectsFrom <http://example.org/HPL#Compressor> ;
+    ns1:hasMedium ns1:Constituent-Glycol ;
+    ns1:hasRole ns1:Role-Discharge .
 
-<http://example.org/HPL#Chamber_DomainSpace> a ns2:DomainSpace ;
+<http://example.org/HPL#Chamber_DomainSpace> a ns1:DomainSpace ;
     rdfs:label "Chamber domain space" ;
-    ns2:cnx <http://example.org/HPL#Chamber_ICP>,
+    ns1:cnx <http://example.org/HPL#Chamber_ICP>,
         <http://example.org/HPL#Chamber_OCP> ;
-    ns2:connectedThrough <http://example.org/HPL#IA_Connection_1>,
+    ns1:connectedThrough <http://example.org/HPL#IA_Connection_1>,
         <http://example.org/HPL#IA_Connection_6> ;
-    ns2:connectedTo <http://example.org/HPL#IA_Unit> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#Chamber_ICP>,
+    ns1:connectedTo <http://example.org/HPL#IA_Unit> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#Chamber_ICP>,
         <http://example.org/HPL#Chamber_OCP> ;
-    ns2:hasDomain ns2:Domain-HVAC .
+    ns1:hasDomain ns1:Domain-HVAC .
 
-<http://example.org/HPL#IA_Connection_3> a ns2:Duct ;
+<http://example.org/HPL#IA_Connection_3> a ns1:Duct ;
     rdfs:label "IA Connection 3" ;
-    ns2:cnx <http://example.org/HPL#IA_Unit_A_OCP>,
+    ns1:cnx <http://example.org/HPL#IA_Unit_A_OCP>,
         <http://example.org/HPL#Mixer_ICP> ;
-    ns2:connectsAt <http://example.org/HPL#IA_Unit_A_OCP>,
+    ns1:connectsAt <http://example.org/HPL#IA_Unit_A_OCP>,
         <http://example.org/HPL#Mixer_ICP> ;
-    ns2:connectsFrom <http://example.org/HPL#IA_Unit> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:hasRole ns2:Role-Supply .
+    ns1:connectsFrom <http://example.org/HPL#IA_Unit> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:hasRole ns1:Role-Supply .
 
-<http://example.org/HPL#OA_Connection_1> a ns2:Duct ;
+<http://example.org/HPL#OA_Connection_1> a ns1:Duct ;
     rdfs:label "OA Connection 1" ;
-    ns2:cnx <http://example.org/HPL#Inlet_OA_OCP>,
+    ns1:cnx <http://example.org/HPL#Inlet_OA_OCP>,
         <http://example.org/HPL#OA_Unit_A_ICP> ;
-    ns2:connectsAt <http://example.org/HPL#Inlet_OA_OCP>,
+    ns1:connectsAt <http://example.org/HPL#Inlet_OA_OCP>,
         <http://example.org/HPL#OA_Unit_A_ICP> ;
-    ns2:connectsFrom <http://example.org/HPL#Inlet_OA> ;
-    ns2:connectsTo <http://example.org/HPL#OA_Unit> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:hasRole ns2:Role-Supply .
+    ns1:connectsFrom <http://example.org/HPL#Inlet_OA> ;
+    ns1:connectsTo <http://example.org/HPL#OA_Unit> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:hasRole ns1:Role-Supply .
 
-<http://example.org/HPL#R_Connection_7> a ns2:Pipe ;
+<http://example.org/HPL#R_Connection_7> a ns1:Pipe ;
     rdfs:label "R Connection 7" ;
-    ns2:cnx <http://example.org/HPL#ExpansionValve_1_CP_2>,
+    ns1:cnx <http://example.org/HPL#ExpansionValve_1_CP_2>,
         <http://example.org/HPL#Filter_CP_1> ;
-    ns2:connectsAt <http://example.org/HPL#ExpansionValve_1_CP_2>,
+    ns1:connectsAt <http://example.org/HPL#ExpansionValve_1_CP_2>,
         <http://example.org/HPL#Filter_CP_1> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#R_Connection_11> a ns2:Pipe ;
+<http://example.org/HPL#R_Connection_11> a ns1:Pipe ;
     rdfs:label "R Connection 11" ;
-    ns2:cnx <http://example.org/HPL#ExpansionValve_2_CP_2>,
+    ns1:cnx <http://example.org/HPL#ExpansionValve_2_CP_2>,
         <http://example.org/HPL#HeatExchanger_R_CP_1>,
         <http://example.org/HPL#IA_Unit_R_CP_1> ;
-    ns2:connectsAt <http://example.org/HPL#ExpansionValve_2_CP_2>,
+    ns1:connectsAt <http://example.org/HPL#ExpansionValve_2_CP_2>,
         <http://example.org/HPL#HeatExchanger_R_CP_1>,
         <http://example.org/HPL#IA_Unit_R_CP_1> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#R_Connection_6> a ns2:Pipe ;
+<http://example.org/HPL#R_Connection_6> a ns1:Pipe ;
     rdfs:label "R Connection 6" ;
-    ns2:cnx <http://example.org/HPL#ExpansionValve_1_CP_1>,
+    ns1:cnx <http://example.org/HPL#ExpansionValve_1_CP_1>,
         <http://example.org/HPL#FinnedHeatExchanger_R_CP_2>,
         <http://example.org/HPL#OA_Unit_R_CP_2> ;
-    ns2:connectsAt <http://example.org/HPL#ExpansionValve_1_CP_1>,
+    ns1:connectsAt <http://example.org/HPL#ExpansionValve_1_CP_1>,
         <http://example.org/HPL#FinnedHeatExchanger_R_CP_2>,
         <http://example.org/HPL#OA_Unit_R_CP_2> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#IA_Connection_5> a ns2:Duct ;
+<http://example.org/HPL#IA_Connection_5> a ns1:Duct ;
     rdfs:label "IA Connection 5" ;
-    ns2:cnx <http://example.org/HPL#ChamberBlower_ICP>,
+    ns1:cnx <http://example.org/HPL#ChamberBlower_ICP>,
         <http://example.org/HPL#Straightener_OCP> ;
-    ns2:connectsAt <http://example.org/HPL#ChamberBlower_ICP>,
+    ns1:connectsAt <http://example.org/HPL#ChamberBlower_ICP>,
         <http://example.org/HPL#Straightener_OCP> ;
-    ns2:connectsFrom <http://example.org/HPL#Straightener> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:hasRole ns2:Role-Supply .
+    ns1:connectsFrom <http://example.org/HPL#Straightener> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:hasRole ns1:Role-Supply .
 
-<http://example.org/HPL#RV> a ns2:Valve ;
+<http://example.org/HPL#RV> a ns1:Valve ;
     rdfs:label "RV" ;
-    ns2:cnx <http://example.org/HPL#RV_CP_R_1>,
+    ns1:cnx <http://example.org/HPL#RV_CP_R_1>,
         <http://example.org/HPL#RV_CP_R_5>,
         <http://example.org/HPL#RV_ICP_R_4>,
         <http://example.org/HPL#RV_OCP_R_2> ;
-    ns2:connectedThrough <http://example.org/HPL#R_Connection_4>,
+    ns1:connectedThrough <http://example.org/HPL#R_Connection_4>,
         <http://example.org/HPL#Segment_2> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#RV_CP_R_1>,
+    ns1:hasConnectionPoint <http://example.org/HPL#RV_CP_R_1>,
         <http://example.org/HPL#RV_CP_R_5>,
         <http://example.org/HPL#RV_ICP_R_4>,
         <http://example.org/HPL#RV_OCP_R_2> .
 
-<http://example.org/HPL#Segment_1> a ns2:Connection ;
+<http://example.org/HPL#Segment_1> a ns1:Connection ;
     rdfs:label "Segment 1" ;
-    ns2:cnx <http://example.org/HPL#HeatExchanger_R_CP_2>,
+    ns1:cnx <http://example.org/HPL#HeatExchanger_R_CP_2>,
         <http://example.org/HPL#IA_Unit_R_CP_2>,
         <http://example.org/HPL#Jnc_1_ICP> ;
-    ns2:connectsAt <http://example.org/HPL#HeatExchanger_R_CP_2>,
+    ns1:connectsAt <http://example.org/HPL#HeatExchanger_R_CP_2>,
         <http://example.org/HPL#IA_Unit_R_CP_2>,
         <http://example.org/HPL#Jnc_1_ICP> ;
-    ns2:connectsTo <http://example.org/HPL#Junction_1> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:connectsTo <http://example.org/HPL#Junction_1> ;
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#Segment_2> a ns2:Connection ;
+<http://example.org/HPL#Segment_2> a ns1:Connection ;
     rdfs:label "Segment 2" ;
-    ns2:cnx <http://example.org/HPL#Jnc_1_OCP>,
+    ns1:cnx <http://example.org/HPL#Jnc_1_OCP>,
         <http://example.org/HPL#OA_Unit_R_CP_1>,
         <http://example.org/HPL#RV_CP_R_1> ;
-    ns2:connectsAt <http://example.org/HPL#Jnc_1_OCP>,
+    ns1:connectsAt <http://example.org/HPL#Jnc_1_OCP>,
         <http://example.org/HPL#OA_Unit_R_CP_1>,
         <http://example.org/HPL#RV_CP_R_1> ;
-    ns2:connectsFrom <http://example.org/HPL#Junction_1> ;
-    ns2:hasMedium ns2:Constituent-Glycol .
+    ns1:connectsFrom <http://example.org/HPL#Junction_1> ;
+    ns1:hasMedium ns1:Constituent-Glycol .
 
-<http://example.org/HPL#IA_Connection_1> a ns2:Duct ;
+<http://example.org/HPL#IA_Connection_1> a ns1:Duct ;
     rdfs:label "IA Connection 1" ;
-    ns2:cnx <http://example.org/HPL#Chamber_OCP>,
+    ns1:cnx <http://example.org/HPL#Chamber_OCP>,
         <http://example.org/HPL#IA_Unit_A_ICP> ;
-    ns2:connectsAt <http://example.org/HPL#Chamber_OCP>,
+    ns1:connectsAt <http://example.org/HPL#Chamber_OCP>,
         <http://example.org/HPL#IA_Unit_A_ICP> ;
-    ns2:connectsFrom <http://example.org/HPL#Chamber_DomainSpace> ;
-    ns2:connectsTo <http://example.org/HPL#IA_Unit> ;
-    ns2:hasMedium ns2:Fluid-Air ;
-    ns2:hasRole ns2:Role-Return .
+    ns1:connectsFrom <http://example.org/HPL#Chamber_DomainSpace> ;
+    ns1:connectsTo <http://example.org/HPL#IA_Unit> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:hasRole ns1:Role-Return .
 
-<http://example.org/HPL#HeatExchanger> a ns2:Coil ;
+<http://example.org/HPL#HeatExchanger> a ns1:Coil ;
     rdfs:label "Heat Exchanger" ;
-    ns2:cnx <http://example.org/HPL#HeatExchanger_A_ICP>,
+    ns1:cnx <http://example.org/HPL#HeatExchanger_A_ICP>,
         <http://example.org/HPL#HeatExchanger_A_OCP>,
         <http://example.org/HPL#HeatExchanger_R_CP_1>,
         <http://example.org/HPL#HeatExchanger_R_CP_2> ;
-    ns2:connectedThrough <http://example.org/HPL#R_Connection_11> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#HeatExchanger_A_ICP>,
+    ns1:connectedThrough <http://example.org/HPL#R_Connection_11> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#HeatExchanger_A_ICP>,
         <http://example.org/HPL#HeatExchanger_A_OCP>,
         <http://example.org/HPL#HeatExchanger_R_CP_1>,
         <http://example.org/HPL#HeatExchanger_R_CP_2> ;
-    ns2:hasRole ns2:Role-Evaporator .
+    ns1:hasRole ns1:Role-Evaporator .
 
-<http://example.org/HPL#IA_Unit> a ns2:Equipment ;
+<http://example.org/HPL#IA_Unit> a ns1:Equipment ;
     rdfs:label "IA Unit" ;
-    ns2:cnx <http://example.org/HPL#IA_Unit_A_ICP>,
+    ns1:cnx <http://example.org/HPL#IA_Unit_A_ICP>,
         <http://example.org/HPL#IA_Unit_A_OCP>,
         <http://example.org/HPL#IA_Unit_R_CP_1>,
         <http://example.org/HPL#IA_Unit_R_CP_2> ;
-    ns2:connectedThrough <http://example.org/HPL#IA_Connection_1>,
+    ns1:connectedThrough <http://example.org/HPL#IA_Connection_1>,
         <http://example.org/HPL#R_Connection_11>,
         <http://example.org/HPL#Segment_1> ;
-    ns2:contains <http://example.org/HPL#ExpansionValve_2>,
+    ns1:contains <http://example.org/HPL#ExpansionValve_2>,
         <http://example.org/HPL#Fan_Indoor>,
         <http://example.org/HPL#HeatExchanger>,
         <http://example.org/HPL#SightGlass> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#IA_Unit_A_ICP>,
+    ns1:hasConnectionPoint <http://example.org/HPL#IA_Unit_A_ICP>,
         <http://example.org/HPL#IA_Unit_A_OCP>,
         <http://example.org/HPL#IA_Unit_R_CP_1>,
         <http://example.org/HPL#IA_Unit_R_CP_2> .
 
-<http://example.org/HPL#FinnedHeatExchanger> a ns2:HeatExchanger ;
+<http://example.org/HPL#FinnedHeatExchanger> a ns1:HeatExchanger ;
     rdfs:label "Finned heat exchanger" ;
-    ns2:cnx <http://example.org/HPL#FinnedHeatExchanger_A_ICP>,
+    ns1:cnx <http://example.org/HPL#FinnedHeatExchanger_A_ICP>,
         <http://example.org/HPL#FinnedHeatExchanger_A_OCP>,
         <http://example.org/HPL#FinnedHeatExchanger_R_CP_1>,
         <http://example.org/HPL#FinnedHeatExchanger_R_CP_2> ;
-    ns2:connectedThrough <http://example.org/HPL#R_Connection_6> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#FinnedHeatExchanger_A_ICP>,
+    ns1:connectedThrough <http://example.org/HPL#R_Connection_6> ;
+    ns1:hasConnectionPoint <http://example.org/HPL#FinnedHeatExchanger_A_ICP>,
         <http://example.org/HPL#FinnedHeatExchanger_A_OCP>,
         <http://example.org/HPL#FinnedHeatExchanger_R_CP_1>,
         <http://example.org/HPL#FinnedHeatExchanger_R_CP_2> ;
-    ns2:hasRole ns2:Role-Condenser .
+    ns1:hasRole ns1:Role-Condenser .
 
-<http://example.org/HPL#OA_Unit> a ns2:Equipment ;
+<http://example.org/HPL#OA_Unit> a ns1:Equipment ;
     rdfs:label "OA Unit" ;
-    ns2:cnx <http://example.org/HPL#OA_Unit_A_ICP>,
+    ns1:cnx <http://example.org/HPL#OA_Unit_A_ICP>,
         <http://example.org/HPL#OA_Unit_A_OCP>,
         <http://example.org/HPL#OA_Unit_R_CP_1>,
         <http://example.org/HPL#OA_Unit_R_CP_2> ;
-    ns2:connectedThrough <http://example.org/HPL#Segment_2> ;
-    ns2:contains <http://example.org/HPL#Accumulator>,
+    ns1:connectedThrough <http://example.org/HPL#Segment_2> ;
+    ns1:contains <http://example.org/HPL#Accumulator>,
         <http://example.org/HPL#Compressor>,
         <http://example.org/HPL#Fan_Outdoor>,
         <http://example.org/HPL#FinnedHeatExchanger>,
         <http://example.org/HPL#RV> ;
-    ns2:hasConnectionPoint <http://example.org/HPL#OA_Unit_A_ICP>,
+    ns1:hasConnectionPoint <http://example.org/HPL#OA_Unit_A_ICP>,
         <http://example.org/HPL#OA_Unit_A_OCP>,
         <http://example.org/HPL#OA_Unit_R_CP_1>,
         <http://example.org/HPL#OA_Unit_R_CP_2> .
