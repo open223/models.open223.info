@@ -608,18 +608,15 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns5:00027 ;
-            sh:resultMessage &quot;Property needs to have at least 1 value&quot; ;
-            sh:resultPath ns2:hasObservationLocation ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/a4692797&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode ns5:00051 ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00051&gt; probably needs an association with a Connection.&quot; ;
-            sh:resultPath ns2:connectsThrough ;
+            sh:focusNode ns5:00857 ;
+            sh:resultMessage &quot;s223: A DomainSpace must be enclosed by a PhysicalSpace.&quot; ;
+            sh:resultPath [ sh:inversePath ns2:encloses ] ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/89559177&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode ns5:00042 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00042&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;http://data.ashrae.org/standard223/data/scb-vrf#00009&gt; because it is associated with a Junction or
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-vrf#00027

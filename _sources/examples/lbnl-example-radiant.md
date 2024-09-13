@@ -31,8 +31,10 @@ This is a reference model provided by LBNL of a medium office building using a r
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Boiler](https://explore.open223.info/s223/Boiler.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [CoolingTower](https://explore.open223.info/s223/CoolingTower.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatExchanger](https://explore.open223.info/s223/HeatExchanger.html) | 1 |
-| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 35 |
-| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 38 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 79 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 62 |
+| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 38 |
+| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 46 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 6 |
 
 

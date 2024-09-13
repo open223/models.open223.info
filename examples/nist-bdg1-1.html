@@ -676,124 +676,294 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># load the model into the BuildingMOTIF instance</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;urn:nist-bdg1-1&quot;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/nist-bdg1-1.ttl&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># validate the model against 223P ontology</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span> <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
+@prefix ns1: &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/graph.py:1468,</span> in <span class="ni">Graph.parse</span><span class="nt">(self, source, publicID, format, location, file, data, **args)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1373</span> <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1374</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1375</span>     <span class="n">source</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1383</span>     <span class="o">**</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1384</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Graph&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1385</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1386</span><span class="sd">     Parse an RDF source adding the resulting triples to the Graph.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1387</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1465</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1466</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1468</span>     <span class="n">source</span> <span class="o">=</span> <span class="n">create_input_source</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1469</span>         <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1470</span>         <span class="n">publicID</span><span class="o">=</span><span class="n">publicID</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1471</span>         <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1472</span>         <span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1473</span>         <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1474</span>         <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1475</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1476</span>     <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1477</span>         <span class="nb">format</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">content_type</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/parser.py:401,</span> in <span class="ni">create_input_source</span><span class="nt">(source, publicID, location, file, data, format)</span>
-<span class="g g-Whitespace">    </span><span class="mi">394</span>         <span class="k">assert</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">395</span>         <span class="k">assert</span> <span class="n">source</span> <span class="ow">is</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">396</span>     <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">397</span>         <span class="n">absolute_location</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">398</span>         <span class="n">auto_close</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">399</span>         <span class="n">file</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span>         <span class="n">input_source</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">401</span>     <span class="p">)</span> <span class="o">=</span> <span class="n">_create_input_source_from_location</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span>         <span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span>         <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span>         <span class="n">input_source</span><span class="o">=</span><span class="n">input_source</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span>         <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span>     <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/parser.py:463,</span> in <span class="ni">_create_input_source_from_location</span><span class="nt">(file, format, input_source, location)</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">463</span>     <span class="n">input_source</span> <span class="o">=</span> <span class="n">URLInputSource</span><span class="p">(</span><span class="n">absolute_location</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span> <span class="n">auto_close</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="c1"># publicID = publicID or absolute_location  # Further to fix</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="c1"># for issue 130</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/parser.py:270,</span> in <span class="ni">URLInputSource.__init__</span><span class="nt">(self, system_id, format)</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span>     <span class="n">myheaders</span><span class="p">[</span><span class="s2">&quot;Accept&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span> <span class="n">req</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="n">system_id</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">myheaders</span><span class="p">)</span>  <span class="c1"># type: ignore[arg-type]</span>
-<span class="ne">--&gt; </span><span class="mi">270</span> <span class="n">response</span><span class="p">:</span> <span class="n">addinfourl</span> <span class="o">=</span> <span class="n">_urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">geturl</span><span class="p">()</span>  <span class="c1"># in case redirections took place</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="bp">self</span><span class="o">.</span><span class="n">links</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_links</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/rdflib/_networking.py:106,</span> in <span class="ni">_urlopen</span><span class="nt">(request)</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span><span class="sd"> This is a shim for `urlopen` that handles HTTP redirects with status code</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span><span class="sd"> 308 (Permanent Redirect).</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span><span class="sd"> :return: The response to the request.</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">106</span>     <span class="k">return</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="k">except</span> <span class="n">HTTPError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="k">if</span> <span class="n">error</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="mi">308</span> <span class="ow">and</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="c1"># HTTP response code 308 (Permanent Redirect) is not supported by python</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="c1"># versions older than 3.11. See &lt;https://bugs.python.org/issue40321&gt; and</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="c1"># &lt;https://github.com/python/cpython/issues/84501&gt; for more details.</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="c1"># This custom error handling should be removed once all supported</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>         <span class="c1"># versions of Python handles 308.</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/urllib/request.py:216,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
-<span class="ne">--&gt; </span><span class="mi">216</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/urllib/request.py:525,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">523</span> <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
-<span class="g g-Whitespace">    </span><span class="mi">524</span>     <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">525</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">527</span> <span class="k">return</span> <span class="n">response</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/urllib/request.py:634,</span> in <span class="ni">HTTPErrorProcessor.http_response</span><span class="nt">(self, request, response)</span>
-<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="c1"># According to RFC 2616, &quot;2xx&quot; code indicates that the client&#39;s</span>
-<span class="g g-Whitespace">    </span><span class="mi">632</span> <span class="c1"># request was successfully received, understood, and accepted.</span>
-<span class="g g-Whitespace">    </span><span class="mi">633</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">634</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">635</span>         <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">637</span> <span class="k">return</span> <span class="n">response</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/urllib/request.py:563,</span> in <span class="ni">OpenerDirector.error</span><span class="nt">(self, proto, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">561</span> <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">562</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
-<span class="ne">--&gt; </span><span class="mi">563</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/urllib/request.py:496,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">496</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>         <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/urllib/request.py:643,</span> in <span class="ni">HTTPDefaultErrorHandler.http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="k">def</span> <span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">643</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
-
-<span class="ne">HTTPError</span>: HTTP Error 404: Not Found
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanActuator&gt; ;
+            sh:resultMessage &quot;Property needs to have at least 1 value&quot; ;
+            sh:resultPath ns2:actuatedByProperty ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/97613d03&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1Outlet&gt; ;
+            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
+            sh:resultPath ns2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirDamperActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirDamperActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00061
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00061 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00061 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUReturnInlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUReturnInlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomFanExhaustDuct
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomFanExhaustDuct needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00025
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00025 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00025 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1CCT
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1CCT needs to be a http://data.ashrae.org/standard223#Function
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1ReheatValvePositionCommand
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1ReheatValvePositionCommand needs to be a http://data.ashrae.org/standard223#Function
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomInletConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomInletConnectionPoint needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00056
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00056 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00056 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00013
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00013 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpeningKC
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpeningKC needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeInletConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeInletConnectionPoint needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1OnOff
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1OnOff needs to be a http://data.ashrae.org/standard223#Function
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OAJunctionInlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OAJunctionInlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2HeatingCoil
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2HeatingCoil needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2HeatingCoil needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1DamperPositionCommand
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1DamperPositionCommand needs to be a http://data.ashrae.org/standard223#Function
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Driver1
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Driver1 needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalBoilerInletCP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalBoilerInletCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00036
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00036 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00036 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00050
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00050 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustFan
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustFan needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustFan needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#LightEngine1Inlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#LightEngine1Inlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUOAInlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUOAInlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00051
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00051 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00051 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilValveActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilValveActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00001
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00001 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00001 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2ReheatValveActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2ReheatValveActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00020
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00020 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1Outlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1Outlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorInletConnectionPointK
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorInletConnectionPointK needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeOutletConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeOutletConnectionPoint needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00035
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00035 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2DamperInletCP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2DamperInletCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletReheatCoilCP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletReheatCoilCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2MotorizedDamper
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2MotorizedDamper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2MotorizedDamper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2DamperOutletCP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2DamperOutletCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00047
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00047 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00047 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00006
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00006 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1Inlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1Inlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00049
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00049 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1ReheatValveActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1ReheatValveActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2OnOff
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2OnOff needs to be a http://data.ashrae.org/standard223#Function
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1MotorizedDamper
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1MotorizedDamper needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1MotorizedDamper needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OAJunctionOutletToMin
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OAJunctionOutletToMin needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUExhaustOutlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUExhaustOutlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorInletConnectionPointPO
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorInletConnectionPointPO needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00046
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00046 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00018
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00018 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00058
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00058 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2Inlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2Inlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletReheatCoilCP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletReheatCoilCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomOutletConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomOutletConnectionPoint needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutletIntraCorridor5CP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutletIntraCorridor5CP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1HeatingCoil
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1HeatingCoil needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1HeatingCoil needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00053
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00053 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustAirDamperActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustAirDamperActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpeningCB
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpeningCB needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OA-to-EconDamper
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OA-to-EconDamper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2Intensity
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2Intensity needs to be a http://data.ashrae.org/standard223#Function
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpeningPOC
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpeningPOC needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorOutletConnectionPointB
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorOutletConnectionPointB needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1DamperOutletCP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1DamperOutletCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#RoomSupply1
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#RoomSupply1 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#PrivateOfficeOutletConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#PrivateOfficeOutletConnectionPoint needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00007
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00007 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00007 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnDuct
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnDuct needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InternalConnection
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InternalConnection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#PrivateOfficeInletConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#PrivateOfficeInletConnectionPoint needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00064
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00064 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00023
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00023 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Driver1Outlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Driver1Outlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilValveActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilValveActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#KitchenetteOutletConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#KitchenetteOutletConnectionPoint needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVSupply
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVSupply needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#KitchenetteInletConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#KitchenetteInletConnectionPoint needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00026
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00026 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2Outlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2Outlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00052
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00052 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalChillerInletCP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalChillerInletCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustToExteriorAir
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustToExteriorAir needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1InternalWire
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1InternalWire needs to be a http://data.ashrae.org/standard223#Substance-Medium
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1InternalWire needs to be a http://data.ashrae.org/standard223#Constituent-Electricity
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OuletReheatCoilCP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OuletReheatCoilCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2CCT
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2CCT needs to be a http://data.ashrae.org/standard223#Function
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#FanOutletConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#FanOutletConnectionPoint needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00037
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00037 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirDamperActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirDamperActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00024
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00024 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirJunction
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirJunction needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUSupplyOutlet
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#AHUSupplyOutlet needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00016
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00016 needs between 1 and None instances of http://data.ashrae.org/standard223#OutletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00016 needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1DamperActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1DamperActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1DamperInletCP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1DamperInletCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00027
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00027 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalChiller
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalChiller needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1Intensity
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1Intensity needs to be a http://data.ashrae.org/standard223#Function
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OAJunctionOutletToEcon
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OAJunctionOutletToEcon needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00059
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00059 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#InletIntraCorridor4CP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#InletIntraCorridor4CP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#RoomSupply2
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#RoomSupply2 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalBoiler
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExternalBoiler needs between 1 and None instances of http://data.ashrae.org/standard223#InletConnectionPoint on path http://data.ashrae.org/standard223#hasConnectionPoint
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustDuct
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustDuct needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00014
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00014 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFromExteriorAir
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFromExteriorAir needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00063
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00063 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OuletReheatCoilCP
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OuletReheatCoilCP needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00010
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00010 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00048
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00048 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00009
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00009 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InternalConnection
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InternalConnection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpeningCOO
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpeningCOO needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#FanInletConnectionPoint
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#FanInletConnectionPoint needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00055
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00055 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00015
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00015 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00038
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00038 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00019
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00019 needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorOutletConnectionPointOO
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CorridorOutletConnectionPointOO needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustToExteriorAir
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustToExteriorAir needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OA-to-MinDamper
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OA-to-MinDamper needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVAC4-5Connection
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVAC4-5Connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2DamperActuator
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2DamperActuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00060
+  - http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00060 needs to be a http://data.ashrae.org/standard223#Substance-Medium
 </pre></div>
 </div>
 </div>
