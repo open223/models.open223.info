@@ -1,6 +1,6 @@
-@prefix ns1: <http://data.ashrae.org/bacnet/2020#> .
+@prefix ns1: <http://qudt.org/schema/qudt/> .
 @prefix ns2: <http://data.ashrae.org/standard223#> .
-@prefix ns3: <http://qudt.org/schema/qudt/> .
+@prefix ns3: <http://data.ashrae.org/bacnet/2020#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -8,10 +8,10 @@
 <http://example.org/IBAL> a owl:Ontology ;
     owl:versionInfo "Created with TopBraid Composer" .
 
-<http://example.org/IBAL#AHU1_Controller> a ns1:object,
+<http://example.org/IBAL#AHU1_Controller> a ns3:object,
         ns2:Controller ;
     rdfs:label "AHU1 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#ahu2_out_rtd_AI>,
+    ns3:hasObject <http://example.org/IBAL#ahu2_out_rtd_AI>,
         <http://example.org/IBAL#ahu2_p_down_AI>,
         <http://example.org/IBAL#ahu2_vfd_AO>,
         <http://example.org/IBAL#d15_pos_c_AI>,
@@ -19,14 +19,14 @@
         <http://example.org/IBAL#v13_pos_c_AO>,
         <http://example.org/IBAL#v13_pos_fb_AI>,
         <http://example.org/IBAL#vav2_heat_c_AI> ;
-    ns1:hasPort ns1:P_47815 ;
+    ns3:hasPort ns3:P_47815 ;
     ns2:executes <http://example.org/IBAL#AHU1_FnB> ;
     ns2:hasRole ns2:Role-Controller .
 
-<http://example.org/IBAL#AHU2_Controller> a ns1:Device,
+<http://example.org/IBAL#AHU2_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "AHU2 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#ahu1_out_rtd>,
+    ns3:hasObject <http://example.org/IBAL#ahu1_out_rtd>,
         <http://example.org/IBAL#ahu1_p_down>,
         <http://example.org/IBAL#ahu1_vfd>,
         <http://example.org/IBAL#d17_pos_c>,
@@ -1175,10 +1175,10 @@
     ns2:hasObservationLocation <http://example.org/IBAL#VAV_4_Connection_2> ;
     ns2:observes <http://example.org/IBAL#vav4_out_rtd> .
 
-<http://example.org/IBAL#Chiller1_Controller> a ns1:Device,
+<http://example.org/IBAL#Chiller1_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "Chiller1 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#ch1_c_in_rtd>,
+    ns3:hasObject <http://example.org/IBAL#ch1_c_in_rtd>,
         <http://example.org/IBAL#ch1_f_c>,
         <http://example.org/IBAL#ch1_f_e>,
         <http://example.org/IBAL#ch1_on>,
@@ -1199,10 +1199,10 @@
     ns2:hasOutput <http://example.org/IBAL#v19_pos_c>,
         <http://example.org/IBAL#v7_pos_c> .
 
-<http://example.org/IBAL#Chiller2_Controller> a ns1:Device,
+<http://example.org/IBAL#Chiller2_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "Chiller2 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#ch2_c_in_rtd>,
+    ns3:hasObject <http://example.org/IBAL#ch2_c_in_rtd>,
         <http://example.org/IBAL#ch2_f_c>,
         <http://example.org/IBAL#ch2_f_e>,
         <http://example.org/IBAL#ch2_on>,
@@ -1254,8 +1254,8 @@
 <http://example.org/IBAL#HC-1-InletTemp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "HC 1 InletTemp" ;
     ns2:hasValue 40.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#HVACZone_1> a ns2:Zone ;
     rdfs:label "HVACZone 1" ;
@@ -1305,26 +1305,26 @@
 <http://example.org/IBAL#PlateHeatExchange_1_ConnectionTemperature> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Plate heat exchange 1 Connection temperature" ;
     ns2:hasValue 60.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ReturnAir-1-Flow> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Return Air 1 Flow" ;
     ns2:hasValue 500.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#Segment_76temp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Segment 76temp" ;
     ns2:hasValue "75" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#Segment_88_Temp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Segment_88_Temp" ;
     ns2:hasValue "62" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#StaticPressureReset> a ns2:Function ;
     rdfs:label "Static pressure reset" ;
@@ -1337,31 +1337,31 @@
 
 <http://example.org/IBAL#Temp_7> rdfs:label "Channel 106" .
 
-<http://example.org/IBAL#VAV1_Controller> a ns1:Device,
+<http://example.org/IBAL#VAV1_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "VAV1 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#d15_pos_c_AO>,
+    ns3:hasObject <http://example.org/IBAL#d15_pos_c_AO>,
         <http://example.org/IBAL#d15_pos_fb_AI>,
         <http://example.org/IBAL#vav1_f_AI>,
         <http://example.org/IBAL#vav1_heat_c_AO>,
         <http://example.org/IBAL#vav1_out_rtd_AI>,
         <http://example.org/IBAL#vav1_t_in_AI>,
         <http://example.org/IBAL#zs1_out_rtd_AI> ;
-    ns1:hasPort ns1:P_47811 ;
+    ns3:hasPort ns3:P_47811 ;
     ns2:executes <http://example.org/IBAL#VAV1_FnB> ;
     ns2:hasRole ns2:Role-Controller .
 
-<http://example.org/IBAL#VAV2_Controller> a ns1:Device,
+<http://example.org/IBAL#VAV2_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "VAV2 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#d16_pos_c_AO>,
+    ns3:hasObject <http://example.org/IBAL#d16_pos_c_AO>,
         <http://example.org/IBAL#d16_pos_fb_AI>,
         <http://example.org/IBAL#vav2_f_AI>,
         <http://example.org/IBAL#vav2_heat_c_AO>,
         <http://example.org/IBAL#vav2_out_rtd_AI>,
         <http://example.org/IBAL#vav2_t_in_AI>,
         <http://example.org/IBAL#zs2_out_rtd_AI> ;
-    ns1:hasPort ns1:P_47812 ;
+    ns3:hasPort ns3:P_47812 ;
     ns2:hasRole ns2:Role-Controller .
 
 <http://example.org/IBAL#VAV2_FnB> a ns2:Function ;
@@ -1374,16 +1374,16 @@
     ns2:hasOutput <http://example.org/IBAL#d16_pos_c>,
         <http://example.org/IBAL#vav2_heat_c> .
 
-<http://example.org/IBAL#VAV3_Controller> a ns1:Device,
+<http://example.org/IBAL#VAV3_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "VAV3 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#d17_pos_c>,
+    ns3:hasObject <http://example.org/IBAL#d17_pos_c>,
         <http://example.org/IBAL#d17_pos_fb>,
         <http://example.org/IBAL#vav3_f>,
         <http://example.org/IBAL#vav3_heat_c>,
         <http://example.org/IBAL#vav3_out_rtd>,
         <http://example.org/IBAL#vav3_t_in> ;
-    ns1:hasPort ns1:P_47813 ;
+    ns3:hasPort ns3:P_47813 ;
     ns2:hasRole ns2:Role-Controller .
 
 <http://example.org/IBAL#VAV3_FnB> a ns2:Function ;
@@ -1396,16 +1396,16 @@
     ns2:hasOutput <http://example.org/IBAL#d17_pos_c>,
         <http://example.org/IBAL#vav3_heat_c> .
 
-<http://example.org/IBAL#VAV4_Controller> a ns1:Device,
+<http://example.org/IBAL#VAV4_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "VAV4 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#d18_pos_c>,
+    ns3:hasObject <http://example.org/IBAL#d18_pos_c>,
         <http://example.org/IBAL#d18_pos_fb>,
         <http://example.org/IBAL#vav4_f>,
         <http://example.org/IBAL#vav4_heat_c>,
         <http://example.org/IBAL#vav4_out_rtd>,
         <http://example.org/IBAL#vav4_t_in> ;
-    ns1:hasPort ns1:P_47814 ;
+    ns3:hasPort ns3:P_47814 ;
     ns2:hasRole ns2:Role-Controller .
 
 <http://example.org/IBAL#VAV4_FnB> a ns2:Function ;
@@ -1418,128 +1418,128 @@
     ns2:hasOutput <http://example.org/IBAL#d18_pos_c>,
         <http://example.org/IBAL#vav4_heat_c> .
 
-<http://example.org/IBAL#Zone1_Controller> a ns1:Device,
+<http://example.org/IBAL#Zone1_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "Zone1 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#zs1_out_rtd>,
+    ns3:hasObject <http://example.org/IBAL#zs1_out_rtd>,
         <http://example.org/IBAL#zs1_t_sp_f> ;
     ns2:hasRole ns2:Role-Controller .
 
-<http://example.org/IBAL#Zone2_Controller> a ns1:Device,
+<http://example.org/IBAL#Zone2_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "Zone2 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#zs2_out_rtd>,
+    ns3:hasObject <http://example.org/IBAL#zs2_out_rtd>,
         <http://example.org/IBAL#zs2_t_sp_f> ;
     ns2:hasRole ns2:Role-Controller .
 
-<http://example.org/IBAL#Zone3_Controller> a ns1:Device,
+<http://example.org/IBAL#Zone3_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "Zone3 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#zs3_out_rtd>,
+    ns3:hasObject <http://example.org/IBAL#zs3_out_rtd>,
         <http://example.org/IBAL#zs3_t_sp_f> ;
     ns2:hasRole ns2:Role-Controller .
 
-<http://example.org/IBAL#Zone4_Controller> a ns1:Device,
+<http://example.org/IBAL#Zone4_Controller> a ns3:Device,
         ns2:Controller ;
     rdfs:label "Zone4 Controller" ;
-    ns1:hasObject <http://example.org/IBAL#zs4_out_rtd>,
+    ns3:hasObject <http://example.org/IBAL#zs4_out_rtd>,
         <http://example.org/IBAL#zs4_t_sp_f> ;
     ns2:hasRole ns2:Role-Controller .
 
 <http://example.org/IBAL#hx2_dp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx2 dp" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#indoor_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "indoor rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#tmc1_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "tmc1 in rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#tmc1_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "tmc1 out rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#tmc2_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "tmc2 in rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#tmc2_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "tmc2 out rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#tmc3_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "tmc3 in rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#tmc3_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "tmc3 out rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#tmc4_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "tmc4 in rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#tmc4_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "tmc4 out rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#v14_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v14 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v14_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v14 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v15_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v15 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v16_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v16 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v16_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v16 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v17_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v17 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v17_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v17 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v2_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v2 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#vch1_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "vch1 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#AHU1_FnB> a ns2:Function ;
     rdfs:label "AHU1 Fn b" ;
@@ -1552,14 +1552,14 @@
 <http://example.org/IBAL#HC-3-OutletFlow> a ns2:QuantifiableObservableProperty ;
     rdfs:label "HC 3 OutletFlow" ;
     ns2:hasValue 500.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
 
 <http://example.org/IBAL#HC-5-OutletFlow> a ns2:QuantifiableObservableProperty ;
     rdfs:label "HC 5 OutletFlow" ;
     ns2:hasValue 20.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#VAV1_FnB> a ns2:Function ;
     rdfs:label "VAV1 Fn b" ;
@@ -1573,1522 +1573,1522 @@
 
 <http://example.org/IBAL#ahu1_cc_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU1 CC Out RTD" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu1_cc_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 CC RTD" ;
     ns2:hasValue 45.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu1_f_cc> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Channel 197" ;
     ns2:hasValue 40.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#ahu1_f_ra> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 F RA" ;
     ns2:hasValue 1000.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#ahu1_f_sa> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 F SA" ;
     ns2:hasValue 600.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#ahu1_fan_power_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ahu1 fan power xref" ;
-    ns1:device-identifier "device,1115" ;
-    ns1:object-identifier "analog-value,1" ;
-    ns1:object-name "ahu1_fan_power" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1115" ;
+    ns3:object-identifier "analog-value,1" ;
+    ns3:object-name "ahu1_fan_power" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ahu1_heat_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "AHU1 Heat C" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#ahu1_heat_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU1 Heat Power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#ahu1_heat_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 Heat RTD" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu1_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 In RTD" ;
     ns2:hasValue 45.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu1_on> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ahu1 on" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#ahu1_out_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ahu1 out rtd xref" ;
-    ns1:device-identifier "device,1115" ;
-    ns1:object-identifier "analog-input,2" ;
-    ns1:object-name "ahu1_out_rtd" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1115" ;
+    ns3:object-identifier "analog-input,2" ;
+    ns3:object-name "ahu1_out_rtd" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ahu1_p_down_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ahu1 p down xref" ;
-    ns1:device-identifier "device,1115" ;
-    ns1:object-identifier "analog-input,3" ;
-    ns1:object-name "ahu1_p_down" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1115" ;
+    ns3:object-identifier "analog-input,3" ;
+    ns3:object-name "ahu1_p_down" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ahu1_p_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU1 P Up" ;
     ns2:hasValue 11296.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
 
 <http://example.org/IBAL#ahu1_rh_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 RH Down" ;
     ns2:hasValue 50.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
 
 <http://example.org/IBAL#ahu1_rh_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 RH Up" ;
     ns2:hasValue 60.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
 
 <http://example.org/IBAL#ahu1_t_ra> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 T RA" ;
     ns2:hasValue 65.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu1_t_sa> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 T SA" ;
     ns2:hasValue 60.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu1_vfd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ahu1 vfd xref" ;
-    ns1:device-identifier "device,1115" ;
-    ns1:object-identifier "analog-output,1" ;
-    ns1:object-name "ahu1_vfd" ;
-    ns1:present-value "30.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1115" ;
+    ns3:object-identifier "analog-output,1" ;
+    ns3:object-name "ahu1_vfd" ;
+    ns3:present-value "30.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ahu2_cc_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 cc in rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu2_cc_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 cc out rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu2_cc_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 cc rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu2_f_cc> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 f cc" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#ahu2_f_cc_mag> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 f cc mag" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#ahu2_f_ra> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 f ra" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#ahu2_f_sa> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 f sa" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#ahu2_fan_power_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ahu2 fan power xref" ;
-    ns1:device-identifier "device,1116" ;
-    ns1:object-identifier "analog-value,1" ;
-    ns1:object-name "ahu2_fan_power" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1116" ;
+    ns3:object-identifier "analog-value,1" ;
+    ns3:object-name "ahu2_fan_power" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ahu2_heat_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ahu2 heat c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#ahu2_heat_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 heat power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#ahu2_heat_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 heat rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu2_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 in rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu2_on> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ahu2 on" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
-<http://example.org/IBAL#ahu2_out_rtd_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#ahu2_out_rtd_AI> a ns3:AnalogInputObject ;
     rdfs:label "ahu2 out rtd AI" ;
-    ns1:description "AHU2 Supply Air Temperature" ;
-    ns1:object-name "ahu2_out_rtd" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "70.0"^^xsd:float .
+    ns3:description "AHU2 Supply Air Temperature" ;
+    ns3:object-name "ahu2_out_rtd" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "70.0"^^xsd:float .
 
 <http://example.org/IBAL#ahu2_out_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ahu2 out rtd xref" ;
-    ns1:device-identifier "device,1116" ;
-    ns1:object-identifier "analog-input,2" ;
-    ns1:object-name "ahu2_out_rtd" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1116" ;
+    ns3:object-identifier "analog-input,2" ;
+    ns3:object-name "ahu2_out_rtd" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#ahu2_p_down_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#ahu2_p_down_AI> a ns3:AnalogInputObject ;
     rdfs:label "ahu2 p down AI" ;
-    ns1:description "Static Pressure Measurement Downstream Fan" ;
-    ns1:object-name "ahu2_p_down" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Static Pressure Measurement Downstream Fan" ;
+    ns3:object-name "ahu2_p_down" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#ahu2_p_down_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ahu2 p down xref" ;
-    ns1:device-identifier "device,1116" ;
-    ns1:object-identifier "analog-input,3" ;
-    ns1:object-name "ahu2_p_down" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1116" ;
+    ns3:object-identifier "analog-input,3" ;
+    ns3:object-name "ahu2_p_down" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ahu2_p_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 p up" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
 
 <http://example.org/IBAL#ahu2_rh_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 rh down" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
 
 <http://example.org/IBAL#ahu2_rh_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 rh up" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
 
 <http://example.org/IBAL#ahu2_t_ra> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 t ra" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu2_t_sa> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu 2 t sa" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/IBAL#ahu2_vfd_AO> a ns1:AnalogOutputObject ;
+<http://example.org/IBAL#ahu2_vfd_AO> a ns3:AnalogOutputObject ;
     rdfs:label "ahu2 vfd AO" ;
-    ns1:description "AHU2 Fan Speed" ;
-    ns1:object-name "ahu1_vfd" ;
-    ns1:object-type "analog-output" ;
-    ns1:present-value "30.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:description "AHU2 Fan Speed" ;
+    ns3:object-name "ahu1_vfd" ;
+    ns3:object-type "analog-output" ;
+    ns3:present-value "30.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ahu2_vfd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ahu2 vfd xref" ;
-    ns1:device-identifier "device,1116" ;
-    ns1:object-identifier "analog-output,1" ;
-    ns1:object-name "ahu2_vfd" ;
-    ns1:present-value "30.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1116" ;
+    ns3:object-identifier "analog-output,1" ;
+    ns3:object-name "ahu2_vfd" ;
+    ns3:present-value "30.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ch1_c_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch1 c in rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch1_c_in_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ch1_c_in_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch1 c in rtd xref" ;
-    ns1:description "Chiller1 Condensing Water Inlet Temperature" ;
-    ns1:device-identifier "device,1117" ;
-    ns1:object-identifier "analog-input,3" ;
-    ns1:object-name "ch1_c_in_rtd" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "70.0"^^xsd:float .
+    ns3:description "Chiller1 Condensing Water Inlet Temperature" ;
+    ns3:device-identifier "device,1117" ;
+    ns3:object-identifier "analog-input,3" ;
+    ns3:object-name "ch1_c_in_rtd" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "70.0"^^xsd:float .
 
 <http://example.org/IBAL#ch1_c_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch1 c out rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ch1_e_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch1 e in rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch1_e_in_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ch1_e_in_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch1 e in rtd xref" ;
-    ns1:object-identifier "analog-output,8" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:object-identifier "analog-output,8" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ch1_e_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch1 e out rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch1_e_out_rtd_exref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ch1_e_out_rtd_exref> a ns2:BACnetExternalReference ;
     rdfs:label "ch1 e out rtd exref" ;
-    ns1:object-identifier "analog-output,7" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:object-identifier "analog-output,7" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ch1_f_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch1 f c xref" ;
-    ns1:description "Chiller1 Condensing Water Flow Rate" ;
-    ns1:device-identifier "device,1117" ;
-    ns1:object-identifier "analog-input,2" ;
-    ns1:object-name "ch1_f_c" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller1 Condensing Water Flow Rate" ;
+    ns3:device-identifier "device,1117" ;
+    ns3:object-identifier "analog-input,2" ;
+    ns3:object-name "ch1_f_c" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#ch1_f_e_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch1 f e xref" ;
-    ns1:description "Chiller1 Evaporator Flow Rate" ;
-    ns1:device-identifier "device,1117" ;
-    ns1:object-identifier "analog-input,1" ;
-    ns1:object-name "ch1_f_e" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller1 Evaporator Flow Rate" ;
+    ns3:device-identifier "device,1117" ;
+    ns3:object-identifier "analog-input,1" ;
+    ns3:object-name "ch1_f_e" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#ch1_on_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch1 on xref" ;
-    ns1:description "Chiller1 On/Off Control Signal" ;
-    ns1:device-identifier "device,1117" ;
-    ns1:object-identifier "binary-input,1" ;
-    ns1:object-name "ch1_on" ;
-    ns1:object-type "binary-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller1 On/Off Control Signal" ;
+    ns3:device-identifier "device,1117" ;
+    ns3:object-identifier "binary-input,1" ;
+    ns3:object-name "ch1_on" ;
+    ns3:object-type "binary-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#ch1_power_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch1 power xref" ;
-    ns1:description "Chiller1 Power Measurement" ;
-    ns1:device-identifier "device,1117" ;
-    ns1:object-identifier "analog-input,7" ;
-    ns1:object-name "ch1_power" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller1 Power Measurement" ;
+    ns3:device-identifier "device,1117" ;
+    ns3:object-identifier "analog-input,7" ;
+    ns3:object-name "ch1_power" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#ch1_t_reset> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ch1 t reset" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ch1_t_sp_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch1 t sp xref" ;
-    ns1:description "Chiller1 Temperature Setpoint" ;
-    ns1:object-identifier "analog-input,7" ;
-    ns1:object-name "ch1_t_sp" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "50.0"^^xsd:float .
+    ns3:description "Chiller1 Temperature Setpoint" ;
+    ns3:object-identifier "analog-input,7" ;
+    ns3:object-name "ch1_t_sp" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "50.0"^^xsd:float .
 
 <http://example.org/IBAL#ch2_c_in_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch2 c in rtd xref" ;
-    ns1:description "Chiller2 Condensing Water Inlet Temperature" ;
-    ns1:device-identifier "device,1118" ;
-    ns1:object-identifier "analog-input,3" ;
-    ns1:object-name "ch2_c_in_rtd" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "70.0"^^xsd:float .
+    ns3:description "Chiller2 Condensing Water Inlet Temperature" ;
+    ns3:device-identifier "device,1118" ;
+    ns3:object-identifier "analog-input,3" ;
+    ns3:object-name "ch2_c_in_rtd" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "70.0"^^xsd:float .
 
 <http://example.org/IBAL#ch2_c_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch2 c out rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ch2_e_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch2 e out rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch2_e_out_rtd_exref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ch2_e_out_rtd_exref> a ns2:BACnetExternalReference ;
     rdfs:label "ch2 e out rtd exref" ;
-    ns1:object-identifier "analog-output,7" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:object-identifier "analog-output,7" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#ch2_f_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch2 f c xref" ;
-    ns1:description "Chiller2 Condensing Water Flow Rate" ;
-    ns1:object-identifier "analog-input,2" ;
-    ns1:object-name "ch2_f_c" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller2 Condensing Water Flow Rate" ;
+    ns3:object-identifier "analog-input,2" ;
+    ns3:object-name "ch2_f_c" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#ch2_f_e_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch2 f e xref" ;
-    ns1:description "Chiller2 Evaporator Flow Rate" ;
-    ns1:device-identifier "device,1118" ;
-    ns1:object-identifier "analog-input,1" ;
-    ns1:object-name "ch2_f_e" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller2 Evaporator Flow Rate" ;
+    ns3:device-identifier "device,1118" ;
+    ns3:object-identifier "analog-input,1" ;
+    ns3:object-name "ch2_f_e" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#ch2_on_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch2 on xref" ;
-    ns1:description "Chiller2 On/Off Control Signal" ;
-    ns1:device-identifier "device,1118" ;
-    ns1:object-identifier "binary-input,1" ;
-    ns1:object-name "ch2_on" ;
-    ns1:object-type "binary-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller2 On/Off Control Signal" ;
+    ns3:device-identifier "device,1118" ;
+    ns3:object-identifier "binary-input,1" ;
+    ns3:object-name "ch2_on" ;
+    ns3:object-type "binary-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#ch2_power_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch2 power xref" ;
-    ns1:description "Chiller1 Power Measurement" ;
-    ns1:device-identifier "device,1118" ;
-    ns1:object-identifier "analog-input,7" ;
-    ns1:object-name "ch1_power" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller1 Power Measurement" ;
+    ns3:device-identifier "device,1118" ;
+    ns3:object-identifier "analog-input,7" ;
+    ns3:object-name "ch1_power" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#ch2_t_reset> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ch2 t reset" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#ch2_t_sp_xref> a ns2:BACnetExternalReference ;
     rdfs:label "ch2 t sp xref" ;
-    ns1:description "Chiller2 Temperature Setpoint" ;
-    ns1:device-identifier "device,1118" ;
-    ns1:object-identifier "analog-input,7" ;
-    ns1:object-name "ch2_t_sp" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "50.0"^^xsd:float .
+    ns3:description "Chiller2 Temperature Setpoint" ;
+    ns3:device-identifier "device,1118" ;
+    ns3:object-identifier "analog-input,7" ;
+    ns3:object-name "ch2_t_sp" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "50.0"^^xsd:float .
 
 <http://example.org/IBAL#cl_f> a ns2:QuantifiableObservableProperty ;
     rdfs:label "cl f" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#cw_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "cw in rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#d10_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d10 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/A> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/A> .
 
 <http://example.org/IBAL#d10_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d10 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d11_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d11 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/A> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/A> .
 
 <http://example.org/IBAL#d11_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d11 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<http://example.org/IBAL#d15_pos_c_AI> a ns1:AnalogOutputObject ;
+<http://example.org/IBAL#d15_pos_c_AI> a ns3:AnalogOutputObject ;
     rdfs:label "d15 pos c AI" ;
-    ns1:description "VAV1 Damper Control Signal" ;
-    ns1:object-name "d15_pos_c" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "VAV1 Damper Control Signal" ;
+    ns3:object-name "d15_pos_c" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
-<http://example.org/IBAL#d15_pos_c_AO> a ns1:AnalogOutputObject ;
+<http://example.org/IBAL#d15_pos_c_AO> a ns3:AnalogOutputObject ;
     rdfs:label "d15 pos c AO" ;
-    ns1:description "VAV1 Damper Control Signal" ;
-    ns1:object-name "d15_pos_c" ;
-    ns1:object-type "analog-output" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "VAV1 Damper Control Signal" ;
+    ns3:object-name "d15_pos_c" ;
+    ns3:object-type "analog-output" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#d15_pos_c_bac> a ns2:BACnetExternalReference ;
     rdfs:label "d15 pos c bac" ;
-    ns1:device-identifier "device,1111" ;
-    ns1:object-identifier "analog-output,2" ;
-    ns1:object-name "d15_pos_c" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1111" ;
+    ns3:object-identifier "analog-output,2" ;
+    ns3:object-name "d15_pos_c" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#d15_pos_fb_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#d15_pos_fb_AI> a ns3:AnalogInputObject ;
     rdfs:label "d15 pos fb AI" ;
-    ns1:description "VAV1 Damper Feedback Signal" ;
-    ns1:object-name "d15_pos_fb" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "VAV1 Damper Feedback Signal" ;
+    ns3:object-name "d15_pos_fb" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#d15_pos_fb_xref> a ns2:BACnetExternalReference ;
     rdfs:label "d15 pos fb xref" ;
-    ns1:device-identifier "device,1111" ;
-    ns1:object-identifier "analog-input,1" ;
-    ns1:object-name "d15_pos_fb" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1111" ;
+    ns3:object-identifier "analog-input,1" ;
+    ns3:object-name "d15_pos_fb" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#d16_pos_c_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#d16_pos_c_AI> a ns3:AnalogInputObject ;
     rdfs:label "d16 pos c AI" ;
-    ns1:description "VAV2 Damper Control Signal" ;
-    ns1:object-name "d16_pos_c" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "VAV2 Damper Control Signal" ;
+    ns3:object-name "d16_pos_c" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
-<http://example.org/IBAL#d16_pos_c_AO> a ns1:AnalogOutputObject ;
+<http://example.org/IBAL#d16_pos_c_AO> a ns3:AnalogOutputObject ;
     rdfs:label "d16 pos c AO" ;
-    ns1:description "VAV2 Damper Control Signal" ;
-    ns1:object-name "d16_pos_c" ;
-    ns1:object-type "analog-output" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "VAV2 Damper Control Signal" ;
+    ns3:object-name "d16_pos_c" ;
+    ns3:object-type "analog-output" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#d16_pos_c_bac> a ns2:BACnetExternalReference ;
     rdfs:label "d16 pos c bac" ;
-    ns1:device-identifier "device,1112" ;
-    ns1:object-identifier "analog-output,2" ;
-    ns1:object-name "d16_pos_c" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1112" ;
+    ns3:object-identifier "analog-output,2" ;
+    ns3:object-name "d16_pos_c" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#d16_pos_fb_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#d16_pos_fb_AI> a ns3:AnalogInputObject ;
     rdfs:label "d16 pos fb AI" ;
-    ns1:description "VA2 Damper Feedback Signal" ;
-    ns1:object-name "d16_pos_fb" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "VA2 Damper Feedback Signal" ;
+    ns3:object-name "d16_pos_fb" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#d16_pos_fb_xref> a ns2:BACnetExternalReference ;
     rdfs:label "d16 pos fb xref" ;
-    ns1:device-identifier "device,1112" ;
-    ns1:object-identifier "analog-input,1" ;
-    ns1:object-name "d16_pos_fb" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1112" ;
+    ns3:object-identifier "analog-input,1" ;
+    ns3:object-name "d16_pos_fb" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#d17_pos_c_bac> a ns2:BACnetExternalReference ;
     rdfs:label "d17 pos c bac" ;
-    ns1:device-identifier "device,1113" ;
-    ns1:object-identifier "analog-output,2" ;
-    ns1:object-name "d17_pos_c" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1113" ;
+    ns3:object-identifier "analog-output,2" ;
+    ns3:object-name "d17_pos_c" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#d17_pos_fb_xref> a ns2:BACnetExternalReference ;
     rdfs:label "d17 pos fb xref" ;
-    ns1:device-identifier "device,1113" ;
-    ns1:object-identifier "analog-input,1" ;
-    ns1:object-name "d17_pos_fb" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1113" ;
+    ns3:object-identifier "analog-input,1" ;
+    ns3:object-name "d17_pos_fb" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#d18_pos_c_bac> a ns2:BACnetExternalReference ;
     rdfs:label "d18 pos c bac" ;
-    ns1:device-identifier "device,1114" ;
-    ns1:object-identifier "analog-output,2" ;
-    ns1:object-name "d18_pos_c" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1114" ;
+    ns3:object-identifier "analog-output,2" ;
+    ns3:object-name "d18_pos_c" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#d18_pos_fb_xref> a ns2:BACnetExternalReference ;
     rdfs:label "d18 pos fb xref" ;
-    ns1:device-identifier "device,1114" ;
-    ns1:object-identifier "analog-input,1" ;
-    ns1:object-name "d18_pos_fb" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1114" ;
+    ns3:object-identifier "analog-input,1" ;
+    ns3:object-name "d18_pos_fb" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#d2_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d2 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d2_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d2 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d3_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d3 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d3_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d3 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d4_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d4 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d4_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d4 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d5_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d5 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d5_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d5 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d6_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d6 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d6_pos_fb> a ns2:QuantifiableObservableProperty ;
     rdfs:label "d6 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d7_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d7 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d7_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d7 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d8_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d8 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#d8_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d8 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
 <http://example.org/IBAL#exf1_f> a ns2:QuantifiableObservableProperty ;
     rdfs:label "exf1 f" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#exf1_on> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "exf1 on" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#exf1_p_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "exf1 p down" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
 
 <http://example.org/IBAL#exf1_p_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "exf1 p up" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
 
 <http://example.org/IBAL#exf1_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "exf1 power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#exf1_t_in> a ns2:QuantifiableObservableProperty ;
     rdfs:label "exf1 t in" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#exf1_vfd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "exf1 vfd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#exf2_f> a ns2:QuantifiableObservableProperty ;
     rdfs:label "exf2 f" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#exf2_on> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "exf2 on" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#exf2_p_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "exf2 p down" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
 
 <http://example.org/IBAL#exf2_p_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "exf2 p up" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
 
 <http://example.org/IBAL#exf2_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "exf2 power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#exf2_t_in> a ns2:QuantifiableObservableProperty ;
     rdfs:label "exf2 t in" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#exf2_vfd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "exf2 vfd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#hw_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hw rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#hx1_f_hw> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx1 f hw" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#hx1_f_pg> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx1 f pg" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#hx1_hw_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx1 hw rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#hx1_pg_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx1_hw_rtd" ;
     ns2:hasValue "70" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#hx2_cw_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx2 cw rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#hx2_hw_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx2 hw rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#hx3_cw_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx3 cw rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#hx3_f_cw> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx3 f cw" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#hx3_f_pg> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx3 f pg" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#hx3_pg_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "hx1 pg rtd" ;
     ns2:hasValue "72" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#oau_cc_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "oau cc rtd" ;
     ns2:hasValue 45.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#oau_f_out> a ns2:QuantifiableObservableProperty ;
     rdfs:label "oau f out" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#oau_fan_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "oau fan power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#oau_heat_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "oau heat c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#oau_hs_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "oau hs rt" ;
     ns2:hasValue 60.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#oau_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "oau in rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#oau_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "oau out rtd" ;
     ns2:hasValue 45.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#oau_p_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "oau p down" ;
     ns2:hasValue 11270.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
 
 <http://example.org/IBAL#oau_p_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "oau p up" ;
     ns2:hasValue 11297.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PA> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PA> .
 
 <http://example.org/IBAL#oau_rh> a ns2:QuantifiableObservableProperty ;
     rdfs:label "oau rh" ;
     ns2:hasValue "80" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
 
 <http://example.org/IBAL#oau_vfd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "oau vfd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#pl_f> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pl f" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#pl_ftemp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pl ftemp" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#pl_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pl in rtd" ;
     ns2:hasValue "68" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#pl_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pl out rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#pump1_on> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "pump1 on" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#pump1_p_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump1 p down" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump1_p_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump1 p up" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump1_vfd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "pump1 vfd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#pump2_on> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "pump2 on" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#pump2_p_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump2 p down" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump2_p_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump2 p up" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump2_vfd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "pump2 vfd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#pump3_dp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump3 dp" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump3_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump3 out rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#pump3_p_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump3 p down" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump3_p_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump3 p up" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump3_vfd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "pump3 vfd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#pump4_on> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "pump4 on" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
-<http://example.org/IBAL#pump4_out_rtd> a ns1:AnalogInputObject,
+<http://example.org/IBAL#pump4_out_rtd> a ns3:AnalogInputObject,
         ns2:QuantifiableObservableProperty ;
     rdfs:label "pump4 out rtd" ;
-    ns1:description "Temperature Entering the Chiller Condenser" ;
-    ns1:object-identifier "analog-input,6" ;
-    ns1:object-name "pump4_out_rtd" ;
-    ns1:object-type "analog-input" ;
-    ns1:objectOf <http://example.org/IBAL#WaterChiller_1> ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns3:description "Temperature Entering the Chiller Condenser" ;
+    ns3:object-identifier "analog-input,6" ;
+    ns3:object-name "pump4_out_rtd" ;
+    ns3:object-type "analog-input" ;
+    ns3:objectOf <http://example.org/IBAL#WaterChiller_1> ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#pump4_p_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump4 p down" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump4_p_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump4 p up" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump4_vfd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "pump4 vfd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#pump5_on> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "pump5 on" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#pump5_p_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump5 p down" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump5_p_up> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump5 p up" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PSI> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
 <http://example.org/IBAL#pump5_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump5 power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#pump5_vfd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "pump5 vfd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#sl_f> a ns2:QuantifiableObservableProperty ;
     rdfs:label "sl f" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#sl_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "sl out rtd" ;
     ns2:hasValue "64" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ts_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ts in rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ts_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ts out rtd" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#v10_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v10 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v10_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v10 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v11_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v11 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v11_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v11 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v12_pos_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "v12 pos c xref" ;
-    ns1:device-identifier "device,1115" ;
-    ns1:object-identifier "analog-output,2" ;
-    ns1:object-name "v12_pos_c" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1115" ;
+    ns3:object-identifier "analog-output,2" ;
+    ns3:object-name "v12_pos_c" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#v12_pos_fb_xref> a ns2:BACnetExternalReference ;
     rdfs:label "v12 pos fb xref" ;
-    ns1:device-identifier "device,1115" ;
-    ns1:object-identifier "analog-input,1" ;
-    ns1:object-name "v12_pos_fb" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1115" ;
+    ns3:object-identifier "analog-input,1" ;
+    ns3:object-name "v12_pos_fb" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#v13_pos_c_AO> a ns1:AnalogOutputObject ;
+<http://example.org/IBAL#v13_pos_c_AO> a ns3:AnalogOutputObject ;
     rdfs:label "v13 pos c AO" ;
-    ns1:description "AHU2 Cooling Coil Valve Control Signal" ;
-    ns1:object-name "v13_pos_c" ;
-    ns1:object-type "analog-output" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "AHU2 Cooling Coil Valve Control Signal" ;
+    ns3:object-name "v13_pos_c" ;
+    ns3:object-type "analog-output" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#v13_pos_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "v13 pos c xref" ;
-    ns1:device-identifier "device,1116" ;
-    ns1:object-identifier "analog-output,2" ;
-    ns1:object-name "v13_pos_c" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1116" ;
+    ns3:object-identifier "analog-output,2" ;
+    ns3:object-name "v13_pos_c" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#v13_pos_fb_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#v13_pos_fb_AI> a ns3:AnalogInputObject ;
     rdfs:label "v13 pos fb AI" ;
-    ns1:description "AHU2 Cooling Coil Feedback Signal" ;
-    ns1:object-name "v13_pos_fb" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "AHU2 Cooling Coil Feedback Signal" ;
+    ns3:object-name "v13_pos_fb" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#v13_pos_fb_xref> a ns2:BACnetExternalReference ;
     rdfs:label "v13 pos fb xref" ;
-    ns1:device-identifier "device,1116" ;
-    ns1:object-identifier "analog-input,1" ;
-    ns1:object-name "v13_pos_fb" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1116" ;
+    ns3:object-identifier "analog-input,1" ;
+    ns3:object-name "v13_pos_fb" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#v18_pos_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "v18 pos c xref" ;
-    ns1:description "Chiller2 Evaporating Valve Control Signal" ;
-    ns1:device-identifier "device,1118" ;
-    ns1:object-identifier "binary-output,1" ;
-    ns1:object-name "v18_pos_c" ;
-    ns1:object-type "binary-output" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller2 Evaporating Valve Control Signal" ;
+    ns3:device-identifier "device,1118" ;
+    ns3:object-identifier "binary-output,1" ;
+    ns3:object-name "v18_pos_c" ;
+    ns3:object-type "binary-output" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#v18_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v18 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v19_pos_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "v19 pos c xref" ;
-    ns1:description "Chiller1 Evaporating Valve Control Signal" ;
-    ns1:device-identifier "device,1117" ;
-    ns1:object-identifier "binary-output,1" ;
-    ns1:object-name "v19_pos_c" ;
-    ns1:object-type "binary-output" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller1 Evaporating Valve Control Signal" ;
+    ns3:device-identifier "device,1117" ;
+    ns3:object-identifier "binary-output,1" ;
+    ns3:object-name "v19_pos_c" ;
+    ns3:object-type "binary-output" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#v19_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v19 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v1_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v1 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/A> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/A> .
 
 <http://example.org/IBAL#v1_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v1 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v20_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v20 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v20_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v20 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v2_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v2 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v3_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v3 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/A> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/A> .
 
 <http://example.org/IBAL#v3_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v3 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v4_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v4 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v4_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v4 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v5_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v5 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v5_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v5 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v6_pos_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "v6 pos c xref" ;
-    ns1:description "Chiller2 Condensing Water Valve Control Signal" ;
-    ns1:device-identifier "device,1118" ;
-    ns1:object-identifier "analog-output,1" ;
-    ns1:object-name "v6_pos_fb" ;
-    ns1:object-type "analog-output" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller2 Condensing Water Valve Control Signal" ;
+    ns3:device-identifier "device,1118" ;
+    ns3:object-identifier "analog-output,1" ;
+    ns3:object-name "v6_pos_fb" ;
+    ns3:object-type "analog-output" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#v6_pos_fb_xref> a ns2:BACnetExternalReference ;
     rdfs:label "v6 pos fb xref" ;
-    ns1:description "Chiller2 Condensing Water Valve Feedback Signal" ;
-    ns1:device-identifier "device,1118" ;
-    ns1:object-identifier "analog-input,4" ;
-    ns1:object-name "v6_pos_fb" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller2 Condensing Water Valve Feedback Signal" ;
+    ns3:device-identifier "device,1118" ;
+    ns3:object-identifier "analog-input,4" ;
+    ns3:object-name "v6_pos_fb" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#v7_pos_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "v7 pos c xref" ;
-    ns1:description "Chiller1 Condensing Water Valve Control Signal" ;
-    ns1:device-identifier "device,1117" ;
-    ns1:object-identifier "analog-output,1" ;
-    ns1:object-name "v7_pos_fb" ;
-    ns1:object-type "analog-output" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller1 Condensing Water Valve Control Signal" ;
+    ns3:device-identifier "device,1117" ;
+    ns3:object-identifier "analog-output,1" ;
+    ns3:object-name "v7_pos_fb" ;
+    ns3:object-type "analog-output" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#v7_pos_fb_xref> a ns2:BACnetExternalReference ;
     rdfs:label "v7 pos fb xref" ;
-    ns1:description "Chiller1 Condensing Water Valve Feedback Signal" ;
-    ns1:device-identifier "device,1117" ;
-    ns1:object-identifier "analog-input,4" ;
-    ns1:object-name "v7_pos_fb" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "Chiller1 Condensing Water Valve Feedback Signal" ;
+    ns3:device-identifier "device,1117" ;
+    ns3:object-identifier "analog-input,4" ;
+    ns3:object-name "v7_pos_fb" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#v8_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v8 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v8_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v8 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v9_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v9 pos c" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v9_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v9 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
-<http://example.org/IBAL#vav1_f_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#vav1_f_AI> a ns3:AnalogInputObject ;
     rdfs:label "vav1 f AI" ;
-    ns1:description "VAV1 Airflow Rate" ;
-    ns1:object-name "vav1_f" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "VAV1 Airflow Rate" ;
+    ns3:object-name "vav1_f" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#vav1_f_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav1 f xref" ;
-    ns1:device-identifier "device,1111" ;
-    ns1:object-identifier "analog-input,4" ;
-    ns1:object-name "vav1_f" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1111" ;
+    ns3:object-identifier "analog-input,4" ;
+    ns3:object-name "vav1_f" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#vav1_heat_c_AO> a ns1:AnalogOutputObject ;
+<http://example.org/IBAL#vav1_heat_c_AO> a ns3:AnalogOutputObject ;
     rdfs:label "vav1 heat c AO" ;
-    ns1:description "VAV1 Heater Control Signal" ;
-    ns1:object-name "vav1_heat_c" ;
-    ns1:object-type "analog-output" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "VAV1 Heater Control Signal" ;
+    ns3:object-name "vav1_heat_c" ;
+    ns3:object-type "analog-output" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#vav1_heat_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav1 heat c xref" ;
-    ns1:device-identifier "device,1111" ;
-    ns1:object-identifier "analog-output,1" ;
-    ns1:object-name "vav1_heat_c" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1111" ;
+    ns3:object-identifier "analog-output,1" ;
+    ns3:object-name "vav1_heat_c" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#vav1_out_rtd_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#vav1_out_rtd_AI> a ns3:AnalogInputObject ;
     rdfs:label "vav1 out rtd AI" ;
-    ns1:description "VAV1 Discharge Temperature" ;
-    ns1:object-name "vav1_out_rtd" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "70.0"^^xsd:float .
+    ns3:description "VAV1 Discharge Temperature" ;
+    ns3:object-name "vav1_out_rtd" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "70.0"^^xsd:float .
 
 <http://example.org/IBAL#vav1_out_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav1 out rtd xref" ;
-    ns1:device-identifier "device,1111" ;
-    ns1:object-identifier "analog-input,2" ;
-    ns1:object-name "vav1_out_rtd" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1111" ;
+    ns3:object-identifier "analog-input,2" ;
+    ns3:object-name "vav1_out_rtd" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#vav1_t_in_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#vav1_t_in_AI> a ns3:AnalogInputObject ;
     rdfs:label "vav1 t in AI" ;
-    ns1:description "VAV1 Supply Air Temperature" ;
-    ns1:object-name "vav1_t_in" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "70.0"^^xsd:float .
+    ns3:description "VAV1 Supply Air Temperature" ;
+    ns3:object-name "vav1_t_in" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "70.0"^^xsd:float .
 
 <http://example.org/IBAL#vav1_t_in_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav1 t in xref" ;
-    ns1:device-identifier "device,1111" ;
-    ns1:object-identifier "analog-input,3" ;
-    ns1:object-name "vav1_t_in" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1111" ;
+    ns3:object-identifier "analog-input,3" ;
+    ns3:object-name "vav1_t_in" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vav2_f_AI> a rdfs:Resource ;
     rdfs:label "vav2 f AI" .
 
 <http://example.org/IBAL#vav2_f_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav2 f xref" ;
-    ns1:device-identifier "device,1112" ;
-    ns1:object-identifier "analog-input,4" ;
-    ns1:object-name "vav2_f" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1112" ;
+    ns3:object-identifier "analog-input,4" ;
+    ns3:object-name "vav2_f" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vav2_heat_c_AI> a ns2:BACnetExternalReference ;
     rdfs:label "vav2 heat c AI" ;
-    ns1:description "VAV1 Heater Control Signal" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "VAV1 Heater Control Signal" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "0.0"^^xsd:float .
 
-<http://example.org/IBAL#vav2_heat_c_AO> a ns1:AnalogOutputObject ;
+<http://example.org/IBAL#vav2_heat_c_AO> a ns3:AnalogOutputObject ;
     rdfs:label "vav2 heat c AO" ;
-    ns1:description "VAV2 Heater Control Signal" ;
-    ns1:object-name "vav2_heat_c" ;
-    ns1:object-type "analog-output" ;
-    ns1:present-value "0.0"^^xsd:float .
+    ns3:description "VAV2 Heater Control Signal" ;
+    ns3:object-name "vav2_heat_c" ;
+    ns3:object-type "analog-output" ;
+    ns3:present-value "0.0"^^xsd:float .
 
 <http://example.org/IBAL#vav2_heat_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav2 heat c xref" ;
-    ns1:device-identifier "device,1112" ;
-    ns1:object-identifier "analog-output,2" ;
-    ns1:object-name "vav2_heat_c" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1112" ;
+    ns3:object-identifier "analog-output,2" ;
+    ns3:object-name "vav2_heat_c" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#vav2_out_rtd_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#vav2_out_rtd_AI> a ns3:AnalogInputObject ;
     rdfs:label "vav2 out rtd AI" ;
-    ns1:description "VAV2 Discharge Temperature" ;
-    ns1:object-name "vav2_out_rtd" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "70.0"^^xsd:float .
+    ns3:description "VAV2 Discharge Temperature" ;
+    ns3:object-name "vav2_out_rtd" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "70.0"^^xsd:float .
 
 <http://example.org/IBAL#vav2_out_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav2 out rtd xref" ;
-    ns1:device-identifier "device,1112" ;
-    ns1:object-identifier "analog-input,2" ;
-    ns1:object-name "vav2_out_rtd" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1112" ;
+    ns3:object-identifier "analog-input,2" ;
+    ns3:object-name "vav2_out_rtd" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
-<http://example.org/IBAL#vav2_t_in_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#vav2_t_in_AI> a ns3:AnalogInputObject ;
     rdfs:label "vav2 t in AI" ;
-    ns1:description "VAV1 Supply Air Temperature" ;
-    ns1:object-name "vav1_t_in" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "70.0"^^xsd:float .
+    ns3:description "VAV1 Supply Air Temperature" ;
+    ns3:object-name "vav1_t_in" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "70.0"^^xsd:float .
 
 <http://example.org/IBAL#vav2_t_in_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav2 t in xref" ;
-    ns1:device-identifier "device,1112" ;
-    ns1:object-identifier "analog-input,3" ;
-    ns1:object-name "vav2_t_in" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1112" ;
+    ns3:object-identifier "analog-input,3" ;
+    ns3:object-name "vav2_t_in" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vav3_f_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav3 f xref" ;
-    ns1:device-identifier "device,1113" ;
-    ns1:object-identifier "analog-input,4" ;
-    ns1:object-name "vav3_f" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1113" ;
+    ns3:object-identifier "analog-input,4" ;
+    ns3:object-name "vav3_f" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vav3_heat_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav3 heat c xref" ;
-    ns1:device-identifier "device,1113" ;
-    ns1:object-identifier "analog-output,2" ;
-    ns1:object-name "vav3_heat_c" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1113" ;
+    ns3:object-identifier "analog-output,2" ;
+    ns3:object-name "vav3_heat_c" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vav3_out_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav3 out rtd xref" ;
-    ns1:device-identifier "device,1113" ;
-    ns1:object-identifier "analog-input,2" ;
-    ns1:object-name "vav3_out_rtd" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1113" ;
+    ns3:object-identifier "analog-input,2" ;
+    ns3:object-name "vav3_out_rtd" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vav3_t_in_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav3 t in xref" ;
-    ns1:device-identifier "device,1113" ;
-    ns1:object-identifier "analog-input,3" ;
-    ns1:object-name "vav3_t_in" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1113" ;
+    ns3:object-identifier "analog-input,3" ;
+    ns3:object-name "vav3_t_in" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vav4_f_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav4 f xref" ;
-    ns1:device-identifier "device,1114" ;
-    ns1:object-identifier "analog-input,4" ;
-    ns1:object-name "vav4_f" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1114" ;
+    ns3:object-identifier "analog-input,4" ;
+    ns3:object-name "vav4_f" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vav4_heat_c_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav4 heat c xref" ;
-    ns1:device-identifier "device,1114" ;
-    ns1:object-identifier "analog-output,2" ;
-    ns1:object-name "vav4_heat_c" ;
-    ns1:present-value "0.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1114" ;
+    ns3:object-identifier "analog-output,2" ;
+    ns3:object-name "vav4_heat_c" ;
+    ns3:present-value "0.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vav4_out_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav4 out rtd xref" ;
-    ns1:device-identifier "device,1114" ;
-    ns1:object-identifier "analog-input,2" ;
-    ns1:object-name "vav4_out_rtd" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1114" ;
+    ns3:object-identifier "analog-input,2" ;
+    ns3:object-name "vav4_out_rtd" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vav4_t_in_xref> a ns2:BACnetExternalReference ;
     rdfs:label "vav4 t in xref" ;
-    ns1:device-identifier "device,1114" ;
-    ns1:object-identifier "analog-input,3" ;
-    ns1:object-name "vav4_t_in" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1114" ;
+    ns3:object-identifier "analog-input,3" ;
+    ns3:object-name "vav4_t_in" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#vch2_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "vch2 pos fb" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#vsh_in> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "vsh in" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#vsh_out> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "vsh out" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#zs1_heat_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs1 heat rtd" ;
     ns2:hasValue 66.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/IBAL#zs1_out_rtd_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#zs1_out_rtd_AI> a ns3:AnalogInputObject ;
     rdfs:label "zs1 out rtd AI" ;
-    ns1:description "Zone1 Temperature" ;
-    ns1:object-name "zs1_out_rtd" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "70.0"^^xsd:float .
+    ns3:description "Zone1 Temperature" ;
+    ns3:object-name "zs1_out_rtd" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "70.0"^^xsd:float .
 
 <http://example.org/IBAL#zs1_out_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "zs1 out rtd xref" ;
-    ns1:device-identifier "device,1111" ;
-    ns1:object-identifier "analog-input,5" ;
-    ns1:object-name "zs1_out_rtd" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1111" ;
+    ns3:object-identifier "analog-input,5" ;
+    ns3:object-name "zs1_out_rtd" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#zs1_rh> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs1_rh" ;
     ns2:hasValue 80.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
 
 <http://example.org/IBAL#zs1_t_sp_f_xref> a ns2:BACnetExternalReference ;
     rdfs:label "zs1 t sp f xref" ;
-    ns1:description "Zone1 Temperature Setpoint" ;
-    ns1:device-identifier "device,1111" ;
-    ns1:object-identifier "analog-input,6" ;
-    ns1:object-name "zs1_t_sp_f" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "74.0"^^xsd:float .
+    ns3:description "Zone1 Temperature Setpoint" ;
+    ns3:device-identifier "device,1111" ;
+    ns3:object-identifier "analog-input,6" ;
+    ns3:object-name "zs1_t_sp_f" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "74.0"^^xsd:float .
 
 <http://example.org/IBAL#zs2_heat_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs2 heat rtd" ;
     ns2:hasValue 70.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-<http://example.org/IBAL#zs2_out_rtd_AI> a ns1:AnalogInputObject ;
+<http://example.org/IBAL#zs2_out_rtd_AI> a ns3:AnalogInputObject ;
     rdfs:label "zs2 out rtd AI" ;
-    ns1:description "Zone2 Temperature" ;
-    ns1:object-name "zs2_out_rtd" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "70.0"^^xsd:float .
+    ns3:description "Zone2 Temperature" ;
+    ns3:object-name "zs2_out_rtd" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "70.0"^^xsd:float .
 
 <http://example.org/IBAL#zs2_out_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "zs2 out rtd xref" ;
-    ns1:device-identifier "device,1112" ;
-    ns1:object-identifier "analog-input,5" ;
-    ns1:object-name "zs2_out_rtd" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1112" ;
+    ns3:object-identifier "analog-input,5" ;
+    ns3:object-name "zs2_out_rtd" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#zs2_rh> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs2 rh" ;
     ns2:hasValue 50.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
 
 <http://example.org/IBAL#zs2_t_sp_f_xref> a ns2:BACnetExternalReference ;
     rdfs:label "zs2 t sp f xref" ;
-    ns1:description "Zone2 Temperature Setpoint" ;
-    ns1:device-identifier "device,1112" ;
-    ns1:object-identifier "analog-input,6" ;
-    ns1:object-name "zs2_t_sp_f" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "74.0"^^xsd:float .
+    ns3:description "Zone2 Temperature Setpoint" ;
+    ns3:device-identifier "device,1112" ;
+    ns3:object-identifier "analog-input,6" ;
+    ns3:object-name "zs2_t_sp_f" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "74.0"^^xsd:float .
 
 <http://example.org/IBAL#zs3_heat_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs3 heat rtd" ;
     ns2:hasValue 66.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#zs3_out_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "zs3 out rtd xref" ;
-    ns1:device-identifier "device,1113" ;
-    ns1:object-identifier "analog-input,5" ;
-    ns1:object-name "zs3_out_rtd" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1113" ;
+    ns3:object-identifier "analog-input,5" ;
+    ns3:object-name "zs3_out_rtd" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#zs3_rh> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs3 rh" ;
     ns2:hasValue 50.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
 
 <http://example.org/IBAL#zs3_t_sp_f_xref> a ns2:BACnetExternalReference ;
     rdfs:label "zs3 t sp f xref" ;
-    ns1:description "Zone3 Temperature Setpoint" ;
-    ns1:device-identifier "device,1113" ;
-    ns1:object-identifier "analog-input,6" ;
-    ns1:object-name "zs3_t_sp_f" ;
-    ns1:object-type "analog-input" ;
-    ns1:present-value "74.0"^^xsd:float .
+    ns3:description "Zone3 Temperature Setpoint" ;
+    ns3:device-identifier "device,1113" ;
+    ns3:object-identifier "analog-input,6" ;
+    ns3:object-name "zs3_t_sp_f" ;
+    ns3:object-type "analog-input" ;
+    ns3:present-value "74.0"^^xsd:float .
 
 <http://example.org/IBAL#zs4_heat_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs4 heat rtd" ;
     ns2:hasValue 68.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#zs4_out_rtd_xref> a ns2:BACnetExternalReference ;
     rdfs:label "zs4 out rtd xref" ;
-    ns1:device-identifier "device,1114" ;
-    ns1:object-identifier "analog-input,5" ;
-    ns1:object-name "zs4_out_rtd" ;
-    ns1:present-value "70.0"^^xsd:float ;
-    ns1:property-identifier "present-value" .
+    ns3:device-identifier "device,1114" ;
+    ns3:object-identifier "analog-input,5" ;
+    ns3:object-name "zs4_out_rtd" ;
+    ns3:present-value "70.0"^^xsd:float ;
+    ns3:property-identifier "present-value" .
 
 <http://example.org/IBAL#zs4_rh> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zsh4 rh" ;
     ns2:hasValue 30.0 ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT_RH> .
 
 <http://example.org/IBAL#zs4_t_sp_f_xref> a ns2:BACnetExternalReference ;
     rdfs:label "zs4 t sp f xref" ;
-    ns1:description "Zone4 Temperature Setpoint" ;
-    ns1:device-identifier "device,1114" ;
-    ns1:object-identifier "analog-input,6" ;
-    ns1:object-name "zs4_t_sp_f" ;
-    ns1:object-type "analog-input" ;
-    ns1:objectOf <http://example.org/IBAL#VAV_4> ;
-    ns1:present-value "74.0"^^xsd:float .
+    ns3:description "Zone4 Temperature Setpoint" ;
+    ns3:device-identifier "device,1114" ;
+    ns3:object-identifier "analog-input,6" ;
+    ns3:object-name "zs4_t_sp_f" ;
+    ns3:object-type "analog-input" ;
+    ns3:objectOf <http://example.org/IBAL#VAV_4> ;
+    ns3:present-value "74.0"^^xsd:float .
 
 <http://example.org/IBAL#CC_1_Water_ICP> a ns2:InletConnectionPoint ;
     rdfs:label "CC 1 Water ICP" ;
@@ -3642,180 +3642,180 @@
 <http://example.org/IBAL#ahu2_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 out rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#ahu2_out_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu2_p_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 p down" ;
     ns2:hasExternalReference <http://example.org/IBAL#ahu2_p_down_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
 
 <http://example.org/IBAL#ahu2_vfd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ahu2 vfd" ;
     ns2:hasExternalReference <http://example.org/IBAL#ahu2_vfd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#ch1_on> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ch1 on" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch1_on_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#ch2_c_in_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch2 c in rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch2_c_in_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#d15_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d15 pos fb" ;
     ns2:hasExternalReference <http://example.org/IBAL#d15_pos_fb_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#d16_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d16 pos fb" ;
     ns2:hasExternalReference <http://example.org/IBAL#d16_pos_fb_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#pump1_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump1 power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#pump2_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump2 power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#pump3_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump3 power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#pump4_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "pump4 power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#v13_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v13 pos c" ;
     ns2:hasExternalReference <http://example.org/IBAL#v13_pos_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v13_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v13 pos fb" ;
     ns2:hasExternalReference <http://example.org/IBAL#v13_pos_fb_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v7_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v7 pos c" ;
     ns2:hasExternalReference <http://example.org/IBAL#v7_pos_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#vav1_f> a ns2:QuantifiableObservableProperty ;
     rdfs:label "VAV1 F" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav1_f_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
-<http://example.org/IBAL#vav1_heat_c> a ns1:AnalogOutputObject,
+<http://example.org/IBAL#vav1_heat_c> a ns3:AnalogOutputObject,
         ns2:QuantifiableActuatableProperty ;
     rdfs:label "vav1 heat c" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav1_heat_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#vav1_heat_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav1 heat power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#vav1_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav1 out rtd" ;
     ns2:hasAspect ns2:Role-Discharge ;
     ns2:hasExternalReference <http://example.org/IBAL#vav1_out_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#vav1_t_in> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav1 t in" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav1_t_in_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#vav2_f> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav2 f" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav2_f_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#vav2_heat_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "vav2 heat c" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav2_heat_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#vav2_heat_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav2 heat power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#vav2_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav2 out rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav2_out_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#vav2_t_in> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav2 t in" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav2_t_in_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#vav3_heat_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav3 heat power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#vav4_heat_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav4 heat power" ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#zs1_t_sp_f> a ns2:QuantifiableProperty ;
     rdfs:label "zs1 t sp f" ;
     ns2:hasAspect ns2:Aspect-Setpoint ;
     ns2:hasExternalReference <http://example.org/IBAL#zs1_t_sp_f_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#zs2_t_sp_f> a ns2:QuantifiableProperty ;
     rdfs:label "zs2 t sp f" ;
     ns2:hasAspect ns2:Aspect-Setpoint ;
     ns2:hasExternalReference <http://example.org/IBAL#zs2_t_sp_f_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#zs3_t_sp_f> a ns2:QuantifiableProperty ;
     rdfs:label "zs3 t sp f" ;
     ns2:hasAspect ns2:Aspect-Setpoint ;
     ns2:hasExternalReference <http://example.org/IBAL#zs3_t_sp_f_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#zs4_t_sp_f> a ns2:QuantifiableProperty ;
     rdfs:label "zs4 t sp f" ;
     ns2:hasAspect ns2:Aspect-Setpoint ;
     ns2:hasExternalReference <http://example.org/IBAL#zs4_t_sp_f_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#AHU_1_E2_ICP> a ns2:InletConnectionPoint ;
     rdfs:label "AHU 1 E2 ICP" ;
@@ -4006,178 +4006,178 @@
 <http://example.org/IBAL#ahu1_fan_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU1 Fan Power" ;
     ns2:hasExternalReference <http://example.org/IBAL#ahu1_fan_power_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#ahu1_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 Out RTD" ;
     ns2:hasExternalReference <http://example.org/IBAL#ahu1_out_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ahu1_p_down> a ns2:QuantifiableObservableProperty ;
     rdfs:label "AHU 1 P Down" ;
     ns2:hasExternalReference <http://example.org/IBAL#ahu1_p_down_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
 
 <http://example.org/IBAL#ahu2_fan_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ahu2 fan power" ;
     ns2:hasExternalReference <http://example.org/IBAL#ahu2_fan_power_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#ch1_f_c> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch1 f c" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch1_f_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#ch1_f_e> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch1 f e" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch1_f_e_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#ch2_f_c> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch2 f c" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch2_f_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#ch2_f_e> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch2 f e" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch2_f_e_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/GAL_US-PER-MIN> .
 
 <http://example.org/IBAL#ch2_on> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ch2 on" ;
     ns2:hasExternalReference <http://example.org/IBAL#ch2_on_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#d15_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d15 pos c" ;
     ns2:hasAspect ns2:Aspect-Command ;
     ns2:hasExternalReference <http://example.org/IBAL#d15_pos_c_bac> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#d16_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d16 pos c" ;
     ns2:hasAspect ns2:Aspect-Command ;
     ns2:hasExternalReference <http://example.org/IBAL#d16_pos_c_bac> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/A> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/A> .
 
 <http://example.org/IBAL#d17_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d17 pos fb" ;
     ns2:hasExternalReference <http://example.org/IBAL#d17_pos_fb_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#d18_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "d18 pos fb" ;
     ns2:hasExternalReference <http://example.org/IBAL#d18_pos_fb_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v12_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v12 pos c" ;
     ns2:hasExternalReference <http://example.org/IBAL#v12_pos_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v12_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v12 pos fb" ;
     ns2:hasExternalReference <http://example.org/IBAL#v12_pos_fb_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v18_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v18 pos c" ;
     ns2:hasExternalReference <http://example.org/IBAL#v18_pos_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v19_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v19 pos c" ;
     ns2:hasExternalReference <http://example.org/IBAL#v19_pos_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v6_pos_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v6 pos c" ;
     ns2:hasExternalReference <http://example.org/IBAL#v6_pos_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#v6_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v6 pos fb" ;
     ns2:hasExternalReference <http://example.org/IBAL#v6_pos_fb_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#vav3_f> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav3 f" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav3_f_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#vav3_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav3 out rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav3_out_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#vav3_t_in> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav3 t in" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav3_t_in_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#vav4_f> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav4 f" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav4_f_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
 <http://example.org/IBAL#vav4_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav4 out rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav4_out_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#vav4_t_in> a ns2:QuantifiableObservableProperty ;
     rdfs:label "vav4 t in" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav4_t_in_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#zs1_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs1_out_rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#zs1_out_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#zs2_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs2 out rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#zs2_out_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#zs3_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs3 out rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#zs3_out_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#zs4_out_rtd> a ns2:QuantifiableObservableProperty ;
     rdfs:label "zs4_out_rtd" ;
     ns2:hasExternalReference <http://example.org/IBAL#zs4_out_rtd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#CC_1_ICP> a ns2:InletConnectionPoint ;
     rdfs:label "CC 1 ICP" ;
@@ -6849,54 +6849,54 @@
 <http://example.org/IBAL#ahu1_vfd> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ahu1 vfd" ;
     ns2:hasExternalReference <http://example.org/IBAL#ahu1_vfd_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#ch1_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch1 power" ;
     ns2:hasAspect ns2:Aspect-Efficiency ;
     ns2:hasExternalReference <http://example.org/IBAL#ch1_power_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#ch1_t_sp> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ch1 t sp" ;
     ns2:hasAspect ns2:Aspect-Setpoint ;
     ns2:hasExternalReference <http://example.org/IBAL#ch1_t_sp_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#ch2_power> a ns2:QuantifiableObservableProperty ;
     rdfs:label "ch2 power" ;
     ns2:hasAspect ns2:Aspect-Efficiency ;
     ns2:hasExternalReference <http://example.org/IBAL#ch2_power_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/W> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
 
 <http://example.org/IBAL#ch2_t_sp> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "ch2 t sp" ;
     ns2:hasAspect ns2:Aspect-Setpoint ;
     ns2:hasExternalReference <http://example.org/IBAL#ch2_t_sp_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 <http://example.org/IBAL#v7_pos_fb> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "v7 pos fb" ;
     ns2:hasExternalReference <http://example.org/IBAL#v7_pos_fb_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#vav3_heat_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "vav3 heat c" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav3_heat_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#vav4_heat_c> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "vav4 heat c" ;
     ns2:hasExternalReference <http://example.org/IBAL#vav4_heat_c_xref> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#AHU_1_G_ICP> a ns2:InletConnectionPoint ;
     rdfs:label "AHU 1 G ICP" ;
@@ -7301,8 +7301,8 @@
     rdfs:label "d17 pos c" ;
     ns2:hasAspect ns2:Aspect-Command ;
     ns2:hasExternalReference <http://example.org/IBAL#d17_pos_c_bac> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#AHU_1_Connection_4> a ns2:Connection ;
     rdfs:label "AHU 1 Connection 4" ;
@@ -8148,8 +8148,8 @@
     rdfs:label "d18 pos c" ;
     ns2:hasAspect ns2:Aspect-Command ;
     ns2:hasExternalReference <http://example.org/IBAL#d18_pos_c_bac> ;
-    ns3:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns3:hasUnit <http://qudt.org/vocab/unit/V> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/V> .
 
 <http://example.org/IBAL#AHU_1_Connection_2> a ns2:Connection ;
     rdfs:label "AHU 1 Connection 2" ;
@@ -10382,7 +10382,7 @@
 
 <http://example.org/IBAL#AHU_2> a ns2:AirHandlingUnit ;
     rdfs:label "AHU 2" ;
-    ns1:hasPort ns1:P_47815 ;
+    ns3:hasPort ns3:P_47815 ;
     ns2:cnx <http://example.org/IBAL#AHU_2_E2_ICP>,
         <http://example.org/IBAL#AHU_2_E_ICP>,
         <http://example.org/IBAL#AHU_2_E_OCP>,
