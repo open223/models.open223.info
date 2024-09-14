@@ -551,43 +551,29 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/pipe-hot-water-return-after-valve&gt; ;
-            sh:resultMessage &quot;s223: A Connection must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
-            sh:resultPath ns2:hasMedium ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/88e857fa&gt; ;
-            sh:value ns2:Medium-Water ],
+            sh:focusNode &lt;urn:ex/duct-before-reheat-coil&gt; ;
+            sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape ns3:ConnectionCnxShape ;
+            sh:value &lt;urn:ex/duct-before-reheat-coil&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/reheat-coil-water-out&gt; ;
-            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Substance-Medium using the relation hasMedium.&quot; ;
-            sh:resultPath ns2:hasMedium ;
-            sh:resultSeveri
+            sh:focusNode &lt;urn:ex/damper-in&gt; ;
+            sh:resultMessage &quot;s223: &lt;urn:ex/damper-in&gt; cannot have both a mapsTo &lt;urn:ex/supply-air-in&gt; and a connectsThrough &lt;urn:ex/duct-before-damper&gt;.&quot; ;
+            sh:resultPath ns3:mapsTo ;
+            sh:resultSeverity sh:Violation ;
+            sh:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/reheat-coil-valve-out
-  - urn:ex/reheat-coil-valve-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-hot-water-supply
-  - urn:ex/pipe-hot-water-supply needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-valve-actuator
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/reheat-coil-valve-actuator
   - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/pipe-hot-water-return-after-valve
-  - urn:ex/pipe-hot-water-return-after-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-water-in
-  - urn:ex/reheat-coil-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-hot-water-return-before-valve
-  - urn:ex/pipe-hot-water-return-before-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-water-out
-  - urn:ex/reheat-coil-water-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-valve-in
-  - urn:ex/reheat-coil-valve-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
 urn:ex/damper-actuator
   - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 </pre></div>

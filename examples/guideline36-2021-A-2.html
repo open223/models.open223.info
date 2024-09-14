@@ -543,49 +543,31 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/reheat-coil&gt; ;
-            sh:resultMessage &quot;g36: The HotWaterCoil shall be connected to a HotWaterValve using the relation connectedTo.&quot; ;
-            sh:resultPath ns3:connectedTo ;
-            sh:resultSeverity ns3:g36 ;
-            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/4dbfb89c&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/reheat-coil-valve-out&gt; ;
-            sh:resultMessage &quot;s223: &lt;urn:ex/reheat-coil-valve-out&gt; cannot have both a mapsTo &lt;urn:ex/hot-water-out&gt; and a connectsThrough &lt;urn:ex/hot-water-out-connection&gt;.&quot; ;
-            sh:resultPath ns3:mapsTo ;
+            sh:focusNode &lt;urn:ex/reheat-coil-valve&gt; ;
+            sh:resultMessage &quot;s223: Predicate ns2:hasMedium is not defined for instance &lt;urn:ex/reheat-coil-valve&gt;.&quot; ;
             sh:resultSeverity sh:Violation ;
-            
+            sh:sourceConstraint _:n8406f64216304f638ea681ceb92a9851b9 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape ns2:ClosedWorldShape ;
+            sh:value &lt;urn:ex/reheat-coil-valve&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/damper-in&gt; ;
+            sh:resultMessage &quot;s223: &lt;urn:ex/damper-in&gt; cannot have both a mapsTo &lt;urn:ex/air-in&gt; and a connectsThrough &lt;urn:ex/air-in-connection&gt;.&quot; ;
+            sh:resultPath ns2:mapsTo ;
+            sh:resultSeverit
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/reheat-coil-water-in
-  - urn:ex/reheat-coil-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-water-out
-  - urn:ex/reheat-coil-water-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/hot-water-out
-  - urn:ex/hot-water-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-valve-out
-  - urn:ex/reheat-coil-valve-out needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/hot-water-out-connection
-  - urn:ex/hot-water-out-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/hot-water-in-connection
-  - urn:ex/hot-water-in-connection needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/pipe-hot-water-return-before-valve
-  - urn:ex/pipe-hot-water-return-before-valve needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/hot-water-in
-  - urn:ex/hot-water-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
-urn:ex/reheat-coil-valve-in
-  - urn:ex/reheat-coil-valve-in needs to be a http://data.ashrae.org/standard223#Substance-Medium
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/reheat-coil-valve-actuator
+  - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 urn:ex/damper-actuator
   - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/reheat-coil-valve-actuator
-  - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 </pre></div>
 </div>
 </div>

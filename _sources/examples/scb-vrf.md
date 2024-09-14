@@ -34,10 +34,9 @@ This is a reference model provided by LBNL of a small office building using a VR
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Compressor](https://explore.open223.info/s223/Compressor.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatPump](https://explore.open223.info/s223/HeatPump.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatExchanger](https://explore.open223.info/s223/HeatExchanger.html) | 1 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [FlowSensor](https://explore.open223.info/s223/FlowSensor.html) | 1 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 193 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 192 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [BidirectionalConnectionPoint](https://explore.open223.info/s223/BidirectionalConnectionPoint.html) | 110 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 97 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 96 |
 | [ExternalReference](https://explore.open223.info/s223/ExternalReference.html) | [BACnetExternalReference](https://explore.open223.info/s223/BACnetExternalReference.html) | 517 |
 | [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 13 |
 | [Property](https://explore.open223.info/s223/Property.html) | [EnumerableProperty](https://explore.open223.info/s223/EnumerableProperty.html) | 292 |

@@ -527,7 +527,7 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
@@ -536,15 +536,15 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
     sh:result [ a sh:ValidationResult ;
             sh:focusNode &lt;urn:ex/hot-deck-damper-in&gt; ;
             sh:resultMessage &quot;s223: &lt;urn:ex/hot-deck-damper-in&gt; cannot have both a mapsTo &lt;urn:ex/hot-deck-in&gt; and a connectsThrough &lt;urn:ex/duct-before-hot-deck-damper&gt;.&quot; ;
-            sh:resultPath ns3:mapsTo ;
+            sh:resultPath ns2:mapsTo ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:nfcef91ebcd32437fad965745d2519c19b3 ;
+            sh:sourceConstraint _:nb657734adf994088b888252df46118bcb8 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/5edd3d1b&gt; ],
+            sh:sourceShape &lt;urn:well-known/24ec176a&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/hot-deck-in-connection&gt; ;
+            sh:focusNode &lt;urn:ex/duct-before-cold-deck-damper&gt; ;
             sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
-           
+     
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/cold-deck-damper-actuator
