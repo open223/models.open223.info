@@ -1,7 +1,3 @@
-# baseURI: http://srr/test
-# imports: http://data.ashrae.org/standard223/1.0/model/all
-# prefix: test
-
 @prefix agg: <http://jena.apache.org/ARQ/function/aggregate#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix constant: <http://qudt.org/vocab/constant/> .
@@ -73,6 +69,9 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix omgeo: <http://www.ontotext.com/owlim/geo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+rec:Room rdfs:subClassOf s223:PhysicalSpace.
+rec:OutdoorSpace rdfs:subClassOf s223:PhysicalSpace.
 
 bdg2:d9dcffbecd8f6029490dcad405406b54 a s223:QuantifiableProperty .
 

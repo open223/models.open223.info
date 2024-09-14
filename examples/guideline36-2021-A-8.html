@@ -541,17 +541,17 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
             sh:sourceShape ns2:ConnectionCnxShape ;
             sh:value &lt;urn:ex/out-connection&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/hot-deck-damper-actuator&gt; ;
-            sh:resultMessage &quot;s223: Predicate ns2:commandedByProperty is not defined for instance &lt;urn:ex/hot-deck-damper-actuator&gt;.&quot; ;
+            sh:focusNode &lt;urn:ex/hot-deck-damper-in&gt; ;
+            sh:resultMessage &quot;s223: &lt;urn:ex/hot-deck-damper-in&gt; cannot have both a mapsTo &lt;urn:ex/hot-deck-in&gt; and a connectsThrough &lt;urn:ex/duct-before-hot-deck-damper&gt;.&quot; ;
+            sh:resultPath ns2:mapsTo ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:n3814f3e3709b4fbe8e266a09e457a5bbb12 ;
-      
+        
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/hot-deck-damper-actuator
-  - urn:ex/hot-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/cold-deck-damper-actuator
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/cold-deck-damper-actuator
   - urn:ex/cold-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/hot-deck-damper-actuator
+  - urn:ex/hot-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 </pre></div>
 </div>
 </div>
