@@ -543,25 +543,23 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/damper-actuator&gt; ;
-            sh:resultMessage &quot;Property needs to have at least 1 value&quot; ;
-            sh:resultPath ns2:actuatedByProperty ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/9c90218c&gt; ],
-        [ a sh:ValidationResult ;
             sh:focusNode &lt;urn:ex/reheat-coil-water-in&gt; ;
             sh:resultMessage &quot;s223: &lt;urn:ex/reheat-coil-water-in&gt; cannot have both a mapsTo &lt;urn:ex/hot-water-in&gt; and a connectsThrough &lt;urn:ex/hot-water-in-connection&gt;.&quot; ;
-            sh:resultPath ns2:mapsTo ;
+            sh:resultPath ns3:mapsTo ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:nb7b77bf67c6043e995b64f59da
+            sh:sourceConstraint _:na552e802e8ca4a629ee98fd1854902aeb7 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/4aaf56c0&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/reheat-coil-air-out&gt; ;
+            sh:resultMessage &quot;s223: &lt;urn:ex/reheat-coil-air-out&gt; cannot have both a mapsTo &lt;urn:ex/air-out&gt; and a connectsThrough &lt;urn:ex/air-out-connection
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/reheat-coil-valve-actuator

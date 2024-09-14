@@ -527,25 +527,25 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/duct-after-damper&gt; ;
+            sh:focusNode &lt;urn:ex/duct-before-damper&gt; ;
             sh:resultMessage &quot;s223: A Connection must have two or more connectsAt relations to ConnectionPoints&quot; ;
-            sh:resultPath ns3:connectsAt ;
+            sh:resultPath ns2:connectsAt ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/297eccd8&gt; ],
+            sh:sourceShape &lt;urn:well-known/428da150&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/damper-in&gt; ;
-            sh:resultMessage &quot;s223: &lt;urn:ex/damper-in&gt; cannot have both a mapsTo &lt;urn:ex/in&gt; and a connectsThrough &lt;urn:ex/duct-before-damper&gt;.&quot; ;
-            sh:resultPath ns3:mapsTo ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:n8311074e41374d0c882d9195654be
+            sh:focusNode &lt;urn:ex/out-connection&gt; ;
+            sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape ns2:Conn
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/damper-actuator

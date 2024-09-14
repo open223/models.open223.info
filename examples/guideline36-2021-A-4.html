@@ -558,24 +558,23 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/return-air-from-plenum-in-connection&gt; ;
+            sh:focusNode &lt;urn:ex/duct-before-damper&gt; ;
             sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape ns2:ConnectionCnxShape ;
-            sh:value &lt;urn:ex/return-air-from-plenum-in-connection&gt; ],
+            sh:value &lt;urn:ex/duct-before-damper&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/return-air-from-plenum-in-connection&gt; ;
-            sh:resultMessage &quot;s223: A Connection must have two or more connectsAt relations to ConnectionPoints&quot; ;
-            sh:resultPath ns2:connectsAt ;
+            sh:focusNode &lt;urn:ex/supply-air-in-connection&gt; ;
+            sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
             sh:resultSeverity sh:Warning ;
-   
+            sh:sourceConstraintComponent sh:OrConstraintComponent 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/reheat-coil-valve-actuator
-  - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/damper-actuator
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/damper-actuator
   - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/reheat-coil-valve-actuator
+  - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 </pre></div>
 </div>
 </div>

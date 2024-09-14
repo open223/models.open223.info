@@ -659,7 +659,23 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
+@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerPanel1&gt; ;
+            sh:resultMessage &quot;s223: Predicate ns3:hasBoundaryConnectionPoint is not defined for instance &lt;http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerPanel1&gt;.&quot; ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraint _:nbb35aaf6dd9946bc8788ee9bfc331efcb3 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape ns3:ClosedWorldShape ;
+            sh:value &lt;http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerPanel1&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerPa
 </pre></div>
 </div>
 </div>

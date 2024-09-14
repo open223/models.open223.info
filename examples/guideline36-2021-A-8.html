@@ -534,18 +534,18 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/duct-before-hot-deck-damper&gt; ;
-            sh:resultMessage &quot;s223: A Connection must have two or more connectsAt relations to ConnectionPoints&quot; ;
-            sh:resultPath ns3:connectsAt ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/ba4c41d6&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/hot-deck-damper-in&gt; ;
-            sh:resultMessage &quot;s223: &lt;urn:ex/hot-deck-damper-in&gt; cannot have both a mapsTo &lt;urn:ex/hot-deck-in&gt; and a connectsThrough &lt;urn:ex/duct-before-hot-deck-damper&gt;.&quot; ;
+            sh:focusNode &lt;urn:ex/junction-out&gt; ;
+            sh:resultMessage &quot;s223: &lt;urn:ex/junction-out&gt; cannot have both a mapsTo &lt;urn:ex/out&gt; and a connectsThrough &lt;urn:ex/out-connection&gt;.&quot; ;
             sh:resultPath ns3:mapsTo ;
             sh:resultSeverity sh:Violation ;
-            sh:sou
+            sh:sourceConstraint _:n3d9b7ceaf25545af863419f27d4d276eb3 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/feaa8c3b&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/hot-deck-in-connection&gt; ;
+            sh:resultMessage &quot;s223: A Connection must have two or more connectsAt relations to ConnectionPoints&quot; ;
+            sh:resultPath ns3:connectsAt ;
+            sh:resultSeverity
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/hot-deck-damper-actuator
