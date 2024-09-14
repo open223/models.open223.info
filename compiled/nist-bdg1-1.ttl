@@ -10,11 +10,20 @@
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerPanel1> a ns1:System ;
     rdfs:label "Breaker panel1" ;
+    ns1:hasBoundaryConnectionPoint <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR1OutletConnectionPoint>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR2OutletConnectionPoint>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR3OutletConnectionPoint>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR4OutletConnectionPoint>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR5OutletConnectionPoint>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerInletCP> ;
     ns1:hasMember <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker1>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker2>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker3>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker4>,
-        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker5> .
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker5>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreaker> ;
+    ns1:hasOptionalConnectionPoint <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR4OutletConnectionPoint>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR5OutletConnectionPoint> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ChilledWaterTemperatureSensor_13> a ns1:TemperatureSensor ;
     rdfs:label "S13" ;
@@ -600,18 +609,6 @@
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PSI> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR4OutletConnectionPoint> a ns1:OutletConnectionPoint ;
-    rdfs:label "BR4Outlet connection point" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker4> ;
-    ns1:hasMedium ns1:Electricity-AC ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker4> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR5OutletConnectionPoint> a ns1:OutletConnectionPoint ;
-    rdfs:label "BR5Outlet connection point" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker5> ;
-    ns1:hasMedium ns1:Electricity-AC ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker5> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Bathroom> a ns1:PhysicalSpace ;
     rdfs:label "Bathroom" ;
     ns1:encloses <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpace2>,
@@ -867,27 +864,11 @@
     ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker1> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR1OutletConnectionPoint> a ns1:OutletConnectionPoint ;
-    rdfs:label "BR1Outlet connection point" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker1>,
-        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit1> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit1> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker1> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR2InletConnectionPoint> a ns1:InletConnectionPoint ;
     rdfs:label "BR2Inlet connection point" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker2>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerCircuit2> ;
     ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerCircuit2> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker2> .
-
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR2OutletConnectionPoint> a ns1:OutletConnectionPoint ;
-    rdfs:label "BR2Outlet connection point" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker2>,
-        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit2> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit2> ;
     ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker2> .
 
@@ -899,14 +880,6 @@
     ns1:hasMedium ns1:AC-240VLL-1Ph-60Hz ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker3> .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR3OutletConnectionPoint> a ns1:OutletConnectionPoint ;
-    rdfs:label "BR3Outlet connection point" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker3>,
-        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit3> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit3> ;
-    ns1:hasMedium ns1:AC-240VLL-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker3> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR4InletConnectionPoint> a ns1:InletConnectionPoint ;
     rdfs:label "BR4Inlet connection point" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker4>,
@@ -915,12 +888,24 @@
     ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker4> .
 
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR4OutletConnectionPoint> a ns1:OutletConnectionPoint ;
+    rdfs:label "BR4Outlet connection point" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker4> ;
+    ns1:hasMedium ns1:Electricity-AC ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker4> .
+
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR5InletConnectionPoint> a ns1:InletConnectionPoint ;
     rdfs:label "BR5Inlet connection point" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker5>,
         <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerCircuit5> ;
     ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerCircuit5> ;
     ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker5> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR5OutletConnectionPoint> a ns1:OutletConnectionPoint ;
+    rdfs:label "BR5Outlet connection point" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker5> ;
+    ns1:hasMedium ns1:Electricity-AC ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker5> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustToExteriorAir> a ns1:InletConnectionPoint ;
@@ -1393,14 +1378,6 @@
     ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker5> ;
     ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz .
 
-<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerInletCP> a ns1:InletConnectionPoint ;
-    rdfs:label "Main breaker inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#GridConnection>,
-        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreaker> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#GridConnection> ;
-    ns1:hasMedium ns1:AC-240VLL-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreaker> .
-
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerOutCP1> a ns1:OutletConnectionPoint ;
     rdfs:label "Main breaker out CP1" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreaker>,
@@ -1818,6 +1795,30 @@
     ns1:hasMedium ns1:Fluid-Air ;
     ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00001> .
 
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR1OutletConnectionPoint> a ns1:OutletConnectionPoint ;
+    rdfs:label "BR1Outlet connection point" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker1>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit1> ;
+    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit1> ;
+    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker1> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR2OutletConnectionPoint> a ns1:OutletConnectionPoint ;
+    rdfs:label "BR2Outlet connection point" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker2>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit2> ;
+    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit2> ;
+    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker2> .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BR3OutletConnectionPoint> a ns1:OutletConnectionPoint ;
+    rdfs:label "BR3Outlet connection point" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker3>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit3> ;
+    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricCircuit3> ;
+    ns1:hasMedium ns1:AC-240VLL-1Ph-60Hz ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker3> .
+
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomExhaustDuct> a ns1:Connection ;
     rdfs:label "Bathroom exhaust duct" ;
     ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BathroomOutletConnectionPoint>,
@@ -1909,6 +1910,14 @@
     ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreaker> ;
     ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ElectricBreaker3> ;
     ns1:hasMedium ns1:AC-240VLL-1Ph-60Hz .
+
+<http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreakerInletCP> a ns1:InletConnectionPoint ;
+    rdfs:label "Main breaker inlet CP" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#GridConnection>,
+        <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreaker> ;
+    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#GridConnection> ;
+    ns1:hasMedium ns1:AC-240VLL-120VLN-1Ph-60Hz ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MainBreaker> .
 
 <http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OA-to-EconDamper> a ns1:Connection ;
     rdfs:label "OA-to-Econ damper" ;

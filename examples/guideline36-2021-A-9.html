@@ -569,37 +569,35 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/htg-coil-valve-actuator&gt; ;
-            sh:resultMessage &quot;s223: Predicate ns2:commandedByProperty is not defined for instance &lt;urn:ex/htg-coil-valve-actuator&gt;.&quot; ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:n92380fbb5c5e460ab380cccb36dd7b89b11 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape ns2:ClosedWorldShape ;
-            sh:value &lt;urn:ex/htg-coil-valve-actuator&gt; ],
+            sh:focusNode &lt;urn:ex/pipe-hot-water-supply&gt; ;
+            sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape ns2:ConnectionCnxShape ;
+            sh:value &lt;urn:ex/pipe-hot-water-supply&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/minimum-oa-damper&gt; ;
-            sh:resultMessage &quot;Value must be an instance of ns2:EnumerationKind-Role&quot; ;
-            sh:resultPath ns2:hasRole ;
-            sh:resultSeverity sh:Violation ;
-        
+            sh:focusNode &lt;urn:ex/oa-in-connection&gt; ;
+            sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/ea-damper-actuator
-  - urn:ex/ea-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/oa-temp
-  - urn:ex/oa-temp needs to be a http://data.ashrae.org/standard223#EnumerationKind
-urn:ex/minimum-oa-damper-actuator
-  - urn:ex/minimum-oa-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/htg-coil-valve-actuator
-  - urn:ex/htg-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/ra-damper-actuator
+  - urn:ex/ra-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 urn:ex/minimum-oa-damper
   - urn:ex/minimum-oa-damper needs to be a http://data.ashrae.org/standard223#EnumerationKind-Role
 urn:ex/economizer-oa-damper-actuator
   - urn:ex/economizer-oa-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 urn:ex/clg-coil-valve-actuator
   - urn:ex/clg-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/ra-damper-actuator
-  - urn:ex/ra-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/oa-temp
+  - urn:ex/oa-temp needs to be a http://data.ashrae.org/standard223#EnumerationKind
+urn:ex/ea-damper-actuator
+  - urn:ex/ea-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/minimum-oa-damper-actuator
+  - urn:ex/minimum-oa-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/htg-coil-valve-actuator
+  - urn:ex/htg-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 </pre></div>
 </div>
 </div>
