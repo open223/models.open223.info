@@ -1,420 +1,424 @@
-@prefix ns1: <http://data.ashrae.org/standard223#> .
-@prefix ns2: <http://qudt.org/schema/qudt/> .
+@prefix g36: <http://data.ashrae.org/standard223/1.0/extensions/g36#> .
+@prefix mysystem1: <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#> .
+@prefix ns1: <http://qudt.org/schema/qudt/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#> a owl:Ontology ;
+mysystem1: a owl:Ontology ;
     rdfs:label "" .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-actuator> a ns1:Actuator ;
+mysystem1:ParallelFpuVariableFan-damper-actuator a s223:Actuator ;
     rdfs:label "Parallelfpuvariablefan Damper Actuator" ;
-    ns1:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-command> ;
-    ns1:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper> .
+    s223:actuatedByProperty mysystem1:ParallelFpuVariableFan-damper-command ;
+    s223:actuates mysystem1:ParallelFpuVariableFan-damper .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-discharge-air-temp-sensor> a ns1:Sensor ;
+mysystem1:ParallelFpuVariableFan-discharge-air-temp-sensor a s223:Sensor ;
     rdfs:label "Parallelfpuvariablefan Discharge Air Temp Sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-air-out> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-discharge-air-temp> .
+    s223:hasObservationLocation mysystem1:ParallelFpuVariableFan-air-out ;
+    s223:observes mysystem1:ParallelFpuVariableFan-discharge-air-temp .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-return-water-temp-sensor> a ns1:Sensor ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-return-water-temp-sensor a s223:Sensor ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Return Water Temp Sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-water-out> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-return-water-temp> .
+    s223:hasObservationLocation mysystem1:ParallelFpuVariableFan-reheat-coil-water-out ;
+    s223:observes mysystem1:ParallelFpuVariableFan-reheat-coil-return-water-temp .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-supply-water-temp-sensor> a ns1:Sensor ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-supply-water-temp-sensor a s223:Sensor ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Supply Water Temp Sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-water-in> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-supply-water-temp> .
+    s223:hasObservationLocation mysystem1:ParallelFpuVariableFan-reheat-coil-water-in ;
+    s223:observes mysystem1:ParallelFpuVariableFan-reheat-coil-supply-water-temp .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-actuator> a ns1:Actuator ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-valve-actuator a s223:Actuator ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Valve Actuator" ;
-    ns1:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-command> ;
-    ns1:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve> .
+    s223:actuatedByProperty mysystem1:ParallelFpuVariableFan-reheat-coil-valve-command ;
+    s223:actuates mysystem1:ParallelFpuVariableFan-reheat-coil-valve .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-supply-air-flow-sensor> a ns1:Sensor ;
+mysystem1:ParallelFpuVariableFan-supply-air-flow-sensor a s223:Sensor ;
     rdfs:label "Parallelfpuvariablefan Supply Air Flow Sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-supply-air-in> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-supply-air-flow> .
+    s223:hasObservationLocation mysystem1:ParallelFpuVariableFan-supply-air-in ;
+    s223:observes mysystem1:ParallelFpuVariableFan-supply-air-flow .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace> a ns1:PhysicalSpace ;
+mysystem1:PhysicalSpace a s223:PhysicalSpace ;
     rdfs:label "Physicalspace" ;
-    ns1:encloses <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain> .
+    s223:encloses mysystem1:PhysicalSpace-hvac-domain .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#zone> a ns1:Zone,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Zone> ;
+mysystem1:zone a s223:Zone,
+        g36:Zone ;
     rdfs:label "Zone" ;
-    ns1:hasDomain ns1:Domain-HVAC ;
-    ns1:hasDomainSpace <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#zone-temp> .
+    s223:hasDomain s223:Domain-HVAC ;
+    s223:hasDomainSpace mysystem1:PhysicalSpace-hvac-domain ;
+    s223:hasProperty mysystem1:zone-temp .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-position> a ns1:QuantifiableObservableProperty ;
+mysystem1:ParallelFpuVariableFan-damper-position a s223:QuantifiableObservableProperty ;
     rdfs:label "Parallelfpuvariablefan Damper Position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-speed-cmd> a ns1:QuantifiableActuatableProperty ;
+mysystem1:ParallelFpuVariableFan-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
     rdfs:label "Parallelfpuvariablefan Fan Speed Cmd" ;
-    ns1:hasAspect ns1:EnumerationKind-Speed ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    s223:hasAspect s223:EnumerationKind-Speed ;
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-speed-status> a ns1:QuantifiableObservableProperty ;
+mysystem1:ParallelFpuVariableFan-fan-speed-status a s223:QuantifiableObservableProperty ;
     rdfs:label "Parallelfpuvariablefan Fan Speed Status" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-start-cmd> a ns1:EnumeratedActuatableProperty ;
+mysystem1:ParallelFpuVariableFan-fan-start-cmd a s223:EnumeratedActuatableProperty ;
     rdfs:label "Parallelfpuvariablefan Fan Start Cmd" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-start-status> a ns1:EnumeratedObservableProperty ;
+mysystem1:ParallelFpuVariableFan-fan-start-status a s223:EnumeratedObservableProperty ;
     rdfs:label "Parallelfpuvariablefan Fan Start Status" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-position> a ns1:QuantifiableObservableProperty ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-valve-position a s223:QuantifiableObservableProperty ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Valve Position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#zone-temp> a ns1:QuantifiableObservableProperty ;
+mysystem1:zone-temp a s223:QuantifiableObservableProperty ;
     rdfs:label "Zone Temp" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+    ns1:hasQuantityKind qudtqk:Temperature ;
+    ns1:hasUnit unit:DEG_C .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-command> a ns1:QuantifiableActuatableProperty ;
+mysystem1:ParallelFpuVariableFan-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Parallelfpuvariablefan Damper Command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    s223:hasAspect s223:EnumerationKind-Position ;
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-in> a ns1:InletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-damper-in a s223:InletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Damper In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-supply-air-in> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-damper ;
+    s223:mapsTo mysystem1:ParallelFpuVariableFan-supply-air-in .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-discharge-air-temp> a ns1:QuantifiableObservableProperty ;
+mysystem1:ParallelFpuVariableFan-discharge-air-temp a s223:QuantifiableObservableProperty ;
     rdfs:label "Parallelfpuvariablefan Discharge Air Temp" ;
-    ns1:hasAspect ns1:Role-Discharge ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+    s223:hasAspect s223:Role-Discharge ;
+    ns1:hasQuantityKind qudtqk:Temperature ;
+    ns1:hasUnit unit:DEG_C .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-out> a ns1:OutletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-junction-out a s223:OutletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Junction Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-air-out> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-junction ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-junction ;
+    s223:mapsTo mysystem1:ParallelFpuVariableFan-air-out .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-air-in> a ns1:InletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-air-in a s223:InletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Air In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-return-air-from-plenum-in> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-reheat-coil ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-reheat-coil ;
+    s223:mapsTo mysystem1:ParallelFpuVariableFan-return-air-from-plenum-in .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-return-water-temp> a ns1:QuantifiableObservableProperty ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-return-water-temp a s223:QuantifiableObservableProperty ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Return Water Temp" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+    ns1:hasQuantityKind qudtqk:Temperature ;
+    ns1:hasUnit unit:DEG_C .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-supply-water-temp> a ns1:QuantifiableObservableProperty ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-supply-water-temp a s223:QuantifiableObservableProperty ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Supply Water Temp" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+    ns1:hasQuantityKind qudtqk:Temperature ;
+    ns1:hasUnit unit:DEG_C .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-command> a ns1:QuantifiableActuatableProperty ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-valve-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Valve Command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    s223:hasAspect s223:EnumerationKind-Position ;
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-out> a ns1:OutletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-valve-out a s223:OutletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Valve Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-hot-water-out> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-reheat-coil-valve ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-reheat-coil-valve ;
+    s223:mapsTo mysystem1:ParallelFpuVariableFan-hot-water-out .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-supply-air-flow> a ns1:QuantifiableObservableProperty ;
+mysystem1:ParallelFpuVariableFan-supply-air-flow a s223:QuantifiableObservableProperty ;
     rdfs:label "Parallelfpuvariablefan Supply Air Flow" ;
-    ns1:hasAspect ns1:Role-Supply ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    s223:hasAspect s223:Role-Supply ;
+    ns1:hasQuantityKind qudtqk:VolumeFlowRate ;
+    ns1:hasUnit unit:FT3-PER-MIN .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-hot-water-in> a ns1:InletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-hot-water-in a s223:InletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Hot Water In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> .
+    s223:cnx mysystem1:ParallelFpuVariableFan ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-hot-water-out> a ns1:OutletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-hot-water-out a s223:OutletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Hot Water Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> .
+    s223:cnx mysystem1:ParallelFpuVariableFan ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-water-in> a ns1:InletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-water-in a s223:InletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Water In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-hot-water-in> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-reheat-coil ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-reheat-coil ;
+    s223:mapsTo mysystem1:ParallelFpuVariableFan-hot-water-in .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-out> a ns1:OutletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-damper-out a s223:OutletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Damper Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-damper> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-damper,
+        mysystem1:ParallelFpuVariableFan-duct-after-damper ;
+    s223:connectsThrough mysystem1:ParallelFpuVariableFan-duct-after-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-damper .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-damper> a ns1:Connection,
-        ns1:Duct ;
+mysystem1:ParallelFpuVariableFan-duct-after-damper a s223:Connection,
+        s223:Duct ;
     rdfs:label "Parallelfpuvariablefan Duct After Damper" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-in-1> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-in-1> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    s223:cnx mysystem1:ParallelFpuVariableFan-damper-out,
+        mysystem1:ParallelFpuVariableFan-junction-in-1 ;
+    s223:connectsAt mysystem1:ParallelFpuVariableFan-damper-out,
+        mysystem1:ParallelFpuVariableFan-junction-in-1 ;
+    s223:connectsFrom mysystem1:ParallelFpuVariableFan-damper ;
+    s223:connectsTo mysystem1:ParallelFpuVariableFan-junction ;
+    s223:hasMedium s223:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-fan> a ns1:Connection,
-        ns1:Duct ;
+mysystem1:ParallelFpuVariableFan-duct-after-fan a s223:Connection,
+        s223:Duct ;
     rdfs:label "Parallelfpuvariablefan Duct After Fan" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-in-2> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-in-2> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    s223:cnx mysystem1:ParallelFpuVariableFan-fan-out,
+        mysystem1:ParallelFpuVariableFan-junction-in-2 ;
+    s223:connectsAt mysystem1:ParallelFpuVariableFan-fan-out,
+        mysystem1:ParallelFpuVariableFan-junction-in-2 ;
+    s223:connectsFrom mysystem1:ParallelFpuVariableFan-fan ;
+    s223:connectsTo mysystem1:ParallelFpuVariableFan-junction ;
+    s223:hasMedium s223:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-reheat-coil> a ns1:Connection,
-        ns1:Duct ;
+mysystem1:ParallelFpuVariableFan-duct-after-reheat-coil a s223:Connection,
+        s223:Duct ;
     rdfs:label "Parallelfpuvariablefan Duct After Reheat Coil" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-air-out> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-air-out> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    s223:cnx mysystem1:ParallelFpuVariableFan-fan-in,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-air-out ;
+    s223:connectsAt mysystem1:ParallelFpuVariableFan-fan-in,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-air-out ;
+    s223:connectsFrom mysystem1:ParallelFpuVariableFan-reheat-coil ;
+    s223:connectsTo mysystem1:ParallelFpuVariableFan-fan ;
+    s223:hasMedium s223:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-in> a ns1:InletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-fan-in a s223:InletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Fan In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-reheat-coil>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-reheat-coil> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-duct-after-reheat-coil,
+        mysystem1:ParallelFpuVariableFan-fan ;
+    s223:connectsThrough mysystem1:ParallelFpuVariableFan-duct-after-reheat-coil ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-fan .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-out> a ns1:OutletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-fan-out a s223:OutletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Fan Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-fan>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-fan> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-duct-after-fan,
+        mysystem1:ParallelFpuVariableFan-fan ;
+    s223:connectsThrough mysystem1:ParallelFpuVariableFan-duct-after-fan ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-fan .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-in-1> a ns1:InletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-junction-in-1 a s223:InletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Junction In 1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-damper>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-duct-after-damper,
+        mysystem1:ParallelFpuVariableFan-junction ;
+    s223:connectsThrough mysystem1:ParallelFpuVariableFan-duct-after-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-junction .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-in-2> a ns1:InletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-junction-in-2 a s223:InletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Junction In 2" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-fan>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-fan> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-duct-after-fan,
+        mysystem1:ParallelFpuVariableFan-junction ;
+    s223:connectsThrough mysystem1:ParallelFpuVariableFan-duct-after-fan ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-junction .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-pipe-hot-water-return-before-valve> a ns1:Connection,
-        ns1:Pipe ;
+mysystem1:ParallelFpuVariableFan-pipe-hot-water-return-before-valve a s223:Connection,
+        s223:Pipe ;
     rdfs:label "Parallelfpuvariablefan Pipe Hot Water Return Before Valve" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-water-out> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-water-out> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve> ;
-    ns1:hasMedium ns1:Fluid-Water .
+    s223:cnx mysystem1:ParallelFpuVariableFan-reheat-coil-valve-in,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-water-out ;
+    s223:connectsAt mysystem1:ParallelFpuVariableFan-reheat-coil-valve-in,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-water-out ;
+    s223:connectsFrom mysystem1:ParallelFpuVariableFan-reheat-coil ;
+    s223:connectsTo mysystem1:ParallelFpuVariableFan-reheat-coil-valve ;
+    s223:hasMedium s223:Fluid-Water .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-air-out> a ns1:OutletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-air-out a s223:OutletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Air Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-reheat-coil>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-duct-after-reheat-coil> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-duct-after-reheat-coil,
+        mysystem1:ParallelFpuVariableFan-reheat-coil ;
+    s223:connectsThrough mysystem1:ParallelFpuVariableFan-duct-after-reheat-coil ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-reheat-coil .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-in> a ns1:InletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-valve-in a s223:InletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Valve In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-pipe-hot-water-return-before-valve>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-pipe-hot-water-return-before-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-pipe-hot-water-return-before-valve,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-valve ;
+    s223:connectsThrough mysystem1:ParallelFpuVariableFan-pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-reheat-coil-valve .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-supply-air-in> a ns1:InletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-supply-air-in a s223:InletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Supply Air In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-supply-air-flow> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> .
+    s223:cnx mysystem1:ParallelFpuVariableFan ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem1:ParallelFpuVariableFan-supply-air-flow ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain-in> a ns1:InletConnectionPoint ;
+mysystem1:PhysicalSpace-hvac-domain-in a s223:InletConnectionPoint ;
     rdfs:label "Physicalspace Hvac Domain In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#fpu-supply-to-room-connection> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#fpu-supply-to-room-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain> .
+    s223:cnx mysystem1:PhysicalSpace-hvac-domain,
+        mysystem1:fpu-supply-to-room-connection ;
+    s223:connectsThrough mysystem1:fpu-supply-to-room-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:PhysicalSpace-hvac-domain .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain-out> a ns1:OutletConnectionPoint ;
+mysystem1:PhysicalSpace-hvac-domain-out a s223:OutletConnectionPoint ;
     rdfs:label "Physicalspace Hvac Domain Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#room-return-to-fpu-connection> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#room-return-to-fpu-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain> .
+    s223:cnx mysystem1:PhysicalSpace-hvac-domain,
+        mysystem1:room-return-to-fpu-connection ;
+    s223:connectsThrough mysystem1:room-return-to-fpu-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:PhysicalSpace-hvac-domain .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#fpu-supply-to-room-connection> a ns1:Connection,
-        ns1:Duct ;
+mysystem1:fpu-supply-to-room-connection a s223:Connection,
+        s223:Duct ;
     rdfs:label "Fpu Supply To Room Connection" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-air-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain-in> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-air-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain-in> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    s223:cnx mysystem1:ParallelFpuVariableFan-air-out,
+        mysystem1:PhysicalSpace-hvac-domain-in ;
+    s223:connectsAt mysystem1:ParallelFpuVariableFan-air-out,
+        mysystem1:PhysicalSpace-hvac-domain-in ;
+    s223:connectsFrom mysystem1:ParallelFpuVariableFan ;
+    s223:connectsTo mysystem1:PhysicalSpace-hvac-domain ;
+    s223:hasMedium s223:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#room-return-to-fpu-connection> a ns1:Connection,
-        ns1:Duct ;
+mysystem1:room-return-to-fpu-connection a s223:Connection,
+        s223:Duct ;
     rdfs:label "Room Return To Fpu Connection" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-return-air-from-plenum-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain-out> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-return-air-from-plenum-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain-out> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    s223:cnx mysystem1:ParallelFpuVariableFan-return-air-from-plenum-in,
+        mysystem1:PhysicalSpace-hvac-domain-out ;
+    s223:connectsAt mysystem1:ParallelFpuVariableFan-return-air-from-plenum-in,
+        mysystem1:PhysicalSpace-hvac-domain-out ;
+    s223:connectsFrom mysystem1:PhysicalSpace-hvac-domain ;
+    s223:connectsTo mysystem1:ParallelFpuVariableFan ;
+    s223:hasMedium s223:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-water-out> a ns1:OutletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-water-out a s223:OutletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Water Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-pipe-hot-water-return-before-valve>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-pipe-hot-water-return-before-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-pipe-hot-water-return-before-valve,
+        mysystem1:ParallelFpuVariableFan-reheat-coil ;
+    s223:connectsThrough mysystem1:ParallelFpuVariableFan-pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan-reheat-coil .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-return-air-from-plenum-in> a ns1:InletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-return-air-from-plenum-in a s223:InletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Return Air From Plenum In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#room-return-to-fpu-connection> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#room-return-to-fpu-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> .
+    s223:cnx mysystem1:ParallelFpuVariableFan,
+        mysystem1:room-return-to-fpu-connection ;
+    s223:connectsThrough mysystem1:room-return-to-fpu-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-air-out> a ns1:OutletConnectionPoint ;
+mysystem1:ParallelFpuVariableFan-air-out a s223:OutletConnectionPoint ;
     rdfs:label "Parallelfpuvariablefan Air Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#fpu-supply-to-room-connection> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#fpu-supply-to-room-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-discharge-air-temp> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> .
+    s223:cnx mysystem1:ParallelFpuVariableFan,
+        mysystem1:fpu-supply-to-room-connection ;
+    s223:connectsThrough mysystem1:fpu-supply-to-room-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem1:ParallelFpuVariableFan-discharge-air-temp ;
+    s223:isConnectionPointOf mysystem1:ParallelFpuVariableFan .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper> a ns1:Damper,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+mysystem1:ParallelFpuVariableFan-damper a s223:Damper,
+        g36:Damper ;
     rdfs:label "Parallelfpuvariablefan Damper" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-out> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-command>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper-position> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-damper-in,
+        mysystem1:ParallelFpuVariableFan-damper-out ;
+    s223:hasConnectionPoint mysystem1:ParallelFpuVariableFan-damper-in,
+        mysystem1:ParallelFpuVariableFan-damper-out ;
+    s223:hasProperty mysystem1:ParallelFpuVariableFan-damper-command,
+        mysystem1:ParallelFpuVariableFan-damper-position .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan> a ns1:Fan,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Fan>,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD> ;
+mysystem1:ParallelFpuVariableFan-fan a s223:Fan,
+        g36:Fan,
+        g36:FanWithVFD ;
     rdfs:label "Parallelfpuvariablefan Fan" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-out> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-speed-cmd>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-speed-status>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-start-cmd>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan-start-status> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-fan-in,
+        mysystem1:ParallelFpuVariableFan-fan-out ;
+    s223:hasConnectionPoint mysystem1:ParallelFpuVariableFan-fan-in,
+        mysystem1:ParallelFpuVariableFan-fan-out ;
+    s223:hasProperty mysystem1:ParallelFpuVariableFan-fan-speed-cmd,
+        mysystem1:ParallelFpuVariableFan-fan-speed-status,
+        mysystem1:ParallelFpuVariableFan-fan-start-cmd,
+        mysystem1:ParallelFpuVariableFan-fan-start-status .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve> a ns1:Valve,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve>,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
+mysystem1:ParallelFpuVariableFan-reheat-coil-valve a s223:Valve,
+        g36:ChilledWaterValve,
+        g36:HotWaterValve ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil Valve" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-out> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-command>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve-position> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-reheat-coil-valve-in,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-valve-out ;
+    s223:hasConnectionPoint mysystem1:ParallelFpuVariableFan-reheat-coil-valve-in,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-valve-out ;
+    s223:hasProperty mysystem1:ParallelFpuVariableFan-reheat-coil-valve-command,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-valve-position .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain> a ns1:DomainSpace ;
+mysystem1:PhysicalSpace-hvac-domain a s223:DomainSpace ;
     rdfs:label "Physicalspace Hvac Domain" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#PhysicalSpace-hvac-domain-out> ;
-    ns1:hasDomain ns1:Domain-HVAC .
+    s223:cnx mysystem1:PhysicalSpace-hvac-domain-in,
+        mysystem1:PhysicalSpace-hvac-domain-out ;
+    s223:hasConnectionPoint mysystem1:PhysicalSpace-hvac-domain-in,
+        mysystem1:PhysicalSpace-hvac-domain-out ;
+    s223:hasDomain s223:Domain-HVAC .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction> a ns1:Junction ;
+mysystem1:ParallelFpuVariableFan-junction a s223:Junction ;
     rdfs:label "Parallelfpuvariablefan Junction" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-in-1>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-in-2>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-in-1>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-in-2>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction-out> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    s223:cnx mysystem1:ParallelFpuVariableFan-junction-in-1,
+        mysystem1:ParallelFpuVariableFan-junction-in-2,
+        mysystem1:ParallelFpuVariableFan-junction-out ;
+    s223:hasConnectionPoint mysystem1:ParallelFpuVariableFan-junction-in-1,
+        mysystem1:ParallelFpuVariableFan-junction-in-2,
+        mysystem1:ParallelFpuVariableFan-junction-out ;
+    s223:hasMedium s223:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil> a ns1:HeatingCoil,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;
+mysystem1:ParallelFpuVariableFan-reheat-coil a s223:HeatingCoil,
+        g36:HotWaterCoil ;
     rdfs:label "Parallelfpuvariablefan Reheat Coil" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-air-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-air-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-water-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-water-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-air-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-air-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-water-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-water-out> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-return-water-temp>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-supply-water-temp> ;
-    ns1:hasRole ns1:Role-Heating .
+    s223:cnx mysystem1:ParallelFpuVariableFan-reheat-coil-air-in,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-air-out,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-water-in,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-water-out ;
+    s223:hasConnectionPoint mysystem1:ParallelFpuVariableFan-reheat-coil-air-in,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-air-out,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-water-in,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-water-out ;
+    s223:hasProperty mysystem1:ParallelFpuVariableFan-reheat-coil-return-water-temp,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-supply-water-temp ;
+    s223:hasRole s223:Role-Heating .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan> a ns1:FanPoweredTerminal,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#FanPoweredTerminal> ;
+mysystem1:ParallelFpuVariableFan a s223:FanPoweredTerminal,
+        g36:FanPoweredTerminal ;
     rdfs:label "Parallelfpuvariablefan" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-air-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-hot-water-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-hot-water-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-return-air-from-plenum-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-supply-air-in> ;
-    ns1:contains <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-damper>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-fan>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-junction>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-reheat-coil-valve> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-air-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-hot-water-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-hot-water-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-return-air-from-plenum-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-4#ParallelFpuVariableFan-supply-air-in> .
+    s223:cnx mysystem1:ParallelFpuVariableFan-air-out,
+        mysystem1:ParallelFpuVariableFan-hot-water-in,
+        mysystem1:ParallelFpuVariableFan-hot-water-out,
+        mysystem1:ParallelFpuVariableFan-return-air-from-plenum-in,
+        mysystem1:ParallelFpuVariableFan-supply-air-in ;
+    s223:contains mysystem1:ParallelFpuVariableFan-damper,
+        mysystem1:ParallelFpuVariableFan-fan,
+        mysystem1:ParallelFpuVariableFan-junction,
+        mysystem1:ParallelFpuVariableFan-reheat-coil,
+        mysystem1:ParallelFpuVariableFan-reheat-coil-valve ;
+    s223:hasConnectionPoint mysystem1:ParallelFpuVariableFan-air-out,
+        mysystem1:ParallelFpuVariableFan-hot-water-in,
+        mysystem1:ParallelFpuVariableFan-hot-water-out,
+        mysystem1:ParallelFpuVariableFan-return-air-from-plenum-in,
+        mysystem1:ParallelFpuVariableFan-supply-air-in .
 

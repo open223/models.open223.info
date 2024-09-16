@@ -1,6 +1,13 @@
-@prefix ns1: <http://data.ashrae.org/standard223#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pt1: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#> .
+@prefix pt2: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#> .
+@prefix pt3: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#> .
+@prefix pt4: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#> .
+@prefix pt6: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#> .
+@prefix pt7: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#> .
+@prefix pt8: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
 
 <http://data.ashrae.org/standard223/1.0/data/patterns-scenario> a owl:Ontology ;
     rdfs:comment """pt1: A simple, manual switch with no electronic signals (Properties)
@@ -11,814 +18,814 @@ pt6: Updated Luminaire controlled by a combination of a smart switch and a motio
 """ ;
     owl:versionInfo "Created with TopBraid Composer" .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#Room> a ns1:PhysicalSpace ;
+pt1:Room a s223:PhysicalSpace ;
     rdfs:label "Room" ;
-    ns1:encloses <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#RoomDomainSpace> .
+    s223:encloses pt1:RoomDomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireLogic> a ns1:Function ;
+pt2:LuminaireLogic a s223:Function ;
     rdfs:label "Luminaire logic" ;
-    ns1:hasInput <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#MotionProperty> ;
-    ns1:hasOutput <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand> .
+    s223:hasInput pt2:MotionProperty ;
+    s223:hasOutput pt2:LuminaireCommand .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OccupantMotionSensor> a ns1:OccupantMotionSensor ;
+pt2:OccupantMotionSensor a s223:OccupantMotionSensor ;
     rdfs:label "Occupant motion sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#MotionProperty> .
+    s223:hasObservationLocation pt2:DomainSpace ;
+    s223:observes pt2:MotionProperty .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#TestRoom> a ns1:PhysicalSpace ;
+pt2:TestRoom a s223:PhysicalSpace ;
     rdfs:label "Test room" ;
-    ns1:encloses <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace> .
+    s223:encloses pt2:DomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Function1> a ns1:Function ;
+pt3:Function1 a s223:Function ;
     rdfs:label "Function block1" ;
-    ns1:hasInput <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty> ;
-    ns1:hasOutput <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand> .
+    s223:hasInput pt3:MotionProperty,
+        pt3:UserSwitchProperty ;
+    s223:hasOutput pt3:LuminaireCommand .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OccupantMotionSensor> a ns1:OccupantMotionSensor ;
+pt3:OccupantMotionSensor a s223:OccupantMotionSensor ;
     rdfs:label "Occupant motion sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty> .
+    s223:hasObservationLocation pt3:DomainSpace ;
+    s223:observes pt3:MotionProperty .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#TestRoom> a ns1:PhysicalSpace ;
+pt3:TestRoom a s223:PhysicalSpace ;
     rdfs:label "Test room" ;
-    ns1:encloses <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace> .
+    s223:encloses pt3:DomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitch> a ns1:Equipment ;
+pt3:UserSwitch a s223:Equipment ;
     rdfs:label "User switch" ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty> .
+    s223:hasProperty pt3:UserSwitchProperty .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Function1> a ns1:Function ;
+pt4:Function1 a s223:Function ;
     rdfs:label "Function block1" ;
-    ns1:hasInput <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty> ;
-    ns1:hasOutput <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand> .
+    s223:hasInput pt4:SmartSwitchProperty ;
+    s223:hasOutput pt4:LuminaireCommand .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OccupantMotionSensor> a ns1:OccupantMotionSensor ;
+pt4:OccupantMotionSensor a s223:OccupantMotionSensor ;
     rdfs:label "Occupant motion sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#MotionProperty> .
+    s223:hasObservationLocation pt4:DomainSpace ;
+    s223:observes pt4:MotionProperty .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitch> a ns1:Equipment ;
+pt4:SmartSwitch a s223:Equipment ;
     rdfs:label "Smart switch" ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty> .
+    s223:hasProperty pt4:SmartSwitchProperty .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#TestRoom> a ns1:PhysicalSpace ;
+pt4:TestRoom a s223:PhysicalSpace ;
     rdfs:label "Test room" ;
-    ns1:encloses <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace> .
+    s223:encloses pt4:DomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#PhysicalSpace_1> a ns1:PhysicalSpace ;
+pt6:PhysicalSpace_1 a s223:PhysicalSpace ;
     rdfs:label "Physical space 1" ;
-    ns1:encloses <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace> .
+    s223:encloses pt6:DomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#TestRoom> a ns1:PhysicalSpace ;
+pt6:TestRoom a s223:PhysicalSpace ;
     rdfs:label "Test room" ;
-    ns1:encloses <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace> .
+    s223:encloses pt4:DomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#MotionProperty> a ns1:EnumeratedObservableProperty ;
+pt4:MotionProperty a s223:EnumeratedObservableProperty ;
     rdfs:label "Motion property" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Motion .
+    s223:hasEnumerationKind s223:Occupancy-Motion .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Controller> a ns1:Controller ;
+pt6:Controller a s223:Controller ;
     rdfs:label "Controller" ;
-    ns1:executes <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Function1> ;
-    ns1:hasRole ns1:Role-Controller .
+    s223:executes pt6:Function1 ;
+    s223:hasRole s223:Role-Controller .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Function1> a ns1:Function ;
+pt6:Function1 a s223:Function ;
     rdfs:label "Function block1																																																																															" ;
-    ns1:hasInput <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty> ;
-    ns1:hasOutput <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand> .
+    s223:hasInput pt6:MotionProperty,
+        pt6:UserInputProperty ;
+    s223:hasOutput pt6:LuminaireCommand .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LightActuator> a ns1:Actuator ;
+pt6:LightActuator a s223:Actuator ;
     rdfs:label "Light actuator" ;
-    ns1:actuates <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Relay> ;
-    ns1:commandedByProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand> .
+    s223:actuates pt6:Relay ;
+    s223:commandedByProperty pt6:LuminaireCommand .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OccupantMotionSensor> a ns1:OccupantMotionSensor ;
+pt6:OccupantMotionSensor a s223:OccupantMotionSensor ;
     rdfs:label "Occupant motion sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty> .
+    s223:hasObservationLocation pt6:DomainSpace ;
+    s223:observes pt6:MotionProperty .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputSwitch> a ns1:Equipment ;
+pt6:UserInputSwitch a s223:Equipment ;
     rdfs:label "User input switch" ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty> .
+    s223:hasProperty pt6:UserInputProperty .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand> a ns1:EnumeratedActuatableProperty ;
+pt2:LuminaireCommand a s223:EnumeratedActuatableProperty ;
     rdfs:label "Luminaire command" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#MotionProperty> a ns1:EnumeratedObservableProperty ;
+pt2:MotionProperty a s223:EnumeratedObservableProperty ;
     rdfs:label "Motion property" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Motion .
+    s223:hasEnumerationKind s223:Occupancy-Motion .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand> a ns1:EnumeratedActuatableProperty ;
+pt3:LuminaireCommand a s223:EnumeratedActuatableProperty ;
     rdfs:label "Luminaire command" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty> a ns1:EnumeratedObservableProperty ;
+pt3:MotionProperty a s223:EnumeratedObservableProperty ;
     rdfs:label "Motion property" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Motion .
+    s223:hasEnumerationKind s223:Occupancy-Motion .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty> a ns1:EnumerableProperty ;
+pt3:UserSwitchProperty a s223:EnumerableProperty ;
     rdfs:label "UserSwitchProperty" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Breaker1> a ns1:ElectricBreaker ;
+pt4:Breaker1 a s223:ElectricBreaker ;
     rdfs:label "Breaker1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP> .
+    s223:cnx pt4:BreakerOutletCP ;
+    s223:connectedThrough pt4:ElectricWireToLuminaire ;
+    s223:hasConnectionPoint pt4:BreakerOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorInletCP> a ns1:InletConnectionPoint ;
+pt4:LightActuatorInletCP a s223:InletConnectionPoint ;
     rdfs:label "LightActuatorInlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInletCP> .
+    s223:cnx pt4:LightActuator ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt4:LightActuator ;
+    s223:mapsTo pt4:LuminaireInletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbOutletCP> a ns1:OutletConnectionPoint ;
+pt4:LightBulbOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Light bulb outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP> .
+    s223:cnx pt4:LightBulb ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt4:LightBulb ;
+    s223:mapsTo pt4:LuminaireOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty> a ns1:EnumerableProperty ;
+pt4:SmartSwitchProperty a s223:EnumerableProperty ;
     rdfs:label "SmartSwitchProperty" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff ;
-    ns1:hasValue ns1:OnOff-Unknown .
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+    s223:hasValue s223:OnOff-Unknown .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Breaker1> a ns1:ElectricBreaker ;
+pt6:Breaker1 a s223:ElectricBreaker ;
     rdfs:label "Breaker1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP> .
+    s223:cnx pt6:BreakerOutletCP ;
+    s223:connectedThrough pt6:ElectricWireFromBreaker ;
+    s223:hasConnectionPoint pt6:BreakerOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand> a ns1:EnumeratedActuatableProperty ;
+pt6:LuminaireCommand a s223:EnumeratedActuatableProperty ;
     rdfs:label "Luminaire command" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty> a ns1:EnumeratedObservableProperty ;
+pt6:MotionProperty a s223:EnumeratedObservableProperty ;
     rdfs:label "Motion property" ;
-    ns1:hasEnumerationKind ns1:Occupancy-Motion .
+    s223:hasEnumerationKind s223:Occupancy-Motion .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayInletCP> a ns1:InletConnectionPoint ;
+pt6:RelayInletCP a s223:InletConnectionPoint ;
     rdfs:label "RelayInlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Relay> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Relay> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchInlet> .
+    s223:cnx pt6:Relay ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt6:Relay ;
+    s223:mapsTo pt6:SmartSwitchInlet .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayOutletCP> a ns1:OutletConnectionPoint ;
+pt6:RelayOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Relay outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Relay> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Relay> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchOutlet> .
+    s223:cnx pt6:Relay ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt6:Relay ;
+    s223:mapsTo pt6:SmartSwitchOutlet .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty> a ns1:EnumerableProperty ;
+pt6:UserInputProperty a s223:EnumerableProperty ;
     rdfs:label "UserInputProperty" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff ;
-    ns1:hasValue ns1:OnOff-Unknown .
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+    s223:hasValue s223:OnOff-Unknown .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitch> a ns1:Equipment ;
+pt1:DumbSwitch a s223:Equipment ;
     rdfs:label "Dumb switch" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP> .
+    s223:cnx pt1:DumbSwitchOutletCP ;
+    s223:hasConnectionPoint pt1:DumbSwitchOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricBreaker_1> a ns1:ElectricBreaker ;
+pt3:ElectricBreaker_1 a s223:ElectricBreaker ;
     rdfs:label "Electric breaker 1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1> .
+    s223:cnx pt3:BreakerOutletConnectionPoint_1 ;
+    s223:hasConnectionPoint pt3:BreakerOutletConnectionPoint_1 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand> a ns1:EnumeratedActuatableProperty ;
+pt4:LuminaireCommand a s223:EnumeratedActuatableProperty ;
     rdfs:label "Luminaire command" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Breaker> a ns1:ElectricBreaker ;
+pt7:Breaker a s223:ElectricBreaker ;
     rdfs:label "Breaker" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP> .
+    s223:cnx pt7:BreakerOutletCP ;
+    s223:hasConnectionPoint pt7:BreakerOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1> a ns1:Motor ;
+pt7:Motor1 a s223:Motor ;
     rdfs:label "Motor1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP> .
+    s223:cnx pt7:Motor1InletCP ;
+    s223:connectedThrough pt7:Circuit1 ;
+    s223:hasConnectionPoint pt7:Motor1InletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2> a ns1:Motor ;
+pt7:Motor2 a s223:Motor ;
     rdfs:label "Motor2" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP> .
+    s223:cnx pt7:Motor2InletCP ;
+    s223:connectedThrough pt7:Circuit1 ;
+    s223:hasConnectionPoint pt7:Motor2InletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3> a ns1:Motor ;
+pt7:Motor3 a s223:Motor ;
     rdfs:label "Motor3" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3InletCP> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3InletCP> .
+    s223:cnx pt7:Motor3InletCP ;
+    s223:connectedThrough pt7:Circuit1 ;
+    s223:hasConnectionPoint pt7:Motor3InletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Breaker> a ns1:ElectricBreaker ;
+pt8:Breaker a s223:ElectricBreaker ;
     rdfs:label "Breaker" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP> .
+    s223:cnx pt8:BreakerOutletCP ;
+    s223:hasConnectionPoint pt8:BreakerOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1> a ns1:Motor ;
+pt8:Motor1 a s223:Motor ;
     rdfs:label "Motor1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP> .
+    s223:cnx pt8:Motor1InletCP ;
+    s223:connectedThrough pt8:CircuitBranch1 ;
+    s223:hasConnectionPoint pt8:Motor1InletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2> a ns1:Motor ;
+pt8:Motor2 a s223:Motor ;
     rdfs:label "Motor2" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP> .
+    s223:cnx pt8:Motor2InletCP ;
+    s223:connectedThrough pt8:CircuitBranch2 ;
+    s223:hasConnectionPoint pt8:Motor2InletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3> a ns1:Motor ;
+pt8:Motor3 a s223:Motor ;
     rdfs:label "Motor3" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP> .
+    s223:cnx pt8:Motor3InletCP ;
+    s223:connectedThrough pt8:CircuitBranch3 ;
+    s223:hasConnectionPoint pt8:Motor3InletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DomainSpaceInletCP> a ns1:InletConnectionPoint ;
+pt1:DomainSpaceInletCP a s223:InletConnectionPoint ;
     rdfs:label "Domain space inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#RoomDomainSpace> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#RoomDomainSpace> .
+    s223:cnx pt1:LightPathToRoom,
+        pt1:RoomDomainSpace ;
+    s223:connectsThrough pt1:LightPathToRoom ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt1:RoomDomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP> a ns1:OutletConnectionPoint ;
+pt1:DumbSwitchOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Dumb switchOutlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitch>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitch> .
+    s223:cnx pt1:DumbSwitch,
+        pt1:ElectricWireDS-Lum ;
+    s223:connectsThrough pt1:ElectricWireDS-Lum ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt1:DumbSwitch .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum> a ns1:ElectricWire ;
+pt1:ElectricWireDS-Lum a s223:ElectricWire ;
     rdfs:label "Electric wire DS-Lum" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireInletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireInletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitch> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#Luminaire> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz .
+    s223:cnx pt1:DumbSwitchOutletCP,
+        pt1:LuminaireInletCP ;
+    s223:connectsAt pt1:DumbSwitchOutletCP,
+        pt1:LuminaireInletCP ;
+    s223:connectsFrom pt1:DumbSwitch ;
+    s223:connectsTo pt1:Luminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom> a ns1:Connection ;
+pt1:LightPathToRoom a s223:Connection ;
     rdfs:label "Light path to room" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DomainSpaceInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireOutletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DomainSpaceInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireOutletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#Luminaire> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#RoomDomainSpace> ;
-    ns1:hasMedium ns1:Light-Visible .
+    s223:cnx pt1:DomainSpaceInletCP,
+        pt1:LuminaireOutletCP ;
+    s223:connectsAt pt1:DomainSpaceInletCP,
+        pt1:LuminaireOutletCP ;
+    s223:connectsFrom pt1:Luminaire ;
+    s223:connectsTo pt1:RoomDomainSpace ;
+    s223:hasMedium s223:Light-Visible .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireInletCP> a ns1:InletConnectionPoint ;
+pt1:LuminaireInletCP a s223:InletConnectionPoint ;
     rdfs:label "LuminaireInlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#Luminaire> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#Luminaire> .
+    s223:cnx pt1:ElectricWireDS-Lum,
+        pt1:Luminaire ;
+    s223:connectsThrough pt1:ElectricWireDS-Lum ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt1:Luminaire .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireOutletCP> a ns1:OutletConnectionPoint ;
+pt1:LuminaireOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#Luminaire> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#Luminaire> .
+    s223:cnx pt1:LightPathToRoom,
+        pt1:Luminaire ;
+    s223:connectsThrough pt1:LightPathToRoom ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt1:Luminaire .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#RoomDomainSpace> a ns1:DomainSpace ;
+pt1:RoomDomainSpace a s223:DomainSpace ;
     rdfs:label "Room domain space" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DomainSpaceInletCP> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DomainSpaceInletCP> ;
-    ns1:hasDomain ns1:Domain-Lighting .
+    s223:cnx pt1:DomainSpaceInletCP ;
+    s223:hasConnectionPoint pt1:DomainSpaceInletCP ;
+    s223:hasDomain s223:Domain-Lighting .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpaceInletCP> a ns1:InletConnectionPoint ;
+pt2:DomainSpaceInletCP a s223:InletConnectionPoint ;
     rdfs:label "Domain space inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace> .
+    s223:cnx pt2:DomainSpace,
+        pt2:OpticalPath ;
+    s223:connectsThrough pt2:OpticalPath ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt2:DomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitch> a ns1:Equipment ;
+pt2:DumbSwitch a s223:Equipment ;
     rdfs:label "Dumb switch" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitchOutletCP> ;
-    ns1:connected <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitchOutletCP> .
+    s223:cnx pt2:DumbSwitchOutletCP ;
+    s223:connected pt2:Luminaire ;
+    s223:hasConnectionPoint pt2:DumbSwitchOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitchOutletCP> a ns1:OutletConnectionPoint ;
+pt2:DumbSwitchOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Dumb switchOutlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitch>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitch> .
+    s223:cnx pt2:DumbSwitch,
+        pt2:ElectricWireBothSwitches-Lum ;
+    s223:connectsThrough pt2:ElectricWireBothSwitches-Lum ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt2:DumbSwitch .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum> a ns1:ElectricWire ;
+pt2:ElectricWireBothSwitches-Lum a s223:ElectricWire ;
     rdfs:label "Electric wire BothSwitches-Lum" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitchOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireInletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitchOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireInletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitch> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz .
+    s223:cnx pt2:DumbSwitchOutletCP,
+        pt2:LuminaireInletCP ;
+    s223:connectsAt pt2:DumbSwitchOutletCP,
+        pt2:LuminaireInletCP ;
+    s223:connectsFrom pt2:DumbSwitch ;
+    s223:connectsTo pt2:Luminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireInletCP> a ns1:InletConnectionPoint ;
+pt2:LuminaireInletCP a s223:InletConnectionPoint ;
     rdfs:label "LuminaireInlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> .
+    s223:cnx pt2:ElectricWireBothSwitches-Lum,
+        pt2:Luminaire ;
+    s223:connectsThrough pt2:ElectricWireBothSwitches-Lum ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt2:Luminaire .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireOutletCP> a ns1:OutletConnectionPoint ;
+pt2:LuminaireOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> .
+    s223:cnx pt2:Luminaire,
+        pt2:OpticalPath ;
+    s223:connectsThrough pt2:OpticalPath ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt2:Luminaire .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath> a ns1:Connection ;
+pt2:OpticalPath a s223:Connection ;
     rdfs:label "Optical path" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpaceInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireOutletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpaceInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireOutletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace> ;
-    ns1:hasMedium ns1:Light-Visible .
+    s223:cnx pt2:DomainSpaceInletCP,
+        pt2:LuminaireOutletCP ;
+    s223:connectsAt pt2:DomainSpaceInletCP,
+        pt2:LuminaireOutletCP ;
+    s223:connectsFrom pt2:Luminaire ;
+    s223:connectsTo pt2:DomainSpace ;
+    s223:hasMedium s223:Light-Visible .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1> a ns1:OutletConnectionPoint ;
+pt3:BreakerOutletConnectionPoint_1 a s223:OutletConnectionPoint ;
     rdfs:label "Breaker outlet connection point 1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricBreaker_1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricBreaker_1> .
+    s223:cnx pt3:ElectricBreaker_1,
+        pt3:ElectricWireToLuminaire ;
+    s223:connectsThrough pt3:ElectricWireToLuminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt3:ElectricBreaker_1 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP> a ns1:InletConnectionPoint ;
+pt3:DomainSpaceInletCP a s223:InletConnectionPoint ;
     rdfs:label "Domain space inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OpticalPath> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OpticalPath> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace> .
+    s223:cnx pt3:DomainSpace,
+        pt3:OpticalPath ;
+    s223:connectsThrough pt3:OpticalPath ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt3:DomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire> a ns1:ElectricWire ;
+pt3:ElectricWireToLuminaire a s223:ElectricWire ;
     rdfs:label "ElectricWireToLuminaire" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireInletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireInletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricBreaker_1> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz .
+    s223:cnx pt3:BreakerOutletConnectionPoint_1,
+        pt3:LuminaireInletCP ;
+    s223:connectsAt pt3:BreakerOutletConnectionPoint_1,
+        pt3:LuminaireInletCP ;
+    s223:connectsFrom pt3:ElectricBreaker_1 ;
+    s223:connectsTo pt3:Luminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireInletCP> a ns1:InletConnectionPoint ;
+pt3:LuminaireInletCP a s223:InletConnectionPoint ;
     rdfs:label "LuminaireInlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire> .
+    s223:cnx pt3:ElectricWireToLuminaire,
+        pt3:Luminaire ;
+    s223:connectsThrough pt3:ElectricWireToLuminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt3:Luminaire .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP> a ns1:OutletConnectionPoint ;
+pt3:LuminaireOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OpticalPath> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OpticalPath> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire> .
+    s223:cnx pt3:Luminaire,
+        pt3:OpticalPath ;
+    s223:connectsThrough pt3:OpticalPath ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt3:Luminaire .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP> a ns1:OutletConnectionPoint ;
+pt4:BreakerOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Breaker outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Breaker1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Breaker1> .
+    s223:cnx pt4:Breaker1,
+        pt4:ElectricWireToLuminaire ;
+    s223:connectsThrough pt4:ElectricWireToLuminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt4:Breaker1 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP> a ns1:InletConnectionPoint ;
+pt4:DomainSpaceInletCP a s223:InletConnectionPoint ;
     rdfs:label "Domain space inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace> .
+    s223:cnx pt4:DomainSpace,
+        pt4:OpticalPath ;
+    s223:connectsThrough pt4:OpticalPath ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt4:DomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorOutletCP> a ns1:OutletConnectionPoint ;
+pt4:LightActuatorOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Light actuator outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInternalWire> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInternalWire> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator> .
+    s223:cnx pt4:LightActuator,
+        pt4:LuminaireInternalWire ;
+    s223:connectsThrough pt4:LuminaireInternalWire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt4:LightActuator .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP> a ns1:InletConnectionPoint ;
+pt4:LightBulbInletCP a s223:InletConnectionPoint ;
     rdfs:label "Light bulb inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInternalWire> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInternalWire> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb> .
+    s223:cnx pt4:LightBulb,
+        pt4:LuminaireInternalWire ;
+    s223:connectsThrough pt4:LuminaireInternalWire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt4:LightBulb .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath> a ns1:Connection ;
+pt4:OpticalPath a s223:Connection ;
     rdfs:label "Optical path" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Luminaire> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace> ;
-    ns1:hasMedium ns1:Light-Visible .
+    s223:cnx pt4:DomainSpaceInletCP,
+        pt4:LuminaireOutletCP ;
+    s223:connectsAt pt4:DomainSpaceInletCP,
+        pt4:LuminaireOutletCP ;
+    s223:connectsFrom pt4:Luminaire ;
+    s223:connectsTo pt4:DomainSpace ;
+    s223:hasMedium s223:Light-Visible .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP> a ns1:OutletConnectionPoint ;
+pt6:BreakerOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Breaker outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Breaker1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Breaker1> .
+    s223:cnx pt6:Breaker1,
+        pt6:ElectricWireFromBreaker ;
+    s223:connectsThrough pt6:ElectricWireFromBreaker ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt6:Breaker1 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP> a ns1:InletConnectionPoint ;
+pt6:DomainSpaceInletCP a s223:InletConnectionPoint ;
     rdfs:label "Domain space inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace> .
+    s223:cnx pt6:DomainSpace,
+        pt6:OpticalPath ;
+    s223:connectsThrough pt6:OpticalPath ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt6:DomainSpace .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireInletCP> a ns1:InletConnectionPoint ;
+pt6:LuminaireInletCP a s223:InletConnectionPoint ;
     rdfs:label "Luminaire inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Luminaire>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#WireToLightFixture> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#WireToLightFixture> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Luminaire> .
+    s223:cnx pt6:Luminaire,
+        pt6:WireToLightFixture ;
+    s223:connectsThrough pt6:WireToLightFixture ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt6:Luminaire .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireOutletCP> a ns1:OutletConnectionPoint ;
+pt6:LuminaireOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "luminaire outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Luminaire>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Luminaire> .
+    s223:cnx pt6:Luminaire,
+        pt6:OpticalPath ;
+    s223:connectsThrough pt6:OpticalPath ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt6:Luminaire .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath> a ns1:Connection ;
+pt6:OpticalPath a s223:Connection ;
     rdfs:label "Optical path" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireOutletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireOutletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Luminaire> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace> ;
-    ns1:hasMedium ns1:Light-Visible .
+    s223:cnx pt6:DomainSpaceInletCP,
+        pt6:LuminaireOutletCP ;
+    s223:connectsAt pt6:DomainSpaceInletCP,
+        pt6:LuminaireOutletCP ;
+    s223:connectsFrom pt6:Luminaire ;
+    s223:connectsTo pt6:DomainSpace ;
+    s223:hasMedium s223:Light-Visible .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#WireToLightFixture> a ns1:ElectricWire ;
+pt6:WireToLightFixture a s223:ElectricWire ;
     rdfs:label "Wire to light fixture" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchOutlet> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchOutlet> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchProduct> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Luminaire> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz .
+    s223:cnx pt6:LuminaireInletCP,
+        pt6:SmartSwitchOutlet ;
+    s223:connectsAt pt6:LuminaireInletCP,
+        pt6:SmartSwitchOutlet ;
+    s223:connectsFrom pt6:SmartSwitchProduct ;
+    s223:connectsTo pt6:Luminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP> a ns1:OutletConnectionPoint ;
+pt7:BreakerOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Breaker outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Breaker>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Breaker> .
+    s223:cnx pt7:Breaker,
+        pt7:Circuit1 ;
+    s223:connectsThrough pt7:Circuit1 ;
+    s223:isConnectionPointOf pt7:Breaker .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP> a ns1:InletConnectionPoint ;
+pt7:Motor1InletCP a s223:InletConnectionPoint ;
     rdfs:label "Motor1Inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1> .
+    s223:cnx pt7:Circuit1,
+        pt7:Motor1 ;
+    s223:connectsThrough pt7:Circuit1 ;
+    s223:isConnectionPointOf pt7:Motor1 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP> a ns1:InletConnectionPoint ;
+pt7:Motor2InletCP a s223:InletConnectionPoint ;
     rdfs:label "Motor2Inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2> .
+    s223:cnx pt7:Circuit1,
+        pt7:Motor2 ;
+    s223:connectsThrough pt7:Circuit1 ;
+    s223:isConnectionPointOf pt7:Motor2 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3InletCP> a ns1:InletConnectionPoint ;
+pt7:Motor3InletCP a s223:InletConnectionPoint ;
     rdfs:label "Motor3Inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3> .
+    s223:cnx pt7:Circuit1,
+        pt7:Motor3 ;
+    s223:connectsThrough pt7:Circuit1 ;
+    s223:isConnectionPointOf pt7:Motor3 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP> a ns1:OutletConnectionPoint ;
+pt8:BreakerOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Breaker outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Breaker>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Breaker> .
+    s223:cnx pt8:Breaker,
+        pt8:Circuit1 ;
+    s223:connectsThrough pt8:Circuit1 ;
+    s223:isConnectionPointOf pt8:Breaker .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP> a ns1:InletConnectionPoint ;
+pt8:JunctionInletCP a s223:InletConnectionPoint ;
     rdfs:label "Junction inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> .
+    s223:cnx pt8:Circuit1,
+        pt8:Junction ;
+    s223:connectsThrough pt8:Circuit1 ;
+    s223:isConnectionPointOf pt8:Junction .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1> a ns1:OutletConnectionPoint ;
+pt8:JunctionOutletCP1 a s223:OutletConnectionPoint ;
     rdfs:label "Junction outlet CP1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> .
+    s223:cnx pt8:CircuitBranch1,
+        pt8:Junction ;
+    s223:connectsThrough pt8:CircuitBranch1 ;
+    s223:isConnectionPointOf pt8:Junction .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2> a ns1:OutletConnectionPoint ;
+pt8:JunctionOutletCP2 a s223:OutletConnectionPoint ;
     rdfs:label "Junction outlet CP2" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> .
+    s223:cnx pt8:CircuitBranch2,
+        pt8:Junction ;
+    s223:connectsThrough pt8:CircuitBranch2 ;
+    s223:isConnectionPointOf pt8:Junction .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3> a ns1:OutletConnectionPoint ;
+pt8:JunctionOutletCP3 a s223:OutletConnectionPoint ;
     rdfs:label "Junction outlet CP3" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> .
+    s223:cnx pt8:CircuitBranch3,
+        pt8:Junction ;
+    s223:connectsThrough pt8:CircuitBranch3 ;
+    s223:isConnectionPointOf pt8:Junction .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP> a ns1:InletConnectionPoint ;
+pt8:Motor1InletCP a s223:InletConnectionPoint ;
     rdfs:label "Motor1Inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1> .
+    s223:cnx pt8:CircuitBranch1,
+        pt8:Motor1 ;
+    s223:connectsThrough pt8:CircuitBranch1 ;
+    s223:isConnectionPointOf pt8:Motor1 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP> a ns1:InletConnectionPoint ;
+pt8:Motor2InletCP a s223:InletConnectionPoint ;
     rdfs:label "Motor2Inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2> .
+    s223:cnx pt8:CircuitBranch2,
+        pt8:Motor2 ;
+    s223:connectsThrough pt8:CircuitBranch2 ;
+    s223:isConnectionPointOf pt8:Motor2 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP> a ns1:InletConnectionPoint ;
+pt8:Motor3InletCP a s223:InletConnectionPoint ;
     rdfs:label "Motor3Inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3> .
+    s223:cnx pt8:CircuitBranch3,
+        pt8:Motor3 ;
+    s223:connectsThrough pt8:CircuitBranch3 ;
+    s223:isConnectionPointOf pt8:Motor3 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire> a ns1:ElectricWire ;
+pt4:ElectricWireToLuminaire a s223:ElectricWire ;
     rdfs:label "ElectricWireToLuminaire" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInletCP> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz .
+    s223:cnx pt4:BreakerOutletCP,
+        pt4:LuminaireInletCP ;
+    s223:connectsAt pt4:BreakerOutletCP,
+        pt4:LuminaireInletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Luminaire> a ns1:Luminaire ;
+pt4:Luminaire a s223:Luminaire ;
     rdfs:label "Luminaire" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP> ;
-    ns1:commandedByProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand> ;
-    ns1:contains <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP> .
+    s223:cnx pt4:LuminaireInletCP,
+        pt4:LuminaireOutletCP ;
+    s223:commandedByProperty pt4:LuminaireCommand ;
+    s223:contains pt4:LightActuator,
+        pt4:LightBulb ;
+    s223:hasConnectionPoint pt4:LuminaireInletCP,
+        pt4:LuminaireOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInletCP> a ns1:InletConnectionPoint ;
+pt4:LuminaireInletCP a s223:InletConnectionPoint ;
     rdfs:label "Luminaire inlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Luminaire> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Luminaire> .
+    s223:cnx pt4:ElectricWireToLuminaire,
+        pt4:Luminaire ;
+    s223:connectsThrough pt4:ElectricWireToLuminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt4:Luminaire .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInternalWire> a ns1:ElectricWire ;
+pt4:LuminaireInternalWire a s223:ElectricWire ;
     rdfs:label "Luminaire internal wire" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz .
+    s223:cnx pt4:LightActuatorOutletCP,
+        pt4:LightBulbInletCP ;
+    s223:connectsAt pt4:LightActuatorOutletCP,
+        pt4:LightBulbInletCP ;
+    s223:connectsFrom pt4:LightActuator ;
+    s223:connectsTo pt4:LightBulb ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP> a ns1:OutletConnectionPoint ;
+pt4:LuminaireOutletCP a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire outlet CP" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Luminaire>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath> ;
-    ns1:hasMedium ns1:Light-Visible ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Luminaire> .
+    s223:cnx pt4:Luminaire,
+        pt4:OpticalPath ;
+    s223:connectsThrough pt4:OpticalPath ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:isConnectionPointOf pt4:Luminaire .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace> a ns1:DomainSpace ;
+pt6:DomainSpace a s223:DomainSpace ;
     rdfs:label "Domain space" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP> ;
-    ns1:hasDomain ns1:Domain-Lighting .
+    s223:cnx pt6:DomainSpaceInletCP ;
+    s223:hasConnectionPoint pt6:DomainSpaceInletCP ;
+    s223:hasDomain s223:Domain-Lighting .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker> a ns1:ElectricWire ;
+pt6:ElectricWireFromBreaker a s223:ElectricWire ;
     rdfs:label "ElectricWireFromBreaker" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchInlet> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchInlet> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchProduct> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz .
+    s223:cnx pt6:BreakerOutletCP,
+        pt6:SmartSwitchInlet ;
+    s223:connectsAt pt6:BreakerOutletCP,
+        pt6:SmartSwitchInlet ;
+    s223:connectsTo pt6:SmartSwitchProduct ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchInlet> a ns1:InletConnectionPoint ;
+pt6:SmartSwitchInlet a s223:InletConnectionPoint ;
     rdfs:label "Smart switch inlet" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchProduct> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchProduct> .
+    s223:cnx pt6:ElectricWireFromBreaker,
+        pt6:SmartSwitchProduct ;
+    s223:connectsThrough pt6:ElectricWireFromBreaker ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt6:SmartSwitchProduct .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchOutlet> a ns1:OutletConnectionPoint ;
+pt6:SmartSwitchOutlet a s223:OutletConnectionPoint ;
     rdfs:label "Smart switch outlet" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchProduct>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#WireToLightFixture> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#WireToLightFixture> ;
-    ns1:hasMedium ns1:AC-120VLN-1Ph-60Hz ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchProduct> .
+    s223:cnx pt6:SmartSwitchProduct,
+        pt6:WireToLightFixture ;
+    s223:connectsThrough pt6:WireToLightFixture ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt6:SmartSwitchProduct .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1> a ns1:ElectricWire ;
+pt8:Circuit1 a s223:ElectricWire ;
     rdfs:label "Circuit1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Breaker> .
+    s223:cnx pt8:BreakerOutletCP,
+        pt8:JunctionInletCP ;
+    s223:connectsAt pt8:BreakerOutletCP,
+        pt8:JunctionInletCP ;
+    s223:connectsFrom pt8:Breaker .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1> a ns1:ElectricWire ;
+pt8:CircuitBranch1 a s223:ElectricWire ;
     rdfs:label "Circuit branch1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1> .
+    s223:cnx pt8:JunctionOutletCP1,
+        pt8:Motor1InletCP ;
+    s223:connectsAt pt8:JunctionOutletCP1,
+        pt8:Motor1InletCP ;
+    s223:connectsFrom pt8:Junction ;
+    s223:connectsTo pt8:Motor1 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2> a ns1:ElectricWire ;
+pt8:CircuitBranch2 a s223:ElectricWire ;
     rdfs:label "Circuit branch2" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2> .
+    s223:cnx pt8:JunctionOutletCP2,
+        pt8:Motor2InletCP ;
+    s223:connectsAt pt8:JunctionOutletCP2,
+        pt8:Motor2InletCP ;
+    s223:connectsFrom pt8:Junction ;
+    s223:connectsTo pt8:Motor2 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3> a ns1:ElectricWire ;
+pt8:CircuitBranch3 a s223:ElectricWire ;
     rdfs:label "Circuit branch3" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3> .
+    s223:cnx pt8:JunctionOutletCP3,
+        pt8:Motor3InletCP ;
+    s223:connectsAt pt8:JunctionOutletCP3,
+        pt8:Motor3InletCP ;
+    s223:connectsFrom pt8:Junction ;
+    s223:connectsTo pt8:Motor3 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#Luminaire> a ns1:Luminaire ;
+pt1:Luminaire a s223:Luminaire ;
     rdfs:label "Luminaire" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireOutletCP> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireOutletCP> .
+    s223:cnx pt1:LuminaireInletCP,
+        pt1:LuminaireOutletCP ;
+    s223:hasConnectionPoint pt1:LuminaireInletCP,
+        pt1:LuminaireOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OpticalPath> a ns1:Connection ;
+pt3:OpticalPath a s223:Connection ;
     rdfs:label "Optical path" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace> ;
-    ns1:hasMedium ns1:Light-Visible .
+    s223:cnx pt3:DomainSpaceInletCP,
+        pt3:LuminaireOutletCP ;
+    s223:connectsAt pt3:DomainSpaceInletCP,
+        pt3:LuminaireOutletCP ;
+    s223:connectsFrom pt3:Luminaire ;
+    s223:connectsTo pt3:DomainSpace ;
+    s223:hasMedium s223:Light-Visible .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace> a ns1:DomainSpace ;
+pt4:DomainSpace a s223:DomainSpace ;
     rdfs:label "Domain space" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP> ;
-    ns1:hasDomain ns1:Domain-Lighting .
+    s223:cnx pt4:DomainSpaceInletCP ;
+    s223:hasConnectionPoint pt4:DomainSpaceInletCP ;
+    s223:hasDomain s223:Domain-Lighting .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Luminaire> a ns1:Equipment ;
+pt6:Luminaire a s223:Equipment ;
     rdfs:label "Luminaire" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireOutletCP> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireOutletCP> .
+    s223:cnx pt6:LuminaireInletCP,
+        pt6:LuminaireOutletCP ;
+    s223:hasConnectionPoint pt6:LuminaireInletCP,
+        pt6:LuminaireOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Relay> a ns1:Equipment ;
+pt6:Relay a s223:Equipment ;
     rdfs:label "Relay" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayOutletCP> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayOutletCP> .
+    s223:cnx pt6:RelayInletCP,
+        pt6:RelayOutletCP ;
+    s223:hasConnectionPoint pt6:RelayInletCP,
+        pt6:RelayOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchProduct> a ns1:Equipment ;
+pt6:SmartSwitchProduct a s223:Equipment ;
     rdfs:label "Smart switch product" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchInlet>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchOutlet> ;
-    ns1:contains <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Controller>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LightActuator>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OccupantMotionSensor>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Relay>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputSwitch> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchInlet>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchOutlet> .
+    s223:cnx pt6:SmartSwitchInlet,
+        pt6:SmartSwitchOutlet ;
+    s223:contains pt6:Controller,
+        pt6:LightActuator,
+        pt6:OccupantMotionSensor,
+        pt6:Relay,
+        pt6:UserInputSwitch ;
+    s223:hasConnectionPoint pt6:SmartSwitchInlet,
+        pt6:SmartSwitchOutlet .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace> a ns1:DomainSpace ;
+pt2:DomainSpace a s223:DomainSpace ;
     rdfs:label "Domain space" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpaceInletCP> ;
-    ns1:connected <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> ;
-    ns1:connectedFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpaceInletCP> ;
-    ns1:hasDomain ns1:Domain-Lighting .
+    s223:cnx pt2:DomainSpaceInletCP ;
+    s223:connected pt2:Luminaire ;
+    s223:connectedFrom pt2:Luminaire ;
+    s223:hasConnectionPoint pt2:DomainSpaceInletCP ;
+    s223:hasDomain s223:Domain-Lighting .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace> a ns1:DomainSpace ;
+pt3:DomainSpace a s223:DomainSpace ;
     rdfs:label "Domain space" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP> ;
-    ns1:connected <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire> ;
-    ns1:connectedFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OpticalPath> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP> ;
-    ns1:hasDomain ns1:Domain-Lighting .
+    s223:cnx pt3:DomainSpaceInletCP ;
+    s223:connected pt3:Luminaire ;
+    s223:connectedFrom pt3:Luminaire ;
+    s223:connectedThrough pt3:OpticalPath ;
+    s223:hasConnectionPoint pt3:DomainSpaceInletCP ;
+    s223:hasDomain s223:Domain-Lighting .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire> a ns1:Luminaire ;
+pt3:Luminaire a s223:Luminaire ;
     rdfs:label "Luminaire" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP> ;
-    ns1:commandedByProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand> ;
-    ns1:connected <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OpticalPath> ;
-    ns1:connectedTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP> .
+    s223:cnx pt3:LuminaireInletCP,
+        pt3:LuminaireOutletCP ;
+    s223:commandedByProperty pt3:LuminaireCommand ;
+    s223:connected pt3:DomainSpace ;
+    s223:connectedThrough pt3:OpticalPath ;
+    s223:connectedTo pt3:DomainSpace ;
+    s223:hasConnectionPoint pt3:LuminaireInletCP,
+        pt3:LuminaireOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator> a ns1:Actuator ;
+pt4:LightActuator a s223:Actuator ;
     rdfs:label "Light actuator" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorOutletCP> ;
-    ns1:commandedByProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand> ;
-    ns1:connected <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb> ;
-    ns1:connectedTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorOutletCP> .
+    s223:cnx pt4:LightActuatorInletCP,
+        pt4:LightActuatorOutletCP ;
+    s223:commandedByProperty pt4:LuminaireCommand ;
+    s223:connected pt4:LightBulb ;
+    s223:connectedTo pt4:LightBulb ;
+    s223:hasConnectionPoint pt4:LightActuatorInletCP,
+        pt4:LightActuatorOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb> a ns1:Equipment ;
+pt4:LightBulb a s223:Equipment ;
     rdfs:label "Light bulb" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbOutletCP> ;
-    ns1:connected <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator> ;
-    ns1:connectedFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInternalWire> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbOutletCP> .
+    s223:cnx pt4:LightBulbInletCP,
+        pt4:LightBulbOutletCP ;
+    s223:connected pt4:LightActuator ;
+    s223:connectedFrom pt4:LightActuator ;
+    s223:connectedThrough pt4:LuminaireInternalWire ;
+    s223:hasConnectionPoint pt4:LightBulbInletCP,
+        pt4:LightBulbOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire> a ns1:Luminaire ;
+pt2:Luminaire a s223:Luminaire ;
     rdfs:label "Luminaire" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireOutletCP> ;
-    ns1:commandedByProperty <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand> ;
-    ns1:connected <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitch> ;
-    ns1:connectedTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireOutletCP> .
+    s223:cnx pt2:LuminaireInletCP,
+        pt2:LuminaireOutletCP ;
+    s223:commandedByProperty pt2:LuminaireCommand ;
+    s223:connected pt2:DomainSpace,
+        pt2:DumbSwitch ;
+    s223:connectedTo pt2:DomainSpace ;
+    s223:hasConnectionPoint pt2:LuminaireInletCP,
+        pt2:LuminaireOutletCP .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1> a ns1:ElectricWire ;
+pt7:Circuit1 a s223:ElectricWire ;
     rdfs:label "Circuit1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3InletCP> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3InletCP> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Breaker> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3> .
+    s223:cnx pt7:BreakerOutletCP,
+        pt7:Motor1InletCP,
+        pt7:Motor2InletCP,
+        pt7:Motor3InletCP ;
+    s223:connectsAt pt7:BreakerOutletCP,
+        pt7:Motor1InletCP,
+        pt7:Motor2InletCP,
+        pt7:Motor3InletCP ;
+    s223:connectsFrom pt7:Breaker ;
+    s223:connectsTo pt7:Motor1,
+        pt7:Motor2,
+        pt7:Motor3 .
 
-<http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction> a ns1:Junction ;
+pt8:Junction a s223:Junction ;
     rdfs:label "Junction" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3> ;
-    ns1:connectedThrough <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2>,
-        <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3> .
+    s223:cnx pt8:JunctionInletCP,
+        pt8:JunctionOutletCP1,
+        pt8:JunctionOutletCP2,
+        pt8:JunctionOutletCP3 ;
+    s223:connectedThrough pt8:Circuit1 ;
+    s223:hasConnectionPoint pt8:JunctionInletCP,
+        pt8:JunctionOutletCP1,
+        pt8:JunctionOutletCP2,
+        pt8:JunctionOutletCP3 .
 

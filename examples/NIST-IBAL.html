@@ -635,32 +635,32 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns1: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns2: &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix ns1: &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#Jnc17-ICP1&gt; ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#Jnc17-ICP1&gt; probably needs an association with a Connection.&quot; ;
-            sh:resultPath ns1:connectsThrough ;
+            sh:focusNode &lt;http://example.org/IBAL#VAV_1_E_ICP&gt; ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#VAV_1_E_ICP&gt; probably needs an association with a Connection.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n0d39b123f94546fc8d02fd67f97b3fe0b3 ;
+            sh:sourceConstraint _:ncd31f74bbdc44a7bbf3007a62f2cb262b3 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/62db5a51&gt; ],
+            sh:sourceShape &lt;urn:well-known/4abcbb20&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#Jnc53_OCP&gt; ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#Jnc53_OCP&gt; probably needs an association with a
+            sh:focusNode &lt;http://example.org/IBAL#Jnc45_OCP2&gt; ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#Jnc45_OCP2&gt; probably needs an association wi
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/IBAL#HEC1_UpperOCP
   - http://example.org/IBAL#HEC1_UpperOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
-http://example.org/IBAL#HEC1_UpperICP
-  - http://example.org/IBAL#HEC1_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
 http://example.org/IBAL#HEC2_UpperICP
   - http://example.org/IBAL#HEC2_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
+http://example.org/IBAL#HEC1_UpperICP
+  - http://example.org/IBAL#HEC1_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Substance-Medium on path http://data.ashrae.org/standard223#hasMedium
 </pre></div>
 </div>
 </div>

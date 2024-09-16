@@ -1,257 +1,261 @@
-@prefix ns1: <http://data.ashrae.org/standard223#> .
-@prefix ns2: <http://qudt.org/schema/qudt/> .
+@prefix g36: <http://data.ashrae.org/standard223/1.0/extensions/g36#> .
+@prefix mysystem: <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#> .
+@prefix ns1: <http://qudt.org/schema/qudt/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#> a owl:Ontology ;
+mysystem: a owl:Ontology ;
     rdfs:label "" .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-actuator> a ns1:Actuator ;
+mysystem:DualDuctInletSensors-cold-deck-damper-actuator a s223:Actuator ;
     rdfs:label "Dualductinletsensors Cold Deck Damper Actuator" ;
-    ns1:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command> ;
-    ns1:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper> .
+    s223:actuatedByProperty mysystem:DualDuctInletSensors-cold-deck-damper-command ;
+    s223:actuates mysystem:DualDuctInletSensors-cold-deck-damper .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-supply-air-flow-sensor> a ns1:Sensor ;
+mysystem:DualDuctInletSensors-cold-deck-supply-air-flow-sensor a s223:Sensor ;
     rdfs:label "Dualductinletsensors Cold Deck Supply Air Flow Sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-in> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-supply-air-flow> .
+    s223:hasObservationLocation mysystem:DualDuctInletSensors-cold-deck-in ;
+    s223:observes mysystem:DualDuctInletSensors-cold-deck-supply-air-flow .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-actuator> a ns1:Actuator ;
+mysystem:DualDuctInletSensors-hot-deck-damper-actuator a s223:Actuator ;
     rdfs:label "Dualductinletsensors Hot Deck Damper Actuator" ;
-    ns1:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-command> ;
-    ns1:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper> .
+    s223:actuatedByProperty mysystem:DualDuctInletSensors-hot-deck-damper-command ;
+    s223:actuates mysystem:DualDuctInletSensors-hot-deck-damper .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow-sensor> a ns1:Sensor ;
+mysystem:DualDuctInletSensors-hot-deck-supply-air-flow-sensor a s223:Sensor ;
     rdfs:label "Dualductinletsensors Hot Deck Supply Air Flow Sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow> .
+    s223:hasObservationLocation mysystem:DualDuctInletSensors-hot-deck-in ;
+    s223:observes mysystem:DualDuctInletSensors-hot-deck-supply-air-flow .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace> a ns1:PhysicalSpace ;
+mysystem:PhysicalSpace a s223:PhysicalSpace ;
     rdfs:label "Physicalspace" ;
-    ns1:encloses <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain> .
+    s223:encloses mysystem:PhysicalSpace-hvac-domain .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#zone> a ns1:Zone,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Zone> ;
+mysystem:zone a s223:Zone,
+        g36:Zone ;
     rdfs:label "Zone" ;
-    ns1:hasDomain ns1:Domain-HVAC ;
-    ns1:hasDomainSpace <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#zone-temp> .
+    s223:hasDomain s223:Domain-HVAC ;
+    s223:hasDomainSpace mysystem:PhysicalSpace-hvac-domain ;
+    s223:hasProperty mysystem:zone-temp .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-position> a ns1:QuantifiableObservableProperty ;
+mysystem:DualDuctInletSensors-cold-deck-damper-position a s223:QuantifiableObservableProperty ;
     rdfs:label "Dualductinletsensors Cold Deck Damper Position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-position> a ns1:QuantifiableObservableProperty ;
+mysystem:DualDuctInletSensors-hot-deck-damper-position a s223:QuantifiableObservableProperty ;
     rdfs:label "Dualductinletsensors Hot Deck Damper Position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#zone-temp> a ns1:QuantifiableObservableProperty ;
+mysystem:zone-temp a s223:QuantifiableObservableProperty ;
     rdfs:label "Zone Temp" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+    ns1:hasQuantityKind qudtqk:Temperature ;
+    ns1:hasUnit unit:DEG_C .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command> a ns1:QuantifiableActuatableProperty ;
+mysystem:DualDuctInletSensors-cold-deck-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Dualductinletsensors Cold Deck Damper Command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    s223:hasAspect s223:EnumerationKind-Position ;
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-in> a ns1:InletConnectionPoint ;
+mysystem:DualDuctInletSensors-cold-deck-damper-in a s223:InletConnectionPoint ;
     rdfs:label "Dualductinletsensors Cold Deck Damper In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-in> .
+    s223:cnx mysystem:DualDuctInletSensors-cold-deck-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctInletSensors-cold-deck-damper ;
+    s223:mapsTo mysystem:DualDuctInletSensors-cold-deck-in .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-supply-air-flow> a ns1:QuantifiableObservableProperty ;
+mysystem:DualDuctInletSensors-cold-deck-supply-air-flow a s223:QuantifiableObservableProperty ;
     rdfs:label "Dualductinletsensors Cold Deck Supply Air Flow" ;
-    ns1:hasAspect ns1:Role-Cooling,
-        ns1:Role-Supply ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    s223:hasAspect s223:Role-Cooling,
+        s223:Role-Supply ;
+    ns1:hasQuantityKind qudtqk:VolumeFlowRate ;
+    ns1:hasUnit unit:FT3-PER-MIN .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-command> a ns1:QuantifiableActuatableProperty ;
+mysystem:DualDuctInletSensors-hot-deck-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Dualductinletsensors Hot Deck Damper Command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    s223:hasAspect s223:EnumerationKind-Position ;
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-in> a ns1:InletConnectionPoint ;
+mysystem:DualDuctInletSensors-hot-deck-damper-in a s223:InletConnectionPoint ;
     rdfs:label "Dualductinletsensors Hot Deck Damper In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in> .
+    s223:cnx mysystem:DualDuctInletSensors-hot-deck-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctInletSensors-hot-deck-damper ;
+    s223:mapsTo mysystem:DualDuctInletSensors-hot-deck-in .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow> a ns1:QuantifiableObservableProperty ;
+mysystem:DualDuctInletSensors-hot-deck-supply-air-flow a s223:QuantifiableObservableProperty ;
     rdfs:label "Dualductinletsensors Hot Deck Supply Air Flow" ;
-    ns1:hasAspect ns1:Role-Heating,
-        ns1:Role-Supply ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    s223:hasAspect s223:Role-Heating,
+        s223:Role-Supply ;
+    ns1:hasQuantityKind qudtqk:VolumeFlowRate ;
+    ns1:hasUnit unit:FT3-PER-MIN .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-out> a ns1:OutletConnectionPoint ;
+mysystem:DualDuctInletSensors-junction-out a s223:OutletConnectionPoint ;
     rdfs:label "Dualductinletsensors Junction Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out> .
+    s223:cnx mysystem:DualDuctInletSensors-junction ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctInletSensors-junction ;
+    s223:mapsTo mysystem:DualDuctInletSensors-out .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-out> a ns1:OutletConnectionPoint ;
+mysystem:PhysicalSpace-hvac-domain-out a s223:OutletConnectionPoint ;
     rdfs:label "Physicalspace Hvac Domain Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain> .
+    s223:cnx mysystem:PhysicalSpace-hvac-domain ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:PhysicalSpace-hvac-domain .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-out> a ns1:OutletConnectionPoint ;
+mysystem:DualDuctInletSensors-cold-deck-damper-out a s223:OutletConnectionPoint ;
     rdfs:label "Dualductinletsensors Cold Deck Damper Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper> .
+    s223:cnx mysystem:DualDuctInletSensors-cold-deck-damper,
+        mysystem:DualDuctInletSensors-duct-after-cold-deck-damper ;
+    s223:connectsThrough mysystem:DualDuctInletSensors-duct-after-cold-deck-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctInletSensors-cold-deck-damper .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-in> a ns1:InletConnectionPoint ;
+mysystem:DualDuctInletSensors-cold-deck-in a s223:InletConnectionPoint ;
     rdfs:label "Dualductinletsensors Cold Deck In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-supply-air-flow> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors> .
+    s223:cnx mysystem:DualDuctInletSensors ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem:DualDuctInletSensors-cold-deck-supply-air-flow ;
+    s223:isConnectionPointOf mysystem:DualDuctInletSensors .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper> a ns1:Connection,
-        ns1:Duct ;
+mysystem:DualDuctInletSensors-duct-after-cold-deck-damper a s223:Connection,
+        s223:Duct ;
     rdfs:label "Dualductinletsensors Duct After Cold Deck Damper" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-2> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-2> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    s223:cnx mysystem:DualDuctInletSensors-cold-deck-damper-out,
+        mysystem:DualDuctInletSensors-junction-in-2 ;
+    s223:connectsAt mysystem:DualDuctInletSensors-cold-deck-damper-out,
+        mysystem:DualDuctInletSensors-junction-in-2 ;
+    s223:connectsFrom mysystem:DualDuctInletSensors-cold-deck-damper ;
+    s223:connectsTo mysystem:DualDuctInletSensors-junction ;
+    s223:hasMedium s223:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper> a ns1:Connection,
-        ns1:Duct ;
+mysystem:DualDuctInletSensors-duct-after-hot-deck-damper a s223:Connection,
+        s223:Duct ;
     rdfs:label "Dualductinletsensors Duct After Hot Deck Damper" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-1> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-1> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    s223:cnx mysystem:DualDuctInletSensors-hot-deck-damper-out,
+        mysystem:DualDuctInletSensors-junction-in-1 ;
+    s223:connectsAt mysystem:DualDuctInletSensors-hot-deck-damper-out,
+        mysystem:DualDuctInletSensors-junction-in-1 ;
+    s223:connectsFrom mysystem:DualDuctInletSensors-hot-deck-damper ;
+    s223:connectsTo mysystem:DualDuctInletSensors-junction ;
+    s223:hasMedium s223:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-out> a ns1:OutletConnectionPoint ;
+mysystem:DualDuctInletSensors-hot-deck-damper-out a s223:OutletConnectionPoint ;
     rdfs:label "Dualductinletsensors Hot Deck Damper Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper> .
+    s223:cnx mysystem:DualDuctInletSensors-duct-after-hot-deck-damper,
+        mysystem:DualDuctInletSensors-hot-deck-damper ;
+    s223:connectsThrough mysystem:DualDuctInletSensors-duct-after-hot-deck-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctInletSensors-hot-deck-damper .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in> a ns1:InletConnectionPoint ;
+mysystem:DualDuctInletSensors-hot-deck-in a s223:InletConnectionPoint ;
     rdfs:label "Dualductinletsensors Hot Deck In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors> .
+    s223:cnx mysystem:DualDuctInletSensors ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem:DualDuctInletSensors-hot-deck-supply-air-flow ;
+    s223:isConnectionPointOf mysystem:DualDuctInletSensors .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-1> a ns1:InletConnectionPoint ;
+mysystem:DualDuctInletSensors-junction-in-1 a s223:InletConnectionPoint ;
     rdfs:label "Dualductinletsensors Junction In 1" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction> .
+    s223:cnx mysystem:DualDuctInletSensors-duct-after-hot-deck-damper,
+        mysystem:DualDuctInletSensors-junction ;
+    s223:connectsThrough mysystem:DualDuctInletSensors-duct-after-hot-deck-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctInletSensors-junction .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-2> a ns1:InletConnectionPoint ;
+mysystem:DualDuctInletSensors-junction-in-2 a s223:InletConnectionPoint ;
     rdfs:label "Dualductinletsensors Junction In 2" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction> .
+    s223:cnx mysystem:DualDuctInletSensors-duct-after-cold-deck-damper,
+        mysystem:DualDuctInletSensors-junction ;
+    s223:connectsThrough mysystem:DualDuctInletSensors-duct-after-cold-deck-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctInletSensors-junction .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-in> a ns1:InletConnectionPoint ;
+mysystem:PhysicalSpace-hvac-domain-in a s223:InletConnectionPoint ;
     rdfs:label "Physicalspace Hvac Domain In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#dual-duct-supply-to-room-connection> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#dual-duct-supply-to-room-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain> .
+    s223:cnx mysystem:PhysicalSpace-hvac-domain,
+        mysystem:dual-duct-supply-to-room-connection ;
+    s223:connectsThrough mysystem:dual-duct-supply-to-room-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:PhysicalSpace-hvac-domain .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#dual-duct-supply-to-room-connection> a ns1:Connection,
-        ns1:Duct ;
+mysystem:dual-duct-supply-to-room-connection a s223:Connection,
+        s223:Duct ;
     rdfs:label "Dual Duct Supply To Room Connection" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-in> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-in> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    s223:cnx mysystem:DualDuctInletSensors-out,
+        mysystem:PhysicalSpace-hvac-domain-in ;
+    s223:connectsAt mysystem:DualDuctInletSensors-out,
+        mysystem:PhysicalSpace-hvac-domain-in ;
+    s223:connectsFrom mysystem:DualDuctInletSensors ;
+    s223:connectsTo mysystem:PhysicalSpace-hvac-domain ;
+    s223:hasMedium s223:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out> a ns1:OutletConnectionPoint ;
+mysystem:DualDuctInletSensors-out a s223:OutletConnectionPoint ;
     rdfs:label "Dualductinletsensors Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#dual-duct-supply-to-room-connection> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#dual-duct-supply-to-room-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors> .
+    s223:cnx mysystem:DualDuctInletSensors,
+        mysystem:dual-duct-supply-to-room-connection ;
+    s223:connectsThrough mysystem:dual-duct-supply-to-room-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctInletSensors .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors> a ns1:DualDuctTerminal,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithInletSensors> ;
+mysystem:DualDuctInletSensors a s223:DualDuctTerminal,
+        g36:DualDuctTerminalWithInletSensors ;
     rdfs:label "Dualductinletsensors" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out> ;
-    ns1:contains <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out> .
+    s223:cnx mysystem:DualDuctInletSensors-cold-deck-in,
+        mysystem:DualDuctInletSensors-hot-deck-in,
+        mysystem:DualDuctInletSensors-out ;
+    s223:contains mysystem:DualDuctInletSensors-cold-deck-damper,
+        mysystem:DualDuctInletSensors-hot-deck-damper,
+        mysystem:DualDuctInletSensors-junction ;
+    s223:hasConnectionPoint mysystem:DualDuctInletSensors-cold-deck-in,
+        mysystem:DualDuctInletSensors-hot-deck-in,
+        mysystem:DualDuctInletSensors-out .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper> a ns1:Damper,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+mysystem:DualDuctInletSensors-cold-deck-damper a s223:Damper,
+        g36:Damper ;
     rdfs:label "Dualductinletsensors Cold Deck Damper" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-out> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-position> ;
-    ns1:hasRole ns1:Role-Cooling,
-        ns1:Role-Supply .
+    s223:cnx mysystem:DualDuctInletSensors-cold-deck-damper-in,
+        mysystem:DualDuctInletSensors-cold-deck-damper-out ;
+    s223:hasConnectionPoint mysystem:DualDuctInletSensors-cold-deck-damper-in,
+        mysystem:DualDuctInletSensors-cold-deck-damper-out ;
+    s223:hasProperty mysystem:DualDuctInletSensors-cold-deck-damper-command,
+        mysystem:DualDuctInletSensors-cold-deck-damper-position ;
+    s223:hasRole s223:Role-Cooling,
+        s223:Role-Supply .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper> a ns1:Damper,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+mysystem:DualDuctInletSensors-hot-deck-damper a s223:Damper,
+        g36:Damper ;
     rdfs:label "Dualductinletsensors Hot Deck Damper" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-out> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-command>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-position> ;
-    ns1:hasRole ns1:Role-Heating,
-        ns1:Role-Supply .
+    s223:cnx mysystem:DualDuctInletSensors-hot-deck-damper-in,
+        mysystem:DualDuctInletSensors-hot-deck-damper-out ;
+    s223:hasConnectionPoint mysystem:DualDuctInletSensors-hot-deck-damper-in,
+        mysystem:DualDuctInletSensors-hot-deck-damper-out ;
+    s223:hasProperty mysystem:DualDuctInletSensors-hot-deck-damper-command,
+        mysystem:DualDuctInletSensors-hot-deck-damper-position ;
+    s223:hasRole s223:Role-Heating,
+        s223:Role-Supply .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain> a ns1:DomainSpace ;
+mysystem:PhysicalSpace-hvac-domain a s223:DomainSpace ;
     rdfs:label "Physicalspace Hvac Domain" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-in>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-out> ;
-    ns1:hasDomain ns1:Domain-HVAC .
+    s223:cnx mysystem:PhysicalSpace-hvac-domain-in,
+        mysystem:PhysicalSpace-hvac-domain-out ;
+    s223:hasConnectionPoint mysystem:PhysicalSpace-hvac-domain-in,
+        mysystem:PhysicalSpace-hvac-domain-out ;
+    s223:hasDomain s223:Domain-HVAC .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction> a ns1:Junction ;
+mysystem:DualDuctInletSensors-junction a s223:Junction ;
     rdfs:label "Dualductinletsensors Junction" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-1>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-2>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-1>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-2>,
-        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-out> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    s223:cnx mysystem:DualDuctInletSensors-junction-in-1,
+        mysystem:DualDuctInletSensors-junction-in-2,
+        mysystem:DualDuctInletSensors-junction-out ;
+    s223:hasConnectionPoint mysystem:DualDuctInletSensors-junction-in-1,
+        mysystem:DualDuctInletSensors-junction-in-2,
+        mysystem:DualDuctInletSensors-junction-out ;
+    s223:hasMedium s223:Fluid-Air .
 
