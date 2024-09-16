@@ -583,24 +583,26 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns6: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns4: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns6:00061 ;
-            sh:resultMessage &quot;s223: &lt;http://data.ashrae.org/standard223/data/scb-vrf#00061&gt; cannot have both a mapsTo &lt;http://data.ashrae.org/standard223/data/scb-vrf#00042&gt; and a connectsThrough &lt;http://data.ashrae.org/standard223/data/scb-vrf#00069&gt;.&quot; ;
-            sh:resultPath ns3:mapsTo ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:n9b3306a1f6834c67aa95031e564239ceb11 ;
+            sh:focusNode ns4:00833 ;
+            sh:resultMessage &quot;s223: Number of inlets 1 are not equivalent with number of outlets 3.&quot; ;
+            sh:resultPath ns2:hasConnectionPoint ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraint _:nac30803ec1584578a1aae8b08ba1033eb11 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/a2fe6524&gt; ],
+            sh:sourceShape &lt;urn:well-known/030cb021&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode ns6:00846 ;
-            sh:resultMessage &quot;s223: A DomainS
+            sh:focusNode ns4:00632 ;
+            sh:resultMessage &quot;s223: A DomainSpace must be enclosed by a PhysicalSpace.&quot; ;
+            sh:resultPath [ sh:inversePath ns2:encloses ] ;
+            sh:resultSeverity sh:Info 
 </pre></div>
 </div>
 </div>
