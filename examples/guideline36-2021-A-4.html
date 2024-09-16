@@ -566,18 +566,18 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/discharge-air-temp&gt; ;
-            sh:resultMessage &quot;s223: Predicate ns2:hasRole is not defined for instance &lt;urn:ex/discharge-air-temp&gt;.&quot; ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:nc23022f9d8a84839b1a1a399c62fada1b3 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape ns2:ClosedWorldShape ;
-            sh:value &lt;urn:ex/discharge-air-temp&gt; ],
-        [ a sh:ValidationResult ;
             sh:focusNode &lt;urn:ex/damper-in&gt; ;
             sh:resultMessage &quot;s223: &lt;urn:ex/damper-in&gt; cannot have both a mapsTo &lt;urn:ex/supply-air-in&gt; and a connectsThrough &lt;urn:ex/duct-before-damper&gt;.&quot; ;
             sh:resultPath ns2:mapsTo ;
-            sh:resu
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraint _:nffd7842680a34a788c8e7a5543323f92b11 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/d25bb0a7&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/supply-air-in-connection&gt; ;
+            sh:resultMessage &quot;s223: A Connection must have two or more connectsAt relations to ConnectionPoints&quot; ;
+            sh:resultPath ns2:connectsAt ;
+            sh:res
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/damper-actuator

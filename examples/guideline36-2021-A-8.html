@@ -542,24 +542,24 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/duct-before-hot-deck-damper&gt; ;
-            sh:resultMessage &quot;s223: A Connection must have two or more connectsAt relations to ConnectionPoints&quot; ;
-            sh:resultPath ns2:connectsAt ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/b68ad21b&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/out-connection&gt; ;
+            sh:focusNode &lt;urn:ex/duct-before-cold-deck-damper&gt; ;
             sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape
+            sh:sourceShape ns2:ConnectionCnxShape ;
+            sh:value &lt;urn:ex/duct-before-cold-deck-damper&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/hot-deck-damper-actuator&gt; ;
+            sh:resultMessage &quot;Property needs to have at least 1 value&quot; ;
+            sh:resultPath ns2:actuatedByProperty ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintC
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/cold-deck-damper-actuator
-  - urn:ex/cold-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/hot-deck-damper-actuator
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/hot-deck-damper-actuator
   - urn:ex/hot-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/cold-deck-damper-actuator
+  - urn:ex/cold-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 </pre></div>
 </div>
 </div>

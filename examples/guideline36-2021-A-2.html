@@ -558,23 +558,24 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/reheat-coil-air-out&gt; ;
-            sh:resultMessage &quot;s223: &lt;urn:ex/reheat-coil-air-out&gt; cannot have both a mapsTo &lt;urn:ex/air-out&gt; and a connectsThrough &lt;urn:ex/air-out-connection&gt;.&quot; ;
+            sh:focusNode &lt;urn:ex/damper-actuator&gt; ;
+            sh:resultMessage &quot;Property needs to have at least 1 value&quot; ;
+            sh:resultPath ns2:actuatedByProperty ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/2eb1ba4f&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/reheat-coil-valve-out&gt; ;
+            sh:resultMessage &quot;s223: &lt;urn:ex/reheat-coil-valve-out&gt; cannot have both a mapsTo &lt;urn:ex/hot-water-out&gt; and a connectsThrough &lt;urn:ex/hot-water-out-connection&gt;.&quot; ;
             sh:resultPath ns2:mapsTo ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:n70e58a5bf4eb42a9a1a705340ae5bc37b3 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/8347f5e1&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/damper-in&gt; ;
-            sh:resultMessage &quot;s223: &lt;urn:ex/damper-in&gt; cannot have both a mapsTo &lt;urn:ex/air-in&gt; and a connectsThrough &lt;urn:ex/air-in-connection&gt;.&quot; ;
-            sh:resultPath ns
+            sh:sourceConstraint _:n219a5eedfda34454b1373c
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/reheat-coil-valve-actuator
-  - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/damper-actuator
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/damper-actuator
   - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/reheat-coil-valve-actuator
+  - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 </pre></div>
 </div>
 </div>

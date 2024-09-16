@@ -1,314 +1,314 @@
-@prefix ns1: <http://data.ashrae.org/standard223#> .
-@prefix ns2: <http://qudt.org/schema/qudt/> .
+@prefix ns1: <http://qudt.org/schema/qudt/> .
+@prefix ns2: <http://data.ashrae.org/standard223#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#> a owl:Ontology ;
     rdfs:label "" .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace> a ns1:PhysicalSpace ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace> a ns2:PhysicalSpace ;
     rdfs:label "Physicalspace" ;
-    ns1:encloses <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> .
+    ns2:encloses <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-actuator> a ns1:Actuator ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-actuator> a ns2:Actuator ;
     rdfs:label "Vavwithreheat Damper Actuator" ;
-    ns1:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command> ;
-    ns1:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> .
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-flow-sensor> a ns1:Sensor ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-flow-sensor> a ns2:Sensor ;
     rdfs:label "Vavwithreheat Discharge Air Flow Sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-flow> .
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-flow> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-temp-sensor> a ns1:Sensor ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-temp-sensor> a ns2:Sensor ;
     rdfs:label "Vavwithreheat Discharge Air Temp Sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-out> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-temp> .
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-temp> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-return-water-temp-sensor> a ns1:Sensor ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-return-water-temp-sensor> a ns2:Sensor ;
     rdfs:label "Vavwithreheat Reheat Coil Return Water Temp Sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-out> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-return-water-temp> .
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-return-water-temp> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-supply-water-temp-sensor> a ns1:Sensor ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-supply-water-temp-sensor> a ns2:Sensor ;
     rdfs:label "Vavwithreheat Reheat Coil Supply Water Temp Sensor" ;
-    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-in> ;
-    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-supply-water-temp> .
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-in> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-supply-water-temp> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-actuator> a ns1:Actuator ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-actuator> a ns2:Actuator ;
     rdfs:label "Vavwithreheat Reheat Coil Valve Actuator" ;
-    ns1:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command> ;
-    ns1:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> .
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone> a ns1:Zone,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone> a ns2:Zone,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Zone> ;
     rdfs:label "Zone" ;
-    ns1:hasDomain ns1:Domain-HVAC ;
-    ns1:hasDomainSpace <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone-co2-concentration>,
+    ns2:hasDomain ns2:Domain-HVAC ;
+    ns2:hasDomainSpace <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone-co2-concentration>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone-temp> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-position> a ns1:QuantifiableObservableProperty ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-position> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Vavwithreheat Damper Position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-position> a ns1:QuantifiableObservableProperty ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-position> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Vavwithreheat Reheat Coil Valve Position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone-co2-concentration> a ns1:QuantifiableObservableProperty ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone-co2-concentration> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Zone Co2 Concentration" ;
-    ns1:ofSubstance ns1:Constituent-CO2 ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/MoleFraction> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PPM> .
+    ns2:ofSubstance ns2:Constituent-CO2 ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/MoleFraction> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PPM> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone-temp> a ns1:QuantifiableObservableProperty ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone-temp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Zone Temp" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command> a ns1:QuantifiableActuatableProperty ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "Vavwithreheat Damper Command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-in> a ns1:InletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-in> a ns2:InletConnectionPoint ;
     rdfs:label "Vavwithreheat Damper In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in> .
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-flow> a ns1:QuantifiableObservableProperty ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-flow> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Vavwithreheat Discharge Air Flow" ;
-    ns1:hasAspect ns1:Role-Discharge ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+    ns2:hasAspect ns2:Role-Discharge ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-temp> a ns1:QuantifiableObservableProperty ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-temp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Vavwithreheat Discharge Air Temp" ;
-    ns1:hasAspect ns1:Role-Discharge ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+    ns2:hasAspect ns2:Role-Discharge ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-out> a ns1:OutletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-out> a ns2:OutletConnectionPoint ;
     rdfs:label "Vavwithreheat Reheat Coil Air Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-out> .
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-out> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-return-water-temp> a ns1:QuantifiableObservableProperty ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-return-water-temp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Vavwithreheat Reheat Coil Return Water Temp" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-supply-water-temp> a ns1:QuantifiableObservableProperty ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-supply-water-temp> a ns2:QuantifiableObservableProperty ;
     rdfs:label "Vavwithreheat Reheat Coil Supply Water Temp" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command> a ns1:QuantifiableActuatableProperty ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command> a ns2:QuantifiableActuatableProperty ;
     rdfs:label "Vavwithreheat Reheat Coil Valve Command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-out> a ns1:OutletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-out> a ns2:OutletConnectionPoint ;
     rdfs:label "Vavwithreheat Reheat Coil Valve Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-out> .
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-out> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-in> a ns1:InletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-in> a ns2:InletConnectionPoint ;
     rdfs:label "Vavwithreheat Hot Water In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> .
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-out> a ns1:OutletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-out> a ns2:OutletConnectionPoint ;
     rdfs:label "Vavwithreheat Hot Water Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> .
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-in> a ns1:InletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-in> a ns2:InletConnectionPoint ;
     rdfs:label "Vavwithreheat Reheat Coil Water In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
-    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-in> .
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-in> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-in> a ns1:InletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-in> a ns2:InletConnectionPoint ;
     rdfs:label "Physicalspace Hvac Domain In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#vav-supply-to-room-connection> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#vav-supply-to-room-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> .
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#vav-supply-to-room-connection> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-out> a ns1:OutletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-out> a ns2:OutletConnectionPoint ;
     rdfs:label "Physicalspace Hvac Domain Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#room-return-to-vav-connection> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#room-return-to-vav-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> .
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#room-return-to-vav-connection> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-out> a ns1:OutletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-out> a ns2:OutletConnectionPoint ;
     rdfs:label "Vavwithreheat Damper Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-duct-after-damper> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-duct-after-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> .
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-duct-after-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-duct-after-damper> a ns1:Connection,
-        ns1:Duct ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-duct-after-damper> a ns2:Connection,
+        ns2:Duct ;
     rdfs:label "Vavwithreheat Duct After Damper" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-out>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-out>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-in> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-out>,
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-out>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-in> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
+    ns2:hasMedium ns2:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-pipe-hot-water-return-before-valve> a ns1:Connection,
-        ns1:Pipe ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-pipe-hot-water-return-before-valve> a ns2:Connection,
+        ns2:Pipe ;
     rdfs:label "Vavwithreheat Pipe Hot Water Return Before Valve" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-in>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-out> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-in>,
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-out> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> ;
-    ns1:hasMedium ns1:Fluid-Water .
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> ;
+    ns2:hasMedium ns2:Fluid-Water .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-in> a ns1:InletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-in> a ns2:InletConnectionPoint ;
     rdfs:label "Vavwithreheat Reheat Coil Air In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-duct-after-damper>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-duct-after-damper>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-duct-after-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> .
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-duct-after-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-in> a ns1:InletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-in> a ns2:InletConnectionPoint ;
     rdfs:label "Vavwithreheat Reheat Coil Valve In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-pipe-hot-water-return-before-valve>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-pipe-hot-water-return-before-valve>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-pipe-hot-water-return-before-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> .
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-pipe-hot-water-return-before-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#room-return-to-vav-connection> a ns1:Connection,
-        ns1:Duct ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#room-return-to-vav-connection> a ns2:Connection,
+        ns2:Duct ;
     rdfs:label "Room Return To Vav Connection" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-out>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-out>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-out>,
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-out>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> ;
+    ns2:hasMedium ns2:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#vav-supply-to-room-connection> a ns1:Connection,
-        ns1:Duct ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#vav-supply-to-room-connection> a ns2:Connection,
+        ns2:Duct ;
     rdfs:label "Vav Supply To Room Connection" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-in>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-out> ;
-    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-in>,
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-out> ;
-    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> ;
-    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> ;
-    ns1:hasMedium ns1:Fluid-Air .
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> ;
+    ns2:hasMedium ns2:Fluid-Air .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-out> a ns1:OutletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-out> a ns2:OutletConnectionPoint ;
     rdfs:label "Vavwithreheat Reheat Coil Water Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-pipe-hot-water-return-before-valve>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-pipe-hot-water-return-before-valve>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-pipe-hot-water-return-before-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> .
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-pipe-hot-water-return-before-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in> a ns1:InletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in> a ns2:InletConnectionPoint ;
     rdfs:label "Vavwithreheat Air In" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#room-return-to-vav-connection> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#room-return-to-vav-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> .
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#room-return-to-vav-connection> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-out> a ns1:OutletConnectionPoint ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-out> a ns2:OutletConnectionPoint ;
     rdfs:label "Vavwithreheat Air Out" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#vav-supply-to-room-connection> ;
-    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#vav-supply-to-room-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-flow>,
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#vav-supply-to-room-connection> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-flow>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-discharge-air-temp> ;
-    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> .
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> a ns1:Damper,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper> a ns2:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
     rdfs:label "Vavwithreheat Damper" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-in>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-in>,
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-out> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command>,
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-position> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> a ns1:Valve,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> a ns2:Valve,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve>,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
     rdfs:label "Vavwithreheat Reheat Coil Valve" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-in>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-in>,
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-out> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command>,
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-position> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> a ns1:DomainSpace ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain> a ns2:DomainSpace ;
     rdfs:label "Physicalspace Hvac Domain" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-in>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-in>,
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#PhysicalSpace-hvac-domain-out> ;
-    ns1:hasDomain ns1:Domain-HVAC .
+    ns2:hasDomain ns2:Domain-HVAC .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> a ns1:SingleDuctTerminal,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat> a ns2:SingleDuctTerminal,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#VAVWithReheat> ;
     rdfs:label "Vavwithreheat" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-out>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-out> ;
-    ns1:contains <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper>,
+    ns2:contains <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in>,
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-air-out>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-out> .
 
-<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> a ns1:HeatingCoil,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil> a ns2:HeatingCoil,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;
     rdfs:label "Vavwithreheat Reheat Coil" ;
-    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-in>,
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-out>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-out> ;
-    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-in>,
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-air-out>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-in>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-water-out> ;
-    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-return-water-temp>,
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-return-water-temp>,
         <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-supply-water-temp> ;
-    ns1:hasRole ns1:Role-Heating .
+    ns2:hasRole ns2:Role-Heating .
 
