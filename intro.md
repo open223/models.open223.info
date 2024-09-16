@@ -16,7 +16,7 @@ ASHRAE standard 223P is a proposed standard that formally defines knowledge conc
 
 ````{margin}
 ```{note}
-Publication document is not yet publicly published
+The 223P standard is not yet finalized and is still under development.
 ```
 ````
 
