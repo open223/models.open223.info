@@ -216,11 +216,20 @@ psm:BreakerCP5Phase
 .
 psm:BreakerPanel1
   a s223:System ;
+  s223:hasBoundaryConnectionPoint psm:BR1OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR2OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR3OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR4OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR5OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:MainBreakerInletCP ;
   s223:hasMember psm:ElectricBreaker1 ;
   s223:hasMember psm:ElectricBreaker2 ;
   s223:hasMember psm:ElectricBreaker3 ;
   s223:hasMember psm:ElectricBreaker4 ;
   s223:hasMember psm:ElectricBreaker5 ;
+  s223:hasMember psm:MainBreaker ;
+  s223:hasOptionalConnectionPoint psm:BR4OutletConnectionPoint ;
+  s223:hasOptionalConnectionPoint psm:BR5OutletConnectionPoint ;
   rdfs:label "Breaker panel1" ;
 .
 psm:ChilledWaterInletTemp
