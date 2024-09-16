@@ -427,11 +427,11 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/Actuator.html">Actuator</a></p></td>
-<td><p>2</p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/Sensor.html">Sensor</a></p></td>
+<td><p>4</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/Sensor.html">Sensor</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/Actuator.html">Actuator</a></p></td>
 <td><p>2</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
@@ -460,23 +460,31 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connection</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/Pipe.html">Pipe</a></p></td>
-<td><p>3</p></td>
+<td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/InletConnectionPoint.html">InletConnectionPoint</a></p></td>
-<td><p>9</p></td>
+<td><p>11</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/OutletConnectionPoint.html">OutletConnectionPoint</a></p></td>
-<td><p>7</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/DomainSpace.html">DomainSpace</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Zone.html">Zone</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
+<td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a></p></td>
-<td><p>6</p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableObservableProperty.html">QuantifiableObservableProperty</a></p></td>
+<td><p>8</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableObservableProperty.html">QuantifiableObservableProperty</a></p></td>
-<td><p>4</p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a></p></td>
+<td><p>6</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableActuatableProperty.html">QuantifiableActuatableProperty</a></p></td>
@@ -551,30 +559,31 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/pipe-hot-water-return-before-valve&gt; ;
+            sh:focusNode &lt;urn:ex/duct-before-damper&gt; ;
+            sh:resultMessage &quot;s223: A Connection must have two or more connectsAt relations to ConnectionPoints&quot; ;
+            sh:resultPath ns2:connectsAt ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/6fead789&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/return-air-from-plenum-in-connection&gt; ;
             sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape ns3:ConnectionCnxShape ;
-            sh:value &lt;urn:ex/pipe-hot-water-return-before-valve&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/discharge-air-temp&gt; ;
-            sh:resultMessage &quot;s223: Predicate ns3:hasRole is not defined for instance &lt;urn:ex/discharge-air-temp&gt;.&quot; ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint _:n3d13df22a59c4ae5aa8112d6c8e2
+            s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/damper-actuator
-  - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/reheat-coil-valve-actuator
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/reheat-coil-valve-actuator
   - urn:ex/reheat-coil-valve-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/damper-actuator
+  - urn:ex/damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 </pre></div>
 </div>
 </div>

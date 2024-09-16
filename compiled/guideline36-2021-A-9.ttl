@@ -1,995 +1,1741 @@
-@prefix ns1: <http://data.ashrae.org/standard223#> .
-@prefix ns2: <http://qudt.org/schema/qudt/> .
+@prefix ns1: <http://qudt.org/schema/qudt/> .
+@prefix ns2: <http://data.ashrae.org/standard223#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
-<urn:ex/> a owl:Ontology .
-
-<urn:ex/clg-coil-valve-actuator> a ns1:Actuator ;
-    rdfs:label "clg coil valve actuator" ;
-    ns1:actuates <urn:ex/clg-coil-valve> ;
-    ns1:commandedByProperty <urn:ex/clg-coil-valve-command> .
-
-<urn:ex/ea-damper-actuator> a ns1:Actuator ;
-    rdfs:label "ea damper actuator" ;
-    ns1:actuates <urn:ex/ea-damper> ;
-    ns1:commandedByProperty <urn:ex/ea-damper-command> .
-
-<urn:ex/economizer-oa-damper-actuator> a ns1:Actuator ;
-    rdfs:label "economizer oa damper actuator" ;
-    ns1:actuates <urn:ex/economizer-oa-damper> ;
-    ns1:commandedByProperty <urn:ex/economizer-oa-damper-command> .
-
-<urn:ex/filter-differential-pressure-sensor> a ns1:DifferentialSensor,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#DifferentialPressureSensor> ;
-    ns1:hasObservationLocation <urn:ex/filter-in>,
-        <urn:ex/filter-out> ;
-    ns1:hasObservationLocationHigh <urn:ex/filter-in> ;
-    ns1:hasObservationLocationLow <urn:ex/filter-out> ;
-    ns1:observes <urn:ex/filter-differential-pressure> .
-
-<urn:ex/heat-coil-air-temp-sensor> a ns1:Sensor ;
-    rdfs:label "heat coil air temp sensor" ;
-    ns1:hasObservationLocation <urn:ex/duct-after-htg-coil> ;
-    ns1:observes <urn:ex/heat-coil-air-temp> .
-
-<urn:ex/htg-coil-valve-actuator> a ns1:Actuator ;
-    rdfs:label "htg coil valve actuator" ;
-    ns1:actuates <urn:ex/htg-coil-valve> ;
-    ns1:commandedByProperty <urn:ex/htg-coil-valve-command> .
-
-<urn:ex/ma-temp-sensor> a ns1:Sensor ;
-    rdfs:label "ma temp sensor" ;
-    ns1:hasObservationLocation <urn:ex/filter-in> ;
-    ns1:observes <urn:ex/ma-temp> .
-
-<urn:ex/minimum-oa-damper-actuator> a ns1:Actuator ;
-    rdfs:label "minimum oa damper actuator" ;
-    ns1:actuates <urn:ex/minimum-oa-damper> ;
-    ns1:commandedByProperty <urn:ex/minimum-oa-damper-command> .
-
-<urn:ex/oa-flow-measurement-station> a ns1:Sensor ;
-    rdfs:label "oa flow measurement station" ;
-    ns1:hasObservationLocation <urn:ex/minimum-oa-damper-out> ;
-    ns1:observes <urn:ex/oa-flow> .
-
-<urn:ex/oa-temp-sensor> a ns1:Sensor ;
-    rdfs:label "oa temp sensor" ;
-    ns1:hasObservationLocation <urn:ex/minimum-oa-damper-out> ;
-    ns1:observes <urn:ex/oa-temp> .
-
-<urn:ex/ra-damper-actuator> a ns1:Actuator ;
-    rdfs:label "ra damper actuator" ;
-    ns1:actuates <urn:ex/ra-damper> ;
-    ns1:commandedByProperty <urn:ex/ra-damper-command> .
-
-<urn:ex/ra-fan-static-pressure-sensor> a ns1:Sensor ;
-    rdfs:label "ra fan static pressure sensor" ;
-    ns1:hasObservationLocation <urn:ex/duct-after-ra-fan> ;
-    ns1:observes <urn:ex/ra-fan-discharge-static-pressure> .
-
-<urn:ex/ra-flow-sensor> a ns1:Sensor ;
-    rdfs:label "ra flow sensor" ;
-    ns1:hasObservationLocation <urn:ex/ra-fan> ;
-    ns1:observes <urn:ex/ra-flow> .
-
-<urn:ex/ra-temp-sensor> a ns1:Sensor ;
-    rdfs:label "ra temp sensor" ;
-    ns1:hasObservationLocation <urn:ex/ra-in> ;
-    ns1:observes <urn:ex/ra-temp> .
-
-<urn:ex/sa-flow-sensor> a ns1:Sensor ;
-    rdfs:label "sa flow sensor" ;
-    ns1:hasObservationLocation <urn:ex/sa-fan> ;
-    ns1:observes <urn:ex/sa-flow> .
-
-<urn:ex/sa-temp-sensor> a ns1:Sensor ;
-    rdfs:label "sa temp sensor" ;
-    ns1:hasObservationLocation <urn:ex/sa-out> ;
-    ns1:observes <urn:ex/sa-temp> .
-
-<urn:ex/supply-duct-static-pressure-sensor> a ns1:Sensor ;
-    rdfs:label "supply duct static pressure sensor" ;
-    ns1:hasObservationLocation <urn:ex/sa-out-connection> ;
-    ns1:observes <urn:ex/supply-duct-static-pressure> .
-
-<urn:ex/clg-coil-valve-position> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "clg coil valve position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/ea-damper-position> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "ea damper position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/economizer-oa-damper-position> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "economizer oa damper position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/htg-coil-valve-position> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "htg coil valve position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/minimum-oa-damper-position> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "minimum oa damper position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/ra-damper-position> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "ra damper position" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/ra-fan-speed-cmd> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "ra fan speed cmd" ;
-    ns1:hasAspect ns1:EnumerationKind-Speed ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/ra-fan-start-cmd> a ns1:EnumeratedActuatableProperty ;
-    rdfs:label "ra fan start cmd" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
-
-<urn:ex/ra-fan-start-status> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "ra fan start status" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
-
-<urn:ex/sa-fan-speed-cmd> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "sa fan speed cmd" ;
-    ns1:hasAspect ns1:EnumerationKind-Speed ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/sa-fan-start-cmd> a ns1:EnumeratedActuatableProperty ;
-    rdfs:label "sa fan start cmd" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
-
-<urn:ex/sa-fan-start-status> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "sa fan start status" ;
-    ns1:hasEnumerationKind ns1:EnumerationKind-OnOff .
-
-<urn:ex/clg-coil-valve-command> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "clg coil valve command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/ea-damper-command> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "ea damper command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/economizer-oa-damper-command> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "economizer oa damper command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/filter-differential-pressure> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "filter differential pressure" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
-
-<urn:ex/heat-coil-air-temp> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "heat coil air temp" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
-
-<urn:ex/htg-coil-valve-command> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "htg coil valve command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/ma-temp> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "ma temp" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
-
-<urn:ex/minimum-oa-damper-command> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "minimum oa damper command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/oa-flow> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "oa flow" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
-
-<urn:ex/oa-temp> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "oa temp" ;
-    ns1:hasAspect ns1:Role-Outside ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
-
-<urn:ex/pipe-chilled-water-return-before-valve> a ns1:Connection,
-        ns1:Pipe ;
-    rdfs:label "pipe chilled water return before valve" ;
-    ns1:cnx <urn:ex/clg-coil-valve-in> ;
-    ns1:connectsAt <urn:ex/clg-coil-valve-in> ;
-    ns1:connectsTo <urn:ex/clg-coil-valve> ;
-    ns1:hasMedium ns1:Fluid-Water .
-
-<urn:ex/pipe-chilled-water-supply> a ns1:Connection,
-        ns1:Pipe ;
-    rdfs:label "pipe chilled water supply" ;
-    ns1:cnx <urn:ex/clg-coil-water-out> ;
-    ns1:connectsAt <urn:ex/clg-coil-water-out> ;
-    ns1:connectsFrom <urn:ex/clg-coil> ;
-    ns1:hasMedium ns1:Fluid-Water .
-
-<urn:ex/pipe-hot-water-return-before-valve> a ns1:Connection,
-        ns1:Pipe ;
-    rdfs:label "pipe hot water return before valve" ;
-    ns1:cnx <urn:ex/htg-coil-valve-in> ;
-    ns1:connectsAt <urn:ex/htg-coil-valve-in> ;
-    ns1:connectsTo <urn:ex/htg-coil-valve> ;
-    ns1:hasMedium ns1:Fluid-Water .
-
-<urn:ex/pipe-hot-water-supply> a ns1:Connection,
-        ns1:Pipe ;
-    rdfs:label "pipe hot water supply" ;
-    ns1:cnx <urn:ex/htg-coil-water-out> ;
-    ns1:connectsAt <urn:ex/htg-coil-water-out> ;
-    ns1:connectsFrom <urn:ex/htg-coil> ;
-    ns1:hasMedium ns1:Fluid-Water .
-
-<urn:ex/ra-damper-command> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "ra damper command" ;
-    ns1:hasAspect ns1:EnumerationKind-Position ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
-
-<urn:ex/ra-fan-discharge-static-pressure> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "ra fan discharge static pressure" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
-
-<urn:ex/ra-flow> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "ra flow" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
-
-<urn:ex/ra-temp> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "ra temp" ;
-    ns1:hasAspect ns1:Role-Return ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
-
-<urn:ex/sa-flow> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "sa flow" ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
-
-<urn:ex/sa-temp> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "sa temp" ;
-    ns1:hasAspect ns1:Role-Supply ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
-
-<urn:ex/supply-duct-static-pressure> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "supply duct static pressure" ;
-    ns1:hasAspect ns1:Role-Supply ;
-    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns2:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
-
-<urn:ex/clg-coil-air-in> a ns1:InletConnectionPoint ;
-    rdfs:label "clg coil air in" ;
-    ns1:cnx <urn:ex/clg-coil>,
-        <urn:ex/duct-after-htg-coil> ;
-    ns1:connectsThrough <urn:ex/duct-after-htg-coil> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil> .
-
-<urn:ex/clg-coil-air-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "clg coil air out" ;
-    ns1:cnx <urn:ex/clg-coil>,
-        <urn:ex/duct-after-clg-coil> ;
-    ns1:connectsThrough <urn:ex/duct-after-clg-coil> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil> .
-
-<urn:ex/clg-coil-valve-in> a ns1:InletConnectionPoint ;
-    rdfs:label "clg coil valve in" ;
-    ns1:cnx <urn:ex/clg-coil-valve>,
-        <urn:ex/pipe-chilled-water-return-before-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-chilled-water-return-before-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil-valve> .
-
-<urn:ex/clg-coil-valve-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "clg coil valve out" ;
-    ns1:cnx <urn:ex/clg-coil-valve>,
-        <urn:ex/pipe-chilled-water-return-after-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-chilled-water-return-after-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil-valve> .
-
-<urn:ex/clg-coil-water-in> a ns1:InletConnectionPoint ;
-    rdfs:label "clg coil water in" ;
-    ns1:cnx <urn:ex/clg-coil>,
-        <urn:ex/pipe-chilled-water-return-after-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-chilled-water-return-after-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil> .
-
-<urn:ex/clg-coil-water-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "clg coil water out" ;
-    ns1:cnx <urn:ex/clg-coil>,
-        <urn:ex/pipe-chilled-water-supply> ;
-    ns1:connectsThrough <urn:ex/pipe-chilled-water-supply> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <urn:ex/clg-coil> .
-
-<urn:ex/duct-after-clg-coil> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct after clg coil" ;
-    ns1:cnx <urn:ex/clg-coil-air-out>,
-        <urn:ex/sa-fan-in> ;
-    ns1:connectsAt <urn:ex/clg-coil-air-out>,
-        <urn:ex/sa-fan-in> ;
-    ns1:connectsFrom <urn:ex/clg-coil> ;
-    ns1:connectsTo <urn:ex/sa-fan> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/duct-after-economizer-oa-damper> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct after economizer oa damper" ;
-    ns1:cnx <urn:ex/economizer-oa-damper-out>,
-        <urn:ex/outside-supply-junction-in-3> ;
-    ns1:connectsAt <urn:ex/economizer-oa-damper-out>,
-        <urn:ex/outside-supply-junction-in-3> ;
-    ns1:connectsFrom <urn:ex/economizer-oa-damper> ;
-    ns1:connectsTo <urn:ex/outside-supply-junction> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/duct-after-filter> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct after filter" ;
-    ns1:cnx <urn:ex/filter-out>,
-        <urn:ex/htg-coil-air-in> ;
-    ns1:connectsAt <urn:ex/filter-out>,
-        <urn:ex/htg-coil-air-in> ;
-    ns1:connectsFrom <urn:ex/filter> ;
-    ns1:connectsTo <urn:ex/htg-coil> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/duct-after-minimum-oa-damper> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct after minimum oa damper" ;
-    ns1:cnx <urn:ex/minimum-oa-damper-out>,
-        <urn:ex/outside-supply-junction-in-2> ;
-    ns1:connectsAt <urn:ex/minimum-oa-damper-out>,
-        <urn:ex/outside-supply-junction-in-2> ;
-    ns1:connectsFrom <urn:ex/minimum-oa-damper> ;
-    ns1:connectsTo <urn:ex/outside-supply-junction> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/duct-after-ra-damper> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct after ra damper" ;
-    ns1:cnx <urn:ex/outside-supply-junction-in-1>,
-        <urn:ex/ra-damper-out> ;
-    ns1:connectsAt <urn:ex/outside-supply-junction-in-1>,
-        <urn:ex/ra-damper-out> ;
-    ns1:connectsFrom <urn:ex/ra-damper> ;
-    ns1:connectsTo <urn:ex/outside-supply-junction> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/duct-before-ea-damper> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct before ea damper" ;
-    ns1:cnx <urn:ex/ea-damper-in>,
-        <urn:ex/return-exhaust-junction-out-1> ;
-    ns1:connectsAt <urn:ex/ea-damper-in>,
-        <urn:ex/return-exhaust-junction-out-1> ;
-    ns1:connectsFrom <urn:ex/return-exhaust-junction> ;
-    ns1:connectsTo <urn:ex/ea-damper> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/duct-before-economizer-oa-damper> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct before economizer oa damper" ;
-    ns1:cnx <urn:ex/economizer-oa-damper-in>,
-        <urn:ex/outside-air-junction-out-2> ;
-    ns1:connectsAt <urn:ex/economizer-oa-damper-in>,
-        <urn:ex/outside-air-junction-out-2> ;
-    ns1:connectsFrom <urn:ex/outside-air-junction> ;
-    ns1:connectsTo <urn:ex/economizer-oa-damper> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/duct-before-filter> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct before filter" ;
-    ns1:cnx <urn:ex/filter-in>,
-        <urn:ex/outside-supply-junction-out> ;
-    ns1:connectsAt <urn:ex/filter-in>,
-        <urn:ex/outside-supply-junction-out> ;
-    ns1:connectsFrom <urn:ex/outside-supply-junction> ;
-    ns1:connectsTo <urn:ex/filter> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/duct-before-minimum-oa-damper> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct before minimum oa damper" ;
-    ns1:cnx <urn:ex/minimum-oa-damper-in>,
-        <urn:ex/outside-air-junction-out-1> ;
-    ns1:connectsAt <urn:ex/minimum-oa-damper-in>,
-        <urn:ex/outside-air-junction-out-1> ;
-    ns1:connectsFrom <urn:ex/outside-air-junction> ;
-    ns1:connectsTo <urn:ex/minimum-oa-damper> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/duct-before-ra-damper> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct before ra damper" ;
-    ns1:cnx <urn:ex/ra-damper-in>,
-        <urn:ex/return-exhaust-junction-out-2> ;
-    ns1:connectsAt <urn:ex/ra-damper-in>,
-        <urn:ex/return-exhaust-junction-out-2> ;
-    ns1:connectsFrom <urn:ex/return-exhaust-junction> ;
-    ns1:connectsTo <urn:ex/ra-damper> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/ea-damper-in> a ns1:InletConnectionPoint ;
-    rdfs:label "ea damper in" ;
-    ns1:cnx <urn:ex/duct-before-ea-damper>,
-        <urn:ex/ea-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-ea-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/ea-damper> .
-
-<urn:ex/ea-damper-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "ea damper out" ;
-    ns1:cnx <urn:ex/ea-damper>,
-        <urn:ex/ea-out-connection> ;
-    ns1:connectsThrough <urn:ex/ea-out-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/ea-damper> ;
-    ns1:mapsTo <urn:ex/ea-out> .
-
-<urn:ex/ea-out-connection> a ns1:Connection ;
-    rdfs:label "ea out connection" ;
-    ns1:cnx <urn:ex/ea-damper-out>,
-        <urn:ex/ea-out> ;
-    ns1:connectsAt <urn:ex/ea-damper-out>,
-        <urn:ex/ea-out> ;
-    ns1:connectsFrom <urn:ex/ea-damper>,
-        <urn:ex/multiple-zone-ahu> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/economizer-oa-damper-in> a ns1:InletConnectionPoint ;
-    rdfs:label "economizer oa damper in" ;
-    ns1:cnx <urn:ex/duct-before-economizer-oa-damper>,
-        <urn:ex/economizer-oa-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-economizer-oa-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/economizer-oa-damper> .
-
-<urn:ex/economizer-oa-damper-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "economizer oa damper out" ;
-    ns1:cnx <urn:ex/duct-after-economizer-oa-damper>,
-        <urn:ex/economizer-oa-damper> ;
-    ns1:connectsThrough <urn:ex/duct-after-economizer-oa-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/economizer-oa-damper> .
-
-<urn:ex/htg-coil-air-in> a ns1:InletConnectionPoint ;
-    rdfs:label "htg coil air in" ;
-    ns1:cnx <urn:ex/duct-after-filter>,
-        <urn:ex/htg-coil> ;
-    ns1:connectsThrough <urn:ex/duct-after-filter> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil> .
-
-<urn:ex/htg-coil-air-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "htg coil air out" ;
-    ns1:cnx <urn:ex/duct-after-htg-coil>,
-        <urn:ex/htg-coil> ;
-    ns1:connectsThrough <urn:ex/duct-after-htg-coil> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <urn:ex/heat-coil-air-temp> ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil> .
-
-<urn:ex/htg-coil-valve-in> a ns1:InletConnectionPoint ;
-    rdfs:label "htg coil valve in" ;
-    ns1:cnx <urn:ex/htg-coil-valve>,
-        <urn:ex/pipe-hot-water-return-before-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-return-before-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil-valve> .
-
-<urn:ex/htg-coil-valve-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "htg coil valve out" ;
-    ns1:cnx <urn:ex/htg-coil-valve>,
-        <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil-valve> .
-
-<urn:ex/htg-coil-water-in> a ns1:InletConnectionPoint ;
-    rdfs:label "htg coil water in" ;
-    ns1:cnx <urn:ex/htg-coil>,
-        <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-return-after-valve> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil> .
-
-<urn:ex/htg-coil-water-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "htg coil water out" ;
-    ns1:cnx <urn:ex/htg-coil>,
-        <urn:ex/pipe-hot-water-supply> ;
-    ns1:connectsThrough <urn:ex/pipe-hot-water-supply> ;
-    ns1:hasMedium ns1:Fluid-Water ;
-    ns1:isConnectionPointOf <urn:ex/htg-coil> .
-
-<urn:ex/minimum-oa-damper-in> a ns1:InletConnectionPoint ;
-    rdfs:label "minimum oa damper in" ;
-    ns1:cnx <urn:ex/duct-before-minimum-oa-damper>,
-        <urn:ex/minimum-oa-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-minimum-oa-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/minimum-oa-damper> .
-
-<urn:ex/oa-in-connection> a ns1:Connection ;
-    rdfs:label "oa in connection" ;
-    ns1:cnx <urn:ex/oa-in>,
-        <urn:ex/outside-air-junction-in> ;
-    ns1:connectsAt <urn:ex/oa-in>,
-        <urn:ex/outside-air-junction-in> ;
-    ns1:connectsTo <urn:ex/multiple-zone-ahu>,
-        <urn:ex/outside-air-junction> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/outside-air-junction-in> a ns1:InletConnectionPoint ;
-    rdfs:label "outside air junction in" ;
-    ns1:cnx <urn:ex/oa-in-connection>,
-        <urn:ex/outside-air-junction> ;
-    ns1:connectsThrough <urn:ex/oa-in-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/outside-air-junction> ;
-    ns1:mapsTo <urn:ex/oa-in> .
-
-<urn:ex/outside-air-junction-out-1> a ns1:OutletConnectionPoint ;
-    rdfs:label "outside air junction out 1" ;
-    ns1:cnx <urn:ex/duct-before-minimum-oa-damper>,
-        <urn:ex/outside-air-junction> ;
-    ns1:connectsThrough <urn:ex/duct-before-minimum-oa-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/outside-air-junction> .
-
-<urn:ex/outside-air-junction-out-2> a ns1:OutletConnectionPoint ;
-    rdfs:label "outside air junction out 2" ;
-    ns1:cnx <urn:ex/duct-before-economizer-oa-damper>,
-        <urn:ex/outside-air-junction> ;
-    ns1:connectsThrough <urn:ex/duct-before-economizer-oa-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/outside-air-junction> .
-
-<urn:ex/outside-supply-junction-in-1> a ns1:InletConnectionPoint ;
-    rdfs:label "outside supply junction in 1" ;
-    ns1:cnx <urn:ex/duct-after-ra-damper>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectsThrough <urn:ex/duct-after-ra-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
-
-<urn:ex/outside-supply-junction-in-2> a ns1:InletConnectionPoint ;
-    rdfs:label "outside supply junction in 2" ;
-    ns1:cnx <urn:ex/duct-after-minimum-oa-damper>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectsThrough <urn:ex/duct-after-minimum-oa-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
-
-<urn:ex/outside-supply-junction-in-3> a ns1:InletConnectionPoint ;
-    rdfs:label "outside supply junction in 3" ;
-    ns1:cnx <urn:ex/duct-after-economizer-oa-damper>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectsThrough <urn:ex/duct-after-economizer-oa-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
-
-<urn:ex/outside-supply-junction-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "outside supply junction out" ;
-    ns1:cnx <urn:ex/duct-before-filter>,
-        <urn:ex/outside-supply-junction> ;
-    ns1:connectsThrough <urn:ex/duct-before-filter> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/outside-supply-junction> .
-
-<urn:ex/pipe-chilled-water-return-after-valve> a ns1:Connection,
-        ns1:Pipe ;
-    rdfs:label "pipe chilled water return after valve" ;
-    ns1:cnx <urn:ex/clg-coil-valve-out>,
-        <urn:ex/clg-coil-water-in> ;
-    ns1:connectsAt <urn:ex/clg-coil-valve-out>,
-        <urn:ex/clg-coil-water-in> ;
-    ns1:connectsFrom <urn:ex/clg-coil-valve> ;
-    ns1:connectsTo <urn:ex/clg-coil> ;
-    ns1:hasMedium ns1:Fluid-Water .
-
-<urn:ex/pipe-hot-water-return-after-valve> a ns1:Connection,
-        ns1:Pipe ;
-    rdfs:label "pipe hot water return after valve" ;
-    ns1:cnx <urn:ex/htg-coil-valve-out>,
-        <urn:ex/htg-coil-water-in> ;
-    ns1:connectsAt <urn:ex/htg-coil-valve-out>,
-        <urn:ex/htg-coil-water-in> ;
-    ns1:connectsFrom <urn:ex/htg-coil-valve> ;
-    ns1:connectsTo <urn:ex/htg-coil> ;
-    ns1:hasMedium ns1:Fluid-Water .
-
-<urn:ex/ra-damper-in> a ns1:InletConnectionPoint ;
-    rdfs:label "ra damper in" ;
-    ns1:cnx <urn:ex/duct-before-ra-damper>,
-        <urn:ex/ra-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-ra-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/ra-damper> .
-
-<urn:ex/ra-damper-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "ra damper out" ;
-    ns1:cnx <urn:ex/duct-after-ra-damper>,
-        <urn:ex/ra-damper> ;
-    ns1:connectsThrough <urn:ex/duct-after-ra-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/ra-damper> .
-
-<urn:ex/ra-fan-in> a ns1:InletConnectionPoint ;
-    rdfs:label "ra fan in" ;
-    ns1:cnx <urn:ex/ra-fan>,
-        <urn:ex/ra-in-connection> ;
-    ns1:connectsThrough <urn:ex/ra-in-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/ra-fan> ;
-    ns1:mapsTo <urn:ex/ra-in> .
-
-<urn:ex/ra-fan-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "ra fan out" ;
-    ns1:cnx <urn:ex/duct-after-ra-fan>,
-        <urn:ex/ra-fan> ;
-    ns1:connectsThrough <urn:ex/duct-after-ra-fan> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <urn:ex/ra-fan-discharge-static-pressure> ;
-    ns1:isConnectionPointOf <urn:ex/ra-fan> .
-
-<urn:ex/ra-in-connection> a ns1:Connection ;
-    rdfs:label "ra in connection" ;
-    ns1:cnx <urn:ex/ra-fan-in>,
-        <urn:ex/ra-in> ;
-    ns1:connectsAt <urn:ex/ra-fan-in>,
-        <urn:ex/ra-in> ;
-    ns1:connectsTo <urn:ex/multiple-zone-ahu>,
-        <urn:ex/ra-fan> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/return-exhaust-junction-in> a ns1:InletConnectionPoint ;
-    rdfs:label "return exhaust junction in" ;
-    ns1:cnx <urn:ex/duct-after-ra-fan>,
-        <urn:ex/return-exhaust-junction> ;
-    ns1:connectsThrough <urn:ex/duct-after-ra-fan> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/return-exhaust-junction> .
-
-<urn:ex/return-exhaust-junction-out-1> a ns1:OutletConnectionPoint ;
-    rdfs:label "return exhaust junction out 1" ;
-    ns1:cnx <urn:ex/duct-before-ea-damper>,
-        <urn:ex/return-exhaust-junction> ;
-    ns1:connectsThrough <urn:ex/duct-before-ea-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/return-exhaust-junction> .
-
-<urn:ex/return-exhaust-junction-out-2> a ns1:OutletConnectionPoint ;
-    rdfs:label "return exhaust junction out 2" ;
-    ns1:cnx <urn:ex/duct-before-ra-damper>,
-        <urn:ex/return-exhaust-junction> ;
-    ns1:connectsThrough <urn:ex/duct-before-ra-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/return-exhaust-junction> .
-
-<urn:ex/sa-fan-in> a ns1:InletConnectionPoint ;
-    rdfs:label "sa fan in" ;
-    ns1:cnx <urn:ex/duct-after-clg-coil>,
-        <urn:ex/sa-fan> ;
-    ns1:connectsThrough <urn:ex/duct-after-clg-coil> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/sa-fan> .
-
-<urn:ex/sa-fan-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "sa fan out" ;
-    ns1:cnx <urn:ex/sa-fan>,
-        <urn:ex/sa-out-connection> ;
-    ns1:connectsThrough <urn:ex/sa-out-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/sa-fan> ;
-    ns1:mapsTo <urn:ex/sa-out> .
-
-<urn:ex/duct-after-htg-coil> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct after htg coil" ;
-    ns1:cnx <urn:ex/clg-coil-air-in>,
-        <urn:ex/htg-coil-air-out> ;
-    ns1:connectsAt <urn:ex/clg-coil-air-in>,
-        <urn:ex/htg-coil-air-out> ;
-    ns1:connectsFrom <urn:ex/htg-coil> ;
-    ns1:connectsTo <urn:ex/clg-coil> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/duct-after-ra-fan> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct after ra fan" ;
-    ns1:cnx <urn:ex/ra-fan-out>,
-        <urn:ex/return-exhaust-junction-in> ;
-    ns1:connectsAt <urn:ex/ra-fan-out>,
-        <urn:ex/return-exhaust-junction-in> ;
-    ns1:connectsFrom <urn:ex/ra-fan> ;
-    ns1:connectsTo <urn:ex/return-exhaust-junction> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/ea-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "ea out" ;
-    ns1:cnx <urn:ex/ea-out-connection>,
-        <urn:ex/multiple-zone-ahu> ;
-    ns1:connectsThrough <urn:ex/ea-out-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
-
-<urn:ex/oa-in> a ns1:InletConnectionPoint ;
-    rdfs:label "oa in" ;
-    ns1:cnx <urn:ex/multiple-zone-ahu>,
-        <urn:ex/oa-in-connection> ;
-    ns1:connectsThrough <urn:ex/oa-in-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
-
-<urn:ex/sa-out-connection> a ns1:Connection ;
-    rdfs:label "sa out connection" ;
-    ns1:cnx <urn:ex/sa-fan-out>,
-        <urn:ex/sa-out> ;
-    ns1:connectsAt <urn:ex/sa-fan-out>,
-        <urn:ex/sa-out> ;
-    ns1:connectsFrom <urn:ex/multiple-zone-ahu>,
-        <urn:ex/sa-fan> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/filter-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "filter out" ;
-    ns1:cnx <urn:ex/duct-after-filter>,
-        <urn:ex/filter> ;
-    ns1:connectsThrough <urn:ex/duct-after-filter> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/filter> .
-
-<urn:ex/minimum-oa-damper-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "minimum oa damper out" ;
-    ns1:cnx <urn:ex/duct-after-minimum-oa-damper>,
-        <urn:ex/minimum-oa-damper> ;
-    ns1:connectsThrough <urn:ex/duct-after-minimum-oa-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <urn:ex/oa-flow>,
-        <urn:ex/oa-temp> ;
-    ns1:isConnectionPointOf <urn:ex/minimum-oa-damper> .
-
-<urn:ex/ra-in> a ns1:InletConnectionPoint ;
-    rdfs:label "ra in" ;
-    ns1:cnx <urn:ex/multiple-zone-ahu>,
-        <urn:ex/ra-in-connection> ;
-    ns1:connectsThrough <urn:ex/ra-in-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <urn:ex/ra-temp> ;
-    ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
-
-<urn:ex/sa-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "sa out" ;
-    ns1:cnx <urn:ex/multiple-zone-ahu>,
-        <urn:ex/sa-out-connection> ;
-    ns1:connectsThrough <urn:ex/sa-out-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <urn:ex/sa-temp>,
-        <urn:ex/supply-duct-static-pressure> ;
-    ns1:isConnectionPointOf <urn:ex/multiple-zone-ahu> .
-
-<urn:ex/filter> a ns1:Filter,
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#> a owl:Ontology ;
+    rdfs:label "" .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-return-water-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Clg Coil Return Water Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-water-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-return-water-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-supply-water-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Clg Coil Supply Water Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-water-in> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-supply-water-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-actuator> a ns2:Actuator ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve Actuator" ;
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-actuator> a ns2:Actuator ;
+    rdfs:label "Multiplezoneahu Ea Damper Actuator" ;
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-actuator> a ns2:Actuator ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper Actuator" ;
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-differential-pressure-sensor> a ns2:DifferentialSensor,
+        ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Filter Differential Pressure Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-in> ;
+    ns2:hasReferenceLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-differential-pressure> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-heat-coil-air-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Heat Coil Air Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-htg-coil> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-heat-coil-air-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-return-water-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Htg Coil Return Water Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-water-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-return-water-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-supply-water-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Htg Coil Supply Water Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-water-in> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-supply-water-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-actuator> a ns2:Actuator ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve Actuator" ;
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ma-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Ma Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-in> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ma-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-actuator> a ns2:Actuator ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper Actuator" ;
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-flow-measurement-station> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Oa Flow Measurement Station" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-flow> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Oa Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-actuator> a ns2:Actuator ;
+    rdfs:label "Multiplezoneahu Ra Damper Actuator" ;
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-static-pressure-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Ra Fan Static Pressure Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-fan> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-discharge-static-pressure> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-flow-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Ra Flow Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-flow> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Ra Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-in> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-flow-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Sa Flow Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-flow> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Sa Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure-sensor> a ns2:Sensor ;
+    rdfs:label "Multiplezoneahu Supply Duct Static Pressure Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#mzahu-connection-to-SupplyAirJunction> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101> a ns2:PhysicalSpace ;
+    rdfs:label "Room 101" ;
+    ns2:encloses <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102> a ns2:PhysicalSpace ;
+    rdfs:label "Room 102" ;
+    ns2:encloses <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-actuator> a ns2:Actuator ;
+    rdfs:label "Vav 701 Damper Actuator" ;
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-flow-sensor> a ns2:Sensor ;
+    rdfs:label "Vav 701 Discharge Air Flow Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-in> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-flow> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Vav 701 Discharge Air Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-return-water-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Vav 701 Reheat Coil Return Water Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-water-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-return-water-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-supply-water-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Vav 701 Reheat Coil Supply Water Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-water-in> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-supply-water-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-actuator> a ns2:Actuator ;
+    rdfs:label "Vav 701 Reheat Coil Valve Actuator" ;
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-actuator> a ns2:Actuator ;
+    rdfs:label "Vav 702 Damper Actuator" ;
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-flow-sensor> a ns2:Sensor ;
+    rdfs:label "Vav 702 Discharge Air Flow Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-in> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-flow> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Vav 702 Discharge Air Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-return-water-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Vav 702 Reheat Coil Return Water Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-water-out> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-return-water-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-supply-water-temp-sensor> a ns2:Sensor ;
+    rdfs:label "Vav 702 Reheat Coil Supply Water Temp Sensor" ;
+    ns2:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-water-in> ;
+    ns2:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-supply-water-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-actuator> a ns2:Actuator ;
+    rdfs:label "Vav 702 Reheat Coil Valve Actuator" ;
+    ns2:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command> ;
+    ns2:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101> a ns2:Zone,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Zone> ;
+    rdfs:label "Zone 101" ;
+    ns2:hasDomain ns2:Domain-HVAC ;
+    ns2:hasDomainSpace <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-co2-concentration>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102> a ns2:Zone,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Zone> ;
+    rdfs:label "Zone 102" ;
+    ns2:hasDomain ns2:Domain-HVAC ;
+    ns2:hasDomainSpace <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-co2-concentration>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-position> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve Position" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-position> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ea Damper Position" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-position> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper Position" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-position> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve Position" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-position> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper Position" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-position> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Damper Position" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-power> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Power" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricPower> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Speed Cmd" ;
+    ns2:hasAspect ns2:EnumerationKind-Speed ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-status> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Speed Status" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-cmd> a ns2:EnumeratedActuatableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Start Cmd" ;
+    ns2:hasEnumerationKind ns2:EnumerationKind-OnOff .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-status> a ns2:EnumeratedObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Start Status" ;
+    ns2:hasEnumerationKind ns2:EnumerationKind-OnOff .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-power> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Sa Fan Power" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricPower> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/W> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Sa Fan Speed Cmd" ;
+    ns2:hasAspect ns2:EnumerationKind-Speed ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-status> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Sa Fan Speed Status" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-cmd> a ns2:EnumeratedActuatableProperty ;
+    rdfs:label "Multiplezoneahu Sa Fan Start Cmd" ;
+    ns2:hasEnumerationKind ns2:EnumerationKind-OnOff .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-status> a ns2:EnumeratedObservableProperty ;
+    rdfs:label "Multiplezoneahu Sa Fan Start Status" ;
+    ns2:hasEnumerationKind ns2:EnumerationKind-OnOff .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp-setpoint> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Sa Temp Setpoint" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure-setpoint> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Supply Duct Static Pressure Setpoint" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-position> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Damper Position" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-position> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Reheat Coil Valve Position" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-position> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Damper Position" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-position> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Reheat Coil Valve Position" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-co2-concentration> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Zone 101 Co2 Concentration" ;
+    ns2:ofSubstance ns2:Constituent-CO2 ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/MoleFraction> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PPM> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Zone 101 Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-co2-concentration> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Zone 102 Co2 Concentration" ;
+    ns2:ofSubstance ns2:Constituent-CO2 ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/MoleFraction> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PPM> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Zone 102 Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-return-water-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Clg Coil Return Water Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-supply-water-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Clg Coil Supply Water Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve Command" ;
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-chilled-water-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Ea Damper Command" ;
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ea Damper Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper Command" ;
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-differential-pressure> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Filter Differential Pressure" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/IN_H2O> ;
+    ns1:isDeltaQuantity true .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-heat-coil-air-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Heat Coil Air Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-return-water-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Htg Coil Return Water Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-supply-water-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Htg Coil Supply Water Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve Command" ;
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-hot-water-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ma-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ma Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper Command" ;
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-flow> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Oa Flow" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Oa Temp" ;
+    ns2:hasAspect ns2:Role-OutdoorAirIntake ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Air Junction In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-in> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Ra Damper Command" ;
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-discharge-static-pressure> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Discharge Static Pressure" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ra Fan In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-in> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-flow> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Flow" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Temp" ;
+    ns2:hasAspect ns2:Role-Return ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Sa Fan Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-flow> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Sa Flow" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Sa Temp" ;
+    ns2:hasAspect ns2:Role-Supply ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Supply Duct Static Pressure" ;
+    ns2:hasAspect ns2:Role-Supply ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/IN_H2O> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Vav 701 Damper Command" ;
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 701 Damper In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-in> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-flow> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Discharge Air Flow" ;
+    ns2:hasAspect ns2:Role-Discharge ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Discharge Air Temp" ;
+    ns2:hasAspect ns2:Role-Discharge ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-air-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Air Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-return-water-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Reheat Coil Return Water Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-supply-water-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Reheat Coil Supply Water Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Vav 701 Reheat Coil Valve Command" ;
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Valve Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-hot-water-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Vav 702 Damper Command" ;
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 702 Damper In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-in> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-flow> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Discharge Air Flow" ;
+    ns2:hasAspect ns2:Role-Discharge ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Discharge Air Temp" ;
+    ns2:hasAspect ns2:Role-Discharge ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-air-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Air Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-return-water-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Reheat Coil Return Water Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-supply-water-temp> a ns2:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Reheat Coil Supply Water Temp" ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command> a ns2:QuantifiableActuatableProperty ;
+    rdfs:label "Vav 702 Reheat Coil Valve Command" ;
+    ns2:hasAspect ns2:EnumerationKind-Position ;
+    ns1:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
+    ns1:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Valve Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-hot-water-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-chilled-water-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Chilled Water In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-chilled-water-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Chilled Water Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-water-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Water In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-chilled-water-in> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ea Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-hot-water-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Hot Water In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-hot-water-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Hot Water Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-water-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Water In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-hot-water-in> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Oa In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-temp> ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-hot-water-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 701 Hot Water In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-hot-water-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Hot Water Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-water-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Water In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-hot-water-in> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-hot-water-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 702 Hot Water In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-hot-water-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Hot Water Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-water-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Water In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> ;
+    ns2:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-hot-water-in> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-air-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Air In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-htg-coil> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-htg-coil> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-air-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Air Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-clg-coil> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-clg-coil> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-pipe-chilled-water-return-before-valve> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-pipe-chilled-water-return-before-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-clg-coil> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Clg Coil" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-in> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-in> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-economizer-oa-damper> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Economizer Oa Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-3> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-3> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-filter> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Filter" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-air-in> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-air-in> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-minimum-oa-damper> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Minimum Oa Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-2> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-2> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-damper> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Ra Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-1>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-1>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-ea-damper> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct Before Ea Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-out-1> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-out-1> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-economizer-oa-damper> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct Before Economizer Oa Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-out-2> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-out-2> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-filter> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct Before Filter" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-minimum-oa-damper> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct Before Minimum Oa Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-out-1> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-out-1> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-ra-damper> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct Before Ra Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-out-2> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-out-2> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ea Damper In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-ea-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-ea-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-economizer-oa-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-economizer-oa-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-economizer-oa-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-economizer-oa-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-air-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Air In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-filter>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-filter> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-air-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Air Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-htg-coil>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-htg-coil> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-heat-coil-air-temp> ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-pipe-hot-water-return-before-valve> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-pipe-hot-water-return-before-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-minimum-oa-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-minimum-oa-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-out-1> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Air Junction Out 1" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-minimum-oa-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-minimum-oa-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-out-2> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Air Junction Out 2" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-economizer-oa-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-economizer-oa-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-1> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Supply Junction In 1" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-2> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Supply Junction In 2" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-minimum-oa-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-minimum-oa-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-3> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Supply Junction In 3" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-economizer-oa-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-economizer-oa-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Supply Junction Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-filter>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-filter> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-pipe-chilled-water-return-before-valve> a ns2:Connection,
+        ns2:Pipe ;
+    rdfs:label "Multiplezoneahu Pipe Chilled Water Return Before Valve" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-water-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-water-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve> ;
+    ns2:hasMedium ns2:Fluid-Water .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-pipe-hot-water-return-before-valve> a ns2:Connection,
+        ns2:Pipe ;
+    rdfs:label "Multiplezoneahu Pipe Hot Water Return Before Valve" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-water-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-water-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve> ;
+    ns2:hasMedium ns2:Fluid-Water .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ra Damper In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-ra-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-ra-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ra Damper Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ra Fan Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-fan>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-fan> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-discharge-static-pressure> ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Return Exhaust Junction In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-fan>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-fan> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-out-1> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Return Exhaust Junction Out 1" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-ea-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-ea-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-out-2> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Return Exhaust Junction Out 2" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-ra-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-ra-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Sa Fan In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-clg-coil>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-clg-coil> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-connection-to-mzahu> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Returnairjunction Connection To Mzahu" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-in-from-room-101> a ns2:InletConnectionPoint ;
+    rdfs:label "Returnairjunction In From Room 101" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-connection-to-ReturnAirJunction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-connection-to-ReturnAirJunction> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-in-from-room-102> a ns2:InletConnectionPoint ;
+    rdfs:label "Returnairjunction In From Room 102" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-connection-to-ReturnAirJunction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-connection-to-ReturnAirJunction> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Returnairjunction Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-connection-to-mzahu> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-connection-to-mzahu> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-connection-to-vav-701> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Supplyairjunction Connection To Vav 701" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-out-to-vav-701>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-in> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-out-to-vav-701>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-in> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-connection-to-vav-702> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Supplyairjunction Connection To Vav 702" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-out-to-vav-702>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-in> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-out-to-vav-702>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-in> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Supplyairjunction In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#mzahu-connection-to-SupplyAirJunction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#mzahu-connection-to-SupplyAirJunction> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-out-to-vav-701> a ns2:OutletConnectionPoint ;
+    rdfs:label "Supplyairjunction Out To Vav 701" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-connection-to-vav-701> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-connection-to-vav-701> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-out-to-vav-702> a ns2:OutletConnectionPoint ;
+    rdfs:label "Supplyairjunction Out To Vav 702" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-connection-to-vav-702> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-connection-to-vav-702> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-connection-to-ReturnAirJunction> a ns2:Connection ;
+    rdfs:label "Room 101 Connection To Returnairjunction" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-in-from-room-101>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-in-from-room-101>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Room 101 Hvac Domain In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-connection-to-room-101> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-connection-to-room-101> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Room 101 Hvac Domain Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-connection-to-ReturnAirJunction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-connection-to-ReturnAirJunction> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-connection-to-ReturnAirJunction> a ns2:Connection ;
+    rdfs:label "Room 102 Connection To Returnairjunction" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-in-from-room-102>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-in-from-room-102>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Room 102 Hvac Domain In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-connection-to-room-102> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-connection-to-room-102> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Room 102 Hvac Domain Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-connection-to-ReturnAirJunction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-connection-to-ReturnAirJunction> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-connection-to-room-101> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Vav 701 Connection To Room 101" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Damper Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-duct-after-damper> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-duct-after-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-duct-after-damper> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Vav 701 Duct After Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-air-in> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-air-in> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-pipe-hot-water-return-before-valve> a ns2:Connection,
+        ns2:Pipe ;
+    rdfs:label "Vav 701 Pipe Hot Water Return Before Valve" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-water-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-water-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve> ;
+    ns2:hasMedium ns2:Fluid-Water .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-air-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Air In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-duct-after-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-duct-after-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Valve In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-pipe-hot-water-return-before-valve>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-pipe-hot-water-return-before-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-connection-to-room-102> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Vav 702 Connection To Room 102" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Damper Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-duct-after-damper> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-duct-after-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-duct-after-damper> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Vav 702 Duct After Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-air-in> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-air-in> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-pipe-hot-water-return-before-valve> a ns2:Connection,
+        ns2:Pipe ;
+    rdfs:label "Vav 702 Pipe Hot Water Return Before Valve" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-water-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-water-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve> ;
+    ns2:hasMedium ns2:Fluid-Water .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-air-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Air In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-duct-after-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-duct-after-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Valve In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-pipe-hot-water-return-before-valve>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-pipe-hot-water-return-before-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-water-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Water Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-pipe-chilled-water-return-before-valve> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-pipe-chilled-water-return-before-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-htg-coil> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Htg Coil" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-air-out> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-air-out> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-ra-fan> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Ra Fan" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-in> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-in> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Filter Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-filter>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-filter> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-water-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Water Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-pipe-hot-water-return-before-valve> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-pipe-hot-water-return-before-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#mzahu-connection-to-SupplyAirJunction> a ns2:Connection,
+        ns2:Duct ;
+    rdfs:label "Mzahu Connection To Supplyairjunction" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-in> ;
+    ns2:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-in> ;
+    ns2:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> ;
+    ns2:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-water-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Water Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-pipe-hot-water-return-before-valve>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-pipe-hot-water-return-before-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-water-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Water Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-pipe-hot-water-return-before-valve>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-pipe-hot-water-return-before-valve> ;
+    ns2:hasMedium ns2:Fluid-Water ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Filter In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-filter>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-before-filter> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ma-temp> ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-minimum-oa-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-duct-after-minimum-oa-damper> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-flow> ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ra In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-connection-to-mzahu> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-connection-to-mzahu> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-temp> ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Sa Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#mzahu-connection-to-SupplyAirJunction> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#mzahu-connection-to-SupplyAirJunction> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp-setpoint>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure-setpoint> ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 701 Air In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-connection-to-vav-701>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-connection-to-vav-701> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Air Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-connection-to-room-101> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-connection-to-room-101> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-flow>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-temp> ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-in> a ns2:InletConnectionPoint ;
+    rdfs:label "Vav 702 Air In" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-connection-to-vav-702>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-connection-to-vav-702> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-out> a ns2:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Air Out" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-connection-to-room-102> ;
+    ns2:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-connection-to-room-102> ;
+    ns2:hasMedium ns2:Fluid-Air ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-flow>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-temp> ;
+    ns2:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve> a ns2:Valve,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve>,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-position> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper> a ns2:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    rdfs:label "Multiplezoneahu Ea Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-position> ;
+    ns2:hasRole ns2:Role-Exhaust .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter> a ns2:Filter,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Filter> ;
-    rdfs:label "filter" ;
-    ns1:cnx <urn:ex/filter-in>,
-        <urn:ex/filter-out> ;
-    ns1:hasConnectionPoint <urn:ex/filter-in>,
-        <urn:ex/filter-out> ;
-    ns1:hasProperty <urn:ex/filter-differential-pressure> .
+    rdfs:label "Multiplezoneahu Filter" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-differential-pressure> .
 
-<urn:ex/filter-in> a ns1:InletConnectionPoint ;
-    rdfs:label "filter in" ;
-    ns1:cnx <urn:ex/duct-before-filter>,
-        <urn:ex/filter> ;
-    ns1:connectsThrough <urn:ex/duct-before-filter> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <urn:ex/ma-temp> ;
-    ns1:isConnectionPointOf <urn:ex/filter> .
-
-<urn:ex/clg-coil-valve> a ns1:Valve,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve> a ns2:Valve,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve>,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
-    rdfs:label "clg coil valve" ;
-    ns1:cnx <urn:ex/clg-coil-valve-in>,
-        <urn:ex/clg-coil-valve-out> ;
-    ns1:hasConnectionPoint <urn:ex/clg-coil-valve-in>,
-        <urn:ex/clg-coil-valve-out> ;
-    ns1:hasMedium ns1:Water-ChilledWater ;
-    ns1:hasProperty <urn:ex/clg-coil-valve-command>,
-        <urn:ex/clg-coil-valve-position> .
+    rdfs:label "Multiplezoneahu Htg Coil Valve" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-position> .
 
-<urn:ex/ea-damper> a ns1:Damper,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan> a ns2:Fan,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Fan>,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD> ;
+    rdfs:label "Multiplezoneahu Ra Fan" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-power>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-status>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-cmd>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-status>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-flow> ;
+    ns2:hasRole ns2:Role-Return .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan> a ns2:Fan,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Fan>,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD> ;
+    rdfs:label "Multiplezoneahu Sa Fan" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-power>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-status>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-cmd>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-status>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-flow> ;
+    ns2:hasRole ns2:Role-Supply .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper> a ns2:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    rdfs:label "ea damper" ;
-    ns1:cnx <urn:ex/ea-damper-in>,
-        <urn:ex/ea-damper-out> ;
-    ns1:hasConnectionPoint <urn:ex/ea-damper-in>,
-        <urn:ex/ea-damper-out> ;
-    ns1:hasProperty <urn:ex/ea-damper-command>,
-        <urn:ex/ea-damper-position> ;
-    ns1:hasRole ns1:Role-Exhaust .
+    rdfs:label "Vav 701 Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-position> .
 
-<urn:ex/economizer-oa-damper> a ns1:Damper,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    rdfs:label "economizer oa damper" ;
-    ns1:cnx <urn:ex/economizer-oa-damper-in>,
-        <urn:ex/economizer-oa-damper-out> ;
-    ns1:hasConnectionPoint <urn:ex/economizer-oa-damper-in>,
-        <urn:ex/economizer-oa-damper-out> ;
-    ns1:hasProperty <urn:ex/economizer-oa-damper-command>,
-        <urn:ex/economizer-oa-damper-position> ;
-    ns1:hasRole ns1:Role-Economizer .
-
-<urn:ex/htg-coil-valve> a ns1:Valve,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve> a ns2:Valve,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve>,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
-    rdfs:label "htg coil valve" ;
-    ns1:cnx <urn:ex/htg-coil-valve-in>,
-        <urn:ex/htg-coil-valve-out> ;
-    ns1:hasConnectionPoint <urn:ex/htg-coil-valve-in>,
-        <urn:ex/htg-coil-valve-out> ;
-    ns1:hasMedium ns1:Water-HotWater ;
-    ns1:hasProperty <urn:ex/htg-coil-valve-command>,
-        <urn:ex/htg-coil-valve-position> .
+    rdfs:label "Vav 701 Reheat Coil Valve" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-position> .
 
-<urn:ex/minimum-oa-damper> a ns1:Damper,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper> a ns2:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    rdfs:label "minimum oa damper" ;
-    ns1:cnx <urn:ex/minimum-oa-damper-in>,
-        <urn:ex/minimum-oa-damper-out> ;
-    ns1:hasConnectionPoint <urn:ex/minimum-oa-damper-in>,
-        <urn:ex/minimum-oa-damper-out> ;
-    ns1:hasProperty <urn:ex/minimum-oa-damper-command>,
-        <urn:ex/minimum-oa-damper-position> ;
-    ns1:hasRole ns1:Role-Outside .
+    rdfs:label "Vav 702 Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-position> .
 
-<urn:ex/ra-damper> a ns1:Damper,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve> a ns2:Valve,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve>,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
+    rdfs:label "Vav 702 Reheat Coil Valve" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-position> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper> a ns2:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    rdfs:label "ra damper" ;
-    ns1:cnx <urn:ex/ra-damper-in>,
-        <urn:ex/ra-damper-out> ;
-    ns1:hasConnectionPoint <urn:ex/ra-damper-in>,
-        <urn:ex/ra-damper-out> ;
-    ns1:hasProperty <urn:ex/ra-damper-command>,
-        <urn:ex/ra-damper-position> ;
-    ns1:hasRole ns1:Role-Return .
+    rdfs:label "Multiplezoneahu Economizer Oa Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-position> ;
+    ns2:hasRole ns2:Role-Economizer .
 
-<urn:ex/ra-fan> a ns1:Fan,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Fan>,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD> ;
-    rdfs:label "ra fan" ;
-    ns1:cnx <urn:ex/ra-fan-in>,
-        <urn:ex/ra-fan-out> ;
-    ns1:hasConnectionPoint <urn:ex/ra-fan-in>,
-        <urn:ex/ra-fan-out> ;
-    ns1:hasProperty <urn:ex/ra-fan-speed-cmd>,
-        <urn:ex/ra-fan-start-cmd>,
-        <urn:ex/ra-fan-start-status>,
-        <urn:ex/ra-flow> ;
-    ns1:hasRole ns1:Role-Return .
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper> a ns2:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-position> ;
+    ns2:hasRole ns2:Role-OutdoorAirIntake .
 
-<urn:ex/sa-fan> a ns1:Fan,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Fan>,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD> ;
-    rdfs:label "sa fan" ;
-    ns1:cnx <urn:ex/sa-fan-in>,
-        <urn:ex/sa-fan-out> ;
-    ns1:hasConnectionPoint <urn:ex/sa-fan-in>,
-        <urn:ex/sa-fan-out> ;
-    ns1:hasProperty <urn:ex/sa-fan-speed-cmd>,
-        <urn:ex/sa-fan-start-cmd>,
-        <urn:ex/sa-fan-start-status>,
-        <urn:ex/sa-flow> ;
-    ns1:hasRole ns1:Role-Supply .
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper> a ns2:Damper,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
+    rdfs:label "Multiplezoneahu Ra Damper" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-position> ;
+    ns2:hasRole ns2:Role-Return .
 
-<urn:ex/outside-air-junction> a ns1:Junction ;
-    rdfs:label "outside air junction" ;
-    ns1:cnx <urn:ex/outside-air-junction-in>,
-        <urn:ex/outside-air-junction-out-1>,
-        <urn:ex/outside-air-junction-out-2> ;
-    ns1:hasConnectionPoint <urn:ex/outside-air-junction-in>,
-        <urn:ex/outside-air-junction-out-1>,
-        <urn:ex/outside-air-junction-out-2> ;
-    ns1:hasMedium ns1:Fluid-Air .
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain> a ns2:DomainSpace ;
+    rdfs:label "Room 101 Hvac Domain" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-101-hvac-domain-out> ;
+    ns2:hasDomain ns2:Domain-HVAC .
 
-<urn:ex/return-exhaust-junction> a ns1:Junction ;
-    rdfs:label "return exhaust junction" ;
-    ns1:cnx <urn:ex/return-exhaust-junction-in>,
-        <urn:ex/return-exhaust-junction-out-1>,
-        <urn:ex/return-exhaust-junction-out-2> ;
-    ns1:hasConnectionPoint <urn:ex/return-exhaust-junction-in>,
-        <urn:ex/return-exhaust-junction-out-1>,
-        <urn:ex/return-exhaust-junction-out-2> ;
-    ns1:hasMedium ns1:Fluid-Air .
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain> a ns2:DomainSpace ;
+    rdfs:label "Room 102 Hvac Domain" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#room-102-hvac-domain-out> ;
+    ns2:hasDomain ns2:Domain-HVAC .
 
-<urn:ex/multiple-zone-ahu> a ns1:AirHandlingUnit,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#MultiZoneVAVAirHandlingUnit> ;
-    rdfs:label "multiple zone ahu" ;
-    ns1:cnx <urn:ex/ea-out>,
-        <urn:ex/oa-in>,
-        <urn:ex/ra-in>,
-        <urn:ex/sa-out> ;
-    ns1:contains <urn:ex/clg-coil>,
-        <urn:ex/clg-coil-valve>,
-        <urn:ex/ea-damper>,
-        <urn:ex/economizer-oa-damper>,
-        <urn:ex/filter>,
-        <urn:ex/htg-coil>,
-        <urn:ex/htg-coil-valve>,
-        <urn:ex/minimum-oa-damper>,
-        <urn:ex/outside-air-junction>,
-        <urn:ex/outside-supply-junction>,
-        <urn:ex/ra-damper>,
-        <urn:ex/ra-fan>,
-        <urn:ex/return-exhaust-junction>,
-        <urn:ex/sa-fan> ;
-    ns1:hasConnectionPoint <urn:ex/ea-out>,
-        <urn:ex/oa-in>,
-        <urn:ex/ra-in>,
-        <urn:ex/sa-out> .
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction> a ns2:Junction ;
+    rdfs:label "Multiplezoneahu Outside Air Junction" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-out-1>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-out-2> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-out-1>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction-out-2> ;
+    ns2:hasMedium ns2:Fluid-Air .
 
-<urn:ex/clg-coil> a ns1:CoolingCoil,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterCoil> ;
-    rdfs:label "clg coil" ;
-    ns1:cnx <urn:ex/clg-coil-air-in>,
-        <urn:ex/clg-coil-air-out>,
-        <urn:ex/clg-coil-water-in>,
-        <urn:ex/clg-coil-water-out> ;
-    ns1:hasConnectionPoint <urn:ex/clg-coil-air-in>,
-        <urn:ex/clg-coil-air-out>,
-        <urn:ex/clg-coil-water-in>,
-        <urn:ex/clg-coil-water-out> ;
-    ns1:hasRole ns1:Role-Cooling .
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction> a ns2:Junction ;
+    rdfs:label "Returnairjunction" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-in-from-room-101>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-in-from-room-102>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-in-from-room-101>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-in-from-room-102>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#ReturnAirJunction-out> ;
+    ns2:hasMedium ns2:Fluid-Air .
 
-<urn:ex/htg-coil> a ns1:HeatingCoil,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction> a ns2:Junction ;
+    rdfs:label "Supplyairjunction" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-out-to-vav-701>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-out-to-vav-702> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-out-to-vav-701>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#SupplyAirJunction-out-to-vav-702> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction> a ns2:Junction ;
+    rdfs:label "Multiplezoneahu Return Exhaust Junction" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-out-1>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-out-2> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-out-1>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction-out-2> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701> a ns2:SingleDuctTerminal,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#VAVWithReheat> ;
+    rdfs:label "Vav 701" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-hot-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-hot-water-out> ;
+    ns2:contains <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-hot-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-hot-water-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702> a ns2:SingleDuctTerminal,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#VAVWithReheat> ;
+    rdfs:label "Vav 702" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-hot-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-hot-water-out> ;
+    ns2:contains <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-hot-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-hot-water-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil> a ns2:HeatingCoil,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;
-    rdfs:label "htg coil" ;
-    ns1:cnx <urn:ex/htg-coil-air-in>,
-        <urn:ex/htg-coil-air-out>,
-        <urn:ex/htg-coil-water-in>,
-        <urn:ex/htg-coil-water-out> ;
-    ns1:hasConnectionPoint <urn:ex/htg-coil-air-in>,
-        <urn:ex/htg-coil-air-out>,
-        <urn:ex/htg-coil-water-in>,
-        <urn:ex/htg-coil-water-out> ;
-    ns1:hasRole ns1:Role-Heating .
+    rdfs:label "Vav 701 Reheat Coil" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-water-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-water-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-return-water-temp>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-supply-water-temp> ;
+    ns2:hasRole ns2:Role-Heating .
 
-<urn:ex/outside-supply-junction> a ns1:Junction ;
-    rdfs:label "outside supply junction" ;
-    ns1:cnx <urn:ex/outside-supply-junction-in-1>,
-        <urn:ex/outside-supply-junction-in-2>,
-        <urn:ex/outside-supply-junction-in-3>,
-        <urn:ex/outside-supply-junction-out> ;
-    ns1:hasConnectionPoint <urn:ex/outside-supply-junction-in-1>,
-        <urn:ex/outside-supply-junction-in-2>,
-        <urn:ex/outside-supply-junction-in-3>,
-        <urn:ex/outside-supply-junction-out> ;
-    ns1:hasMedium ns1:Fluid-Air .
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil> a ns2:HeatingCoil,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;
+    rdfs:label "Vav 702 Reheat Coil" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-water-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-water-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-return-water-temp>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-supply-water-temp> ;
+    ns2:hasRole ns2:Role-Heating .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil> a ns2:CoolingCoil,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterCoil> ;
+    rdfs:label "Multiplezoneahu Clg Coil" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-water-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-water-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-return-water-temp>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-supply-water-temp> ;
+    ns2:hasRole ns2:Role-Cooling .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil> a ns2:HeatingCoil,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;
+    rdfs:label "Multiplezoneahu Htg Coil" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-water-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-air-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-air-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-water-out> ;
+    ns2:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-return-water-temp>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-supply-water-temp> ;
+    ns2:hasRole ns2:Role-Heating .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction> a ns2:Junction ;
+    rdfs:label "Multiplezoneahu Outside Supply Junction" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-1>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-2>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-3>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-out> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-1>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-2>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-in-3>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction-out> ;
+    ns2:hasMedium ns2:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu> a ns2:AirHandlingUnit,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#MultipleZoneVAVAirHandlingUnit> ;
+    rdfs:label "Multiplezoneahu" ;
+    ns2:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-chilled-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-chilled-water-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-hot-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-hot-water-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-out> ;
+    ns2:contains <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-air-junction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-outside-supply-junction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-return-exhaust-junction>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan> ;
+    ns2:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-chilled-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-chilled-water-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-hot-water-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-hot-water-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-out> .
 

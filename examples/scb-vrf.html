@@ -583,7 +583,7 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns1: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix ns4: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
@@ -591,14 +591,16 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns4:00094 ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00094&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;http://data.ashrae.org/standard223/data/scb-vrf#00076&gt; because it is associated with a Junction or Equipment that is contained by &lt;http://data.ashrae.org/standard223/data/scb-vrf#00076&gt;.&quot; ;
-            sh:resultPath ns1:mapsTo ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:nfd0a2d506e4d4174ae6db46d6cbbd5f8b9 ;
+            sh:focusNode ns4:00512 ;
+            sh:resultMessage &quot;s223: Number of inlets 1 are not equivalent with number of outlets 3.&quot; ;
+            sh:resultPath ns2:hasConnectionPoint ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraint _:n24e04f579374402297ed8766fbe4ec8cb12 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/b2592318&gt; ],
-        [ a sh:Valid
+            sh:sourceShape &lt;urn:well-known/b6302969&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode ns4:00950 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00950&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;http://data.ashrae.o
 </pre></div>
 </div>
 </div>

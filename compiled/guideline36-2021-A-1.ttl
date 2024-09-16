@@ -3,116 +3,160 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<urn:ex/> a owl:Ontology .
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#> a owl:Ontology ;
+    rdfs:label "" .
 
-<urn:ex/damper-actuator> a ns1:Actuator ;
-    rdfs:label "damper actuator" ;
-    ns1:actuates <urn:ex/damper> ;
-    ns1:commandedByProperty <urn:ex/damper-command> .
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace> a ns1:PhysicalSpace ;
+    rdfs:label "Physicalspace" ;
+    ns1:encloses <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain> .
 
-<urn:ex/discharge-air-flow-sensor> a ns1:Sensor ;
-    rdfs:label "discharge air flow sensor" ;
-    ns1:hasObservationLocation <urn:ex/out> ;
-    ns1:observes <urn:ex/discharge-air-flow> .
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-actuator> a ns1:Actuator ;
+    rdfs:label "Vavcoolingonly Damper Actuator" ;
+    ns1:actuatedByProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command> ;
+    ns1:actuates <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper> .
 
-<urn:ex/damper-position> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "damper position" ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow-sensor> a ns1:Sensor ;
+    rdfs:label "Vavcoolingonly Discharge Air Flow Sensor" ;
+    ns1:hasObservationLocation <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out> ;
+    ns1:observes <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-duct-after-damper> a ns1:Connection,
+        ns1:Duct ;
+    rdfs:label "Vavcoolingonly Duct After Damper" ;
+    ns1:hasMedium ns1:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-duct-before-damper> a ns1:Connection,
+        ns1:Duct ;
+    rdfs:label "Vavcoolingonly Duct Before Damper" ;
+    ns1:hasMedium ns1:Fluid-Air .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone> a ns1:Zone,
+        <http://data.ashrae.org/standard223/1.0/extensions/g36#Zone> ;
+    rdfs:label "Zone" ;
+    ns1:hasDomain ns1:Domain-HVAC ;
+    ns1:hasDomainSpace <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain> ;
+    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-co2-concentration>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-temp> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-position> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Vavcoolingonly Damper Position" ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/damper-command> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "damper command" ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-co2-concentration> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Zone Co2 Concentration" ;
+    ns1:ofSubstance ns1:Constituent-CO2 ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/MoleFraction> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/PPM> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-temp> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Zone Temp" ;
+    ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
+    ns2:hasUnit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command> a ns1:QuantifiableActuatableProperty ;
+    rdfs:label "Vavcoolingonly Damper Command" ;
     ns1:hasAspect ns1:EnumerationKind-Position ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/DimensionlessRatio> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
 
-<urn:ex/discharge-air-flow> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "discharge air flow" ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-in> a ns1:InletConnectionPoint ;
+    rdfs:label "Vavcoolingonly Damper In" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper> ;
+    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-in> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-out> a ns1:OutletConnectionPoint ;
+    rdfs:label "Vavcoolingonly Damper Out" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper> ;
+    ns1:mapsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "Vavcoolingonly Discharge Air Flow" ;
     ns1:hasAspect ns1:Role-Discharge ;
     ns2:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
     ns2:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
 
-<urn:ex/duct-after-damper> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct after damper" ;
-    ns1:cnx <urn:ex/damper-out> ;
-    ns1:connectsAt <urn:ex/damper-out> ;
-    ns1:connectsFrom <urn:ex/damper> ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-in> a ns1:InletConnectionPoint ;
+    rdfs:label "Physicalspace Hvac Domain In" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#vav-supply-to-room-connection> ;
+    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#vav-supply-to-room-connection> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-out> a ns1:OutletConnectionPoint ;
+    rdfs:label "Physicalspace Hvac Domain Out" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#room-return-to-vav-connection> ;
+    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#room-return-to-vav-connection> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#room-return-to-vav-connection> a ns1:Connection ;
+    rdfs:label "Room Return To Vav Connection" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-in> ;
+    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-out>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-in> ;
+    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain> ;
+    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly> ;
     ns1:hasMedium ns1:Fluid-Air .
 
-<urn:ex/duct-before-damper> a ns1:Connection,
-        ns1:Duct ;
-    rdfs:label "duct before damper" ;
-    ns1:cnx <urn:ex/damper-in> ;
-    ns1:connectsAt <urn:ex/damper-in> ;
-    ns1:connectsTo <urn:ex/damper> ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#vav-supply-to-room-connection> a ns1:Connection ;
+    rdfs:label "Vav Supply To Room Connection" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out> ;
+    ns1:connectsAt <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out> ;
+    ns1:connectsFrom <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly> ;
+    ns1:connectsTo <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain> ;
     ns1:hasMedium ns1:Fluid-Air .
 
-<urn:ex/in-connection> a ns1:Connection ;
-    rdfs:label "in connection" ;
-    ns1:cnx <urn:ex/in> ;
-    ns1:connectsAt <urn:ex/in> ;
-    ns1:connectsTo <urn:ex/vav-cooling-only> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/out-connection> a ns1:Connection ;
-    rdfs:label "out connection" ;
-    ns1:cnx <urn:ex/out> ;
-    ns1:connectsAt <urn:ex/out> ;
-    ns1:connectsFrom <urn:ex/vav-cooling-only> ;
-    ns1:hasMedium ns1:Fluid-Air .
-
-<urn:ex/damper-in> a ns1:InletConnectionPoint ;
-    rdfs:label "damper in" ;
-    ns1:cnx <urn:ex/damper>,
-        <urn:ex/duct-before-damper> ;
-    ns1:connectsThrough <urn:ex/duct-before-damper> ;
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-in> a ns1:InletConnectionPoint ;
+    rdfs:label "Vavcoolingonly In" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#room-return-to-vav-connection> ;
+    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#room-return-to-vav-connection> ;
     ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/damper> ;
-    ns1:mapsTo <urn:ex/in> .
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly> .
 
-<urn:ex/damper-out> a ns1:OutletConnectionPoint ;
-    rdfs:label "damper out" ;
-    ns1:cnx <urn:ex/damper>,
-        <urn:ex/duct-after-damper> ;
-    ns1:connectsThrough <urn:ex/duct-after-damper> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/damper> ;
-    ns1:mapsTo <urn:ex/out> .
-
-<urn:ex/in> a ns1:InletConnectionPoint ;
-    rdfs:label "in" ;
-    ns1:cnx <urn:ex/in-connection>,
-        <urn:ex/vav-cooling-only> ;
-    ns1:connectsThrough <urn:ex/in-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:isConnectionPointOf <urn:ex/vav-cooling-only> .
-
-<urn:ex/out> a ns1:OutletConnectionPoint ;
-    rdfs:label "out" ;
-    ns1:cnx <urn:ex/out-connection>,
-        <urn:ex/vav-cooling-only> ;
-    ns1:connectsThrough <urn:ex/out-connection> ;
-    ns1:hasMedium ns1:Fluid-Air ;
-    ns1:hasProperty <urn:ex/discharge-air-flow> ;
-    ns1:isConnectionPointOf <urn:ex/vav-cooling-only> .
-
-<urn:ex/vav-cooling-only> a ns1:SingleDuctTerminal,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly> a ns1:SingleDuctTerminal,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#VAV> ;
-    rdfs:label "vav cooling only" ;
-    ns1:cnx <urn:ex/in>,
-        <urn:ex/out> ;
-    ns1:contains <urn:ex/damper> ;
-    ns1:hasConnectionPoint <urn:ex/in>,
-        <urn:ex/out> .
+    rdfs:label "Vavcoolingonly" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out> ;
+    ns1:contains <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper> ;
+    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out> .
 
-<urn:ex/damper> a ns1:Damper,
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper> a ns1:Damper,
         <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    rdfs:label "damper" ;
-    ns1:cnx <urn:ex/damper-in>,
-        <urn:ex/damper-out> ;
-    ns1:hasConnectionPoint <urn:ex/damper-in>,
-        <urn:ex/damper-out> ;
-    ns1:hasProperty <urn:ex/damper-command>,
-        <urn:ex/damper-position> .
+    rdfs:label "Vavcoolingonly Damper" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-out> ;
+    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-out> ;
+    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-position> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out> a ns1:OutletConnectionPoint ;
+    rdfs:label "Vavcoolingonly Out" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#vav-supply-to-room-connection> ;
+    ns1:connectsThrough <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#vav-supply-to-room-connection> ;
+    ns1:hasMedium ns1:Fluid-Air ;
+    ns1:hasProperty <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow> ;
+    ns1:isConnectionPointOf <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly> .
+
+<http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain> a ns1:DomainSpace ;
+    rdfs:label "Physicalspace Hvac Domain" ;
+    ns1:cnx <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-out> ;
+    ns1:hasConnectionPoint <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-in>,
+        <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-out> ;
+    ns1:hasDomain ns1:Domain-HVAC .
 

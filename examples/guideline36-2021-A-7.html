@@ -444,15 +444,23 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connection</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/Duct.html">Duct</a></p></td>
-<td><p>4</p></td>
+<td><p>3</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/InletConnectionPoint.html">InletConnectionPoint</a></p></td>
-<td><p>6</p></td>
+<td><p>7</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/OutletConnectionPoint.html">OutletConnectionPoint</a></p></td>
-<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/DomainSpace.html">DomainSpace</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Zone.html">Zone</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
+<td><p>1</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a></p></td>
@@ -460,7 +468,7 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableObservableProperty.html">QuantifiableObservableProperty</a></p></td>
-<td><p>4</p></td>
+<td><p>5</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableActuatableProperty.html">QuantifiableActuatableProperty</a></p></td>
@@ -535,24 +543,23 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
             sh:focusNode &lt;urn:ex/cold-deck-in-connection&gt; ;
-            sh:resultMessage &quot;s223: A Connection must have two or more connectsAt relations to ConnectionPoints&quot; ;
-            sh:resultPath ns2:connectsAt ;
+            sh:resultMessage &quot;s223: You need either an InletCP and an OutletCP, or at least one BidirectionalCP and another CP of any type.&quot; ;
             sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/eb748167&gt; ],
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape ns2:ConnectionCnxShape ;
+            sh:value &lt;urn:ex/cold-deck-in-connection&gt; ],
         [ a sh:ValidationResult ;
             sh:focusNode &lt;urn:ex/cold-deck-damper-actuator&gt; ;
             sh:resultMessage &quot;Property needs to have at least 1 value&quot; ;
             sh:resultPath ns2:actuatedByProperty ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;ur
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/cold-deck-damper-actuator
-  - urn:ex/cold-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
-urn:ex/hot-deck-damper-actuator
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/hot-deck-damper-actuator
   - urn:ex/hot-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
+urn:ex/cold-deck-damper-actuator
+  - urn:ex/cold-deck-damper-actuator needs between 1 and None instances of http://data.ashrae.org/standard223#ActuatableProperty on path http://data.ashrae.org/standard223#actuatedByProperty
 </pre></div>
 </div>
 </div>
