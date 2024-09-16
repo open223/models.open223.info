@@ -26,10 +26,12 @@ if __name__ == "__main__":
     for f in args.input:
         graph.parse(f, format=rdflib.util.guess_format(f))
 
+    namespaces = dict(graph.namespace_manager.namespaces())
 
     s223 = rdflib.Graph()
     if args.do_import:
         s223.parse("ontologies/223p.ttl")
+        namespaces.update(dict(s223.namespace_manager.namespaces()))
 
     # remove QUDT prefix because it breaks things
     #graph.bind("qudtprefix21", rdflib.Namespace("http://qudt.org/2.1/vocab/prefix/"))
@@ -46,6 +48,8 @@ if __name__ == "__main__":
             print(report)
             raise Exception("Validation failed: {}".format(report))
     if args.output:
+        for prefix, uri in namespaces.items():
+            graph.bind(prefix, uri)
         graph.serialize(args.output, format="turtle")
     else:
         print(graph.serialize(format="turtle"))
