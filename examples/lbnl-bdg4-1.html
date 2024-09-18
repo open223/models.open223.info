@@ -397,7 +397,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloads">Downloads</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queries">Queries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-validate-model">Load and Validate Model</a></li>
 </ul>
             </nav>
         </div>
@@ -438,7 +437,7 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Zone/room temperature sensors</p></td>
-<td><p><a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+SELECT+%3Flocation+%3Fsensor+WHERE+%7B%0A++++%3Fsensor+rdf%3Atype%2Frdfs%3AsubClassOf%2A+s223%3ASensor+.%0A++++%3Fsensor+s223%3Aobserves+%3Fproperty+.%0A++++%3Fproperty+qudt%3AhasQuantityKind+quantitykind%3ATemperature+.%0A++++%3Fsensor+s223%3AhasObservationLocation+%3Flocation%0A%7D%0A&url=https%3A%2F%2Fmodels.open223.info%2Fcompiled%2Flbnl-bdg4-1.ttl'>Query Link</a></p></td>
+<td><p><a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+SELECT+%3Flocation+%3Fsensor+WHERE+%7B%0A++++%3Fsensor+rdf%3Atype%2Frdfs%3AsubClassOf%2A+s223%3ASensor+.%0A++++%3Fsensor+s223%3Aobserves+%3Fproperty+.%0A++++%3Fproperty+qudt%3AhasQuantityKind+quantitykind%3ATemperature+.%0A++++%3Fsensor+s223%3AhasObservationLocation+%3Flocation%0A%7D%0A&url=https%3A%2F%2Fmodels.open223.info%2Fcompiled%2Flbnl-example.ttl'>Query Link</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -456,7 +455,7 @@ document.write(`
 <tbody>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/Sensor.html">Sensor</a></p></td>
-<td><p>174</p></td>
+<td><p>167</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/Actuator.html">Actuator</a></p></td>
@@ -479,272 +478,63 @@ document.write(`
 <td><p>40</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/Filter.html">Filter</a></p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/Fan.html">Fan</a></p></td>
 <td><p>2</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/AirHandlingUnit.html">AirHandlingUnit</a></p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/CoolingCoil.html">CoolingCoil</a></p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connection</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/Duct.html">Duct</a></p></td>
-<td><p>132</p></td>
-</tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connection</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/Pipe.html">Pipe</a></p></td>
-<td><p>42</p></td>
+<td><p>126</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/OutletConnectionPoint.html">OutletConnectionPoint</a></p></td>
-<td><p>365</p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connection</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/Duct.html">Duct</a></p></td>
+<td><p>88</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/OutletConnectionPoint.html">OutletConnectionPoint</a></p></td>
+<td><p>304</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/InletConnectionPoint.html">InletConnectionPoint</a></p></td>
-<td><p>365</p></td>
+<td><p>304</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/DomainSpace.html">DomainSpace</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/DomainSpace.html">DomainSpace</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
 <td><p>47</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Zone.html">Zone</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Zone.html">Zone</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
-<td><p>47</p></td>
+<td><p>38</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableObservableProperty.html">QuantifiableObservableProperty</a></p></td>
-<td><p>437</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableActuatableProperty.html">QuantifiableActuatableProperty</a></p></td>
-<td><p>230</p></td>
+<td><p>299</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/EnumeratedObservableProperty.html">EnumeratedObservableProperty</a></p></td>
-<td><p>53</p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableActuatableProperty.html">QuantifiableActuatableProperty</a></p></td>
+<td><p>249</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
+<td><p><a class="reference external" href="https://explore.open223.info/s223/EnumeratedObservableProperty.html">EnumeratedObservableProperty</a></p></td>
+<td><p>200</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a></p></td>
 <td><p>6</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/EnumeratedActuatableProperty.html">EnumeratedActuatableProperty</a></p></td>
 <td><p>2</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-</section>
-<section id="load-and-validate-model">
-<h2>Load and Validate Model<a class="headerlink" href="#load-and-validate-model" title="Link to this heading">#</a></h2>
-<p>This code uses the <a class="reference external" href="https://github.com/NREL/BuildingMOTIF">BuildingMOTIF</a> library to load the 223P ontology and the model file into a temporary in-memory instance.
-It then validates the model against the ontology. If the model is invalid, it will print the validation report.</p>
-<p>To run this code, you need to have Java installed on your system. If you do not have Java installed, you can remove the <code class="docutils literal notranslate"><span class="pre">shacl_engine='topquadrant'</span></code> parameter from the <code class="docutils literal notranslate"><span class="pre">BuildingMOTIF</span></code> constructor.
-Be warned that without the <code class="docutils literal notranslate"><span class="pre">shacl_engine='topquadrant'</span></code> parameter, the validation process will be slower.</p>
-<div class="dropdown admonition note">
-<p class="admonition-title">Note</p>
-<p>BuildingMOTIF installation
-To install the <code class="docutils literal notranslate"><span class="pre">buildingmotif</span></code> library, you can use the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;buildingmotif[topquadrant] @ git+https://github.com/NREL/buildingmotif.git@develop&#39;</span>
-</pre></div>
-</div>
-<p>If you do not have Java installed, you can use the following command to install the library:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">buildingmotif</span> <span class="kn">import</span> <span class="n">BuildingMOTIF</span>
-<span class="kn">from</span> <span class="nn">buildingmotif.dataclasses</span> <span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-
-<span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
-<span class="n">bm</span> <span class="o">=</span> <span class="n">BuildingMOTIF</span><span class="p">(</span><span class="s1">&#39;sqlite://&#39;</span><span class="p">,</span> <span class="n">shacl_engine</span><span class="o">=</span><span class="s1">&#39;topquadrant&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
-
-<span class="c1"># load 223P library. We will load a recent copy from the models.open223.info</span>
-<span class="c1"># git repository; later, we will load this from the location of the actual standard</span>
-<span class="n">s223</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ontology_graph</span><span class="o">=</span><span class="s2">&quot;https://github.com/open223/models.open223.info/raw/main/ontologies/223p.ttl&quot;</span><span class="p">)</span>
-
-<span class="c1"># load the model into the BuildingMOTIF instance</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;urn:lbnl-bdg4-1&quot;</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/lbnl-bdg4-1.ttl&quot;</span><span class="p">)</span>
-
-<span class="c1"># validate the model against 223P ontology</span>
-<span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span> <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># print the validation result</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model is valid: </span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># if the model is invalid, print the validation report</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">report_string</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span> <span class="c1"># first 1000 characters of the report</span>
-
-<span class="c1"># BuildingMOTIF can also interpret the report to provide recommendations on fixes</span>
-<span class="k">for</span> <span class="n">focus_node</span><span class="p">,</span> <span class="n">diffs</span> <span class="ow">in</span> <span class="n">ctx</span><span class="o">.</span><span class="n">get_reasons_with_severity</span><span class="p">(</span><span class="s2">&quot;Violation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">diffs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">focus_node</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">diff</span> <span class="ow">in</span> <span class="n">diffs</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - &quot;</span> <span class="o">+</span> <span class="n">diff</span><span class="o">.</span><span class="n">reason</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-
-[] a sh:ValidationReport ;
-    sh:conforms false ;
-    sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-hot-water-out&gt; ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-hot-water-out&gt; probably needs an association with a Connection, or use of hasOptionalConnectionPoint or hasBoundaryConnectionPoint qualifiers.&quot; ;
-            sh:resultPath ns3:connectsThrough ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n64d1d23fbe6c4b55963b170622e0bc2ab11 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/3d5bbe29&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-htg-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-htg-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-htg-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-clg-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-clg-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil needs between 1 and None instances of http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve on path http://data.ashrae.org/standard223#connectedTo
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -818,7 +608,6 @@ http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloads">Downloads</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queries">Queries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-validate-model">Load and Validate Model</a></li>
 </ul>
   </nav></div>
 

@@ -396,7 +396,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloads">Downloads</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queries">Queries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-validate-model">Load and Validate Model</a></li>
 </ul>
             </nav>
         </div>
@@ -417,170 +416,12 @@ document.write(`
 </section>
 <section id="downloads">
 <h2>Downloads<a class="headerlink" href="#downloads" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a href="/compiled/NIST-HPL.ttl">Turtle file (compiled)</a> (<a href="/NIST-HPL.ttl">original</a>)</p></li>
-<li><p><a href="/NIST-HPL.jsonld">JSON-LD file (original)</a></p></li>
-</ul>
 </section>
 <section id="queries">
 <h2>Queries<a class="headerlink" href="#queries" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Description</p></th>
-<th class="head"><p>Query URL</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Find the downstream equipment for AHU1.</p></td>
-<td><p><a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+SELECT+%3FconnectionDown+%3FconnectionDown2+WHERE+%7B%0A++++BIND%28IBAL%3AAHU_1+as+%3Fahu%29+%7B%0A%09%7D%0A%09UNION+%7B%0A%09%3Fahu+s223%3AhasConnectionPoint+%3FconnectionPoint+.%0A%09%3FconnectionPoint+a+s223%3AOutletConnectionPoint+.%0A%09%3FconnectionPoint+s223%3AhasMedium+s223%3AMedium-Air+.%0A%09%3FconnectionPoint+s223%3AconnectsThrough+%3Fsegment+.%0A%09%3Fsegment+s223%3AconnectsTo+%3Fjunction+.%0A++++%3Fjunction+s223%3AconnectedTo+%3FconnectionDown+.%0A++++%3FconnectionDown+a+s223%3ATerminalUnit+.%0A%09%7D%0A%09UNION+%7B%0A%09%3Fahu+s223%3AhasConnectionPoint+%3FconnectionPoint+.%0A%09%3FconnectionPoint+a+s223%3AOutletConnectionPoint+.%0A%09%3FconnectionPoint+s223%3AhasMedium+s223%3AMedium-Air+.%0A%09%3FconnectionPoint+s223%3AconnectsThrough+%3Fsegment+.%0A%09%3Fsegment+s223%3AconnectsTo+%3Fjunction+.%0A++++%3Fjunction+s223%3AconnectedTo+%3FconnectionDown+.%0A++++%3FconnectionDown+a+s223%3AJunction+.%0A%09%3FconnectionDown+s223%3AconnectedTo+%3FconnectionDown2+.%0A%09%3FconnectionDown2+a+s223%3ATerminalUnit+.%0A%09%7D%0A%7D%0A&url=https%3A%2F%2Fmodels.open223.info%2Fcompiled%2Fnist-hpl.ttl'>Query Link</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </section>
 <section id="model-components">
 <h2>Model Components<a class="headerlink" href="#model-components" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Parent Class</p></th>
-<th class="head"><p>Class</p></th>
-<th class="head"><p>Instances</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/TemperatureSensor.html">TemperatureSensor</a></p></td>
-<td><p>34</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/PressureSensor.html">PressureSensor</a></p></td>
-<td><p>8</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/Sensor.html">Sensor</a></p></td>
-<td><p>3</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/HumiditySensor.html">HumiditySensor</a></p></td>
-<td><p>3</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/Fan.html">Fan</a></p></td>
-<td><p>3</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/Valve.html">Valve</a></p></td>
-<td><p>3</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/FlowSensor.html">FlowSensor</a></p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/HeatExchanger.html">HeatExchanger</a></p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Equipment.html">Equipment</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/Coil.html">Coil</a></p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connection</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/Pipe.html">Pipe</a></p></td>
-<td><p>10</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Connection.html">Connection</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/Duct.html">Duct</a></p></td>
-<td><p>9</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/BidirectionalConnectionPoint.html">BidirectionalConnectionPoint</a></p></td>
-<td><p>20</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/OutletConnectionPoint.html">OutletConnectionPoint</a></p></td>
-<td><p>15</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/InletConnectionPoint.html">InletConnectionPoint</a></p></td>
-<td><p>15</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/DomainSpace.html">DomainSpace</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableObservableProperty.html">QuantifiableObservableProperty</a></p></td>
-<td><p>52</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a></p></td>
-<td><p>6</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="load-and-validate-model">
-<h2>Load and Validate Model<a class="headerlink" href="#load-and-validate-model" title="Link to this heading">#</a></h2>
-<p>This code uses the <a class="reference external" href="https://github.com/NREL/BuildingMOTIF">BuildingMOTIF</a> library to load the 223P ontology and the model file into a temporary in-memory instance.
-It then validates the model against the ontology. If the model is invalid, it will print the validation report.</p>
-<p>To run this code, you need to have Java installed on your system. If you do not have Java installed, you can remove the <code class="docutils literal notranslate"><span class="pre">shacl_engine='topquadrant'</span></code> parameter from the <code class="docutils literal notranslate"><span class="pre">BuildingMOTIF</span></code> constructor.
-Be warned that without the <code class="docutils literal notranslate"><span class="pre">shacl_engine='topquadrant'</span></code> parameter, the validation process will be slower.</p>
-<div class="dropdown admonition note">
-<p class="admonition-title">Note</p>
-<p>BuildingMOTIF installation
-To install the <code class="docutils literal notranslate"><span class="pre">buildingmotif</span></code> library, you can use the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;buildingmotif[topquadrant] @ git+https://github.com/NREL/buildingmotif.git@develop&#39;</span>
-</pre></div>
-</div>
-<p>If you do not have Java installed, you can use the following command to install the library:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">buildingmotif</span> <span class="kn">import</span> <span class="n">BuildingMOTIF</span>
-<span class="kn">from</span> <span class="nn">buildingmotif.dataclasses</span> <span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-
-<span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
-<span class="n">bm</span> <span class="o">=</span> <span class="n">BuildingMOTIF</span><span class="p">(</span><span class="s1">&#39;sqlite://&#39;</span><span class="p">,</span> <span class="n">shacl_engine</span><span class="o">=</span><span class="s1">&#39;topquadrant&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
-
-<span class="c1"># load 223P library. We will load a recent copy from the models.open223.info</span>
-<span class="c1"># git repository; later, we will load this from the location of the actual standard</span>
-<span class="n">s223</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ontology_graph</span><span class="o">=</span><span class="s2">&quot;https://github.com/open223/models.open223.info/raw/main/ontologies/223p.ttl&quot;</span><span class="p">)</span>
-
-<span class="c1"># load the model into the BuildingMOTIF instance</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;urn:NIST-HPL&quot;</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/NIST-HPL.ttl&quot;</span><span class="p">)</span>
-
-<span class="c1"># validate the model against 223P ontology</span>
-<span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span> <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># print the validation result</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model is valid: </span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># if the model is invalid, print the validation report</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">report_string</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span> <span class="c1"># first 1000 characters of the report</span>
-
-<span class="c1"># BuildingMOTIF can also interpret the report to provide recommendations on fixes</span>
-<span class="k">for</span> <span class="n">focus_node</span><span class="p">,</span> <span class="n">diffs</span> <span class="ow">in</span> <span class="n">ctx</span><span class="o">.</span><span class="n">get_reasons_with_severity</span><span class="p">(</span><span class="s2">&quot;Violation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">diffs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">focus_node</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">diff</span> <span class="ow">in</span> <span class="n">diffs</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - &quot;</span> <span class="o">+</span> <span class="n">diff</span><span class="o">.</span><span class="n">reason</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: True
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 
@@ -652,7 +493,6 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloads">Downloads</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queries">Queries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-validate-model">Load and Validate Model</a></li>
 </ul>
   </nav></div>
 

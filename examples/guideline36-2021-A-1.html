@@ -394,7 +394,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloads">Downloads</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-validate-model">Load and Validate Model</a></li>
 </ul>
             </nav>
         </div>
@@ -448,19 +447,11 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/OutletConnectionPoint.html">OutletConnectionPoint</a></p></td>
-<td><p>3</p></td>
+<td><p>2</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/ConnectionPoint.html">ConnectionPoint</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/InletConnectionPoint.html">InletConnectionPoint</a></p></td>
-<td><p>3</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/DomainSpace.html">DomainSpace</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Zone.html">Zone</a></p></td>
-<td><p><a class="reference external" href="https://explore.open223.info/s223/.html"></a></p></td>
-<td><p>1</p></td>
+<td><p>2</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableProperty.html">QuantifiableProperty</a></p></td>
@@ -468,7 +459,7 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableObservableProperty.html">QuantifiableObservableProperty</a></p></td>
-<td><p>4</p></td>
+<td><p>2</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://explore.open223.info/s223/Property.html">Property</a></p></td>
 <td><p><a class="reference external" href="https://explore.open223.info/s223/QuantifiableActuatableProperty.html">QuantifiableActuatableProperty</a></p></td>
@@ -476,68 +467,6 @@ document.write(`
 </tr>
 </tbody>
 </table>
-</div>
-</section>
-<section id="load-and-validate-model">
-<h2>Load and Validate Model<a class="headerlink" href="#load-and-validate-model" title="Link to this heading">#</a></h2>
-<p>This code uses the <a class="reference external" href="https://github.com/NREL/BuildingMOTIF">BuildingMOTIF</a> library to load the 223P ontology and the model file into a temporary in-memory instance.
-It then validates the model against the ontology. If the model is invalid, it will print the validation report.</p>
-<p>To run this code, you need to have Java installed on your system. If you do not have Java installed, you can remove the <code class="docutils literal notranslate"><span class="pre">shacl_engine='topquadrant'</span></code> parameter from the <code class="docutils literal notranslate"><span class="pre">BuildingMOTIF</span></code> constructor.
-Be warned that without the <code class="docutils literal notranslate"><span class="pre">shacl_engine='topquadrant'</span></code> parameter, the validation process will be slower.</p>
-<div class="dropdown admonition note">
-<p class="admonition-title">Note</p>
-<p>BuildingMOTIF installation
-To install the <code class="docutils literal notranslate"><span class="pre">buildingmotif</span></code> library, you can use the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;buildingmotif[topquadrant] @ git+https://github.com/NREL/buildingmotif.git@develop&#39;</span>
-</pre></div>
-</div>
-<p>If you do not have Java installed, you can use the following command to install the library:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">buildingmotif</span> <span class="kn">import</span> <span class="n">BuildingMOTIF</span>
-<span class="kn">from</span> <span class="nn">buildingmotif.dataclasses</span> <span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-
-<span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
-<span class="n">bm</span> <span class="o">=</span> <span class="n">BuildingMOTIF</span><span class="p">(</span><span class="s1">&#39;sqlite://&#39;</span><span class="p">,</span> <span class="n">shacl_engine</span><span class="o">=</span><span class="s1">&#39;topquadrant&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
-
-<span class="c1"># load 223P library. We will load a recent copy from the models.open223.info</span>
-<span class="c1"># git repository; later, we will load this from the location of the actual standard</span>
-<span class="n">s223</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ontology_graph</span><span class="o">=</span><span class="s2">&quot;https://github.com/open223/models.open223.info/raw/main/ontologies/223p.ttl&quot;</span><span class="p">)</span>
-
-<span class="c1"># load the model into the BuildingMOTIF instance</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;urn:guideline36-2021-A-1&quot;</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/guideline36-2021-A-1.ttl&quot;</span><span class="p">)</span>
-
-<span class="c1"># validate the model against 223P ontology</span>
-<span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span> <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># print the validation result</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model is valid: </span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># if the model is invalid, print the validation report</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">report_string</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span> <span class="c1"># first 1000 characters of the report</span>
-
-<span class="c1"># BuildingMOTIF can also interpret the report to provide recommendations on fixes</span>
-<span class="k">for</span> <span class="n">focus_node</span><span class="p">,</span> <span class="n">diffs</span> <span class="ow">in</span> <span class="n">ctx</span><span class="o">.</span><span class="n">get_reasons_with_severity</span><span class="p">(</span><span class="s2">&quot;Violation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">diffs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">focus_node</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">diff</span> <span class="ow">in</span> <span class="n">diffs</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - &quot;</span> <span class="o">+</span> <span class="n">diff</span><span class="o">.</span><span class="n">reason</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: True
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -608,7 +537,6 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloads">Downloads</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-validate-model">Load and Validate Model</a></li>
 </ul>
   </nav></div>
 
