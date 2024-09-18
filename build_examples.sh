@@ -35,4 +35,4 @@ uv run python tools/generate-queries.py
 # for each filename in the models/ directory, run tools/compile.py -o models/compiled/<filename>.ttl
 mkdir -p models/compiled
 make -j 4 compile-models
-jb build .
+uv run jb build .
