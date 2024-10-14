@@ -2,11 +2,13 @@ import re
 import string
 import random
 import argparse
-import brickschema
-from brickschema import topquadrant_shacl
+import rdflib
+#import brickschema
+#from brickschema import topquadrant_shacl
+from brick_tq_shacl.topquadrant_shacl import infer, validate
 import rdflib
 
-graph = brickschema.Graph()
+graph = rdflib.Graph()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -26,10 +28,12 @@ if __name__ == "__main__":
     for f in args.input:
         graph.parse(f, format=rdflib.util.guess_format(f))
 
+    namespaces = dict(graph.namespace_manager.namespaces())
 
     s223 = rdflib.Graph()
     if args.do_import:
         s223.parse("ontologies/223p.ttl")
+        namespaces.update(dict(s223.namespace_manager.namespaces()))
 
     # remove QUDT prefix because it breaks things
     #graph.bind("qudtprefix21", rdflib.Namespace("http://qudt.org/2.1/vocab/prefix/"))
@@ -39,13 +43,15 @@ if __name__ == "__main__":
         graph.remove((None, rdflib.OWL.imports, None))
         s223.remove((None, rdflib.OWL.imports, None))
         #topquadrant_shacl._MAX_EXTERNAL_LOOPS = 2
-        graph = topquadrant_shacl.infer(graph, s223)
+        graph = infer(graph, s223)
         #graph.expand(profile="shacl", backend="topquadrant")
-        valid, _, report = topquadrant_shacl.validate(graph, s223)
+        valid, _, report = validate(graph, s223)
         if not valid:
             print(report)
             raise Exception("Validation failed: {}".format(report))
     if args.output:
+        for prefix, uri in namespaces.items():
+            graph.bind(prefix, uri)
         graph.serialize(args.output, format="turtle")
     else:
         print(graph.serialize(format="turtle"))

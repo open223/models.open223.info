@@ -122,9 +122,9 @@ pt2:ElectricWireBothSwitches-Lum
 .
 pt2:Luminaire
   a s223:Luminaire ;
+  s223:actuatedByProperty pt2:LuminaireCommand ;
   s223:cnx pt2:LuminaireInletCP ;
   s223:cnx pt2:LuminaireOutletCP ;
-  s223:commandedByProperty pt2:LuminaireCommand ;
   s223:connected pt2:DumbSwitch ;
   s223:connectedTo pt2:DomainSpace ;
   rdfs:label "Luminaire" ;
@@ -209,9 +209,9 @@ pt3:Function1
 .
 pt3:Luminaire
   a s223:Luminaire ;
+  s223:actuatedByProperty pt3:LuminaireCommand ;
   s223:cnx pt3:LuminaireInletCP ;
   s223:cnx pt3:LuminaireOutletCP ;
-  s223:commandedByProperty pt3:LuminaireCommand ;
   s223:connectedTo pt3:DomainSpace ;
   rdfs:label "Luminaire" ;
 .
@@ -301,8 +301,8 @@ pt4:Function1
 .
 pt4:LightActuator
   a s223:Actuator ;
+  s223:actuatedByProperty pt4:LuminaireCommand ;
   s223:cnx pt4:LightActuatorOutletCP ;
-  s223:commandedByProperty pt4:LuminaireCommand ;
   s223:connectedTo pt4:LightBulb ;
   rdfs:label "Light actuator" ;
 .
@@ -338,8 +338,8 @@ pt4:LightBulbOutletCP
 .
 pt4:Luminaire
   a s223:Luminaire ;
+  s223:actuatedByProperty pt4:LuminaireCommand ;
   s223:cnx pt4:LuminaireOutletCP ;
-  s223:commandedByProperty pt4:LuminaireCommand ;
   s223:contains pt4:LightActuator ;
   s223:contains pt4:LightBulb ;
   rdfs:label "Luminaire" ;
@@ -444,8 +444,8 @@ pt6:Function1
 .
 pt6:LightActuator
   a s223:Actuator ;
+  s223:actuatedByProperty pt6:LuminaireCommand ;
   s223:actuates pt6:Relay ;
-  s223:commandedByProperty pt6:LuminaireCommand ;
   rdfs:label "Light actuator" ;
 .
 pt6:Luminaire
@@ -565,6 +565,7 @@ pt7:Breaker
 pt7:BreakerOutletCP
   a s223:OutletConnectionPoint ;
   s223:cnx pt7:Circuit1 ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Breaker outlet CP" ;
 .
 pt7:Circuit1
@@ -572,6 +573,7 @@ pt7:Circuit1
   s223:cnx pt7:Motor1InletCP ;
   s223:cnx pt7:Motor2InletCP ;
   s223:cnx pt7:Motor3InletCP ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Circuit1" ;
 .
 pt7:Motor1
@@ -581,6 +583,7 @@ pt7:Motor1
 .
 pt7:Motor1InletCP
   a s223:InletConnectionPoint ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Motor1Inlet CP" ;
 .
 pt7:Motor2
@@ -590,6 +593,7 @@ pt7:Motor2
 .
 pt7:Motor2InletCP
   a s223:InletConnectionPoint ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Motor2Inlet CP" ;
 .
 pt7:Motor3
@@ -599,6 +603,7 @@ pt7:Motor3
 .
 pt7:Motor3InletCP
   a s223:InletConnectionPoint ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Motor3Inlet CP" ;
 .
 pt8:Breaker
@@ -609,26 +614,31 @@ pt8:Breaker
 pt8:BreakerOutletCP
   a s223:OutletConnectionPoint ;
   s223:cnx pt8:Circuit1 ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Breaker outlet CP" ;
 .
 pt8:Circuit1
   a s223:ElectricWire ;
   s223:cnx pt8:JunctionInletCP ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Circuit1" ;
 .
 pt8:CircuitBranch1
   a s223:ElectricWire ;
   s223:cnx pt8:Motor1InletCP ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Circuit branch1" ;
 .
 pt8:CircuitBranch2
   a s223:ElectricWire ;
   s223:cnx pt8:Motor2InletCP ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Circuit branch2" ;
 .
 pt8:CircuitBranch3
   a s223:ElectricWire ;
   s223:cnx pt8:Motor3InletCP ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Circuit branch3" ;
 .
 pt8:Junction
@@ -636,26 +646,31 @@ pt8:Junction
   s223:cnx pt8:JunctionOutletCP1 ;
   s223:cnx pt8:JunctionOutletCP2 ;
   s223:cnx pt8:JunctionOutletCP3 ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Junction" ;
 .
 pt8:JunctionInletCP
   a s223:InletConnectionPoint ;
   s223:cnx pt8:Junction ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Junction inlet CP" ;
 .
 pt8:JunctionOutletCP1
   a s223:OutletConnectionPoint ;
   s223:cnx pt8:CircuitBranch1 ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Junction outlet CP1" ;
 .
 pt8:JunctionOutletCP2
   a s223:OutletConnectionPoint ;
   s223:cnx pt8:CircuitBranch2 ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Junction outlet CP2" ;
 .
 pt8:JunctionOutletCP3
   a s223:OutletConnectionPoint ;
   s223:cnx pt8:CircuitBranch3 ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Junction outlet CP3" ;
 .
 pt8:Motor1
@@ -665,6 +680,7 @@ pt8:Motor1
 .
 pt8:Motor1InletCP
   a s223:InletConnectionPoint ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Motor1Inlet CP" ;
 .
 pt8:Motor2
@@ -674,6 +690,7 @@ pt8:Motor2
 .
 pt8:Motor2InletCP
   a s223:InletConnectionPoint ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Motor2Inlet CP" ;
 .
 pt8:Motor3
@@ -683,5 +700,6 @@ pt8:Motor3
 .
 pt8:Motor3InletCP
   a s223:InletConnectionPoint ;
+  s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Motor3Inlet CP" ;
 .
