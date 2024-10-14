@@ -21,13 +21,11 @@
 .
 psm:AHUChilledWaterInlet
   a s223:InletConnectionPoint ;
-  s223:connectsThrough psm:PipeFromChiller ;
   s223:hasMedium s223:Water-ChilledWater ;
   rdfs:label "AHUChilled water inlet" ;
 .
 psm:AHUChilledWaterOutlet
   a s223:OutletConnectionPoint ;
-  s223:connectsThrough psm:PipeToChiller ;
   s223:hasMedium s223:Water-ChilledWater ;
   rdfs:label "AHUChilled water outlet" ;
 .
@@ -216,12 +214,26 @@ psm:BreakerCP5Phase
 .
 psm:BreakerPanel1
   a s223:System ;
+  s223:hasBoundaryConnectionPoint psm:BR1OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR2OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR3OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR4OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR5OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:MainBreakerInletCP ;
   s223:hasMember psm:ElectricBreaker1 ;
   s223:hasMember psm:ElectricBreaker2 ;
   s223:hasMember psm:ElectricBreaker3 ;
   s223:hasMember psm:ElectricBreaker4 ;
   s223:hasMember psm:ElectricBreaker5 ;
+  s223:hasMember psm:MainBreaker ;
+  s223:hasOptionalConnectionPoint psm:BR4OutletConnectionPoint ;
+  s223:hasOptionalConnectionPoint psm:BR5OutletConnectionPoint ;
   rdfs:label "Breaker panel1" ;
+.
+psm:CPToGround
+  a s223:BidirectionalConnectionPoint ;
+  s223:hasMedium s223:Medium-ThermalContact ;
+  rdfs:label "CPTo ground" ;
 .
 psm:ChilledWaterInletTemp
   a s223:QuantifiableObservableProperty ;
@@ -385,6 +397,12 @@ psm:ElectricCircuit3
   s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
   rdfs:label "Electric Circuit 3" ;
 .
+psm:ElectricInletCP
+  a s223:InletConnectionPoint ;
+  s223:cnx psm:PowerToCoil ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Electric inlet CP" ;
+.
 psm:ExhaustAirDamperActuator
   a s223:Actuator ;
   s223:actuatedByProperty psm:ExhaustAirDamperPosition ;
@@ -457,23 +475,12 @@ psm:ExternalBoilerOutletCP
   s223:hasMedium s223:Water-HotWater ;
   rdfs:label "External boiler outlet CP" ;
 .
-psm:ExternalChiller
-  a s223:Chiller ;
-  s223:hasConnectionPoint psm:ExternalChillerInletCP ;
-  s223:hasConnectionPoint psm:ExternalChillerOutletCP ;
-  rdfs:label "External chiller" ;
-.
-psm:ExternalChillerInletCP
-  a s223:InletConnectionPoint ;
-  s223:cnx psm:PipeToChiller ;
-  s223:hasMedium s223:Fluid-Water ;
-  rdfs:label "External chiller inlet CP" ;
-.
-psm:ExternalChillerOutletCP
-  a s223:OutletConnectionPoint ;
-  s223:cnx psm:PipeFromChiller ;
-  s223:hasMedium s223:Water-ChilledWater ;
-  rdfs:label "External chiller outlet CP" ;
+psm:ExternalLoop
+  a s223:Coil ;
+  s223:cnx psm:CPToGround ;
+  s223:hasConnectionPoint psm:LoopInletCP ;
+  s223:hasConnectionPoint psm:LoopOutletCP ;
+  rdfs:label "External loop" ;
 .
 psm:FanInletConnectionPoint
   a s223:InletConnectionPoint ;
@@ -654,6 +661,32 @@ psm:InletIntraCorridor4CP
   s223:isConnectionPointOf psm:HVACSpace4 ;
   rdfs:label "Inlet intra corridor4CP" ;
 .
+psm:InternalAHUElectricJunction
+  a s223:Junction ;
+  s223:hasConnectionPoint psm:JunctionIn ;
+  s223:hasConnectionPoint psm:JunctionOut1 ;
+  s223:hasConnectionPoint psm:JunctionOut2 ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Internal AHUElectric junction" ;
+.
+psm:JunctionIn
+  a s223:InletConnectionPoint ;
+  s223:hasMedium s223:Electricity-AC ;
+  s223:mapsTo psm:AHUElectricityInlet ;
+  rdfs:label "Junction in" ;
+.
+psm:JunctionOut1
+  a s223:OutletConnectionPoint ;
+  s223:cnx psm:PowerToFan ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Junction out1" ;
+.
+psm:JunctionOut2
+  a s223:OutletConnectionPoint ;
+  s223:cnx psm:PowerToCoil ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Junction out2" ;
+.
 psm:Kitchenette
   a s223:PhysicalSpace ;
   s223:encloses psm:HVACSpace6 ;
@@ -795,6 +828,23 @@ psm:LightingZone6
   s223:hasDomain s223:Domain-Lighting ;
   s223:hasDomainSpace psm:LightingSpace6 ;
   rdfs:label "LightingZone6" ;
+.
+psm:LoopInletCP
+  a s223:InletConnectionPoint ;
+  s223:hasMedium s223:Fluid-Water ;
+  rdfs:label "Loop inlet CP" ;
+.
+psm:LoopOutletCP
+  a s223:OutletConnectionPoint ;
+  s223:cnx psm:LoopToValve ;
+  s223:hasMedium s223:Water-ChilledWater ;
+  rdfs:label "Loop outlet CP" ;
+.
+psm:LoopToValve
+  a s223:Pipe ;
+  s223:cnx psm:AHUChilledWaterInlet ;
+  s223:hasMedium s223:Water-ChilledWater ;
+  rdfs:label "Loop to Valve" ;
 .
 psm:Luminaire1
   a s223:Luminaire ;
@@ -1488,20 +1538,20 @@ psm:PipeFromBoiler
   s223:hasMedium s223:Water-HotWater ;
   rdfs:label "Pipe from boiler" ;
 .
-psm:PipeFromChiller
-  a s223:Connection ;
-  s223:hasMedium s223:GlycolSolution-30Percent ;
-  rdfs:label "Pipe from chiller" ;
-.
 psm:PipeToBoiler
   a s223:Connection ;
   s223:hasMedium s223:Water-HotWater ;
   rdfs:label "Pipe to boiler" ;
 .
-psm:PipeToChiller
-  a s223:Connection ;
-  s223:hasMedium s223:GlycolSolution-30Percent ;
-  rdfs:label "Pipe to chiller" ;
+psm:PowerToCoil
+  a s223:ElectricWire ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Power to coil" ;
+.
+psm:PowerToFan
+  a s223:ElectricWire ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Power to fan" ;
 .
 psm:PrivateOffice
   a s223:PhysicalSpace ;
@@ -1589,8 +1639,8 @@ psm:SupplyFanActuator
 .
 psm:SupplyFanElectricInCP
   a s223:InletConnectionPoint ;
+  s223:cnx psm:PowerToFan ;
   s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
-  s223:mapsTo psm:AHUElectricityInlet ;
   rdfs:label "Supply fan electric in CP" ;
 .
 psm:SupplyFanSpeed
@@ -1613,6 +1663,8 @@ psm:SupplyFromExteriorAir
 .
 psm:SupplySystem
   a s223:System ;
+  s223:hasBoundaryConnectionPoint psm:CPToGround ;
+  s223:hasMember psm:ExternalLoop ;
   s223:hasMember psm:i00007 ;
   s223:hasMember psm:i00011 ;
   s223:hasMember psm:i00016 ;
@@ -1983,8 +2035,16 @@ psm:VAVSupply
   s223:hasMedium s223:Fluid-Air ;
   rdfs:label "VAVSupply" ;
 .
+psm:ValveToCoil
+  a s223:Pipe ;
+  s223:cnx psm:i00039 ;
+  s223:cnx psm:i00044 ;
+  s223:hasMedium s223:Water-ChilledWater ;
+  rdfs:label "Valve to coil" ;
+.
 psm:i00001
   a s223:AirHandlingUnit ;
+  s223:contains psm:InternalAHUElectricJunction ;
   s223:contains psm:OutsideAirJunction ;
   s223:contains psm:i00007 ;
   s223:contains psm:i00011 ;
@@ -2221,6 +2281,7 @@ psm:i00035
 .
 psm:i00036
   a s223:CoolingCoil ;
+  s223:cnx psm:ElectricInletCP ;
   s223:cnx psm:i00037 ;
   s223:cnx psm:i00038 ;
   s223:cnx psm:i00039 ;
@@ -2245,13 +2306,13 @@ psm:i00039
   a s223:InletConnectionPoint ;
   s223:cnx psm:i00036 ;
   s223:hasMedium s223:Water-ChilledWater ;
-  s223:mapsTo psm:AHUChilledWaterInlet ;
   rdfs:label "A-9.chilled_water_coil.chilledWaterSupply" ;
 .
 psm:i00040
   a s223:OutletConnectionPoint ;
   s223:cnx psm:i00036 ;
-  s223:hasMedium s223:Water-ChilledWater ;
+  s223:hasMedium s223:Fluid-Water ;
+  s223:mapsTo psm:AHUChilledWaterOutlet ;
   rdfs:label "A-9.chilled_water_coil.chilledWaterReturn" ;
 .
 psm:i00041
@@ -2270,21 +2331,21 @@ psm:i00042
 psm:i00043
   a s223:InletConnectionPoint ;
   s223:cnx psm:i00041 ;
-  s223:cnx psm:i00045 ;
   s223:hasMedium s223:Water-ChilledWater ;
+  s223:mapsTo psm:AHUChilledWaterInlet ;
   rdfs:label "A-9.chilled_water_coil.chilled_water_valve.chilledWaterInlet" ;
 .
 psm:i00044
   a s223:OutletConnectionPoint ;
   s223:cnx psm:i00041 ;
   s223:hasMedium s223:Water-ChilledWater ;
-  s223:mapsTo psm:AHUChilledWaterOutlet ;
   rdfs:label "A-9.chilled_water_coil.chilled_water_valve.chilledWaterOutlet" ;
 .
 psm:i00045
   a s223:Connection ;
-  s223:cnx psm:i00040 ;
-  s223:hasMedium s223:Water-ChilledWater ;
+  s223:cnx psm:AHUChilledWaterOutlet ;
+  s223:cnx psm:LoopInletCP ;
+  s223:hasMedium s223:Fluid-Water ;
   rdfs:label "Chilled water connection" ;
 .
 psm:i00046
