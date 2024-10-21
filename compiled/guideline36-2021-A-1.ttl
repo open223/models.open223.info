@@ -1,0 +1,176 @@
+@prefix g36: <http://data.ashrae.org/standard223/1.0/extensions/g36#> .
+@prefix mysystem1: <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#> .
+@prefix ns1: <http://qudt.org/schema/qudt/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+mysystem1: a owl:Ontology ;
+    rdfs:label "" .
+
+mysystem1:PhysicalSpace a s223:PhysicalSpace ;
+    rdfs:label "Physicalspace" ;
+    s223:encloses mysystem1:PhysicalSpace-hvac-domain .
+
+mysystem1:VAVCoolingOnly-damper-actuator a s223:Actuator ;
+    rdfs:label "Vavcoolingonly Damper Actuator" ;
+    s223:actuatedByProperty mysystem1:VAVCoolingOnly-damper-command ;
+    s223:actuates mysystem1:VAVCoolingOnly-damper .
+
+mysystem1:VAVCoolingOnly-discharge-air-flow-sensor a s223:Sensor ;
+    rdfs:label "Vavcoolingonly Discharge Air Flow Sensor" ;
+    s223:hasObservationLocation mysystem1:VAVCoolingOnly-out ;
+    s223:observes mysystem1:VAVCoolingOnly-discharge-air-flow .
+
+mysystem1:VAVCoolingOnly-duct-after-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Vavcoolingonly Duct After Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem1:VAVCoolingOnly-duct-before-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Vavcoolingonly Duct Before Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem1:zone a s223:Zone,
+        g36:Zone ;
+    rdfs:label "Zone" ;
+    s223:hasDomain s223:Domain-HVAC ;
+    s223:hasDomainSpace mysystem1:PhysicalSpace-hvac-domain ;
+    s223:hasProperty mysystem1:zone-co2-concentration,
+        mysystem1:zone-temp .
+
+mysystem1:VAVCoolingOnly-damper-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vavcoolingonly Damper Position" ;
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
+
+mysystem1:zone-co2-concentration a s223:QuantifiableObservableProperty ;
+    rdfs:label "Zone Co2 Concentration" ;
+    s223:ofSubstance s223:Constituent-CO2 ;
+    ns1:hasQuantityKind qudtqk:MoleFraction ;
+    ns1:hasUnit unit:PPM .
+
+mysystem1:zone-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Zone Temp" ;
+    ns1:hasQuantityKind qudtqk:Temperature ;
+    ns1:hasUnit unit:DEG_C .
+
+mysystem1:VAVCoolingOnly-damper-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Vavcoolingonly Damper Command" ;
+    s223:hasAspect s223:EnumerationKind-Position ;
+    ns1:hasQuantityKind qudtqk:DimensionlessRatio ;
+    ns1:hasUnit unit:PERCENT .
+
+mysystem1:VAVCoolingOnly-damper-in a s223:InletConnectionPoint ;
+    rdfs:label "Vavcoolingonly Damper In" ;
+    s223:cnx mysystem1:VAVCoolingOnly-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:VAVCoolingOnly-damper ;
+    s223:mapsTo mysystem1:VAVCoolingOnly-in .
+
+mysystem1:VAVCoolingOnly-damper-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vavcoolingonly Damper Out" ;
+    s223:cnx mysystem1:VAVCoolingOnly-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:VAVCoolingOnly-damper ;
+    s223:mapsTo mysystem1:VAVCoolingOnly-out .
+
+mysystem1:VAVCoolingOnly-discharge-air-flow a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vavcoolingonly Discharge Air Flow" ;
+    s223:hasAspect s223:Role-Discharge ;
+    ns1:hasQuantityKind qudtqk:VolumeFlowRate ;
+    ns1:hasUnit unit:FT3-PER-MIN .
+
+mysystem1:PhysicalSpace-hvac-domain-in a s223:InletConnectionPoint ;
+    rdfs:label "Physicalspace Hvac Domain In" ;
+    s223:cnx mysystem1:PhysicalSpace-hvac-domain,
+        mysystem1:vav-supply-to-room-connection ;
+    s223:connectsThrough mysystem1:vav-supply-to-room-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:PhysicalSpace-hvac-domain .
+
+mysystem1:PhysicalSpace-hvac-domain-out a s223:OutletConnectionPoint ;
+    rdfs:label "Physicalspace Hvac Domain Out" ;
+    s223:cnx mysystem1:PhysicalSpace-hvac-domain,
+        mysystem1:room-return-to-vav-connection ;
+    s223:connectsThrough mysystem1:room-return-to-vav-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:PhysicalSpace-hvac-domain .
+
+mysystem1:VAVCoolingOnly-in a s223:InletConnectionPoint ;
+    rdfs:label "Vavcoolingonly In" ;
+    s223:cnx mysystem1:VAVCoolingOnly,
+        mysystem1:room-return-to-vav-connection ;
+    s223:connectsThrough mysystem1:room-return-to-vav-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem1:VAVCoolingOnly .
+
+mysystem1:VAVCoolingOnly-damper a s223:Damper,
+        g36:Damper ;
+    rdfs:label "Vavcoolingonly Damper" ;
+    s223:cnx mysystem1:VAVCoolingOnly-damper-in,
+        mysystem1:VAVCoolingOnly-damper-out ;
+    s223:hasConnectionPoint mysystem1:VAVCoolingOnly-damper-in,
+        mysystem1:VAVCoolingOnly-damper-out ;
+    s223:hasProperty mysystem1:VAVCoolingOnly-damper-command,
+        mysystem1:VAVCoolingOnly-damper-position .
+
+mysystem1:VAVCoolingOnly-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vavcoolingonly Out" ;
+    s223:cnx mysystem1:VAVCoolingOnly,
+        mysystem1:vav-supply-to-room-connection ;
+    s223:connectsThrough mysystem1:vav-supply-to-room-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem1:VAVCoolingOnly-discharge-air-flow ;
+    s223:isConnectionPointOf mysystem1:VAVCoolingOnly .
+
+mysystem1:room-return-to-vav-connection a s223:Connection ;
+    rdfs:label "Room Return To Vav Connection" ;
+    s223:cnx mysystem1:PhysicalSpace-hvac-domain-out,
+        mysystem1:VAVCoolingOnly-in ;
+    s223:connectsAt mysystem1:PhysicalSpace-hvac-domain-out,
+        mysystem1:VAVCoolingOnly-in ;
+    s223:connectsFrom mysystem1:PhysicalSpace-hvac-domain ;
+    s223:connectsTo mysystem1:VAVCoolingOnly ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem1:vav-supply-to-room-connection a s223:Connection ;
+    rdfs:label "Vav Supply To Room Connection" ;
+    s223:cnx mysystem1:PhysicalSpace-hvac-domain-in,
+        mysystem1:VAVCoolingOnly-out ;
+    s223:connectsAt mysystem1:PhysicalSpace-hvac-domain-in,
+        mysystem1:VAVCoolingOnly-out ;
+    s223:connectsFrom mysystem1:VAVCoolingOnly ;
+    s223:connectsTo mysystem1:PhysicalSpace-hvac-domain ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem1:VAVCoolingOnly a s223:SingleDuctTerminal,
+        g36:VAV ;
+    rdfs:label "Vavcoolingonly" ;
+    s223:cnx mysystem1:VAVCoolingOnly-in,
+        mysystem1:VAVCoolingOnly-out ;
+    s223:connected mysystem1:PhysicalSpace-hvac-domain ;
+    s223:connectedFrom mysystem1:PhysicalSpace-hvac-domain ;
+    s223:connectedThrough mysystem1:room-return-to-vav-connection,
+        mysystem1:vav-supply-to-room-connection ;
+    s223:connectedTo mysystem1:PhysicalSpace-hvac-domain ;
+    s223:contains mysystem1:VAVCoolingOnly-damper ;
+    s223:hasConnectionPoint mysystem1:VAVCoolingOnly-in,
+        mysystem1:VAVCoolingOnly-out .
+
+mysystem1:PhysicalSpace-hvac-domain a s223:DomainSpace ;
+    rdfs:label "Physicalspace Hvac Domain" ;
+    s223:cnx mysystem1:PhysicalSpace-hvac-domain-in,
+        mysystem1:PhysicalSpace-hvac-domain-out ;
+    s223:connected mysystem1:VAVCoolingOnly ;
+    s223:connectedFrom mysystem1:VAVCoolingOnly ;
+    s223:connectedThrough mysystem1:room-return-to-vav-connection,
+        mysystem1:vav-supply-to-room-connection ;
+    s223:connectedTo mysystem1:VAVCoolingOnly ;
+    s223:hasConnectionPoint mysystem1:PhysicalSpace-hvac-domain-in,
+        mysystem1:PhysicalSpace-hvac-domain-out ;
+    s223:hasDomain s223:Domain-HVAC .
+

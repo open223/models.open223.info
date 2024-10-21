@@ -603,34 +603,35 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:nrel_example/nrel00000379&gt; ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;urn:nrel_example/nrel00000379&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;urn:nrel_example/nrel00000066&gt; because it is associated with a Junction or Equipment that is contained by &lt;urn:nrel_example/nrel00000066&gt;.&quot; ;
-            sh:resultPath ns2:mapsTo ;
+            sh:focusNode &lt;urn:nrel_example/nrel00001210&gt; ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;urn:nrel_example/nrel00001210&gt; probably needs an association with a Connection, or use of hasOptionalConnectionPoint or hasBoundaryConnectionPoint qualifiers.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n5efdc66aca98415bb42109aa61d1c497b3 ;
+            sh:sourceConstraint _:n0c85f043e9d9419f9224854a5477486cb5 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/8d8adefe&gt; ],
+            sh:sourceShape &lt;urn:well-known/b17ae65f&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:nrel_example/nrel00001129&gt; ;
-            sh:resultMessage &quot;s223: Connect
+            sh:focusNode ns2:EnumerationKind-FlowStatus ;
+            sh:resultMessage &quot;s223: Class ns2:EnumerationKind-FlowStatus must have an rdfs:comment.&quot; ;
+   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:nrel_example/nrel00000583
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:nrel_example/nrel00000048
+  - urn:nrel_example/nrel00000048 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+urn:nrel_example/nrel00001102
+  - urn:nrel_example/nrel00001102 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+urn:nrel_example/nrel00001075
+  - urn:nrel_example/nrel00001075 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+urn:nrel_example/nrel00001115
+  - urn:nrel_example/nrel00001115 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+urn:nrel_example/nrel00000583
   - urn:nrel_example/nrel00000583 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
 urn:nrel_example/nrel00000108
   - urn:nrel_example/nrel00000108 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
 urn:nrel_example/nrel00000501
   - urn:nrel_example/nrel00000501 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-urn:nrel_example/nrel00001115
-  - urn:nrel_example/nrel00001115 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-urn:nrel_example/nrel00000048
-  - urn:nrel_example/nrel00000048 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-urn:nrel_example/nrel00001075
-  - urn:nrel_example/nrel00001075 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
 urn:nrel_example/nrel00001315
   - urn:nrel_example/nrel00001315 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-urn:nrel_example/nrel00001102
-  - urn:nrel_example/nrel00001102 needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
 </pre></div>
 </div>
 </div>
