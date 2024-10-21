@@ -4,7 +4,7 @@ import os
 
 
 def get_git_last_modified_date(file_path):
-    return datetime.datetime.strptime(os.popen(f"git log -1 --date=format:'%Y-%m-%d %H:%M:%S' --format=%cd -- {file_path}").read().strip(), '%Y-%m-%d %H:%M:%S')
+    return datetime.datetime.strptime(os.popen(f"git log -1 --date=format:'%Y-%m-%d %H:%M:%S' --format=%ci -- {file_path}").read().strip(), '%Y-%m-%d %H:%M:%S %z')
 
 def generate_python_code(model_file_path):
     s223_last_updated = get_git_last_modified_date("ontologies/223p.ttl")
