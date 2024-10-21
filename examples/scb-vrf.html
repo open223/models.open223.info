@@ -407,7 +407,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lbnl-example-scb-vrf">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
+223P was last updated on 2024-10-21 09:58:46. The model file was last updated on 2024-09-13 16:54:53</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="lbnl-example-scb-vrf">
 <h1>LBNL Example SCB VRF<a class="headerlink" href="#lbnl-example-scb-vrf" title="Link to this heading">#</a></h1>
 <p>This is a reference model provided by LBNL of a small office building using a VRF Heat Recovery System. Labels have been anonymized, and may not be interpretable.</p>
 <section id="downloads">
@@ -591,19 +596,16 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns4:00097 ;
-            sh:resultMessage &quot;s223: A DomainSpace must be enclosed by a PhysicalSpace.&quot; ;
-            sh:resultPath [ sh:inversePath ns2:encloses ] ;
+            sh:focusNode ns4:00040 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00040&gt; probably needs an association with a Connection, or use of hasOptionalConnectionPoint or hasBoundaryConnectionPoint qualifiers.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/0478b19d&gt; ],
+            sh:sourceConstraint _:n405ac243a7a546aa956d302441ac37e5b11 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/f01a7d5d&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode ns4:01167 ;
-            sh:resultMessage &quot;s223: A DomainSpace must be enclosed by a PhysicalSpace.&quot; ;
-            sh:resultPath [ sh:inversePath ns2:encloses ] ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-  
+            sh:focusNode ns4:00041 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http:
 </pre></div>
 </div>
 </div>

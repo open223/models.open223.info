@@ -10,6 +10,11 @@ kernelspec:
   name: python3
 ---
 
+```{warning}
+This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
+223P was last updated on 2024-10-21 09:58:46. The model file was last updated on 2024-09-14 12:12:25
+```
+        
 # PNNL Example Building 1 Model 2
 
 Example Building 1 is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.

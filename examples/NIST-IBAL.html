@@ -408,7 +408,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="intelligent-buildings-agents-laboratory-ibal">
+  <div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
+223P was last updated on 2024-10-21 09:58:46. The model file was last updated on 2024-09-12 16:11:46</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="intelligent-buildings-agents-laboratory-ibal">
 <h1>Intelligent Buildings Agents Laboratory (IBAL)<a class="headerlink" href="#intelligent-buildings-agents-laboratory-ibal" title="Link to this heading">#</a></h1>
 <p>The IBAL is a mixed system lab at NIST that is able to test commercial equipment under simulated conditions. For more information, vist the <a class="reference external" href="https://ibal.nist.gov/">IBAL Database</a>.</p>
 <section id="schematic-view">
@@ -636,81 +641,81 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
 @prefix ns1: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#VAV_3_E_OCP&gt; ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#VAV_3_E_OCP&gt; probably needs an association with a Connection, or use of hasOptionalConnectionPoint or hasBoundaryConnectionPoint qualifiers.&quot; ;
-            sh:resultPath ns2:connectsThrough ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n70443b82064942dcb4762773fc2e5455b11 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/6a93e8c7&gt; ],
+            sh:focusNode &lt;http://example.org/IBAL#WaterChiller_2&gt; ;
+            sh:resultMessage &quot;s223: If the relation contains is present it must associate the Equipment with either Equipment or Junction.&quot; ;
+            sh:resultPath ns3:contains ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/c503479d&gt; ;
+            sh:value &lt;http://example.org/IBAL#ChillerHEE2&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#Jnc55_OCP2&gt; ;
-            sh:resultMessage &quot;s223: Conne
+            sh:focusNode &lt;http://example.org/IBAL#WaterPump_1_S_OCP&gt; ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://example.org/IBAL#WaterPump_1_S_OCP&gt; probably needs an association wi
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/IBAL#HEE1_LowerOCP
-  - http://example.org/IBAL#HEE1_LowerOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEC1_LowerICP
-  - http://example.org/IBAL#HEC1_LowerICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEE2_UpperICP
-  - http://example.org/IBAL#HEE2_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEC1_UpperICP
-  - http://example.org/IBAL#HEC1_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEE2_LowerICP
-  - http://example.org/IBAL#HEE2_LowerICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP
+  - http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_3_Upper_ICP
+  - http://example.org/IBAL#PlateHeatExchange_3_Upper_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP
+  - http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_3_Upper_OCP
+  - http://example.org/IBAL#PlateHeatExchange_3_Upper_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEC2_UpperOCP
+  - http://example.org/IBAL#HEC2_UpperOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP
+  - http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP
+  - http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEE2_LowerOCP
+  - http://example.org/IBAL#HEE2_LowerOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP
+  - http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEC2_LowerOCP
+  - http://example.org/IBAL#HEC2_LowerOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
 http://example.org/IBAL#HEE2_UpperOCP
   - http://example.org/IBAL#HEE2_UpperOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEE1_UpperICP
-  - http://example.org/IBAL#HEE1_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_3_Lower_ICP
-  - http://example.org/IBAL#PlateHeatExchange_3_Lower_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
 http://example.org/IBAL#HEE1_LowerICP
   - http://example.org/IBAL#HEE1_LowerICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
 http://example.org/IBAL#HEC1_UpperOCP
   - http://example.org/IBAL#HEC1_UpperOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP
-  - http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEC1_LowerOCP
-  - http://example.org/IBAL#HEC1_LowerOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_2_Lower_ICP
-  - http://example.org/IBAL#PlateHeatExchange_2_Lower_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_3_Lower_OCP
-  - http://example.org/IBAL#PlateHeatExchange_3_Lower_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP
-  - http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP
-  - http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEC2_LowerOCP
-  - http://example.org/IBAL#HEC2_LowerOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP
-  - http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEC2_LowerICP
-  - http://example.org/IBAL#HEC2_LowerICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP
-  - http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEE2_LowerICP
+  - http://example.org/IBAL#HEE2_LowerICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
 http://example.org/IBAL#HEC2_UpperICP
   - http://example.org/IBAL#HEC2_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEE1_UpperOCP
-  - http://example.org/IBAL#HEE1_UpperOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEE1_UpperICP
+  - http://example.org/IBAL#HEE1_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP
+  - http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_3_Lower_OCP
+  - http://example.org/IBAL#PlateHeatExchange_3_Lower_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEC1_LowerOCP
+  - http://example.org/IBAL#HEC1_LowerOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
 http://example.org/IBAL#PlateHeatExchange_1_Upper_ICP
   - http://example.org/IBAL#PlateHeatExchange_1_Upper_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_3_Upper_OCP
-  - http://example.org/IBAL#PlateHeatExchange_3_Upper_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEE2_LowerOCP
-  - http://example.org/IBAL#HEE2_LowerOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP
-  - http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_3_Upper_ICP
-  - http://example.org/IBAL#PlateHeatExchange_3_Upper_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
-http://example.org/IBAL#HEC2_UpperOCP
-  - http://example.org/IBAL#HEC2_UpperOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEC1_LowerICP
+  - http://example.org/IBAL#HEC1_LowerICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_2_Lower_ICP
+  - http://example.org/IBAL#PlateHeatExchange_2_Lower_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_3_Lower_ICP
+  - http://example.org/IBAL#PlateHeatExchange_3_Lower_ICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEC2_LowerICP
+  - http://example.org/IBAL#HEC2_LowerICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEE1_LowerOCP
+  - http://example.org/IBAL#HEE1_LowerOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEC1_UpperICP
+  - http://example.org/IBAL#HEC1_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEE1_UpperOCP
+  - http://example.org/IBAL#HEE1_UpperOCP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
+http://example.org/IBAL#HEE2_UpperICP
+  - http://example.org/IBAL#HEE2_UpperICP needs between 1 and 1 instances of http://data.ashrae.org/standard223#Connectable on path http://data.ashrae.org/standard223#isConnectionPointOf
 </pre></div>
 </div>
 </div>

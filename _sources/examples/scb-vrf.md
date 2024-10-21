@@ -10,6 +10,11 @@ kernelspec:
   name: python3
 ---
 
+```{warning}
+This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
+223P was last updated on 2024-10-21 09:58:46. The model file was last updated on 2024-09-13 16:54:53
+```
+        
 # LBNL Example SCB VRF
 
 This is a reference model provided by LBNL of a small office building using a VRF Heat Recovery System. Labels have been anonymized, and may not be interpretable.

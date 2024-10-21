@@ -10,6 +10,11 @@ kernelspec:
   name: python3
 ---
 
+```{warning}
+This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
+223P was last updated on 2024-10-21 09:58:46. The model file was last updated on 2024-09-14 12:12:25
+```
+        
 # PNNL Example Building 2 Model 1
 
 Exammple Building 2 is based on the [Department of Energy Prototype Medium Office Builiding](https://www.energycodes.gov/prototype-building-models). 
