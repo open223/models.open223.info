@@ -583,27 +583,23 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns5: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns5:00632 ;
+            sh:focusNode ns2:00525 ;
             sh:resultMessage &quot;s223: A DomainSpace must be enclosed by a PhysicalSpace.&quot; ;
-            sh:resultPath [ sh:inversePath ns2:encloses ] ;
+            sh:resultPath [ sh:inversePath ns3:encloses ] ;
             sh:resultSeverity sh:Info ;
             sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/1c1bef45&gt; ],
+            sh:sourceShape &lt;urn:well-known/38d7aec2&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode ns5:00525 ;
-            sh:resultMessage &quot;s223: A DomainSpace must be enclosed by a PhysicalSpace.&quot; ;
-            sh:resultPath [ sh:inversePath ns2:encloses ] ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-  
+            sh:focusNode ns2:00629 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00629&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;http://data.ashrae.org/standard223/data/scb-vrf#00611&gt; because it is associated with a Junction or
 </pre></div>
 </div>
 </div>
