@@ -391,7 +391,7 @@
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2024-10-22 18:02:17. The model file was last updated on 2024-09-13 16:54:53</p>
+223P was last updated on 2024-10-23 15:42:26. The model file was last updated on 2024-09-13 16:54:53</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="lbnl-example-scb-vrf">
 <h1>LBNL Example SCB VRF<a class="headerlink" href="#lbnl-example-scb-vrf" title="Link to this heading">#</a></h1>
@@ -569,22 +569,24 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns5: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns4: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns5:00094 ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00094&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;http://data.ashrae.org/standard223/data/scb-vrf#00076&gt; because it is associated with a Junction or Equipment that is contained by &lt;http://data.ashrae.org/standard223/data/scb-vrf#00076&gt;.&quot; ;
-            sh:resultPath ns3:mapsTo ;
+            sh:focusNode ns4:00007 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00007&gt; probably needs an association with a Connection, or use of hasOptionalConnectionPoint or hasBoundaryConnectionPoint qualifiers.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:nf909d4893a164bc2ab2db30ea781d4f6b9 ;
+            sh:sourceConstraint _:n1a1492808a044f99b736129d94122eebb12 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/88434474&gt; ],
-        [ a sh:Valid
+            sh:sourceShape &lt;urn:well-known/1636a3bc&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode ns4:01047 ;
+            sh:resultMessage &quot;s223: A Coil shall fit one o
 </pre></div>
 </div>
 </div>

@@ -392,7 +392,7 @@
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2024-10-22 18:02:17. The model file was last updated on 2024-09-12 16:11:46</p>
+223P was last updated on 2024-10-23 15:42:26. The model file was last updated on 2024-09-12 16:11:46</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="heat-pump-laboratory-hpl">
 <h1>Heat Pump Laboratory (HPL)<a class="headerlink" href="#heat-pump-laboratory-hpl" title="Link to this heading">#</a></h1>
@@ -563,22 +563,23 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns1: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/HPL#HeatExchanger&gt; ;
-            sh:resultMessage &quot;s223: A Coil shall fit one of the following patterns of ConnectionPoints: 1: Two inlets and two outlets using the medium Mix-Fluid. 2: One inlet and one outlet using the medium Mix-Fluid, and one or two bidirectionals using the medium Mix-Fluid or Medium-ThermalContact. 3: Three bidirectionals using the medium Mix-Fluid or Medium-ThermalContact.&quot; ;
+            sh:focusNode &lt;http://example.org/HPL#FinnedHeatExchanger_R_CP_2&gt; ;
+            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Connectable using the relation isConnectionPointOf.&quot; ;
+            sh:resultPath ns1:isConnectionPointOf ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:XoneConstraintComponent ;
-            sh:sourceShape ns3:Coil ;
-            sh:value &lt;http://example.org/HPL#HeatExchanger&gt; ],
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/b7778618&gt; ;
+            sh:value &lt;http://example.org/HPL#FinnedHeatExchanger&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/HPL#OA_Unit&gt; ;
-   
+            sh:focusNode &lt;http://example.org/HPL#FinnedHeatExchanger_A_OCP&gt; ;
+            sh:resultMessage &quot;s223: A ConnectionPoint must be associated with exactly one Connectable using the relation isConnectio
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/HPL#FinnedHeatExchanger_R_CP_1
