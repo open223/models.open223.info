@@ -1,24 +1,50 @@
 [
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-in",
         "@type": [
-            "http://data.ashrae.org/standard223#PhysicalSpace"
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
-        "http://data.ashrae.org/standard223#encloses": [
+        "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain"
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-supply-air-flow"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Physicalspace"
+                "@value": "Dualductinletsensors Cold Deck In"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-out",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+            "http://www.w3.org/2002/07/owl#Ontology"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": ""
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#imports": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/model/all"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-2",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper"
+            }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -27,14 +53,14 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Physicalspace Hvac Domain Out"
+                "@value": "Dualductinletsensors Junction In 2"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-in",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
@@ -48,28 +74,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Dualductinletsensors Out"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors Junction Out"
+                "@value": "Physicalspace Hvac Domain In"
             }
         ]
     },
@@ -103,13 +108,19 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-1",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction",
         "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
+            "http://data.ashrae.org/standard223#Junction"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-1"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-2"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-out"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -119,28 +130,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Dualductinletsensors Junction In 1"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors Hot Deck Supply Air Flow Sensor"
+                "@value": "Dualductinletsensors Junction"
             }
         ]
     },
@@ -166,7 +156,115 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Hot Deck In"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Heating"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Supply"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Hot Deck Supply Air Flow"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-supply-air-flow-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-in"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-supply-air-flow"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Cold Deck Supply Air Flow Sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Physicalspace Hvac Domain Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuatedByProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command"
+            }
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Cold Deck Damper Actuator"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#dual-duct-supply-to-room-connection",
         "@type": [
             "http://data.ashrae.org/standard223#Connection",
             "http://data.ashrae.org/standard223#Duct"
@@ -178,75 +276,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Dualductinletsensors Duct After Hot Deck Damper"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors Cold Deck Damper Command"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors Hot Deck Damper In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-supply-air-flow"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors Cold Deck In"
+                "@value": "Dual Duct Supply To Room Connection"
             }
         ]
     },
@@ -298,7 +328,49 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#dual-duct-supply-to-room-connection",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-1",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Junction In 1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Hot Deck Damper Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper",
         "@type": [
             "http://data.ashrae.org/standard223#Connection",
             "http://data.ashrae.org/standard223#Duct"
@@ -310,18 +382,54 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Dual Duct Supply To Room Connection"
+                "@value": "Dualductinletsensors Duct After Hot Deck Damper"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-out",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Damper",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-in"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-command"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-position"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Heating"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Supply"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Hot Deck Damper"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out",
         "@type": [
             "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#dual-duct-supply-to-room-connection"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -331,31 +439,23 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Dualductinletsensors Cold Deck Damper Out"
+                "@value": "Dualductinletsensors Out"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace",
         "@type": [
-            "http://data.ashrae.org/standard223#DomainSpace"
+            "http://data.ashrae.org/standard223#PhysicalSpace"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
+        "http://data.ashrae.org/standard223#encloses": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasDomain": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Domain-HVAC"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Physicalspace Hvac Domain"
+                "@value": "Physicalspace"
             }
         ]
     },
@@ -387,31 +487,130 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper",
         "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+            "http://data.ashrae.org/standard223#Damper",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
         ],
-        "http://data.ashrae.org/standard223#hasAspect": [
+        "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223#Role-Heating"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-in"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-position"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Cooling"
             },
             {
                 "@id": "http://data.ashrae.org/standard223#Role-Supply"
             }
         ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Cold Deck Damper"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
+            }
+        ],
         "http://qudt.org/schema/qudt/hasQuantityKind": [
             {
-                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
             }
         ],
         "http://qudt.org/schema/qudt/hasUnit": [
             {
-                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Dualductinletsensors Hot Deck Supply Air Flow"
+                "@value": "Dualductinletsensors Cold Deck Damper Command"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain",
+        "@type": [
+            "http://data.ashrae.org/standard223#DomainSpace"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-in"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasDomain": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Domain-HVAC"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Physicalspace Hvac Domain"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Hot Deck Supply Air Flow Sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Junction Out"
             }
         ]
     },
@@ -437,107 +636,53 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-supply-air-flow-sensor",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper",
         "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
         ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dualductinletsensors Duct After Cold Deck Damper"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors",
+        "@type": [
+            "http://data.ashrae.org/standard223#DualDuctTerminal",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithInletSensors"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
             {
                 "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-in"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
+            },
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-supply-air-flow"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in"
+            },
             {
-                "@value": "Dualductinletsensors Cold Deck Supply Air Flow Sensor"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#PhysicalSpace-hvac-domain-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#dual-duct-supply-to-room-connection"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out"
             }
         ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Physicalspace Hvac Domain In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuatedByProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command"
-            }
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
+        "http://data.ashrae.org/standard223#contains": [
             {
                 "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Dualductinletsensors Cold Deck Damper Actuator"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-supply-air-flow"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors Hot Deck In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-2",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors Junction In 2"
+                "@value": "Dualductinletsensors"
             }
         ]
     },
@@ -584,127 +729,13 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Damper",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-command"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-position"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Heating"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Supply"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors Hot Deck Damper"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors",
-        "@type": [
-            "http://data.ashrae.org/standard223#DualDuctTerminal",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#DualDuctTerminalWithInletSensors"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#contains": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors Duct After Cold Deck Damper"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction",
-        "@type": [
-            "http://data.ashrae.org/standard223#Junction"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-1"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-in-2"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-junction-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dualductinletsensors Junction"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-out",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-out",
         "@type": [
             "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-hot-deck-damper"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-duct-after-cold-deck-damper"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -714,59 +745,28 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Dualductinletsensors Hot Deck Damper Out"
+                "@value": "Dualductinletsensors Cold Deck Damper Out"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-in",
         "@type": [
-            "http://data.ashrae.org/standard223#Damper",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
+        "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-out"
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
             }
         ],
-        "http://data.ashrae.org/standard223#hasProperty": [
+        "http://data.ashrae.org/standard223#mapsTo": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-position"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Cooling"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Supply"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Dualductinletsensors Cold Deck Damper"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#",
-        "@type": [
-            "http://www.w3.org/2002/07/owl#Ontology"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": ""
-            }
-        ],
-        "http://www.w3.org/2002/07/owl#imports": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/model/all"
+                "@value": "Dualductinletsensors Hot Deck Damper In"
             }
         ]
     }
