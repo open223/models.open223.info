@@ -570,23 +570,21 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
 @prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns4: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns3: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns4:00007 ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00007&gt; probably needs an association with a Connection, or use of hasOptionalConnectionPoint or hasBoundaryConnectionPoint qualifiers.&quot; ;
-            sh:resultPath ns2:connectsThrough ;
+            sh:focusNode ns3:00016 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00016&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;http://data.ashrae.org/standard223/data/scb-vrf#00005&gt; because it is associated with a Junction or Equipment that is contained by &lt;http://data.ashrae.org/standard223/data/scb-vrf#00005&gt;.&quot; ;
+            sh:resultPath ns2:mapsTo ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n1a1492808a044f99b736129d94122eebb12 ;
+            sh:sourceConstraint _:nc185991f97bc4173b8e1687ecf0fe3acb5 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/1636a3bc&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode ns4:01047 ;
-            sh:resultMessage &quot;s223: A Coil shall fit one o
+            sh:sourceShape &lt;urn:well-known/b1f146c3&gt; ],
+        [ a sh:Valid
 </pre></div>
 </div>
 </div>
