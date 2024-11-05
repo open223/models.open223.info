@@ -45,13 +45,13 @@ if __name__ == "__main__":
         #topquadrant_shacl._MAX_EXTERNAL_LOOPS = 2
         graph = infer(graph, s223)
         #graph.expand(profile="shacl", backend="topquadrant")
-        valid, _, report = validate(graph, s223)
-        if not valid:
-            print(report)
-            raise Exception("Validation failed: {}".format(report))
     if args.output:
         for prefix, uri in namespaces.items():
             graph.bind(prefix, uri)
         graph.serialize(args.output, format="turtle")
     else:
         print(graph.serialize(format="turtle"))
+    valid, _, report = validate(graph, s223)
+    if not valid:
+        print(report)
+        raise Exception("Validation failed: {}".format(report))
