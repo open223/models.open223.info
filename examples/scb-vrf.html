@@ -391,7 +391,7 @@
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2024-10-23 15:42:26. The model file was last updated on 2024-09-13 16:54:53</p>
+223P was last updated on 2024-11-06 20:16:58. The model file was last updated on 2024-09-13 16:54:53</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="lbnl-example-scb-vrf">
 <h1>LBNL Example SCB VRF<a class="headerlink" href="#lbnl-example-scb-vrf" title="Link to this heading">#</a></h1>
@@ -570,21 +570,23 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
 @prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns3: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
+@prefix ns4: &lt;http://data.ashrae.org/standard223/data/scb-vrf#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns3:00016 ;
-            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00016&gt; could be missing a mapsTo relation to a ConnectionPoint of &lt;http://data.ashrae.org/standard223/data/scb-vrf#00005&gt; because it is associated with a Junction or Equipment that is contained by &lt;http://data.ashrae.org/standard223/data/scb-vrf#00005&gt;.&quot; ;
-            sh:resultPath ns2:mapsTo ;
+            sh:focusNode ns4:00009 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http://data.ashrae.org/standard223/data/scb-vrf#00009&gt; probably needs an association with a Connection, or use of hasOptionalConnectionPoint or hasBoundaryConnectionPoint qualifiers.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:nc185991f97bc4173b8e1687ecf0fe3acb5 ;
+            sh:sourceConstraint _:nea54c634c407410281e775d4f049567db11 ;
             sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/b1f146c3&gt; ],
-        [ a sh:Valid
+            sh:sourceShape &lt;urn:well-known/bb59087a&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode ns4:00201 ;
+            sh:resultMessage &quot;s223: ConnectionPoint &lt;http:
 </pre></div>
 </div>
 </div>
