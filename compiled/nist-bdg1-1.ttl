@@ -372,6 +372,12 @@ psm:Luminaire12OnOffStatus a s223:EnumerableProperty ;
     s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
     s223:hasValue s223:OnOff-Off .
 
+psm:Luminaire1InternalWire a s223:ElectricWire ;
+    rdfs:label "Luminaire1Internal wire" ;
+    s223:cnx psm:Driver1Outlet,
+        psm:LightEngine1Inlet ;
+    s223:hasMedium s223:Constituent-Electricity .
+
 psm:Luminaire2OnOffStatus a s223:EnumerableProperty ;
     rdfs:label "Luminaire2On off status" ;
     s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
@@ -411,6 +417,12 @@ psm:Luminaire9OnOffStatus a s223:EnumerableProperty ;
     rdfs:label "Luminaire9On off status" ;
     s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
     s223:hasValue s223:OnOff-Off .
+
+psm:MainBreakerCircuit3 a s223:ElectricWire ;
+    rdfs:label "Main breaker circuit3" ;
+    s223:cnx psm:BR3InletConnectionPoint,
+        psm:MainBreakerOutCP3 ;
+    s223:hasMedium s223:AC-240VLL-1Ph-60Hz .
 
 psm:MixedAirDamperPosition a s223:QuantifiableActuatableProperty ;
     rdfs:label "Mixed air damper position" ;
@@ -635,6 +647,18 @@ psm:Driver1Inlet a s223:InletConnectionPoint ;
     s223:isConnectionPointOf psm:Driver1 ;
     s223:mapsTo psm:Luminaire1Inlet .
 
+psm:ElectricCircuit3 a s223:ElectricWire ;
+    rdfs:label "Electric Circuit 3" ;
+    s223:cnx psm:AHUElectricityInlet,
+        psm:BR3OutletConnectionPoint ;
+    s223:hasMedium s223:AC-240VLL-1Ph-60Hz .
+
+psm:GridConnection a s223:ElectricWire ;
+    rdfs:label "Grid connection" ;
+    s223:cnx psm:MainBreakerInletCP,
+        psm:MainGridConnectionPoint ;
+    s223:hasMedium s223:AC-240VLL-120VLN-1Ph-60Hz .
+
 psm:HVACZone1Temperature a s223:QuantifiableObservableProperty ;
     rdfs:label "HVACZone1Temperature" ;
     s223:hasSetpoint psm:HVACZone1TemperatureSetpoint ;
@@ -688,6 +712,35 @@ psm:Luminaire2OnOff a s223:EnumeratedActuatableProperty ;
     s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
     s223:hasValue s223:OnOff-Off .
 
+psm:MainBreakerCircuit1 a s223:ElectricWire ;
+    rdfs:label "Main breaker circuit1" ;
+    s223:cnx psm:BR1InletConnectionPoint,
+        psm:MainBreakerOutCP1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+psm:MainBreakerCircuit2 a s223:ElectricWire ;
+    rdfs:label "Main breaker circuit2" ;
+    s223:cnx psm:BR2InletConnectionPoint,
+        psm:MainBreakerOutCP2 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+psm:MainBreakerCircuit4 a s223:ElectricWire ;
+    rdfs:label "Main breaker circuit4" ;
+    s223:cnx psm:BR4InletConnectionPoint,
+        psm:MainBreakerOutCP4 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+psm:MainBreakerCircuit5 a s223:ElectricWire ;
+    rdfs:label "Main breaker circuit5" ;
+    s223:cnx psm:BR5InletConnectionPoint,
+        psm:MainBreakerOutCP5 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+psm:MainGridPowerSource a s223:Generator ;
+    rdfs:label "Main grid power source" ;
+    s223:cnx psm:MainGridConnectionPoint ;
+    s223:hasConnectionPoint psm:MainGridConnectionPoint .
+
 psm:OAJunctionInlet a s223:InletConnectionPoint ;
     rdfs:label "OAJunction inlet" ;
     s223:cnx psm:OutsideAirJunction ;
@@ -714,6 +767,18 @@ psm:OccupancySpace4 a s223:DomainSpace ;
 psm:OccupancySpace5 a s223:DomainSpace ;
     rdfs:label "OccupancySpace5" ;
     s223:hasDomain s223:Domain-Occupancy .
+
+psm:PowerToCoil a s223:ElectricWire ;
+    rdfs:label "Power to coil" ;
+    s223:cnx psm:ElectricInletCP,
+        psm:JunctionOut2 ;
+    s223:hasMedium s223:Electricity-AC .
+
+psm:PowerToFan a s223:ElectricWire ;
+    rdfs:label "Power to fan" ;
+    s223:cnx psm:JunctionOut1,
+        psm:SupplyFanElectricInCP ;
+    s223:hasMedium s223:Electricity-AC .
 
 psm:TU1DamperPositionCommand a s223:QuantifiableActuatableProperty ;
     rdfs:label "TU1 Damper Position Command" ;
@@ -811,11 +876,59 @@ psm:ratmp a s223:QuantifiableObservableProperty ;
     ns1:hasQuantityKind qudtqk:Temperature ;
     ns1:hasUnit unit:DEG_F .
 
+psm:BR1InletConnectionPoint a s223:InletConnectionPoint ;
+    rdfs:label "BR1Inlet connection point" ;
+    s223:cnx psm:ElectricBreaker1,
+        psm:MainBreakerCircuit1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:ElectricBreaker1 .
+
+psm:BR2InletConnectionPoint a s223:InletConnectionPoint ;
+    rdfs:label "BR2Inlet connection point" ;
+    s223:cnx psm:ElectricBreaker2,
+        psm:MainBreakerCircuit2 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:ElectricBreaker2 .
+
+psm:BR3InletConnectionPoint a s223:InletConnectionPoint ;
+    rdfs:label "BR3Inlet connection point" ;
+    s223:cnx psm:ElectricBreaker3 ;
+    s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:ElectricBreaker3 .
+
+psm:BR4InletConnectionPoint a s223:InletConnectionPoint ;
+    rdfs:label "BR4Inlet connection point" ;
+    s223:cnx psm:ElectricBreaker4,
+        psm:MainBreakerCircuit4 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:ElectricBreaker4 .
+
+psm:BR5InletConnectionPoint a s223:InletConnectionPoint ;
+    rdfs:label "BR5Inlet connection point" ;
+    s223:cnx psm:ElectricBreaker5,
+        psm:MainBreakerCircuit5 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:ElectricBreaker5 .
+
 psm:CPToGround a s223:BidirectionalConnectionPoint ;
     rdfs:label "CPTo ground" ;
     s223:cnx psm:ExternalLoop ;
     s223:hasMedium s223:Medium-ThermalContact ;
     s223:isConnectionPointOf psm:ExternalLoop .
+
+psm:Driver1Outlet a s223:OutletConnectionPoint ;
+    rdfs:label "Driver1Outlet" ;
+    s223:cnx psm:Driver1,
+        psm:Luminaire1InternalWire ;
+    s223:hasMedium s223:Constituent-Electricity ;
+    s223:isConnectionPointOf psm:Driver1 .
+
+psm:ElectricInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Electric inlet CP" ;
+    s223:cnx psm:PowerToCoil,
+        psm:i00036 ;
+    s223:hasMedium s223:Electricity-AC ;
+    s223:isConnectionPointOf psm:i00036 .
 
 psm:HVACZone1TemperatureSetpoint a s223:QuantifiableActuatableProperty ;
     rdfs:label "HVACZone1Temperature setpoint" ;
@@ -824,16 +937,167 @@ psm:HVACZone1TemperatureSetpoint a s223:QuantifiableActuatableProperty ;
     ns1:hasQuantityKind qudtqk:Temperature ;
     ns1:hasUnit unit:DEG_F .
 
+psm:JunctionOut1 a s223:OutletConnectionPoint ;
+    rdfs:label "Junction out1" ;
+    s223:cnx psm:InternalAHUElectricJunction,
+        psm:PowerToFan ;
+    s223:hasMedium s223:Electricity-AC ;
+    s223:isConnectionPointOf psm:InternalAHUElectricJunction .
+
+psm:JunctionOut2 a s223:OutletConnectionPoint ;
+    rdfs:label "Junction out2" ;
+    s223:cnx psm:InternalAHUElectricJunction,
+        psm:PowerToCoil ;
+    s223:hasMedium s223:Electricity-AC ;
+    s223:isConnectionPointOf psm:InternalAHUElectricJunction .
+
 psm:Kitchenette a s223:PhysicalSpace ;
     rdfs:label "Kitchenette" ;
     s223:encloses psm:HVACSpace6,
         psm:LightingSpace6,
         psm:OccupancySpace5 .
 
+psm:LightEngine1Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Light engine1Inlet" ;
+    s223:cnx psm:LightEngine1 ;
+    s223:hasMedium s223:Constituent-Electricity ;
+    s223:isConnectionPointOf psm:LightEngine1 .
+
+psm:Luminaire10Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire10Inlet" ;
+    s223:cnx psm:ElectricCircuit2,
+        psm:Luminaire10 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire10 .
+
+psm:Luminaire11Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire11Inlet" ;
+    s223:cnx psm:ElectricCircuit2,
+        psm:Luminaire11 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire11 .
+
+psm:Luminaire12Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire12Inlet" ;
+    s223:cnx psm:ElectricCircuit2,
+        psm:Luminaire12 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire12 .
+
+psm:Luminaire2Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire2Inlet" ;
+    s223:cnx psm:ElectricCircuit1,
+        psm:Luminaire2 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire2 .
+
+psm:Luminaire3Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire3Inlet" ;
+    s223:cnx psm:ElectricCircuit1,
+        psm:Luminaire3 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire3 .
+
+psm:Luminaire4Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire4Inlet" ;
+    s223:cnx psm:ElectricCircuit1,
+        psm:Luminaire4 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire4 .
+
+psm:Luminaire5Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire5Inlet" ;
+    s223:cnx psm:ElectricCircuit2,
+        psm:Luminaire5 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire5 .
+
+psm:Luminaire6Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire6Inlet" ;
+    s223:cnx psm:ElectricCircuit2,
+        psm:Luminaire6 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire6 .
+
+psm:Luminaire7Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire7Inlet" ;
+    s223:cnx psm:ElectricCircuit2,
+        psm:Luminaire7 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire7 .
+
+psm:Luminaire8Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire8Inlet" ;
+    s223:cnx psm:ElectricCircuit2,
+        psm:Luminaire8 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire8 .
+
+psm:Luminaire9Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire9Inlet" ;
+    s223:cnx psm:ElectricCircuit2,
+        psm:Luminaire9 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:Luminaire9 .
+
+psm:MainBreakerOutCP1 a s223:OutletConnectionPoint ;
+    rdfs:label "Main breaker out CP1" ;
+    s223:cnx psm:MainBreaker,
+        psm:MainBreakerCircuit1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:hasProperty psm:BreakerCP1Phase ;
+    s223:isConnectionPointOf psm:MainBreaker .
+
+psm:MainBreakerOutCP2 a s223:OutletConnectionPoint ;
+    rdfs:label "Main breaker out CP2" ;
+    s223:cnx psm:MainBreaker,
+        psm:MainBreakerCircuit2 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:hasProperty psm:BreakerCP2Phase ;
+    s223:isConnectionPointOf psm:MainBreaker .
+
+psm:MainBreakerOutCP3 a s223:OutletConnectionPoint ;
+    rdfs:label "Main breaker out CP3" ;
+    s223:cnx psm:MainBreaker,
+        psm:MainBreakerCircuit3 ;
+    s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
+    s223:hasProperty psm:BreakerCP3Phase ;
+    s223:isConnectionPointOf psm:MainBreaker .
+
+psm:MainBreakerOutCP4 a s223:OutletConnectionPoint ;
+    rdfs:label "Main breaker out CP4" ;
+    s223:cnx psm:MainBreaker,
+        psm:MainBreakerCircuit4 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:hasProperty psm:BreakerCP4Phase ;
+    s223:isConnectionPointOf psm:MainBreaker .
+
+psm:MainBreakerOutCP5 a s223:OutletConnectionPoint ;
+    rdfs:label "Main breaker out CP5" ;
+    s223:cnx psm:MainBreaker,
+        psm:MainBreakerCircuit5 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:hasProperty psm:BreakerCP5Phase ;
+    s223:isConnectionPointOf psm:MainBreaker .
+
+psm:MainGridConnectionPoint a s223:OutletConnectionPoint ;
+    rdfs:label "Main grid connection point" ;
+    s223:cnx psm:GridConnection,
+        psm:MainGridPowerSource ;
+    s223:hasMedium s223:Electricity-AC ;
+    s223:isConnectionPointOf psm:MainGridPowerSource .
+
 psm:OpenOfficeDaylightLevel a s223:QuantifiableObservableProperty ;
     rdfs:label "Open office daylight level" ;
     ns1:hasQuantityKind qudtqk:Illuminance ;
     ns1:hasUnit unit:LUX .
+
+psm:SupplyFanElectricInCP a s223:InletConnectionPoint ;
+    rdfs:label "Supply fan electric in CP" ;
+    s223:cnx psm:PowerToFan,
+        psm:i00047 ;
+    s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:i00047 .
 
 psm:VAV1OuletReheatCoilCP a s223:OutletConnectionPoint ;
     rdfs:label "VAV1Oulet reheat coil CP" ;
@@ -863,51 +1127,39 @@ psm:i00052 a s223:InletConnectionPoint ;
     s223:isConnectionPointOf psm:i00051 ;
     s223:mapsTo psm:AHUReturnInlet .
 
-psm:BR1InletConnectionPoint a s223:InletConnectionPoint ;
-    rdfs:label "BR1Inlet connection point" ;
+psm:AHUElectricityInlet a s223:InletConnectionPoint ;
+    rdfs:label "AHUElectricity inlet" ;
+    s223:cnx psm:ElectricCircuit3,
+        psm:i00001 ;
+    s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:i00001 .
+
+psm:BR1OutletConnectionPoint a s223:OutletConnectionPoint ;
+    rdfs:label "BR1Outlet connection point" ;
     s223:cnx psm:ElectricBreaker1,
-        psm:MainBreakerCircuit1 ;
-    s223:connectsThrough psm:MainBreakerCircuit1 ;
+        psm:ElectricCircuit1 ;
     s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
     s223:isConnectionPointOf psm:ElectricBreaker1 .
 
-psm:BR2InletConnectionPoint a s223:InletConnectionPoint ;
-    rdfs:label "BR2Inlet connection point" ;
+psm:BR2OutletConnectionPoint a s223:OutletConnectionPoint ;
+    rdfs:label "BR2Outlet connection point" ;
     s223:cnx psm:ElectricBreaker2,
-        psm:MainBreakerCircuit2 ;
-    s223:connectsThrough psm:MainBreakerCircuit2 ;
+        psm:ElectricCircuit2 ;
     s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
     s223:isConnectionPointOf psm:ElectricBreaker2 .
 
-psm:BR3InletConnectionPoint a s223:InletConnectionPoint ;
-    rdfs:label "BR3Inlet connection point" ;
+psm:BR3OutletConnectionPoint a s223:OutletConnectionPoint ;
+    rdfs:label "BR3Outlet connection point" ;
     s223:cnx psm:ElectricBreaker3,
-        psm:MainBreakerCircuit3 ;
-    s223:connectsThrough psm:MainBreakerCircuit3 ;
+        psm:ElectricCircuit3 ;
     s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
     s223:isConnectionPointOf psm:ElectricBreaker3 .
-
-psm:BR4InletConnectionPoint a s223:InletConnectionPoint ;
-    rdfs:label "BR4Inlet connection point" ;
-    s223:cnx psm:ElectricBreaker4,
-        psm:MainBreakerCircuit4 ;
-    s223:connectsThrough psm:MainBreakerCircuit4 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:ElectricBreaker4 .
 
 psm:BR4OutletConnectionPoint a s223:OutletConnectionPoint ;
     rdfs:label "BR4Outlet connection point" ;
     s223:cnx psm:ElectricBreaker4 ;
     s223:hasMedium s223:Electricity-AC ;
     s223:isConnectionPointOf psm:ElectricBreaker4 .
-
-psm:BR5InletConnectionPoint a s223:InletConnectionPoint ;
-    rdfs:label "BR5Inlet connection point" ;
-    s223:cnx psm:ElectricBreaker5,
-        psm:MainBreakerCircuit5 ;
-    s223:connectsThrough psm:MainBreakerCircuit5 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:ElectricBreaker5 .
 
 psm:BR5OutletConnectionPoint a s223:OutletConnectionPoint ;
     rdfs:label "BR5Outlet connection point" ;
@@ -987,22 +1239,6 @@ psm:CorridorOutletConnectionPointOO a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Fluid-Air ;
     s223:isConnectionPointOf psm:HVACSpace4 .
 
-psm:Driver1Outlet a s223:OutletConnectionPoint ;
-    rdfs:label "Driver1Outlet" ;
-    s223:cnx psm:Driver1,
-        psm:Luminaire1InternalWire ;
-    s223:connectsThrough psm:Luminaire1InternalWire ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf psm:Driver1 .
-
-psm:ElectricInletCP a s223:InletConnectionPoint ;
-    rdfs:label "Electric inlet CP" ;
-    s223:cnx psm:PowerToCoil,
-        psm:i00036 ;
-    s223:connectsThrough psm:PowerToCoil ;
-    s223:hasMedium s223:Electricity-AC ;
-    s223:isConnectionPointOf psm:i00036 .
-
 psm:ExhaustToExteriorAir a s223:InletConnectionPoint ;
     rdfs:label "Exhaust to exterior air" ;
     s223:cnx psm:ExteriorAir,
@@ -1059,22 +1295,6 @@ psm:InletIntraCorridor4CP a s223:InletConnectionPoint ;
     s223:hasMedium s223:Fluid-Air ;
     s223:isConnectionPointOf psm:HVACSpace4 .
 
-psm:JunctionOut1 a s223:OutletConnectionPoint ;
-    rdfs:label "Junction out1" ;
-    s223:cnx psm:InternalAHUElectricJunction,
-        psm:PowerToFan ;
-    s223:connectsThrough psm:PowerToFan ;
-    s223:hasMedium s223:Electricity-AC ;
-    s223:isConnectionPointOf psm:InternalAHUElectricJunction .
-
-psm:JunctionOut2 a s223:OutletConnectionPoint ;
-    rdfs:label "Junction out2" ;
-    s223:cnx psm:InternalAHUElectricJunction,
-        psm:PowerToCoil ;
-    s223:connectsThrough psm:PowerToCoil ;
-    s223:hasMedium s223:Electricity-AC ;
-    s223:isConnectionPointOf psm:InternalAHUElectricJunction .
-
 psm:KitchenetteInletConnectionPoint a s223:InletConnectionPoint ;
     rdfs:label "Kitchenette inlet connection point" ;
     s223:cnx psm:HVACSpace6,
@@ -1106,14 +1326,6 @@ psm:LIghtingSpace1DLInlet a s223:InletConnectionPoint ;
     s223:connectsThrough psm:DLightPath1 ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:LightingSpace1 .
-
-psm:LightEngine1Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Light engine1Inlet" ;
-    s223:cnx psm:LightEngine1,
-        psm:Luminaire1InternalWire ;
-    s223:connectsThrough psm:Luminaire1InternalWire ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf psm:LightEngine1 .
 
 psm:LightingSpace1ELInlet a s223:InletConnectionPoint ;
     rdfs:label "Lighting Space1 EL Inlet" ;
@@ -1147,14 +1359,6 @@ psm:LoopOutletCP a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Water-ChilledWater ;
     s223:isConnectionPointOf psm:ExternalLoop .
 
-psm:Luminaire10Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire10Inlet" ;
-    s223:cnx psm:ElectricCircuit2,
-        psm:Luminaire10 ;
-    s223:connectsThrough psm:ElectricCircuit2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire10 .
-
 psm:Luminaire10Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire10Outlet" ;
     s223:cnx psm:CorridorLight1,
@@ -1162,14 +1366,6 @@ psm:Luminaire10Outlet a s223:OutletConnectionPoint ;
     s223:connectsThrough psm:CorridorLight1 ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire10 .
-
-psm:Luminaire11Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire11Inlet" ;
-    s223:cnx psm:ElectricCircuit2,
-        psm:Luminaire11 ;
-    s223:connectsThrough psm:ElectricCircuit2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire11 .
 
 psm:Luminaire11Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire11Outlet" ;
@@ -1179,14 +1375,6 @@ psm:Luminaire11Outlet a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire11 .
 
-psm:Luminaire12Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire12Inlet" ;
-    s223:cnx psm:ElectricCircuit2,
-        psm:Luminaire12 ;
-    s223:connectsThrough psm:ElectricCircuit2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire12 .
-
 psm:Luminaire12Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire12Outlet" ;
     s223:cnx psm:KitchenetteLight1,
@@ -1195,13 +1383,12 @@ psm:Luminaire12Outlet a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire12 .
 
-psm:Luminaire2Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire2Inlet" ;
+psm:Luminaire1Inlet a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire1Inlet" ;
     s223:cnx psm:ElectricCircuit1,
-        psm:Luminaire2 ;
-    s223:connectsThrough psm:ElectricCircuit1 ;
+        psm:Luminaire1 ;
     s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire2 .
+    s223:isConnectionPointOf psm:Luminaire1 .
 
 psm:Luminaire2Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire2Outlet" ;
@@ -1211,14 +1398,6 @@ psm:Luminaire2Outlet a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire2 .
 
-psm:Luminaire3Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire3Inlet" ;
-    s223:cnx psm:ElectricCircuit1,
-        psm:Luminaire3 ;
-    s223:connectsThrough psm:ElectricCircuit1 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire3 .
-
 psm:Luminaire3Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire3Outlet" ;
     s223:cnx psm:ELightPath2,
@@ -1226,14 +1405,6 @@ psm:Luminaire3Outlet a s223:OutletConnectionPoint ;
     s223:connectsThrough psm:ELightPath2 ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire3 .
-
-psm:Luminaire4Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire4Inlet" ;
-    s223:cnx psm:ElectricCircuit1,
-        psm:Luminaire4 ;
-    s223:connectsThrough psm:ElectricCircuit1 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire4 .
 
 psm:Luminaire4Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire4Outlet" ;
@@ -1243,14 +1414,6 @@ psm:Luminaire4Outlet a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire4 .
 
-psm:Luminaire5Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire5Inlet" ;
-    s223:cnx psm:ElectricCircuit2,
-        psm:Luminaire5 ;
-    s223:connectsThrough psm:ElectricCircuit2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire5 .
-
 psm:Luminaire5Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire5Outlet" ;
     s223:cnx psm:BathroomLight1,
@@ -1258,14 +1421,6 @@ psm:Luminaire5Outlet a s223:OutletConnectionPoint ;
     s223:connectsThrough psm:BathroomLight1 ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire5 .
-
-psm:Luminaire6Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire6Inlet" ;
-    s223:cnx psm:ElectricCircuit2,
-        psm:Luminaire6 ;
-    s223:connectsThrough psm:ElectricCircuit2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire6 .
 
 psm:Luminaire6Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire6Outlet" ;
@@ -1275,14 +1430,6 @@ psm:Luminaire6Outlet a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire6 .
 
-psm:Luminaire7Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire7Inlet" ;
-    s223:cnx psm:ElectricCircuit2,
-        psm:Luminaire7 ;
-    s223:connectsThrough psm:ElectricCircuit2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire7 .
-
 psm:Luminaire7Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire7Outlet" ;
     s223:cnx psm:Luminaire7,
@@ -1290,14 +1437,6 @@ psm:Luminaire7Outlet a s223:OutletConnectionPoint ;
     s223:connectsThrough psm:PrivateOfficeLight1 ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire7 .
-
-psm:Luminaire8Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire8Inlet" ;
-    s223:cnx psm:ElectricCircuit2,
-        psm:Luminaire8 ;
-    s223:connectsThrough psm:ElectricCircuit2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire8 .
 
 psm:Luminaire8Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire8Outlet" ;
@@ -1307,14 +1446,6 @@ psm:Luminaire8Outlet a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire8 .
 
-psm:Luminaire9Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire9Inlet" ;
-    s223:cnx psm:ElectricCircuit2,
-        psm:Luminaire9 ;
-    s223:connectsThrough psm:ElectricCircuit2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire9 .
-
 psm:Luminaire9Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire9Outlet" ;
     s223:cnx psm:CorridorLight1,
@@ -1323,58 +1454,12 @@ psm:Luminaire9Outlet a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire9 .
 
-psm:MainBreakerOutCP1 a s223:OutletConnectionPoint ;
-    rdfs:label "Main breaker out CP1" ;
-    s223:cnx psm:MainBreaker,
-        psm:MainBreakerCircuit1 ;
-    s223:connectsThrough psm:MainBreakerCircuit1 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:hasProperty psm:BreakerCP1Phase ;
-    s223:isConnectionPointOf psm:MainBreaker .
-
-psm:MainBreakerOutCP2 a s223:OutletConnectionPoint ;
-    rdfs:label "Main breaker out CP2" ;
-    s223:cnx psm:MainBreaker,
-        psm:MainBreakerCircuit2 ;
-    s223:connectsThrough psm:MainBreakerCircuit2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:hasProperty psm:BreakerCP2Phase ;
-    s223:isConnectionPointOf psm:MainBreaker .
-
-psm:MainBreakerOutCP3 a s223:OutletConnectionPoint ;
-    rdfs:label "Main breaker out CP3" ;
-    s223:cnx psm:MainBreaker,
-        psm:MainBreakerCircuit3 ;
-    s223:connectsThrough psm:MainBreakerCircuit3 ;
-    s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
-    s223:hasProperty psm:BreakerCP3Phase ;
-    s223:isConnectionPointOf psm:MainBreaker .
-
-psm:MainBreakerOutCP4 a s223:OutletConnectionPoint ;
-    rdfs:label "Main breaker out CP4" ;
-    s223:cnx psm:MainBreaker,
-        psm:MainBreakerCircuit4 ;
-    s223:connectsThrough psm:MainBreakerCircuit4 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:hasProperty psm:BreakerCP4Phase ;
-    s223:isConnectionPointOf psm:MainBreaker .
-
-psm:MainBreakerOutCP5 a s223:OutletConnectionPoint ;
-    rdfs:label "Main breaker out CP5" ;
-    s223:cnx psm:MainBreaker,
-        psm:MainBreakerCircuit5 ;
-    s223:connectsThrough psm:MainBreakerCircuit5 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:hasProperty psm:BreakerCP5Phase ;
-    s223:isConnectionPointOf psm:MainBreaker .
-
-psm:MainGridConnectionPoint a s223:OutletConnectionPoint ;
-    rdfs:label "Main grid connection point" ;
+psm:MainBreakerInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Main breaker inlet CP" ;
     s223:cnx psm:GridConnection,
-        psm:MainGridPowerSource ;
-    s223:connectsThrough psm:GridConnection ;
-    s223:hasMedium s223:Electricity-AC ;
-    s223:isConnectionPointOf psm:MainGridPowerSource .
+        psm:MainBreaker ;
+    s223:hasMedium s223:AC-240VLL-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf psm:MainBreaker .
 
 psm:OAJunctionOutletToEcon a s223:OutletConnectionPoint ;
     rdfs:label "OAJunction outlet to econ" ;
@@ -1468,14 +1553,6 @@ psm:PrivateOfficeOutletConnectionPoint a s223:OutletConnectionPoint ;
     s223:connectsThrough psm:OpeningPOC ;
     s223:hasMedium s223:Fluid-Air ;
     s223:isConnectionPointOf psm:HVACSpace3 .
-
-psm:SupplyFanElectricInCP a s223:InletConnectionPoint ;
-    rdfs:label "Supply fan electric in CP" ;
-    s223:cnx psm:PowerToFan,
-        psm:i00047 ;
-    s223:connectsThrough psm:PowerToFan ;
-    s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:i00047 .
 
 psm:SupplyFromExteriorAir a s223:OutletConnectionPoint ;
     rdfs:label "Supply from exterior air" ;
@@ -1684,14 +1761,6 @@ psm:AHUChilledWaterOutlet a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Water-ChilledWater ;
     s223:isConnectionPointOf psm:i00001 .
 
-psm:AHUElectricityInlet a s223:InletConnectionPoint ;
-    rdfs:label "AHUElectricity inlet" ;
-    s223:cnx psm:ElectricCircuit3,
-        psm:i00001 ;
-    s223:connectsThrough psm:ElectricCircuit3 ;
-    s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:i00001 .
-
 psm:AHUExhaustOutlet a s223:OutletConnectionPoint ;
     rdfs:label "AHUExhaust outlet" ;
     s223:cnx psm:i00001,
@@ -1740,37 +1809,60 @@ psm:AHUSupplyOutlet a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Fluid-Air ;
     s223:isConnectionPointOf psm:i00001 .
 
-psm:BR1OutletConnectionPoint a s223:OutletConnectionPoint ;
-    rdfs:label "BR1Outlet connection point" ;
-    s223:cnx psm:ElectricBreaker1,
-        psm:ElectricCircuit1 ;
-    s223:connectsThrough psm:ElectricCircuit1 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:ElectricBreaker1 .
+psm:Driver1 a s223:Actuator ;
+    rdfs:label "Driver1" ;
+    s223:actuatedByProperty psm:Luminaire1CCT,
+        psm:Luminaire1Intensity,
+        psm:Luminaire1OnOff ;
+    s223:actuates psm:LightEngine1 ;
+    s223:cnx psm:Driver1Inlet,
+        psm:Driver1Outlet ;
+    s223:hasConnectionPoint psm:Driver1Inlet,
+        psm:Driver1Outlet .
 
-psm:BR2OutletConnectionPoint a s223:OutletConnectionPoint ;
-    rdfs:label "BR2Outlet connection point" ;
-    s223:cnx psm:ElectricBreaker2,
-        psm:ElectricCircuit2 ;
-    s223:connectsThrough psm:ElectricCircuit2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:ElectricBreaker2 .
+psm:ElectricBreaker1 a s223:ElectricBreaker ;
+    rdfs:label "Electric breaker1" ;
+    s223:cnx psm:BR1InletConnectionPoint,
+        psm:BR1OutletConnectionPoint ;
+    s223:hasConnectionPoint psm:BR1InletConnectionPoint,
+        psm:BR1OutletConnectionPoint .
 
-psm:BR3OutletConnectionPoint a s223:OutletConnectionPoint ;
-    rdfs:label "BR3Outlet connection point" ;
-    s223:cnx psm:ElectricBreaker3,
-        psm:ElectricCircuit3 ;
-    s223:connectsThrough psm:ElectricCircuit3 ;
-    s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:ElectricBreaker3 .
+psm:ElectricBreaker2 a s223:ElectricBreaker ;
+    rdfs:label "Electric breaker2" ;
+    s223:cnx psm:BR2InletConnectionPoint,
+        psm:BR2OutletConnectionPoint ;
+    s223:hasConnectionPoint psm:BR2InletConnectionPoint,
+        psm:BR2OutletConnectionPoint .
 
-psm:Luminaire1Inlet a s223:InletConnectionPoint ;
-    rdfs:label "Luminaire1Inlet" ;
-    s223:cnx psm:ElectricCircuit1,
-        psm:Luminaire1 ;
-    s223:connectsThrough psm:ElectricCircuit1 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:Luminaire1 .
+psm:ElectricBreaker3 a s223:ElectricBreaker ;
+    rdfs:label "Electric breaker3" ;
+    s223:cnx psm:BR3InletConnectionPoint,
+        psm:BR3OutletConnectionPoint ;
+    s223:hasConnectionPoint psm:BR3InletConnectionPoint,
+        psm:BR3OutletConnectionPoint .
+
+psm:ElectricBreaker4 a s223:ElectricBreaker ;
+    rdfs:label "Electric breaker4" ;
+    s223:cnx psm:BR4InletConnectionPoint,
+        psm:BR4OutletConnectionPoint ;
+    s223:hasConnectionPoint psm:BR4InletConnectionPoint,
+        psm:BR4OutletConnectionPoint .
+
+psm:ElectricBreaker5 a s223:ElectricBreaker ;
+    rdfs:label "Electric breaker5" ;
+    s223:cnx psm:BR5InletConnectionPoint,
+        psm:BR5OutletConnectionPoint ;
+    s223:hasConnectionPoint psm:BR5InletConnectionPoint,
+        psm:BR5OutletConnectionPoint .
+
+psm:ElectricCircuit1 a s223:ElectricWire ;
+    rdfs:label "Electric Circuit 1" ;
+    s223:cnx psm:BR1OutletConnectionPoint,
+        psm:Luminaire1Inlet,
+        psm:Luminaire2Inlet,
+        psm:Luminaire3Inlet,
+        psm:Luminaire4Inlet ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
 psm:Luminaire1Outlet a s223:OutletConnectionPoint ;
     rdfs:label "Luminaire1Outlet" ;
@@ -1779,22 +1871,6 @@ psm:Luminaire1Outlet a s223:OutletConnectionPoint ;
     s223:connectsThrough psm:ELightPath1 ;
     s223:hasMedium s223:Light-Visible ;
     s223:isConnectionPointOf psm:Luminaire1 .
-
-psm:MainBreakerInletCP a s223:InletConnectionPoint ;
-    rdfs:label "Main breaker inlet CP" ;
-    s223:cnx psm:GridConnection,
-        psm:MainBreaker ;
-    s223:connectsThrough psm:GridConnection ;
-    s223:hasMedium s223:AC-240VLL-120VLN-1Ph-60Hz ;
-    s223:isConnectionPointOf psm:MainBreaker .
-
-psm:MainGridPowerSource a s223:Generator ;
-    rdfs:label "Main grid power source" ;
-    s223:cnx psm:MainGridConnectionPoint ;
-    s223:connected psm:MainBreaker ;
-    s223:connectedThrough psm:GridConnection ;
-    s223:connectedTo psm:MainBreaker ;
-    s223:hasConnectionPoint psm:MainGridConnectionPoint .
 
 psm:VAV1BoxSupplyFluidInlet a s223:InletConnectionPoint ;
     rdfs:label "VAV1Box supply fluid inlet" ;
@@ -1931,16 +2007,6 @@ psm:DLightPath1 a s223:Connection ;
     s223:connectsTo psm:LightingSpace1 ;
     s223:hasMedium s223:Light-Visible .
 
-psm:ElectricCircuit3 a s223:ElectricWire ;
-    rdfs:label "Electric Circuit 3" ;
-    s223:cnx psm:AHUElectricityInlet,
-        psm:BR3OutletConnectionPoint ;
-    s223:connectsAt psm:AHUElectricityInlet,
-        psm:BR3OutletConnectionPoint ;
-    s223:connectsFrom psm:ElectricBreaker3 ;
-    s223:connectsTo psm:i00001 ;
-    s223:hasMedium s223:AC-240VLL-1Ph-60Hz .
-
 psm:ExteriorAmbientLight a s223:DomainSpace ;
     rdfs:label "Exterior ambient light" ;
     s223:cnx psm:ExteriorAmbientLightCP ;
@@ -1960,16 +2026,6 @@ psm:ExteriorAmbientLightPath a s223:Connection ;
     s223:connectsTo psm:OpenOfficeWindows ;
     s223:hasMedium s223:Light-Visible .
 
-psm:GridConnection a s223:ElectricWire ;
-    rdfs:label "Grid connection" ;
-    s223:cnx psm:MainBreakerInletCP,
-        psm:MainGridConnectionPoint ;
-    s223:connectsAt psm:MainBreakerInletCP,
-        psm:MainGridConnectionPoint ;
-    s223:connectsFrom psm:MainGridPowerSource ;
-    s223:connectsTo psm:MainBreaker ;
-    s223:hasMedium s223:AC-240VLL-120VLN-1Ph-60Hz .
-
 psm:HVAC4-5Connection a s223:Connection ;
     rdfs:label "HVAC4-5Connection" ;
     s223:cnx psm:InletIntraCorridor4CP,
@@ -1980,6 +2036,13 @@ psm:HVAC4-5Connection a s223:Connection ;
     s223:connectsTo psm:HVACSpace4 ;
     s223:hasMedium s223:Fluid-Air .
 
+psm:LightEngine1 a s223:Equipment ;
+    rdfs:label "LightEngine1" ;
+    s223:cnx psm:LightEngine1Inlet,
+        psm:LightEngine1Outlet ;
+    s223:hasConnectionPoint psm:LightEngine1Inlet,
+        psm:LightEngine1Outlet .
+
 psm:LoopToValve a s223:Pipe ;
     rdfs:label "Loop to Valve" ;
     s223:cnx psm:AHUChilledWaterInlet,
@@ -1989,66 +2052,6 @@ psm:LoopToValve a s223:Pipe ;
     s223:connectsFrom psm:ExternalLoop ;
     s223:connectsTo psm:i00001 ;
     s223:hasMedium s223:Water-ChilledWater .
-
-psm:Luminaire1InternalWire a s223:ElectricWire ;
-    rdfs:label "Luminaire1Internal wire" ;
-    s223:cnx psm:Driver1Outlet,
-        psm:LightEngine1Inlet ;
-    s223:connectsAt psm:Driver1Outlet,
-        psm:LightEngine1Inlet ;
-    s223:connectsFrom psm:Driver1 ;
-    s223:connectsTo psm:LightEngine1 ;
-    s223:hasMedium s223:Constituent-Electricity .
-
-psm:MainBreakerCircuit1 a s223:ElectricWire ;
-    rdfs:label "Main breaker circuit1" ;
-    s223:cnx psm:BR1InletConnectionPoint,
-        psm:MainBreakerOutCP1 ;
-    s223:connectsAt psm:BR1InletConnectionPoint,
-        psm:MainBreakerOutCP1 ;
-    s223:connectsFrom psm:MainBreaker ;
-    s223:connectsTo psm:ElectricBreaker1 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
-
-psm:MainBreakerCircuit2 a s223:ElectricWire ;
-    rdfs:label "Main breaker circuit2" ;
-    s223:cnx psm:BR2InletConnectionPoint,
-        psm:MainBreakerOutCP2 ;
-    s223:connectsAt psm:BR2InletConnectionPoint,
-        psm:MainBreakerOutCP2 ;
-    s223:connectsFrom psm:MainBreaker ;
-    s223:connectsTo psm:ElectricBreaker2 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
-
-psm:MainBreakerCircuit3 a s223:ElectricWire ;
-    rdfs:label "Main breaker circuit3" ;
-    s223:cnx psm:BR3InletConnectionPoint,
-        psm:MainBreakerOutCP3 ;
-    s223:connectsAt psm:BR3InletConnectionPoint,
-        psm:MainBreakerOutCP3 ;
-    s223:connectsFrom psm:MainBreaker ;
-    s223:connectsTo psm:ElectricBreaker3 ;
-    s223:hasMedium s223:AC-240VLL-1Ph-60Hz .
-
-psm:MainBreakerCircuit4 a s223:ElectricWire ;
-    rdfs:label "Main breaker circuit4" ;
-    s223:cnx psm:BR4InletConnectionPoint,
-        psm:MainBreakerOutCP4 ;
-    s223:connectsAt psm:BR4InletConnectionPoint,
-        psm:MainBreakerOutCP4 ;
-    s223:connectsFrom psm:MainBreaker ;
-    s223:connectsTo psm:ElectricBreaker4 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
-
-psm:MainBreakerCircuit5 a s223:ElectricWire ;
-    rdfs:label "Main breaker circuit5" ;
-    s223:cnx psm:BR5InletConnectionPoint,
-        psm:MainBreakerOutCP5 ;
-    s223:connectsAt psm:BR5InletConnectionPoint,
-        psm:MainBreakerOutCP5 ;
-    s223:connectsFrom psm:MainBreaker ;
-    s223:connectsTo psm:ElectricBreaker5 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
 psm:OA-to-EconDamper a s223:Connection ;
     rdfs:label "OA-to-Econ damper" ;
@@ -2107,26 +2110,6 @@ psm:OpeningPOC a s223:Connection ;
     s223:connectsFrom psm:HVACSpace3 ;
     s223:connectsTo psm:HVACSpace4 ;
     s223:hasMedium s223:Fluid-Air .
-
-psm:PowerToCoil a s223:ElectricWire ;
-    rdfs:label "Power to coil" ;
-    s223:cnx psm:ElectricInletCP,
-        psm:JunctionOut2 ;
-    s223:connectsAt psm:ElectricInletCP,
-        psm:JunctionOut2 ;
-    s223:connectsFrom psm:InternalAHUElectricJunction ;
-    s223:connectsTo psm:i00036 ;
-    s223:hasMedium s223:Electricity-AC .
-
-psm:PowerToFan a s223:ElectricWire ;
-    rdfs:label "Power to fan" ;
-    s223:cnx psm:JunctionOut1,
-        psm:SupplyFanElectricInCP ;
-    s223:connectsAt psm:JunctionOut1,
-        psm:SupplyFanElectricInCP ;
-    s223:connectsFrom psm:InternalAHUElectricJunction ;
-    s223:connectsTo psm:i00047 ;
-    s223:hasMedium s223:Electricity-AC .
 
 psm:ReturnDuct a s223:Connection ;
     rdfs:label "Return duct" ;
@@ -2260,6 +2243,16 @@ psm:i00060 a s223:Connection ;
     s223:connectsTo psm:ExteriorAir ;
     s223:hasMedium s223:Fluid-Air .
 
+psm:InternalAHUElectricJunction a s223:Junction ;
+    rdfs:label "Internal AHUElectric junction" ;
+    s223:cnx psm:JunctionIn,
+        psm:JunctionOut1,
+        psm:JunctionOut2 ;
+    s223:hasConnectionPoint psm:JunctionIn,
+        psm:JunctionOut1,
+        psm:JunctionOut2 ;
+    s223:hasMedium s223:Electricity-AC .
+
 psm:i00046 a s223:Connection ;
     rdfs:label "Connection from heating coil" ;
     s223:cnx psm:i00027,
@@ -2280,39 +2273,129 @@ psm:i00050 a s223:Connection ;
     s223:connectsTo psm:i00047 ;
     s223:hasMedium s223:Fluid-Air .
 
-psm:Driver1 a s223:Actuator ;
-    rdfs:label "Driver1" ;
-    s223:actuatedByProperty psm:Luminaire1CCT,
-        psm:Luminaire1Intensity,
-        psm:Luminaire1OnOff ;
-    s223:actuates psm:LightEngine1 ;
-    s223:cnx psm:Driver1Inlet,
-        psm:Driver1Outlet ;
-    s223:connected psm:LightEngine1 ;
-    s223:connectedThrough psm:Luminaire1InternalWire ;
-    s223:connectedTo psm:LightEngine1 ;
-    s223:hasConnectionPoint psm:Driver1Inlet,
-        psm:Driver1Outlet .
+psm:Luminaire1 a s223:Luminaire ;
+    rdfs:label "Luminaire1" ;
+    s223:cnx psm:Luminaire1Inlet,
+        psm:Luminaire1Outlet ;
+    s223:connected psm:LightingSpace1,
+        psm:Luminaire2 ;
+    s223:connectedThrough psm:ELightPath1 ;
+    s223:connectedTo psm:LightingSpace1 ;
+    s223:contains psm:Driver1,
+        psm:LightEngine1 ;
+    s223:hasConnectionPoint psm:Luminaire1Inlet,
+        psm:Luminaire1Outlet .
 
-psm:ElectricBreaker4 a s223:ElectricBreaker ;
-    rdfs:label "Electric breaker4" ;
-    s223:cnx psm:BR4InletConnectionPoint,
-        psm:BR4OutletConnectionPoint ;
-    s223:connected psm:MainBreaker ;
-    s223:connectedFrom psm:MainBreaker ;
-    s223:connectedThrough psm:MainBreakerCircuit4 ;
-    s223:hasConnectionPoint psm:BR4InletConnectionPoint,
-        psm:BR4OutletConnectionPoint .
+psm:Luminaire10 a s223:Luminaire ;
+    rdfs:label "Luminaire10" ;
+    s223:cnx psm:Luminaire10Inlet,
+        psm:Luminaire10Outlet ;
+    s223:connected psm:LightingSpace5,
+        psm:Luminaire9 ;
+    s223:connectedThrough psm:CorridorLight1 ;
+    s223:connectedTo psm:LightingSpace5 ;
+    s223:hasConnectionPoint psm:Luminaire10Inlet,
+        psm:Luminaire10Outlet ;
+    s223:hasProperty psm:Luminaire10OnOffStatus .
 
-psm:ElectricBreaker5 a s223:ElectricBreaker ;
-    rdfs:label "Electric breaker5" ;
-    s223:cnx psm:BR5InletConnectionPoint,
-        psm:BR5OutletConnectionPoint ;
-    s223:connected psm:MainBreaker ;
-    s223:connectedFrom psm:MainBreaker ;
-    s223:connectedThrough psm:MainBreakerCircuit5 ;
-    s223:hasConnectionPoint psm:BR5InletConnectionPoint,
-        psm:BR5OutletConnectionPoint .
+psm:Luminaire2 a s223:Luminaire ;
+    rdfs:label "Luminaire2" ;
+    s223:actuatedByProperty psm:Luminaire2CCT,
+        psm:Luminaire2Intensity,
+        psm:Luminaire2OnOff ;
+    s223:cnx psm:Luminaire2Inlet,
+        psm:Luminaire2Outlet ;
+    s223:connected psm:LightingSpace1,
+        psm:Luminaire1 ;
+    s223:connectedThrough psm:ELightPath1 ;
+    s223:connectedTo psm:LightingSpace1 ;
+    s223:hasConnectionPoint psm:Luminaire2Inlet,
+        psm:Luminaire2Outlet ;
+    s223:hasProperty psm:Luminaire2OnOffStatus .
+
+psm:Luminaire3 a s223:Luminaire ;
+    rdfs:label "Luminaire3" ;
+    s223:cnx psm:Luminaire3Inlet,
+        psm:Luminaire3Outlet ;
+    s223:connected psm:LightingSpace2,
+        psm:Luminaire4 ;
+    s223:connectedThrough psm:ELightPath2 ;
+    s223:connectedTo psm:LightingSpace2 ;
+    s223:hasConnectionPoint psm:Luminaire3Inlet,
+        psm:Luminaire3Outlet ;
+    s223:hasProperty psm:Luminaire3OnOffStatus .
+
+psm:Luminaire4 a s223:Luminaire ;
+    rdfs:label "Luminaire4" ;
+    s223:cnx psm:Luminaire4Inlet,
+        psm:Luminaire4Outlet ;
+    s223:connected psm:LightingSpace2,
+        psm:Luminaire3 ;
+    s223:connectedThrough psm:ELightPath2 ;
+    s223:connectedTo psm:LightingSpace2 ;
+    s223:hasConnectionPoint psm:Luminaire4Inlet,
+        psm:Luminaire4Outlet ;
+    s223:hasProperty psm:Luminaire4OnOffStatus .
+
+psm:Luminaire5 a s223:Luminaire ;
+    rdfs:label "Luminaire5" ;
+    s223:cnx psm:Luminaire5Inlet,
+        psm:Luminaire5Outlet ;
+    s223:connected psm:LightingSpace3,
+        psm:Luminaire6 ;
+    s223:connectedThrough psm:BathroomLight1 ;
+    s223:connectedTo psm:LightingSpace3 ;
+    s223:hasConnectionPoint psm:Luminaire5Inlet,
+        psm:Luminaire5Outlet ;
+    s223:hasProperty psm:Luminaire5OnOffStatus .
+
+psm:Luminaire6 a s223:Luminaire ;
+    rdfs:label "Luminaire6" ;
+    s223:cnx psm:Luminaire6Inlet,
+        psm:Luminaire6Outlet ;
+    s223:connected psm:LightingSpace3,
+        psm:Luminaire5 ;
+    s223:connectedThrough psm:BathroomLight1 ;
+    s223:connectedTo psm:LightingSpace3 ;
+    s223:hasConnectionPoint psm:Luminaire6Inlet,
+        psm:Luminaire6Outlet ;
+    s223:hasProperty psm:Luminaire6OnOffStatus .
+
+psm:Luminaire7 a s223:Luminaire ;
+    rdfs:label "Luminaire7" ;
+    s223:cnx psm:Luminaire7Inlet,
+        psm:Luminaire7Outlet ;
+    s223:connected psm:LightingSpace4,
+        psm:Luminaire8 ;
+    s223:connectedThrough psm:PrivateOfficeLight1 ;
+    s223:connectedTo psm:LightingSpace4 ;
+    s223:hasConnectionPoint psm:Luminaire7Inlet,
+        psm:Luminaire7Outlet ;
+    s223:hasProperty psm:Luminaire7OnOffStatus .
+
+psm:Luminaire8 a s223:Luminaire ;
+    rdfs:label "Luminaire8" ;
+    s223:cnx psm:Luminaire8Inlet,
+        psm:Luminaire8Outlet ;
+    s223:connected psm:LightingSpace4,
+        psm:Luminaire7 ;
+    s223:connectedThrough psm:PrivateOfficeLight1 ;
+    s223:connectedTo psm:LightingSpace4 ;
+    s223:hasConnectionPoint psm:Luminaire8Inlet,
+        psm:Luminaire8Outlet ;
+    s223:hasProperty psm:Luminaire8OnOffStatus .
+
+psm:Luminaire9 a s223:Luminaire ;
+    rdfs:label "Luminaire9" ;
+    s223:cnx psm:Luminaire9Inlet,
+        psm:Luminaire9Outlet ;
+    s223:connected psm:LightingSpace5,
+        psm:Luminaire10 ;
+    s223:connectedThrough psm:CorridorLight1 ;
+    s223:connectedTo psm:LightingSpace5 ;
+    s223:hasConnectionPoint psm:Luminaire9Inlet,
+        psm:Luminaire9Outlet ;
+    s223:hasProperty psm:Luminaire9OnOffStatus .
 
 psm:TU1ReheatValve a s223:Valve ;
     rdfs:label "TU1Reheat valve" ;
@@ -2420,6 +2503,19 @@ psm:ELightPath2 a s223:Connection ;
     s223:connectsTo psm:LightingSpace2 ;
     s223:hasMedium s223:Light-Visible .
 
+psm:ElectricCircuit2 a s223:ElectricWire ;
+    rdfs:label "Electric Circuit 2" ;
+    s223:cnx psm:BR2OutletConnectionPoint,
+        psm:Luminaire10Inlet,
+        psm:Luminaire11Inlet,
+        psm:Luminaire12Inlet,
+        psm:Luminaire5Inlet,
+        psm:Luminaire6Inlet,
+        psm:Luminaire7Inlet,
+        psm:Luminaire8Inlet,
+        psm:Luminaire9Inlet ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
 psm:KitchenetteLight1 a s223:Connection ;
     rdfs:label "Kitchenette light1" ;
     s223:cnx psm:KitchenetteLightInletCP,
@@ -2432,16 +2528,6 @@ psm:KitchenetteLight1 a s223:Connection ;
         psm:Luminaire12 ;
     s223:connectsTo psm:LightingSpace6 ;
     s223:hasMedium s223:Light-Visible .
-
-psm:LightEngine1 a s223:Equipment ;
-    rdfs:label "LightEngine1" ;
-    s223:cnx psm:LightEngine1Inlet,
-        psm:LightEngine1Outlet ;
-    s223:connected psm:Driver1 ;
-    s223:connectedFrom psm:Driver1 ;
-    s223:connectedThrough psm:Luminaire1InternalWire ;
-    s223:hasConnectionPoint psm:LightEngine1Inlet,
-        psm:LightEngine1Outlet .
 
 psm:LightingSpace2 a s223:DomainSpace ;
     rdfs:label "LightingSpace2" ;
@@ -2497,6 +2583,32 @@ psm:LightingSpace6 a s223:DomainSpace ;
     s223:connectedThrough psm:KitchenetteLight1 ;
     s223:hasConnectionPoint psm:KitchenetteLightInletCP ;
     s223:hasDomain s223:Domain-Lighting .
+
+psm:Luminaire11 a s223:Luminaire ;
+    rdfs:label "Luminaire11" ;
+    s223:cnx psm:Luminaire11Inlet,
+        psm:Luminaire11Outlet ;
+    s223:connected psm:LightingSpace6,
+        psm:Luminaire12 ;
+    s223:connectedThrough psm:KitchenetteLight1 ;
+    s223:connectedTo psm:LightingSpace6 ;
+    s223:hasConnectionPoint psm:Luminaire11Inlet,
+        psm:Luminaire11Outlet ;
+    s223:hasPhysicalLocation psm:Kitchenette ;
+    s223:hasProperty psm:Luminaire11OnOffStatus .
+
+psm:Luminaire12 a s223:Luminaire ;
+    rdfs:label "Luminaire12" ;
+    s223:cnx psm:Luminaire12Inlet,
+        psm:Luminaire12Outlet ;
+    s223:connected psm:LightingSpace6,
+        psm:Luminaire11 ;
+    s223:connectedThrough psm:KitchenetteLight1 ;
+    s223:connectedTo psm:LightingSpace6 ;
+    s223:hasConnectionPoint psm:Luminaire12Inlet,
+        psm:Luminaire12Outlet ;
+    s223:hasPhysicalLocation psm:Kitchenette ;
+    s223:hasProperty psm:Luminaire12OnOffStatus .
 
 psm:PrivateOfficeLight1 a s223:Connection ;
     rdfs:label "Private office light1" ;
@@ -2592,18 +2704,19 @@ psm:i00056 a s223:Damper,
         psm:i00059 ;
     s223:hasProperty psm:i00057 .
 
-psm:ElectricBreaker3 a s223:ElectricBreaker ;
-    rdfs:label "Electric breaker3" ;
-    s223:cnx psm:BR3InletConnectionPoint,
-        psm:BR3OutletConnectionPoint ;
-    s223:connected psm:MainBreaker,
-        psm:i00001 ;
-    s223:connectedFrom psm:MainBreaker ;
-    s223:connectedThrough psm:ElectricCircuit3,
-        psm:MainBreakerCircuit3 ;
-    s223:connectedTo psm:i00001 ;
-    s223:hasConnectionPoint psm:BR3InletConnectionPoint,
-        psm:BR3OutletConnectionPoint .
+psm:i00047 a s223:Fan,
+        g36:Fan ;
+    rdfs:label "A-9.supply_fan" ;
+    s223:cnx psm:SupplyFanElectricInCP,
+        psm:i00048,
+        psm:i00049 ;
+    s223:connected psm:i00036 ;
+    s223:connectedFrom psm:i00036 ;
+    s223:connectedThrough psm:i00050 ;
+    s223:hasConnectionPoint psm:SupplyFanElectricInCP,
+        psm:i00048,
+        psm:i00049 ;
+    s223:hasProperty psm:SupplyFanStatus .
 
 psm:i00051 a s223:Fan,
         g36:Fan ;
@@ -2769,93 +2882,20 @@ psm:HVACSpace6 a s223:DomainSpace ;
         psm:KitchenetteOutletConnectionPoint ;
     s223:hasDomain s223:Domain-HVAC .
 
-psm:InternalAHUElectricJunction a s223:Junction ;
-    rdfs:label "Internal AHUElectric junction" ;
-    s223:cnx psm:JunctionIn,
-        psm:JunctionOut1,
-        psm:JunctionOut2 ;
-    s223:connected psm:i00036,
-        psm:i00047 ;
-    s223:connectedThrough psm:PowerToCoil,
-        psm:PowerToFan ;
-    s223:connectedTo psm:i00036,
-        psm:i00047 ;
-    s223:hasConnectionPoint psm:JunctionIn,
-        psm:JunctionOut1,
-        psm:JunctionOut2 ;
-    s223:hasMedium s223:Electricity-AC .
-
-psm:Luminaire1 a s223:Luminaire ;
-    rdfs:label "Luminaire1" ;
-    s223:cnx psm:Luminaire1Inlet,
-        psm:Luminaire1Outlet ;
-    s223:connected psm:ElectricBreaker1,
-        psm:LightingSpace1,
-        psm:Luminaire2,
-        psm:Luminaire3,
-        psm:Luminaire4 ;
-    s223:connectedFrom psm:ElectricBreaker1 ;
-    s223:connectedThrough psm:ELightPath1,
-        psm:ElectricCircuit1 ;
-    s223:connectedTo psm:LightingSpace1 ;
-    s223:contains psm:Driver1,
-        psm:LightEngine1 ;
-    s223:hasConnectionPoint psm:Luminaire1Inlet,
-        psm:Luminaire1Outlet .
-
-psm:Luminaire2 a s223:Luminaire ;
-    rdfs:label "Luminaire2" ;
-    s223:actuatedByProperty psm:Luminaire2CCT,
-        psm:Luminaire2Intensity,
-        psm:Luminaire2OnOff ;
-    s223:cnx psm:Luminaire2Inlet,
-        psm:Luminaire2Outlet ;
-    s223:connected psm:ElectricBreaker1,
-        psm:LightingSpace1,
-        psm:Luminaire1,
-        psm:Luminaire3,
-        psm:Luminaire4 ;
-    s223:connectedFrom psm:ElectricBreaker1 ;
-    s223:connectedThrough psm:ELightPath1,
-        psm:ElectricCircuit1 ;
-    s223:connectedTo psm:LightingSpace1 ;
-    s223:hasConnectionPoint psm:Luminaire2Inlet,
-        psm:Luminaire2Outlet ;
-    s223:hasProperty psm:Luminaire2OnOffStatus .
-
-psm:Luminaire3 a s223:Luminaire ;
-    rdfs:label "Luminaire3" ;
-    s223:cnx psm:Luminaire3Inlet,
-        psm:Luminaire3Outlet ;
-    s223:connected psm:ElectricBreaker1,
-        psm:LightingSpace2,
-        psm:Luminaire1,
-        psm:Luminaire2,
-        psm:Luminaire4 ;
-    s223:connectedFrom psm:ElectricBreaker1 ;
-    s223:connectedThrough psm:ELightPath2,
-        psm:ElectricCircuit1 ;
-    s223:connectedTo psm:LightingSpace2 ;
-    s223:hasConnectionPoint psm:Luminaire3Inlet,
-        psm:Luminaire3Outlet ;
-    s223:hasProperty psm:Luminaire3OnOffStatus .
-
-psm:Luminaire4 a s223:Luminaire ;
-    rdfs:label "Luminaire4" ;
-    s223:cnx psm:Luminaire4Inlet,
-        psm:Luminaire4Outlet ;
-    s223:connected psm:ElectricBreaker1,
-        psm:LightingSpace2,
-        psm:Luminaire1,
-        psm:Luminaire2,
-        psm:Luminaire3 ;
-    s223:connectedFrom psm:ElectricBreaker1 ;
-    s223:connectedThrough psm:ELightPath2,
-        psm:ElectricCircuit1 ;
-    s223:connectedTo psm:LightingSpace2 ;
-    s223:hasConnectionPoint psm:Luminaire4Inlet,
-        psm:Luminaire4Outlet ;
-    s223:hasProperty psm:Luminaire4OnOffStatus .
+psm:MainBreaker a s223:ElectricBreaker ;
+    rdfs:label "Main breaker" ;
+    s223:cnx psm:MainBreakerInletCP,
+        psm:MainBreakerOutCP1,
+        psm:MainBreakerOutCP2,
+        psm:MainBreakerOutCP3,
+        psm:MainBreakerOutCP4,
+        psm:MainBreakerOutCP5 ;
+    s223:hasConnectionPoint psm:MainBreakerInletCP,
+        psm:MainBreakerOutCP1,
+        psm:MainBreakerOutCP2,
+        psm:MainBreakerOutCP3,
+        psm:MainBreakerOutCP4,
+        psm:MainBreakerOutCP5 .
 
 psm:OutsideAirJunction a s223:Junction ;
     rdfs:label "Outside air junction" ;
@@ -2906,23 +2946,6 @@ psm:i00016 a s223:Damper,
         psm:i00019 ;
     s223:hasProperty psm:i00017 .
 
-psm:i00047 a s223:Fan,
-        g36:Fan ;
-    rdfs:label "A-9.supply_fan" ;
-    s223:cnx psm:SupplyFanElectricInCP,
-        psm:i00048,
-        psm:i00049 ;
-    s223:connected psm:InternalAHUElectricJunction,
-        psm:i00036 ;
-    s223:connectedFrom psm:InternalAHUElectricJunction,
-        psm:i00036 ;
-    s223:connectedThrough psm:PowerToFan,
-        psm:i00050 ;
-    s223:hasConnectionPoint psm:SupplyFanElectricInCP,
-        psm:i00048,
-        psm:i00049 ;
-    s223:hasProperty psm:SupplyFanStatus .
-
 psm:i00061 a s223:Damper,
         g36:Damper ;
     rdfs:label "A-9.return_air_damper" ;
@@ -2940,25 +2963,6 @@ psm:i00061 a s223:Damper,
     s223:hasConnectionPoint psm:i00063,
         psm:i00064 ;
     s223:hasProperty psm:i00062 .
-
-psm:ElectricCircuit1 a s223:ElectricWire ;
-    rdfs:label "Electric Circuit 1" ;
-    s223:cnx psm:BR1OutletConnectionPoint,
-        psm:Luminaire1Inlet,
-        psm:Luminaire2Inlet,
-        psm:Luminaire3Inlet,
-        psm:Luminaire4Inlet ;
-    s223:connectsAt psm:BR1OutletConnectionPoint,
-        psm:Luminaire1Inlet,
-        psm:Luminaire2Inlet,
-        psm:Luminaire3Inlet,
-        psm:Luminaire4Inlet ;
-    s223:connectsFrom psm:ElectricBreaker1 ;
-    s223:connectsTo psm:Luminaire1,
-        psm:Luminaire2,
-        psm:Luminaire3,
-        psm:Luminaire4 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
 psm:ExteriorAir a s223:DomainSpace ;
     rdfs:label "Exterior air" ;
@@ -3049,195 +3053,6 @@ psm:i00021 a s223:Equipment,
     s223:hasConnectionPoint psm:i00023,
         psm:i00024 ;
     s223:hasProperty psm:i00022 .
-
-psm:ElectricBreaker1 a s223:ElectricBreaker ;
-    rdfs:label "Electric breaker1" ;
-    s223:cnx psm:BR1InletConnectionPoint,
-        psm:BR1OutletConnectionPoint ;
-    s223:connected psm:Luminaire1,
-        psm:Luminaire2,
-        psm:Luminaire3,
-        psm:Luminaire4,
-        psm:MainBreaker ;
-    s223:connectedFrom psm:MainBreaker ;
-    s223:connectedThrough psm:ElectricCircuit1,
-        psm:MainBreakerCircuit1 ;
-    s223:connectedTo psm:Luminaire1,
-        psm:Luminaire2,
-        psm:Luminaire3,
-        psm:Luminaire4 ;
-    s223:hasConnectionPoint psm:BR1InletConnectionPoint,
-        psm:BR1OutletConnectionPoint .
-
-psm:Luminaire10 a s223:Luminaire ;
-    rdfs:label "Luminaire10" ;
-    s223:cnx psm:Luminaire10Inlet,
-        psm:Luminaire10Outlet ;
-    s223:connected psm:ElectricBreaker2,
-        psm:LightingSpace5,
-        psm:Luminaire11,
-        psm:Luminaire12,
-        psm:Luminaire5,
-        psm:Luminaire6,
-        psm:Luminaire7,
-        psm:Luminaire8,
-        psm:Luminaire9 ;
-    s223:connectedFrom psm:ElectricBreaker2 ;
-    s223:connectedThrough psm:CorridorLight1,
-        psm:ElectricCircuit2 ;
-    s223:connectedTo psm:LightingSpace5 ;
-    s223:hasConnectionPoint psm:Luminaire10Inlet,
-        psm:Luminaire10Outlet ;
-    s223:hasProperty psm:Luminaire10OnOffStatus .
-
-psm:Luminaire5 a s223:Luminaire ;
-    rdfs:label "Luminaire5" ;
-    s223:cnx psm:Luminaire5Inlet,
-        psm:Luminaire5Outlet ;
-    s223:connected psm:ElectricBreaker2,
-        psm:LightingSpace3,
-        psm:Luminaire10,
-        psm:Luminaire11,
-        psm:Luminaire12,
-        psm:Luminaire6,
-        psm:Luminaire7,
-        psm:Luminaire8,
-        psm:Luminaire9 ;
-    s223:connectedFrom psm:ElectricBreaker2 ;
-    s223:connectedThrough psm:BathroomLight1,
-        psm:ElectricCircuit2 ;
-    s223:connectedTo psm:LightingSpace3 ;
-    s223:hasConnectionPoint psm:Luminaire5Inlet,
-        psm:Luminaire5Outlet ;
-    s223:hasProperty psm:Luminaire5OnOffStatus .
-
-psm:Luminaire6 a s223:Luminaire ;
-    rdfs:label "Luminaire6" ;
-    s223:cnx psm:Luminaire6Inlet,
-        psm:Luminaire6Outlet ;
-    s223:connected psm:ElectricBreaker2,
-        psm:LightingSpace3,
-        psm:Luminaire10,
-        psm:Luminaire11,
-        psm:Luminaire12,
-        psm:Luminaire5,
-        psm:Luminaire7,
-        psm:Luminaire8,
-        psm:Luminaire9 ;
-    s223:connectedFrom psm:ElectricBreaker2 ;
-    s223:connectedThrough psm:BathroomLight1,
-        psm:ElectricCircuit2 ;
-    s223:connectedTo psm:LightingSpace3 ;
-    s223:hasConnectionPoint psm:Luminaire6Inlet,
-        psm:Luminaire6Outlet ;
-    s223:hasProperty psm:Luminaire6OnOffStatus .
-
-psm:Luminaire7 a s223:Luminaire ;
-    rdfs:label "Luminaire7" ;
-    s223:cnx psm:Luminaire7Inlet,
-        psm:Luminaire7Outlet ;
-    s223:connected psm:ElectricBreaker2,
-        psm:LightingSpace4,
-        psm:Luminaire10,
-        psm:Luminaire11,
-        psm:Luminaire12,
-        psm:Luminaire5,
-        psm:Luminaire6,
-        psm:Luminaire8,
-        psm:Luminaire9 ;
-    s223:connectedFrom psm:ElectricBreaker2 ;
-    s223:connectedThrough psm:ElectricCircuit2,
-        psm:PrivateOfficeLight1 ;
-    s223:connectedTo psm:LightingSpace4 ;
-    s223:hasConnectionPoint psm:Luminaire7Inlet,
-        psm:Luminaire7Outlet ;
-    s223:hasProperty psm:Luminaire7OnOffStatus .
-
-psm:Luminaire8 a s223:Luminaire ;
-    rdfs:label "Luminaire8" ;
-    s223:cnx psm:Luminaire8Inlet,
-        psm:Luminaire8Outlet ;
-    s223:connected psm:ElectricBreaker2,
-        psm:LightingSpace4,
-        psm:Luminaire10,
-        psm:Luminaire11,
-        psm:Luminaire12,
-        psm:Luminaire5,
-        psm:Luminaire6,
-        psm:Luminaire7,
-        psm:Luminaire9 ;
-    s223:connectedFrom psm:ElectricBreaker2 ;
-    s223:connectedThrough psm:ElectricCircuit2,
-        psm:PrivateOfficeLight1 ;
-    s223:connectedTo psm:LightingSpace4 ;
-    s223:hasConnectionPoint psm:Luminaire8Inlet,
-        psm:Luminaire8Outlet ;
-    s223:hasProperty psm:Luminaire8OnOffStatus .
-
-psm:Luminaire9 a s223:Luminaire ;
-    rdfs:label "Luminaire9" ;
-    s223:cnx psm:Luminaire9Inlet,
-        psm:Luminaire9Outlet ;
-    s223:connected psm:ElectricBreaker2,
-        psm:LightingSpace5,
-        psm:Luminaire10,
-        psm:Luminaire11,
-        psm:Luminaire12,
-        psm:Luminaire5,
-        psm:Luminaire6,
-        psm:Luminaire7,
-        psm:Luminaire8 ;
-    s223:connectedFrom psm:ElectricBreaker2 ;
-    s223:connectedThrough psm:CorridorLight1,
-        psm:ElectricCircuit2 ;
-    s223:connectedTo psm:LightingSpace5 ;
-    s223:hasConnectionPoint psm:Luminaire9Inlet,
-        psm:Luminaire9Outlet ;
-    s223:hasProperty psm:Luminaire9OnOffStatus .
-
-psm:Luminaire11 a s223:Luminaire ;
-    rdfs:label "Luminaire11" ;
-    s223:cnx psm:Luminaire11Inlet,
-        psm:Luminaire11Outlet ;
-    s223:connected psm:ElectricBreaker2,
-        psm:LightingSpace6,
-        psm:Luminaire10,
-        psm:Luminaire12,
-        psm:Luminaire5,
-        psm:Luminaire6,
-        psm:Luminaire7,
-        psm:Luminaire8,
-        psm:Luminaire9 ;
-    s223:connectedFrom psm:ElectricBreaker2 ;
-    s223:connectedThrough psm:ElectricCircuit2,
-        psm:KitchenetteLight1 ;
-    s223:connectedTo psm:LightingSpace6 ;
-    s223:hasConnectionPoint psm:Luminaire11Inlet,
-        psm:Luminaire11Outlet ;
-    s223:hasPhysicalLocation psm:Kitchenette ;
-    s223:hasProperty psm:Luminaire11OnOffStatus .
-
-psm:Luminaire12 a s223:Luminaire ;
-    rdfs:label "Luminaire12" ;
-    s223:cnx psm:Luminaire12Inlet,
-        psm:Luminaire12Outlet ;
-    s223:connected psm:ElectricBreaker2,
-        psm:LightingSpace6,
-        psm:Luminaire10,
-        psm:Luminaire11,
-        psm:Luminaire5,
-        psm:Luminaire6,
-        psm:Luminaire7,
-        psm:Luminaire8,
-        psm:Luminaire9 ;
-    s223:connectedFrom psm:ElectricBreaker2 ;
-    s223:connectedThrough psm:ElectricCircuit2,
-        psm:KitchenetteLight1 ;
-    s223:connectedTo psm:LightingSpace6 ;
-    s223:hasConnectionPoint psm:Luminaire12Inlet,
-        psm:Luminaire12Outlet ;
-    s223:hasPhysicalLocation psm:Kitchenette ;
-    s223:hasProperty psm:Luminaire12OnOffStatus .
 
 psm:i00025 a s223:HeatingCoil ;
     rdfs:label "A-9.hot_water_coil" ;
@@ -3346,15 +3161,12 @@ psm:i00036 a s223:CoolingCoil ;
         psm:i00038,
         psm:i00039,
         psm:i00040 ;
-    s223:connected psm:InternalAHUElectricJunction,
-        psm:i00025,
+    s223:connected psm:i00025,
         psm:i00041,
         psm:i00047 ;
-    s223:connectedFrom psm:InternalAHUElectricJunction,
-        psm:i00025,
+    s223:connectedFrom psm:i00025,
         psm:i00041 ;
-    s223:connectedThrough psm:PowerToCoil,
-        psm:ValveToCoil,
+    s223:connectedThrough psm:ValveToCoil,
         psm:i00046,
         psm:i00050 ;
     s223:connectedTo psm:i00047 ;
@@ -3365,97 +3177,6 @@ psm:i00036 a s223:CoolingCoil ;
         psm:i00040 ;
     s223:hasRole s223:Role-Cooling,
         s223:Role-HeatTransfer .
-
-psm:ElectricBreaker2 a s223:ElectricBreaker ;
-    rdfs:label "Electric breaker2" ;
-    s223:cnx psm:BR2InletConnectionPoint,
-        psm:BR2OutletConnectionPoint ;
-    s223:connected psm:Luminaire10,
-        psm:Luminaire11,
-        psm:Luminaire12,
-        psm:Luminaire5,
-        psm:Luminaire6,
-        psm:Luminaire7,
-        psm:Luminaire8,
-        psm:Luminaire9,
-        psm:MainBreaker ;
-    s223:connectedFrom psm:MainBreaker ;
-    s223:connectedThrough psm:ElectricCircuit2,
-        psm:MainBreakerCircuit2 ;
-    s223:connectedTo psm:Luminaire10,
-        psm:Luminaire11,
-        psm:Luminaire12,
-        psm:Luminaire5,
-        psm:Luminaire6,
-        psm:Luminaire7,
-        psm:Luminaire8,
-        psm:Luminaire9 ;
-    s223:hasConnectionPoint psm:BR2InletConnectionPoint,
-        psm:BR2OutletConnectionPoint .
-
-psm:ElectricCircuit2 a s223:ElectricWire ;
-    rdfs:label "Electric Circuit 2" ;
-    s223:cnx psm:BR2OutletConnectionPoint,
-        psm:Luminaire10Inlet,
-        psm:Luminaire11Inlet,
-        psm:Luminaire12Inlet,
-        psm:Luminaire5Inlet,
-        psm:Luminaire6Inlet,
-        psm:Luminaire7Inlet,
-        psm:Luminaire8Inlet,
-        psm:Luminaire9Inlet ;
-    s223:connectsAt psm:BR2OutletConnectionPoint,
-        psm:Luminaire10Inlet,
-        psm:Luminaire11Inlet,
-        psm:Luminaire12Inlet,
-        psm:Luminaire5Inlet,
-        psm:Luminaire6Inlet,
-        psm:Luminaire7Inlet,
-        psm:Luminaire8Inlet,
-        psm:Luminaire9Inlet ;
-    s223:connectsFrom psm:ElectricBreaker2 ;
-    s223:connectsTo psm:Luminaire10,
-        psm:Luminaire11,
-        psm:Luminaire12,
-        psm:Luminaire5,
-        psm:Luminaire6,
-        psm:Luminaire7,
-        psm:Luminaire8,
-        psm:Luminaire9 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
-
-psm:MainBreaker a s223:ElectricBreaker ;
-    rdfs:label "Main breaker" ;
-    s223:cnx psm:MainBreakerInletCP,
-        psm:MainBreakerOutCP1,
-        psm:MainBreakerOutCP2,
-        psm:MainBreakerOutCP3,
-        psm:MainBreakerOutCP4,
-        psm:MainBreakerOutCP5 ;
-    s223:connected psm:ElectricBreaker1,
-        psm:ElectricBreaker2,
-        psm:ElectricBreaker3,
-        psm:ElectricBreaker4,
-        psm:ElectricBreaker5,
-        psm:MainGridPowerSource ;
-    s223:connectedFrom psm:MainGridPowerSource ;
-    s223:connectedThrough psm:GridConnection,
-        psm:MainBreakerCircuit1,
-        psm:MainBreakerCircuit2,
-        psm:MainBreakerCircuit3,
-        psm:MainBreakerCircuit4,
-        psm:MainBreakerCircuit5 ;
-    s223:connectedTo psm:ElectricBreaker1,
-        psm:ElectricBreaker2,
-        psm:ElectricBreaker3,
-        psm:ElectricBreaker4,
-        psm:ElectricBreaker5 ;
-    s223:hasConnectionPoint psm:MainBreakerInletCP,
-        psm:MainBreakerOutCP1,
-        psm:MainBreakerOutCP2,
-        psm:MainBreakerOutCP3,
-        psm:MainBreakerOutCP4,
-        psm:MainBreakerOutCP5 .
 
 psm:i00001 a s223:AirHandlingUnit ;
     rdfs:label "AHU" ;
@@ -3468,20 +3189,17 @@ psm:i00001 a s223:AirHandlingUnit ;
         psm:AHUOAInlet,
         psm:AHUReturnInlet,
         psm:AHUSupplyOutlet ;
-    s223:connected psm:ElectricBreaker3,
-        psm:ExteriorAir,
+    s223:connected psm:ExteriorAir,
         psm:ExternalBoiler,
         psm:ExternalLoop,
         psm:HVACSpace1,
         psm:VAVBox1,
         psm:VAVBox2 ;
-    s223:connectedFrom psm:ElectricBreaker3,
-        psm:ExteriorAir,
+    s223:connectedFrom psm:ExteriorAir,
         psm:ExternalBoiler,
         psm:ExternalLoop,
         psm:HVACSpace1 ;
-    s223:connectedThrough psm:ElectricCircuit3,
-        psm:LoopToValve,
+    s223:connectedThrough psm:LoopToValve,
         psm:PipeFromBoiler,
         psm:PipeToBoiler,
         psm:ReturnDuct,
