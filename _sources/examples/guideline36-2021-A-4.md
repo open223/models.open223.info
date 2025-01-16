@@ -12,7 +12,7 @@ kernelspec:
 
 ```{warning}
 This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2024-12-19 09:48:17. The model file was last updated on 2024-09-15 23:37:32
+223P was last updated on 2025-01-16 16:12:21. The model file was last updated on 2024-09-15 23:37:32
 ```
         
 # ASHRAE Guideline 36-2021 A-4 Parallel Fan-Powered Terminal Unit, Variable Volume Fan
