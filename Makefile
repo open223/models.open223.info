@@ -29,4 +29,4 @@ install-kernel:
 
 # Rule to clean up the compiled models.
 clean:
-	rm -f models/compiled/*.ttl
+	rm -rf models/compiled/*.ttl .ontoenv
