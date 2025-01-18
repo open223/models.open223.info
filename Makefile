@@ -10,13 +10,16 @@ MODEL_SOURCES := $(wildcard models/*.ttl)
 # COMPILED_MODELS will be the list of files but in the models/compiled folder.
 COMPILED_MODELS := $(patsubst models/%.ttl,models/compiled/%.ttl,$(MODEL_SOURCES))
 
+.ontoenv:
+	ontoenv init models ontologies
+
 # Rule to compile each model.
 # The prerequisite 'models/%.ttl' means it will match each .ttl file in the models directory.
 # 'tools/compile.py' ensures the compile script is present, but should be a prerequisite only if you want to track changes on it.
 # 'ontologies/*.ttl' captures changes in any .ttl file in the ontologies directory.
-models/compiled/%.ttl: models/%.ttl tools/compile.py
-	-python tools/compile.py -r -i -o $@ $< 
-	#ontologies/223p.ttl
+models/compiled/%.ttl: models/%.ttl tools/compile.py .ontoenv
+	ontoenv refresh
+	-uv run python tools/compile.py -r -i -o $@ $< 
 
 # The compile-models target will "make" all of the COMPILED_MODELS.
 compile-models: $(COMPILED_MODELS)
@@ -26,4 +29,4 @@ install-kernel:
 
 # Rule to clean up the compiled models.
 clean:
-	rm -f models/compiled/*.ttl
+	rm -rf models/compiled/*.ttl .ontoenv
