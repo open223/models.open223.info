@@ -17,7 +17,7 @@ It uses an underfloor air distribution system with fan-powered terminal reheat c
 The lighting system primariliy uses fluorescent luminaires and zone-based lighting controllers that communicate with user interface devices and wireless gatetways over DALI networks. The gateways collect occupancy and light sensor data over an ISM-band wireless network. 
 
 Example Building 3 Model 2 is provided by Pacific Northwest National Laboratory.
-See [LBNL Example Building 3 model 1](../lbnl-bdg3-2.md) for a different modeling approach for the same building.
+See [LBNL Example Building 3 model 1](lbnl-bdg3-2.md) for a different modeling approach for the same building.
 
 ## Contents
 
