@@ -18,7 +18,7 @@ COMPILED_MODELS := $(patsubst models/%.ttl,models/compiled/%.ttl,$(MODEL_SOURCES
 # 'tools/compile.py' ensures the compile script is present, but should be a prerequisite only if you want to track changes on it.
 # 'ontologies/*.ttl' captures changes in any .ttl file in the ontologies directory.
 models/compiled/%.ttl: models/%.ttl tools/compile.py .ontoenv
-	ontoenv refresh
+	#ontoenv refresh
 	-uv run python tools/compile.py -r -i -o $@ $< 
 
 # The compile-models target will "make" all of the COMPILED_MODELS.
