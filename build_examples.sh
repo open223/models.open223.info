@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+ontoenv init models ontologies
+
 # run the tools/make_model_formats.py script on the models directory
 python tools/make_model_formats.py models
 
