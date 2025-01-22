@@ -659,440 +659,444 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#mxtmp&gt; ;
-            sh:resultMessage &quot;s223: A `QuantifiableProperty` can be associated with at most one Unit using the relation `hasUnit`.&quot; ;
-            sh:resultPath ns2:hasUnit ;
+            sh:focusNode ns1:Voltage-24V ;
+            sh:resultMessage &quot;Value must be an instance of ns2:QuantityKind&quot; ;
+            sh:resultPath ns2:hasQuantityKind ;
             sh:resultSeverity sh:Violation ;
             sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/66cda00e&gt; ;
-            sh:value &lt;http://qudt.org/vocab/unit/DEG_F&gt; ],
+            sh:sourceShape &lt;urn:well-known/10b955f6&gt; ;
+            sh:value &lt;http://qudt.org/vocab/quantitykind/Voltage&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00022&gt; ;
-            sh:resultMessage &quot;s223: A `QuantifiableProperty` can be associated with
-ndbf583de4aea4c89af0d8610c24b9f91b134
-  - http://qudt.org/vocab/quantitykind/Temperature on ndbf583de4aea4c89af0d8610c24b9f91b134 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanSpeed
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanSpeed needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanSpeed needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineNeutralVoltage-231V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-1900V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire5OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire5OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP2Phase
-  - http://data.ashrae.org/standard223#Aspect-ElectricalPhaseIdentifier on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP2Phase needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-ndbf583de4aea4c89af0d8610c24b9f91b231
-  - http://qudt.org/vocab/quantitykind/Temperature on ndbf583de4aea4c89af0d8610c24b9f91b231 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-24V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-DCVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-120V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletFlow
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletFlow needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletFlow needs to be a http://qudt.org/schema/qudt/Unit
+            sh:focusNode ns1:Voltage-231V ;
+            sh:resultMessage &quot;Value must be an instance of ns2:Unit&quot; ;
+            sh:resultPath ns2:hasUnit ;
+            sh:resultSeverity sh:Info ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+    
 http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00017
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00017 needs to be a http://qudt.org/schema/qudt/Unit
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00017 needs to be a http://data.ashrae.org/standard223#EnumerationKind
   - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00017 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-277V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-1900V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-110V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-3460V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1Intensity
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1Intensity needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/LuminousFluxRatio on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1Intensity needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-120V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-480V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-110V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#EnumerationKind-Numerical
-  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1CCT
-  - http://qudt.org/vocab/unit/K on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1CCT needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/ThermodynamicTemperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1CCT needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1TemperatureSetpoint
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1TemperatureSetpoint needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1TemperatureSetpoint needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-139V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00008
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00008 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00008 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00008 needs to be a http://qudt.org/schema/qudt/QuantityKind
-ndbf583de4aea4c89af0d8610c24b9f91b12
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndbf583de4aea4c89af0d8610c24b9f91b12 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on ndbf583de4aea4c89af0d8610c24b9f91b12 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-10000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00017 needs to be a http://qudt.org/schema/qudt/Unit
 http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperatureProperty
   - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperatureProperty needs to be a http://qudt.org/schema/qudt/Unit
   - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperatureProperty needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire3OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire3OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#Voltage-3V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00031
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00031 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00031 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#mxtmp
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#mxtmp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#mxtmp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1DamperPositionCommand
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1DamperPositionCommand needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1DamperPositionCommand needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineNeutralVoltage-347V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperature
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperature needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperature needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP3Phase
-  - http://data.ashrae.org/standard223#Aspect-ElectricalPhaseIdentifier on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP3Phase needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-ndbf583de4aea4c89af0d8610c24b9f91b14
-  - http://qudt.org/vocab/unit/PERCENT on ndbf583de4aea4c89af0d8610c24b9f91b14 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndbf583de4aea4c89af0d8610c24b9f91b14 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Thermostat
-  - http://data.ashrae.org/standard223#Role-Controller on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Thermostat needs to be a http://data.ashrae.org/standard223#EnumerationKind-Role
-http://data.ashrae.org/standard223#Voltage-12V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-ndbf583de4aea4c89af0d8610c24b9f91b173
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndbf583de4aea4c89af0d8610c24b9f91b173 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on ndbf583de4aea4c89af0d8610c24b9f91b173 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-3810V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#Frequency-60Hz
   - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-60Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Frequency-50Hz
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#oatmp
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#oatmp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#oatmp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire12OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire12OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00022
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00022 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00022 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-6000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpaceTemp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpaceTemp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpaceTemp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-3300V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00057
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00057 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00057 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00057 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire10OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire10OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1OnOff
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1OnOff needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00012
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00012 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00012 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-127V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2CCT
-  - http://qudt.org/vocab/unit/K on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2CCT needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/ThermodynamicTemperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2CCT needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Temperature
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Temperature needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Temperature needs to be a http://qudt.org/schema/qudt/Unit
-ndbf583de4aea4c89af0d8610c24b9f91b176
-  - http://qudt.org/vocab/unit/PERCENT on ndbf583de4aea4c89af0d8610c24b9f91b176 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndbf583de4aea4c89af0d8610c24b9f91b176 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00042
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00042 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00042 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-219V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp1
-  - http://qudt.org/vocab/unit/NUM on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp1 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Population on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp1 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone2Temperature
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone2Temperature needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone2Temperature needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2Intensity
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2Intensity needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/LuminousFluxRatio on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2Intensity needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeDaylightLevel
-  - http://qudt.org/vocab/quantitykind/Illuminance on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeDaylightLevel needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/LUX on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeDaylightLevel needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1ReheatValvePositionCommand
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1ReheatValvePositionCommand needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1ReheatValvePositionCommand needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-5770V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-219V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
-ndbf583de4aea4c89af0d8610c24b9f91b276
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndbf583de4aea4c89af0d8610c24b9f91b276 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on ndbf583de4aea4c89af0d8610c24b9f91b276 needs to be a http://qudt.org/schema/qudt/Unit
 http://data.ashrae.org/standard223#Voltage-3460V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-48V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-1730V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirDamperPosition
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirDamperPosition needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirDamperPosition needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-4160V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-190V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-127V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-220V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletFlow
-  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletFlow needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletFlow needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnAirFlowRate
-  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnAirFlowRate needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnAirFlowRate needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1ReheatValvePosition
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1ReheatValvePosition needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1ReheatValvePosition needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-24V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-231V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire8OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire8OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#Numerical-Frequency
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Numerical-Frequency needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#sap
-  - http://qudt.org/vocab/unit/PSI on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#sap needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#sap needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-139V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#LineLineVoltage-600V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirDamperPosition
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirDamperPosition needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirDamperPosition needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-DCVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustFanStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustFanStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire11OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire11OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Temperature
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Temperature needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Temperature needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-1730V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2ReheatValvePosition
   - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2ReheatValvePosition needs to be a http://qudt.org/schema/qudt/Unit
   - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2ReheatValvePosition needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-5770V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-415V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-ndbf583de4aea4c89af0d8610c24b9f91b28
-  - http://qudt.org/vocab/unit/PERCENT on ndbf583de4aea4c89af0d8610c24b9f91b28 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndbf583de4aea4c89af0d8610c24b9f91b28 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-6600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire6OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire6OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletTemperature
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletTemperature needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletTemperature needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-3000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ChilledWaterInletTemp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ChilledWaterInletTemp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ChilledWaterInletTemp needs to be a http://qudt.org/schema/qudt/Unit
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b104
+  - http://qudt.org/vocab/quantitykind/Temperature on n5cf81f6cfdfd4c769848ff5ca33bf7b5b104 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2CCT
+  - http://qudt.org/vocab/unit/K on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2CCT needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/ThermodynamicTemperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2CCT needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirPressure
+  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirPressure needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PSI on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirPressure needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-139V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire7OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire7OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeDaylightLevel
+  - http://qudt.org/vocab/unit/LUX on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeDaylightLevel needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Illuminance on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OpenOfficeDaylightLevel needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire5OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire5OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilValvePosition
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilValvePosition needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilValvePosition needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00012
+  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00012 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00012 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-10000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-4160V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3810V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP2Phase
+  - http://data.ashrae.org/standard223#Aspect-ElectricalPhaseIdentifier on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP2Phase needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#Voltage-1900V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-3300V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperature
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperature needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2OutletTemperature needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnAirFlowRate
+  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnAirFlowRate needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnAirFlowRate needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-415V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b186
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n5cf81f6cfdfd4c769848ff5ca33bf7b5b186 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n5cf81f6cfdfd4c769848ff5ca33bf7b5b186 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineNeutralVoltage-24V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2Intensity
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2Intensity needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/LuminousFluxRatio on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2Intensity needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-LineLineVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-3460V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-110V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b200
+  - http://qudt.org/vocab/unit/PERCENT on n5cf81f6cfdfd4c769848ff5ca33bf7b5b200 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n5cf81f6cfdfd4c769848ff5ca33bf7b5b200 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1CCT
+  - http://qudt.org/vocab/quantitykind/ThermodynamicTemperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1CCT needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/K on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1CCT needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Frequency-50Hz
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanSpeed
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanSpeed needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanSpeed needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b169
+  - http://qudt.org/vocab/unit/PERCENT on n5cf81f6cfdfd4c769848ff5ca33bf7b5b169 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n5cf81f6cfdfd4c769848ff5ca33bf7b5b169 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-190V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-10000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanSpeed
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanSpeed needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ReturnFanSpeed needs to be a http://qudt.org/schema/qudt/Unit
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b350
+  - http://qudt.org/vocab/quantitykind/Temperature on n5cf81f6cfdfd4c769848ff5ca33bf7b5b350 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-Voltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ratmp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ratmp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ratmp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-24V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b175
+  - http://qudt.org/vocab/quantitykind/Temperature on n5cf81f6cfdfd4c769848ff5ca33bf7b5b175 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-127V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#LineNeutralVoltage-2400V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilValvePosition
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilValvePosition needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilValvePosition needs to be a http://qudt.org/schema/qudt/QuantityKind
-ndbf583de4aea4c89af0d8610c24b9f91b74
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndbf583de4aea4c89af0d8610c24b9f91b74 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on ndbf583de4aea4c89af0d8610c24b9f91b74 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-4160V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OutletTemperature
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OutletTemperature needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OutletTemperature needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-6000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-190V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-3000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ratmp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ratmp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ratmp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineNeutralVoltage-3810V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-2400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-ndbf583de4aea4c89af0d8610c24b9f91b3
-  - http://qudt.org/vocab/unit/PERCENT on ndbf583de4aea4c89af0d8610c24b9f91b3 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndbf583de4aea4c89af0d8610c24b9f91b3 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire7OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire7OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustFanStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustFanStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP4Phase
-  - http://data.ashrae.org/standard223#Aspect-ElectricalPhaseIdentifier on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP4Phase needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#Voltage-480V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#Numerical-Voltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1DamperPosition
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1DamperPosition needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1DamperPosition needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-220V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-5770V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-277V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletFlow
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletFlow needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletFlow needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Numerical-Frequency
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Numerical-Frequency needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire4OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire4OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#Voltage-219V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#oatmp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#oatmp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#oatmp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-380V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#Voltage-400V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletTemperature
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletTemperature needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1InletTemperature needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ChilledWaterInletTemp
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ChilledWaterInletTemp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ChilledWaterInletTemp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire12OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire12OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustAirDamperPosition
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustAirDamperPosition needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustAirDamperPosition needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineNeutralVoltage-120V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00057
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00057 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00057 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00057 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-3300V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-127V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-110V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b280
+  - http://qudt.org/vocab/unit/PERCENT on n5cf81f6cfdfd4c769848ff5ca33bf7b5b280 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n5cf81f6cfdfd4c769848ff5ca33bf7b5b280 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00008
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00008 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00008 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00008 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineNeutralVoltage-347V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1DamperPosition
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1DamperPosition needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1DamperPosition needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-48V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b126
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n5cf81f6cfdfd4c769848ff5ca33bf7b5b126 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n5cf81f6cfdfd4c769848ff5ca33bf7b5b126 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1Intensity
+  - http://qudt.org/vocab/quantitykind/LuminousFluxRatio on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1Intensity needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1Intensity needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OutletTemperature
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OutletTemperature needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV1OutletTemperature needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-3300V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-2V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire10OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire10OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2OnOff
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2OnOff needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-277V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-5770V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1TemperatureSetpoint
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1TemperatureSetpoint needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1TemperatureSetpoint needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletFlow
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletFlow needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAV2InletFlow needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilValvePosition
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilValvePosition needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilValvePosition needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00022
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00022 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00022 needs to be a http://qudt.org/schema/qudt/QuantityKind
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b164
+  - http://qudt.org/vocab/unit/PERCENT on n5cf81f6cfdfd4c769848ff5ca33bf7b5b164 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n5cf81f6cfdfd4c769848ff5ca33bf7b5b164 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-219V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-480V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP4Phase
+  - http://data.ashrae.org/standard223#Aspect-ElectricalPhaseIdentifier on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP4Phase needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#EnumerationKind-Numerical
+  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire9OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire9OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223#LineLineVoltage-6600V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-220V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00042
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00042 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00042 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-12V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-4160V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00062
   - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00062 needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00062 needs to be a http://data.ashrae.org/standard223#EnumerationKind
   - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00062 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirDamperPosition
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirDamperPosition needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OutsideAirDamperPosition needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire9OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire9OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilOutletTemperature
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilOutletTemperature needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilOutletTemperature needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-10000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#mxtmp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#mxtmp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#mxtmp needs to be a http://qudt.org/schema/qudt/Unit
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b110
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n5cf81f6cfdfd4c769848ff5ca33bf7b5b110 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n5cf81f6cfdfd4c769848ff5ca33bf7b5b110 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire8OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire8OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirDamperPosition
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirDamperPosition needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirDamperPosition needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1ReheatValvePosition
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1ReheatValvePosition needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox1ReheatValvePosition needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1DamperPositionCommand
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1DamperPositionCommand needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1DamperPositionCommand needs to be a http://qudt.org/schema/qudt/Unit
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b78
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n5cf81f6cfdfd4c769848ff5ca33bf7b5b78 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n5cf81f6cfdfd4c769848ff5ca33bf7b5b78 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-480V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2DamperPosition
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2DamperPosition needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2DamperPosition needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-1730V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone2Temperature
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone2Temperature needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone2Temperature needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#sap
+  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#sap needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PSI on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#sap needs to be a http://qudt.org/schema/qudt/Unit
 http://data.ashrae.org/standard223#Voltage-6V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-220V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-139V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-415V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-380V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-1730V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire11OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire11OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-ndbf583de4aea4c89af0d8610c24b9f91b100
-  - http://qudt.org/vocab/unit/PERCENT on ndbf583de4aea4c89af0d8610c24b9f91b100 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndbf583de4aea4c89af0d8610c24b9f91b100 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2OnOff
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2OnOff needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2DamperPosition
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2DamperPosition needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#VAVBox2DamperPosition needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineNeutralVoltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-380V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustAirDamperPosition
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustAirDamperPosition needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#ExhaustAirDamperPosition needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP5Phase
-  - http://data.ashrae.org/standard223#Aspect-ElectricalPhaseIdentifier on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP5Phase needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#Voltage-6000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#Voltage-347V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire2OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanSpeed
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanSpeed needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#SupplyFanSpeed needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-LineLineVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilValvePosition
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilValvePosition needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilValvePosition needs to be a http://qudt.org/schema/qudt/Unit
-ndbf583de4aea4c89af0d8610c24b9f91b68
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndbf583de4aea4c89af0d8610c24b9f91b68 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on ndbf583de4aea4c89af0d8610c24b9f91b68 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineNeutralVoltage-277V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
-ndbf583de4aea4c89af0d8610c24b9f91b268
-  - http://qudt.org/vocab/quantitykind/Temperature on ndbf583de4aea4c89af0d8610c24b9f91b268 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirPressure
-  - http://qudt.org/vocab/unit/PSI on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirPressure needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#MixedAirPressure needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilOutletTemperature
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilOutletTemperature needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilOutletTemperature needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Thermostat
+  - http://data.ashrae.org/standard223#Role-Controller on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACZone1Thermostat needs to be a http://data.ashrae.org/standard223#EnumerationKind-Role
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP5Phase
+  - http://data.ashrae.org/standard223#Aspect-ElectricalPhaseIdentifier on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP5Phase needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-3810V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp1
+  - http://qudt.org/vocab/quantitykind/Population on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp1 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/NUM on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#OccupancyProp1 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-190V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1ReheatValvePositionCommand
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1ReheatValvePositionCommand needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#TU1ReheatValvePositionCommand needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-2400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilOutletTemperature
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilOutletTemperature needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HeatingCoilOutletTemperature needs to be a http://qudt.org/schema/qudt/Unit
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b17
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n5cf81f6cfdfd4c769848ff5ca33bf7b5b17 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n5cf81f6cfdfd4c769848ff5ca33bf7b5b17 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-415V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire3OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire3OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+n5cf81f6cfdfd4c769848ff5ca33bf7b5b259
+  - http://qudt.org/vocab/unit/PERCENT on n5cf81f6cfdfd4c769848ff5ca33bf7b5b259 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n5cf81f6cfdfd4c769848ff5ca33bf7b5b259 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-231V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-1900V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00031
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00031 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#i00031 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-380V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpaceTemp
+  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpaceTemp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#HVACSpaceTemp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire6OnOffStatus
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire6OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#LineLineVoltage-6000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-120V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-231V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP3Phase
+  - http://data.ashrae.org/standard223#Aspect-ElectricalPhaseIdentifier on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP3Phase needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP1Phase
   - http://data.ashrae.org/standard223#Aspect-ElectricalPhaseIdentifier on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#BreakerCP1Phase needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilOutletTemperature
-  - http://qudt.org/vocab/unit/DEG_F on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilOutletTemperature needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#CoolingCoilOutletTemperature needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-2V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire4OnOffStatus
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire4OnOffStatus needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1OnOff
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/pd-sr-mp-pritoni#Luminaire1OnOff needs to be a http://data.ashrae.org/standard223#EnumerationKind
 </pre></div>
 </div>
 </div>
