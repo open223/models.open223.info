@@ -1,36 +1,12 @@
 [
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitchOutletCP",
         "@type": [
-            "http://data.ashrae.org/standard223#DomainSpace"
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasDomain": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Domain-Lighting"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Domain space"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchInlet",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchProduct"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -40,86 +16,19 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Smart switch inlet"
+                "@value": "Dumb switchOutlet CP"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumerableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "UserSwitchProperty"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Luminaire"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Luminaire inlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Luminaire command"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motor1Inlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath",
         "@type": [
             "http://data.ashrae.org/standard223#Connection"
+        ],
+        "http://data.ashrae.org/standard223#connectsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace"
+            }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -129,325 +38,6 @@
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
                 "@value": "Optical path"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Breaker1"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Breaker outlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Light-Visible"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Luminaire outlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorInletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInletCP"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "LightActuatorInlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motor3Inlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OccupantMotionSensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#OccupantMotionSensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#MotionProperty"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Occupant motion sensor"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#RoomDomainSpace",
-        "@type": [
-            "http://data.ashrae.org/standard223#DomainSpace"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DomainSpaceInletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasDomain": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Domain-Lighting"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Room domain space"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "ElectricWireToLuminaire"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Breaker",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricBreaker"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Breaker"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Luminaire",
-        "@type": [
-            "http://data.ashrae.org/standard223#Luminaire"
-        ],
-        "http://data.ashrae.org/standard223#actuatedByProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand"
-            }
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#contains": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Luminaire"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OccupantMotionSensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#OccupantMotionSensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Occupant motion sensor"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitch",
-        "@type": [
-            "http://data.ashrae.org/standard223#Equipment"
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Smart switch"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Controller",
-        "@type": [
-            "http://data.ashrae.org/standard223#Controller"
-        ],
-        "http://data.ashrae.org/standard223#executes": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Function1"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Controller"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Junction outlet CP1"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1",
-        "@type": [
-            "http://data.ashrae.org/standard223#Motor"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motor1"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Light-Visible"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Light path to room"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorOutletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInternalWire"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Light actuator outlet CP"
             }
         ]
     },
@@ -468,172 +58,13 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Circuit branch3"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3InletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motor3Inlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#MotionProperty",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Occupancy-Motion"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motion property"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#TestRoom",
-        "@type": [
-            "http://data.ashrae.org/standard223#PhysicalSpace"
-        ],
-        "http://data.ashrae.org/standard223#encloses": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Test room"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#PhysicalSpace_1",
-        "@type": [
-            "http://data.ashrae.org/standard223#PhysicalSpace"
-        ],
-        "http://data.ashrae.org/standard223#encloses": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Physical space 1"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1",
-        "@type": [
-            "http://data.ashrae.org/standard223#Motor"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motor1"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Circuit branch1"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario",
-        "@type": [
-            "http://www.w3.org/2002/07/owl#Ontology"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#comment": [
-            {
-                "@value": "pt1: A simple, manual switch with no electronic signals (Properties)\npt2: A Luminaire that is controlled by both a simple light switch and a motion sensor\npt3: A Luminaire controlled by a combination of a smart switch and a motion sensor\npt4: A Luminaire controlled by a combination of a smart switch and a motion sensor - expanded components\npt6: Updated Luminaire controlled by a combination of a smart switch and a motion sensor - expanded\n"
-            }
-        ],
-        "http://www.w3.org/2002/07/owl#imports": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/model/all"
-            }
-        ],
-        "http://www.w3.org/2002/07/owl#versionInfo": [
-            {
-                "@value": "Created with TopBraid Composer"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Occupancy-Motion"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motion property"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace",
         "@type": [
             "http://data.ashrae.org/standard223#DomainSpace"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpaceInletCP"
             }
         ],
         "http://data.ashrae.org/standard223#hasDomain": [
@@ -669,51 +100,9 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OccupantMotionSensor",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP",
         "@type": [
-            "http://data.ashrae.org/standard223#OccupantMotionSensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Occupant motion sensor"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#TestRoom",
-        "@type": [
-            "http://data.ashrae.org/standard223#PhysicalSpace"
-        ],
-        "http://data.ashrae.org/standard223#encloses": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Test room"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath"
-            }
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -722,57 +111,28 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Domain space inlet CP"
+                "@value": "Luminaire outlet CP"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+            "http://data.ashrae.org/standard223#EnumerableProperty"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Breaker1"
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
             }
         ],
-        "http://data.ashrae.org/standard223#hasMedium": [
+        "http://data.ashrae.org/standard223#hasValue": [
             {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+                "@id": "http://data.ashrae.org/standard223#OnOff-Unknown"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Breaker outlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire",
-        "@type": [
-            "http://data.ashrae.org/standard223#Luminaire"
-        ],
-        "http://data.ashrae.org/standard223#actuatedByProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand"
-            }
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireInletCP"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#connectedTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Luminaire"
+                "@value": "SmartSwitchProperty"
             }
         ]
     },
@@ -798,13 +158,101 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DomainSpaceInletCP",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dumb switchOutlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#WireToLightFixture",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricWire"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Wire to light fixture"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor2Inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb",
+        "@type": [
+            "http://data.ashrae.org/standard223#Equipment"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbOutletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Light bulb"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricWire"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Electric wire BothSwitches-Lum"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -815,6 +263,464 @@
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
                 "@value": "Domain space inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace",
+        "@type": [
+            "http://data.ashrae.org/standard223#DomainSpace"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasDomain": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Domain-Lighting"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Domain space"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Function1",
+        "@type": [
+            "http://data.ashrae.org/standard223#Function"
+        ],
+        "http://data.ashrae.org/standard223#hasInput": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasOutput": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Function block1\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Luminaire command"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3",
+        "@type": [
+            "http://data.ashrae.org/standard223#Motor"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor3"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitch",
+        "@type": [
+            "http://data.ashrae.org/standard223#Equipment"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dumb switch"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#TestRoom",
+        "@type": [
+            "http://data.ashrae.org/standard223#PhysicalSpace"
+        ],
+        "http://data.ashrae.org/standard223#encloses": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Test room"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OccupantMotionSensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#OccupantMotionSensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Occupant motion sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Luminaire command"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputSwitch",
+        "@type": [
+            "http://data.ashrae.org/standard223#Equipment"
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "User input switch"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Breaker1"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Breaker outlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor3Inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Breaker outlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricWire"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Electric wire DS-Lum"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OccupantMotionSensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#OccupantMotionSensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#MotionProperty"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Occupant motion sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2",
+        "@type": [
+            "http://data.ashrae.org/standard223#Motor"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor2"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Luminaire command"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor1Inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricWire"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Circuit branch2"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Occupancy-Motion"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motion property"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Junction outlet CP1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#MotionProperty",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Occupancy-Motion"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motion property"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OccupantMotionSensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#OccupantMotionSensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Occupant motion sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Light-Visible"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Light bulb outlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OccupantMotionSensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#OccupantMotionSensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#MotionProperty"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Occupant motion sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor1Inlet CP"
             }
         ]
     },
@@ -860,13 +766,29 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireOutletCP",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor3InletCP",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
+        "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom"
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor3Inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection"
+        ],
+        "http://data.ashrae.org/standard223#connectsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -876,39 +798,18 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Luminaire outlet CP"
+                "@value": "Optical path"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitch",
-        "@type": [
-            "http://data.ashrae.org/standard223#Equipment"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitchOutletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#connected": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dumb switch"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireInletCP",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireInletCP",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -919,6 +820,254 @@
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
                 "@value": "LuminaireInlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayInletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchInlet"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "RelayInlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Relay",
+        "@type": [
+            "http://data.ashrae.org/standard223#Equipment"
+        ],
+        "http://data.ashrae.org/standard223#hasConnectionPoint": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayInletCP"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayOutletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Relay"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Luminaire",
+        "@type": [
+            "http://data.ashrae.org/standard223#Luminaire"
+        ],
+        "http://data.ashrae.org/standard223#actuatedByProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand"
+            }
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#contains": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Luminaire"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Breaker1"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Breaker outlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Light bulb inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInternalWire"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Light actuator outlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#PhysicalSpace_1",
+        "@type": [
+            "http://data.ashrae.org/standard223#PhysicalSpace"
+        ],
+        "http://data.ashrae.org/standard223#encloses": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Physical space 1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumerableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasValue": [
+            {
+                "@id": "http://data.ashrae.org/standard223#OnOff-Unknown"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "UserInputProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpaceInletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Light-Visible"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Domain space inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace",
+        "@type": [
+            "http://data.ashrae.org/standard223#DomainSpace"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasDomain": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Domain-Lighting"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Domain space"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Junction inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Light-Visible"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "luminaire outlet CP"
             }
         ]
     },
@@ -957,30 +1106,98 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInternalWire",
         "@type": [
-            "http://data.ashrae.org/standard223#EnumerableProperty"
+            "http://data.ashrae.org/standard223#ElectricWire"
         ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+        "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP"
             }
         ],
-        "http://data.ashrae.org/standard223#hasValue": [
+        "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223#OnOff-Unknown"
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "UserInputProperty"
+                "@value": "Luminaire internal wire"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Breaker outlet connection point 1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Occupancy-Motion"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motion property"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuatedByProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand"
+            }
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorOutletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#connectedTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Light actuator"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DomainSpaceInletCP",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom"
+            }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -990,6 +1207,244 @@
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
                 "@value": "Domain space inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricWire"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "ElectricWireFromBreaker"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Luminaire"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Luminaire inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch1",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricWire"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Circuit branch1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Function1",
+        "@type": [
+            "http://data.ashrae.org/standard223#Function"
+        ],
+        "http://data.ashrae.org/standard223#hasInput": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasOutput": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Function block1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitch",
+        "@type": [
+            "http://data.ashrae.org/standard223#Equipment"
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Smart switch"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchInlet",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchProduct"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Smart switch inlet"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace",
+        "@type": [
+            "http://data.ashrae.org/standard223#DomainSpace"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasDomain": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Domain-Lighting"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Domain space"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1",
+        "@type": [
+            "http://data.ashrae.org/standard223#Motor"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#Room",
+        "@type": [
+            "http://data.ashrae.org/standard223#PhysicalSpace"
+        ],
+        "http://data.ashrae.org/standard223#encloses": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#RoomDomainSpace"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Room"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchOutlet",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#WireToLightFixture"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Smart switch outlet"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Light-Visible"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Optical path"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Light-Visible"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Luminaire outlet CP"
             }
         ]
     },
@@ -1010,82 +1465,129 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Luminaire",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Ontology"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#comment": [
+            {
+                "@value": "pt1: A simple, manual switch with no electronic signals (Properties)\npt2: A Luminaire that is controlled by both a simple light switch and a motion sensor\npt3: A Luminaire controlled by a combination of a smart switch and a motion sensor\npt4: A Luminaire controlled by a combination of a smart switch and a motion sensor - expanded components\npt6: Updated Luminaire controlled by a combination of a smart switch and a motion sensor - expanded\n"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#imports": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/model/all"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#versionInfo": [
+            {
+                "@value": "Created with TopBraid Composer"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1",
+        "@type": [
+            "http://data.ashrae.org/standard223#Motor"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor1InletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Light-Visible"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Domain space inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Breaker",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricBreaker"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Breaker"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#TestRoom",
+        "@type": [
+            "http://data.ashrae.org/standard223#PhysicalSpace"
+        ],
+        "http://data.ashrae.org/standard223#encloses": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Test room"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch3",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricWire"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Circuit branch3"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitch",
         "@type": [
             "http://data.ashrae.org/standard223#Equipment"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireInletCP"
-            },
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitchOutletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#connected": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireOutletCP"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#Luminaire"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Luminaire"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Function1",
-        "@type": [
-            "http://data.ashrae.org/standard223#Function"
-        ],
-        "http://data.ashrae.org/standard223#hasInput": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasOutput": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Function block1"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Circuit1"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Electric wire DS-Lum"
+                "@value": "Dumb switch"
             }
         ]
     },
@@ -1117,44 +1619,23 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#TestRoom",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+            "http://data.ashrae.org/standard223#PhysicalSpace"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
+        "http://data.ashrae.org/standard223#encloses": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Breaker outlet CP"
+                "@value": "Test room"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitch",
-        "@type": [
-            "http://data.ashrae.org/standard223#Equipment"
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "User switch"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty",
         "@type": [
             "http://data.ashrae.org/standard223#EnumerableProperty"
         ],
@@ -1163,14 +1644,9 @@
                 "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
             }
         ],
-        "http://data.ashrae.org/standard223#hasValue": [
-            {
-                "@id": "http://data.ashrae.org/standard223#OnOff-Unknown"
-            }
-        ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "SmartSwitchProperty"
+                "@value": "UserSwitchProperty"
             }
         ]
     },
@@ -1196,6 +1672,168 @@
         ]
     },
     {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitch",
+        "@type": [
+            "http://data.ashrae.org/standard223#Equipment"
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "User switch"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Light-Visible"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Luminaire outlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Function1",
+        "@type": [
+            "http://data.ashrae.org/standard223#Function"
+        ],
+        "http://data.ashrae.org/standard223#hasInput": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#MotionProperty"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasOutput": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Function block1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Breaker1",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricBreaker"
+        ],
+        "http://data.ashrae.org/standard223#connectedThrough": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Breaker1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor2Inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Junction outlet CP2"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireInletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "LuminaireInlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction",
+        "@type": [
+            "http://data.ashrae.org/standard223#Junction"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Junction"
+            }
+        ]
+    },
+    {
         "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayOutletCP",
         "@type": [
             "http://data.ashrae.org/standard223#OutletConnectionPoint"
@@ -1217,34 +1855,69 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbOutletCP",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Luminaire",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Light-Visible"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireOutletCP"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Light bulb outlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
+            "http://data.ashrae.org/standard223#Equipment"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireInletCP"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireOutletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Luminaire"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Breaker outlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricBreaker_1",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricBreaker"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Electric breaker 1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireOutletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -1254,28 +1927,62 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Domain space inlet CP"
+                "@value": "Luminaire outlet CP"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Breaker1",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#Luminaire",
         "@type": [
-            "http://data.ashrae.org/standard223#ElectricBreaker"
+            "http://data.ashrae.org/standard223#Luminaire"
         ],
-        "http://data.ashrae.org/standard223#connectedThrough": [
+        "http://data.ashrae.org/standard223#actuatedByProperty": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand"
+            }
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireInletCP"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#connectedTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpace"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Breaker1"
+                "@value": "Luminaire"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#RoomDomainSpace",
+        "@type": [
+            "http://data.ashrae.org/standard223#DomainSpace"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DomainSpaceInletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasDomain": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Domain-Lighting"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Room domain space"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand",
         "@type": [
             "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
         ],
@@ -1287,6 +1994,83 @@
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
                 "@value": "Luminaire command"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricWire"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "ElectricWireToLuminaire"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Circuit1",
+        "@type": [
+            "http://data.ashrae.org/standard223#ElectricWire"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Circuit1"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OpticalPath",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Light-Visible"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Optical path"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Controller",
+        "@type": [
+            "http://data.ashrae.org/standard223#Controller"
+        ],
+        "http://data.ashrae.org/standard223#executes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Function1"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Controller"
             }
         ]
     },
@@ -1326,6 +2110,43 @@
         ]
     },
     {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpaceInletCP",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Light-Visible"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Domain space inlet CP"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2",
+        "@type": [
+            "http://data.ashrae.org/standard223#Motor"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Motor2"
+            }
+        ]
+    },
+    {
         "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#MotionProperty",
         "@type": [
             "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
@@ -1342,55 +2163,10 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor1InletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motor1Inlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dumb switchOutlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#OpticalPath",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LightPathToRoom",
         "@type": [
             "http://data.ashrae.org/standard223#Connection"
         ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#DomainSpaceInletCP"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP"
-            }
-        ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#Light-Visible"
@@ -1398,168 +2174,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Optical path"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireOutletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Light-Visible"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Luminaire outlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#Function1",
-        "@type": [
-            "http://data.ashrae.org/standard223#Function"
-        ],
-        "http://data.ashrae.org/standard223#hasInput": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasOutput": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Function block1"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Junction outlet CP2"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitch",
-        "@type": [
-            "http://data.ashrae.org/standard223#Equipment"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#DumbSwitchOutletCP"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dumb switch"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#CircuitBranch2",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Circuit branch2"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchOutlet",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#WireToLightFixture"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Smart switch outlet"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb",
-        "@type": [
-            "http://data.ashrae.org/standard223#Equipment"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbOutletCP"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Light bulb"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Breaker outlet connection point 1"
+                "@value": "Light path to room"
             }
         ]
     },
@@ -1585,424 +2200,6 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireInletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "LuminaireInlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputSwitch",
-        "@type": [
-            "http://data.ashrae.org/standard223#Equipment"
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "User input switch"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionInletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Junction inlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Electric wire BothSwitches-Lum"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Luminaire command"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Light bulb inlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace",
-        "@type": [
-            "http://data.ashrae.org/standard223#DomainSpace"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpaceInletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasDomain": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Domain-Lighting"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Domain space"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpaceInletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#OpticalPath"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Light-Visible"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Domain space inlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OpticalPath",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection"
-        ],
-        "http://data.ashrae.org/standard223#connectsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Light-Visible"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Optical path"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection"
-        ],
-        "http://data.ashrae.org/standard223#connectsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#DomainSpace"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Light-Visible"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Optical path"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Relay",
-        "@type": [
-            "http://data.ashrae.org/standard223#Equipment"
-        ],
-        "http://data.ashrae.org/standard223#hasConnectionPoint": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayInletCP"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayOutletCP"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Relay"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#ElectricWireFromBreaker",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "ElectricWireFromBreaker"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3",
-        "@type": [
-            "http://data.ashrae.org/standard223#Motor"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor3InletCP"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motor3"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireInletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "LuminaireInlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Luminaire command"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DumbSwitchOutletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#ElectricWireBothSwitches-Lum"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Dumb switchOutlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Circuit1"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Breaker outlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motor2Inlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Function1",
-        "@type": [
-            "http://data.ashrae.org/standard223#Function"
-        ],
-        "http://data.ashrae.org/standard223#hasInput": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasOutput": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Function block1\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#Room",
-        "@type": [
-            "http://data.ashrae.org/standard223#PhysicalSpace"
-        ],
-        "http://data.ashrae.org/standard223#encloses": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#RoomDomainSpace"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Room"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInternalWire",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulbInletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Luminaire internal wire"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#MotionProperty",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Occupancy-Motion"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motion property"
-            }
-        ]
-    },
-    {
         "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#Breaker1",
         "@type": [
             "http://data.ashrae.org/standard223#ElectricBreaker"
@@ -2019,46 +2216,14 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricBreaker_1",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#ElectricWireToLuminaire",
         "@type": [
-            "http://data.ashrae.org/standard223#ElectricBreaker"
+            "http://data.ashrae.org/standard223#ElectricWire"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP"
             }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Electric breaker 1"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#OccupantMotionSensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#OccupantMotionSensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#DomainSpace"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#MotionProperty"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Occupant motion sensor"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#ElectricWireToLuminaire",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -2072,41 +2237,14 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#TestRoom",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorInletCP",
         "@type": [
-            "http://data.ashrae.org/standard223#PhysicalSpace"
-        ],
-        "http://data.ashrae.org/standard223#encloses": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Test room"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2",
-        "@type": [
-            "http://data.ashrae.org/standard223#Motor"
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator"
             }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motor2"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#RelayInletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -2115,163 +2253,25 @@
         ],
         "http://data.ashrae.org/standard223#mapsTo": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#SmartSwitchInlet"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireInletCP"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "RelayInlet CP"
+                "@value": "LightActuatorInlet CP"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireOutletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Light-Visible"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Luminaire outlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuatedByProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand"
-            }
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuatorOutletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#connectedTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Light actuator"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#WireToLightFixture",
-        "@type": [
-            "http://data.ashrae.org/standard223#ElectricWire"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Wire to light fixture"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Junction",
-        "@type": [
-            "http://data.ashrae.org/standard223#Junction"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP1"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP2"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#JunctionOutletCP3"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Junction"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireOutletCP",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#OpticalPath"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Light-Visible"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "luminaire outlet CP"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpace",
-        "@type": [
-            "http://data.ashrae.org/standard223#DomainSpace"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#DomainSpaceInletCP"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasDomain": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Domain-Lighting"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Domain space"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2",
-        "@type": [
-            "http://data.ashrae.org/standard223#Motor"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#Motor2InletCP"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Motor2"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#Motor2InletCP",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#LuminaireInletCP",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#ElectricWireDS-Lum"
+            }
+        ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#AC-120VLN-1Ph-60Hz"
@@ -2279,7 +2279,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Motor2Inlet CP"
+                "@value": "LuminaireInlet CP"
             }
         ]
     }
