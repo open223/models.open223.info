@@ -28,6 +28,9 @@ jobs:
         chmod +x ontoenv_v0.1.10a7_x86_64_linux_gnu
         sudo mv ontoenv_v0.1.10a7_x86_64_linux_gnu /usr/local/bin/ontoenv
 
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+
     - uses: actions/setup-python@v4
       with:
         python-version: 3.11
