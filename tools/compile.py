@@ -4,8 +4,7 @@ import random
 import argparse
 import ontoenv
 import rdflib
-#import brickschema
-#from brickschema import topquadrant_shacl
+from brick_tq_shacl import topquadrant_shacl
 from brick_tq_shacl.topquadrant_shacl import infer, validate
 import rdflib
 
@@ -40,7 +39,7 @@ if __name__ == "__main__":
     graph.serialize("graph.ttl", format="turtle")
 
     if args.reason:
-        #topquadrant_shacl._MAX_EXTERNAL_LOOPS = 2
+        topquadrant_shacl._MAX_EXTERNAL_LOOPS = 10
         graph = infer(graph, graph)
         #graph.expand(profile="shacl", backend="topquadrant")
     if args.output:
