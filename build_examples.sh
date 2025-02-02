@@ -38,4 +38,4 @@ uv run python tools/generate-queries.py
 ontoenv refresh
 mkdir -p models/compiled
 make compile-models
-jb build .
+uv run jb build .
