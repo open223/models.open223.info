@@ -1,12 +1,125 @@
 [
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-in-1",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-hot-water-out"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Valve Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-flow",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Supply"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Supply Air Flow"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve",
+        "@type": [
+            "http://data.ashrae.org/standard223#Valve",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-in"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-position"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Valve"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#room-return-to-fpu-connection",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Room Return To Fpu Connection"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-in",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-damper"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-pipe-hot-water-return-before-valve"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Valve In"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-in-2",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-fan"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
@@ -16,7 +129,96 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Parallelfpuconstantfan Junction In 1"
+                "@value": "Parallelfpuconstantfan Junction In 2"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#zone-co2-concentration",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#ofSubstance": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Constituent-CO2"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/MoleFraction"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PPM"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Zone Co2 Concentration"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-hot-water-in"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Water In"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-reheat-coil"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Fan In"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-position",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Valve Position"
             }
         ]
     },
@@ -49,226 +251,6 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Damper",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-position"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Damper"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-discharge-air-temp",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Discharge"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/DEG_C"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Discharge Air Temp"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-cmd",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Fan Start Cmd"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-flow-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-in"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-flow"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Supply Air Flow Sensor"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-supply-water-temp-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-in"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-supply-water-temp"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Supply Water Temp Sensor"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-pipe-hot-water-return-before-valve",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Pipe"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Pipe Hot Water Return Before Valve"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#",
-        "@type": [
-            "http://www.w3.org/2002/07/owl#Ontology"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": ""
-            }
-        ],
-        "http://www.w3.org/2002/07/owl#imports": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/model/all"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-air-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-return-air-from-plenum-in"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Air In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-pipe-hot-water-return-before-valve"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Valve In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace",
-        "@type": [
-            "http://data.ashrae.org/standard223#PhysicalSpace"
-        ],
-        "http://data.ashrae.org/standard223#encloses": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Physicalspace"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#fpu-supply-to-room-connection",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Fpu Supply To Room Connection"
-            }
-        ]
-    },
-    {
         "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-in",
         "@type": [
             "http://data.ashrae.org/standard223#InletConnectionPoint"
@@ -290,315 +272,9 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-hot-water-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Hot Water In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-flow",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-position",
         "@type": [
             "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Supply"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Supply Air Flow"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-return-water-temp-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#observes": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-return-water-temp"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Return Water Temp Sensor"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-fan"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Fan Out"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-air-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#fpu-supply-to-room-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-discharge-air-temp"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Air Out"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction",
-        "@type": [
-            "http://data.ashrae.org/standard223#Junction"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-in-1"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-in-2"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Junction"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil",
-        "@type": [
-            "http://data.ashrae.org/standard223#HeatingCoil",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-air-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-air-out"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-return-water-temp"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-supply-water-temp"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasRole": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Heating"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#zone-co2-concentration",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#ofSubstance": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Constituent-CO2"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/MoleFraction"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PPM"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Zone Co2 Concentration"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-hot-water-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Hot Water Out"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuatedByProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command"
-            }
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Valve Actuator"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-reheat-coil"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Fan In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-reheat-coil",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Duct After Reheat Coil"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain",
-        "@type": [
-            "http://data.ashrae.org/standard223#DomainSpace"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasDomain": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Domain-HVAC"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Physicalspace Hvac Domain"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
-            }
         ],
         "http://qudt.org/schema/qudt/hasQuantityKind": [
             {
@@ -612,133 +288,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Parallelfpuconstantfan Damper Command"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuatedByProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command"
-            }
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Damper Actuator"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#fpu-supply-to-room-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Physicalspace Hvac Domain In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-return-water-temp",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/DEG_C"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Return Water Temp"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-hot-water-out"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Valve Out"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#room-return-to-fpu-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Physicalspace Hvac Domain Out"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-air-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-reheat-coil"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Air Out"
+                "@value": "Parallelfpuconstantfan Damper Position"
             }
         ]
     },
@@ -769,49 +319,49 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-supply-water-temp",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-in-1",
         "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/DEG_C"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Supply Water Temp"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-pipe-hot-water-return-before-valve"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-damper"
             }
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Parallelfpuconstantfan Reheat Coil Water Out"
+                "@value": "Parallelfpuconstantfan Junction In 1"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#room-return-to-fpu-connection",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-return-air-from-plenum-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#room-return-to-fpu-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Return Air From Plenum In"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-reheat-coil",
         "@type": [
             "http://data.ashrae.org/standard223#Connection",
             "http://data.ashrae.org/standard223#Duct"
@@ -823,28 +373,52 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Room Return To Fpu Connection"
+                "@value": "Parallelfpuconstantfan Duct After Reheat Coil"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-in",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-discharge-air-temp-sensor",
         "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
+            "http://data.ashrae.org/standard223#Sensor"
         ],
-        "http://data.ashrae.org/standard223#hasMedium": [
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
             {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-air-out"
             }
         ],
-        "http://data.ashrae.org/standard223#mapsTo": [
+        "http://data.ashrae.org/standard223#observes": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-hot-water-in"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-discharge-air-temp"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Parallelfpuconstantfan Reheat Coil Water In"
+                "@value": "Parallelfpuconstantfan Discharge Air Temp Sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain",
+        "@type": [
+            "http://data.ashrae.org/standard223#DomainSpace"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain-in"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasDomain": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Domain-HVAC"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Physicalspace Hvac Domain"
             }
         ]
     },
@@ -895,23 +469,695 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-discharge-air-temp-sensor",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Duct After Damper"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-discharge-air-temp",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Discharge"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/DEG_C"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Discharge Air Temp"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-flow-sensor",
         "@type": [
             "http://data.ashrae.org/standard223#Sensor"
         ],
         "http://data.ashrae.org/standard223#hasObservationLocation": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-air-out"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-in"
             }
         ],
         "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-flow"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Supply Air Flow Sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-status",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Fan Start Status"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-fan",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Duct After Fan"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace",
+        "@type": [
+            "http://data.ashrae.org/standard223#PhysicalSpace"
+        ],
+        "http://data.ashrae.org/standard223#encloses": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Physicalspace"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#zone-temp",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/DEG_C"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Zone Temp"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-air-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-reheat-coil"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Air Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-hot-water-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Hot Water In"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-return-water-temp",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/DEG_C"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Return Water Temp"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-damper"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Damper Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuatedByProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command"
+            }
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Damper Actuator"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-cmd",
+        "@type": [
+            "http://data.ashrae.org/standard223#EnumeratedActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasEnumerationKind": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Fan Start Cmd"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-air-out"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Junction Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction",
+        "@type": [
+            "http://data.ashrae.org/standard223#Junction"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-in-1"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-in-2"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Junction"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-air-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#fpu-supply-to-room-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
             {
                 "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-discharge-air-temp"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Parallelfpuconstantfan Discharge Air Temp Sensor"
+                "@value": "Parallelfpuconstantfan Air Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper",
+        "@type": [
+            "http://data.ashrae.org/standard223#Damper",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-in"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-position"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Damper"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableActuatableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#EnumerationKind-Position"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Damper Command"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-air-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-return-air-from-plenum-in"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Air In"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-pipe-hot-water-return-before-valve",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Pipe"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Pipe Hot Water Return Before Valve"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-pipe-hot-water-return-before-valve"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Water Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-fan"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Fan Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-supply-water-temp-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-in"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-supply-water-temp"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Supply Water Temp Sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuatedByProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command"
+            }
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Valve Actuator"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#room-return-to-fpu-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Physicalspace Hvac Domain Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-hot-water-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Water"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Hot Water Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-in"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Damper In"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#PhysicalSpace-hvac-domain-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#fpu-supply-to-room-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Physicalspace Hvac Domain In"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-return-water-temp-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-return-water-temp"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Return Water Temp Sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Ontology"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": ""
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#imports": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/model/all"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#fpu-supply-to-room-connection",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Fpu Supply To Room Connection"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil",
+        "@type": [
+            "http://data.ashrae.org/standard223#HeatingCoil",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-air-in"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-air-out"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-in"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-water-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-return-water-temp"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-supply-water-temp"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasRole": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Heating"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-supply-water-temp",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/DEG_C"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Parallelfpuconstantfan Reheat Coil Supply Water Temp"
             }
         ]
     },
@@ -942,252 +1188,6 @@
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
                 "@value": "Zone"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-air-out"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Junction Out"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Damper Position"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Duct After Damper"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-status",
-        "@type": [
-            "http://data.ashrae.org/standard223#EnumeratedObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasEnumerationKind": [
-            {
-                "@id": "http://data.ashrae.org/standard223#EnumerationKind-OnOff"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Fan Start Status"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Valve Position"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve",
-        "@type": [
-            "http://data.ashrae.org/standard223#Valve",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-position"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Reheat Coil Valve"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#zone-temp",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/Temperature"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/DEG_C"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Zone Temp"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-damper"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Damper Out"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-fan",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Duct After Fan"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-return-air-from-plenum-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#room-return-to-fpu-connection"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Return Air From Plenum In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-in"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Damper In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-junction-in-2",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-duct-after-fan"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Parallelfpuconstantfan Junction In 2"
             }
         ]
     }
