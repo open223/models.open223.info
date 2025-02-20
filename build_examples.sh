@@ -1,6 +1,9 @@
 #!/bin/bash
 set -x
 
+# for debugging ontoenv
+export RUST_BACKTRACE=1
+
 ontoenv init models ontologies
 
 # run the tools/make_model_formats.py script on the models directory
