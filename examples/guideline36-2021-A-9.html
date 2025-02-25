@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -66,7 +63,6 @@
     <link rel="prev" title="ASHRAE Guideline 36-2021 A-8 Dual Duct Terminal Unit with Discharge Sensor" href="guideline36-2021-A-8.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,8 +78,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -91,6 +98,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -98,8 +106,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -115,8 +123,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -146,11 +153,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -193,14 +204,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -344,16 +350,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -573,619 +587,616 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns1:DCPositiveVoltage-24.0V ;
+            sh:focusNode ns1:LineNeutralVoltage-110V ;
             sh:resultMessage &quot;Value must be an instance of ns2:Unit&quot; ;
             sh:resultPath ns2:hasUnit ;
             sh:resultSeverity sh:Info ;
             sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/2d864ac6&gt; ;
+            sh:sourceShape &lt;urn:well-known/58be3436&gt; ;
             sh:value &lt;http://qudt.org/vocab/unit/V&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode ns1:LineNeutralVoltage-5770V ;
-            sh:resultMessage &quot;Value must be an instance of ns2:Unit&quot; ;
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-position&gt; ;
+            sh:resultMessage &quot;s223: A `QuantifiableProperty` can be associated with at most one `Unit` using the relation `hasUnit`.&quot; ;
             sh:resultPath ns2:hasUnit ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-            sh:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-219V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-position
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-position needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223#Voltage-3460V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#LineNeutralVoltage-120V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-380V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3300V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b434
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b434 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b434 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-190V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command needs to be a http://qudt.org/schema/qudt/Unit
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b291
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b291 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b291 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-status
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-status needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-status needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-return-water-temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-flow
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-flow needs to be a http://qudt.org/schema/qudt/Unit
 http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase
   - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-110V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-DCVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-480V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b265
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b265 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b265 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineNeutralVoltage-139V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-5770V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-48V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#Voltage-231V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-1730V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-110V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b377
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b377 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b377 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-1900V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure
-  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/IN_H2O on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-position
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-position needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-3810V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-heat-coil-air-temp
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-heat-coil-air-temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-heat-coil-air-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-415V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-231V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-position
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-position needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-position needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-position
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-position needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#Voltage-12V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-1730V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-3810V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-position
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-position needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-380V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-supply-water-temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil expected at least 1 instance(s) of ns2:HotWaterValve on path ns1:connectedTo
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil expected at least 1 instance(s) of ns2:HotWaterValve on path ns1:connectedTo
+ndaac5e1b43f74cbfaf9ddb041a896179b209
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b209 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b209 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-3000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-277V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-co2-concentration
-  - http://qudt.org/vocab/unit/PPM on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-co2-concentration needs to be a http://qudt.org/schema/qudt/Unit
   - http://qudt.org/vocab/quantitykind/MoleFraction on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-co2-concentration needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PPM on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-co2-concentration needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-127V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-24V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-127V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-110V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command needs to be a http://qudt.org/schema/qudt/Unit
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#Frequency-50Hz
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-415V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp-setpoint
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp-setpoint needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp-setpoint needs to be a http://qudt.org/schema/qudt/Unit
-nf7fa198efbe74ff2a7ab1e13884d5163b482
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b482 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b482 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-power
-  - http://qudt.org/vocab/unit/W on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-power needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/ElectricPower on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-power needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3460V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-24V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd needs to be a http://qudt.org/schema/qudt/Unit
-  - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-temp
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-3300V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b9
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b9 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b9 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-120V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-480V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-220V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-347V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#LineNeutralVoltage-3460V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-position
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-position needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-190V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b215
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b215 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b215 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3810V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-415V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3300V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-DCVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-380V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-3000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-flow
+  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-flow needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-190V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-Voltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-1730V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b169
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b169 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b169 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-heat-coil-air-temp
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-heat-coil-air-temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-heat-coil-air-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command needs to be a http://qudt.org/schema/qudt/Unit
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#Numerical-Frequency
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Numerical-Frequency needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Numerical-Frequency needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-2400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-temp
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b90
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b90 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b90 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-supply-water-temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineNeutralVoltage-3810V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-status
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-position
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-position needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-supply-water-temp
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-24V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-temp
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-231V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-position
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-position needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command
   - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command needs to be a http://qudt.org/schema/qudt/Unit
   - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-139V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-position
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-position needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-position needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b331
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b331 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b331 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil expected at least 1 instance(s) of ns2:ChilledWaterValve on path ns1:connectedTo
-http://data.ashrae.org/standard223#Voltage-127V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-2400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-status
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-status needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-status needs to be a http://qudt.org/schema/qudt/Unit
-nf7fa198efbe74ff2a7ab1e13884d5163b693
-  - http://qudt.org/vocab/quantitykind/Temperature on nf7fa198efbe74ff2a7ab1e13884d5163b693 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b489
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b489 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b489 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-position
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-position needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-120V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-6V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-temp
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-139V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b180
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b180 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b180 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-temp needs to be a http://qudt.org/schema/qudt/Unit
-nf7fa198efbe74ff2a7ab1e13884d5163b266
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b266 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b266 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-Frequency
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Numerical-Frequency needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Numerical-Frequency needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-flow
-  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-flow needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-discharge-static-pressure
-  - http://qudt.org/vocab/unit/IN_H2O on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-discharge-static-pressure needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-discharge-static-pressure needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b162
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b162 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b162 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-return-water-temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-220V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-6600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-5770V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-position
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-position needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-position needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-220V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-status
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#Frequency-60Hz
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-60Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-60Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-temp
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-277V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-190V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-supply-water-temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineNeutralVoltage-1900V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b251
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b251 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b251 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-3V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-supply-water-temp
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-24V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-6600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b479
-  - http://qudt.org/vocab/quantitykind/Temperature on nf7fa198efbe74ff2a7ab1e13884d5163b479 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-return-water-temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b49
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b49 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b49 needs to be a http://qudt.org/schema/qudt/Unit
+ndaac5e1b43f74cbfaf9ddb041a896179b87
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b87 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b87 needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#EnumerationKind-Numerical
-  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-347V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-6000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-status
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command needs to be a http://qudt.org/schema/qudt/Unit
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#LineLineVoltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-6000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-2V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b185
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b185 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b185 needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b205
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b205 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b205 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-return-water-temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineNeutralVoltage-277V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-4160V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-127V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-480V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b277
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b277 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b277 needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b197
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b197 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b197 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure-setpoint
-  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure-setpoint needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/IN_H2O on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure-setpoint needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-differential-pressure
-  - http://qudt.org/vocab/unit/IN_H2O on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-differential-pressure needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-differential-pressure needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan expected at least 1 instance(s) of ns1:EnumeratedActuatableProperty on path ns1:hasProperty
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan expected at least 1 instance(s) of ns1:QuantifiableActuatableProperty on path ns1:hasProperty
-http://data.ashrae.org/standard223#Voltage-2400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan expected at least 1 instance(s) of ns1:EnumeratedActuatableProperty on path ns1:hasProperty
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan expected at least 1 instance(s) of ns1:QuantifiableActuatableProperty on path ns1:hasProperty
-http://data.ashrae.org/standard223#Numerical-LineLineVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-cmd
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#LineLineVoltage-400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-4160V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-discharge-static-pressure
+  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-discharge-static-pressure needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/IN_H2O on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-discharge-static-pressure needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-position
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-position needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-1730V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#Voltage-10000V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-position
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-position needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-2400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-return-water-temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan expected at least 1 instance(s) of ns1:QuantifiableActuatableProperty on path ns1:hasProperty
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan expected at least 1 instance(s) of ns1:EnumeratedActuatableProperty on path ns1:hasProperty
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-position
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-position needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-480V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-co2-concentration
   - http://qudt.org/vocab/unit/PPM on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-co2-concentration needs to be a http://qudt.org/schema/qudt/Unit
   - http://qudt.org/vocab/quantitykind/MoleFraction on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-co2-concentration needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b69
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b69 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b69 needs to be a http://qudt.org/schema/qudt/Unit
-nf7fa198efbe74ff2a7ab1e13884d5163b322
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b322 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b322 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-219V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-supply-water-temp
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-3000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-231V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b283
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b283 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b283 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-277V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-power
+  - http://qudt.org/vocab/unit/W on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-power needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/ElectricPower on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-power needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-temp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-position
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-position needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd needs to be a http://qudt.org/schema/qudt/Unit
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-temp
   - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil expected at least 1 instance(s) of ns2:HotWaterValve on path ns1:connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil expected at least 1 instance(s) of ns2:HotWaterValve on path ns1:connectedTo
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-flow
-  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-flow needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b47
-  - http://qudt.org/vocab/quantitykind/Temperature on nf7fa198efbe74ff2a7ab1e13884d5163b47 needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b195
-  - http://qudt.org/vocab/quantitykind/Temperature on nf7fa198efbe74ff2a7ab1e13884d5163b195 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-flow
-  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-flow needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-Voltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-10000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil expected at least 1 instance(s) of ns2:HotWaterValve on path ns1:connectedTo
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil expected at least 1 instance(s) of ns2:HotWaterValve on path ns1:connectedTo
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-position
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-position needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-position needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-347V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ma-temp
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ma-temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ma-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b30
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b30 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b30 needs to be a http://qudt.org/schema/qudt/Unit
-nf7fa198efbe74ff2a7ab1e13884d5163b172
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b172 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b172 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-status
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-status needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-status needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-temp
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-flow
-  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-flow needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-position
-  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-position needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b666
+  - http://qudt.org/vocab/quantitykind/Temperature on ndaac5e1b43f74cbfaf9ddb041a896179b666 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-differential-pressure
+  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-differential-pressure needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/IN_H2O on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-filter-differential-pressure needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-6000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b121
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b121 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b121 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-temp
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-101-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-power
   - http://qudt.org/vocab/quantitykind/ElectricPower on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-power needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/unit/W on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-power needs to be a http://qudt.org/schema/qudt/Unit
-nf7fa198efbe74ff2a7ab1e13884d5163b144
-  - http://qudt.org/vocab/quantitykind/Temperature on nf7fa198efbe74ff2a7ab1e13884d5163b144 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-supply-water-temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-cmd
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-return-water-temp
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-nf7fa198efbe74ff2a7ab1e13884d5163b534
-  - http://qudt.org/vocab/quantitykind/Temperature on nf7fa198efbe74ff2a7ab1e13884d5163b534 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-flow
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-flow needs to be a http://qudt.org/schema/qudt/Unit
-nf7fa198efbe74ff2a7ab1e13884d5163b229
-  - http://qudt.org/vocab/unit/PERCENT on nf7fa198efbe74ff2a7ab1e13884d5163b229 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nf7fa198efbe74ff2a7ab1e13884d5163b229 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp-setpoint
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp-setpoint needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-temp-setpoint needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-status
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-status needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-status needs to be a http://qudt.org/schema/qudt/Unit
+ndaac5e1b43f74cbfaf9ddb041a896179b439
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b439 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b439 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-380V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command needs to be a http://qudt.org/schema/qudt/Unit
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#Numerical-LineLineVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-415V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-220V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-12V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-139V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-110V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-219V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-2V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b340
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b340 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b340 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-flow
+  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-flow needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-discharge-air-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Frequency-60Hz
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-60Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-60Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-1900V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-48V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b128
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b128 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b128 needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b456
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b456 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b456 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil expected at least 1 instance(s) of ns2:HotWaterValve on path ns1:connectedTo
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil expected at least 1 instance(s) of ns2:HotWaterValve on path ns1:connectedTo
+http://data.ashrae.org/standard223#Voltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Frequency-50Hz
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-6600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-219V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b46
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b46 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b46 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-5770V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-return-water-temp
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-position
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-position needs to be a http://qudt.org/schema/qudt/Unit
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil
   - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil expected at least 1 instance(s) of ns2:HotWaterValve on path ns1:connectedTo
   - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil expected at least 1 instance(s) of ns2:HotWaterValve on path ns1:connectedTo
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve needs to match one of the following shapes: nce43ae9705b74597b848508ed96a0e4fb46, nce43ae9705b74597b848508ed96a0e4fb52
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper needs to match one of the following shapes: nce43ae9705b74597b848508ed96a0e4fb17, nce43ae9705b74597b848508ed96a0e4fb23
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper needs to match one of the following shapes: nce43ae9705b74597b848508ed96a0e4fb17, nce43ae9705b74597b848508ed96a0e4fb23
+ndaac5e1b43f74cbfaf9ddb041a896179b474
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b474 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b474 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-10000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure-setpoint
+  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure-setpoint needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/IN_H2O on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure-setpoint needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineNeutralVoltage-5770V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-cmd
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-status
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223#LineLineVoltage-3300V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-flow
+  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-flow needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-oa-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-4160V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan expected at least 1 instance(s) of ns1:QuantifiableActuatableProperty on path ns1:hasProperty
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan expected at least 1 instance(s) of ns1:EnumeratedActuatableProperty on path ns1:hasProperty
+ndaac5e1b43f74cbfaf9ddb041a896179b186
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b186 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b186 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-position
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-position needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#EnumerationKind-Numerical
+  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b125
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b125 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b125 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ma-temp
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ma-temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ma-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b7
+  - http://qudt.org/vocab/quantitykind/Temperature on ndaac5e1b43f74cbfaf9ddb041a896179b7 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-temp
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#zone-102-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure
+  - http://qudt.org/vocab/quantitykind/Pressure on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/IN_H2O on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-supply-duct-static-pressure needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-4160V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-347V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-position
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-position needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-flow
+  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-flow needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-discharge-air-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command needs to be a http://qudt.org/schema/qudt/Unit
+ndaac5e1b43f74cbfaf9ddb041a896179b653
+  - http://qudt.org/vocab/quantitykind/Temperature on ndaac5e1b43f74cbfaf9ddb041a896179b653 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command
+  - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command needs to be a http://qudt.org/schema/qudt/Unit
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+ndaac5e1b43f74cbfaf9ddb041a896179b352
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b352 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b352 needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b310
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b310 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b310 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-supply-water-temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-supply-water-temp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-return-water-temp
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-return-water-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b295
+  - http://qudt.org/vocab/quantitykind/Temperature on ndaac5e1b43f74cbfaf9ddb041a896179b295 needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b425
+  - http://qudt.org/vocab/quantitykind/Temperature on ndaac5e1b43f74cbfaf9ddb041a896179b425 needs to be a http://qudt.org/schema/qudt/QuantityKind
+ndaac5e1b43f74cbfaf9ddb041a896179b330
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on ndaac5e1b43f74cbfaf9ddb041a896179b330 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on ndaac5e1b43f74cbfaf9ddb041a896179b330 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-1900V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-cmd
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
+ndaac5e1b43f74cbfaf9ddb041a896179b199
+  - http://qudt.org/vocab/quantitykind/Temperature on ndaac5e1b43f74cbfaf9ddb041a896179b199 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil expected at least 1 instance(s) of ns2:ChilledWaterValve on path ns1:connectedTo
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper needs to match one of the following shapes: nce43ae9705b74597b848508ed96a0e4fb17, nce43ae9705b74597b848508ed96a0e4fb23
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper needs to match one of the following shapes: nf1f7cac8764e44268dab3341265ecebfb17, nf1f7cac8764e44268dab3341265ecebfb23
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve needs to match one of the following shapes: nf1f7cac8764e44268dab3341265ecebfb46, nf1f7cac8764e44268dab3341265ecebfb52
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve needs to match one of the following shapes: nce43ae9705b74597b848508ed96a0e4fb46, nce43ae9705b74597b848508ed96a0e4fb52
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve needs to match one of the following shapes: nce43ae9705b74597b848508ed96a0e4fb3, nce43ae9705b74597b848508ed96a0e4fb9
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper needs to match one of the following shapes: nce43ae9705b74597b848508ed96a0e4fb17, nce43ae9705b74597b848508ed96a0e4fb23
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve needs to match one of the following shapes: nce43ae9705b74597b848508ed96a0e4fb46, nce43ae9705b74597b848508ed96a0e4fb52
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper needs to match one of the following shapes: nce43ae9705b74597b848508ed96a0e4fb17, nce43ae9705b74597b848508ed96a0e4fb23
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve needs to match one of the following shapes: nf1f7cac8764e44268dab3341265ecebfb46, nf1f7cac8764e44268dab3341265ecebfb52
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper needs to match one of the following shapes: nce43ae9705b74597b848508ed96a0e4fb17, nce43ae9705b74597b848508ed96a0e4fb23
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper needs to match one of the following shapes: nf1f7cac8764e44268dab3341265ecebfb17, nf1f7cac8764e44268dab3341265ecebfb23
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper needs to match one of the following shapes: nf1f7cac8764e44268dab3341265ecebfb17, nf1f7cac8764e44268dab3341265ecebfb23
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper needs to match one of the following shapes: nf1f7cac8764e44268dab3341265ecebfb17, nf1f7cac8764e44268dab3341265ecebfb23
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve needs to match one of the following shapes: nf1f7cac8764e44268dab3341265ecebfb46, nf1f7cac8764e44268dab3341265ecebfb52
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper needs to match one of the following shapes: nf1f7cac8764e44268dab3341265ecebfb17, nf1f7cac8764e44268dab3341265ecebfb23
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper needs to match one of the following shapes: nf1f7cac8764e44268dab3341265ecebfb17, nf1f7cac8764e44268dab3341265ecebfb23
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve needs to match one of the following shapes: nf1f7cac8764e44268dab3341265ecebfb3, nf1f7cac8764e44268dab3341265ecebfb9
 </pre></div>
 </div>
 </div>
@@ -1239,8 +1250,7 @@ http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1289,8 +1299,8 @@ http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
