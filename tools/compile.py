@@ -9,7 +9,7 @@ from brick_tq_shacl.topquadrant_shacl import infer, validate
 import rdflib
 
 graph = rdflib.Graph()
-cfg = ontoenv.Config(["models", "ontologies"], offline=False, strict=False)
+cfg = ontoenv.Config(["models", "ontologies"], offline=False, strict=False, includes=['*.ttl'])
 env = ontoenv.OntoEnv(cfg, read_only=True, recreate=False)
 
 if __name__ == "__main__":

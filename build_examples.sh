@@ -1,10 +1,10 @@
 #!/bin/bash
-set -x
+set -ex
 
 # for debugging ontoenv
 export RUST_BACKTRACE=1
 
-ontoenv init models ontologies
+ontoenv init models ontologies -i '*.ttl'
 
 # run the tools/make_model_formats.py script on the models directory
 uv run python tools/make_model_formats.py models
