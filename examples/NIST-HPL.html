@@ -411,7 +411,7 @@ document.write(`
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-03-11 12:30:42. The model file was last updated on 2024-09-12 16:11:46</p>
+223P was last updated on 2025-03-14 14:22:53. The model file was last updated on 2024-09-12 16:11:46</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="heat-pump-laboratory-hpl">
 <h1>Heat Pump Laboratory (HPL)<a class="headerlink" href="#heat-pump-laboratory-hpl" title="Link to this heading">#</a></h1>
@@ -582,450 +582,451 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns1: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix ns2: &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix ns1: &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/HPL#OA_Connection_1_Temp_6&gt; ;
-            sh:resultMessage &quot;s223: An `ObservableProperty` normally is referred to by a `Sensor` using the relation `observes`.&quot; ;
-            sh:resultPath [ sh:inversePath ns1:observes ] ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/6228c9db&gt; ],
+            sh:focusNode &lt;http://example.org/HPL#TC_1_Temp_4&gt; ;
+            sh:resultMessage &quot;s223: A `QuantifiableProperty` can be associated with at most one `Unit` using the relation `hasUnit`.&quot; ;
+            sh:resultPath ns1:hasUnit ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/12f4e1bf&gt; ;
+            sh:value &lt;http://qudt.org/vocab/unit/DEG_F&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/HPL#OA_Connection_1_Temp_2&gt; ;
+            sh:focusNode _:nd71e44da1e624b94bc7c00d5493378e8b101 ;
             sh:resultMessage &quot;s223: A `QuantifiableProperty` must be associated with a `QuantityKind` using the relation `hasQuantityKind`.&quot; ;
-            sh:resultP
-http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-1900V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-480V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#Accumulator_CP_1_Temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#Accumulator_CP_1_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#Accumulator_CP_1_Temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-4160V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#SightGlass_CP_2_Temp
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#SightGlass_CP_2_Temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#SightGlass_CP_2_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#OA_Connection_1_Temp_5
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_5 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_5 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-PoE
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-PoE needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#EnumerationKind-Numerical
-  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#RV_CP_3_Temp
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#RV_CP_3_Temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#RV_CP_3_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-24V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-139V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-6600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-10000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-2400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-120V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#HeatExchanger_R_CP_2_Temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#HeatExchanger_R_CP_2_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#HeatExchanger_R_CP_2_Temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-220V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb4
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb4 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb4 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-1730V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb246
-  - http://qudt.org/vocab/quantitykind/Temperature on nfe7d26037e094c7d8e5ccad5382b1d0fb246 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#TC_1_Temp_5
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_1_Temp_5 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_1_Temp_5 needs to be a http://qudt.org/schema/qudt/Unit
-nfe7d26037e094c7d8e5ccad5382b1d0fb181
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb181 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb181 needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb140
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb140 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb140 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-5770V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#Compressor_Power
-  - http://qudt.org/vocab/unit/W on http://example.org/HPL#Compressor_Power needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Power on http://example.org/HPL#Compressor_Power needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#OA_Connection_3_Temp_2
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_3_Temp_2 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_3_Temp_2 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-3460V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#HeatExchanger_Temp_1
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#HeatExchanger_Temp_1 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#HeatExchanger_Temp_1 needs to be a http://qudt.org/schema/qudt/Unit
-http://example.org/HPL#ExpansionValve_1_CP_2_Pres
-  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#ExpansionValve_1_CP_2_Pres needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#ExpansionValve_1_CP_2_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#sa_temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#sa_temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb198
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb198 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb198 needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb269
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb269 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb269 needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb74
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb74 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb74 needs to be a http://qudt.org/schema/qudt/Unit
-http://example.org/HPL#Compressor_CP_2_Pres
-  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#Compressor_CP_2_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#Compressor_CP_2_Pres needs to be a http://qudt.org/schema/qudt/Unit
-http://example.org/HPL#FinnedHeatExchanger_R_Pres
-  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#FinnedHeatExchanger_R_Pres needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#FinnedHeatExchanger_R_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-1730V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#TC_1_Temp_4
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_1_Temp_4 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_1_Temp_4 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb143
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb143 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb143 needs to be a http://qudt.org/schema/qudt/QuantityKind
+
 http://data.ashrae.org/standard223#LineNeutralVoltage-5770V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-110V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-231V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-139V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#TC_1_Temp_3
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_1_Temp_3 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_1_Temp_3 needs to be a http://qudt.org/schema/qudt/Unit
-nfe7d26037e094c7d8e5ccad5382b1d0fb283
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb283 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb283 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#HeatExchanger_Temp_2
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#HeatExchanger_Temp_2 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#HeatExchanger_Temp_2 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#zn_temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#zn_temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#Compressor_CP_2_Temp
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#Compressor_CP_2_Temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#Compressor_CP_2_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-415V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#HeatExchanger_R_CP_2_Temp_Sat
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#HeatExchanger_R_CP_2_Temp_Sat needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#HeatExchanger_R_CP_2_Temp_Sat needs to be a http://qudt.org/schema/qudt/Unit
-nfe7d26037e094c7d8e5ccad5382b1d0fb281
-  - http://qudt.org/vocab/quantitykind/Temperature on nfe7d26037e094c7d8e5ccad5382b1d0fb281 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-127V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb243
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb243 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb243 needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb378
-  - http://qudt.org/vocab/quantitykind/Temperature on nfe7d26037e094c7d8e5ccad5382b1d0fb378 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-231V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3460V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-6V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-190V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb124
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb124 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb124 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-380V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Frequency-50Hz
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-DCVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#TC_2_Temp_3
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_2_Temp_3 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_2_Temp_3 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-1900V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-48V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-4160V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3810V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#FinnedHeatExchanger_R_CP_2
-  - http://example.org/HPL#FinnedHeatExchanger on http://example.org/HPL#FinnedHeatExchanger_R_CP_2 needs to be a http://data.ashrae.org/standard223#Connectable
-http://example.org/HPL#FinnedHeatExchanger_R_Temp_Sat
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#FinnedHeatExchanger_R_Temp_Sat needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#FinnedHeatExchanger_R_Temp_Sat needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-6000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#TC_1_Temp_2
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_1_Temp_2 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_1_Temp_2 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#TC_2_Temp_5
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_2_Temp_5 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_2_Temp_5 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#OA_Connection_1_Temp_2
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_2 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_2 needs to be a http://qudt.org/schema/qudt/Unit
-http://example.org/HPL#RV_CP_3_Pres
-  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#RV_CP_3_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#RV_CP_3_Pres needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-10000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#od_power
-  - http://qudt.org/vocab/quantitykind/Power on http://example.org/HPL#od_power needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3300V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb46
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb46 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb46 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-127V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#TC_1_Temp_1
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_1_Temp_1 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_1_Temp_1 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-24V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-347V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-120V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#TC_2_Temp_4
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_2_Temp_4 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_2_Temp_4 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-Voltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-12V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-6600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb256
-  - http://qudt.org/vocab/quantitykind/Temperature on nfe7d26037e094c7d8e5ccad5382b1d0fb256 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#OA_Connection_1_Temp_6
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_6 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_6 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb84
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb84 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb84 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#HeatExchanger_R_CP_2_Pres
-  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#HeatExchanger_R_CP_2_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#HeatExchanger_R_CP_2_Pres needs to be a http://qudt.org/schema/qudt/Unit
-http://example.org/HPL#OA_Connection_1_Temp_3
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_3 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_3 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-480V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#FinnedHeatExchanger_R_CP_1
-  - http://example.org/HPL#FinnedHeatExchanger_R_CP_1 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
-nfe7d26037e094c7d8e5ccad5382b1d0fb318
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb318 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb318 needs to be a http://qudt.org/schema/qudt/Unit
-http://example.org/HPL#TC_2_Temp_1
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_2_Temp_1 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_2_Temp_1 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-2V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb152
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb152 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb152 needs to be a http://qudt.org/schema/qudt/Unit
-http://example.org/HPL#OA_Connection_1_Temp_1
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_1 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_1 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#Compressor_Temp
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#Compressor_Temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#Compressor_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#R_Connection_8_Temp
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#R_Connection_8_Temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#R_Connection_8_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-2400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-3810V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#id_power
-  - http://qudt.org/vocab/quantitykind/Power on http://example.org/HPL#id_power needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#FinnedHeatExchanger_A_ICP
-  - http://example.org/HPL#FinnedHeatExchanger_A_ICP expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
-http://data.ashrae.org/standard223#LineNeutralVoltage-277V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#HeatExchanger_R_CP_1_Pres
-  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#HeatExchanger_R_CP_1_Pres needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#HeatExchanger_R_CP_1_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-380V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb120
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb120 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb120 needs to be a http://qudt.org/schema/qudt/Unit
-http://example.org/HPL#TC_2_Temp_2
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_2_Temp_2 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_2_Temp_2 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Frequency-60Hz
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-60Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#SightGlass_CP_2_Pres
-  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#SightGlass_CP_2_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#SightGlass_CP_2_Pres needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-219V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-277V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#OA_Connection_1_Temp_4
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_4 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_4 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://example.org/HPL#ExpansionValve_1_CP_2_Temp
   - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#ExpansionValve_1_CP_2_Temp needs to be a http://qudt.org/schema/qudt/Unit
   - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#ExpansionValve_1_CP_2_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb162
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb162 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb162 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineNeutralVoltage-347V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#FinnedHeatExchanger_R_CP_2
+  - http://example.org/HPL#FinnedHeatExchanger on http://example.org/HPL#FinnedHeatExchanger_R_CP_2 needs to be a http://data.ashrae.org/standard223#Connectable
+http://example.org/HPL#TC_1_Temp_3
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_1_Temp_3 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_1_Temp_3 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-231V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3300V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-Voltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#zn_temp_dp
+  - http://qudt.org/vocab/quantitykind/RelativeHumidity on http://example.org/HPL#zn_temp_dp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-277V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-120V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-380V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-415V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-1730V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#OA_Connection_1_Temp_4
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_4 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_4 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#TC_2_Temp_1
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_2_Temp_1 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_2_Temp_1 needs to be a http://qudt.org/schema/qudt/Unit
+http://example.org/HPL#Accumulator_CP_1_Pres
+  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#Accumulator_CP_1_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#Accumulator_CP_1_Pres needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-3810V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#Compressor_CP_2_Temp
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#Compressor_CP_2_Temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#Compressor_CP_2_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-127V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-3300V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b67
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b67 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b67 needs to be a http://qudt.org/schema/qudt/Unit
+http://example.org/HPL#zn_temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#zn_temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#TC_2_Temp_2
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_2_Temp_2 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_2_Temp_2 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3460V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#SightGlass_CP_2_Pres
+  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#SightGlass_CP_2_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#SightGlass_CP_2_Pres needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b115
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b115 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b115 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-48V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Frequency-60Hz
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-60Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#OA_Connection_1_Temp_1
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_1 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_1 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-3460V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#EnumerationKind-Numerical
+  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b265
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b265 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b265 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#ExpansionValve_1_CP_2_Temp_Sat
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#ExpansionValve_1_CP_2_Temp_Sat needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#ExpansionValve_1_CP_2_Temp_Sat needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b165
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b165 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b165 needs to be a http://qudt.org/schema/qudt/Unit
+nd71e44da1e624b94bc7c00d5493378e8b101
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b101 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b101 needs to be a http://qudt.org/schema/qudt/Unit
+nd71e44da1e624b94bc7c00d5493378e8b38
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b38 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b38 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-480V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#HeatExchanger_R_CP_2_Pres
+  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#HeatExchanger_R_CP_2_Pres needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#HeatExchanger_R_CP_2_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b140
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b140 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b140 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-2V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#od_power
+  - http://qudt.org/vocab/quantitykind/Power on http://example.org/HPL#od_power needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#oa_temp_dp
+  - http://qudt.org/vocab/quantitykind/RelativeHumidity on http://example.org/HPL#oa_temp_dp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#TC_1_Temp_5
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_1_Temp_5 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_1_Temp_5 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCPositiveVoltage-PoE
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-PoE needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-3000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-DCVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#FinnedHeatExchanger_R_Pres
+  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#FinnedHeatExchanger_R_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#FinnedHeatExchanger_R_Pres needs to be a http://qudt.org/schema/qudt/Unit
+http://example.org/HPL#R_Connection_9_Temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#R_Connection_9_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#R_Connection_9_Temp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineNeutralVoltage-2400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#Compressor_Power
+  - http://qudt.org/vocab/quantitykind/Power on http://example.org/HPL#Compressor_Power needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/W on http://example.org/HPL#Compressor_Power needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-PoE
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-PoE needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#OA_Connection_1_Temp_5
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_5 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_5 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-4160V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#Compressor_CP_2_Pres
+  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#Compressor_CP_2_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#Compressor_CP_2_Pres needs to be a http://qudt.org/schema/qudt/Unit
+http://example.org/HPL#TC_2_Temp_3
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_2_Temp_3 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_2_Temp_3 needs to be a http://qudt.org/schema/qudt/Unit
+http://example.org/HPL#id_power
+  - http://qudt.org/vocab/quantitykind/Power on http://example.org/HPL#id_power needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-127V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b305
+  - http://qudt.org/vocab/quantitykind/Temperature on nd71e44da1e624b94bc7c00d5493378e8b305 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#RV_CP_3_Pres
+  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#RV_CP_3_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#RV_CP_3_Pres needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineNeutralVoltage-231V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-10000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-Frequency
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Numerical-Frequency needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b28
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b28 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b28 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineNeutralVoltage-1900V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b182
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b182 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b182 needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b159
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b159 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b159 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-110V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#Accumulator_CP_1_Temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#Accumulator_CP_1_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#Accumulator_CP_1_Temp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Numerical-LineLineVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#sa_temp_dp
+  - http://qudt.org/vocab/quantitykind/RelativeHumidity on http://example.org/HPL#sa_temp_dp needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b170
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b170 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b170 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-219V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-347V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-6000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-24V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#HeatExchanger_R_CP_1_Pres
+  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#HeatExchanger_R_CP_1_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#HeatExchanger_R_CP_1_Pres needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-1900V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-120V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#R_Connection_8_Temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#R_Connection_8_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#R_Connection_8_Temp needs to be a http://qudt.org/schema/qudt/Unit
+nd71e44da1e624b94bc7c00d5493378e8b33
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b33 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b33 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-4160V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-139V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-10000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#FinnedHeatExchanger_A_OCP
+  - http://example.org/HPL#FinnedHeatExchanger_A_OCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-12V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#TC_2_Temp_4
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_2_Temp_4 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_2_Temp_4 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#SightGlass_CP_2_Temp
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#SightGlass_CP_2_Temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#SightGlass_CP_2_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b123
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b123 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b123 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#FinnedHeatExchanger_R_Temp_Sat
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#FinnedHeatExchanger_R_Temp_Sat needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#FinnedHeatExchanger_R_Temp_Sat needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-139V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-190V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-6600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#OA_Connection_3_Temp_2
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_3_Temp_2 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_3_Temp_2 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#ExpansionValve_1_CP_2_Pres
+  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#ExpansionValve_1_CP_2_Pres needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#ExpansionValve_1_CP_2_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b80
+  - http://qudt.org/vocab/quantitykind/Temperature on nd71e44da1e624b94bc7c00d5493378e8b80 needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://example.org/HPL#OA_Connection_3_Temp_1
   - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_3_Temp_1 needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_3_Temp_1 needs to be a http://qudt.org/schema/qudt/Unit
-http://example.org/HPL#ref_flow
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://example.org/HPL#ref_flow needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#sa_temp_dp
-  - http://qudt.org/vocab/quantitykind/RelativeHumidity on http://example.org/HPL#sa_temp_dp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#oa_temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#oa_temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-LineLineVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-110V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#oa_temp_dp
-  - http://qudt.org/vocab/quantitykind/RelativeHumidity on http://example.org/HPL#oa_temp_dp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-190V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-219V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#zn_temp_dp
-  - http://qudt.org/vocab/quantitykind/RelativeHumidity on http://example.org/HPL#zn_temp_dp needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#R_Connection_9_Temp
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#R_Connection_9_Temp needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#R_Connection_9_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb6
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb6 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb6 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-6000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-220V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-347V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-110V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#OA_Connection_1_Temp_2
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_2 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_2 needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b69
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b69 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b69 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#sa_temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#sa_temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-5770V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b227
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b227 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b227 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-220V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#HeatExchanger_R_CP_2_Temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#HeatExchanger_R_CP_2_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#HeatExchanger_R_CP_2_Temp needs to be a http://qudt.org/schema/qudt/Unit
 http://example.org/HPL#FinnedHeatExchanger_R_Temp
   - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#FinnedHeatExchanger_R_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#FinnedHeatExchanger_R_Temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#DCPositiveVoltage-PoE
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-PoE needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#Accumulator_CP_1_Pres
-  - http://qudt.org/vocab/unit/PA on http://example.org/HPL#Accumulator_CP_1_Pres needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/Pressure on http://example.org/HPL#Accumulator_CP_1_Pres needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-Frequency
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Numerical-Frequency needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-3000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#sa_flow
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://example.org/HPL#sa_flow needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-3300V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#ExpansionValve_1_CP_2_Temp_Sat
-  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#ExpansionValve_1_CP_2_Temp_Sat needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#ExpansionValve_1_CP_2_Temp_Sat needs to be a http://qudt.org/schema/qudt/Unit
-nfe7d26037e094c7d8e5ccad5382b1d0fb105
-  - http://qudt.org/vocab/unit/PERCENT on nfe7d26037e094c7d8e5ccad5382b1d0fb105 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on nfe7d26037e094c7d8e5ccad5382b1d0fb105 needs to be a http://qudt.org/schema/qudt/QuantityKind
-nfe7d26037e094c7d8e5ccad5382b1d0fb59
-  - http://qudt.org/vocab/quantitykind/Temperature on nfe7d26037e094c7d8e5ccad5382b1d0fb59 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://example.org/HPL#FinnedHeatExchanger_A_OCP
-  - http://example.org/HPL#FinnedHeatExchanger_A_OCP expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://example.org/HPL#HeatExchanger_Temp_2
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#HeatExchanger_Temp_2 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#HeatExchanger_Temp_2 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#TC_2_Temp_5
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_2_Temp_5 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_2_Temp_5 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-219V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#Voltage-415V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-220V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-3810V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#FinnedHeatExchanger_A_ICP
+  - http://example.org/HPL#FinnedHeatExchanger_A_ICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/HPL#RV_CP_3_Temp
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#RV_CP_3_Temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#RV_CP_3_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b197
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b197 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b197 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-480V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b49
+  - http://qudt.org/vocab/quantitykind/Temperature on nd71e44da1e624b94bc7c00d5493378e8b49 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#TC_1_Temp_4
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_1_Temp_4 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_1_Temp_4 needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b192
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b192 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b192 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#FinnedHeatExchanger_R_CP_1
+  - http://example.org/HPL#FinnedHeatExchanger_R_CP_1 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://data.ashrae.org/standard223#LineLineVoltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-1730V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#ref_flow
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://example.org/HPL#ref_flow needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#HeatExchanger_R_CP_2_Temp_Sat
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#HeatExchanger_R_CP_2_Temp_Sat needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#HeatExchanger_R_CP_2_Temp_Sat needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-380V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b247
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on nd71e44da1e624b94bc7c00d5493378e8b247 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on nd71e44da1e624b94bc7c00d5493378e8b247 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#Compressor_Temp
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#Compressor_Temp needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#Compressor_Temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#TC_1_Temp_2
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_1_Temp_2 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_1_Temp_2 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-190V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#OA_Connection_1_Temp_3
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_3 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_3 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#TC_1_Temp_1
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#TC_1_Temp_1 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#TC_1_Temp_1 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#HeatExchanger_Temp_1
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#HeatExchanger_Temp_1 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#HeatExchanger_Temp_1 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-277V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#OA_Connection_1_Temp_6
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#OA_Connection_1_Temp_6 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_F on http://example.org/HPL#OA_Connection_1_Temp_6 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Frequency-50Hz
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-24V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-2400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b168
+  - http://qudt.org/vocab/quantitykind/Temperature on nd71e44da1e624b94bc7c00d5493378e8b168 needs to be a http://qudt.org/schema/qudt/QuantityKind
+nd71e44da1e624b94bc7c00d5493378e8b344
+  - http://qudt.org/vocab/quantitykind/Temperature on nd71e44da1e624b94bc7c00d5493378e8b344 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#sa_flow
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://example.org/HPL#sa_flow needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://example.org/HPL#oa_temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://example.org/HPL#oa_temp needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://example.org/HPL#OA_Unit
-  - http://example.org/HPL#OA_Unit needs to match one of the following shapes: n5850c8bce5714a5a9226e7ff3c26dde0b1064, n5850c8bce5714a5a9226e7ff3c26dde0b1065
+  - http://example.org/HPL#OA_Unit needs to match one of the following shapes: n6198525b1bf94ed3bddefb1afb44b0f8b1068, n6198525b1bf94ed3bddefb1afb44b0f8b1069
 </pre></div>
 </div>
 </div>
