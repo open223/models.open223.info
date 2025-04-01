@@ -409,7 +409,7 @@ document.write(`
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-03-23 23:41:06. The model file was last updated on 2024-09-15 23:37:32</p>
+223P was last updated on 2025-04-01 10:59:10. The model file was last updated on 2024-09-15 23:37:32</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="ashrae-guideline-36-2021-a-1-vav-terminal-unit-cooling-only">
 <h1>ASHRAE Guideline 36-2021 A-1 VAV Terminal Unit, Cooling Only<a class="headerlink" href="#ashrae-guideline-36-2021-a-1-vav-terminal-unit-cooling-only" title="Link to this heading">#</a></h1>
@@ -540,317 +540,315 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns2: &lt;http://qudt.org/schema/qudt/&gt; .
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns1: &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns3:LineLineVoltage-10000V ;
-            sh:resultMessage &quot;Value must be an instance of ns2:QuantityKind&quot; ;
-            sh:resultPath ns2:hasQuantityKind ;
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command&gt; ;
+            sh:resultMessage &quot;s223: If the relation `hasAspect` is present, it must associate the `Property` with an `EnumerationKind`.&quot; ;
+            sh:resultPath ns2:hasAspect ;
             sh:resultSeverity sh:Violation ;
             sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/eb6ff7b6&gt; ;
-            sh:value &lt;http://qudt.org/vocab/quantitykind/Voltage&gt; ],
+            sh:sourceShape &lt;urn:well-known/a923cc94&gt; ;
+            sh:value ns2:EnumerationKind-Position ],
         [ a sh:ValidationResult ;
-            sh:focusNode ns3:Voltage-219V ;
-            sh:resultMessage &quot;Value must be an instance of ns2:QuantityKind&quot; ;
-            sh:resultPath ns2:hasQuantityKind ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh
-http://data.ashrae.org/standard223#LineNeutralVoltage-3810V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-1900V
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-120V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab77
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab77 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab77 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-3V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3300V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab72
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab72 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab72 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-277V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-6600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-380V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab12
-  - http://qudt.org/vocab/quantitykind/Temperature on na59df6832a3a4ae88cf9af1823cba00ab12 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-5770V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-temp
-  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-temp needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-PoE
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-PoE needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-1730V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-co2-concentration
-  - http://qudt.org/vocab/quantitykind/MoleFraction on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-co2-concentration needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PPM on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-co2-concentration needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Frequency-60Hz
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-60Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3810V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab137
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab137 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab137 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-DCVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-231V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-48V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-110V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-480V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-139V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow
-  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
+            sh:focusNode ns2:Numerical-LineNeutralVoltage ;
+            sh:resultMessage &quot;Value must be an instance of ns1:QuantityKind&quot; ;
+            
+n6362d8fd5fb14be3b4cd10bd91157ee4b121
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b121 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b121 needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b168
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b168 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b168 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineNeutralVoltage-127V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
   - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command needs to be a http://qudt.org/schema/qudt/Unit
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-PoE
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-PoE needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-3460V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab5
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab5 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab5 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-24V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b173
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b173 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b173 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-5770V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-139V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-219V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#EnumerationKind-Numerical
+  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-24V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3460V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-DCVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b111
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b111 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b111 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Numerical-LineLineVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b245
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b245 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b245 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-1900V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-190V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b82
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b82 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b82 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-139V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-110V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b14
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b14 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b14 needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b117
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b117 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b117 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-3300V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b119
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b119 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b119 needs to be a http://qudt.org/schema/qudt/Unit
+n6362d8fd5fb14be3b4cd10bd91157ee4b257
+  - http://qudt.org/vocab/quantitykind/Temperature on n6362d8fd5fb14be3b4cd10bd91157ee4b257 needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-position
   - http://qudt.org/vocab/quantitykind/DimensionlessRatio on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-position needs to be a http://qudt.org/schema/qudt/QuantityKind
   - http://qudt.org/vocab/unit/PERCENT on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-position needs to be a http://qudt.org/schema/qudt/Unit
-na59df6832a3a4ae88cf9af1823cba00ab49
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab49 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab49 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-2400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-Voltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-347V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab57
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab57 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab57 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Numerical-LineLineVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-10000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab19
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab19 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab19 needs to be a http://qudt.org/schema/qudt/Unit
-na59df6832a3a4ae88cf9af1823cba00ab74
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab74 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab74 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-3000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-3300V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-6600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-415V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Frequency-50Hz
-  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-190V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-4160V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-415V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-190V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab97
-  - http://qudt.org/vocab/quantitykind/Temperature on na59df6832a3a4ae88cf9af1823cba00ab97 needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab139
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab139 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab139 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#EnumerationKind-Numerical
-  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-5770V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-24V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-6V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-240V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-480V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-380V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-277V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-600V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab3
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab3 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab3 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-219V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-3460V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab7
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab7 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab7 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#LineLineVoltage-6000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab103
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab103 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab103 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-1900V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#Voltage-600V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-208V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-2V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-10000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#Voltage-220V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-6000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab211
-  - http://qudt.org/vocab/quantitykind/Temperature on na59df6832a3a4ae88cf9af1823cba00ab211 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab68
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab68 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab68 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-1900V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-24V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab21
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab21 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab21 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-10000V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineLineVoltage-220V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-277V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-347V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-48V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-6600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b38
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b38 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b38 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-3810V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-120V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b17
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b17 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b17 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-12V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b191
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b191 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b191 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-480V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b105
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b105 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b105 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#Voltage-480V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-temp
+  - http://qudt.org/vocab/quantitykind/Temperature on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-temp needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/DEG_C on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-temp needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#LineLineVoltage-6000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b3
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b3 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b3 needs to be a http://qudt.org/schema/qudt/Unit
 http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-1730V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-347V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab180
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab180 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab180 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-110V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-277V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Frequency-50Hz
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-380V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b204
+  - http://qudt.org/vocab/quantitykind/Temperature on n6362d8fd5fb14be3b4cd10bd91157ee4b204 needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases
-  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab55
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab55 needs to be a http://qudt.org/schema/qudt/Unit
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab55 needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab82
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab82 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab82 needs to be a http://qudt.org/schema/qudt/Unit
-na59df6832a3a4ae88cf9af1823cba00ab29
-  - http://qudt.org/vocab/quantitykind/VolumeFraction on na59df6832a3a4ae88cf9af1823cba00ab29 needs to be a http://qudt.org/schema/qudt/QuantityKind
-  - http://qudt.org/vocab/unit/PERCENT on na59df6832a3a4ae88cf9af1823cba00ab29 needs to be a http://qudt.org/schema/qudt/Unit
-http://data.ashrae.org/standard223#Voltage-127V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-2400V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-120V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-4160V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab144
-  - http://qudt.org/vocab/quantitykind/Temperature on na59df6832a3a4ae88cf9af1823cba00ab144 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-231V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-139V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#LineNeutralVoltage-127V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow
+  - http://qudt.org/vocab/unit/FT3-PER-MIN on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFlowRate on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3810V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#Numerical-Frequency
   - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Numerical-Frequency needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223#LineNeutralVoltage-219V
   - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#Voltage-12V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
-na59df6832a3a4ae88cf9af1823cba00ab160
-  - http://qudt.org/vocab/quantitykind/Temperature on na59df6832a3a4ae88cf9af1823cba00ab160 needs to be a http://qudt.org/schema/qudt/QuantityKind
-http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V
-  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-415V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-5770V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-2V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-co2-concentration
+  - http://qudt.org/vocab/unit/PPM on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-co2-concentration needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/MoleFraction on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-co2-concentration needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-415V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3300V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-PoE
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-PoE needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-PoE
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-PoE needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b51
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b51 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b51 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-220V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-2400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-190V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Frequency-60Hz
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-60Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b162
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b162 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b162 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-1730V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-1730V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-2400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-110V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-Voltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b9
+  - http://qudt.org/vocab/quantitykind/Temperature on n6362d8fd5fb14be3b4cd10bd91157ee4b9 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-127V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b195
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b195 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b195 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-231V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-347V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-231V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-231V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b160
+  - http://qudt.org/vocab/unit/PERCENT on n6362d8fd5fb14be3b4cd10bd91157ee4b160 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n6362d8fd5fb14be3b4cd10bd91157ee4b160 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-3000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-120V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-3460V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-380V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-4160V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-4160V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b223
+  - http://qudt.org/vocab/quantitykind/Temperature on n6362d8fd5fb14be3b4cd10bd91157ee4b223 needs to be a http://qudt.org/schema/qudt/QuantityKind
+n6362d8fd5fb14be3b4cd10bd91157ee4b260
+  - http://qudt.org/vocab/quantitykind/Temperature on n6362d8fd5fb14be3b4cd10bd91157ee4b260 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-10000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper needs to match one of the following shapes: n41efd869fe6a4d39bab4b30aaf455a77b17, n41efd869fe6a4d39bab4b30aaf455a77b23
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper needs to match one of the following shapes: n941636ae47e64667b7bbc5c6b30b2004b17, n941636ae47e64667b7bbc5c6b30b2004b23
 </pre></div>
 </div>
 </div>
