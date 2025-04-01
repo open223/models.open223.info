@@ -26,13 +26,7 @@ See [NIST Example Building 1 Model 1](nist-bdg1-1.md) for a different modeling a
 
 This model contains a representation of the building architecture and electrical/lighting system.
 
-In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types. The Real Estate Core ontology is extended by defining 2 subclasses for rec:Office.
-``` ttl
-recx:OpenOffice rdfs:subClassOf rec:Office;
-  rdfs:label "Open Office".
-recx:PrivateOffice rdfs:subClassOf rec:Office;
-  rdfs:label "Private Office".
-```
+In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types.
 
 ## Source
 
