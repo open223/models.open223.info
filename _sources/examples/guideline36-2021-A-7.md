@@ -12,7 +12,7 @@ kernelspec:
 
 ```{warning}
 This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-04-02 14:21:11. The model file was last updated on 2024-09-15 23:37:32
+223P was last updated on 2025-04-03 11:16:25. The model file was last updated on 2024-09-15 23:37:32
 ```
         
 # ASHRAE Guideline 36-2021 A-7 Dual Duct Terminal Unit with Inlet Sensors
