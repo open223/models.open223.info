@@ -12,7 +12,7 @@ kernelspec:
 
 ```{warning}
 This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-04-03 11:28:14. The model file was last updated on 2024-09-13 16:54:53
+223P was last updated on 2025-04-08 08:18:40. The model file was last updated on 2024-09-13 16:54:53
 ```
         
 # LBNL Example SCB VRF
