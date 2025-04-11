@@ -1,591 +1,1298 @@
-@prefix bldg: <urn:ex/> .
-@prefix s223: <http://data.ashrae.org/standard223#> .
+@prefix g36: <http://data.ashrae.org/standard223/1.0/extensions/g36#> .
+@prefix mysystem: <http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-bldg: a owl:Ontology .
+mysystem: a owl:Ontology ;
+    rdfs:label "" ;
+    owl:imports <http://data.ashrae.org/standard223/1.0/model/all> .
 
-bldg:clg-coil-valve-actuator a s223:Actuator ;
-    s223:actuates bldg:clg-coil-valve ;
-    s223:commandedByProperty bldg:clg-coil-valve-command .
+mysystem:MultipleZoneAhu a s223:AirHandlingUnit,
+        g36:MultipleZoneVAVAirHandlingUnit ;
+    rdfs:label "Multiplezoneahu" ;
+    s223:cnx mysystem:MultipleZoneAhu-chilled-water-in,
+        mysystem:MultipleZoneAhu-chilled-water-out,
+        mysystem:MultipleZoneAhu-ea-out,
+        mysystem:MultipleZoneAhu-hot-water-in,
+        mysystem:MultipleZoneAhu-hot-water-out,
+        mysystem:MultipleZoneAhu-oa-in,
+        mysystem:MultipleZoneAhu-ra-in,
+        mysystem:MultipleZoneAhu-sa-out ;
+    s223:contains mysystem:MultipleZoneAhu-clg-coil,
+        mysystem:MultipleZoneAhu-clg-coil-valve,
+        mysystem:MultipleZoneAhu-ea-damper,
+        mysystem:MultipleZoneAhu-economizer-oa-damper,
+        mysystem:MultipleZoneAhu-filter,
+        mysystem:MultipleZoneAhu-htg-coil,
+        mysystem:MultipleZoneAhu-htg-coil-valve,
+        mysystem:MultipleZoneAhu-minimum-oa-damper,
+        mysystem:MultipleZoneAhu-outside-air-junction,
+        mysystem:MultipleZoneAhu-outside-supply-junction,
+        mysystem:MultipleZoneAhu-ra-damper,
+        mysystem:MultipleZoneAhu-ra-fan,
+        mysystem:MultipleZoneAhu-return-exhaust-junction,
+        mysystem:MultipleZoneAhu-sa-fan .
 
-bldg:ea-damper-actuator a s223:Actuator ;
-    s223:actuates bldg:ea-damper ;
-    s223:commandedByProperty bldg:ea-damper-command .
+mysystem:MultipleZoneAhu-clg-coil-return-water-temp-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Clg Coil Return Water Temp Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-clg-coil-water-out ;
+    s223:observes mysystem:MultipleZoneAhu-clg-coil-return-water-temp .
 
-bldg:economizer-oa-damper-actuator a s223:Actuator ;
-    s223:actuates bldg:economizer-oa-damper ;
-    s223:commandedByProperty bldg:economizer-oa-damper-command .
+mysystem:MultipleZoneAhu-clg-coil-supply-water-temp-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Clg Coil Supply Water Temp Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-clg-coil-water-in ;
+    s223:observes mysystem:MultipleZoneAhu-clg-coil-supply-water-temp .
 
-bldg:filter-differential-pressure-sensor a s223:DifferentialSensor,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#DifferentialPressureSensor> ;
-    s223:hasObservationLocation bldg:filter-in,
-        bldg:filter-out ;
-    s223:hasObservationLocationHigh bldg:filter-in ;
-    s223:hasObservationLocationLow bldg:filter-out ;
-    s223:observes bldg:filter-differential-pressure .
+mysystem:MultipleZoneAhu-clg-coil-valve-actuator a s223:Actuator ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve Actuator" ;
+    s223:actuatedByProperty mysystem:MultipleZoneAhu-clg-coil-valve-command ;
+    s223:actuates mysystem:MultipleZoneAhu-clg-coil-valve .
 
-bldg:heat-coil-air-temp-sensor a s223:Sensor ;
-    s223:hasObservationLocation bldg:duct-after-htg-coil ;
-    s223:observes bldg:heat-coil-air-temp .
+mysystem:MultipleZoneAhu-ea-damper-actuator a s223:Actuator ;
+    rdfs:label "Multiplezoneahu Ea Damper Actuator" ;
+    s223:actuatedByProperty mysystem:MultipleZoneAhu-ea-damper-command ;
+    s223:actuates mysystem:MultipleZoneAhu-ea-damper .
 
-bldg:htg-coil-valve-actuator a s223:Actuator ;
-    s223:actuates bldg:htg-coil-valve ;
-    s223:commandedByProperty bldg:htg-coil-valve-command .
+mysystem:MultipleZoneAhu-economizer-oa-damper-actuator a s223:Actuator ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper Actuator" ;
+    s223:actuatedByProperty mysystem:MultipleZoneAhu-economizer-oa-damper-command ;
+    s223:actuates mysystem:MultipleZoneAhu-economizer-oa-damper .
 
-bldg:ma-temp-sensor a s223:Sensor ;
-    s223:hasObservationLocation bldg:filter-in ;
-    s223:observes bldg:ma-temp .
+mysystem:MultipleZoneAhu-filter-differential-pressure-sensor a s223:DifferentialSensor,
+        s223:Sensor ;
+    rdfs:label "Multiplezoneahu Filter Differential Pressure Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-filter-in ;
+    s223:hasReferenceLocation mysystem:MultipleZoneAhu-filter-out ;
+    s223:observes mysystem:MultipleZoneAhu-filter-differential-pressure .
 
-bldg:minimum-oa-damper-actuator a s223:Actuator ;
-    s223:actuates bldg:minimum-oa-damper ;
-    s223:commandedByProperty bldg:minimum-oa-damper-command .
+mysystem:MultipleZoneAhu-heat-coil-air-temp-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Heat Coil Air Temp Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-duct-after-htg-coil ;
+    s223:observes mysystem:MultipleZoneAhu-heat-coil-air-temp .
 
-bldg:multiple-zone-ahu a s223:AirHandlingUnit,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#MultiZoneVAVAirHandlingUnit> ;
-    s223:cnx bldg:ea-out,
-        bldg:oa-in,
-        bldg:ra-in,
-        bldg:sa-out ;
-    s223:contains bldg:clg-coil,
-        bldg:clg-coil-valve,
-        bldg:ea-damper,
-        bldg:economizer-oa-damper,
-        bldg:filter,
-        bldg:htg-coil,
-        bldg:htg-coil-valve,
-        bldg:minimum-oa-damper,
-        bldg:outside-air-junction,
-        bldg:outside-supply-junction,
-        bldg:ra-damper,
-        bldg:ra-fan,
-        bldg:return-exhaust-junction,
-        bldg:sa-fan .
+mysystem:MultipleZoneAhu-htg-coil-return-water-temp-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Htg Coil Return Water Temp Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-htg-coil-water-out ;
+    s223:observes mysystem:MultipleZoneAhu-htg-coil-return-water-temp .
 
-bldg:oa-flow-measurement-station a s223:Sensor ;
-    s223:hasObservationLocation bldg:minimum-oa-damper-out ;
-    s223:observes bldg:oa-flow .
+mysystem:MultipleZoneAhu-htg-coil-supply-water-temp-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Htg Coil Supply Water Temp Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-htg-coil-water-in ;
+    s223:observes mysystem:MultipleZoneAhu-htg-coil-supply-water-temp .
 
-bldg:oa-temp-sensor a s223:Sensor ;
-    s223:hasObservationLocation bldg:minimum-oa-damper-out ;
-    s223:observes bldg:oa-temp .
+mysystem:MultipleZoneAhu-htg-coil-valve-actuator a s223:Actuator ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve Actuator" ;
+    s223:actuatedByProperty mysystem:MultipleZoneAhu-htg-coil-valve-command ;
+    s223:actuates mysystem:MultipleZoneAhu-htg-coil-valve .
 
-bldg:ra-damper-actuator a s223:Actuator ;
-    s223:actuates bldg:ra-damper ;
-    s223:commandedByProperty bldg:ra-damper-command .
+mysystem:MultipleZoneAhu-ma-temp-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Ma Temp Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-filter-in ;
+    s223:observes mysystem:MultipleZoneAhu-ma-temp .
 
-bldg:ra-fan-static-pressure-sensor a s223:Sensor ;
-    s223:hasObservationLocation bldg:duct-after-ra-fan ;
-    s223:observes bldg:ra-fan-discharge-static-pressure .
+mysystem:MultipleZoneAhu-minimum-oa-damper-actuator a s223:Actuator ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper Actuator" ;
+    s223:actuatedByProperty mysystem:MultipleZoneAhu-minimum-oa-damper-command ;
+    s223:actuates mysystem:MultipleZoneAhu-minimum-oa-damper .
 
-bldg:ra-flow-sensor a s223:Sensor ;
-    s223:hasObservationLocation bldg:ra-fan ;
-    s223:observes bldg:ra-flow .
+mysystem:MultipleZoneAhu-oa-flow-measurement-station a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Oa Flow Measurement Station" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-minimum-oa-damper-out ;
+    s223:observes mysystem:MultipleZoneAhu-oa-flow .
 
-bldg:ra-temp-sensor a s223:Sensor ;
-    s223:hasObservationLocation bldg:ra-in ;
-    s223:observes bldg:ra-temp .
+mysystem:MultipleZoneAhu-oa-temp-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Oa Temp Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-minimum-oa-damper-out ;
+    s223:observes mysystem:MultipleZoneAhu-oa-temp .
 
-bldg:sa-flow-sensor a s223:Sensor ;
-    s223:hasObservationLocation bldg:sa-fan ;
-    s223:observes bldg:sa-flow .
+mysystem:MultipleZoneAhu-ra-damper-actuator a s223:Actuator ;
+    rdfs:label "Multiplezoneahu Ra Damper Actuator" ;
+    s223:actuatedByProperty mysystem:MultipleZoneAhu-ra-damper-command ;
+    s223:actuates mysystem:MultipleZoneAhu-ra-damper .
 
-bldg:sa-temp-sensor a s223:Sensor ;
-    s223:hasObservationLocation bldg:sa-out ;
-    s223:observes bldg:sa-temp .
+mysystem:MultipleZoneAhu-ra-fan-static-pressure-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Ra Fan Static Pressure Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-duct-after-ra-fan ;
+    s223:observes mysystem:MultipleZoneAhu-ra-fan-discharge-static-pressure .
 
-bldg:supply-duct-static-pressure-sensor a s223:Sensor ;
-    s223:hasObservationLocation bldg:sa-out-connection ;
-    s223:observes bldg:supply-duct-static-pressure .
+mysystem:MultipleZoneAhu-ra-flow-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Ra Flow Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-ra-fan ;
+    s223:observes mysystem:MultipleZoneAhu-ra-flow .
 
-bldg:clg-coil a s223:CoolingCoil,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterCoil> ;
-    s223:cnx bldg:clg-coil-air-in,
-        bldg:clg-coil-air-out,
-        bldg:clg-coil-water-in,
-        bldg:clg-coil-water-out ;
+mysystem:MultipleZoneAhu-ra-temp-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Ra Temp Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-ra-in ;
+    s223:observes mysystem:MultipleZoneAhu-ra-temp .
+
+mysystem:MultipleZoneAhu-sa-flow-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Sa Flow Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-sa-fan ;
+    s223:observes mysystem:MultipleZoneAhu-sa-flow .
+
+mysystem:MultipleZoneAhu-sa-temp-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Sa Temp Sensor" ;
+    s223:hasObservationLocation mysystem:MultipleZoneAhu-sa-out ;
+    s223:observes mysystem:MultipleZoneAhu-sa-temp .
+
+mysystem:MultipleZoneAhu-supply-duct-static-pressure-sensor a s223:Sensor ;
+    rdfs:label "Multiplezoneahu Supply Duct Static Pressure Sensor" ;
+    s223:hasObservationLocation mysystem:mzahu-connection-to-SupplyAirJunction ;
+    s223:observes mysystem:MultipleZoneAhu-supply-duct-static-pressure .
+
+mysystem:ReturnAirJunction a s223:Junction ;
+    rdfs:label "Returnairjunction" ;
+    s223:cnx mysystem:ReturnAirJunction-in-from-room-101,
+        mysystem:ReturnAirJunction-in-from-room-102,
+        mysystem:ReturnAirJunction-out ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:SupplyAirJunction a s223:Junction ;
+    rdfs:label "Supplyairjunction" ;
+    s223:cnx mysystem:SupplyAirJunction-in,
+        mysystem:SupplyAirJunction-out-to-vav-701,
+        mysystem:SupplyAirJunction-out-to-vav-702 ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:room-101 a s223:PhysicalSpace ;
+    rdfs:label "Room 101" ;
+    s223:encloses mysystem:room-101-hvac-domain .
+
+mysystem:room-102 a s223:PhysicalSpace ;
+    rdfs:label "Room 102" ;
+    s223:encloses mysystem:room-102-hvac-domain .
+
+mysystem:vav-701 a s223:SingleDuctTerminal,
+        g36:VAVWithReheat ;
+    rdfs:label "Vav 701" ;
+    s223:cnx mysystem:vav-701-air-in,
+        mysystem:vav-701-air-out,
+        mysystem:vav-701-hot-water-in,
+        mysystem:vav-701-hot-water-out ;
+    s223:contains mysystem:vav-701-damper,
+        mysystem:vav-701-reheat-coil,
+        mysystem:vav-701-reheat-coil-valve .
+
+mysystem:vav-701-damper-actuator a s223:Actuator ;
+    rdfs:label "Vav 701 Damper Actuator" ;
+    s223:actuatedByProperty mysystem:vav-701-damper-command ;
+    s223:actuates mysystem:vav-701-damper .
+
+mysystem:vav-701-discharge-air-flow-sensor a s223:Sensor ;
+    rdfs:label "Vav 701 Discharge Air Flow Sensor" ;
+    s223:hasObservationLocation mysystem:vav-701-air-in ;
+    s223:observes mysystem:vav-701-discharge-air-flow .
+
+mysystem:vav-701-discharge-air-temp-sensor a s223:Sensor ;
+    rdfs:label "Vav 701 Discharge Air Temp Sensor" ;
+    s223:hasObservationLocation mysystem:vav-701-air-out ;
+    s223:observes mysystem:vav-701-discharge-air-temp .
+
+mysystem:vav-701-reheat-coil-return-water-temp-sensor a s223:Sensor ;
+    rdfs:label "Vav 701 Reheat Coil Return Water Temp Sensor" ;
+    s223:hasObservationLocation mysystem:vav-701-reheat-coil-water-out ;
+    s223:observes mysystem:vav-701-reheat-coil-return-water-temp .
+
+mysystem:vav-701-reheat-coil-supply-water-temp-sensor a s223:Sensor ;
+    rdfs:label "Vav 701 Reheat Coil Supply Water Temp Sensor" ;
+    s223:hasObservationLocation mysystem:vav-701-reheat-coil-water-in ;
+    s223:observes mysystem:vav-701-reheat-coil-supply-water-temp .
+
+mysystem:vav-701-reheat-coil-valve-actuator a s223:Actuator ;
+    rdfs:label "Vav 701 Reheat Coil Valve Actuator" ;
+    s223:actuatedByProperty mysystem:vav-701-reheat-coil-valve-command ;
+    s223:actuates mysystem:vav-701-reheat-coil-valve .
+
+mysystem:vav-702 a s223:SingleDuctTerminal,
+        g36:VAVWithReheat ;
+    rdfs:label "Vav 702" ;
+    s223:cnx mysystem:vav-702-air-in,
+        mysystem:vav-702-air-out,
+        mysystem:vav-702-hot-water-in,
+        mysystem:vav-702-hot-water-out ;
+    s223:contains mysystem:vav-702-damper,
+        mysystem:vav-702-reheat-coil,
+        mysystem:vav-702-reheat-coil-valve .
+
+mysystem:vav-702-damper-actuator a s223:Actuator ;
+    rdfs:label "Vav 702 Damper Actuator" ;
+    s223:actuatedByProperty mysystem:vav-702-damper-command ;
+    s223:actuates mysystem:vav-702-damper .
+
+mysystem:vav-702-discharge-air-flow-sensor a s223:Sensor ;
+    rdfs:label "Vav 702 Discharge Air Flow Sensor" ;
+    s223:hasObservationLocation mysystem:vav-702-air-in ;
+    s223:observes mysystem:vav-702-discharge-air-flow .
+
+mysystem:vav-702-discharge-air-temp-sensor a s223:Sensor ;
+    rdfs:label "Vav 702 Discharge Air Temp Sensor" ;
+    s223:hasObservationLocation mysystem:vav-702-air-out ;
+    s223:observes mysystem:vav-702-discharge-air-temp .
+
+mysystem:vav-702-reheat-coil-return-water-temp-sensor a s223:Sensor ;
+    rdfs:label "Vav 702 Reheat Coil Return Water Temp Sensor" ;
+    s223:hasObservationLocation mysystem:vav-702-reheat-coil-water-out ;
+    s223:observes mysystem:vav-702-reheat-coil-return-water-temp .
+
+mysystem:vav-702-reheat-coil-supply-water-temp-sensor a s223:Sensor ;
+    rdfs:label "Vav 702 Reheat Coil Supply Water Temp Sensor" ;
+    s223:hasObservationLocation mysystem:vav-702-reheat-coil-water-in ;
+    s223:observes mysystem:vav-702-reheat-coil-supply-water-temp .
+
+mysystem:vav-702-reheat-coil-valve-actuator a s223:Actuator ;
+    rdfs:label "Vav 702 Reheat Coil Valve Actuator" ;
+    s223:actuatedByProperty mysystem:vav-702-reheat-coil-valve-command ;
+    s223:actuates mysystem:vav-702-reheat-coil-valve .
+
+mysystem:zone-101 a s223:Zone,
+        g36:Zone ;
+    rdfs:label "Zone 101" ;
+    s223:hasDomain s223:Domain-HVAC ;
+    s223:hasDomainSpace mysystem:room-101-hvac-domain ;
+    s223:hasProperty mysystem:zone-101-co2-concentration,
+        mysystem:zone-101-temp .
+
+mysystem:zone-102 a s223:Zone,
+        g36:Zone ;
+    rdfs:label "Zone 102" ;
+    s223:hasDomain s223:Domain-HVAC ;
+    s223:hasDomainSpace mysystem:room-102-hvac-domain ;
+    s223:hasProperty mysystem:zone-102-co2-concentration,
+        mysystem:zone-102-temp .
+
+mysystem:MultipleZoneAhu-clg-coil a s223:CoolingCoil,
+        g36:ChilledWaterCoil ;
+    rdfs:label "Multiplezoneahu Clg Coil" ;
+    s223:cnx mysystem:MultipleZoneAhu-clg-coil-air-in,
+        mysystem:MultipleZoneAhu-clg-coil-air-out,
+        mysystem:MultipleZoneAhu-clg-coil-water-in,
+        mysystem:MultipleZoneAhu-clg-coil-water-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-clg-coil-return-water-temp,
+        mysystem:MultipleZoneAhu-clg-coil-supply-water-temp ;
     s223:hasRole s223:Role-Cooling .
 
-bldg:clg-coil-air-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-after-htg-coil ;
+mysystem:MultipleZoneAhu-clg-coil-air-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Air In" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-htg-coil ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:clg-coil-air-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-after-clg-coil ;
+mysystem:MultipleZoneAhu-clg-coil-air-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Air Out" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-clg-coil ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:clg-coil-valve-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:pipe-chilled-water-return-before-valve ;
+mysystem:MultipleZoneAhu-clg-coil-valve-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve In" ;
+    s223:cnx mysystem:MultipleZoneAhu-pipe-chilled-water-return-before-valve ;
     s223:hasMedium s223:Fluid-Water .
 
-bldg:clg-coil-valve-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:pipe-chilled-water-return-after-valve ;
-    s223:hasMedium s223:Fluid-Water .
+mysystem:MultipleZoneAhu-clg-coil-valve-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve Out" ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:mapsTo mysystem:MultipleZoneAhu-chilled-water-out .
 
-bldg:clg-coil-valve-position a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-clg-coil-valve-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve Position" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:clg-coil-water-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:pipe-chilled-water-return-after-valve ;
-    s223:hasMedium s223:Fluid-Water .
-
-bldg:clg-coil-water-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:pipe-chilled-water-supply ;
-    s223:hasMedium s223:Fluid-Water .
-
-bldg:ea-damper-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-before-ea-damper ;
+mysystem:MultipleZoneAhu-ea-damper-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ea Damper In" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-before-ea-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:ea-damper-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:ea-out-connection ;
+mysystem:MultipleZoneAhu-ea-damper-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ea Damper Out" ;
     s223:hasMedium s223:Fluid-Air ;
-    s223:mapsTo bldg:ea-out .
+    s223:mapsTo mysystem:MultipleZoneAhu-ea-out .
 
-bldg:ea-damper-position a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-ea-damper-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ea Damper Position" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:economizer-oa-damper-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-before-economizer-oa-damper ;
+mysystem:MultipleZoneAhu-economizer-oa-damper-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper In" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-before-economizer-oa-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:economizer-oa-damper-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-after-economizer-oa-damper ;
+mysystem:MultipleZoneAhu-economizer-oa-damper-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper Out" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-economizer-oa-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:economizer-oa-damper-position a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-economizer-oa-damper-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper Position" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:filter a s223:Filter,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Filter> ;
-    s223:cnx bldg:filter-in,
-        bldg:filter-out ;
-    s223:hasProperty bldg:filter-differential-pressure .
+mysystem:MultipleZoneAhu-filter a s223:Filter,
+        g36:Filter ;
+    rdfs:label "Multiplezoneahu Filter" ;
+    s223:cnx mysystem:MultipleZoneAhu-filter-in,
+        mysystem:MultipleZoneAhu-filter-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-filter-differential-pressure .
 
-bldg:htg-coil a s223:HeatingCoil,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterCoil> ;
-    s223:cnx bldg:htg-coil-air-in,
-        bldg:htg-coil-air-out,
-        bldg:htg-coil-water-in,
-        bldg:htg-coil-water-out ;
+mysystem:MultipleZoneAhu-htg-coil a s223:HeatingCoil,
+        g36:HotWaterCoil ;
+    rdfs:label "Multiplezoneahu Htg Coil" ;
+    s223:cnx mysystem:MultipleZoneAhu-htg-coil-air-in,
+        mysystem:MultipleZoneAhu-htg-coil-air-out,
+        mysystem:MultipleZoneAhu-htg-coil-water-in,
+        mysystem:MultipleZoneAhu-htg-coil-water-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-htg-coil-return-water-temp,
+        mysystem:MultipleZoneAhu-htg-coil-supply-water-temp ;
     s223:hasRole s223:Role-Heating .
 
-bldg:htg-coil-air-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-after-filter ;
+mysystem:MultipleZoneAhu-htg-coil-air-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Air In" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-filter ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:htg-coil-air-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-after-htg-coil ;
+mysystem:MultipleZoneAhu-htg-coil-air-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Air Out" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-htg-coil ;
     s223:hasMedium s223:Fluid-Air ;
-    s223:hasProperty bldg:heat-coil-air-temp .
+    s223:hasProperty mysystem:MultipleZoneAhu-heat-coil-air-temp .
 
-bldg:htg-coil-valve-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:pipe-hot-water-return-before-valve ;
+mysystem:MultipleZoneAhu-htg-coil-valve-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve In" ;
+    s223:cnx mysystem:MultipleZoneAhu-pipe-hot-water-return-before-valve ;
     s223:hasMedium s223:Fluid-Water .
 
-bldg:htg-coil-valve-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:pipe-hot-water-return-after-valve ;
-    s223:hasMedium s223:Fluid-Water .
+mysystem:MultipleZoneAhu-htg-coil-valve-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve Out" ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:mapsTo mysystem:MultipleZoneAhu-hot-water-out .
 
-bldg:htg-coil-valve-position a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-htg-coil-valve-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve Position" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:htg-coil-water-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:pipe-hot-water-return-after-valve ;
-    s223:hasMedium s223:Fluid-Water .
-
-bldg:htg-coil-water-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:pipe-hot-water-supply ;
-    s223:hasMedium s223:Fluid-Water .
-
-bldg:minimum-oa-damper-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-before-minimum-oa-damper ;
+mysystem:MultipleZoneAhu-minimum-oa-damper-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper In" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-before-minimum-oa-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:minimum-oa-damper-position a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-minimum-oa-damper-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper Position" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:outside-air-junction a s223:Junction ;
-    s223:cnx bldg:outside-air-junction-in,
-        bldg:outside-air-junction-out-1,
-        bldg:outside-air-junction-out-2 ;
+mysystem:MultipleZoneAhu-outside-air-junction a s223:Junction ;
+    rdfs:label "Multiplezoneahu Outside Air Junction" ;
+    s223:cnx mysystem:MultipleZoneAhu-outside-air-junction-in,
+        mysystem:MultipleZoneAhu-outside-air-junction-out-1,
+        mysystem:MultipleZoneAhu-outside-air-junction-out-2 ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:outside-air-junction-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:oa-in-connection ;
+mysystem:MultipleZoneAhu-outside-air-junction-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Air Junction In" ;
     s223:hasMedium s223:Fluid-Air ;
-    s223:mapsTo bldg:oa-in .
+    s223:mapsTo mysystem:MultipleZoneAhu-oa-in .
 
-bldg:outside-air-junction-out-1 a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-before-minimum-oa-damper ;
+mysystem:MultipleZoneAhu-outside-air-junction-out-1 a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Air Junction Out 1" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-before-minimum-oa-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:outside-air-junction-out-2 a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-before-economizer-oa-damper ;
+mysystem:MultipleZoneAhu-outside-air-junction-out-2 a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Air Junction Out 2" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-before-economizer-oa-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:outside-supply-junction a s223:Junction ;
-    s223:cnx bldg:outside-supply-junction-in-1,
-        bldg:outside-supply-junction-in-2,
-        bldg:outside-supply-junction-in-3,
-        bldg:outside-supply-junction-out ;
+mysystem:MultipleZoneAhu-outside-supply-junction a s223:Junction ;
+    rdfs:label "Multiplezoneahu Outside Supply Junction" ;
+    s223:cnx mysystem:MultipleZoneAhu-outside-supply-junction-in-1,
+        mysystem:MultipleZoneAhu-outside-supply-junction-in-2,
+        mysystem:MultipleZoneAhu-outside-supply-junction-in-3,
+        mysystem:MultipleZoneAhu-outside-supply-junction-out ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:outside-supply-junction-in-1 a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-after-ra-damper ;
+mysystem:MultipleZoneAhu-outside-supply-junction-in-1 a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Supply Junction In 1" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-ra-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:outside-supply-junction-in-2 a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-after-minimum-oa-damper ;
+mysystem:MultipleZoneAhu-outside-supply-junction-in-2 a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Supply Junction In 2" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-minimum-oa-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:outside-supply-junction-in-3 a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-after-economizer-oa-damper ;
+mysystem:MultipleZoneAhu-outside-supply-junction-in-3 a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Supply Junction In 3" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-economizer-oa-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:outside-supply-junction-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-before-filter ;
+mysystem:MultipleZoneAhu-outside-supply-junction-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Outside Supply Junction Out" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-before-filter ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:pipe-chilled-water-return-before-valve a s223:Connection,
-        s223:Pipe ;
-    s223:hasMedium s223:Fluid-Water .
-
-bldg:pipe-chilled-water-supply a s223:Connection,
-        s223:Pipe ;
-    s223:hasMedium s223:Fluid-Water .
-
-bldg:pipe-hot-water-return-before-valve a s223:Connection,
-        s223:Pipe ;
-    s223:hasMedium s223:Fluid-Water .
-
-bldg:pipe-hot-water-supply a s223:Connection,
-        s223:Pipe ;
-    s223:hasMedium s223:Fluid-Water .
-
-bldg:ra-damper-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-before-ra-damper ;
+mysystem:MultipleZoneAhu-ra-damper-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ra Damper In" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-before-ra-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:ra-damper-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-after-ra-damper ;
+mysystem:MultipleZoneAhu-ra-damper-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ra Damper Out" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-ra-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:ra-damper-position a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-ra-damper-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Damper Position" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:ra-fan-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:ra-in-connection ;
+mysystem:MultipleZoneAhu-ra-fan-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ra Fan In" ;
     s223:hasMedium s223:Fluid-Air ;
-    s223:mapsTo bldg:ra-in .
+    s223:mapsTo mysystem:MultipleZoneAhu-ra-in .
 
-bldg:ra-fan-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-after-ra-fan ;
+mysystem:MultipleZoneAhu-ra-fan-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ra Fan Out" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-ra-fan ;
     s223:hasMedium s223:Fluid-Air ;
-    s223:hasProperty bldg:ra-fan-discharge-static-pressure .
+    s223:hasProperty mysystem:MultipleZoneAhu-ra-fan-discharge-static-pressure .
 
-bldg:ra-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
-    s223:hasAspect s223:EnumerationKind-Speed ;
+mysystem:MultipleZoneAhu-ra-fan-power a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Power" ;
+    qudt:hasQuantityKind qudtqk:ElectricPower ;
+    qudt:hasUnit unit:W .
+
+mysystem:MultipleZoneAhu-ra-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Speed Cmd" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:ra-fan-start-cmd a s223:EnumeratedActuatableProperty ;
-    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+mysystem:MultipleZoneAhu-ra-fan-speed-status a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Speed Status" ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
 
-bldg:ra-fan-start-status a s223:EnumeratedObservableProperty ;
-    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+mysystem:MultipleZoneAhu-ra-fan-start-cmd a s223:EnumeratedActuatableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Start Cmd" ;
+    s223:hasEnumerationKind s223:Binary-OnOff .
 
-bldg:return-exhaust-junction a s223:Junction ;
-    s223:cnx bldg:return-exhaust-junction-in,
-        bldg:return-exhaust-junction-out-1,
-        bldg:return-exhaust-junction-out-2 ;
+mysystem:MultipleZoneAhu-ra-fan-start-status a s223:EnumeratedObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Start Status" ;
+    s223:hasEnumerationKind s223:Binary-OnOff .
+
+mysystem:MultipleZoneAhu-return-exhaust-junction a s223:Junction ;
+    rdfs:label "Multiplezoneahu Return Exhaust Junction" ;
+    s223:cnx mysystem:MultipleZoneAhu-return-exhaust-junction-in,
+        mysystem:MultipleZoneAhu-return-exhaust-junction-out-1,
+        mysystem:MultipleZoneAhu-return-exhaust-junction-out-2 ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:return-exhaust-junction-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-after-ra-fan ;
+mysystem:MultipleZoneAhu-return-exhaust-junction-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Return Exhaust Junction In" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-ra-fan ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:return-exhaust-junction-out-1 a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-before-ea-damper ;
+mysystem:MultipleZoneAhu-return-exhaust-junction-out-1 a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Return Exhaust Junction Out 1" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-before-ea-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:return-exhaust-junction-out-2 a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-before-ra-damper ;
+mysystem:MultipleZoneAhu-return-exhaust-junction-out-2 a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Return Exhaust Junction Out 2" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-before-ra-damper ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:sa-fan-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-after-clg-coil ;
+mysystem:MultipleZoneAhu-sa-fan-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Sa Fan In" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-clg-coil ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:sa-fan-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:sa-out-connection ;
+mysystem:MultipleZoneAhu-sa-fan-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Sa Fan Out" ;
     s223:hasMedium s223:Fluid-Air ;
-    s223:mapsTo bldg:sa-out .
+    s223:mapsTo mysystem:MultipleZoneAhu-sa-out .
 
-bldg:sa-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
-    s223:hasAspect s223:EnumerationKind-Speed ;
+mysystem:MultipleZoneAhu-sa-fan-power a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Sa Fan Power" ;
+    qudt:hasQuantityKind qudtqk:ElectricPower ;
+    qudt:hasUnit unit:W .
+
+mysystem:MultipleZoneAhu-sa-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Sa Fan Speed Cmd" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:sa-fan-start-cmd a s223:EnumeratedActuatableProperty ;
-    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
-
-bldg:sa-fan-start-status a s223:EnumeratedObservableProperty ;
-    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
-
-bldg:clg-coil-valve a s223:Valve,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#ChilledWaterValve> ;
-    s223:cnx bldg:clg-coil-valve-in,
-        bldg:clg-coil-valve-out ;
-    s223:hasMedium s223:Water-ChilledWater ;
-    s223:hasProperty bldg:clg-coil-valve-command,
-        bldg:clg-coil-valve-position .
-
-bldg:clg-coil-valve-command a s223:QuantifiableActuatableProperty ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+mysystem:MultipleZoneAhu-sa-fan-speed-status a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Sa Fan Speed Status" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:duct-after-clg-coil a s223:Connection,
-        s223:Duct ;
+mysystem:MultipleZoneAhu-sa-fan-start-cmd a s223:EnumeratedActuatableProperty ;
+    rdfs:label "Multiplezoneahu Sa Fan Start Cmd" ;
+    s223:hasEnumerationKind s223:Binary-OnOff .
+
+mysystem:MultipleZoneAhu-sa-fan-start-status a s223:EnumeratedObservableProperty ;
+    rdfs:label "Multiplezoneahu Sa Fan Start Status" ;
+    s223:hasEnumerationKind s223:Binary-OnOff .
+
+mysystem:MultipleZoneAhu-sa-temp-setpoint a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Sa Temp Setpoint" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:MultipleZoneAhu-supply-duct-static-pressure-setpoint a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Supply Duct Static Pressure Setpoint" ;
+    qudt:hasQuantityKind qudtqk:Pressure ;
+    qudt:hasUnit unit:IN_H2O .
+
+mysystem:ReturnAirJunction-in-from-room-101 a s223:InletConnectionPoint ;
+    rdfs:label "Returnairjunction In From Room 101" ;
+    s223:cnx mysystem:room-101-connection-to-ReturnAirJunction ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:duct-after-economizer-oa-damper a s223:Connection,
-        s223:Duct ;
+mysystem:ReturnAirJunction-in-from-room-102 a s223:InletConnectionPoint ;
+    rdfs:label "Returnairjunction In From Room 102" ;
+    s223:cnx mysystem:room-102-connection-to-ReturnAirJunction ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:duct-after-filter a s223:Connection,
-        s223:Duct ;
+mysystem:ReturnAirJunction-out a s223:OutletConnectionPoint ;
+    rdfs:label "Returnairjunction Out" ;
+    s223:cnx mysystem:ReturnAirJunction-connection-to-mzahu ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:duct-after-minimum-oa-damper a s223:Connection,
-        s223:Duct ;
+mysystem:SupplyAirJunction-in a s223:InletConnectionPoint ;
+    rdfs:label "Supplyairjunction In" ;
+    s223:cnx mysystem:mzahu-connection-to-SupplyAirJunction ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:duct-after-ra-damper a s223:Connection,
-        s223:Duct ;
+mysystem:SupplyAirJunction-out-to-vav-701 a s223:OutletConnectionPoint ;
+    rdfs:label "Supplyairjunction Out To Vav 701" ;
+    s223:cnx mysystem:SupplyAirJunction-connection-to-vav-701 ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:duct-before-ea-damper a s223:Connection,
-        s223:Duct ;
+mysystem:SupplyAirJunction-out-to-vav-702 a s223:OutletConnectionPoint ;
+    rdfs:label "Supplyairjunction Out To Vav 702" ;
+    s223:cnx mysystem:SupplyAirJunction-connection-to-vav-702 ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:duct-before-economizer-oa-damper a s223:Connection,
-        s223:Duct ;
+mysystem:room-101-hvac-domain-in a s223:InletConnectionPoint ;
+    rdfs:label "Room 101 Hvac Domain In" ;
+    s223:cnx mysystem:vav-701-connection-to-room-101 ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:duct-before-filter a s223:Connection,
-        s223:Duct ;
+mysystem:room-101-hvac-domain-out a s223:OutletConnectionPoint ;
+    rdfs:label "Room 101 Hvac Domain Out" ;
+    s223:cnx mysystem:room-101-connection-to-ReturnAirJunction ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:duct-before-minimum-oa-damper a s223:Connection,
-        s223:Duct ;
+mysystem:room-102-hvac-domain-in a s223:InletConnectionPoint ;
+    rdfs:label "Room 102 Hvac Domain In" ;
+    s223:cnx mysystem:vav-702-connection-to-room-102 ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:duct-before-ra-damper a s223:Connection,
-        s223:Duct ;
+mysystem:room-102-hvac-domain-out a s223:OutletConnectionPoint ;
+    rdfs:label "Room 102 Hvac Domain Out" ;
+    s223:cnx mysystem:room-102-connection-to-ReturnAirJunction ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:ea-damper a s223:Damper,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    s223:cnx bldg:ea-damper-in,
-        bldg:ea-damper-out ;
-    s223:hasProperty bldg:ea-damper-command,
-        bldg:ea-damper-position ;
+mysystem:vav-701-damper-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 701 Damper In" ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:mapsTo mysystem:vav-701-air-in .
+
+mysystem:vav-701-damper-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Damper Out" ;
+    s223:cnx mysystem:vav-701-duct-after-damper ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-701-damper-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Damper Position" ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+mysystem:vav-701-reheat-coil a s223:HeatingCoil,
+        g36:HotWaterCoil ;
+    rdfs:label "Vav 701 Reheat Coil" ;
+    s223:cnx mysystem:vav-701-reheat-coil-air-in,
+        mysystem:vav-701-reheat-coil-air-out,
+        mysystem:vav-701-reheat-coil-water-in,
+        mysystem:vav-701-reheat-coil-water-out ;
+    s223:hasProperty mysystem:vav-701-reheat-coil-return-water-temp,
+        mysystem:vav-701-reheat-coil-supply-water-temp ;
+    s223:hasRole s223:Role-Heating .
+
+mysystem:vav-701-reheat-coil-air-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Air In" ;
+    s223:cnx mysystem:vav-701-duct-after-damper ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-701-reheat-coil-air-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Air Out" ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:mapsTo mysystem:vav-701-air-out .
+
+mysystem:vav-701-reheat-coil-valve-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Valve In" ;
+    s223:cnx mysystem:vav-701-pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:vav-701-reheat-coil-valve-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Valve Out" ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:mapsTo mysystem:vav-701-hot-water-out .
+
+mysystem:vav-701-reheat-coil-valve-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Reheat Coil Valve Position" ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+mysystem:vav-702-damper-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 702 Damper In" ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:mapsTo mysystem:vav-702-air-in .
+
+mysystem:vav-702-damper-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Damper Out" ;
+    s223:cnx mysystem:vav-702-duct-after-damper ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-702-damper-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Damper Position" ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+mysystem:vav-702-reheat-coil a s223:HeatingCoil,
+        g36:HotWaterCoil ;
+    rdfs:label "Vav 702 Reheat Coil" ;
+    s223:cnx mysystem:vav-702-reheat-coil-air-in,
+        mysystem:vav-702-reheat-coil-air-out,
+        mysystem:vav-702-reheat-coil-water-in,
+        mysystem:vav-702-reheat-coil-water-out ;
+    s223:hasProperty mysystem:vav-702-reheat-coil-return-water-temp,
+        mysystem:vav-702-reheat-coil-supply-water-temp ;
+    s223:hasRole s223:Role-Heating .
+
+mysystem:vav-702-reheat-coil-air-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Air In" ;
+    s223:cnx mysystem:vav-702-duct-after-damper ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-702-reheat-coil-air-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Air Out" ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:mapsTo mysystem:vav-702-air-out .
+
+mysystem:vav-702-reheat-coil-valve-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Valve In" ;
+    s223:cnx mysystem:vav-702-pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:vav-702-reheat-coil-valve-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Valve Out" ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:mapsTo mysystem:vav-702-hot-water-out .
+
+mysystem:vav-702-reheat-coil-valve-position a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Reheat Coil Valve Position" ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+mysystem:zone-101-co2-concentration a s223:QuantifiableObservableProperty ;
+    rdfs:label "Zone 101 Co2 Concentration" ;
+    s223:ofMedium s223:Fluid-Air ;
+    s223:ofSubstance s223:Constituent-CO2 ;
+    qudt:hasQuantityKind qudtqk:MoleFraction ;
+    qudt:hasUnit unit:PPM .
+
+mysystem:zone-101-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Zone 101 Temp" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:zone-102-co2-concentration a s223:QuantifiableObservableProperty ;
+    rdfs:label "Zone 102 Co2 Concentration" ;
+    s223:ofMedium s223:Fluid-Air ;
+    s223:ofSubstance s223:Constituent-CO2 ;
+    qudt:hasQuantityKind qudtqk:MoleFraction ;
+    qudt:hasUnit unit:PPM .
+
+mysystem:zone-102-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Zone 102 Temp" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:MultipleZoneAhu-chilled-water-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Chilled Water In" ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:MultipleZoneAhu-chilled-water-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Chilled Water Out" ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:MultipleZoneAhu-clg-coil-return-water-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Clg Coil Return Water Temp" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:MultipleZoneAhu-clg-coil-supply-water-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Clg Coil Supply Water Temp" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:MultipleZoneAhu-clg-coil-valve a s223:Valve,
+        g36:ChilledWaterValve ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve" ;
+    s223:cnx mysystem:MultipleZoneAhu-clg-coil-valve-in,
+        mysystem:MultipleZoneAhu-clg-coil-valve-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-clg-coil-valve-command,
+        mysystem:MultipleZoneAhu-clg-coil-valve-position .
+
+mysystem:MultipleZoneAhu-clg-coil-valve-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Clg Coil Valve Command" ;
+    s223:hasAspect s223:Binary-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+mysystem:MultipleZoneAhu-clg-coil-water-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Water In" ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:mapsTo mysystem:MultipleZoneAhu-chilled-water-in .
+
+mysystem:MultipleZoneAhu-clg-coil-water-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Clg Coil Water Out" ;
+    s223:cnx mysystem:MultipleZoneAhu-pipe-chilled-water-return-before-valve ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:MultipleZoneAhu-duct-after-clg-coil a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Clg Coil" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-duct-after-economizer-oa-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Economizer Oa Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-duct-after-filter a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Filter" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-duct-after-minimum-oa-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Minimum Oa Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-duct-after-ra-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Ra Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-duct-before-ea-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct Before Ea Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-duct-before-economizer-oa-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct Before Economizer Oa Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-duct-before-filter a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct Before Filter" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-duct-before-minimum-oa-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct Before Minimum Oa Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-duct-before-ra-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct Before Ra Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-ea-damper a s223:Damper,
+        g36:Damper ;
+    rdfs:label "Multiplezoneahu Ea Damper" ;
+    s223:cnx mysystem:MultipleZoneAhu-ea-damper-in,
+        mysystem:MultipleZoneAhu-ea-damper-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-ea-damper-command,
+        mysystem:MultipleZoneAhu-ea-damper-position ;
     s223:hasRole s223:Role-Exhaust .
 
-bldg:ea-damper-command a s223:QuantifiableActuatableProperty ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+mysystem:MultipleZoneAhu-ea-damper-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Ea Damper Command" ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:ea-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:ea-out-connection ;
+mysystem:MultipleZoneAhu-ea-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ea Out" ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:ea-out-connection a s223:Connection ;
-    s223:hasMedium s223:Fluid-Air .
-
-bldg:economizer-oa-damper a s223:Damper,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    s223:cnx bldg:economizer-oa-damper-in,
-        bldg:economizer-oa-damper-out ;
-    s223:hasProperty bldg:economizer-oa-damper-command,
-        bldg:economizer-oa-damper-position ;
+mysystem:MultipleZoneAhu-economizer-oa-damper a s223:Damper,
+        g36:Damper ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper" ;
+    s223:cnx mysystem:MultipleZoneAhu-economizer-oa-damper-in,
+        mysystem:MultipleZoneAhu-economizer-oa-damper-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-economizer-oa-damper-command,
+        mysystem:MultipleZoneAhu-economizer-oa-damper-position ;
     s223:hasRole s223:Role-Economizer .
 
-bldg:economizer-oa-damper-command a s223:QuantifiableActuatableProperty ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+mysystem:MultipleZoneAhu-economizer-oa-damper-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Economizer Oa Damper Command" ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:filter-differential-pressure a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-filter-differential-pressure a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Filter Differential Pressure" ;
     qudt:hasQuantityKind qudtqk:Pressure ;
-    qudt:hasUnit unit:IN_H2O .
+    qudt:hasUnit unit:IN_H2O ;
+    qudt:isDeltaQuantity true .
 
-bldg:heat-coil-air-temp a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-filter-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Filter Out" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-filter ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-heat-coil-air-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Heat Coil Air Temp" ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:hasUnit unit:DEG_C .
 
-bldg:htg-coil-valve a s223:Valve,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#HotWaterValve> ;
-    s223:cnx bldg:htg-coil-valve-in,
-        bldg:htg-coil-valve-out ;
-    s223:hasMedium s223:Water-HotWater ;
-    s223:hasProperty bldg:htg-coil-valve-command,
-        bldg:htg-coil-valve-position .
+mysystem:MultipleZoneAhu-hot-water-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Hot Water In" ;
+    s223:hasMedium s223:Fluid-Water .
 
-bldg:htg-coil-valve-command a s223:QuantifiableActuatableProperty ;
-    s223:hasAspect s223:EnumerationKind-Position ;
-    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
-    qudt:hasUnit unit:PERCENT .
+mysystem:MultipleZoneAhu-hot-water-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Hot Water Out" ;
+    s223:hasMedium s223:Fluid-Water .
 
-bldg:ma-temp a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-htg-coil-return-water-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Htg Coil Return Water Temp" ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:hasUnit unit:DEG_C .
 
-bldg:minimum-oa-damper a s223:Damper,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    s223:cnx bldg:minimum-oa-damper-in,
-        bldg:minimum-oa-damper-out ;
-    s223:hasProperty bldg:minimum-oa-damper-command,
-        bldg:minimum-oa-damper-position ;
-    s223:hasRole s223:Role-Outside .
+mysystem:MultipleZoneAhu-htg-coil-supply-water-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Htg Coil Supply Water Temp" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
 
-bldg:minimum-oa-damper-command a s223:QuantifiableActuatableProperty ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+mysystem:MultipleZoneAhu-htg-coil-valve a s223:Valve,
+        g36:HotWaterValve ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve" ;
+    s223:cnx mysystem:MultipleZoneAhu-htg-coil-valve-in,
+        mysystem:MultipleZoneAhu-htg-coil-valve-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-htg-coil-valve-command,
+        mysystem:MultipleZoneAhu-htg-coil-valve-position .
+
+mysystem:MultipleZoneAhu-htg-coil-valve-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Htg Coil Valve Command" ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:oa-flow a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-htg-coil-water-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Water In" ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:mapsTo mysystem:MultipleZoneAhu-hot-water-in .
+
+mysystem:MultipleZoneAhu-htg-coil-water-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Htg Coil Water Out" ;
+    s223:cnx mysystem:MultipleZoneAhu-pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:MultipleZoneAhu-ma-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ma Temp" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:MultipleZoneAhu-minimum-oa-damper a s223:Damper,
+        g36:Damper ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper" ;
+    s223:cnx mysystem:MultipleZoneAhu-minimum-oa-damper-in,
+        mysystem:MultipleZoneAhu-minimum-oa-damper-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-minimum-oa-damper-command,
+        mysystem:MultipleZoneAhu-minimum-oa-damper-position ;
+    s223:hasRole s223:Role-OutdoorAirIntake .
+
+mysystem:MultipleZoneAhu-minimum-oa-damper-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper Command" ;
+    s223:hasAspect s223:Binary-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+mysystem:MultipleZoneAhu-oa-flow a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Oa Flow" ;
     qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
     qudt:hasUnit unit:FT3-PER-MIN .
 
-bldg:oa-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:oa-in-connection ;
-    s223:hasMedium s223:Fluid-Air .
+mysystem:MultipleZoneAhu-oa-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Oa In" ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem:MultipleZoneAhu-oa-temp .
 
-bldg:oa-in-connection a s223:Connection ;
-    s223:hasMedium s223:Fluid-Air .
-
-bldg:oa-temp a s223:QuantifiableObservableProperty ;
-    s223:hasAspect s223:Role-Outside ;
+mysystem:MultipleZoneAhu-oa-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Oa Temp" ;
+    s223:hasAspect s223:Role-OutdoorAirIntake ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:hasUnit unit:DEG_C .
 
-bldg:pipe-chilled-water-return-after-valve a s223:Connection,
+mysystem:MultipleZoneAhu-pipe-chilled-water-return-before-valve a s223:Connection,
         s223:Pipe ;
+    rdfs:label "Multiplezoneahu Pipe Chilled Water Return Before Valve" ;
     s223:hasMedium s223:Fluid-Water .
 
-bldg:pipe-hot-water-return-after-valve a s223:Connection,
+mysystem:MultipleZoneAhu-pipe-hot-water-return-before-valve a s223:Connection,
         s223:Pipe ;
+    rdfs:label "Multiplezoneahu Pipe Hot Water Return Before Valve" ;
     s223:hasMedium s223:Fluid-Water .
 
-bldg:ra-damper a s223:Damper,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#Damper> ;
-    s223:cnx bldg:ra-damper-in,
-        bldg:ra-damper-out ;
-    s223:hasProperty bldg:ra-damper-command,
-        bldg:ra-damper-position ;
+mysystem:MultipleZoneAhu-ra-damper a s223:Damper,
+        g36:Damper ;
+    rdfs:label "Multiplezoneahu Ra Damper" ;
+    s223:cnx mysystem:MultipleZoneAhu-ra-damper-in,
+        mysystem:MultipleZoneAhu-ra-damper-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-ra-damper-command,
+        mysystem:MultipleZoneAhu-ra-damper-position ;
     s223:hasRole s223:Role-Return .
 
-bldg:ra-damper-command a s223:QuantifiableActuatableProperty ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+mysystem:MultipleZoneAhu-ra-damper-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Multiplezoneahu Ra Damper Command" ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
-bldg:ra-fan a s223:Fan,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD> ;
-    s223:cnx bldg:ra-fan-in,
-        bldg:ra-fan-out ;
-    s223:hasProperty bldg:ra-fan-speed-cmd,
-        bldg:ra-fan-start-cmd,
-        bldg:ra-fan-start-status,
-        bldg:ra-flow ;
+mysystem:MultipleZoneAhu-ra-fan a s223:Fan,
+        g36:FanWithVFD ;
+    rdfs:label "Multiplezoneahu Ra Fan" ;
+    s223:cnx mysystem:MultipleZoneAhu-ra-fan-in,
+        mysystem:MultipleZoneAhu-ra-fan-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-ra-fan-power,
+        mysystem:MultipleZoneAhu-ra-fan-speed-cmd,
+        mysystem:MultipleZoneAhu-ra-fan-speed-status,
+        mysystem:MultipleZoneAhu-ra-fan-start-cmd,
+        mysystem:MultipleZoneAhu-ra-fan-start-status,
+        mysystem:MultipleZoneAhu-ra-flow ;
     s223:hasRole s223:Role-Return .
 
-bldg:ra-fan-discharge-static-pressure a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-ra-fan-discharge-static-pressure a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Fan Discharge Static Pressure" ;
     qudt:hasQuantityKind qudtqk:Pressure ;
     qudt:hasUnit unit:IN_H2O .
 
-bldg:ra-flow a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-ra-flow a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Flow" ;
     qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
     qudt:hasUnit unit:FT3-PER-MIN .
 
-bldg:ra-in-connection a s223:Connection ;
-    s223:hasMedium s223:Fluid-Air .
-
-bldg:ra-temp a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-ra-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Ra Temp" ;
     s223:hasAspect s223:Role-Return ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:hasUnit unit:DEG_C .
 
-bldg:sa-fan a s223:Fan,
-        <http://data.ashrae.org/standard223/1.0/extensions/g36#FanWithVFD> ;
-    s223:cnx bldg:sa-fan-in,
-        bldg:sa-fan-out ;
-    s223:hasProperty bldg:sa-fan-speed-cmd,
-        bldg:sa-fan-start-cmd,
-        bldg:sa-fan-start-status,
-        bldg:sa-flow ;
+mysystem:MultipleZoneAhu-sa-fan a s223:Fan,
+        g36:FanWithVFD ;
+    rdfs:label "Multiplezoneahu Sa Fan" ;
+    s223:cnx mysystem:MultipleZoneAhu-sa-fan-in,
+        mysystem:MultipleZoneAhu-sa-fan-out ;
+    s223:hasProperty mysystem:MultipleZoneAhu-sa-fan-power,
+        mysystem:MultipleZoneAhu-sa-fan-speed-cmd,
+        mysystem:MultipleZoneAhu-sa-fan-speed-status,
+        mysystem:MultipleZoneAhu-sa-fan-start-cmd,
+        mysystem:MultipleZoneAhu-sa-fan-start-status,
+        mysystem:MultipleZoneAhu-sa-flow ;
     s223:hasRole s223:Role-Supply .
 
-bldg:sa-flow a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-sa-flow a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Sa Flow" ;
     qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
     qudt:hasUnit unit:FT3-PER-MIN .
 
-bldg:sa-temp a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-sa-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Sa Temp" ;
     s223:hasAspect s223:Role-Supply ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:hasUnit unit:DEG_C .
 
-bldg:supply-duct-static-pressure a s223:QuantifiableObservableProperty ;
+mysystem:MultipleZoneAhu-supply-duct-static-pressure a s223:QuantifiableObservableProperty ;
+    rdfs:label "Multiplezoneahu Supply Duct Static Pressure" ;
     s223:hasAspect s223:Role-Supply ;
     qudt:hasQuantityKind qudtqk:Pressure ;
     qudt:hasUnit unit:IN_H2O .
 
-bldg:duct-after-htg-coil a s223:Connection,
+mysystem:ReturnAirJunction-connection-to-mzahu a s223:Connection,
         s223:Duct ;
+    rdfs:label "Returnairjunction Connection To Mzahu" ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:duct-after-ra-fan a s223:Connection,
+mysystem:SupplyAirJunction-connection-to-vav-701 a s223:Connection,
         s223:Duct ;
+    rdfs:label "Supplyairjunction Connection To Vav 701" ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:filter-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-after-filter ;
+mysystem:SupplyAirJunction-connection-to-vav-702 a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Supplyairjunction Connection To Vav 702" ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:minimum-oa-damper-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:duct-after-minimum-oa-damper ;
-    s223:hasMedium s223:Fluid-Air ;
-    s223:hasProperty bldg:oa-flow,
-        bldg:oa-temp .
-
-bldg:ra-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:ra-in-connection ;
-    s223:hasMedium s223:Fluid-Air ;
-    s223:hasProperty bldg:ra-temp .
-
-bldg:sa-out a s223:OutletConnectionPoint ;
-    s223:cnx bldg:sa-out-connection ;
-    s223:hasMedium s223:Fluid-Air ;
-    s223:hasProperty bldg:sa-temp,
-        bldg:supply-duct-static-pressure .
-
-bldg:sa-out-connection a s223:Connection ;
+mysystem:room-101-connection-to-ReturnAirJunction a s223:Connection ;
+    rdfs:label "Room 101 Connection To Returnairjunction" ;
     s223:hasMedium s223:Fluid-Air .
 
-bldg:filter-in a s223:InletConnectionPoint ;
-    s223:cnx bldg:duct-before-filter ;
+mysystem:room-101-hvac-domain a s223:DomainSpace ;
+    rdfs:label "Room 101 Hvac Domain" ;
+    s223:cnx mysystem:room-101-hvac-domain-in,
+        mysystem:room-101-hvac-domain-out ;
+    s223:hasDomain s223:Domain-HVAC .
+
+mysystem:room-102-connection-to-ReturnAirJunction a s223:Connection ;
+    rdfs:label "Room 102 Connection To Returnairjunction" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:room-102-hvac-domain a s223:DomainSpace ;
+    rdfs:label "Room 102 Hvac Domain" ;
+    s223:cnx mysystem:room-102-hvac-domain-in,
+        mysystem:room-102-hvac-domain-out ;
+    s223:hasDomain s223:Domain-HVAC .
+
+mysystem:vav-701-connection-to-room-101 a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Vav 701 Connection To Room 101" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-701-damper a s223:Damper,
+        g36:Damper ;
+    rdfs:label "Vav 701 Damper" ;
+    s223:cnx mysystem:vav-701-damper-in,
+        mysystem:vav-701-damper-out ;
+    s223:hasProperty mysystem:vav-701-damper-command,
+        mysystem:vav-701-damper-position .
+
+mysystem:vav-701-damper-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Vav 701 Damper Command" ;
+    s223:hasAspect s223:Binary-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+mysystem:vav-701-discharge-air-flow a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Discharge Air Flow" ;
+    s223:hasAspect s223:Role-Discharge ;
+    qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
+    qudt:hasUnit unit:FT3-PER-MIN .
+
+mysystem:vav-701-discharge-air-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Discharge Air Temp" ;
+    s223:hasAspect s223:Role-Discharge ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:vav-701-duct-after-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Vav 701 Duct After Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-701-hot-water-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 701 Hot Water In" ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:vav-701-hot-water-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Hot Water Out" ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:vav-701-pipe-hot-water-return-before-valve a s223:Connection,
+        s223:Pipe ;
+    rdfs:label "Vav 701 Pipe Hot Water Return Before Valve" ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:vav-701-reheat-coil-return-water-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Reheat Coil Return Water Temp" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:vav-701-reheat-coil-supply-water-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 701 Reheat Coil Supply Water Temp" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:vav-701-reheat-coil-valve a s223:Valve,
+        g36:HotWaterValve ;
+    rdfs:label "Vav 701 Reheat Coil Valve" ;
+    s223:cnx mysystem:vav-701-reheat-coil-valve-in,
+        mysystem:vav-701-reheat-coil-valve-out ;
+    s223:hasProperty mysystem:vav-701-reheat-coil-valve-command,
+        mysystem:vav-701-reheat-coil-valve-position .
+
+mysystem:vav-701-reheat-coil-valve-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Vav 701 Reheat Coil Valve Command" ;
+    s223:hasAspect s223:Binary-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+mysystem:vav-701-reheat-coil-water-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Water In" ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:mapsTo mysystem:vav-701-hot-water-in .
+
+mysystem:vav-701-reheat-coil-water-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Reheat Coil Water Out" ;
+    s223:cnx mysystem:vav-701-pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:vav-702-connection-to-room-102 a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Vav 702 Connection To Room 102" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-702-damper a s223:Damper,
+        g36:Damper ;
+    rdfs:label "Vav 702 Damper" ;
+    s223:cnx mysystem:vav-702-damper-in,
+        mysystem:vav-702-damper-out ;
+    s223:hasProperty mysystem:vav-702-damper-command,
+        mysystem:vav-702-damper-position .
+
+mysystem:vav-702-damper-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Vav 702 Damper Command" ;
+    s223:hasAspect s223:Binary-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+mysystem:vav-702-discharge-air-flow a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Discharge Air Flow" ;
+    s223:hasAspect s223:Role-Discharge ;
+    qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
+    qudt:hasUnit unit:FT3-PER-MIN .
+
+mysystem:vav-702-discharge-air-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Discharge Air Temp" ;
+    s223:hasAspect s223:Role-Discharge ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:vav-702-duct-after-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Vav 702 Duct After Damper" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-702-hot-water-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 702 Hot Water In" ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:vav-702-hot-water-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Hot Water Out" ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:vav-702-pipe-hot-water-return-before-valve a s223:Connection,
+        s223:Pipe ;
+    rdfs:label "Vav 702 Pipe Hot Water Return Before Valve" ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:vav-702-reheat-coil-return-water-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Reheat Coil Return Water Temp" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:vav-702-reheat-coil-supply-water-temp a s223:QuantifiableObservableProperty ;
+    rdfs:label "Vav 702 Reheat Coil Supply Water Temp" ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:hasUnit unit:DEG_C .
+
+mysystem:vav-702-reheat-coil-valve a s223:Valve,
+        g36:HotWaterValve ;
+    rdfs:label "Vav 702 Reheat Coil Valve" ;
+    s223:cnx mysystem:vav-702-reheat-coil-valve-in,
+        mysystem:vav-702-reheat-coil-valve-out ;
+    s223:hasProperty mysystem:vav-702-reheat-coil-valve-command,
+        mysystem:vav-702-reheat-coil-valve-position .
+
+mysystem:vav-702-reheat-coil-valve-command a s223:QuantifiableActuatableProperty ;
+    rdfs:label "Vav 702 Reheat Coil Valve Command" ;
+    s223:hasAspect s223:Binary-Position ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:hasUnit unit:PERCENT .
+
+mysystem:vav-702-reheat-coil-water-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Water In" ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:mapsTo mysystem:vav-702-hot-water-in .
+
+mysystem:vav-702-reheat-coil-water-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Reheat Coil Water Out" ;
+    s223:cnx mysystem:vav-702-pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Fluid-Water .
+
+mysystem:MultipleZoneAhu-duct-after-htg-coil a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Htg Coil" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-duct-after-ra-fan a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Multiplezoneahu Duct After Ra Fan" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:MultipleZoneAhu-filter-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Filter In" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-before-filter ;
     s223:hasMedium s223:Fluid-Air ;
-    s223:hasProperty bldg:ma-temp .
+    s223:hasProperty mysystem:MultipleZoneAhu-ma-temp .
+
+mysystem:MultipleZoneAhu-minimum-oa-damper-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Minimum Oa Damper Out" ;
+    s223:cnx mysystem:MultipleZoneAhu-duct-after-minimum-oa-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem:MultipleZoneAhu-oa-flow .
+
+mysystem:MultipleZoneAhu-ra-in a s223:InletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Ra In" ;
+    s223:cnx mysystem:ReturnAirJunction-connection-to-mzahu ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem:MultipleZoneAhu-ra-temp .
+
+mysystem:MultipleZoneAhu-sa-out a s223:OutletConnectionPoint ;
+    rdfs:label "Multiplezoneahu Sa Out" ;
+    s223:cnx mysystem:mzahu-connection-to-SupplyAirJunction ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem:MultipleZoneAhu-sa-temp,
+        mysystem:MultipleZoneAhu-sa-temp-setpoint,
+        mysystem:MultipleZoneAhu-supply-duct-static-pressure,
+        mysystem:MultipleZoneAhu-supply-duct-static-pressure-setpoint .
+
+mysystem:mzahu-connection-to-SupplyAirJunction a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Mzahu Connection To Supplyairjunction" ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-701-air-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 701 Air In" ;
+    s223:cnx mysystem:SupplyAirJunction-connection-to-vav-701 ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-701-air-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 701 Air Out" ;
+    s223:cnx mysystem:vav-701-connection-to-room-101 ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem:vav-701-discharge-air-flow,
+        mysystem:vav-701-discharge-air-temp .
+
+mysystem:vav-702-air-in a s223:InletConnectionPoint ;
+    rdfs:label "Vav 702 Air In" ;
+    s223:cnx mysystem:SupplyAirJunction-connection-to-vav-702 ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:vav-702-air-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vav 702 Air Out" ;
+    s223:cnx mysystem:vav-702-connection-to-room-102 ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem:vav-702-discharge-air-flow,
+        mysystem:vav-702-discharge-air-temp .
 
