@@ -1,7 +1,3 @@
-# baseURI: http://srr/test
-# imports: http://data.ashrae.org/standard223/1.0/model/all
-# prefix: test
-
 @prefix agg: <http://jena.apache.org/ARQ/function/aggregate#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix constant: <http://qudt.org/vocab/constant/> .
@@ -74,6 +70,16 @@
 @prefix omgeo: <http://www.ontotext.com/owlim/geo#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
+<http://data.ashrae.org/standard223/1.0/data/pnnl-bdg1-2>
+  a owl:Ontology  ;
+  rdfs:label "pnnl-bdg1-2" ;
+  owl:imports <http://data.ashrae.org/standard223/1.0/model/all> ;
+  owl:imports <https://raw.githubusercontent.com/RealEstateCore/rec/main/Source/SHACL/RealEstateCore/rec.ttl> ;
+  owl:imports <https://raw.githubusercontent.com/RealEstateCore/rec/main/Source/SHACL/RealEstateCore/recimports.ttl> ;
+.
+rec:Room rdfs:subClassOf s223:PhysicalSpace.
+rec:OutdoorSpace rdfs:subClassOf s223:PhysicalSpace.
+
 bdg1:73abeca540415fb5cc14ce1b47d9591f a s223:QuantifiableProperty;
   rdfs:label "QuantifiableProperty";
   s223:hasValue 39.29;
@@ -101,8 +107,7 @@ bdg1:048895cf281224e5cb2f8e01453a8dfd a s223:Zone;
 bdg1:7e89fafcc8db5a9bf685f49ee58196e0 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.14>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.10> .
 
 bdg1:a2c2a5feadf56d138ece34afc7fa34dd a s223:QuantifiableProperty;
   rdfs:label "QuantifiableProperty";
@@ -117,26 +122,22 @@ bdg1:cb2d754f7f139d4cafaaada86399a0aa a s223:Property;
 bdg1:0a8ed6d561b158c49d4145abf05044a7 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.1>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.13> .
 
 bdg1:c6267519c296551e3d74704d80369cb9 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.12>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.8> .
 
 bdg1:7dd75f093c0714b7e12fd42700a05617 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.2>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.17> .
 
 bdg1:2ec6c777b3ca86655677fc5ef4dd0242 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.3>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.3> .
 
 bdg1:178fa3a86e0fc55e0d39087fa7711aff a s223:DomainSpace;
   rdfs:label "Domain-HVAC";
@@ -146,7 +147,7 @@ bdg1:178fa3a86e0fc55e0d39087fa7711aff a s223:DomainSpace;
 bdg1:44531f11cb0626bac97aa43d6732fdf2 a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.1> .
+  s223:cnx <urn:anon:hash:231054042390633353.2> .
 
 bdg1:e2684126ff114d569384c6d3a21f953b a s223:ElectricBreaker;
   s223:hasPhysicalLocation bdg1:8aa694885f0bc783d007c24a0a81c3b4;
@@ -156,14 +157,12 @@ bdg1:e2684126ff114d569384c6d3a21f953b a s223:ElectricBreaker;
 bdg1:76fcb9d9e1b00b636de89b477b0b25e8 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.8>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.15> .
 
 bdg1:94524186447a8326f0bdb024328582e5 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.21>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.1> .
 
 bdg1:eafe74d79e1ab2386bcd74cfe7380ef0 a s223:QuantifiableProperty;
   rdfs:label "QuantifiableProperty";
@@ -182,14 +181,12 @@ bdg1:d21b0ee35207fb73afce7321fb635d95 a s223:Property;
 bdg1:9dd35c17e7f147c29adbfcf900c4b590 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.13>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.0> .
 
 bdg1:cfde270f1c3574c36afefa90a75d3a74 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.15>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.18> .
 
 bdg1:e7583f67f85b0f6389e10c50c39b2ce5 a s223:QuantifiableProperty;
   rdfs:label "QuantifiableProperty";
@@ -245,8 +242,7 @@ bdg1:7f5935009b40a43f3e018ee25a3a2d0a a s223:Property;
 bdg1:3a2dac267747a410f1146caf20e19624 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.17>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.12> .
 
 bdg1:3846feef170d81a357188251b05e55ec a s223:Property;
   rdfs:label "Property";
@@ -271,7 +267,7 @@ bdg1:e9d83bcd0340d3b2c702a83acd90a597 a s223:ElectricBreaker;
 bdg1:11c04c42e073d0d0b9c2a00aadf4901b a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.2> .
+  s223:cnx <urn:anon:hash:231054042390633353.4> .
 
 bdg1:7427f4edf3217904298499200651e74d a s223:QuantifiableProperty;
   rdfs:label "QuantifiableProperty";
@@ -292,14 +288,12 @@ bdg1:11af0a0bad7da3e10ac418948ed7e072 a s223:PhysicalSpace, rec:Building, <http:
 bdg1:752235573d372d87cbd69a21539496fc a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.6>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.14> .
 
 bdg1:5f824b38a3005d7a877a46f3acfd8ce2 a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.10>;
-  s223:hasProperty s223:Voltage-277V .
+  s223:cnx <urn:anon:hash:8831795277718232770.4> .
 
 bdg1:fd1eba64d7bac4ac23691283c56da903 a s223:QuantifiableProperty;
   rdfs:label "QuantifiableProperty";
@@ -367,8 +361,8 @@ bdg1:1157c123ff14a75b9beadab2f8c0180f a rec:Hallway;
     bdg1:b14c6feef797609d7f5f79ff160fdee2;
   s223:hasProperty bdg1:69962dede1bb7985d7d34dbb8e6cd3fb, bdg1:128c468a83afddd4f135f5c253ad7bd0 .
 
-bdg1:8aa694885f0bc783d007c24a0a81c3b4 a <urn:rec:extentions:PrivateOffice>;
-  rdfs:label "Private Office";
+bdg1:8aa694885f0bc783d007c24a0a81c3b4 a rec:OfficeRoom;
+  rdfs:label "OfficeRoom";
   s223:encloses bdg1:178fa3a86e0fc55e0d39087fa7711aff, bdg1:59fb2c63ae6f2bb5d5ea8db4599cfd31;
   s223:hasProperty bdg1:7427f4edf3217904298499200651e74d, bdg1:45a059f2cd9bc41044f7610b9288f378 .
 
@@ -377,8 +371,8 @@ bdg1:59fb2c63ae6f2bb5d5ea8db4599cfd31 a s223:DomainSpace;
   s223:hasDomain s223:Domain-Lighting;
   s223:hasProperty bdg1:ea132dc6f9ffb48fcaa86607ff4b65b3 .
 
-bdg1:73dd5a752ff6dd1b77b259564949bc98 a <urn:rec:extentions:OpenOffice>;
-  rdfs:label "Open Office";
+bdg1:73dd5a752ff6dd1b77b259564949bc98 a rec:OfficeLandscape;
+  rdfs:label "OfficeLandscape";
   s223:encloses bdg1:1e49c73957b1e7f049418aead80c4c7b, bdg1:9007570e1745b69899a7b84350a4f0a8,
     bdg1:0c37e173b953cac45dd9487ce85cdda4;
   s223:hasProperty bdg1:e7583f67f85b0f6389e10c50c39b2ce5, bdg1:7f5935009b40a43f3e018ee25a3a2d0a .
@@ -508,7 +502,7 @@ bdg1:5217834f6f5a983e95c2b997bc3b4997 a s223:Zone;
 bdg1:e2164e3d14db5fcb6915a4a2c8474579 a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:73dd5a752ff6dd1b77b259564949bc98;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:7e89fafcc8db5a9bf685f49ee58196e0, <urn:anon:hash:2204552651392969502.1>;
+  s223:cnx bdg1:7e89fafcc8db5a9bf685f49ee58196e0, <urn:anon:hash:2204552651392969502.3>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:abffebf3460815d76a360a84a6b75f31 .
 
 bdg1:abffebf3460815d76a360a84a6b75f31 a s223:Property;
@@ -538,7 +532,7 @@ bdg1:4ea70f2ce314f6256af73903cd711f94 a s223:OccupantMotionSensor;
   s223:hasPhysicalLocation bdg1:8aa694885f0bc783d007c24a0a81c3b4;
   rdfs:label "OccupantMotionSensor";
   s223:hasObservationLocation bdg1:59fb2c63ae6f2bb5d5ea8db4599cfd31;
-  s223:observes <urn:anon:hash:1258644745483386973.4> .
+  s223:observes <urn:anon:hash:1258644745483386973.2> .
 
 <urn:anon:hash:1258644745483386973.5> a s223:EnumeratedObservableProperty;
   rdfs:label "Enumerated observable property";
@@ -547,7 +541,7 @@ bdg1:4ea70f2ce314f6256af73903cd711f94 a s223:OccupantMotionSensor;
 bdg1:7ce038437255ca97816f40fafc85d5e5 a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:73dd5a752ff6dd1b77b259564949bc98;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:5f824b38a3005d7a877a46f3acfd8ce2, <urn:anon:hash:2204552651392969502.2>;
+  s223:cnx bdg1:5f824b38a3005d7a877a46f3acfd8ce2, <urn:anon:hash:2204552651392969502.6>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:5e7eaec65e2941476e6a65b21cd97455 .
 
 bdg1:44e334e6228d7e835aa280fc469bfb46 a s223:Property;
@@ -563,14 +557,14 @@ bdg1:449e446d77098075fa06d8dd8a394e27 a s223:Property;
 bdg1:c01317fdfcfe26384d44f515b3dd2400 a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:1157c123ff14a75b9beadab2f8c0180f;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:9dd35c17e7f147c29adbfcf900c4b590, <urn:anon:hash:2204552651392969502.10>;
+  s223:cnx bdg1:9dd35c17e7f147c29adbfcf900c4b590, <urn:anon:hash:2204552651392969502.5>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:0081656d7f39350e088899f269731754 .
 
 bdg1:98b4ba93290fb58ad5c44f8c47df60db a s223:OccupantMotionSensor;
   s223:hasPhysicalLocation bdg1:1157c123ff14a75b9beadab2f8c0180f;
   rdfs:label "OccupantMotionSensor";
   s223:hasObservationLocation bdg1:b14c6feef797609d7f5f79ff160fdee2;
-  s223:observes <urn:anon:hash:1258644745483386973.1> .
+  s223:observes <urn:anon:hash:1258644745483386973.3> .
 
 bdg1:2369b84e845898237f185679a49455f3 a s223:OccupantMotionSensor;
   s223:hasPhysicalLocation bdg1:f9e99ac2c98b799f695df5c1e1aca159;
@@ -600,7 +594,7 @@ bdg1:e6bd5806daa5c70127c242e36606d2e7 a s223:Property;
 bdg1:82310afe7be18795e744d3829d8c5b02 a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:73dd5a752ff6dd1b77b259564949bc98;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:cfde270f1c3574c36afefa90a75d3a74, <urn:anon:hash:2204552651392969502.0>;
+  s223:cnx bdg1:cfde270f1c3574c36afefa90a75d3a74, <urn:anon:hash:2204552651392969502.1>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:449e446d77098075fa06d8dd8a394e27 .
 
 bdg1:0c1229c3ec60eb5c8201d97d0ff71fab a s223:Property;
@@ -616,7 +610,7 @@ bdg1:6c6abcbd7ea372258ba7850e2feb3021 a s223:Property;
 bdg1:83a72b8eb42e0a6295fcccd3b21ff40e a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:3ec4d54f9cd50310bd26d2bbb594b11d;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:94524186447a8326f0bdb024328582e5, <urn:anon:hash:2204552651392969502.11>;
+  s223:cnx bdg1:94524186447a8326f0bdb024328582e5, <urn:anon:hash:2204552651392969502.7>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:0c1229c3ec60eb5c8201d97d0ff71fab .
 
 bdg1:027ca851ad532aa38bc9939e6dd8d5b5 a s223:Property;
@@ -627,7 +621,7 @@ bdg1:027ca851ad532aa38bc9939e6dd8d5b5 a s223:Property;
 bdg1:6b94d2f45496e556bbfe5020cd805a56 a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:73dd5a752ff6dd1b77b259564949bc98;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:2ec6c777b3ca86655677fc5ef4dd0242, <urn:anon:hash:2204552651392969502.5>;
+  s223:cnx bdg1:2ec6c777b3ca86655677fc5ef4dd0242, <urn:anon:hash:2204552651392969502.8>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:548d8907abdbc6e8c97face1f929893b .
 
 bdg1:548d8907abdbc6e8c97face1f929893b a s223:Property;
@@ -643,13 +637,13 @@ bdg1:c35f0fe3cf4279d9d51b8d8db038f987 a s223:Property;
 bdg1:0afb7c8e9477410024492f1cf1a1cbd4 a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:8aa694885f0bc783d007c24a0a81c3b4;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:76fcb9d9e1b00b636de89b477b0b25e8, <urn:anon:hash:2204552651392969502.4>;
+  s223:cnx bdg1:76fcb9d9e1b00b636de89b477b0b25e8, <urn:anon:hash:2204552651392969502.11>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:e6bd5806daa5c70127c242e36606d2e7 .
 
 bdg1:87dfeb5fa9182df28ee465465f416594 a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:3ec4d54f9cd50310bd26d2bbb594b11d;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:3a2dac267747a410f1146caf20e19624, <urn:anon:hash:2204552651392969502.7>;
+  s223:cnx bdg1:3a2dac267747a410f1146caf20e19624, <urn:anon:hash:2204552651392969502.10>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:027ca851ad532aa38bc9939e6dd8d5b5 .
 
 <urn:anon:hash:1258644745483386973.0> a s223:EnumeratedObservableProperty;
@@ -659,7 +653,7 @@ bdg1:87dfeb5fa9182df28ee465465f416594 a s223:Luminaire;
 bdg1:989a49980114d3ad1b7cd8174b4fbb3e a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:8aa694885f0bc783d007c24a0a81c3b4;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:7dd75f093c0714b7e12fd42700a05617, <urn:anon:hash:2204552651392969502.8>;
+  s223:cnx bdg1:7dd75f093c0714b7e12fd42700a05617, <urn:anon:hash:2204552651392969502.0>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:6c6abcbd7ea372258ba7850e2feb3021 .
 
 bdg1:d35dfa3a711c8827da4ebe2c6c4daeaf a s223:Luminaire;
@@ -676,26 +670,26 @@ bdg1:e371b4366f513b0d9876168ba9e61d63 a s223:Property;
 bdg1:623d78727293db6754a53c99d74131fb a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:f9e99ac2c98b799f695df5c1e1aca159;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:c6267519c296551e3d74704d80369cb9, <urn:anon:hash:2204552651392969502.3>;
+  s223:cnx bdg1:c6267519c296551e3d74704d80369cb9, <urn:anon:hash:2204552651392969502.2>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:e371b4366f513b0d9876168ba9e61d63 .
 
 bdg1:27967fc224f4ffd94032c8a851862769 a s223:Luminaire;
   s223:hasPhysicalLocation bdg1:f9e99ac2c98b799f695df5c1e1aca159;
   rdfs:label "Luminaire";
-  s223:cnx bdg1:752235573d372d87cbd69a21539496fc, <urn:anon:hash:2204552651392969502.6>;
+  s223:cnx bdg1:752235573d372d87cbd69a21539496fc, <urn:anon:hash:2204552651392969502.4>;
   s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f, bdg1:c35f0fe3cf4279d9d51b8d8db038f987 .
 
 bdg1:69a3c94b6051eef9648c4a51b61fef2d a s223:OccupantMotionSensor;
   s223:hasPhysicalLocation bdg1:3ec4d54f9cd50310bd26d2bbb594b11d;
   rdfs:label "OccupantMotionSensor";
   s223:hasObservationLocation bdg1:ef05a22cb4ed7775608686d5a1fd7e1d;
-  s223:observes <urn:anon:hash:1258644745483386973.2> .
+  s223:observes <urn:anon:hash:1258644745483386973.1> .
 
 bdg1:9db8a11163a3cf15cdf724157a148128 a s223:OccupantMotionSensor;
   s223:hasPhysicalLocation bdg1:73dd5a752ff6dd1b77b259564949bc98;
   rdfs:label "OccupantMotionSensor";
   s223:hasObservationLocation bdg1:0c37e173b953cac45dd9487ce85cdda4;
-  s223:observes <urn:anon:hash:1258644745483386973.3> .
+  s223:observes <urn:anon:hash:1258644745483386973.4> .
 
 <urn:anon:hash:2812002171156370768.1> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
@@ -705,12 +699,12 @@ bdg1:9db8a11163a3cf15cdf724157a148128 a s223:OccupantMotionSensor;
 <urn:anon:hash:2812002171156370768.9> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx bdg1:b14c6feef797609d7f5f79ff160fdee2 .
+  s223:cnx bdg1:0c37e173b953cac45dd9487ce85cdda4 .
 
 <urn:anon:hash:4835137604893221237.7> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.6> .
+  s223:cnx <urn:anon:hash:2812002171156370768.2> .
 
 <urn:anon:hash:2812002171156370768.0> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
@@ -720,37 +714,37 @@ bdg1:9db8a11163a3cf15cdf724157a148128 a s223:OccupantMotionSensor;
 <urn:anon:hash:2812002171156370768.4> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx bdg1:b14c6feef797609d7f5f79ff160fdee2 .
+  s223:cnx bdg1:59fb2c63ae6f2bb5d5ea8db4599cfd31 .
 
 <urn:anon:hash:4835137604893221237.8> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.5> .
+  s223:cnx <urn:anon:hash:2812002171156370768.6> .
 
 <urn:anon:hash:4835137604893221237.2> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.3> .
+  s223:cnx <urn:anon:hash:2812002171156370768.5> .
 
 <urn:anon:hash:2812002171156370768.7> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx bdg1:e92772be282614bafb6fb5ff166a635c .
+  s223:cnx bdg1:0c37e173b953cac45dd9487ce85cdda4 .
 
 <urn:anon:hash:2812002171156370768.11> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx bdg1:0c37e173b953cac45dd9487ce85cdda4 .
+  s223:cnx bdg1:e92772be282614bafb6fb5ff166a635c .
 
 <urn:anon:hash:4835137604893221237.0> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.1> .
+  s223:cnx <urn:anon:hash:2812002171156370768.7> .
 
 <urn:anon:hash:4835137604893221237.9> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.2> .
+  s223:cnx <urn:anon:hash:2812002171156370768.8> .
 
 <urn:anon:hash:2812002171156370768.5> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
@@ -760,42 +754,42 @@ bdg1:9db8a11163a3cf15cdf724157a148128 a s223:OccupantMotionSensor;
 <urn:anon:hash:4835137604893221237.1> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.11> .
+  s223:cnx <urn:anon:hash:2812002171156370768.0> .
 
 <urn:anon:hash:2812002171156370768.3> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx bdg1:9007570e1745b69899a7b84350a4f0a8 .
+  s223:cnx bdg1:e92772be282614bafb6fb5ff166a635c .
 
 <urn:anon:hash:4835137604893221237.10> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.9> .
+  s223:cnx <urn:anon:hash:2812002171156370768.3> .
 
 <urn:anon:hash:4835137604893221237.11> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.0> .
+  s223:cnx <urn:anon:hash:2812002171156370768.11> .
 
 <urn:anon:hash:2812002171156370768.8> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx bdg1:e92772be282614bafb6fb5ff166a635c .
+  s223:cnx bdg1:b14c6feef797609d7f5f79ff160fdee2 .
 
 <urn:anon:hash:4835137604893221237.5> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.7> .
+  s223:cnx <urn:anon:hash:2812002171156370768.4> .
 
 <urn:anon:hash:4835137604893221237.4> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.4> .
+  s223:cnx <urn:anon:hash:2812002171156370768.10> .
 
 <urn:anon:hash:2812002171156370768.10> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx bdg1:0c37e173b953cac45dd9487ce85cdda4 .
+  s223:cnx bdg1:9007570e1745b69899a7b84350a4f0a8 .
 
 <urn:anon:hash:2812002171156370768.6> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
@@ -805,214 +799,76 @@ bdg1:9db8a11163a3cf15cdf724157a148128 a s223:OccupantMotionSensor;
 <urn:anon:hash:4835137604893221237.3> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.10> .
+  s223:cnx <urn:anon:hash:2812002171156370768.1> .
 
 <urn:anon:hash:4835137604893221237.6> a s223:Connection;
   rdfs:label "Connection";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:2812002171156370768.8> .
+  s223:cnx <urn:anon:hash:2812002171156370768.9> .
 
 <urn:anon:hash:2812002171156370768.2> a s223:InletConnectionPoint;
   rdfs:label "InletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx bdg1:59fb2c63ae6f2bb5d5ea8db4599cfd31 .
+  s223:cnx bdg1:b14c6feef797609d7f5f79ff160fdee2 .
 
 <urn:anon:hash:2204552651392969502.1> a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
   s223:hasMedium s223:EM-Light;
   s223:cnx <urn:anon:hash:4835137604893221237.2> .
 
-<urn:anon:hash:2679908989038310476.14> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.18> .
-
-<urn:anon:hash:2679908989038310476.12> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.22> .
-
-<urn:anon:hash:2679908989038310476.3> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.7> .
-
-<urn:anon:hash:1511543043808378775.1> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.5> .
-
 <urn:anon:hash:2204552651392969502.2> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:4835137604893221237.3> .
-
-<urn:anon:hash:2204552651392969502.4> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:4835137604893221237.9> .
-
-<urn:anon:hash:2679908989038310476.21> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.20> .
-
-<urn:anon:hash:2679908989038310476.20> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.0> .
-
-<urn:anon:hash:2679908989038310476.8> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.19> .
-
-<urn:anon:hash:1511543043808378775.3> a s223:InletConnectionPoint;
-  rdfs:label "InletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.4> .
-
-<urn:anon:hash:1511543043808378775.4> a s223:Junction;
-  rdfs:label "Junction";
-  s223:hasMedium s223:Constituent-Electricity .
-
-<urn:anon:hash:2679908989038310476.22> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.0> .
-
-<urn:anon:hash:1511543043808378775.0> a s223:Junction;
-  rdfs:label "Junction";
-  s223:hasMedium s223:Constituent-Electricity .
-
-<urn:anon:hash:2679908989038310476.7> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.4> .
-
-<urn:anon:hash:2679908989038310476.17> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.16> .
-
-<urn:anon:hash:2204552651392969502.0> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:4835137604893221237.8> .
-
-<urn:anon:hash:2204552651392969502.6> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:4835137604893221237.6> .
-
-<urn:anon:hash:2204552651392969502.10> a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
   s223:hasMedium s223:EM-Light;
   s223:cnx <urn:anon:hash:4835137604893221237.10> .
 
-<urn:anon:hash:2204552651392969502.8> a s223:OutletConnectionPoint;
+<urn:anon:hash:2204552651392969502.4> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:EM-Light;
+  s223:cnx <urn:anon:hash:4835137604893221237.11> .
+
+<urn:anon:hash:2204552651392969502.0> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:EM-Light;
+  s223:cnx <urn:anon:hash:4835137604893221237.3> .
+
+<urn:anon:hash:2204552651392969502.6> a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
   s223:hasMedium s223:EM-Light;
   s223:cnx <urn:anon:hash:4835137604893221237.0> .
 
-<urn:anon:hash:2204552651392969502.5> a s223:OutletConnectionPoint;
+<urn:anon:hash:2204552651392969502.10> a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
   s223:hasMedium s223:EM-Light;
   s223:cnx <urn:anon:hash:4835137604893221237.1> .
 
-<urn:anon:hash:2679908989038310476.0> a s223:OutletConnectionPoint;
+<urn:anon:hash:2204552651392969502.8> a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.0> .
+  s223:hasMedium s223:EM-Light;
+  s223:cnx <urn:anon:hash:4835137604893221237.6> .
 
-<urn:anon:hash:2679908989038310476.10> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.11> .
-
-<urn:anon:hash:2679908989038310476.11> a s223:OutletConnectionPoint;
+<urn:anon:hash:2204552651392969502.5> a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.4> .
-
-<urn:anon:hash:2679908989038310476.9> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.4> .
-
-<urn:anon:hash:2679908989038310476.1> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.23> .
-
-<urn:anon:hash:2679908989038310476.23> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.0> .
-
-<urn:anon:hash:2679908989038310476.5> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.0> .
+  s223:hasMedium s223:EM-Light;
+  s223:cnx <urn:anon:hash:4835137604893221237.9> .
 
 <urn:anon:hash:2204552651392969502.9> a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:4835137604893221237.4> .
-
-<urn:anon:hash:2679908989038310476.2> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.4> .
-
-<urn:anon:hash:2679908989038310476.13> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.0> .
+  s223:cnx <urn:anon:hash:4835137604893221237.7> .
 
 bdg1:4bdde6c86ff9b5dc677a6f8acace03b9 a s223:Property;
   rdfs:label "Property";
   s223:hasValue "LightingZone5" .
 
-<urn:anon:hash:2679908989038310476.16> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.0> .
-
 <urn:anon:hash:2204552651392969502.11> a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:4835137604893221237.7> .
-
-<urn:anon:hash:1511543043808378775.2> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.3> .
-
-<urn:anon:hash:2679908989038310476.19> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.0> .
-
-<urn:anon:hash:2679908989038310476.4> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.0> .
+  s223:cnx <urn:anon:hash:4835137604893221237.5> .
 
 <urn:anon:hash:2204552651392969502.7> a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:4835137604893221237.11> .
-
-<urn:anon:hash:2679908989038310476.18> a s223:OutletConnectionPoint;
-  rdfs:label "OutletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.4> .
-
-<urn:anon:hash:1511543043808378775.5> a s223:InletConnectionPoint;
-  rdfs:label "InletConnectionPoint";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:1511543043808378775.0> .
+  s223:cnx <urn:anon:hash:4835137604893221237.8> .
 
 bdg1:28e41df49242453eff570c4a08bf13c6 a s223:Property;
   rdfs:label "Property";
@@ -1021,18 +877,156 @@ bdg1:28e41df49242453eff570c4a08bf13c6 a s223:Property;
 <urn:anon:hash:2204552651392969502.3> a s223:OutletConnectionPoint;
   rdfs:label "OutletConnectionPoint";
   s223:hasMedium s223:EM-Light;
-  s223:cnx <urn:anon:hash:4835137604893221237.5> .
-
-<urn:anon:hash:2679908989038310476.6> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.5> .
-
-<urn:anon:hash:2679908989038310476.15> a s223:ElectricWire;
-  rdfs:label "ElectricWire";
-  s223:hasMedium s223:Constituent-Electricity;
-  s223:cnx <urn:anon:hash:2679908989038310476.9> .
+  s223:cnx <urn:anon:hash:4835137604893221237.4> .
 
 bdg1:9c382b10a0ac82100a03f06fd00d23fc a s223:Property;
   rdfs:label "Property";
   s223:hasValue "LightingZone1" .
+
+<urn:anon:hash:8831795277718232770.10> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.11> .
+
+<urn:anon:hash:8831795277718232770.8> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.6> .
+
+<urn:anon:hash:8831795277718232770.14> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.23> .
+
+<urn:anon:hash:8831795277718232770.23> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.3> .
+
+<urn:anon:hash:8831795277718232770.3> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.9> .
+
+<urn:anon:hash:231054042390633353.2> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:231054042390633353.5> .
+
+<urn:anon:hash:8831795277718232770.15> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.5> .
+
+<urn:anon:hash:8831795277718232770.5> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.3> .
+
+<urn:anon:hash:8831795277718232770.9> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.1> .
+
+<urn:anon:hash:231054042390633353.1> a s223:Junction;
+  rdfs:label "Junction";
+  s223:hasMedium s223:Constituent-Electricity .
+
+<urn:anon:hash:231054042390633353.5> a s223:InletConnectionPoint;
+  rdfs:label "InletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.3> .
+
+<urn:anon:hash:8831795277718232770.17> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.20> .
+
+<urn:anon:hash:8831795277718232770.20> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.3> .
+
+<urn:anon:hash:8831795277718232770.4> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.7> .
+
+<urn:anon:hash:8831795277718232770.7> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.1> .
+
+<urn:anon:hash:8831795277718232770.1> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.2> .
+
+<urn:anon:hash:8831795277718232770.12> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.21> .
+
+<urn:anon:hash:8831795277718232770.6> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.3> .
+
+<urn:anon:hash:231054042390633353.3> a s223:Junction;
+  rdfs:label "Junction";
+  s223:hasMedium s223:Constituent-Electricity .
+
+<urn:anon:hash:8831795277718232770.21> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.3> .
+
+<urn:anon:hash:8831795277718232770.19> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.3> .
+
+<urn:anon:hash:231054042390633353.4> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:231054042390633353.0> .
+
+<urn:anon:hash:231054042390633353.0> a s223:InletConnectionPoint;
+  rdfs:label "InletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.1> .
+
+<urn:anon:hash:8831795277718232770.11> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.1> .
+
+<urn:anon:hash:8831795277718232770.0> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.22> .
+
+<urn:anon:hash:8831795277718232770.2> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.3> .
+
+<urn:anon:hash:8831795277718232770.22> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.3> .
+
+<urn:anon:hash:8831795277718232770.18> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.16> .
+
+<urn:anon:hash:8831795277718232770.16> a s223:OutletConnectionPoint;
+  rdfs:label "OutletConnectionPoint";
+  s223:hasMedium s223:Constituent-Electricity;
+  s223:cnx <urn:anon:hash:231054042390633353.1> .
+
+<urn:anon:hash:8831795277718232770.13> a s223:ElectricWire;
+  rdfs:label "ElectricWire";
+  s223:hasMedium s223:AC-277VLN-1Ph-60Hz;
+  s223:cnx <urn:anon:hash:8831795277718232770.19> .

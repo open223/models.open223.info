@@ -19,14 +19,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: get ontoenv
+      run: |
+        wget https://github.com/gtfierro/ontoenv-rs/releases/download/v0.1.10a9/ontoenv_v0.1.10a9_x86_64_linux_gnu
+        chmod +x ontoenv_v0.1.10a9_x86_64_linux_gnu
+        sudo mv ontoenv_v0.1.10a9_x86_64_linux_gnu /usr/local/bin/ontoenv
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
 
     - uses: actions/setup-python@v4
       with:
         python-version: 3.11
-
-    - name: install dependencies
-      run: |
-        pip install -r requirements.txt
 
     - name: Set up Java
       uses: actions/setup-java@v4
@@ -40,7 +47,7 @@ jobs:
 
     - name: build jupyter book
       run: |
-        jupyter-book build .
+        uv run jupyter-book build .
         ls -l _build/html
 
     - name: fix CNAME

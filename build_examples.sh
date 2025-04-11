@@ -1,8 +1,13 @@
 #!/bin/bash
-set -x
+set -ex
+
+# for debugging ontoenv
+export RUST_BACKTRACE=1
+
+ontoenv init models ontologies -i '*.ttl'
 
 # run the tools/make_model_formats.py script on the models directory
-python tools/make_model_formats.py models
+uv run python tools/make_model_formats.py models
 
 # for each filename in the examples/ directory, look for a corresponding .ttl file in the 
 # models directory. If it exists, run the tools/make_count_table.py script as
@@ -24,14 +29,16 @@ for filename in examples/*.md; do
     md_filename="examples/$(basename "${filename%.md}.md")"
     echo "  Writing to $md_filename"
 
-    python tools/make_count_table.py "$ttl_filename" "$md_filename"
-    python tools/make-notebook.py "$ttl_filename" "$md_filename"
-    python tools/mark-out-of-date.py "$ttl_filename" "$md_filename"
+    uv run python tools/make_count_table.py "$ttl_filename" "$md_filename"
+    uv run python tools/make-notebook.py "$ttl_filename" "$md_filename"
+    uv run python tools/mark-out-of-date.py "$ttl_filename" "$md_filename"
 done
 
 # build queries
-python tools/generate-queries.py
+uv run python tools/generate-queries.py
 
 # for each filename in the models/ directory, run tools/compile.py -o models/compiled/<filename>.ttl
+ontoenv refresh
 mkdir -p models/compiled
 make compile-models
+uv run jb build .

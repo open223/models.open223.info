@@ -1,6 +1,6 @@
 import urllib.parse
 import re
-import tomllib as toml
+import toml
 
 def replace_section_in_markdown(file_path, header, new_content):
     header_pattern = re.compile(r"^## .+$", re.MULTILINE)
@@ -35,7 +35,7 @@ def replace_section_in_markdown(file_path, header, new_content):
         file.write(new_content)
 
 # Load the contents of the TOML file
-with open('queries.toml', 'rb') as f:
+with open('queries.toml', 'r') as f:
     toml_data = toml.load(f)
 
 # Define the base URL for the queries

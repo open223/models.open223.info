@@ -2,11 +2,15 @@ import re
 import string
 import random
 import argparse
-import brickschema
-from brickschema import topquadrant_shacl
+import ontoenv
+import rdflib
+from brick_tq_shacl import topquadrant_shacl
+from brick_tq_shacl.topquadrant_shacl import infer, validate
 import rdflib
 
-graph = brickschema.Graph()
+graph = rdflib.Graph()
+cfg = ontoenv.Config(["models", "ontologies"], offline=False, strict=False, includes=['*.ttl'])
+env = ontoenv.OntoEnv(cfg, read_only=True, recreate=False)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -26,26 +30,25 @@ if __name__ == "__main__":
     for f in args.input:
         graph.parse(f, format=rdflib.util.guess_format(f))
 
+    namespaces = dict(graph.namespace_manager.namespaces())
 
-    s223 = rdflib.Graph()
-    if args.do_import:
-        s223.parse("ontologies/223p.ttl")
-
-    # remove QUDT prefix because it breaks things
-    #graph.bind("qudtprefix21", rdflib.Namespace("http://qudt.org/2.1/vocab/prefix/"))
-    #graph.bind("qudtprefix", rdflib.Namespace("http://qudt.org/vocab/prefix/"))
+    deps = rdflib.Graph()
+    env.get_closure("http://data.ashrae.org/standard223/1.0/model/all", deps)
+    env.import_dependencies(graph)
+    deps.serialize("deps.ttl", format="turtle")
+    graph.serialize("graph.ttl", format="turtle")
 
     if args.reason:
-        graph.remove((None, rdflib.OWL.imports, None))
-        s223.remove((None, rdflib.OWL.imports, None))
-        #topquadrant_shacl._MAX_EXTERNAL_LOOPS = 2
-        graph = topquadrant_shacl.infer(graph, s223)
+        topquadrant_shacl._MAX_EXTERNAL_LOOPS = 10
+        graph = infer(graph, graph)
         #graph.expand(profile="shacl", backend="topquadrant")
-        valid, _, report = topquadrant_shacl.validate(graph, s223)
-        if not valid:
-            print(report)
-            raise Exception("Validation failed: {}".format(report))
     if args.output:
+        for prefix, uri in namespaces.items():
+            graph.bind(prefix, uri)
         graph.serialize(args.output, format="turtle")
     else:
         print(graph.serialize(format="turtle"))
+    valid, _, report = validate(graph, graph)
+    if not valid:
+        print(report)
+        raise Exception("Validation failed: {}".format(report))

@@ -21,13 +21,11 @@
 .
 psm:AHUChilledWaterInlet
   a s223:InletConnectionPoint ;
-  s223:connectsThrough psm:PipeFromChiller ;
   s223:hasMedium s223:Water-ChilledWater ;
   rdfs:label "AHUChilled water inlet" ;
 .
 psm:AHUChilledWaterOutlet
   a s223:OutletConnectionPoint ;
-  s223:connectsThrough psm:PipeToChiller ;
   s223:hasMedium s223:Water-ChilledWater ;
   rdfs:label "AHUChilled water outlet" ;
 .
@@ -184,44 +182,28 @@ psm:BathroomOutletConnectionPoint
   s223:hasMedium s223:Fluid-Air ;
   rdfs:label "Bathroom outlet connection point" ;
 .
-psm:BreakerCP1Phase
-  a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:Aspect-ElectricalPhaseIdentifier ;
-  s223:hasValue s223:ElectricalPhaseIdentifier-A ;
-  rdfs:label "BreakerCP1Phase" ;
-.
-psm:BreakerCP2Phase
-  a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:Aspect-ElectricalPhaseIdentifier ;
-  s223:hasValue s223:ElectricalPhaseIdentifier-B ;
-  rdfs:label "Breaker CP2Phase" ;
-.
-psm:BreakerCP3Phase
-  a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:Aspect-ElectricalPhaseIdentifier ;
-  s223:hasValue s223:ElectricalPhaseIdentifier-BC ;
-  rdfs:label "Breaker CP3Phase" ;
-.
-psm:BreakerCP4Phase
-  a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:Aspect-ElectricalPhaseIdentifier ;
-  s223:hasValue s223:ElectricalPhaseIdentifier-C ;
-  rdfs:label "BreakerCP1Phase" ;
-.
-psm:BreakerCP5Phase
-  a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:Aspect-ElectricalPhaseIdentifier ;
-  s223:hasValue s223:ElectricalPhaseIdentifier-A ;
-  rdfs:label "BreakerCP1Phase" ;
-.
 psm:BreakerPanel1
   a s223:System ;
+  s223:hasBoundaryConnectionPoint psm:BR1OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR2OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR3OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR4OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:BR5OutletConnectionPoint ;
+  s223:hasBoundaryConnectionPoint psm:MainBreakerInletCP ;
   s223:hasMember psm:ElectricBreaker1 ;
   s223:hasMember psm:ElectricBreaker2 ;
   s223:hasMember psm:ElectricBreaker3 ;
   s223:hasMember psm:ElectricBreaker4 ;
   s223:hasMember psm:ElectricBreaker5 ;
+  s223:hasMember psm:MainBreaker ;
+  s223:hasOptionalConnectionPoint psm:BR4OutletConnectionPoint ;
+  s223:hasOptionalConnectionPoint psm:BR5OutletConnectionPoint ;
   rdfs:label "Breaker panel1" ;
+.
+psm:CPToGround
+  a s223:BidirectionalConnectionPoint ;
+  s223:hasMedium s223:Medium-ThermalContact ;
+  rdfs:label "CPTo ground" ;
 .
 psm:ChilledWaterInletTemp
   a s223:QuantifiableObservableProperty ;
@@ -371,19 +353,25 @@ psm:ElectricBreaker5
   rdfs:label "Electric breaker5" ;
 .
 psm:ElectricCircuit1
-  a s223:ElectricWire ;
+  a s223:Conductor ;
   s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Electric Circuit 1" ;
 .
 psm:ElectricCircuit2
-  a s223:ElectricWire ;
+  a s223:Conductor ;
   s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Electric Circuit 2" ;
 .
 psm:ElectricCircuit3
-  a s223:ElectricWire ;
+  a s223:Conductor ;
   s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
   rdfs:label "Electric Circuit 3" ;
+.
+psm:ElectricInletCP
+  a s223:InletConnectionPoint ;
+  s223:cnx psm:PowerToCoil ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Electric inlet CP" ;
 .
 psm:ExhaustAirDamperActuator
   a s223:Actuator ;
@@ -398,8 +386,8 @@ psm:ExhaustAirDamperPosition
   rdfs:label "Exhaust air damper position" ;
 .
 psm:ExhaustFanStatus
-  a s223:EnumeratedActuatableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  a s223:EnumerableProperty ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-On ;
   rdfs:label "Exhaust fan status" ;
 .
@@ -457,23 +445,12 @@ psm:ExternalBoilerOutletCP
   s223:hasMedium s223:Water-HotWater ;
   rdfs:label "External boiler outlet CP" ;
 .
-psm:ExternalChiller
-  a s223:Chiller ;
-  s223:hasConnectionPoint psm:ExternalChillerInletCP ;
-  s223:hasConnectionPoint psm:ExternalChillerOutletCP ;
-  rdfs:label "External chiller" ;
-.
-psm:ExternalChillerInletCP
-  a s223:InletConnectionPoint ;
-  s223:cnx psm:PipeToChiller ;
-  s223:hasMedium s223:Fluid-Water ;
-  rdfs:label "External chiller inlet CP" ;
-.
-psm:ExternalChillerOutletCP
-  a s223:OutletConnectionPoint ;
-  s223:cnx psm:PipeFromChiller ;
-  s223:hasMedium s223:Water-ChilledWater ;
-  rdfs:label "External chiller outlet CP" ;
+psm:ExternalLoop
+  a s223:Coil ;
+  s223:cnx psm:CPToGround ;
+  s223:hasConnectionPoint psm:LoopInletCP ;
+  s223:hasConnectionPoint psm:LoopOutletCP ;
+  rdfs:label "External loop" ;
 .
 psm:FanInletConnectionPoint
   a s223:InletConnectionPoint ;
@@ -503,7 +480,7 @@ psm:FlowSensor1
   rdfs:label "S1" ;
 .
 psm:GridConnection
-  a s223:ElectricWire ;
+  a s223:Conductor ;
   s223:hasMedium s223:AC-240VLL-120VLN-1Ph-60Hz ;
   rdfs:label "Grid connection" ;
 .
@@ -593,8 +570,7 @@ psm:HVACZone1TemperatureSensor
   rdfs:label "TH1" ;
 .
 psm:HVACZone1TemperatureSetpoint
-  a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:Aspect-Setpoint ;
+  a s223:QuantifiableProperty ;
   s223:hasValue 73.0 ;
   qudt:hasQuantityKind qudtqk:Temperature ;
   qudt:hasUnit unit:DEG_F ;
@@ -605,7 +581,6 @@ psm:HVACZone1Thermostat
   s223:contains psm:HVACZone1TemperatureSensor ;
   s223:executes psm:TerminalUnit1Function ;
   s223:hasProperty psm:HVACZone1TemperatureSetpoint ;
-  s223:hasRole s223:Role-Controller ;
   rdfs:label "HVACZone1Thermostat" ;
 .
 psm:HVACZone2
@@ -653,6 +628,32 @@ psm:InletIntraCorridor4CP
   s223:hasMedium s223:Fluid-Air ;
   s223:isConnectionPointOf psm:HVACSpace4 ;
   rdfs:label "Inlet intra corridor4CP" ;
+.
+psm:InternalAHUElectricJunction
+  a s223:Junction ;
+  s223:hasConnectionPoint psm:JunctionIn ;
+  s223:hasConnectionPoint psm:JunctionOut1 ;
+  s223:hasConnectionPoint psm:JunctionOut2 ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Internal AHUElectric junction" ;
+.
+psm:JunctionIn
+  a s223:InletConnectionPoint ;
+  s223:hasMedium s223:Electricity-AC ;
+  s223:mapsTo psm:AHUElectricityInlet ;
+  rdfs:label "Junction in" ;
+.
+psm:JunctionOut1
+  a s223:OutletConnectionPoint ;
+  s223:cnx psm:PowerToFan ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Junction out1" ;
+.
+psm:JunctionOut2
+  a s223:OutletConnectionPoint ;
+  s223:cnx psm:PowerToCoil ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Junction out2" ;
 .
 psm:Kitchenette
   a s223:PhysicalSpace ;
@@ -796,6 +797,23 @@ psm:LightingZone6
   s223:hasDomainSpace psm:LightingSpace6 ;
   rdfs:label "LightingZone6" ;
 .
+psm:LoopInletCP
+  a s223:InletConnectionPoint ;
+  s223:hasMedium s223:Fluid-Water ;
+  rdfs:label "Loop inlet CP" ;
+.
+psm:LoopOutletCP
+  a s223:OutletConnectionPoint ;
+  s223:cnx psm:LoopToValve ;
+  s223:hasMedium s223:Water-ChilledWater ;
+  rdfs:label "Loop outlet CP" ;
+.
+psm:LoopToValve
+  a s223:Pipe ;
+  s223:cnx psm:AHUChilledWaterInlet ;
+  s223:hasMedium s223:Water-ChilledWater ;
+  rdfs:label "Loop to Valve" ;
+.
 psm:Luminaire1
   a s223:Luminaire ;
   s223:cnx psm:Luminaire1Inlet ;
@@ -819,7 +837,7 @@ psm:Luminaire10Inlet
 .
 psm:Luminaire10OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire10On off status" ;
 .
@@ -845,7 +863,7 @@ psm:Luminaire11Inlet
 .
 psm:Luminaire11OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire11On off status" ;
 .
@@ -870,7 +888,7 @@ psm:Luminaire12Inlet
 .
 psm:Luminaire12OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire12On off status" ;
 .
@@ -909,14 +927,14 @@ psm:Luminaire1Intensity
   rdfs:label "Luminaire1Intensity" ;
 .
 psm:Luminaire1InternalWire
-  a s223:ElectricWire ;
+  a s223:Conductor ;
   s223:cnx psm:LightEngine1Inlet ;
   s223:hasMedium s223:Constituent-Electricity ;
   rdfs:label "Luminaire1Internal wire" ;
 .
 psm:Luminaire1OnOff
   a s223:EnumeratedActuatableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire1OnOff" ;
 .
@@ -966,13 +984,13 @@ psm:Luminaire2Intensity
 .
 psm:Luminaire2OnOff
   a s223:EnumeratedActuatableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire2OnOff" ;
 .
 psm:Luminaire2OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire2On off status" ;
 .
@@ -997,7 +1015,7 @@ psm:Luminaire3Inlet
 .
 psm:Luminaire3OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire3On off status" ;
 .
@@ -1022,7 +1040,7 @@ psm:Luminaire4Inlet
 .
 psm:Luminaire4OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire4On off status" ;
 .
@@ -1047,7 +1065,7 @@ psm:Luminaire5Inlet
 .
 psm:Luminaire5OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire5On off status" ;
 .
@@ -1072,7 +1090,7 @@ psm:Luminaire6Inlet
 .
 psm:Luminaire6OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire6On off status" ;
 .
@@ -1097,7 +1115,7 @@ psm:Luminaire7Inlet
 .
 psm:Luminaire7OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire7On off status" ;
 .
@@ -1122,7 +1140,7 @@ psm:Luminaire8Inlet
 .
 psm:Luminaire8OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire8On off status" ;
 .
@@ -1147,7 +1165,7 @@ psm:Luminaire9Inlet
 .
 psm:Luminaire9OnOffStatus
   a s223:EnumerableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-Off ;
   rdfs:label "Luminaire9On off status" ;
 .
@@ -1168,28 +1186,28 @@ psm:MainBreaker
   rdfs:label "Main breaker" ;
 .
 psm:MainBreakerCircuit1
-  a s223:ElectricWire ;
+  a s223:Conductor ;
   s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Main breaker circuit1" ;
 .
 psm:MainBreakerCircuit2
-  a s223:ElectricWire ;
+  a s223:Conductor ;
   s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Main breaker circuit2" ;
 .
 psm:MainBreakerCircuit3
-  a s223:ElectricWire ;
+  a s223:Conductor ;
   s223:cnx psm:BR3InletConnectionPoint ;
   s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
   rdfs:label "Main breaker circuit3" ;
 .
 psm:MainBreakerCircuit4
-  a s223:ElectricWire ;
+  a s223:Conductor ;
   s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Main breaker circuit4" ;
 .
 psm:MainBreakerCircuit5
-  a s223:ElectricWire ;
+  a s223:Conductor ;
   s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
   rdfs:label "Main breaker circuit5" ;
 .
@@ -1202,36 +1220,36 @@ psm:MainBreakerInletCP
 psm:MainBreakerOutCP1
   a s223:OutletConnectionPoint ;
   s223:cnx psm:MainBreakerCircuit1 ;
+  s223:hasElectricalPhase s223:ElectricalPhaseIdentifier-A ;
   s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-  s223:hasProperty psm:BreakerCP1Phase ;
   rdfs:label "Main breaker out CP1" ;
 .
 psm:MainBreakerOutCP2
   a s223:OutletConnectionPoint ;
   s223:cnx psm:MainBreakerCircuit2 ;
+  s223:hasElectricalPhase s223:ElectricalPhaseIdentifier-B ;
   s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-  s223:hasProperty psm:BreakerCP2Phase ;
   rdfs:label "Main breaker out CP2" ;
 .
 psm:MainBreakerOutCP3
   a s223:OutletConnectionPoint ;
   s223:cnx psm:MainBreakerCircuit3 ;
+  s223:hasElectricalPhase s223:ElectricalPhaseIdentifier-BC ;
   s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
-  s223:hasProperty psm:BreakerCP3Phase ;
   rdfs:label "Main breaker out CP3" ;
 .
 psm:MainBreakerOutCP4
   a s223:OutletConnectionPoint ;
   s223:cnx psm:MainBreakerCircuit4 ;
+  s223:hasElectricalPhase s223:ElectricalPhaseIdentifier-C ;
   s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-  s223:hasProperty psm:BreakerCP4Phase ;
   rdfs:label "Main breaker out CP4" ;
 .
 psm:MainBreakerOutCP5
   a s223:OutletConnectionPoint ;
   s223:cnx psm:MainBreakerCircuit5 ;
+  s223:hasElectricalPhase s223:ElectricalPhaseIdentifier-A ;
   s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
-  s223:hasProperty psm:BreakerCP5Phase ;
   rdfs:label "Main breaker out CP5" ;
 .
 psm:MainGridConnectionPoint
@@ -1488,20 +1506,20 @@ psm:PipeFromBoiler
   s223:hasMedium s223:Water-HotWater ;
   rdfs:label "Pipe from boiler" ;
 .
-psm:PipeFromChiller
-  a s223:Connection ;
-  s223:hasMedium s223:GlycolSolution-30Percent ;
-  rdfs:label "Pipe from chiller" ;
-.
 psm:PipeToBoiler
   a s223:Connection ;
   s223:hasMedium s223:Water-HotWater ;
   rdfs:label "Pipe to boiler" ;
 .
-psm:PipeToChiller
-  a s223:Connection ;
-  s223:hasMedium s223:GlycolSolution-30Percent ;
-  rdfs:label "Pipe to chiller" ;
+psm:PowerToCoil
+  a s223:Conductor ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Power to coil" ;
+.
+psm:PowerToFan
+  a s223:Conductor ;
+  s223:hasMedium s223:Electricity-AC ;
+  rdfs:label "Power to fan" ;
 .
 psm:PrivateOffice
   a s223:PhysicalSpace ;
@@ -1558,8 +1576,8 @@ psm:ReturnFanSpeed
   rdfs:label "Return fan speed" ;
 .
 psm:ReturnFanStatus
-  a s223:EnumeratedActuatableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  a s223:EnumerableProperty ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-On ;
   rdfs:label "Return fan status" ;
 .
@@ -1589,8 +1607,8 @@ psm:SupplyFanActuator
 .
 psm:SupplyFanElectricInCP
   a s223:InletConnectionPoint ;
+  s223:cnx psm:PowerToFan ;
   s223:hasMedium s223:AC-240VLL-1Ph-60Hz ;
-  s223:mapsTo psm:AHUElectricityInlet ;
   rdfs:label "Supply fan electric in CP" ;
 .
 psm:SupplyFanSpeed
@@ -1601,8 +1619,8 @@ psm:SupplyFanSpeed
   rdfs:label "Supply fan speed" ;
 .
 psm:SupplyFanStatus
-  a s223:EnumeratedActuatableProperty ;
-  s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+  a s223:EnumerableProperty ;
+  s223:hasEnumerationKind s223:Binary-OnOff ;
   s223:hasValue s223:OnOff-On ;
   rdfs:label "Supply fan status" ;
 .
@@ -1613,6 +1631,8 @@ psm:SupplyFromExteriorAir
 .
 psm:SupplySystem
   a s223:System ;
+  s223:hasBoundaryConnectionPoint psm:CPToGround ;
+  s223:hasMember psm:ExternalLoop ;
   s223:hasMember psm:i00007 ;
   s223:hasMember psm:i00011 ;
   s223:hasMember psm:i00016 ;
@@ -1717,11 +1737,17 @@ psm:VAV1InletReheatCoilCP
   rdfs:label "VAV1Inlet reheat coil CP" ;
 .
 psm:VAV1InletTemperature
-  a s223:QuantifiableObservableProperty ;
+  a s223:QuantifiableProperty ;
   s223:hasValue 70.2 ;
   qudt:hasQuantityKind qudtqk:Temperature ;
   qudt:hasUnit unit:DEG_F ;
-  rdfs:label "VAV1 Inlet Temperature" ;
+  rdfs:label "VAV1 Inlet Temperature (estimated)" ;
+.
+psm:VAV1InletTemperatureFunction
+  a s223:Function ;
+  s223:hasInput psm:VAV1OutletTemperature ;
+  s223:hasOutput psm:VAV1InletTemperature ;
+  rdfs:label "VAV1Inlet temperature function" ;
 .
 psm:VAV1InternalConnection
   a s223:Connection ;
@@ -1792,17 +1818,10 @@ psm:VAV2OuletReheatCoilCP
 .
 psm:VAV2OutletTemperature
   a s223:QuantifiableObservableProperty ;
-  s223:hasValue 71.2 ;
-  qudt:hasQuantityKind qudtqk:Temperature ;
-  qudt:hasUnit unit:DEG_F ;
-  rdfs:label "VAV2 Outlet Temperature" ;
-.
-psm:VAV2OutletTemperatureProperty
-  a s223:QuantifiableObservableProperty ;
   s223:hasValue "70"^^xsd:decimal ;
   qudt:hasQuantityKind qudtqk:Temperature ;
   qudt:hasUnit unit:DEG_F ;
-  rdfs:label "VAV2Outlet temperature property" ;
+  rdfs:label "VAV2Outlet temperature" ;
 .
 psm:VAV2ReheatCoilSupplyFluidInlet
   a s223:InletConnectionPoint ;
@@ -1963,7 +1982,7 @@ psm:VAVBox2Outlet
 psm:VAVBox2OutletTemperatureSensor
   a s223:TemperatureSensor ;
   s223:hasObservationLocation psm:VAV2OuletReheatCoilCP ;
-  s223:observes psm:VAV2OutletTemperatureProperty ;
+  s223:observes psm:VAV2OutletTemperature ;
   rdfs:label "S12" ;
 .
 psm:VAVBox2ReheatValveActuator
@@ -1983,8 +2002,16 @@ psm:VAVSupply
   s223:hasMedium s223:Fluid-Air ;
   rdfs:label "VAVSupply" ;
 .
+psm:ValveToCoil
+  a s223:Pipe ;
+  s223:cnx psm:i00039 ;
+  s223:cnx psm:i00044 ;
+  s223:hasMedium s223:Water-ChilledWater ;
+  rdfs:label "Valve to coil" ;
+.
 psm:i00001
   a s223:AirHandlingUnit ;
+  s223:contains psm:InternalAHUElectricJunction ;
   s223:contains psm:OutsideAirJunction ;
   s223:contains psm:i00007 ;
   s223:contains psm:i00011 ;
@@ -2019,14 +2046,14 @@ psm:i00006
 .
 psm:i00007
   a s223:Damper ;
+  s223:actuatedByProperty psm:i00008 ;
   s223:cnx psm:i00009 ;
   s223:cnx psm:i00010 ;
-  s223:hasProperty psm:i00008 ;
   rdfs:label "A-9.min_oa_damper" ;
 .
 psm:i00008
   a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:EnumerationKind-Position ;
+  s223:hasAspect s223:Binary-Position ;
   qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
   qudt:hasUnit unit:PERCENT ;
   rdfs:label "Minimum outdoor air damper command" ;
@@ -2081,14 +2108,14 @@ psm:i00015
 .
 psm:i00016
   a s223:Damper ;
+  s223:actuatedByProperty psm:i00017 ;
   s223:cnx psm:i00018 ;
   s223:cnx psm:i00019 ;
-  s223:hasProperty psm:i00017 ;
   rdfs:label "A-9.economizer_oa_damper" ;
 .
 psm:i00017
   a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:EnumerationKind-Position ;
+  s223:hasAspect s223:Binary-Position ;
   qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
   qudt:hasUnit unit:PERCENT ;
   rdfs:label "Economizer outside air damper command" ;
@@ -2221,6 +2248,7 @@ psm:i00035
 .
 psm:i00036
   a s223:CoolingCoil ;
+  s223:cnx psm:ElectricInletCP ;
   s223:cnx psm:i00037 ;
   s223:cnx psm:i00038 ;
   s223:cnx psm:i00039 ;
@@ -2245,13 +2273,13 @@ psm:i00039
   a s223:InletConnectionPoint ;
   s223:cnx psm:i00036 ;
   s223:hasMedium s223:Water-ChilledWater ;
-  s223:mapsTo psm:AHUChilledWaterInlet ;
   rdfs:label "A-9.chilled_water_coil.chilledWaterSupply" ;
 .
 psm:i00040
   a s223:OutletConnectionPoint ;
   s223:cnx psm:i00036 ;
-  s223:hasMedium s223:Water-ChilledWater ;
+  s223:hasMedium s223:Fluid-Water ;
+  s223:mapsTo psm:AHUChilledWaterOutlet ;
   rdfs:label "A-9.chilled_water_coil.chilledWaterReturn" ;
 .
 psm:i00041
@@ -2270,21 +2298,21 @@ psm:i00042
 psm:i00043
   a s223:InletConnectionPoint ;
   s223:cnx psm:i00041 ;
-  s223:cnx psm:i00045 ;
   s223:hasMedium s223:Water-ChilledWater ;
+  s223:mapsTo psm:AHUChilledWaterInlet ;
   rdfs:label "A-9.chilled_water_coil.chilled_water_valve.chilledWaterInlet" ;
 .
 psm:i00044
   a s223:OutletConnectionPoint ;
   s223:cnx psm:i00041 ;
   s223:hasMedium s223:Water-ChilledWater ;
-  s223:mapsTo psm:AHUChilledWaterOutlet ;
   rdfs:label "A-9.chilled_water_coil.chilled_water_valve.chilledWaterOutlet" ;
 .
 psm:i00045
   a s223:Connection ;
-  s223:cnx psm:i00040 ;
-  s223:hasMedium s223:Water-ChilledWater ;
+  s223:cnx psm:AHUChilledWaterOutlet ;
+  s223:cnx psm:LoopInletCP ;
+  s223:hasMedium s223:Fluid-Water ;
   rdfs:label "Chilled water connection" ;
 .
 psm:i00046
@@ -2353,14 +2381,14 @@ psm:i00055
 .
 psm:i00056
   a s223:Damper ;
+  s223:actuatedByProperty psm:i00057 ;
   s223:cnx psm:i00058 ;
   s223:cnx psm:i00059 ;
-  s223:hasProperty psm:i00057 ;
   rdfs:label "A-9.exhaust_air_damper" ;
 .
 psm:i00057
   a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:EnumerationKind-Position ;
+  s223:hasAspect s223:Binary-Position ;
   qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
   qudt:hasUnit unit:PERCENT ;
   rdfs:label "Exhaust air damper command" ;
@@ -2387,14 +2415,14 @@ psm:i00060
 .
 psm:i00061
   a s223:Damper ;
+  s223:actuatedByProperty psm:i00062 ;
   s223:cnx psm:i00063 ;
   s223:cnx psm:i00064 ;
-  s223:hasProperty psm:i00062 ;
   rdfs:label "A-9.return_air_damper" ;
 .
 psm:i00062
   a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:EnumerationKind-Position ;
+  s223:hasAspect s223:Binary-Position ;
   qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
   qudt:hasUnit unit:PERCENT ;
   rdfs:label "Return air damper command" ;
