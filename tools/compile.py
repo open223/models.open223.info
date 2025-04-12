@@ -40,16 +40,13 @@ if __name__ == "__main__":
     if args.reason:
         topquadrant_shacl._MAX_EXTERNAL_LOOPS = 10
         graph = infer(graph, deps)
+    if args.do_import:
+        env.import_dependencies(graph)
+        namespaces = dict(graph.namespace_manager.namespaces())
     if args.output:
         for prefix, uri in namespaces.items():
             graph.bind(prefix, uri)
         graph.serialize(args.output, format="turtle")
-
-        # replace .ttl with -with-imports.ttl
-        new_file = re.sub(r"\.ttl$", "-with-imports.ttl", args.output)
-        env.import_dependencies(graph)
-        graph.serialize(new_file, format="turtle")
-
     valid, _, report = validate(graph, graph)
     if not valid:
         print(report)

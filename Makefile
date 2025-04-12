@@ -5,24 +5,26 @@
 all: compile-models
 
 # MODEL_SOURCES will find all .ttl files in the models directory.
-MODEL_SOURCES := $(wildcard models/*.ttl)
+# MODEL_SOURCES := $(wildcard models/*.ttl)
+MODEL_SOURCES := models/HPL.ttl
 
 # COMPILED_MODELS will be the list of files but in the models/compiled folder.
 COMPILED_MODELS := $(patsubst models/%.ttl,models/compiled/%.ttl,$(MODEL_SOURCES))
 
-.ontoenv:
-	ontoenv init -s models -s ontologies
+# WITH_IMPORTS_MODELS will be the list of files but in the models/withimports folder.
+WITH_IMPORTS_MODELS := $(patsubst models/%.ttl,models/withimports/%.ttl,$(MODEL_SOURCES))
 
-# Rule to compile each model.
-# The prerequisite 'models/%.ttl' means it will match each .ttl file in the models directory.
-# 'tools/compile.py' ensures the compile script is present, but should be a prerequisite only if you want to track changes on it.
-# 'ontologies/*.ttl' captures changes in any .ttl file in the ontologies directory.
+.ontoenv:
+	ontoenv init models ontologies
+
 models/compiled/%.ttl: models/%.ttl tools/compile.py .ontoenv
-	#ontoenv refresh
-	-uv run python tools/compile.py -r -i -o $@ $< 
+	-uv run python tools/compile.py -r -o $@ $< 
+
+models/withimports/%.ttl: models/compiled/%.ttl tools/compile.py .ontoenv
+	-uv run python tools/compile.py -i -o $@ $< 
 
 # The compile-models target will "make" all of the COMPILED_MODELS.
-compile-models: $(COMPILED_MODELS)
+compile-models: $(COMPILED_MODELS) $(WITH_IMPORTS_MODELS)
 
 install-kernel:
 	python -m ipykernel install --user --name=python3
