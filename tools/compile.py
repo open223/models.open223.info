@@ -34,20 +34,22 @@ if __name__ == "__main__":
 
     deps = rdflib.Graph()
     env.get_closure("http://data.ashrae.org/standard223/1.0/model/all", deps)
-    env.import_dependencies(graph)
     deps.serialize("deps.ttl", format="turtle")
     graph.serialize("graph.ttl", format="turtle")
 
     if args.reason:
         topquadrant_shacl._MAX_EXTERNAL_LOOPS = 10
-        graph = infer(graph, graph)
-        #graph.expand(profile="shacl", backend="topquadrant")
+        graph = infer(graph, deps)
     if args.output:
         for prefix, uri in namespaces.items():
             graph.bind(prefix, uri)
         graph.serialize(args.output, format="turtle")
-    else:
-        print(graph.serialize(format="turtle"))
+
+        # replace .ttl with -with-imports.ttl
+        new_file = re.sub(r"\.ttl$", "-with-imports.ttl", args.output)
+        env.import_dependencies(graph)
+        graph.serialize(new_file, format="turtle")
+
     valid, _, report = validate(graph, graph)
     if not valid:
         print(report)

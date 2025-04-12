@@ -11,7 +11,7 @@ MODEL_SOURCES := $(wildcard models/*.ttl)
 COMPILED_MODELS := $(patsubst models/%.ttl,models/compiled/%.ttl,$(MODEL_SOURCES))
 
 .ontoenv:
-	ontoenv init models ontologies
+	ontoenv init -s models -s ontologies
 
 # Rule to compile each model.
 # The prerequisite 'models/%.ttl' means it will match each .ttl file in the models directory.
