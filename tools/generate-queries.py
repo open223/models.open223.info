@@ -1,4 +1,6 @@
 import urllib.parse
+import os
+import sys
 import re
 import toml
 
@@ -34,13 +36,40 @@ def replace_section_in_markdown(file_path, header, new_content):
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(new_content)
 
+
+# Check if the path to the directory is provided
+if len(sys.argv) != 2:
+    print("Usage: python generate-queries.py <model_directory_path>")
+    sys.exit(1)
+
+# Get directory name from command line argument
+directory = sys.argv[1]
+
 # Load the contents of the TOML file
 with open('queries.toml', 'r') as f:
     toml_data = toml.load(f)
 
+# now, for all models that don't appear in the toml file, add a row to the markdown table
+# with a 'select *' query
+for root, dirs, files in os.walk(directory):
+    for file in files:
+        if file.endswith('.ttl'):
+            base_name = os.path.splitext(file)[0]
+            examples_path = os.path.join("examples", f"{base_name}.md")
+            print(f"Processing file: {examples_path}")
+            # Check if the model is already in the TOML file and it has an "examples" section
+            if base_name not in toml_data and os.path.exists(examples_path):
+                # Add a default query for the model
+                toml_data[base_name] = [
+                    {
+                        "description": "Select all model",
+                        "query": "\nSELECT * WHERE {\n\t ?s ?p ?o \n}\n LIMIT 10",
+                    }
+                ]
+
+
 # Define the base URL for the queries
 base_url = "https://query.open223.info/"
-
 
 # Loop over each query configuration in the TOML file and add rows to the markdown table
 for key in toml_data:
@@ -75,3 +104,4 @@ for key in toml_data:
     header_to_replace = "## Queries"
     markdown_file_path = f"examples/{key}.md"
     replace_section_in_markdown(markdown_file_path, header_to_replace, markdown_table)
+

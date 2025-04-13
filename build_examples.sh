@@ -4,7 +4,7 @@ set -ex
 # for debugging ontoenv
 export RUST_BACKTRACE=1
 
-ontoenv init models ontologies -i '*.ttl'
+ontoenv init models ontologies -i '*.ttl' --overwrite
 
 # run the tools/make_model_formats.py script on the models directory
 uv run python tools/make_model_formats.py models
@@ -35,7 +35,7 @@ for filename in examples/*.md; do
 done
 
 # build queries
-uv run python tools/generate-queries.py
+uv run python tools/generate-queries.py models
 
 # for each filename in the models/ directory, run tools/compile.py -o models/compiled/<filename>.ttl
 ontoenv refresh
