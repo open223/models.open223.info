@@ -63,7 +63,7 @@ for root, dirs, files in os.walk(directory):
                 toml_data[base_name] = [
                     {
                         "description": "Select all model",
-                        "query": "SELECT * WHERE { ?s ?p ?o } LIMIT 10",
+                        "query": "\nSELECT * WHERE {\n\t ?s ?p ?o \n}\n LIMIT 10",
                     }
                 ]
 
