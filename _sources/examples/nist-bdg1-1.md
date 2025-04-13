@@ -10,11 +10,6 @@ kernelspec:
   name: python3
 ---
 
-```{warning}
-This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-04-11 13:03:25. The model file was last updated on 2025-01-10 12:34:20
-```
-        
 # NIST Example Building 1 Model 1
 
 Example Building 1 is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.
@@ -68,7 +63,6 @@ The model was created using [TopQuadrant](https://www.topquadrant.com/) TopBraid
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [CoolingCoil](https://explore.open223.info/s223/CoolingCoil.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Sensor](https://explore.open223.info/s223/Sensor.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [IlluminanceSensor](https://explore.open223.info/s223/IlluminanceSensor.html) | 1 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [OccupantCounter](https://explore.open223.info/s223/OccupantCounter.html) | 1 |
 | [Connection](https://explore.open223.info/s223/Connection.html) | [Pipe](https://explore.open223.info/s223/Pipe.html) | 3 |
 | [Connection](https://explore.open223.info/s223/Connection.html) | [Duct](https://explore.open223.info/s223/Duct.html) | 1 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 73 |
