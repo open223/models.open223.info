@@ -26,7 +26,9 @@ The IBAL is a mixed system lab at NIST that is able to test commercial equipment
 
 ## Downloads
 
-- <a href="/compiled/NIST-IBAL.ttl">Turtle file (compiled)</a> (<a href="/NIST-IBAL.ttl">original</a>)
+- <a href="/compiled/NIST-IBAL.ttl">Turtle file (compiled)</a>
+- <a href="/withimports/NIST-IBAL.ttl">Turtle file (with all imports)</a>
+- <a href="/NIST-IBAL.ttl">Turtle file (original)</a>
 - <a href="/NIST-IBAL.jsonld">JSON-LD file (original)</a>
     
 ## Queries

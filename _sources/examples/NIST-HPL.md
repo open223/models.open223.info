@@ -27,7 +27,9 @@ The HPL is a lab at NIST that consists of a bi-directional indoor and outdoor ai
 
 ## Downloads
 
-- <a href="/compiled/NIST-HPL.ttl">Turtle file (compiled)</a> (<a href="/NIST-HPL.ttl">original</a>)
+- <a href="/compiled/NIST-HPL.ttl">Turtle file (compiled)</a>
+- <a href="/withimports/NIST-HPL.ttl">Turtle file (with all imports)</a>
+- <a href="/NIST-HPL.ttl">Turtle file (original)</a>
 - <a href="/NIST-HPL.jsonld">JSON-LD file (original)</a>
     
 ## Queries

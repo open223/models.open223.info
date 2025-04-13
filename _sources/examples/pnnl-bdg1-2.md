@@ -59,10 +59,15 @@ bdg1:e2164e3d14db5fcb6915a4a2c8474579 a s223:Luminaire
 
 ## Downloads
 
-- <a href="/compiled/pnnl-bdg1-2.ttl">Turtle file (compiled)</a> (<a href="/pnnl-bdg1-2.ttl">original</a>)
+- <a href="/compiled/pnnl-bdg1-2.ttl">Turtle file (compiled)</a>
+- <a href="/withimports/pnnl-bdg1-2.ttl">Turtle file (with all imports)</a>
+- <a href="/pnnl-bdg1-2.ttl">Turtle file (original)</a>
 - <a href="/pnnl-bdg1-2.jsonld">JSON-LD file (original)</a>
     
 ## Queries
+| Description | Query URL |
+|-------------|-----------|
+| Select all model | <a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+%0ASELECT+%2A+WHERE+%7B%0A%09+%3Fs+%3Fp+%3Fo+%0A%7D%0A+LIMIT+10&url=https%3A%2F%2Fmodels.open223.info%2Fcompiled%2Fpnnl-bdg1-2.ttl'>Query Link</a> |
 
 ## Model Components
 | Parent Class | Class | Instances |

@@ -21,7 +21,9 @@ This component model is an example of the parallel fan-powered terminal unit wit
 
 ## Downloads
 
-- <a href="/compiled/guideline36-2021-A-3.ttl">Turtle file (compiled)</a> (<a href="/guideline36-2021-A-3.ttl">original</a>)
+- <a href="/compiled/guideline36-2021-A-3.ttl">Turtle file (compiled)</a>
+- <a href="/withimports/guideline36-2021-A-3.ttl">Turtle file (with all imports)</a>
+- <a href="/guideline36-2021-A-3.ttl">Turtle file (original)</a>
 - <a href="/guideline36-2021-A-3.jsonld">JSON-LD file (original)</a>
     
 ## Model Components

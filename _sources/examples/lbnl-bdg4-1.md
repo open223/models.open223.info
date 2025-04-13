@@ -30,7 +30,9 @@ This model contains a representation of the HVAC system.
 
 ## Downloads
 
-- <a href="/compiled/lbnl-bdg4-1.ttl">Turtle file (compiled)</a> (<a href="/lbnl-bdg4-1.ttl">original</a>)
+- <a href="/compiled/lbnl-bdg4-1.ttl">Turtle file (compiled)</a>
+- <a href="/withimports/lbnl-bdg4-1.ttl">Turtle file (with all imports)</a>
+- <a href="/lbnl-bdg4-1.ttl">Turtle file (original)</a>
 - <a href="/lbnl-bdg4-1.jsonld">JSON-LD file (original)</a>
     
 ## Queries
