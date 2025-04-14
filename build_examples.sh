@@ -37,8 +37,9 @@ done
 # build queries
 uv run python tools/generate-queries.py models
 
-# for each filename in the models/ directory, run tools/compile.py -o models/compiled/<filename>.ttl
+# for each filename in the models/ directory compile models and pull imports
 ontoenv refresh
 mkdir -p models/compiled
+mkdir -p models/withimports
 make compile-models
 uv run jb build .

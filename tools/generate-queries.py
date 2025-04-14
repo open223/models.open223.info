@@ -62,7 +62,7 @@ for root, dirs, files in os.walk(directory):
                 # Add a default query for the model
                 toml_data[base_name] = [
                     {
-                        "description": "Select all model",
+                        "description": "Select all triples from model.",
                         "query": "\nSELECT * WHERE {\n\t ?s ?p ?o \n}\n LIMIT 10",
                     }
                 ]
