@@ -10,7 +10,7 @@ import rdflib
 
 graph = rdflib.Graph()
 cfg = ontoenv.Config(["models", "ontologies"], offline=False, strict=False, includes=['*.ttl'])
-env = ontoenv.OntoEnv(cfg, read_only=True, recreate=False)
+env = ontoenv.OntoEnv(cfg, read_only=True, recreate=True)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
