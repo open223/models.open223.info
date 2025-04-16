@@ -1,0 +1,683 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pt1: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario1#> .
+@prefix pt2: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#> .
+@prefix pt3: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#> .
+@prefix pt4: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#> .
+@prefix pt6: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#> .
+@prefix pt7: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#> .
+@prefix pt8: <http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s223: <http://data.ashrae.org/standard223#> .
+
+<http://data.ashrae.org/standard223/1.0/data/patterns-scenario> a owl:Ontology ;
+    rdfs:comment """pt1: A simple, manual switch with no electronic signals (Properties)
+pt2: A Luminaire that is controlled by both a simple light switch and a motion sensor
+pt3: A Luminaire controlled by a combination of a smart switch and a motion sensor
+pt4: A Luminaire controlled by a combination of a smart switch and a motion sensor - expanded components
+pt6: Updated Luminaire controlled by a combination of a smart switch and a motion sensor - expanded
+""" ;
+    owl:imports <http://data.ashrae.org/standard223/1.0/model/all> ;
+    owl:versionInfo "Created with TopBraid Composer" .
+
+pt1:Room a s223:PhysicalSpace ;
+    rdfs:label "Room" ;
+    s223:encloses pt1:RoomDomainSpace .
+
+pt2:LuminaireLogic a s223:Function ;
+    rdfs:label "Luminaire logic" ;
+    s223:hasInput pt2:MotionProperty ;
+    s223:hasOutput pt2:LuminaireCommand .
+
+pt2:OccupantMotionSensor a s223:OccupantMotionSensor ;
+    rdfs:label "Occupant motion sensor" ;
+    s223:hasObservationLocation pt2:DomainSpace ;
+    s223:observes pt2:MotionProperty .
+
+pt2:TestRoom a s223:PhysicalSpace ;
+    rdfs:label "Test room" ;
+    s223:encloses pt2:DomainSpace .
+
+pt3:Function1 a s223:Function ;
+    rdfs:label "Function block1" ;
+    s223:hasInput pt3:MotionProperty,
+        pt3:UserSwitchProperty ;
+    s223:hasOutput pt3:LuminaireCommand .
+
+pt3:OccupantMotionSensor a s223:OccupantMotionSensor ;
+    rdfs:label "Occupant motion sensor" ;
+    s223:hasObservationLocation pt3:DomainSpace ;
+    s223:observes pt3:MotionProperty .
+
+pt3:TestRoom a s223:PhysicalSpace ;
+    rdfs:label "Test room" ;
+    s223:encloses pt3:DomainSpace .
+
+pt3:UserSwitch a s223:Equipment ;
+    rdfs:label "User switch" ;
+    s223:hasProperty pt3:UserSwitchProperty .
+
+pt4:Function1 a s223:Function ;
+    rdfs:label "Function block1" ;
+    s223:hasInput pt4:SmartSwitchProperty ;
+    s223:hasOutput pt4:LuminaireCommand .
+
+pt4:OccupantMotionSensor a s223:OccupantMotionSensor ;
+    rdfs:label "Occupant motion sensor" ;
+    s223:hasObservationLocation pt4:DomainSpace ;
+    s223:observes pt4:MotionProperty .
+
+pt4:SmartSwitch a s223:Equipment ;
+    rdfs:label "Smart switch" ;
+    s223:hasProperty pt4:SmartSwitchProperty .
+
+pt4:TestRoom a s223:PhysicalSpace ;
+    rdfs:label "Test room" ;
+    s223:encloses pt4:DomainSpace .
+
+pt6:PhysicalSpace_1 a s223:PhysicalSpace ;
+    rdfs:label "Physical space 1" ;
+    s223:encloses pt6:DomainSpace .
+
+pt6:TestRoom a s223:PhysicalSpace ;
+    rdfs:label "Test room" ;
+    s223:encloses pt4:DomainSpace .
+
+pt1:DumbSwitch a s223:Equipment ;
+    rdfs:label "Dumb switch" ;
+    s223:cnx pt1:DumbSwitchOutletCP ;
+    s223:hasConnectionPoint pt1:DumbSwitchOutletCP .
+
+pt3:ElectricBreaker_1 a s223:ElectricBreaker ;
+    rdfs:label "Electric breaker 1" ;
+    s223:cnx pt3:BreakerOutletConnectionPoint_1 ;
+    s223:hasConnectionPoint pt3:BreakerOutletConnectionPoint_1 .
+
+pt4:Breaker1 a s223:ElectricBreaker ;
+    rdfs:label "Breaker1" ;
+    s223:cnx pt4:BreakerOutletCP ;
+    s223:connectedThrough pt4:ElectricWireToLuminaire .
+
+pt4:LightActuatorInletCP a s223:InletConnectionPoint ;
+    rdfs:label "LightActuatorInlet CP" ;
+    s223:cnx pt4:LightActuator ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:mapsTo pt4:LuminaireInletCP .
+
+pt4:LuminaireInternalWire a s223:ElectricWire ;
+    rdfs:label "Luminaire internal wire" ;
+    s223:cnx pt4:LightActuatorOutletCP,
+        pt4:LightBulbInletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt4:MotionProperty a s223:EnumeratedObservableProperty ;
+    rdfs:label "Motion property" ;
+    s223:hasEnumerationKind s223:Occupancy-Motion .
+
+pt6:Breaker1 a s223:ElectricBreaker ;
+    rdfs:label "Breaker1" ;
+    s223:cnx pt6:BreakerOutletCP ;
+    s223:connectedThrough pt6:ElectricWireFromBreaker .
+
+pt6:Controller a s223:Controller ;
+    rdfs:label "Controller" ;
+    s223:executes pt6:Function1 .
+
+pt6:Function1 a s223:Function ;
+    rdfs:label "Function block1																																																																															" ;
+    s223:hasInput pt6:MotionProperty,
+        pt6:UserInputProperty ;
+    s223:hasOutput pt6:LuminaireCommand .
+
+pt6:LightActuator a s223:Actuator ;
+    rdfs:label "Light actuator" ;
+    s223:actuatedByProperty pt6:LuminaireCommand ;
+    s223:actuates pt6:Relay .
+
+pt6:OccupantMotionSensor a s223:OccupantMotionSensor ;
+    rdfs:label "Occupant motion sensor" ;
+    s223:hasObservationLocation pt6:DomainSpace ;
+    s223:observes pt6:MotionProperty .
+
+pt6:UserInputSwitch a s223:Equipment ;
+    rdfs:label "User input switch" ;
+    s223:hasProperty pt6:UserInputProperty .
+
+pt7:Breaker a s223:ElectricBreaker ;
+    rdfs:label "Breaker" ;
+    s223:cnx pt7:BreakerOutletCP ;
+    s223:hasConnectionPoint pt7:BreakerOutletCP .
+
+pt7:Circuit1 a s223:ElectricWire ;
+    rdfs:label "Circuit1" ;
+    s223:cnx pt7:BreakerOutletCP,
+        pt7:Motor1InletCP,
+        pt7:Motor2InletCP,
+        pt7:Motor3InletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt7:Motor1 a s223:Motor ;
+    rdfs:label "Motor1" ;
+    s223:cnx pt7:Motor1InletCP ;
+    s223:hasConnectionPoint pt7:Motor1InletCP .
+
+pt7:Motor2 a s223:Motor ;
+    rdfs:label "Motor2" ;
+    s223:cnx pt7:Motor2InletCP ;
+    s223:hasConnectionPoint pt7:Motor2InletCP .
+
+pt7:Motor3 a s223:Motor ;
+    rdfs:label "Motor3" ;
+    s223:cnx pt7:Motor3InletCP ;
+    s223:hasConnectionPoint pt7:Motor3InletCP .
+
+pt8:Breaker a s223:ElectricBreaker ;
+    rdfs:label "Breaker" ;
+    s223:cnx pt8:BreakerOutletCP ;
+    s223:hasConnectionPoint pt8:BreakerOutletCP .
+
+pt8:Circuit1 a s223:ElectricWire ;
+    rdfs:label "Circuit1" ;
+    s223:cnx pt8:BreakerOutletCP,
+        pt8:JunctionInletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:CircuitBranch1 a s223:ElectricWire ;
+    rdfs:label "Circuit branch1" ;
+    s223:cnx pt8:JunctionOutletCP1,
+        pt8:Motor1InletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:CircuitBranch2 a s223:ElectricWire ;
+    rdfs:label "Circuit branch2" ;
+    s223:cnx pt8:JunctionOutletCP2,
+        pt8:Motor2InletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:CircuitBranch3 a s223:ElectricWire ;
+    rdfs:label "Circuit branch3" ;
+    s223:cnx pt8:JunctionOutletCP3,
+        pt8:Motor3InletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:Motor1 a s223:Motor ;
+    rdfs:label "Motor1" ;
+    s223:cnx pt8:Motor1InletCP ;
+    s223:hasConnectionPoint pt8:Motor1InletCP .
+
+pt8:Motor2 a s223:Motor ;
+    rdfs:label "Motor2" ;
+    s223:cnx pt8:Motor2InletCP ;
+    s223:hasConnectionPoint pt8:Motor2InletCP .
+
+pt8:Motor3 a s223:Motor ;
+    rdfs:label "Motor3" ;
+    s223:cnx pt8:Motor3InletCP ;
+    s223:hasConnectionPoint pt8:Motor3InletCP .
+
+pt1:ElectricWireDS-Lum a s223:ElectricWire ;
+    rdfs:label "Electric wire DS-Lum" ;
+    s223:cnx pt1:DumbSwitchOutletCP,
+        pt1:LuminaireInletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt1:LightPathToRoom a s223:Connection ;
+    rdfs:label "Light path to room" ;
+    s223:cnx pt1:DomainSpaceInletCP,
+        pt1:LuminaireOutletCP ;
+    s223:hasMedium s223:Light-Visible .
+
+pt1:Luminaire a s223:Luminaire ;
+    rdfs:label "Luminaire" ;
+    s223:cnx pt1:LuminaireInletCP,
+        pt1:LuminaireOutletCP ;
+    s223:hasConnectionPoint pt1:LuminaireInletCP,
+        pt1:LuminaireOutletCP .
+
+pt1:RoomDomainSpace a s223:DomainSpace ;
+    rdfs:label "Room domain space" ;
+    s223:cnx pt1:DomainSpaceInletCP ;
+    s223:hasConnectionPoint pt1:DomainSpaceInletCP ;
+    s223:hasDomain s223:Domain-Lighting .
+
+pt2:DumbSwitch a s223:Equipment ;
+    rdfs:label "Dumb switch" ;
+    s223:cnx pt2:DumbSwitchOutletCP ;
+    s223:connected pt2:Luminaire ;
+    s223:hasConnectionPoint pt2:DumbSwitchOutletCP .
+
+pt2:ElectricWireBothSwitches-Lum a s223:ElectricWire ;
+    rdfs:label "Electric wire BothSwitches-Lum" ;
+    s223:cnx pt2:DumbSwitchOutletCP,
+        pt2:LuminaireInletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt2:LuminaireCommand a s223:EnumeratedActuatableProperty ;
+    rdfs:label "Luminaire command" ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+
+pt2:MotionProperty a s223:EnumeratedObservableProperty ;
+    rdfs:label "Motion property" ;
+    s223:hasEnumerationKind s223:Occupancy-Motion .
+
+pt2:OpticalPath a s223:Connection ;
+    rdfs:label "Optical path" ;
+    s223:cnx pt2:DomainSpaceInletCP,
+        pt2:LuminaireOutletCP ;
+    s223:hasMedium s223:Light-Visible .
+
+pt3:ElectricWireToLuminaire a s223:ElectricWire ;
+    rdfs:label "ElectricWireToLuminaire" ;
+    s223:cnx pt3:BreakerOutletConnectionPoint_1,
+        pt3:LuminaireInletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt3:LuminaireCommand a s223:EnumeratedActuatableProperty ;
+    rdfs:label "Luminaire command" ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+
+pt3:MotionProperty a s223:EnumeratedObservableProperty ;
+    rdfs:label "Motion property" ;
+    s223:hasEnumerationKind s223:Occupancy-Motion .
+
+pt3:OpticalPath a s223:Connection ;
+    rdfs:label "Optical path" ;
+    s223:cnx pt3:DomainSpaceInletCP,
+        pt3:LuminaireOutletCP ;
+    s223:connectsAt pt3:DomainSpaceInletCP,
+        pt3:LuminaireOutletCP ;
+    s223:hasMedium s223:Light-Visible .
+
+pt3:UserSwitchProperty a s223:EnumerableProperty ;
+    rdfs:label "UserSwitchProperty" ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+
+pt4:BreakerOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Breaker outlet CP" ;
+    s223:cnx pt4:Breaker1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt4:ElectricWireToLuminaire a s223:ElectricWire ;
+    rdfs:label "ElectricWireToLuminaire" ;
+    s223:cnx pt4:BreakerOutletCP,
+        pt4:LuminaireInletCP ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt4:LightBulbOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Light bulb outlet CP" ;
+    s223:cnx pt4:LightBulb ;
+    s223:hasMedium s223:Light-Visible ;
+    s223:mapsTo pt4:LuminaireOutletCP .
+
+pt4:Luminaire a s223:Luminaire ;
+    rdfs:label "Luminaire" ;
+    s223:actuatedByProperty pt4:LuminaireCommand ;
+    s223:cnx pt4:LuminaireInletCP,
+        pt4:LuminaireOutletCP ;
+    s223:contains pt4:LightActuator,
+        pt4:LightBulb ;
+    s223:hasConnectionPoint pt4:LuminaireOutletCP .
+
+pt4:OpticalPath a s223:Connection ;
+    rdfs:label "Optical path" ;
+    s223:cnx pt4:DomainSpaceInletCP,
+        pt4:LuminaireOutletCP ;
+    s223:connectsTo pt4:DomainSpace ;
+    s223:hasMedium s223:Light-Visible .
+
+pt4:SmartSwitchProperty a s223:EnumerableProperty ;
+    rdfs:label "SmartSwitchProperty" ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+    s223:hasValue s223:OnOff-Unknown .
+
+pt6:BreakerOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Breaker outlet CP" ;
+    s223:cnx pt6:Breaker1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt6:ElectricWireFromBreaker a s223:ElectricWire ;
+    rdfs:label "ElectricWireFromBreaker" ;
+    s223:cnx pt6:BreakerOutletCP,
+        pt6:SmartSwitchInlet ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt6:Luminaire a s223:Equipment ;
+    rdfs:label "Luminaire" ;
+    s223:cnx pt6:LuminaireInletCP,
+        pt6:LuminaireOutletCP ;
+    s223:hasConnectionPoint pt6:LuminaireInletCP,
+        pt6:LuminaireOutletCP .
+
+pt6:LuminaireCommand a s223:EnumeratedActuatableProperty ;
+    rdfs:label "Luminaire command" ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+
+pt6:MotionProperty a s223:EnumeratedObservableProperty ;
+    rdfs:label "Motion property" ;
+    s223:hasEnumerationKind s223:Occupancy-Motion .
+
+pt6:OpticalPath a s223:Connection ;
+    rdfs:label "Optical path" ;
+    s223:cnx pt6:DomainSpaceInletCP,
+        pt6:LuminaireOutletCP ;
+    s223:connectsTo pt6:DomainSpace ;
+    s223:hasMedium s223:Light-Visible .
+
+pt6:RelayInletCP a s223:InletConnectionPoint ;
+    rdfs:label "RelayInlet CP" ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt6:Relay ;
+    s223:mapsTo pt6:SmartSwitchInlet .
+
+pt6:RelayOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Relay outlet CP" ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt6:Relay ;
+    s223:mapsTo pt6:SmartSwitchOutlet .
+
+pt6:UserInputProperty a s223:EnumerableProperty ;
+    rdfs:label "UserInputProperty" ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff ;
+    s223:hasValue s223:OnOff-Unknown .
+
+pt6:WireToLightFixture a s223:ElectricWire ;
+    rdfs:label "Wire to light fixture" ;
+    s223:cnx pt6:LuminaireInletCP,
+        pt6:SmartSwitchOutlet ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:JunctionInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Junction inlet CP" ;
+    s223:cnx pt8:Junction ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt1:DomainSpaceInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Domain space inlet CP" ;
+    s223:cnx pt1:LightPathToRoom,
+        pt1:RoomDomainSpace ;
+    s223:hasMedium s223:Light-Visible .
+
+pt1:DumbSwitchOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Dumb switchOutlet CP" ;
+    s223:cnx pt1:DumbSwitch,
+        pt1:ElectricWireDS-Lum ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt1:LuminaireInletCP a s223:InletConnectionPoint ;
+    rdfs:label "LuminaireInlet CP" ;
+    s223:cnx pt1:ElectricWireDS-Lum,
+        pt1:Luminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt1:LuminaireOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Luminaire outlet CP" ;
+    s223:cnx pt1:LightPathToRoom,
+        pt1:Luminaire ;
+    s223:hasMedium s223:Light-Visible .
+
+pt2:DomainSpaceInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Domain space inlet CP" ;
+    s223:cnx pt2:DomainSpace,
+        pt2:OpticalPath ;
+    s223:hasMedium s223:Light-Visible .
+
+pt2:DumbSwitchOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Dumb switchOutlet CP" ;
+    s223:cnx pt2:DumbSwitch,
+        pt2:ElectricWireBothSwitches-Lum ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt2:LuminaireInletCP a s223:InletConnectionPoint ;
+    rdfs:label "LuminaireInlet CP" ;
+    s223:cnx pt2:ElectricWireBothSwitches-Lum,
+        pt2:Luminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt2:LuminaireOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Luminaire outlet CP" ;
+    s223:cnx pt2:Luminaire,
+        pt2:OpticalPath ;
+    s223:hasMedium s223:Light-Visible .
+
+pt3:BreakerOutletConnectionPoint_1 a s223:OutletConnectionPoint ;
+    rdfs:label "Breaker outlet connection point 1" ;
+    s223:cnx pt3:ElectricBreaker_1,
+        pt3:ElectricWireToLuminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt3:Luminaire a s223:Luminaire ;
+    rdfs:label "Luminaire" ;
+    s223:actuatedByProperty pt3:LuminaireCommand ;
+    s223:cnx pt3:LuminaireInletCP,
+        pt3:LuminaireOutletCP ;
+    s223:connected pt3:DomainSpace ;
+    s223:connectedTo pt3:DomainSpace ;
+    s223:hasConnectionPoint pt3:LuminaireInletCP,
+        pt3:LuminaireOutletCP .
+
+pt3:LuminaireInletCP a s223:InletConnectionPoint ;
+    rdfs:label "LuminaireInlet CP" ;
+    s223:cnx pt3:ElectricWireToLuminaire,
+        pt3:Luminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt4:DomainSpaceInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Domain space inlet CP" ;
+    s223:cnx pt4:DomainSpace,
+        pt4:OpticalPath ;
+    s223:hasMedium s223:Light-Visible .
+
+pt4:LightActuatorOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Light actuator outlet CP" ;
+    s223:cnx pt4:LightActuator,
+        pt4:LuminaireInternalWire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt4:LightBulbInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Light bulb inlet CP" ;
+    s223:cnx pt4:LightBulb ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt4:LuminaireCommand a s223:EnumeratedActuatableProperty ;
+    rdfs:label "Luminaire command" ;
+    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+
+pt4:LuminaireInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire inlet CP" ;
+    s223:cnx pt4:ElectricWireToLuminaire,
+        pt4:Luminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt6:DomainSpaceInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Domain space inlet CP" ;
+    s223:cnx pt6:DomainSpace,
+        pt6:OpticalPath ;
+    s223:hasMedium s223:Light-Visible .
+
+pt6:LuminaireInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Luminaire inlet CP" ;
+    s223:cnx pt6:Luminaire,
+        pt6:WireToLightFixture ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt6:LuminaireOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "luminaire outlet CP" ;
+    s223:cnx pt6:Luminaire,
+        pt6:OpticalPath ;
+    s223:hasMedium s223:Light-Visible .
+
+pt7:BreakerOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Breaker outlet CP" ;
+    s223:cnx pt7:Breaker,
+        pt7:Circuit1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt7:Motor1InletCP a s223:InletConnectionPoint ;
+    rdfs:label "Motor1Inlet CP" ;
+    s223:cnx pt7:Motor1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt7:Motor2InletCP a s223:InletConnectionPoint ;
+    rdfs:label "Motor2Inlet CP" ;
+    s223:cnx pt7:Motor2 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt7:Motor3InletCP a s223:InletConnectionPoint ;
+    rdfs:label "Motor3Inlet CP" ;
+    s223:cnx pt7:Motor3 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:BreakerOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Breaker outlet CP" ;
+    s223:cnx pt8:Breaker,
+        pt8:Circuit1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:JunctionOutletCP1 a s223:OutletConnectionPoint ;
+    rdfs:label "Junction outlet CP1" ;
+    s223:cnx pt8:CircuitBranch1,
+        pt8:Junction ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:JunctionOutletCP2 a s223:OutletConnectionPoint ;
+    rdfs:label "Junction outlet CP2" ;
+    s223:cnx pt8:CircuitBranch2,
+        pt8:Junction ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:JunctionOutletCP3 a s223:OutletConnectionPoint ;
+    rdfs:label "Junction outlet CP3" ;
+    s223:cnx pt8:CircuitBranch3,
+        pt8:Junction ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:Motor1InletCP a s223:InletConnectionPoint ;
+    rdfs:label "Motor1Inlet CP" ;
+    s223:cnx pt8:Motor1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:Motor2InletCP a s223:InletConnectionPoint ;
+    rdfs:label "Motor2Inlet CP" ;
+    s223:cnx pt8:Motor2 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:Motor3InletCP a s223:InletConnectionPoint ;
+    rdfs:label "Motor3Inlet CP" ;
+    s223:cnx pt8:Motor3 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt2:Luminaire a s223:Luminaire ;
+    rdfs:label "Luminaire" ;
+    s223:actuatedByProperty pt2:LuminaireCommand ;
+    s223:cnx pt2:LuminaireInletCP,
+        pt2:LuminaireOutletCP ;
+    s223:connected pt2:DomainSpace,
+        pt2:DumbSwitch ;
+    s223:connectedTo pt2:DomainSpace ;
+    s223:hasConnectionPoint pt2:LuminaireInletCP,
+        pt2:LuminaireOutletCP .
+
+pt3:DomainSpaceInletCP a s223:InletConnectionPoint ;
+    rdfs:label "Domain space inlet CP" ;
+    s223:cnx pt3:DomainSpace,
+        pt3:OpticalPath ;
+    s223:hasMedium s223:Light-Visible .
+
+pt3:LuminaireOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Luminaire outlet CP" ;
+    s223:cnx pt3:Luminaire,
+        pt3:OpticalPath ;
+    s223:hasMedium s223:Light-Visible .
+
+pt4:LightActuator a s223:Actuator ;
+    rdfs:label "Light actuator" ;
+    s223:actuatedByProperty pt4:LuminaireCommand ;
+    s223:cnx pt4:LightActuatorInletCP,
+        pt4:LightActuatorOutletCP ;
+    s223:connected pt4:LightBulb ;
+    s223:connectedTo pt4:LightBulb ;
+    s223:hasConnectionPoint pt4:LightActuatorOutletCP .
+
+pt4:LuminaireOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Luminaire outlet CP" ;
+    s223:cnx pt4:Luminaire,
+        pt4:OpticalPath ;
+    s223:hasMedium s223:Light-Visible .
+
+pt6:DomainSpace a s223:DomainSpace ;
+    rdfs:label "Domain space" ;
+    s223:cnx pt6:DomainSpaceInletCP ;
+    s223:hasConnectionPoint pt6:DomainSpaceInletCP ;
+    s223:hasDomain s223:Domain-Lighting .
+
+pt6:Relay a s223:Equipment ;
+    rdfs:label "Relay" ;
+    s223:cnx pt6:RelayInletCP,
+        pt6:RelayOutletCP ;
+    s223:hasConnectionPoint pt6:RelayInletCP,
+        pt6:RelayOutletCP .
+
+pt6:SmartSwitchInlet a s223:InletConnectionPoint ;
+    rdfs:label "Smart switch inlet" ;
+    s223:cnx pt6:ElectricWireFromBreaker,
+        pt6:SmartSwitchProduct ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt6:SmartSwitchProduct .
+
+pt6:SmartSwitchOutlet a s223:OutletConnectionPoint ;
+    rdfs:label "Smart switch outlet" ;
+    s223:cnx pt6:SmartSwitchProduct,
+        pt6:WireToLightFixture ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz ;
+    s223:isConnectionPointOf pt6:SmartSwitchProduct .
+
+pt6:SmartSwitchProduct a s223:Equipment ;
+    rdfs:label "Smart switch product" ;
+    s223:cnx pt6:SmartSwitchInlet,
+        pt6:SmartSwitchOutlet ;
+    s223:contains pt6:Controller,
+        pt6:LightActuator,
+        pt6:OccupantMotionSensor,
+        pt6:Relay,
+        pt6:UserInputSwitch ;
+    s223:hasConnectionPoint pt6:SmartSwitchInlet,
+        pt6:SmartSwitchOutlet .
+
+pt8:Junction a s223:Junction ;
+    rdfs:label "Junction" ;
+    s223:cnx pt8:JunctionInletCP,
+        pt8:JunctionOutletCP1,
+        pt8:JunctionOutletCP2,
+        pt8:JunctionOutletCP3 ;
+    s223:hasConnectionPoint pt8:JunctionOutletCP1,
+        pt8:JunctionOutletCP2,
+        pt8:JunctionOutletCP3 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt2:DomainSpace a s223:DomainSpace ;
+    rdfs:label "Domain space" ;
+    s223:cnx pt2:DomainSpaceInletCP ;
+    s223:connectedFrom pt2:Luminaire ;
+    s223:hasConnectionPoint pt2:DomainSpaceInletCP ;
+    s223:hasDomain s223:Domain-Lighting .
+
+pt3:DomainSpace a s223:DomainSpace ;
+    rdfs:label "Domain space" ;
+    s223:cnx pt3:DomainSpaceInletCP ;
+    s223:connectedFrom pt3:Luminaire ;
+    s223:hasConnectionPoint pt3:DomainSpaceInletCP ;
+    s223:hasDomain s223:Domain-Lighting .
+
+pt4:DomainSpace a s223:DomainSpace ;
+    rdfs:label "Domain space" ;
+    s223:cnx pt4:DomainSpaceInletCP ;
+    s223:hasConnectionPoint pt4:DomainSpaceInletCP ;
+    s223:hasDomain s223:Domain-Lighting .
+
+pt4:LightBulb a s223:Equipment ;
+    rdfs:label "Light bulb" ;
+    s223:cnx pt4:LightBulbInletCP,
+        pt4:LightBulbOutletCP ;
+    s223:connectedFrom pt4:LightActuator ;
+    s223:hasConnectionPoint pt4:LightBulbInletCP,
+        pt4:LightBulbOutletCP .
+
