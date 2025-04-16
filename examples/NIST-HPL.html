@@ -428,6 +428,17 @@ document.write(`
 <li><p><a href="/NIST-HPL.ttl">Turtle file (original)</a></p></li>
 <li><p><a href="/NIST-HPL.jsonld">JSON-LD file (original)</a></p></li>
 </ul>
+<details>
+<summary>What are these files?</summary>
+<ul class="simple">
+<li><p><strong>Turtle file (original)</strong>: This is the original source Turtle file that was provided to <code class="docutils literal notranslate"><span class="pre">models.open223.info</span></code>, usually as the output of some model creation tool.</p></li>
+<li><p><strong>Turtle file (compiled)</strong>: This is the original Turtle file with all inferred relationships and values added through SHACL inference against the 223P ontology and other dependencies. <strong>You should use this file for any further processing.</strong> It does not contain any of the ontologies.</p></li>
+<li><p><strong>Turtle file (with all imports)</strong>: This is the compiled Turtle file with all imports included in the file (223P ontology, QUDT ontology, and others). This is helpful when you do not want to deal with downloading and managing ontology dependencies. It is also much larger than the compiled file.</p></li>
+<li><p><strong>JSON-LD file (original)</strong>: This is the original Turtle file converted to the JSON-LD format.</p></li>
+</ul>
+<p><a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a> is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers
+are available in many programming languages. <a class="reference external" href="https://json-ld.org">JSON-LD</a> is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.</p>
+</details>
 </section>
 <section id="queries">
 <h2>Queries<a class="headerlink" href="#queries" title="Link to this heading">#</a></h2>
