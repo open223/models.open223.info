@@ -12,7 +12,7 @@ kernelspec:
 
 ```{warning}
 This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-04-17 15:05:04. The model file was last updated on 2024-09-12 17:10:55
+223P was last updated on 2025-04-18 09:25:51. The model file was last updated on 2024-09-12 17:10:55
 ```
         
 # LBNL Example SMB Radiant
