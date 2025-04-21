@@ -12,7 +12,7 @@ kernelspec:
 
 ```{warning}
 This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-04-18 09:25:51. The model file was last updated on 2025-04-12 13:54:22
+223P was last updated on 2025-04-21 16:43:46. The model file was last updated on 2025-04-12 13:54:22
 ```
         
 # NIST Example Building 1 Model 1
