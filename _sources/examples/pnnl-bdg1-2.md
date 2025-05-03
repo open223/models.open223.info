@@ -130,7 +130,7 @@ bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ER
 
 # load 223P library. We will load a recent copy from the models.open223.info
 # git repository; later, we will load this from the location of the actual standard
-s223 = Library.load(ontology_graph="https://github.com/open223/models.open223.info/raw/main/ontologies/223p.ttl")
+s223 = Library.load(ontology_graph="https://open223.info/223p.ttl")
 
 # load the model into the BuildingMOTIF instance
 model = Model.create("urn:pnnl-bdg1-2")
