@@ -10,11 +10,6 @@ kernelspec:
   name: python3
 ---
 
-```{warning}
-This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-05-02 16:21:38. The model file was last updated on 2025-04-12 13:54:22
-```
-        
 # NIST Example Building 1 Model 1
 
 Example Building 1 is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.
