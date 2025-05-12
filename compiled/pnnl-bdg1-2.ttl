@@ -150,11 +150,21 @@ bdg1:d5a173e301bc12bdb57b42d84743a2d8 a s223:Zone ;
     s223:hasDomainSpace bdg1:9007570e1745b69899a7b84350a4f0a8 ;
     s223:hasProperty bdg1:3b946c4804eb93a98eff5718b5b49318 .
 
+bdg1:e2684126ff114d569384c6d3a21f953b a s223:ElectricBreaker ;
+    rdfs:label "ElectricBreaker" ;
+    s223:cnx bdg1:44531f11cb0626bac97aa43d6732fdf2 ;
+    s223:hasPhysicalLocation bdg1:8aa694885f0bc783d007c24a0a81c3b4 .
+
 bdg1:e4370738c339691a30c7e62a5cfc5a46 a rec:Desk ;
     rdfs:label "Desk" .
 
 bdg1:e5e1b3a136441d31d3921181c4f3c2e7 a rec:Desk ;
     rdfs:label "Desk" .
+
+bdg1:e9d83bcd0340d3b2c702a83acd90a597 a s223:ElectricBreaker ;
+    rdfs:label "ElectricBreaker" ;
+    s223:cnx bdg1:11c04c42e073d0d0b9c2a00aadf4901b ;
+    s223:hasPhysicalLocation bdg1:73dd5a752ff6dd1b77b259564949bc98 .
 
 bdg1:f046f97d2357eb6bbe381593808ff378 a rec:Desk ;
     rdfs:label "Desk" .
@@ -328,12 +338,6 @@ bdg1:dc7fc4c0daab77ddb84ca1a1f5c61e62 a s223:QuantifiableProperty ;
     qudt:hasQuantityKind qudtqk:Area ;
     qudt:hasUnit unit:M2 .
 
-bdg1:e2684126ff114d569384c6d3a21f953b a s223:ElectricBreaker ;
-    rdfs:label "ElectricBreaker" ;
-    s223:cnx bdg1:44531f11cb0626bac97aa43d6732fdf2 ;
-    s223:hasConnectionPoint bdg1:44531f11cb0626bac97aa43d6732fdf2 ;
-    s223:hasPhysicalLocation bdg1:8aa694885f0bc783d007c24a0a81c3b4 .
-
 bdg1:e371b4366f513b0d9876168ba9e61d63 a s223:Property ;
     rdfs:label "Property" ;
     s223:hasAspect s223:Aspect-Model ;
@@ -355,12 +359,6 @@ bdg1:e7cb45f8083fac1804a9f98b64d7c27c a s223:QuantifiableProperty ;
     s223:hasValue 9.971593 ;
     qudt:hasQuantityKind qudtqk:Area ;
     qudt:hasUnit unit:M2 .
-
-bdg1:e9d83bcd0340d3b2c702a83acd90a597 a s223:ElectricBreaker ;
-    rdfs:label "ElectricBreaker" ;
-    s223:cnx bdg1:11c04c42e073d0d0b9c2a00aadf4901b ;
-    s223:hasConnectionPoint bdg1:11c04c42e073d0d0b9c2a00aadf4901b ;
-    s223:hasPhysicalLocation bdg1:73dd5a752ff6dd1b77b259564949bc98 .
 
 bdg1:eafe74d79e1ab2386bcd74cfe7380ef0 a s223:QuantifiableProperty ;
     rdfs:label "QuantifiableProperty" ;
@@ -503,6 +501,11 @@ bdg1:0f62e06df1b1b931f2de769dbf568a96 a s223:DomainSpace ;
     s223:hasDomain s223:Domain-HVAC ;
     s223:hasProperty bdg1:4b375708b891b81bb4ae859c5488621c .
 
+bdg1:11c04c42e073d0d0b9c2a00aadf4901b a s223:OutletConnectionPoint ;
+    rdfs:label "OutletConnectionPoint" ;
+    s223:cnx <urn:anon:hash:231054042390633353.4> ;
+    s223:hasMedium s223:Constituent-Electricity .
+
 bdg1:178fa3a86e0fc55e0d39087fa7711aff a s223:DomainSpace ;
     rdfs:label "Domain-HVAC" ;
     s223:hasDomain s223:Domain-HVAC ;
@@ -522,6 +525,11 @@ bdg1:27967fc224f4ffd94032c8a851862769 a s223:Luminaire ;
     s223:hasPhysicalLocation bdg1:f9e99ac2c98b799f695df5c1e1aca159 ;
     s223:hasProperty bdg1:73abeca540415fb5cc14ce1b47d9591f,
         bdg1:c35f0fe3cf4279d9d51b8d8db038f987 .
+
+bdg1:44531f11cb0626bac97aa43d6732fdf2 a s223:OutletConnectionPoint ;
+    rdfs:label "OutletConnectionPoint" ;
+    s223:cnx <urn:anon:hash:231054042390633353.2> ;
+    s223:hasMedium s223:Constituent-Electricity .
 
 bdg1:623d78727293db6754a53c99d74131fb a s223:Luminaire ;
     rdfs:label "Luminaire" ;
@@ -810,12 +818,6 @@ bdg1:0a8ed6d561b158c49d4145abf05044a7 a s223:InletConnectionPoint ;
         <urn:anon:hash:8831795277718232770.13> ;
     s223:hasMedium s223:Constituent-Electricity .
 
-bdg1:11c04c42e073d0d0b9c2a00aadf4901b a s223:OutletConnectionPoint ;
-    rdfs:label "OutletConnectionPoint" ;
-    s223:cnx bdg1:e9d83bcd0340d3b2c702a83acd90a597,
-        <urn:anon:hash:231054042390633353.4> ;
-    s223:hasMedium s223:Constituent-Electricity .
-
 bdg1:2ec6c777b3ca86655677fc5ef4dd0242 a s223:InletConnectionPoint ;
     rdfs:label "InletConnectionPoint" ;
     s223:cnx bdg1:6b94d2f45496e556bbfe5020cd805a56,
@@ -826,12 +828,6 @@ bdg1:3a2dac267747a410f1146caf20e19624 a s223:InletConnectionPoint ;
     rdfs:label "InletConnectionPoint" ;
     s223:cnx bdg1:87dfeb5fa9182df28ee465465f416594,
         <urn:anon:hash:8831795277718232770.12> ;
-    s223:hasMedium s223:Constituent-Electricity .
-
-bdg1:44531f11cb0626bac97aa43d6732fdf2 a s223:OutletConnectionPoint ;
-    rdfs:label "OutletConnectionPoint" ;
-    s223:cnx bdg1:e2684126ff114d569384c6d3a21f953b,
-        <urn:anon:hash:231054042390633353.2> ;
     s223:hasMedium s223:Constituent-Electricity .
 
 bdg1:5f824b38a3005d7a877a46f3acfd8ce2 a s223:InletConnectionPoint ;

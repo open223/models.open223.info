@@ -37,6 +37,10 @@ pt2:TestRoom a s223:PhysicalSpace ;
     rdfs:label "Test room" ;
     s223:encloses pt2:DomainSpace .
 
+pt3:ElectricBreaker_1 a s223:ElectricBreaker ;
+    rdfs:label "Electric breaker 1" ;
+    s223:cnx pt3:BreakerOutletConnectionPoint_1 .
+
 pt3:Function1 a s223:Function ;
     rdfs:label "Function block1" ;
     s223:hasInput pt3:MotionProperty,
@@ -82,15 +86,18 @@ pt6:TestRoom a s223:PhysicalSpace ;
     rdfs:label "Test room" ;
     s223:encloses pt4:DomainSpace .
 
+pt7:Breaker a s223:ElectricBreaker ;
+    rdfs:label "Breaker" ;
+    s223:cnx pt7:BreakerOutletCP .
+
+pt8:Breaker a s223:ElectricBreaker ;
+    rdfs:label "Breaker" ;
+    s223:cnx pt8:BreakerOutletCP .
+
 pt1:DumbSwitch a s223:Equipment ;
     rdfs:label "Dumb switch" ;
     s223:cnx pt1:DumbSwitchOutletCP ;
     s223:hasConnectionPoint pt1:DumbSwitchOutletCP .
-
-pt3:ElectricBreaker_1 a s223:ElectricBreaker ;
-    rdfs:label "Electric breaker 1" ;
-    s223:cnx pt3:BreakerOutletConnectionPoint_1 ;
-    s223:hasConnectionPoint pt3:BreakerOutletConnectionPoint_1 .
 
 pt4:Breaker1 a s223:ElectricBreaker ;
     rdfs:label "Breaker1" ;
@@ -142,11 +149,6 @@ pt6:UserInputSwitch a s223:Equipment ;
     rdfs:label "User input switch" ;
     s223:hasProperty pt6:UserInputProperty .
 
-pt7:Breaker a s223:ElectricBreaker ;
-    rdfs:label "Breaker" ;
-    s223:cnx pt7:BreakerOutletCP ;
-    s223:hasConnectionPoint pt7:BreakerOutletCP .
-
 pt7:Circuit1 a s223:ElectricWire ;
     rdfs:label "Circuit1" ;
     s223:cnx pt7:BreakerOutletCP,
@@ -169,11 +171,6 @@ pt7:Motor3 a s223:Motor ;
     rdfs:label "Motor3" ;
     s223:cnx pt7:Motor3InletCP ;
     s223:hasConnectionPoint pt7:Motor3InletCP .
-
-pt8:Breaker a s223:ElectricBreaker ;
-    rdfs:label "Breaker" ;
-    s223:cnx pt8:BreakerOutletCP ;
-    s223:hasConnectionPoint pt8:BreakerOutletCP .
 
 pt8:Circuit1 a s223:ElectricWire ;
     rdfs:label "Circuit1" ;
@@ -264,6 +261,11 @@ pt2:OpticalPath a s223:Connection ;
     s223:cnx pt2:DomainSpaceInletCP,
         pt2:LuminaireOutletCP ;
     s223:hasMedium s223:Light-Visible .
+
+pt3:BreakerOutletConnectionPoint_1 a s223:OutletConnectionPoint ;
+    rdfs:label "Breaker outlet connection point 1" ;
+    s223:cnx pt3:ElectricWireToLuminaire ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
 pt3:ElectricWireToLuminaire a s223:ElectricWire ;
     rdfs:label "ElectricWireToLuminaire" ;
@@ -385,6 +387,16 @@ pt6:WireToLightFixture a s223:ElectricWire ;
         pt6:SmartSwitchOutlet ;
     s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
+pt7:BreakerOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Breaker outlet CP" ;
+    s223:cnx pt7:Circuit1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
+pt8:BreakerOutletCP a s223:OutletConnectionPoint ;
+    rdfs:label "Breaker outlet CP" ;
+    s223:cnx pt8:Circuit1 ;
+    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
+
 pt8:JunctionInletCP a s223:InletConnectionPoint ;
     rdfs:label "Junction inlet CP" ;
     s223:cnx pt8:Junction ;
@@ -437,12 +449,6 @@ pt2:LuminaireOutletCP a s223:OutletConnectionPoint ;
     s223:cnx pt2:Luminaire,
         pt2:OpticalPath ;
     s223:hasMedium s223:Light-Visible .
-
-pt3:BreakerOutletConnectionPoint_1 a s223:OutletConnectionPoint ;
-    rdfs:label "Breaker outlet connection point 1" ;
-    s223:cnx pt3:ElectricBreaker_1,
-        pt3:ElectricWireToLuminaire ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
 pt3:Luminaire a s223:Luminaire ;
     rdfs:label "Luminaire" ;
@@ -505,12 +511,6 @@ pt6:LuminaireOutletCP a s223:OutletConnectionPoint ;
         pt6:OpticalPath ;
     s223:hasMedium s223:Light-Visible .
 
-pt7:BreakerOutletCP a s223:OutletConnectionPoint ;
-    rdfs:label "Breaker outlet CP" ;
-    s223:cnx pt7:Breaker,
-        pt7:Circuit1 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
-
 pt7:Motor1InletCP a s223:InletConnectionPoint ;
     rdfs:label "Motor1Inlet CP" ;
     s223:cnx pt7:Motor1 ;
@@ -524,12 +524,6 @@ pt7:Motor2InletCP a s223:InletConnectionPoint ;
 pt7:Motor3InletCP a s223:InletConnectionPoint ;
     rdfs:label "Motor3Inlet CP" ;
     s223:cnx pt7:Motor3 ;
-    s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
-
-pt8:BreakerOutletCP a s223:OutletConnectionPoint ;
-    rdfs:label "Breaker outlet CP" ;
-    s223:cnx pt8:Breaker,
-        pt8:Circuit1 ;
     s223:hasMedium s223:AC-120VLN-1Ph-60Hz .
 
 pt8:JunctionOutletCP1 a s223:OutletConnectionPoint ;
