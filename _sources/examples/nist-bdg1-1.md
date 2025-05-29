@@ -10,11 +10,6 @@ kernelspec:
   name: python3
 ---
 
-```{warning}
-This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-05-23 16:11:56. The model file was last updated on 2025-05-05 16:23:51
-```
-        
 # NIST Example Building 1 Model 1
 
 Example Building 1 is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.
@@ -65,7 +60,6 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Actuator](https://explore.open223.info/s223/Actuator.html) | 12 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Luminaire](https://explore.open223.info/s223/Luminaire.html) | 12 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [TemperatureSensor](https://explore.open223.info/s223/TemperatureSensor.html) | 10 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [ElectricBreaker](https://explore.open223.info/s223/ElectricBreaker.html) | 6 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Damper](https://explore.open223.info/s223/Damper.html) | 6 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatingCoil](https://explore.open223.info/s223/HeatingCoil.html) | 3 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [FlowSensor](https://explore.open223.info/s223/FlowSensor.html) | 3 |
