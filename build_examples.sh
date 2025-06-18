@@ -4,7 +4,7 @@ set -ex
 # for debugging ontoenv
 export RUST_BACKTRACE=1
 
-ontoenv init models ontologies -i '*.ttl' --overwrite
+RUST_LOG=info ontoenv init models ontologies -i '*.ttl' --overwrite
 
 # run the tools/make_model_formats.py script on the models directory
 uv run python tools/make_model_formats.py models
