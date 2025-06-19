@@ -11862,6 +11862,32 @@ ex1:00005 a s223:AirHandlingUnit,
     ex1:returnAirInlet ex1:00006 ;
     ex1:supplyAirOutlet ex1:00008 .
 
+ex1:00044 a s223:Connectable,
+        s223:Equipment,
+        s223:HeatExchanger,
+        ex1:CondenserCoil ;
+    rdfs:label "condenser" ;
+    s223:cnx ex1:00045,
+        ex1:00046,
+        ex1:00047,
+        ex1:00048 ;
+    s223:connected ex1:00044,
+        ex1:00049 ;
+    s223:connectedFrom ex1:00044 ;
+    s223:connectedThrough ex1:00066,
+        ex1:00067 ;
+    s223:connectedTo ex1:00044,
+        ex1:00049 ;
+    s223:hasConnectionPoint ex1:00045,
+        ex1:00046,
+        ex1:00047,
+        ex1:00048 ;
+    ex1:refrigerantInlet ex1:00047 ;
+    ex1:refrigerantOutlet ex1:00048 ;
+    bob:airInlet ex1:00045 ;
+    bob:airOutlet ex1:00046 ;
+    rdfs:comment "condenser" .
+
 ex1:00058 a s223:Connectable,
         s223:Equipment,
         s223:Valve,
@@ -11871,8 +11897,10 @@ ex1:00058 a s223:Connectable,
         ex1:00060,
         ex1:00061,
         ex1:00062 ;
-    s223:connected ex1:00063 ;
-    s223:connectedFrom ex1:00063 ;
+    s223:connected ex1:00058,
+        ex1:00063 ;
+    s223:connectedFrom ex1:00058,
+        ex1:00063 ;
     s223:connectedThrough ex1:00068,
         ex1:00069 ;
     s223:connectedTo ex1:00058,
@@ -11899,9 +11927,11 @@ ex1:00039 a s223:Connectable,
         ex1:00041,
         ex1:00042,
         ex1:00043 ;
-    s223:connected ex1:00070,
+    s223:connected ex1:00039,
+        ex1:00070,
         ex1:00071 ;
-    s223:connectedFrom ex1:00070,
+    s223:connectedFrom ex1:00039,
+        ex1:00070,
         ex1:00071 ;
     s223:connectedThrough ex1:00073,
         ex1:00075 ;
@@ -11955,32 +11985,6 @@ ex1:00039 a s223:Connectable,
     ex1:refrigerantToCondenser ex1:00043 ;
     ex1:refrigerantToValve ex1:00042 .
 
-ex1:00044 a s223:Connectable,
-        s223:Equipment,
-        s223:HeatExchanger,
-        ex1:CondenserCoil ;
-    rdfs:label "condenser" ;
-    s223:cnx ex1:00045,
-        ex1:00046,
-        ex1:00047,
-        ex1:00048 ;
-    s223:connected ex1:00044,
-        ex1:00049 ;
-    s223:connectedFrom ex1:00044 ;
-    s223:connectedThrough ex1:00066,
-        ex1:00067 ;
-    s223:connectedTo ex1:00044,
-        ex1:00049 ;
-    s223:hasConnectionPoint ex1:00045,
-        ex1:00046,
-        ex1:00047,
-        ex1:00048 ;
-    ex1:refrigerantInlet ex1:00047 ;
-    ex1:refrigerantOutlet ex1:00048 ;
-    bob:airInlet ex1:00045 ;
-    bob:airOutlet ex1:00046 ;
-    rdfs:comment "condenser" .
-
 ex1:00084 a s223:Coil,
         s223:Connectable,
         s223:Equipment,
@@ -11991,8 +11995,10 @@ ex1:00084 a s223:Coil,
         ex1:00087,
         ex1:00088 ;
     s223:connected ex1:00081,
+        ex1:00084,
         ex1:00089 ;
     s223:connectedFrom ex1:00081,
+        ex1:00084,
         ex1:00089 ;
     s223:connectedThrough ex1:00095,
         ex1:00096 ;
@@ -12018,8 +12024,10 @@ ex1:00191 a s223:Coil,
         ex1:00194,
         ex1:00195 ;
     s223:connected ex1:00188,
+        ex1:00191,
         ex1:00196 ;
     s223:connectedFrom ex1:00188,
+        ex1:00191,
         ex1:00196 ;
     s223:connectedThrough ex1:00202,
         ex1:00203 ;
@@ -12045,8 +12053,10 @@ ex1:00298 a s223:Coil,
         ex1:00301,
         ex1:00302 ;
     s223:connected ex1:00295,
+        ex1:00298,
         ex1:00303 ;
     s223:connectedFrom ex1:00295,
+        ex1:00298,
         ex1:00303 ;
     s223:connectedThrough ex1:00309,
         ex1:00310 ;
@@ -12072,8 +12082,10 @@ ex1:00405 a s223:Coil,
         ex1:00408,
         ex1:00409 ;
     s223:connected ex1:00402,
+        ex1:00405,
         ex1:00410 ;
     s223:connectedFrom ex1:00402,
+        ex1:00405,
         ex1:00410 ;
     s223:connectedThrough ex1:00416,
         ex1:00417 ;
@@ -12099,8 +12111,10 @@ ex1:00512 a s223:Coil,
         ex1:00515,
         ex1:00516 ;
     s223:connected ex1:00509,
+        ex1:00512,
         ex1:00517 ;
     s223:connectedFrom ex1:00509,
+        ex1:00512,
         ex1:00517 ;
     s223:connectedThrough ex1:00523,
         ex1:00524 ;
@@ -12126,8 +12140,10 @@ ex1:00619 a s223:Coil,
         ex1:00622,
         ex1:00623 ;
     s223:connected ex1:00616,
+        ex1:00619,
         ex1:00624 ;
     s223:connectedFrom ex1:00616,
+        ex1:00619,
         ex1:00624 ;
     s223:connectedThrough ex1:00630,
         ex1:00631 ;
@@ -12153,8 +12169,10 @@ ex1:00726 a s223:Coil,
         ex1:00729,
         ex1:00730 ;
     s223:connected ex1:00723,
+        ex1:00726,
         ex1:00731 ;
     s223:connectedFrom ex1:00723,
+        ex1:00726,
         ex1:00731 ;
     s223:connectedThrough ex1:00737,
         ex1:00738 ;
@@ -12180,8 +12198,10 @@ ex1:00833 a s223:Coil,
         ex1:00836,
         ex1:00837 ;
     s223:connected ex1:00830,
+        ex1:00833,
         ex1:00838 ;
     s223:connectedFrom ex1:00830,
+        ex1:00833,
         ex1:00838 ;
     s223:connectedThrough ex1:00844,
         ex1:00845 ;
@@ -12207,8 +12227,10 @@ ex1:00940 a s223:Coil,
         ex1:00943,
         ex1:00944 ;
     s223:connected ex1:00937,
+        ex1:00940,
         ex1:00945 ;
     s223:connectedFrom ex1:00937,
+        ex1:00940,
         ex1:00945 ;
     s223:connectedThrough ex1:00951,
         ex1:00952 ;
@@ -12234,8 +12256,10 @@ ex1:01047 a s223:Coil,
         ex1:01050,
         ex1:01051 ;
     s223:connected ex1:01044,
+        ex1:01047,
         ex1:01052 ;
     s223:connectedFrom ex1:01044,
+        ex1:01047,
         ex1:01052 ;
     s223:connectedThrough ex1:01058,
         ex1:01059 ;
@@ -12261,8 +12285,10 @@ ex1:01154 a s223:Coil,
         ex1:01157,
         ex1:01158 ;
     s223:connected ex1:01151,
+        ex1:01154,
         ex1:01159 ;
     s223:connectedFrom ex1:01151,
+        ex1:01154,
         ex1:01159 ;
     s223:connectedThrough ex1:01165,
         ex1:01166 ;
@@ -12288,8 +12314,10 @@ ex1:01261 a s223:Coil,
         ex1:01264,
         ex1:01265 ;
     s223:connected ex1:01258,
+        ex1:01261,
         ex1:01266 ;
     s223:connectedFrom ex1:01258,
+        ex1:01261,
         ex1:01266 ;
     s223:connectedThrough ex1:01272,
         ex1:01273 ;
@@ -12315,8 +12343,10 @@ ex1:01368 a s223:Coil,
         ex1:01371,
         ex1:01372 ;
     s223:connected ex1:01365,
+        ex1:01368,
         ex1:01373 ;
     s223:connectedFrom ex1:01365,
+        ex1:01368,
         ex1:01373 ;
     s223:connectedThrough ex1:01379,
         ex1:01380 ;
@@ -12343,10 +12373,12 @@ ex1:00076 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:00076,
         ex1:00097 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:00076 ;
     s223:connectedThrough ex1:00099,
         ex1:00101,
         ex1:00106,
@@ -12413,10 +12445,12 @@ ex1:00183 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:00183,
         ex1:00204 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:00183 ;
     s223:connectedThrough ex1:00206,
         ex1:00208,
         ex1:00213,
@@ -12483,10 +12517,12 @@ ex1:00290 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:00290,
         ex1:00311 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:00290 ;
     s223:connectedThrough ex1:00313,
         ex1:00315,
         ex1:00320,
@@ -12553,10 +12589,12 @@ ex1:00397 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:00397,
         ex1:00418 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:00397 ;
     s223:connectedThrough ex1:00420,
         ex1:00422,
         ex1:00427,
@@ -12623,10 +12661,12 @@ ex1:00504 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:00504,
         ex1:00525 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:00504 ;
     s223:connectedThrough ex1:00527,
         ex1:00529,
         ex1:00534,
@@ -12693,10 +12733,12 @@ ex1:00611 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:00611,
         ex1:00632 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:00611 ;
     s223:connectedThrough ex1:00634,
         ex1:00636,
         ex1:00641,
@@ -12763,10 +12805,12 @@ ex1:00718 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:00718,
         ex1:00739 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:00718 ;
     s223:connectedThrough ex1:00741,
         ex1:00743,
         ex1:00748,
@@ -12833,10 +12877,12 @@ ex1:00825 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:00825,
         ex1:00846 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:00825 ;
     s223:connectedThrough ex1:00848,
         ex1:00850,
         ex1:00855,
@@ -12903,10 +12949,12 @@ ex1:00932 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:00932,
         ex1:00953 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:00932 ;
     s223:connectedThrough ex1:00955,
         ex1:00957,
         ex1:00962,
@@ -12973,10 +13021,12 @@ ex1:01039 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:01039,
         ex1:01060 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:01039 ;
     s223:connectedThrough ex1:01062,
         ex1:01064,
         ex1:01069,
@@ -13043,10 +13093,12 @@ ex1:01146 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:01146,
         ex1:01167 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:01146 ;
     s223:connectedThrough ex1:01169,
         ex1:01171,
         ex1:01176,
@@ -13113,10 +13165,12 @@ ex1:01253 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:01253,
         ex1:01274 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:01253 ;
     s223:connectedThrough ex1:01276,
         ex1:01278,
         ex1:01283,
@@ -13183,10 +13237,12 @@ ex1:01360 a s223:Connectable,
     s223:connected ex1:00001,
         ex1:00070,
         ex1:00071,
+        ex1:01360,
         ex1:01381 ;
     s223:connectedFrom ex1:00001,
         ex1:00070,
-        ex1:00071 ;
+        ex1:00071,
+        ex1:01360 ;
     s223:connectedThrough ex1:01383,
         ex1:01385,
         ex1:01390,

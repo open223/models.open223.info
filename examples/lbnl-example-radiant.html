@@ -569,7 +569,411 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
+@prefix ns1: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://qudt.org/schema/qudt/&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode ns1:LineNeutralVoltage-110V ;
+            sh:resultMessage &quot;Value must be an instance of ns2:QuantityKind&quot; ;
+            sh:resultPath ns2:hasQuantityKind ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/21ac93ef&gt; ;
+            sh:value &lt;http://qudt.org/vocab/quantitykind/Voltage&gt; ],
+        [ a sh:ValidationResult ;
+            sh:focusNode &lt;urn:ex/YKbncoJN336&gt; ;
+            sh:resultMessage &quot;s223: A `ConnectionPoint` shall be associated with exactly one `Connectable` using the relation `isConnectionPointOf`.&quot; ;
+            sh:resultPath ns1:isConnectionPointOf ;
+      
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223#Voltage-2400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-230V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-230V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-230V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-230V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-120V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/tGPgeyRr355
+  - urn:ex/tGPgeyRr355 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/dLYt0KIT319
+  - urn:ex/dLYt0KIT319 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineNeutralVoltage-3460V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-347V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/qZg3DGvk316
+  - urn:ex/qZg3DGvk316 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineLineVoltage-6000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/ihjgobmS409
+  - urn:ex/ihjgobmS409 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-10000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-SinglePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/LBWzUtoZ442
+  - urn:ex/LBWzUtoZ442 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-1730V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n9939c3c402ec44d39a3f0300bce7c031b61
+  - http://qudt.org/vocab/unit/PERCENT on n9939c3c402ec44d39a3f0300bce7c031b61 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n9939c3c402ec44d39a3f0300bce7c031b61 needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/VaZzJCtS350
+  - urn:ex/VaZzJCtS350 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/Pj1x4yV9368
+  - urn:ex/Pj1x4yV9368 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineLineVoltage-4160V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/78Qbi7Fo352
+  - urn:ex/78Qbi7Fo352 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n9939c3c402ec44d39a3f0300bce7c031b238
+  - http://qudt.org/vocab/unit/PERCENT on n9939c3c402ec44d39a3f0300bce7c031b238 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n9939c3c402ec44d39a3f0300bce7c031b238 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-380V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-PoE
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-PoE needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/2GPPHY5B129
+  - urn:ex/2GPPHY5B129 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineLineVoltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-12V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-12V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n9939c3c402ec44d39a3f0300bce7c031b226
+  - http://qudt.org/vocab/quantitykind/Temperature on n9939c3c402ec44d39a3f0300bce7c031b226 needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/KDRab1lr370
+  - urn:ex/KDRab1lr370 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/6xP216Xu27
+  - urn:ex/6xP216Xu27 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Frequency-50Hz
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-50Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-LineLineVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineLineVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-48.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/mOefS7S2337
+  - urn:ex/mOefS7S2337 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineNeutralVoltage-277V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-3300V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/LZjshvIF340
+  - urn:ex/LZjshvIF340 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineNeutralVoltage-1900V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-277V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-277V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/a4DCmbwh420
+  - urn:ex/a4DCmbwh420 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#NumberOfElectricalPhases-ThreePhase needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-4160V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-4160V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/RsJOTyRV373
+  - urn:ex/RsJOTyRV373 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineLineVoltage-10000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-10000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n9939c3c402ec44d39a3f0300bce7c031b144
+  - http://qudt.org/vocab/unit/PERCENT on n9939c3c402ec44d39a3f0300bce7c031b144 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n9939c3c402ec44d39a3f0300bce7c031b144 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-2V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-2V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n9939c3c402ec44d39a3f0300bce7c031b23
+  - http://qudt.org/vocab/unit/PERCENT on n9939c3c402ec44d39a3f0300bce7c031b23 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n9939c3c402ec44d39a3f0300bce7c031b23 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-12.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3460V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3460V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-120V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-120V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-415V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/bjwSmEDY138
+  - urn:ex/bjwSmEDY138 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-110V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/YKbncoJN336
+  - urn:ex/YKbncoJN336 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/SrkSOnTF89
+  - urn:ex/SrkSOnTF89 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/CsJNd2CT297
+  - urn:ex/CsJNd2CT297 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineLineVoltage-220V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-219V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/y62223k0107
+  - urn:ex/y62223k0107 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/1KK5lI2d83
+  - urn:ex/1KK5lI2d83 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Numerical-Voltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-Voltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+n9939c3c402ec44d39a3f0300bce7c031b359
+  - http://qudt.org/vocab/unit/PERCENT on n9939c3c402ec44d39a3f0300bce7c031b359 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n9939c3c402ec44d39a3f0300bce7c031b359 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/dv8t7etb101
+  - urn:ex/dv8t7etb101 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+n9939c3c402ec44d39a3f0300bce7c031b179
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n9939c3c402ec44d39a3f0300bce7c031b179 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n9939c3c402ec44d39a3f0300bce7c031b179 needs to be a http://qudt.org/schema/qudt/Unit
+urn:ex/BRYT4HS582
+  - urn:ex/BRYT4HS582 expected at least 1 instance(s) of ns1:BidirectionalConnectionPoint on path ns1:hasConnectionPoint
+http://data.ashrae.org/standard223#Voltage-3300V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3300V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/Apko0TOe520
+  - urn:ex/Apko0TOe520 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineNeutralVoltage-2400V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-2400V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-24V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-139V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-24V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-24V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCPositiveVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/ppGOzxUO461
+  - urn:ex/ppGOzxUO461 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/b5tdvVHM39
+  - urn:ex/b5tdvVHM39 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-347V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-347V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-DCVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-DCVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-Frequency
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Numerical-Frequency needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/DRxxau5r601
+  - urn:ex/DRxxau5r601 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-3V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-415V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-415V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCZeroVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-3810V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n9939c3c402ec44d39a3f0300bce7c031b34
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n9939c3c402ec44d39a3f0300bce7c031b34 needs to be a http://qudt.org/schema/qudt/QuantityKind
+  - http://qudt.org/vocab/unit/PERCENT on n9939c3c402ec44d39a3f0300bce7c031b34 needs to be a http://qudt.org/schema/qudt/Unit
+http://data.ashrae.org/standard223#EnumerationKind-Numerical
+  - http://qudt.org/vocab/quantitykind/Unknown on http://data.ashrae.org/standard223#EnumerationKind-Numerical needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/4fh7GlSA277
+  - urn:ex/4fh7GlSA277 expected at least 1 instance(s) of ns1:BidirectionalConnectionPoint on path ns1:hasConnectionPoint
+http://data.ashrae.org/standard223#Voltage-208V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-208V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-139V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-139V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-6.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/BmiW3IeK330
+  - urn:ex/BmiW3IeK330 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-2.5V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineLineVoltage-6600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-127V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-380.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/7Yn4H59D273
+  - urn:ex/7Yn4H59D273 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/auqKqKUP540
+  - urn:ex/auqKqKUP540 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineLineVoltage-480V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-5770V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases
+  - http://qudt.org/vocab/quantitykind/Dimensionless on http://data.ashrae.org/standard223#Numerical-NumberOfElectricalPhases needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#LineNeutralVoltage-110V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-110V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-3.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n9939c3c402ec44d39a3f0300bce7c031b27
+  - http://qudt.org/vocab/quantitykind/Temperature on n9939c3c402ec44d39a3f0300bce7c031b27 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Frequency-60Hz
+  - http://qudt.org/vocab/quantitykind/Frequency on http://data.ashrae.org/standard223#Frequency-60Hz needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-3810V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-3810V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/Xx7MnV9M582
+  - urn:ex/Xx7MnV9M582 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineLineVoltage-190V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/4L9brF9m219
+  - urn:ex/4L9brF9m219 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineLineVoltage-3000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-3000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/XGPv8y1i250
+  - urn:ex/XGPv8y1i250 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+n9939c3c402ec44d39a3f0300bce7c031b244
+  - http://qudt.org/vocab/unit/PERCENT on n9939c3c402ec44d39a3f0300bce7c031b244 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n9939c3c402ec44d39a3f0300bce7c031b244 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-127V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-127V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-6600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/68PIcWok524
+  - urn:ex/68PIcWok524 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-380V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-380V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n9939c3c402ec44d39a3f0300bce7c031b48
+  - http://qudt.org/vocab/unit/PERCENT on n9939c3c402ec44d39a3f0300bce7c031b48 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n9939c3c402ec44d39a3f0300bce7c031b48 needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/2ME0tCwW456
+  - urn:ex/2ME0tCwW456 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCNegativeVoltage-190.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/UzGWRDPZ9
+  - urn:ex/UzGWRDPZ9 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/AOowjS3s200
+  - urn:ex/AOowjS3s200 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-220V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-220V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-5770V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-5770V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/t0oRv7hG233
+  - urn:ex/t0oRv7hG233 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-219V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-219V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/vGQfwGxo176
+  - urn:ex/vGQfwGxo176 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-480V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-480V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-24.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+n9939c3c402ec44d39a3f0300bce7c031b241
+  - http://qudt.org/vocab/quantitykind/Temperature on n9939c3c402ec44d39a3f0300bce7c031b241 needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-5.0V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/mloUlnTr344
+  - urn:ex/mloUlnTr344 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/oyQ1DgZx70
+  - urn:ex/oyQ1DgZx70 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/sKh9n6ON367
+  - urn:ex/sKh9n6ON367 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/uVlW5FMz445
+  - urn:ex/uVlW5FMz445 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/hqp0aUUN168
+  - urn:ex/hqp0aUUN168 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineLineVoltage-600V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineLineVoltage-600V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/fVWrrgPi606
+  - urn:ex/fVWrrgPi606 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-6000V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-6000V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/SBePB6sI137
+  - urn:ex/SBePB6sI137 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineNeutralVoltage-1730V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-1730V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-190V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-190V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#DCPositiveVoltage-PoE
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCPositiveVoltage-PoE needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/1yoTn6BP186
+  - urn:ex/1yoTn6BP186 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/yBpJjQAV389
+  - urn:ex/yBpJjQAV389 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/uCwEUFeI345
+  - urn:ex/uCwEUFeI345 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/hlzlZfkY164
+  - urn:ex/hlzlZfkY164 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/z7sTel3w320
+  - urn:ex/z7sTel3w320 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Numerical-LineNeutralVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/CJ1DEcTJ550
+  - urn:ex/CJ1DEcTJ550 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/HnEWaTyu25
+  - urn:ex/HnEWaTyu25 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/BiKiJvUX264
+  - urn:ex/BiKiJvUX264 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#DCVoltage-DCNegativeVoltage needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/amTwuuDu463
+  - urn:ex/amTwuuDu463 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#LineNeutralVoltage-240V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#LineNeutralVoltage-240V needs to be a http://qudt.org/schema/qudt/QuantityKind
+http://data.ashrae.org/standard223#Voltage-1900V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-1900V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/aldnlUFo357
+  - urn:ex/aldnlUFo357 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/pv235IR9229
+  - urn:ex/pv235IR9229 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/kyIAgAAq325
+  - urn:ex/kyIAgAAq325 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/NzYF9trZ71
+  - urn:ex/NzYF9trZ71 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/XfllCghn64
+  - urn:ex/XfllCghn64 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+n9939c3c402ec44d39a3f0300bce7c031b44
+  - http://qudt.org/vocab/unit/PERCENT on n9939c3c402ec44d39a3f0300bce7c031b44 needs to be a http://qudt.org/schema/qudt/Unit
+  - http://qudt.org/vocab/quantitykind/VolumeFraction on n9939c3c402ec44d39a3f0300bce7c031b44 needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/ICJhYnMh502
+  - urn:ex/ICJhYnMh502 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/lvpLQvmp354
+  - urn:ex/lvpLQvmp354 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/SWdxEIhn26
+  - urn:ex/SWdxEIhn26 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/6bLp9flF404
+  - urn:ex/6bLp9flF404 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/OATdW6VI72
+  - urn:ex/OATdW6VI72 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+http://data.ashrae.org/standard223#Voltage-48V
+  - http://qudt.org/vocab/quantitykind/Voltage on http://data.ashrae.org/standard223#Voltage-48V needs to be a http://qudt.org/schema/qudt/QuantityKind
+urn:ex/aR68jkur483
+  - urn:ex/aR68jkur483 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/BfCfCErP353
+  - urn:ex/BfCfCErP353 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/KJ4qilWW90
+  - urn:ex/KJ4qilWW90 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
+urn:ex/1JpP6zXv670
+  - urn:ex/1JpP6zXv670 expected 1 instance(s) of ns1:Connectable on path ns1:isConnectionPointOf
 </pre></div>
 </div>
 </div>

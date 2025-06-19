@@ -62,6 +62,7 @@ mysystem:DualDuctDischargeSensor-cold-deck-damper-in a s223:InletConnectionPoint
     rdfs:label "Dualductdischargesensor Cold Deck Damper In" ;
     s223:cnx mysystem:DualDuctDischargeSensor-cold-deck-damper ;
     s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctDischargeSensor-cold-deck-damper ;
     s223:mapsTo mysystem:DualDuctDischargeSensor-cold-deck-in .
 
 mysystem:DualDuctDischargeSensor-discharge-air-flow a s223:QuantifiableObservableProperty ;
@@ -69,20 +70,6 @@ mysystem:DualDuctDischargeSensor-discharge-air-flow a s223:QuantifiableObservabl
     s223:hasAspect s223:Role-Discharge ;
     qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
     qudt:hasUnit unit:FT3-PER-MIN .
-
-mysystem:DualDuctDischargeSensor-duct-after-cold-deck-damper a s223:Connection,
-        s223:Duct ;
-    rdfs:label "Dualductdischargesensor Duct After Cold Deck Damper" ;
-    s223:cnx mysystem:DualDuctDischargeSensor-cold-deck-damper-out,
-        mysystem:DualDuctDischargeSensor-junction-in-2 ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:DualDuctDischargeSensor-duct-after-hot-deck-damper a s223:Connection,
-        s223:Duct ;
-    rdfs:label "Dualductdischargesensor Duct After Hot Deck Damper" ;
-    s223:cnx mysystem:DualDuctDischargeSensor-hot-deck-damper-out,
-        mysystem:DualDuctDischargeSensor-junction-in-1 ;
-    s223:hasMedium s223:Fluid-Air .
 
 mysystem:DualDuctDischargeSensor-hot-deck-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Dualductdischargesensor Hot Deck Damper Command" ;
@@ -94,24 +81,114 @@ mysystem:DualDuctDischargeSensor-hot-deck-damper-in a s223:InletConnectionPoint 
     rdfs:label "Dualductdischargesensor Hot Deck Damper In" ;
     s223:cnx mysystem:DualDuctDischargeSensor-hot-deck-damper ;
     s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctDischargeSensor-hot-deck-damper ;
     s223:mapsTo mysystem:DualDuctDischargeSensor-hot-deck-in .
 
 mysystem:DualDuctDischargeSensor-junction-out a s223:OutletConnectionPoint ;
     rdfs:label "Dualductdischargesensor Junction Out" ;
     s223:cnx mysystem:DualDuctDischargeSensor-junction ;
     s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctDischargeSensor-junction ;
     s223:mapsTo mysystem:DualDuctDischargeSensor-out .
 
 mysystem:PhysicalSpace-hvac-domain-out a s223:OutletConnectionPoint ;
     rdfs:label "Physicalspace Hvac Domain Out" ;
     s223:cnx mysystem:PhysicalSpace-hvac-domain ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:PhysicalSpace-hvac-domain .
+
+mysystem:DualDuctDischargeSensor-cold-deck-in a s223:InletConnectionPoint ;
+    rdfs:label "Dualductdischargesensor Cold Deck In" ;
+    s223:cnx mysystem:DualDuctDischargeSensor ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctDischargeSensor .
+
+mysystem:DualDuctDischargeSensor-hot-deck-in a s223:InletConnectionPoint ;
+    rdfs:label "Dualductdischargesensor Hot Deck In" ;
+    s223:cnx mysystem:DualDuctDischargeSensor ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctDischargeSensor .
+
+mysystem:DualDuctDischargeSensor-cold-deck-damper-out a s223:OutletConnectionPoint ;
+    rdfs:label "Dualductdischargesensor Cold Deck Damper Out" ;
+    s223:cnx mysystem:DualDuctDischargeSensor-cold-deck-damper,
+        mysystem:DualDuctDischargeSensor-duct-after-cold-deck-damper ;
+    s223:connectsThrough mysystem:DualDuctDischargeSensor-duct-after-cold-deck-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctDischargeSensor-cold-deck-damper .
+
+mysystem:DualDuctDischargeSensor-hot-deck-damper-out a s223:OutletConnectionPoint ;
+    rdfs:label "Dualductdischargesensor Hot Deck Damper Out" ;
+    s223:cnx mysystem:DualDuctDischargeSensor-duct-after-hot-deck-damper,
+        mysystem:DualDuctDischargeSensor-hot-deck-damper ;
+    s223:connectsThrough mysystem:DualDuctDischargeSensor-duct-after-hot-deck-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctDischargeSensor-hot-deck-damper .
+
+mysystem:DualDuctDischargeSensor-junction-in-1 a s223:InletConnectionPoint ;
+    rdfs:label "Dualductdischargesensor Junction In 1" ;
+    s223:cnx mysystem:DualDuctDischargeSensor-duct-after-hot-deck-damper,
+        mysystem:DualDuctDischargeSensor-junction ;
+    s223:connectsThrough mysystem:DualDuctDischargeSensor-duct-after-hot-deck-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctDischargeSensor-junction .
+
+mysystem:DualDuctDischargeSensor-junction-in-2 a s223:InletConnectionPoint ;
+    rdfs:label "Dualductdischargesensor Junction In 2" ;
+    s223:cnx mysystem:DualDuctDischargeSensor-duct-after-cold-deck-damper,
+        mysystem:DualDuctDischargeSensor-junction ;
+    s223:connectsThrough mysystem:DualDuctDischargeSensor-duct-after-cold-deck-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:DualDuctDischargeSensor-junction .
+
+mysystem:PhysicalSpace-hvac-domain-in a s223:InletConnectionPoint ;
+    rdfs:label "Physicalspace Hvac Domain In" ;
+    s223:cnx mysystem:PhysicalSpace-hvac-domain,
+        mysystem:dual-duct-supply-to-room-connection ;
+    s223:connectsThrough mysystem:dual-duct-supply-to-room-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:PhysicalSpace-hvac-domain .
+
+mysystem:DualDuctDischargeSensor-duct-after-cold-deck-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Dualductdischargesensor Duct After Cold Deck Damper" ;
+    s223:cnx mysystem:DualDuctDischargeSensor-cold-deck-damper-out,
+        mysystem:DualDuctDischargeSensor-junction-in-2 ;
+    s223:connectsAt mysystem:DualDuctDischargeSensor-cold-deck-damper-out,
+        mysystem:DualDuctDischargeSensor-junction-in-2 ;
+    s223:connectsFrom mysystem:DualDuctDischargeSensor-cold-deck-damper ;
+    s223:connectsTo mysystem:DualDuctDischargeSensor-junction ;
     s223:hasMedium s223:Fluid-Air .
+
+mysystem:DualDuctDischargeSensor-duct-after-hot-deck-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Dualductdischargesensor Duct After Hot Deck Damper" ;
+    s223:cnx mysystem:DualDuctDischargeSensor-hot-deck-damper-out,
+        mysystem:DualDuctDischargeSensor-junction-in-1 ;
+    s223:connectsAt mysystem:DualDuctDischargeSensor-hot-deck-damper-out,
+        mysystem:DualDuctDischargeSensor-junction-in-1 ;
+    s223:connectsFrom mysystem:DualDuctDischargeSensor-hot-deck-damper ;
+    s223:connectsTo mysystem:DualDuctDischargeSensor-junction ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:DualDuctDischargeSensor-out a s223:OutletConnectionPoint ;
+    rdfs:label "Dualductdischargesensor Out" ;
+    s223:cnx mysystem:DualDuctDischargeSensor,
+        mysystem:dual-duct-supply-to-room-connection ;
+    s223:connectsThrough mysystem:dual-duct-supply-to-room-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem:DualDuctDischargeSensor-discharge-air-flow ;
+    s223:isConnectionPointOf mysystem:DualDuctDischargeSensor .
 
 mysystem:dual-duct-supply-to-room-connection a s223:Connection,
         s223:Duct ;
     rdfs:label "Dual Duct Supply To Room Connection" ;
     s223:cnx mysystem:DualDuctDischargeSensor-out,
         mysystem:PhysicalSpace-hvac-domain-in ;
+    s223:connectsAt mysystem:DualDuctDischargeSensor-out,
+        mysystem:PhysicalSpace-hvac-domain-in ;
+    s223:connectsFrom mysystem:DualDuctDischargeSensor ;
+    s223:connectsTo mysystem:PhysicalSpace-hvac-domain ;
     s223:hasMedium s223:Fluid-Air .
 
 mysystem:DualDuctDischargeSensor a s223:DualDuctTerminal,
@@ -120,6 +197,9 @@ mysystem:DualDuctDischargeSensor a s223:DualDuctTerminal,
     s223:cnx mysystem:DualDuctDischargeSensor-cold-deck-in,
         mysystem:DualDuctDischargeSensor-hot-deck-in,
         mysystem:DualDuctDischargeSensor-out ;
+    s223:connected mysystem:PhysicalSpace-hvac-domain ;
+    s223:connectedThrough mysystem:dual-duct-supply-to-room-connection ;
+    s223:connectedTo mysystem:PhysicalSpace-hvac-domain ;
     s223:contains mysystem:DualDuctDischargeSensor-cold-deck-damper,
         mysystem:DualDuctDischargeSensor-hot-deck-damper,
         mysystem:DualDuctDischargeSensor-junction ;
@@ -127,51 +207,14 @@ mysystem:DualDuctDischargeSensor a s223:DualDuctTerminal,
         mysystem:DualDuctDischargeSensor-hot-deck-in,
         mysystem:DualDuctDischargeSensor-out .
 
-mysystem:DualDuctDischargeSensor-cold-deck-damper-out a s223:OutletConnectionPoint ;
-    rdfs:label "Dualductdischargesensor Cold Deck Damper Out" ;
-    s223:cnx mysystem:DualDuctDischargeSensor-cold-deck-damper,
-        mysystem:DualDuctDischargeSensor-duct-after-cold-deck-damper ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:DualDuctDischargeSensor-cold-deck-in a s223:InletConnectionPoint ;
-    rdfs:label "Dualductdischargesensor Cold Deck In" ;
-    s223:cnx mysystem:DualDuctDischargeSensor ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:DualDuctDischargeSensor-hot-deck-damper-out a s223:OutletConnectionPoint ;
-    rdfs:label "Dualductdischargesensor Hot Deck Damper Out" ;
-    s223:cnx mysystem:DualDuctDischargeSensor-duct-after-hot-deck-damper,
-        mysystem:DualDuctDischargeSensor-hot-deck-damper ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:DualDuctDischargeSensor-hot-deck-in a s223:InletConnectionPoint ;
-    rdfs:label "Dualductdischargesensor Hot Deck In" ;
-    s223:cnx mysystem:DualDuctDischargeSensor ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:DualDuctDischargeSensor-junction-in-1 a s223:InletConnectionPoint ;
-    rdfs:label "Dualductdischargesensor Junction In 1" ;
-    s223:cnx mysystem:DualDuctDischargeSensor-duct-after-hot-deck-damper,
-        mysystem:DualDuctDischargeSensor-junction ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:DualDuctDischargeSensor-junction-in-2 a s223:InletConnectionPoint ;
-    rdfs:label "Dualductdischargesensor Junction In 2" ;
-    s223:cnx mysystem:DualDuctDischargeSensor-duct-after-cold-deck-damper,
-        mysystem:DualDuctDischargeSensor-junction ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:PhysicalSpace-hvac-domain-in a s223:InletConnectionPoint ;
-    rdfs:label "Physicalspace Hvac Domain In" ;
-    s223:cnx mysystem:PhysicalSpace-hvac-domain,
-        mysystem:dual-duct-supply-to-room-connection ;
-    s223:hasMedium s223:Fluid-Air .
-
 mysystem:DualDuctDischargeSensor-cold-deck-damper a s223:Damper,
         g36:Damper ;
     rdfs:label "Dualductdischargesensor Cold Deck Damper" ;
     s223:cnx mysystem:DualDuctDischargeSensor-cold-deck-damper-in,
         mysystem:DualDuctDischargeSensor-cold-deck-damper-out ;
+    s223:connected mysystem:DualDuctDischargeSensor-junction ;
+    s223:connectedThrough mysystem:DualDuctDischargeSensor-duct-after-cold-deck-damper ;
+    s223:connectedTo mysystem:DualDuctDischargeSensor-junction ;
     s223:hasConnectionPoint mysystem:DualDuctDischargeSensor-cold-deck-damper-in,
         mysystem:DualDuctDischargeSensor-cold-deck-damper-out ;
     s223:hasProperty mysystem:DualDuctDischargeSensor-cold-deck-damper-command,
@@ -184,6 +227,9 @@ mysystem:DualDuctDischargeSensor-hot-deck-damper a s223:Damper,
     rdfs:label "Dualductdischargesensor Hot Deck Damper" ;
     s223:cnx mysystem:DualDuctDischargeSensor-hot-deck-damper-in,
         mysystem:DualDuctDischargeSensor-hot-deck-damper-out ;
+    s223:connected mysystem:DualDuctDischargeSensor-junction ;
+    s223:connectedThrough mysystem:DualDuctDischargeSensor-duct-after-hot-deck-damper ;
+    s223:connectedTo mysystem:DualDuctDischargeSensor-junction ;
     s223:hasConnectionPoint mysystem:DualDuctDischargeSensor-hot-deck-damper-in,
         mysystem:DualDuctDischargeSensor-hot-deck-damper-out ;
     s223:hasProperty mysystem:DualDuctDischargeSensor-hot-deck-damper-command,
@@ -191,28 +237,30 @@ mysystem:DualDuctDischargeSensor-hot-deck-damper a s223:Damper,
     s223:hasRole s223:Role-Heating,
         s223:Role-Supply .
 
+mysystem:PhysicalSpace-hvac-domain a s223:DomainSpace ;
+    rdfs:label "Physicalspace Hvac Domain" ;
+    s223:cnx mysystem:PhysicalSpace-hvac-domain-in,
+        mysystem:PhysicalSpace-hvac-domain-out ;
+    s223:connected mysystem:DualDuctDischargeSensor ;
+    s223:connectedFrom mysystem:DualDuctDischargeSensor ;
+    s223:connectedThrough mysystem:dual-duct-supply-to-room-connection ;
+    s223:hasConnectionPoint mysystem:PhysicalSpace-hvac-domain-in,
+        mysystem:PhysicalSpace-hvac-domain-out ;
+    s223:hasDomain s223:Domain-HVAC .
+
 mysystem:DualDuctDischargeSensor-junction a s223:Junction ;
     rdfs:label "Dualductdischargesensor Junction" ;
     s223:cnx mysystem:DualDuctDischargeSensor-junction-in-1,
         mysystem:DualDuctDischargeSensor-junction-in-2,
         mysystem:DualDuctDischargeSensor-junction-out ;
+    s223:connected mysystem:DualDuctDischargeSensor-cold-deck-damper,
+        mysystem:DualDuctDischargeSensor-hot-deck-damper ;
+    s223:connectedFrom mysystem:DualDuctDischargeSensor-cold-deck-damper,
+        mysystem:DualDuctDischargeSensor-hot-deck-damper ;
+    s223:connectedThrough mysystem:DualDuctDischargeSensor-duct-after-cold-deck-damper,
+        mysystem:DualDuctDischargeSensor-duct-after-hot-deck-damper ;
     s223:hasConnectionPoint mysystem:DualDuctDischargeSensor-junction-in-1,
         mysystem:DualDuctDischargeSensor-junction-in-2,
         mysystem:DualDuctDischargeSensor-junction-out ;
     s223:hasMedium s223:Fluid-Air .
-
-mysystem:PhysicalSpace-hvac-domain a s223:DomainSpace ;
-    rdfs:label "Physicalspace Hvac Domain" ;
-    s223:cnx mysystem:PhysicalSpace-hvac-domain-in,
-        mysystem:PhysicalSpace-hvac-domain-out ;
-    s223:hasConnectionPoint mysystem:PhysicalSpace-hvac-domain-in,
-        mysystem:PhysicalSpace-hvac-domain-out ;
-    s223:hasDomain s223:Domain-HVAC .
-
-mysystem:DualDuctDischargeSensor-out a s223:OutletConnectionPoint ;
-    rdfs:label "Dualductdischargesensor Out" ;
-    s223:cnx mysystem:DualDuctDischargeSensor,
-        mysystem:dual-duct-supply-to-room-connection ;
-    s223:hasMedium s223:Fluid-Air ;
-    s223:hasProperty mysystem:DualDuctDischargeSensor-discharge-air-flow .
 

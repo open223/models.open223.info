@@ -84,6 +84,7 @@ mysystem:VAVWithReheat-damper-in a s223:InletConnectionPoint ;
     rdfs:label "Vavwithreheat Damper In" ;
     s223:cnx mysystem:VAVWithReheat-damper ;
     s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat-damper ;
     s223:mapsTo mysystem:VAVWithReheat-air-in .
 
 mysystem:VAVWithReheat-discharge-air-flow a s223:QuantifiableObservableProperty ;
@@ -98,24 +99,11 @@ mysystem:VAVWithReheat-discharge-air-temp a s223:QuantifiableObservableProperty 
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:hasUnit unit:DEG_C .
 
-mysystem:VAVWithReheat-duct-after-damper a s223:Connection,
-        s223:Duct ;
-    rdfs:label "Vavwithreheat Duct After Damper" ;
-    s223:cnx mysystem:VAVWithReheat-damper-out,
-        mysystem:VAVWithReheat-reheat-coil-air-in ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:VAVWithReheat-pipe-hot-water-return-before-valve a s223:Connection,
-        s223:Pipe ;
-    rdfs:label "Vavwithreheat Pipe Hot Water Return Before Valve" ;
-    s223:cnx mysystem:VAVWithReheat-reheat-coil-valve-in,
-        mysystem:VAVWithReheat-reheat-coil-water-out ;
-    s223:hasMedium s223:Fluid-Water .
-
 mysystem:VAVWithReheat-reheat-coil-air-out a s223:OutletConnectionPoint ;
     rdfs:label "Vavwithreheat Reheat Coil Air Out" ;
     s223:cnx mysystem:VAVWithReheat-reheat-coil ;
     s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat-reheat-coil ;
     s223:mapsTo mysystem:VAVWithReheat-air-out .
 
 mysystem:VAVWithReheat-reheat-coil-return-water-temp a s223:QuantifiableObservableProperty ;
@@ -138,13 +126,125 @@ mysystem:VAVWithReheat-reheat-coil-valve-out a s223:OutletConnectionPoint ;
     rdfs:label "Vavwithreheat Reheat Coil Valve Out" ;
     s223:cnx mysystem:VAVWithReheat-reheat-coil-valve ;
     s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat-reheat-coil-valve ;
     s223:mapsTo mysystem:VAVWithReheat-hot-water-out .
+
+mysystem:VAVWithReheat-hot-water-in a s223:InletConnectionPoint ;
+    rdfs:label "Vavwithreheat Hot Water In" ;
+    s223:cnx mysystem:VAVWithReheat ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat .
+
+mysystem:VAVWithReheat-hot-water-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vavwithreheat Hot Water Out" ;
+    s223:cnx mysystem:VAVWithReheat ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat .
+
+mysystem:VAVWithReheat-reheat-coil-water-in a s223:InletConnectionPoint ;
+    rdfs:label "Vavwithreheat Reheat Coil Water In" ;
+    s223:cnx mysystem:VAVWithReheat-reheat-coil ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat-reheat-coil ;
+    s223:mapsTo mysystem:VAVWithReheat-hot-water-in .
+
+mysystem:PhysicalSpace-hvac-domain-in a s223:InletConnectionPoint ;
+    rdfs:label "Physicalspace Hvac Domain In" ;
+    s223:cnx mysystem:PhysicalSpace-hvac-domain,
+        mysystem:vav-supply-to-room-connection ;
+    s223:connectsThrough mysystem:vav-supply-to-room-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:PhysicalSpace-hvac-domain .
+
+mysystem:PhysicalSpace-hvac-domain-out a s223:OutletConnectionPoint ;
+    rdfs:label "Physicalspace Hvac Domain Out" ;
+    s223:cnx mysystem:PhysicalSpace-hvac-domain,
+        mysystem:room-return-to-vav-connection ;
+    s223:connectsThrough mysystem:room-return-to-vav-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:PhysicalSpace-hvac-domain .
+
+mysystem:VAVWithReheat-damper-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vavwithreheat Damper Out" ;
+    s223:cnx mysystem:VAVWithReheat-damper,
+        mysystem:VAVWithReheat-duct-after-damper ;
+    s223:connectsThrough mysystem:VAVWithReheat-duct-after-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat-damper .
+
+mysystem:VAVWithReheat-reheat-coil-air-in a s223:InletConnectionPoint ;
+    rdfs:label "Vavwithreheat Reheat Coil Air In" ;
+    s223:cnx mysystem:VAVWithReheat-duct-after-damper,
+        mysystem:VAVWithReheat-reheat-coil ;
+    s223:connectsThrough mysystem:VAVWithReheat-duct-after-damper ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat-reheat-coil .
+
+mysystem:VAVWithReheat-reheat-coil-valve-in a s223:InletConnectionPoint ;
+    rdfs:label "Vavwithreheat Reheat Coil Valve In" ;
+    s223:cnx mysystem:VAVWithReheat-pipe-hot-water-return-before-valve,
+        mysystem:VAVWithReheat-reheat-coil-valve ;
+    s223:connectsThrough mysystem:VAVWithReheat-pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat-reheat-coil-valve .
+
+mysystem:VAVWithReheat-reheat-coil-water-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vavwithreheat Reheat Coil Water Out" ;
+    s223:cnx mysystem:VAVWithReheat-pipe-hot-water-return-before-valve,
+        mysystem:VAVWithReheat-reheat-coil ;
+    s223:connectsThrough mysystem:VAVWithReheat-pipe-hot-water-return-before-valve ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat-reheat-coil .
+
+mysystem:VAVWithReheat-air-in a s223:InletConnectionPoint ;
+    rdfs:label "Vavwithreheat Air In" ;
+    s223:cnx mysystem:VAVWithReheat,
+        mysystem:room-return-to-vav-connection ;
+    s223:connectsThrough mysystem:room-return-to-vav-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat .
+
+mysystem:VAVWithReheat-air-out a s223:OutletConnectionPoint ;
+    rdfs:label "Vavwithreheat Air Out" ;
+    s223:cnx mysystem:VAVWithReheat,
+        mysystem:vav-supply-to-room-connection ;
+    s223:connectsThrough mysystem:vav-supply-to-room-connection ;
+    s223:hasMedium s223:Fluid-Air ;
+    s223:hasProperty mysystem:VAVWithReheat-discharge-air-flow,
+        mysystem:VAVWithReheat-discharge-air-temp ;
+    s223:isConnectionPointOf mysystem:VAVWithReheat .
+
+mysystem:VAVWithReheat-duct-after-damper a s223:Connection,
+        s223:Duct ;
+    rdfs:label "Vavwithreheat Duct After Damper" ;
+    s223:cnx mysystem:VAVWithReheat-damper-out,
+        mysystem:VAVWithReheat-reheat-coil-air-in ;
+    s223:connectsAt mysystem:VAVWithReheat-damper-out,
+        mysystem:VAVWithReheat-reheat-coil-air-in ;
+    s223:connectsFrom mysystem:VAVWithReheat-damper ;
+    s223:connectsTo mysystem:VAVWithReheat-reheat-coil ;
+    s223:hasMedium s223:Fluid-Air .
+
+mysystem:VAVWithReheat-pipe-hot-water-return-before-valve a s223:Connection,
+        s223:Pipe ;
+    rdfs:label "Vavwithreheat Pipe Hot Water Return Before Valve" ;
+    s223:cnx mysystem:VAVWithReheat-reheat-coil-valve-in,
+        mysystem:VAVWithReheat-reheat-coil-water-out ;
+    s223:connectsAt mysystem:VAVWithReheat-reheat-coil-valve-in,
+        mysystem:VAVWithReheat-reheat-coil-water-out ;
+    s223:connectsFrom mysystem:VAVWithReheat-reheat-coil ;
+    s223:connectsTo mysystem:VAVWithReheat-reheat-coil-valve ;
+    s223:hasMedium s223:Fluid-Water .
 
 mysystem:room-return-to-vav-connection a s223:Connection,
         s223:Duct ;
     rdfs:label "Room Return To Vav Connection" ;
     s223:cnx mysystem:PhysicalSpace-hvac-domain-out,
         mysystem:VAVWithReheat-air-in ;
+    s223:connectsAt mysystem:PhysicalSpace-hvac-domain-out,
+        mysystem:VAVWithReheat-air-in ;
+    s223:connectsFrom mysystem:PhysicalSpace-hvac-domain ;
+    s223:connectsTo mysystem:VAVWithReheat ;
     s223:hasMedium s223:Fluid-Air .
 
 mysystem:vav-supply-to-room-connection a s223:Connection,
@@ -152,58 +252,47 @@ mysystem:vav-supply-to-room-connection a s223:Connection,
     rdfs:label "Vav Supply To Room Connection" ;
     s223:cnx mysystem:PhysicalSpace-hvac-domain-in,
         mysystem:VAVWithReheat-air-out ;
+    s223:connectsAt mysystem:PhysicalSpace-hvac-domain-in,
+        mysystem:VAVWithReheat-air-out ;
+    s223:connectsFrom mysystem:VAVWithReheat ;
+    s223:connectsTo mysystem:PhysicalSpace-hvac-domain ;
     s223:hasMedium s223:Fluid-Air .
 
-mysystem:PhysicalSpace-hvac-domain-in a s223:InletConnectionPoint ;
-    rdfs:label "Physicalspace Hvac Domain In" ;
-    s223:cnx mysystem:PhysicalSpace-hvac-domain,
-        mysystem:vav-supply-to-room-connection ;
-    s223:hasMedium s223:Fluid-Air .
+mysystem:VAVWithReheat-damper a s223:Damper,
+        g36:Damper ;
+    rdfs:label "Vavwithreheat Damper" ;
+    s223:cnx mysystem:VAVWithReheat-damper-in,
+        mysystem:VAVWithReheat-damper-out ;
+    s223:connected mysystem:VAVWithReheat-reheat-coil ;
+    s223:connectedThrough mysystem:VAVWithReheat-duct-after-damper ;
+    s223:connectedTo mysystem:VAVWithReheat-reheat-coil ;
+    s223:hasConnectionPoint mysystem:VAVWithReheat-damper-in,
+        mysystem:VAVWithReheat-damper-out ;
+    s223:hasProperty mysystem:VAVWithReheat-damper-command,
+        mysystem:VAVWithReheat-damper-position .
 
-mysystem:PhysicalSpace-hvac-domain-out a s223:OutletConnectionPoint ;
-    rdfs:label "Physicalspace Hvac Domain Out" ;
-    s223:cnx mysystem:PhysicalSpace-hvac-domain,
-        mysystem:room-return-to-vav-connection ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:VAVWithReheat-damper-out a s223:OutletConnectionPoint ;
-    rdfs:label "Vavwithreheat Damper Out" ;
-    s223:cnx mysystem:VAVWithReheat-damper,
-        mysystem:VAVWithReheat-duct-after-damper ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:VAVWithReheat-hot-water-in a s223:InletConnectionPoint ;
-    rdfs:label "Vavwithreheat Hot Water In" ;
-    s223:cnx mysystem:VAVWithReheat ;
-    s223:hasMedium s223:Fluid-Water .
-
-mysystem:VAVWithReheat-hot-water-out a s223:OutletConnectionPoint ;
-    rdfs:label "Vavwithreheat Hot Water Out" ;
-    s223:cnx mysystem:VAVWithReheat ;
-    s223:hasMedium s223:Fluid-Water .
-
-mysystem:VAVWithReheat-reheat-coil-air-in a s223:InletConnectionPoint ;
-    rdfs:label "Vavwithreheat Reheat Coil Air In" ;
-    s223:cnx mysystem:VAVWithReheat-duct-after-damper,
-        mysystem:VAVWithReheat-reheat-coil ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:VAVWithReheat-reheat-coil-valve-in a s223:InletConnectionPoint ;
-    rdfs:label "Vavwithreheat Reheat Coil Valve In" ;
-    s223:cnx mysystem:VAVWithReheat-pipe-hot-water-return-before-valve,
-        mysystem:VAVWithReheat-reheat-coil-valve ;
-    s223:hasMedium s223:Fluid-Water .
-
-mysystem:VAVWithReheat-reheat-coil-water-in a s223:InletConnectionPoint ;
-    rdfs:label "Vavwithreheat Reheat Coil Water In" ;
-    s223:cnx mysystem:VAVWithReheat-reheat-coil ;
-    s223:hasMedium s223:Fluid-Water ;
-    s223:mapsTo mysystem:VAVWithReheat-hot-water-in .
+mysystem:VAVWithReheat-reheat-coil-valve a s223:Valve,
+        g36:HotWaterValve ;
+    rdfs:label "Vavwithreheat Reheat Coil Valve" ;
+    s223:cnx mysystem:VAVWithReheat-reheat-coil-valve-in,
+        mysystem:VAVWithReheat-reheat-coil-valve-out ;
+    s223:connected mysystem:VAVWithReheat-reheat-coil ;
+    s223:connectedFrom mysystem:VAVWithReheat-reheat-coil ;
+    s223:connectedThrough mysystem:VAVWithReheat-pipe-hot-water-return-before-valve ;
+    s223:hasConnectionPoint mysystem:VAVWithReheat-reheat-coil-valve-in,
+        mysystem:VAVWithReheat-reheat-coil-valve-out ;
+    s223:hasProperty mysystem:VAVWithReheat-reheat-coil-valve-command,
+        mysystem:VAVWithReheat-reheat-coil-valve-position .
 
 mysystem:PhysicalSpace-hvac-domain a s223:DomainSpace ;
     rdfs:label "Physicalspace Hvac Domain" ;
     s223:cnx mysystem:PhysicalSpace-hvac-domain-in,
         mysystem:PhysicalSpace-hvac-domain-out ;
+    s223:connected mysystem:VAVWithReheat ;
+    s223:connectedFrom mysystem:VAVWithReheat ;
+    s223:connectedThrough mysystem:room-return-to-vav-connection,
+        mysystem:vav-supply-to-room-connection ;
+    s223:connectedTo mysystem:VAVWithReheat ;
     s223:hasConnectionPoint mysystem:PhysicalSpace-hvac-domain-in,
         mysystem:PhysicalSpace-hvac-domain-out ;
     s223:hasDomain s223:Domain-HVAC .
@@ -215,6 +304,11 @@ mysystem:VAVWithReheat a s223:SingleDuctTerminal,
         mysystem:VAVWithReheat-air-out,
         mysystem:VAVWithReheat-hot-water-in,
         mysystem:VAVWithReheat-hot-water-out ;
+    s223:connected mysystem:PhysicalSpace-hvac-domain ;
+    s223:connectedFrom mysystem:PhysicalSpace-hvac-domain ;
+    s223:connectedThrough mysystem:room-return-to-vav-connection,
+        mysystem:vav-supply-to-room-connection ;
+    s223:connectedTo mysystem:PhysicalSpace-hvac-domain ;
     s223:contains mysystem:VAVWithReheat-damper,
         mysystem:VAVWithReheat-reheat-coil,
         mysystem:VAVWithReheat-reheat-coil-valve ;
@@ -223,46 +317,6 @@ mysystem:VAVWithReheat a s223:SingleDuctTerminal,
         mysystem:VAVWithReheat-hot-water-in,
         mysystem:VAVWithReheat-hot-water-out .
 
-mysystem:VAVWithReheat-damper a s223:Damper,
-        g36:Damper ;
-    rdfs:label "Vavwithreheat Damper" ;
-    s223:cnx mysystem:VAVWithReheat-damper-in,
-        mysystem:VAVWithReheat-damper-out ;
-    s223:hasConnectionPoint mysystem:VAVWithReheat-damper-in,
-        mysystem:VAVWithReheat-damper-out ;
-    s223:hasProperty mysystem:VAVWithReheat-damper-command,
-        mysystem:VAVWithReheat-damper-position .
-
-mysystem:VAVWithReheat-reheat-coil-valve a s223:Valve,
-        g36:HotWaterValve ;
-    rdfs:label "Vavwithreheat Reheat Coil Valve" ;
-    s223:cnx mysystem:VAVWithReheat-reheat-coil-valve-in,
-        mysystem:VAVWithReheat-reheat-coil-valve-out ;
-    s223:hasConnectionPoint mysystem:VAVWithReheat-reheat-coil-valve-in,
-        mysystem:VAVWithReheat-reheat-coil-valve-out ;
-    s223:hasProperty mysystem:VAVWithReheat-reheat-coil-valve-command,
-        mysystem:VAVWithReheat-reheat-coil-valve-position .
-
-mysystem:VAVWithReheat-reheat-coil-water-out a s223:OutletConnectionPoint ;
-    rdfs:label "Vavwithreheat Reheat Coil Water Out" ;
-    s223:cnx mysystem:VAVWithReheat-pipe-hot-water-return-before-valve,
-        mysystem:VAVWithReheat-reheat-coil ;
-    s223:hasMedium s223:Fluid-Water .
-
-mysystem:VAVWithReheat-air-in a s223:InletConnectionPoint ;
-    rdfs:label "Vavwithreheat Air In" ;
-    s223:cnx mysystem:VAVWithReheat,
-        mysystem:room-return-to-vav-connection ;
-    s223:hasMedium s223:Fluid-Air .
-
-mysystem:VAVWithReheat-air-out a s223:OutletConnectionPoint ;
-    rdfs:label "Vavwithreheat Air Out" ;
-    s223:cnx mysystem:VAVWithReheat,
-        mysystem:vav-supply-to-room-connection ;
-    s223:hasMedium s223:Fluid-Air ;
-    s223:hasProperty mysystem:VAVWithReheat-discharge-air-flow,
-        mysystem:VAVWithReheat-discharge-air-temp .
-
 mysystem:VAVWithReheat-reheat-coil a s223:HeatingCoil,
         g36:HotWaterCoil ;
     rdfs:label "Vavwithreheat Reheat Coil" ;
@@ -270,6 +324,12 @@ mysystem:VAVWithReheat-reheat-coil a s223:HeatingCoil,
         mysystem:VAVWithReheat-reheat-coil-air-out,
         mysystem:VAVWithReheat-reheat-coil-water-in,
         mysystem:VAVWithReheat-reheat-coil-water-out ;
+    s223:connected mysystem:VAVWithReheat-damper,
+        mysystem:VAVWithReheat-reheat-coil-valve ;
+    s223:connectedFrom mysystem:VAVWithReheat-damper ;
+    s223:connectedThrough mysystem:VAVWithReheat-duct-after-damper,
+        mysystem:VAVWithReheat-pipe-hot-water-return-before-valve ;
+    s223:connectedTo mysystem:VAVWithReheat-reheat-coil-valve ;
     s223:hasConnectionPoint mysystem:VAVWithReheat-reheat-coil-air-in,
         mysystem:VAVWithReheat-reheat-coil-air-out,
         mysystem:VAVWithReheat-reheat-coil-water-in,
