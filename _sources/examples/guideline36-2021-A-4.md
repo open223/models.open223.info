@@ -96,13 +96,18 @@ bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ER
 # load 223P library. We will load a recent copy from the models.open223.info
 # git repository; later, we will load this from the location of the actual standard
 s223 = Library.load(ontology_graph="https://open223.info/223p.ttl")
+unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit")
+quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind")
 
 # load the model into the BuildingMOTIF instance
 model = Model.create("urn:guideline36-2021-A-4")
 model.graph.parse("https://models.open223.info/guideline36-2021-A-4.ttl")
 
 # validate the model against 223P ontology
-ctx = model.validate([s223.get_shape_collection()], error_on_missing_imports=False)
+ctx = model.validate([s223.get_shape_collection(),
+                      unit.get_shape_collection(),
+                      quantitykind.get_shape_collection()],
+                     error_on_missing_imports=False)
 
 # print the validation result
 print(f"Model is valid: {ctx.valid}")
