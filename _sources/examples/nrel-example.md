@@ -10,6 +10,11 @@ kernelspec:
   name: python3
 ---
 
+```{warning}
+This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
+223P was last updated on 2025-06-24 17:37:14. The model file was last updated on 2025-06-20 10:26:03
+```
+        
 # NREL Example Building
 
 This is an example building provided by the National Renewable Energy Laboratory, built with the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) tool.

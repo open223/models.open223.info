@@ -409,7 +409,7 @@ document.write(`
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-06-17 09:40:18. The model file was last updated on 2024-09-15 23:37:32</p>
+223P was last updated on 2025-06-24 17:37:14. The model file was last updated on 2024-09-15 23:37:32</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="ashrae-guideline-36-2021-a-3-parallel-fan-powered-terminal-unit-constant-volume-fan">
 <h1>ASHRAE Guideline 36-2021 A-3 Parallel Fan-Powered Terminal Unit, Constant Volume Fan<a class="headerlink" href="#ashrae-guideline-36-2021-a-3-parallel-fan-powered-terminal-unit-constant-volume-fan" title="Link to this heading">#</a></h1>
@@ -589,32 +589,32 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#zone-co2-concentration&gt; ;
-            sh:resultMessage &quot;s223: Since Property &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#zone-co2-concentration&gt; has an `ofSubstance` relation, it should also have an `ofMedium` relation.&quot; ;
-            sh:resultPath ns2:ofSubstance ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraint [ ] ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/55c62c34&gt; ],
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#zone&gt; ;
+            sh:resultMessage &quot;g36: A Zone shall have at least one window switch on-off property using the relation hasProperty.&quot; ;
+            sh:resultPath ns2:hasProperty ;
+            sh:resultSeverity sh:Info ;
+            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/5fc4ad21&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan&gt; ;
-            sh
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-position&gt; ;
+            sh:resultMessage &quot;s223: An `ObservableProperty` is usually referred to by a `Sensor` using the relation `observes`.&quot; ;
+         
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-status
   - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-cmd
   - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper needs to match one of the following shapes: n029be94360ef435c84ea6c40ccd14fdeb29, n029be94360ef435c84ea6c40ccd14fdeb35
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve needs to match one of the following shapes: n029be94360ef435c84ea6c40ccd14fdeb57, n029be94360ef435c84ea6c40ccd14fdeb63
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve needs to match one of the following shapes: nfe90a2cc9ba7489aa5d175970243dfcdb57, nfe90a2cc9ba7489aa5d175970243dfcdb63
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper needs to match one of the following shapes: nfe90a2cc9ba7489aa5d175970243dfcdb29, nfe90a2cc9ba7489aa5d175970243dfcdb35
 </pre></div>
 </div>
 </div>

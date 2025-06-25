@@ -408,7 +408,7 @@ document.write(`
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-06-17 09:40:18. The model file was last updated on 2024-09-15 23:37:32</p>
+223P was last updated on 2025-06-24 17:37:14. The model file was last updated on 2024-09-15 23:37:32</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="ashrae-guideline-36-2021-a-9-multiple-zone-vav-air-handling-unit">
 <h1>ASHRAE Guideline 36-2021 A-9 Multiple Zone VAV Air Handling Unit<a class="headerlink" href="#ashrae-guideline-36-2021-a-9-multiple-zone-vav-air-handling-unit" title="Link to this heading">#</a></h1>
@@ -604,73 +604,72 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-hot-water-in&gt; ;
-            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-hot-water-in&gt; probably needs an association with a `Connection`, or use of `hasOptionalConnectionPoint` or `hasBoundaryConnectionPoint` qualifiers.&quot; ;
-            sh:resultPath ns2:connectsThrough ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n7fd084babf144a97b2f7ea1aeddbc318b3 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/d70ae582&gt; ],
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper&gt; ;
+            sh:resultMessage &quot;g36: A damper shall have at least one analog damper command property or at least two binary damper command properties using the relation hasProperty.&quot; ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape &lt;http://data.ashrae.org/standard223/1.0/extensions/g36#DamperOrShape1&gt; ;
+            sh:value &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valv
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-cmd
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-status
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-cmd
   - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd
   - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-status
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd
-  - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan
   - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd
+  - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-status
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-cmd
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-status
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan
   - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-sa-fan expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve needs to match one of the following shapes: ncd1c636c780b47918817632db812a41eb57, ncd1c636c780b47918817632db812a41eb63
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper needs to match one of the following shapes: ncd1c636c780b47918817632db812a41eb29, ncd1c636c780b47918817632db812a41eb35
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper needs to match one of the following shapes: ncd1c636c780b47918817632db812a41eb29, ncd1c636c780b47918817632db812a41eb35
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper needs to match one of the following shapes: ncd1c636c780b47918817632db812a41eb29, ncd1c636c780b47918817632db812a41eb35
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper needs to match one of the following shapes: ncd1c636c780b47918817632db812a41eb29, ncd1c636c780b47918817632db812a41eb35
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve needs to match one of the following shapes: ncd1c636c780b47918817632db812a41eb15, ncd1c636c780b47918817632db812a41eb21
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper needs to match one of the following shapes: ncd1c636c780b47918817632db812a41eb29, ncd1c636c780b47918817632db812a41eb35
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve needs to match one of the following shapes: ncd1c636c780b47918817632db812a41eb57, ncd1c636c780b47918817632db812a41eb63
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper needs to match one of the following shapes: ncd1c636c780b47918817632db812a41eb29, ncd1c636c780b47918817632db812a41eb35
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-economizer-oa-damper needs to match one of the following shapes: n7273f2fd4cab4bfd94db642420ae65f4b29, n7273f2fd4cab4bfd94db642420ae65f4b35
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve needs to match one of the following shapes: ncd1c636c780b47918817632db812a41eb57, ncd1c636c780b47918817632db812a41eb63
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-reheat-coil-valve needs to match one of the following shapes: n7273f2fd4cab4bfd94db642420ae65f4b57, n7273f2fd4cab4bfd94db642420ae65f4b63
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ra-damper needs to match one of the following shapes: n7273f2fd4cab4bfd94db642420ae65f4b29, n7273f2fd4cab4bfd94db642420ae65f4b35
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-clg-coil-valve needs to match one of the following shapes: n7273f2fd4cab4bfd94db642420ae65f4b15, n7273f2fd4cab4bfd94db642420ae65f4b21
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-ea-damper needs to match one of the following shapes: n7273f2fd4cab4bfd94db642420ae65f4b29, n7273f2fd4cab4bfd94db642420ae65f4b35
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-minimum-oa-damper needs to match one of the following shapes: n7273f2fd4cab4bfd94db642420ae65f4b29, n7273f2fd4cab4bfd94db642420ae65f4b35
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-reheat-coil-valve needs to match one of the following shapes: n7273f2fd4cab4bfd94db642420ae65f4b57, n7273f2fd4cab4bfd94db642420ae65f4b63
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-702-damper needs to match one of the following shapes: n7273f2fd4cab4bfd94db642420ae65f4b29, n7273f2fd4cab4bfd94db642420ae65f4b35
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#vav-701-damper needs to match one of the following shapes: n7273f2fd4cab4bfd94db642420ae65f4b29, n7273f2fd4cab4bfd94db642420ae65f4b35
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-9#MultipleZoneAhu-htg-coil-valve needs to match one of the following shapes: n7273f2fd4cab4bfd94db642420ae65f4b57, n7273f2fd4cab4bfd94db642420ae65f4b63
 </pre></div>
 </div>
 </div>
