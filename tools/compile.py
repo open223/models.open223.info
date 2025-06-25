@@ -37,17 +37,19 @@ if __name__ == "__main__":
     deps.serialize("deps.ttl", format="turtle")
     graph.serialize("graph.ttl", format="turtle")
 
+    if args.do_import:
+        print("Performing imports")
+        print(env.list_closure("http://data.ashrae.org/standard223/1.0/model/all"))
+        env.import_dependencies(graph)
+        namespaces = dict(graph.namespace_manager.namespaces())
     if args.reason:
         topquadrant_shacl._MAX_EXTERNAL_LOOPS = 10
         graph = infer(graph, deps)
-    if args.do_import:
-        env.import_dependencies(graph)
-        namespaces = dict(graph.namespace_manager.namespaces())
     if args.output:
         for prefix, uri in namespaces.items():
             graph.bind(prefix, uri)
         graph.serialize(args.output, format="turtle")
-    valid, _, report = validate(graph, graph)
+    valid, _, report = validate(graph, graph+deps)
     if not valid:
         print(report)
         raise Exception("Validation failed: {}".format(report))

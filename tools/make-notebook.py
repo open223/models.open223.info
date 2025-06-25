@@ -14,6 +14,7 @@ def generate_python_code(location):
     code_content = f"""\
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
+import ontoenv
 import logging
 
 # Create a BuildingMOTIF object. If you do not have Java installed, remove the "shacl_engine" parameter
