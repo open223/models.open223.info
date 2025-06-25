@@ -579,6 +579,7 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildingMOTIF</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ontoenv</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
@@ -627,629 +628,630 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode ns3:01204 ;
-            sh:resultMessage &quot;s223: An `ActuatableProperty` normally is referred to by `Equipment` using the relation `actuatedByProperty`.&quot; ;
-            sh:resultPath [ sh:inversePath ns2:actuatedByProperty ] ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/6457e1ed&gt; ],
+            sh:focusNode ns3:01024 ;
+            sh:resultMessage &quot;s223: An `EnumerableProperty` shall be associated with exactly one `EnumerationKind` using the relation `hasEnumerationKind`.&quot; ;
+            sh:resultPath ns2:hasEnumerationKind ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/275c546a&gt; ;
+            sh:value ns2:EnumerationKind-OnOff ],
         [ a sh:ValidationResult ;
-            sh:focusNode ns3:00614 ;
-            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://data.ashrae.org/standard223/data/scb-vrf#00614&gt; cannot be an instance of both ns2:BidirectionalConnectionPoint and ns2:OutletConnectionPoi
+            sh:focusNode ns3:01046 ;
+            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://data.ashrae.org/standard223/data/scb-vrf#01046&gt; cannot be an instance of both ns2:Bidirection
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-vrf#01319
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01319 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00907
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00907 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01159
-  - http://data.ashrae.org/standard223/data/scb-vrf#01159 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#00584
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00584 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01073
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01073 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00677
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00677 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01341
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01341 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00800
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00800 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01026
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01026 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01109
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01109 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01538
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01538 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00675
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00675 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01010
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01010 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00624
-  - http://data.ashrae.org/standard223/data/scb-vrf#00624 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#01000
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01000 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01016
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01016 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00259
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00259 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01184
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01184 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00970
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00970 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01289
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01289 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01327
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01327 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01230
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01230 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00219
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00219 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01012
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01012 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00247
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00247 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01323
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01323 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01450
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01450 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00566
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00566 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00913
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00913 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00994
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00994 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00144
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00144 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01133
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01133 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01333
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01333 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00542
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00542 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00580
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00580 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00792
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00792 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01394
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01394 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01127
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01127 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01220
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01220 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01077
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01077 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00780
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00780 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00150
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00150 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01014
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01014 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00253
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00253 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00917
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00917 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00598
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00598 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00859
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00859 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00972
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00972 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01214
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01214 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01240
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01240 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00893
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00893 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00477
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00477 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00998
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00998 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01018
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01018 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00479
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00479 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00255
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00255 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00267
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00267 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00592
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00592 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01434
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01434 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01226
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01226 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01345
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01345 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01339
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01339 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00182
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00182 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01228
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01228 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01238
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01238 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00053
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00053 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00695
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00695 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01117
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01117 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01466
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01466 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00265
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00265 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00717
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00717 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00152
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00152 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00544
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00544 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00380
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00380 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01422
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01422 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00271
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00271 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00538
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00538 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00374
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00374 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00140
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00140 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00396
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00396 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00570
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00570 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00223
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00223 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01444
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01444 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00249
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00249 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00996
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00996 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00275
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00275 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00697
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00697 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00110
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00110 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00794
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00794 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00459
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00459 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00699
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00699 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01145
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01145 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00824
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00824 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01111
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01111 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00269
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00269 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01252
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01252 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00148
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00148 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00691
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00691 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01325
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01325 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01052
-  - http://data.ashrae.org/standard223/data/scb-vrf#01052 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#00651
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00651 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00158
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00158 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00689
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00689 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00326
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00326 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00681
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00681 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01448
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01448 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01436
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01436 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01103
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01103 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00465
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00465 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00649
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00649 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00469
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00469 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01131
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01131 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00356
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00356 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00461
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00461 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00968
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00968 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01224
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01224 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01038
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01038 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00463
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00463 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00586
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00586 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01075
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01075 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00703
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00703 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00360
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00360 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01474
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01474 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00865
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00865 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00330
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00330 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00808
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00808 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01438
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01438 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01329
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01329 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00588
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00588 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00263
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00263 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00705
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00705 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00156
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00156 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00596
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00596 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01004
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01004 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00049
-  - http://data.ashrae.org/standard223/data/scb-vrf#00049 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#01123
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01123 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01315
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01315 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01022
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01022 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00362
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00362 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00806
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00806 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01440
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01440 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01107
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01107 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01119
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/data/scb-vrf#01119
   - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01119 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01105
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01105 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01335
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01335 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00257
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00257 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01331
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01331 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00582
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00582 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00483
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00483 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01293
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01293 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00261
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00261 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01430
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01430 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00433
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00433 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00245
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00245 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00919
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00919 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01232
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01232 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00673
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00673 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01426
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01426 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01002
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01002 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00487
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00487 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00915
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00915 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01182
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01182 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00368
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00368 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01006
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01006 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00899
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00899 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01115
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01115 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00594
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00594 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01400
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01400 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01008
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01008 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00590
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00590 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01208
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01208 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00112
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00112 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00289
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00289 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00503
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00503 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00887
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00887 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00647
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00647 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00473
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00473 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01020
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01020 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00895
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00895 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00540
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00540 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00324
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00324 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00796
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00796 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01359
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01359 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00863
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00863 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00574
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00574 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00168
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00168 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00138
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00138 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00693
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00693 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00481
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00481 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01125
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01125 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00679
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00679 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00370
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00370 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00273
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00273 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00897
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00897 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01432
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01432 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01079
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01079 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00758
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00758 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00804
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00804 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00812
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00812 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01398
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01398 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01291
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01291 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01129
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01129 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00578
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00578 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01287
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01287 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00931
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00931 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00354
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00354 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00685
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00685 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00756
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00756 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00889
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00889 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01101
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01101 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00752
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00752 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01216
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01216 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00903
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00903 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01210
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01210 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00572
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00572 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01180
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01180 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00786
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00786 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00782
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00782 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01321
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01321 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01442
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01442 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00838
-  - http://data.ashrae.org/standard223/data/scb-vrf#00838 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#00687
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00687 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01343
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01343 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01454
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01454 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00645
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00645 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00366
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00366 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00166
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00166 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00754
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00754 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01452
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01452 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00162
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00162 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00471
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00471 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00328
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00328 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00378
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00378 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00610
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00610 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00905
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00905 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00382
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00382 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01317
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01317 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00164
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00164 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01024
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01024 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00798
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00798 needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/data/scb-vrf#00945
   - http://data.ashrae.org/standard223/data/scb-vrf#00945 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#00788
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00788 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01222
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01222 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01470
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01470 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00810
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00810 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00790
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00790 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01424
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01424 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00221
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00221 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00784
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00784 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00435
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00435 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00475
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00475 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01337
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01337 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01212
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01212 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00217
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00217 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00358
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00358 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00568
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00568 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00142
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00142 needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/data/scb-vrf#00467
   - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00467 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00364
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00364 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00303
-  - http://data.ashrae.org/standard223/data/scb-vrf#00303 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#00861
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00861 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01236
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01236 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01234
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01234 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00437
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00437 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01218
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01218 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00701
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00701 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00170
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00170 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00196
-  - http://data.ashrae.org/standard223/data/scb-vrf#00196 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#01186
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01186 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00146
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00146 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00160
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00160 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01428
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01428 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00384
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00384 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00114
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00114 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00410
-  - http://data.ashrae.org/standard223/data/scb-vrf#00410 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#00485
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00485 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00683
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00683 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01446
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01446 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00901
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00901 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01347
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01347 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00376
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00376 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00966
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00966 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01468
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01468 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00277
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00277 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01396
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01396 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01472
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01472 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01398
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01398 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01321
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01321 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00217
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00217 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00574
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00574 needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/data/scb-vrf#00089
   - http://data.ashrae.org/standard223/data/scb-vrf#00089 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#00489
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00489 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00154
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00154 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00352
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00352 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00909
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00909 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00116
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00116 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00372
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00372 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00431
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00431 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00517
-  - http://data.ashrae.org/standard223/data/scb-vrf#00517 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
-http://data.ashrae.org/standard223/data/scb-vrf#01121
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01121 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00802
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00802 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00491
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00491 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00251
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00251 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01113
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01113 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00891
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00891 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00911
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00911 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#00576
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00576 needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/data/scb-vrf#01266
-  - http://data.ashrae.org/standard223/data/scb-vrf#01266 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#00221
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00221 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01333
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01333 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01317
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01317 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00435
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00435 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01440
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01440 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01129
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01129 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00699
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00699 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01234
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01234 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01180
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01180 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01287
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01287 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00582
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00582 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00485
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00485 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00790
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00790 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00972
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00972 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01073
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01073 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01020
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01020 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00380
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00380 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01018
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01018 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00798
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00798 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01131
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01131 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00792
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00792 needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/data/scb-vrf#01373
   - http://data.ashrae.org/standard223/data/scb-vrf#01373 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#00166
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00166 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01394
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01394 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01323
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01323 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00695
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00695 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01145
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01145 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00687
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00687 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00473
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00473 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01446
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01446 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00469
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00469 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00114
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00114 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00802
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00802 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01341
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01341 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00679
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00679 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01240
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01240 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00330
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00330 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00812
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00812 needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/data/scb-vrf#00731
   - http://data.ashrae.org/standard223/data/scb-vrf#00731 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#01472
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01472 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00796
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00796 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00610
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00610 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00624
+  - http://data.ashrae.org/standard223/data/scb-vrf#00624 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#01329
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01329 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01474
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01474 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00580
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00580 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00572
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00572 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00146
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00146 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01123
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01123 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01115
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01115 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00273
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00273 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00998
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00998 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00142
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00142 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00265
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00265 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01450
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01450 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00471
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00471 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01315
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01315 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00903
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00903 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01238
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01238 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00257
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00257 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00863
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00863 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00475
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00475 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00289
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00289 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01014
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01014 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00865
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00865 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01121
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01121 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00182
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00182 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00360
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00360 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01400
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01400 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00689
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00689 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00303
+  - http://data.ashrae.org/standard223/data/scb-vrf#00303 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#00267
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00267 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00905
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00905 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00154
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00154 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00150
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00150 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01335
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01335 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00261
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00261 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00366
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00366 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00168
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00168 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01004
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01004 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01117
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01117 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00810
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00810 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01428
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01428 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01008
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01008 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01228
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01228 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01024
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01024 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00459
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00459 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00481
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00481 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00649
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00649 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00368
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00368 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01222
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01222 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00251
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00251 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00356
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00356 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00489
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00489 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01331
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01331 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00584
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00584 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01236
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01236 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00517
+  - http://data.ashrae.org/standard223/data/scb-vrf#00517 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#00568
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00568 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01000
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01000 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01182
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01182 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00806
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00806 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00372
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00372 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01226
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01226 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00970
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00970 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00647
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00647 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01212
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01212 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00378
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00378 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00752
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00752 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01214
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01214 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00824
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00824 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00683
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00683 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00701
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00701 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00968
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00968 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00691
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00691 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01208
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01208 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00996
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00996 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00800
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00800 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00861
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00861 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00901
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00901 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00463
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00463 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00376
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00376 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00384
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00384 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00909
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00909 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01343
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01343 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00431
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00431 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01291
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01291 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01224
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01224 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01470
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01470 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01430
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01430 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00249
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00249 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00570
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00570 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00326
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00326 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00247
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00247 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00917
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00917 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00540
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00540 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00277
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00277 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00328
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00328 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00596
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00596 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00479
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00479 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00352
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00352 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00324
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00324 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01327
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01327 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00112
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00112 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01442
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01442 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00140
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00140 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01454
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01454 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00756
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00756 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00544
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00544 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00364
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00364 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00697
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00697 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01159
+  - http://data.ashrae.org/standard223/data/scb-vrf#01159 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#01252
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01252 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01339
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01339 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00804
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00804 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00362
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00362 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00255
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00255 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00675
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00675 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00966
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00966 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00370
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00370 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01186
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01186 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00592
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00592 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00170
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00170 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01448
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01448 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01026
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01026 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00542
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00542 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00907
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00907 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00758
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00758 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01266
+  - http://data.ashrae.org/standard223/data/scb-vrf#01266 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#00483
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00483 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00160
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00160 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00465
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00465 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01103
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01103 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01107
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01107 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01232
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01232 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00491
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00491 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01127
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01127 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01210
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01210 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00788
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00788 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00219
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00219 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01319
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01319 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00566
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00566 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01113
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01113 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00269
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00269 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00144
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00144 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00677
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00677 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01422
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01422 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01345
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01345 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00433
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00433 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00382
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00382 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00919
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00919 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00354
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00354 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01438
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01438 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01337
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01337 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01216
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01216 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01038
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01038 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01184
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01184 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01075
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01075 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00893
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00893 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00538
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00538 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00578
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00578 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00152
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00152 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01002
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01002 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00196
+  - http://data.ashrae.org/standard223/data/scb-vrf#00196 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#01432
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01432 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00223
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00223 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00487
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00487 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01010
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01010 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00162
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00162 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00673
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00673 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01538
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01538 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01452
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01452 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00897
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00897 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01012
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01012 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01293
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01293 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01436
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01436 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00374
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00374 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00245
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00245 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00889
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00889 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00263
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00263 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01444
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01444 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01125
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01125 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01325
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01325 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00685
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00685 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00703
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00703 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00148
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00148 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00754
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00754 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00156
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00156 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01111
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01111 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01230
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01230 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00275
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00275 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00717
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00717 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01077
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01077 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00158
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00158 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00053
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00053 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00784
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00784 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01079
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01079 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01105
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01105 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00786
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00786 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01109
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01109 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00259
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00259 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00651
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00651 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00808
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00808 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00588
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00588 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00931
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00931 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00859
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00859 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00396
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00396 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00586
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00586 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00116
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00116 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01347
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01347 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01006
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01006 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01218
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01218 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01133
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01133 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00358
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00358 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00594
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00594 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00899
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00899 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01289
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01289 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00780
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00780 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00253
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00253 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00477
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00477 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00110
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00110 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00437
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00437 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00271
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00271 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00693
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00693 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00164
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00164 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00049
+  - http://data.ashrae.org/standard223/data/scb-vrf#00049 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#01359
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01359 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01220
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01220 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00705
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00705 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00895
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00895 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00838
+  - http://data.ashrae.org/standard223/data/scb-vrf#00838 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#00681
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00681 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00913
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00913 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01468
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01468 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01101
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01101 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00410
+  - http://data.ashrae.org/standard223/data/scb-vrf#00410 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#00794
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00794 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00994
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00994 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00915
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00915 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00911
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00911 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00138
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00138 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00891
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00891 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01426
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01426 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00590
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00590 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00461
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00461 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01016
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01016 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01424
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#01424 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00782
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00782 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01022
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01022 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01052
+  - http://data.ashrae.org/standard223/data/scb-vrf#01052 expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/data/scb-vrf#01434
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01434 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00503
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00503 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01466
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01466 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00598
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00598 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00887
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#00887 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00645
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00645 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#01396
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/data/scb-vrf#01396 needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/data/scb-vrf#00576
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/data/scb-vrf#00576 needs to be a http://data.ashrae.org/standard223#EnumerationKind
 </pre></div>
 </div>
 </div>

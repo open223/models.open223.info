@@ -535,6 +535,7 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildingMOTIF</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ontoenv</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
@@ -582,158 +583,160 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/sKh9n6ON367&gt; ;
+            sh:focusNode &lt;urn:ex/hlzlZfkY164&gt; ;
             sh:resultMessage &quot;s223: A `ConnectionPoint` shall be associated with exactly one `Connectable` using the relation `isConnectionPointOf`.&quot; ;
             sh:resultPath ns2:isConnectionPointOf ;
             sh:resultSeverity sh:Violation ;
             sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/a1e017f1&gt; ],
+            sh:sourceShape &lt;urn:well-known/6030771c&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;urn:ex/I4kSJoAo387&gt; ;
-            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;urn:ex/I4kSJoAo387&gt; probably needs an association with a `Connection`, or use of `hasOptionalConnectionPoint` or `hasBoundaryConnectionPoint` qualifiers.&quot; ;
-            sh:resultPath ns2:connectsT
+            sh:focusNode &lt;urn:ex/UzGWRDPZ9&gt; ;
+            sh:resultMessage &quot;s223: A `ConnectionPoint` shall be associated with exactly one `Connectable` using the relation `isConnectionPointOf`.&quot; ;
+            sh:resultPath ns2:isConnectionPointOf ;
+            sh:resultSeverity sh:Violation ;
+    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/BmiW3IeK330
-  - urn:ex/BmiW3IeK330 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/Pj1x4yV9368
-  - urn:ex/Pj1x4yV9368 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/Xx7MnV9M582
-  - urn:ex/Xx7MnV9M582 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/CJ1DEcTJ550
-  - urn:ex/CJ1DEcTJ550 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/pv235IR9229
-  - urn:ex/pv235IR9229 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/ihjgobmS409
-  - urn:ex/ihjgobmS409 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/BfCfCErP353
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>urn:ex/BfCfCErP353
   - urn:ex/BfCfCErP353 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/uCwEUFeI345
-  - urn:ex/uCwEUFeI345 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/uVlW5FMz445
-  - urn:ex/uVlW5FMz445 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/ppGOzxUO461
-  - urn:ex/ppGOzxUO461 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/hlzlZfkY164
-  - urn:ex/hlzlZfkY164 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/bjwSmEDY138
-  - urn:ex/bjwSmEDY138 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/1yoTn6BP186
-  - urn:ex/1yoTn6BP186 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/AOowjS3s200
-  - urn:ex/AOowjS3s200 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/oyQ1DgZx70
-  - urn:ex/oyQ1DgZx70 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/6xP216Xu27
-  - urn:ex/6xP216Xu27 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/auqKqKUP540
-  - urn:ex/auqKqKUP540 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/mOefS7S2337
-  - urn:ex/mOefS7S2337 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/fVWrrgPi606
-  - urn:ex/fVWrrgPi606 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/1KK5lI2d83
-  - urn:ex/1KK5lI2d83 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 urn:ex/LZjshvIF340
   - urn:ex/LZjshvIF340 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/lvpLQvmp354
-  - urn:ex/lvpLQvmp354 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/qZg3DGvk316
-  - urn:ex/qZg3DGvk316 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/hqp0aUUN168
-  - urn:ex/hqp0aUUN168 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/amTwuuDu463
-  - urn:ex/amTwuuDu463 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/KDRab1lr370
-  - urn:ex/KDRab1lr370 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/mloUlnTr344
-  - urn:ex/mloUlnTr344 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/CsJNd2CT297
-  - urn:ex/CsJNd2CT297 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/aR68jkur483
-  - urn:ex/aR68jkur483 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/HnEWaTyu25
-  - urn:ex/HnEWaTyu25 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/SrkSOnTF89
-  - urn:ex/SrkSOnTF89 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/bjwSmEDY138
+  - urn:ex/bjwSmEDY138 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/t0oRv7hG233
+  - urn:ex/t0oRv7hG233 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/tGPgeyRr355
+  - urn:ex/tGPgeyRr355 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 urn:ex/DRxxau5r601
   - urn:ex/DRxxau5r601 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/BiKiJvUX264
-  - urn:ex/BiKiJvUX264 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/OATdW6VI72
-  - urn:ex/OATdW6VI72 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/KJ4qilWW90
-  - urn:ex/KJ4qilWW90 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/2GPPHY5B129
-  - urn:ex/2GPPHY5B129 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/aldnlUFo357
-  - urn:ex/aldnlUFo357 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/XGPv8y1i250
-  - urn:ex/XGPv8y1i250 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/BRYT4HS582
-  - urn:ex/BRYT4HS582 expected at least 1 instance(s) of ns2:BidirectionalConnectionPoint on path ns2:hasConnectionPoint
-urn:ex/yBpJjQAV389
-  - urn:ex/yBpJjQAV389 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/6bLp9flF404
-  - urn:ex/6bLp9flF404 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/68PIcWok524
-  - urn:ex/68PIcWok524 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/YKbncoJN336
+  - urn:ex/YKbncoJN336 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/78Qbi7Fo352
+  - urn:ex/78Qbi7Fo352 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/ppGOzxUO461
+  - urn:ex/ppGOzxUO461 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 urn:ex/4L9brF9m219
   - urn:ex/4L9brF9m219 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/yBpJjQAV389
+  - urn:ex/yBpJjQAV389 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/z7sTel3w320
+  - urn:ex/z7sTel3w320 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/RsJOTyRV373
+  - urn:ex/RsJOTyRV373 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/dLYt0KIT319
+  - urn:ex/dLYt0KIT319 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/uVlW5FMz445
+  - urn:ex/uVlW5FMz445 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/hqp0aUUN168
+  - urn:ex/hqp0aUUN168 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/uCwEUFeI345
+  - urn:ex/uCwEUFeI345 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/SrkSOnTF89
+  - urn:ex/SrkSOnTF89 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/lvpLQvmp354
+  - urn:ex/lvpLQvmp354 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/CJ1DEcTJ550
+  - urn:ex/CJ1DEcTJ550 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 urn:ex/a4DCmbwh420
   - urn:ex/a4DCmbwh420 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/4fh7GlSA277
-  - urn:ex/4fh7GlSA277 expected at least 1 instance(s) of ns2:BidirectionalConnectionPoint on path ns2:hasConnectionPoint
+urn:ex/aldnlUFo357
+  - urn:ex/aldnlUFo357 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/HnEWaTyu25
+  - urn:ex/HnEWaTyu25 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/KDRab1lr370
+  - urn:ex/KDRab1lr370 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 urn:ex/vGQfwGxo176
   - urn:ex/vGQfwGxo176 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 urn:ex/y62223k0107
   - urn:ex/y62223k0107 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/dLYt0KIT319
-  - urn:ex/dLYt0KIT319 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/z7sTel3w320
-  - urn:ex/z7sTel3w320 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/LBWzUtoZ442
-  - urn:ex/LBWzUtoZ442 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/SBePB6sI137
-  - urn:ex/SBePB6sI137 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/dv8t7etb101
-  - urn:ex/dv8t7etb101 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/tGPgeyRr355
-  - urn:ex/tGPgeyRr355 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/2ME0tCwW456
-  - urn:ex/2ME0tCwW456 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/t0oRv7hG233
-  - urn:ex/t0oRv7hG233 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/ICJhYnMh502
-  - urn:ex/ICJhYnMh502 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/sKh9n6ON367
-  - urn:ex/sKh9n6ON367 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/SWdxEIhn26
-  - urn:ex/SWdxEIhn26 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/1JpP6zXv670
-  - urn:ex/1JpP6zXv670 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/7Yn4H59D273
-  - urn:ex/7Yn4H59D273 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/YKbncoJN336
-  - urn:ex/YKbncoJN336 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 urn:ex/Apko0TOe520
   - urn:ex/Apko0TOe520 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/VaZzJCtS350
-  - urn:ex/VaZzJCtS350 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/78Qbi7Fo352
-  - urn:ex/78Qbi7Fo352 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/XfllCghn64
-  - urn:ex/XfllCghn64 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/NzYF9trZ71
-  - urn:ex/NzYF9trZ71 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/BiKiJvUX264
+  - urn:ex/BiKiJvUX264 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/7Yn4H59D273
+  - urn:ex/7Yn4H59D273 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/sKh9n6ON367
+  - urn:ex/sKh9n6ON367 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/oyQ1DgZx70
+  - urn:ex/oyQ1DgZx70 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/ihjgobmS409
+  - urn:ex/ihjgobmS409 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/2GPPHY5B129
+  - urn:ex/2GPPHY5B129 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/Xx7MnV9M582
+  - urn:ex/Xx7MnV9M582 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/OATdW6VI72
+  - urn:ex/OATdW6VI72 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/CsJNd2CT297
+  - urn:ex/CsJNd2CT297 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/amTwuuDu463
+  - urn:ex/amTwuuDu463 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/BmiW3IeK330
+  - urn:ex/BmiW3IeK330 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/SWdxEIhn26
+  - urn:ex/SWdxEIhn26 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/fVWrrgPi606
+  - urn:ex/fVWrrgPi606 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/LBWzUtoZ442
+  - urn:ex/LBWzUtoZ442 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 urn:ex/b5tdvVHM39
   - urn:ex/b5tdvVHM39 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/RsJOTyRV373
-  - urn:ex/RsJOTyRV373 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-urn:ex/UzGWRDPZ9
-  - urn:ex/UzGWRDPZ9 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/1KK5lI2d83
+  - urn:ex/1KK5lI2d83 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/KJ4qilWW90
+  - urn:ex/KJ4qilWW90 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 urn:ex/kyIAgAAq325
   - urn:ex/kyIAgAAq325 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/6xP216Xu27
+  - urn:ex/6xP216Xu27 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/BRYT4HS582
+  - urn:ex/BRYT4HS582 expected at least 1 instance(s) of ns2:BidirectionalConnectionPoint on path ns2:hasConnectionPoint
+urn:ex/ICJhYnMh502
+  - urn:ex/ICJhYnMh502 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/1yoTn6BP186
+  - urn:ex/1yoTn6BP186 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/SBePB6sI137
+  - urn:ex/SBePB6sI137 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/mOefS7S2337
+  - urn:ex/mOefS7S2337 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/4fh7GlSA277
+  - urn:ex/4fh7GlSA277 expected at least 1 instance(s) of ns2:BidirectionalConnectionPoint on path ns2:hasConnectionPoint
+urn:ex/Pj1x4yV9368
+  - urn:ex/Pj1x4yV9368 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/6bLp9flF404
+  - urn:ex/6bLp9flF404 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/XfllCghn64
+  - urn:ex/XfllCghn64 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/mloUlnTr344
+  - urn:ex/mloUlnTr344 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/AOowjS3s200
+  - urn:ex/AOowjS3s200 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/auqKqKUP540
+  - urn:ex/auqKqKUP540 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/VaZzJCtS350
+  - urn:ex/VaZzJCtS350 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/qZg3DGvk316
+  - urn:ex/qZg3DGvk316 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/1JpP6zXv670
+  - urn:ex/1JpP6zXv670 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/UzGWRDPZ9
+  - urn:ex/UzGWRDPZ9 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/68PIcWok524
+  - urn:ex/68PIcWok524 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/hlzlZfkY164
+  - urn:ex/hlzlZfkY164 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/NzYF9trZ71
+  - urn:ex/NzYF9trZ71 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/dv8t7etb101
+  - urn:ex/dv8t7etb101 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/XGPv8y1i250
+  - urn:ex/XGPv8y1i250 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/2ME0tCwW456
+  - urn:ex/2ME0tCwW456 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/aR68jkur483
+  - urn:ex/aR68jkur483 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+urn:ex/pv235IR9229
+  - urn:ex/pv235IR9229 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 </pre></div>
 </div>
 </div>

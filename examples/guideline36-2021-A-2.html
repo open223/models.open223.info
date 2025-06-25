@@ -547,6 +547,7 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildingMOTIF</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ontoenv</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
@@ -594,26 +595,25 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone&gt; ;
-            sh:resultMessage &quot;g36: A Zone shall have at least one binary zone occupancy property using the relation hasProperty&quot; ;
-            sh:resultPath ns2:hasProperty ;
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-out&gt; ;
+            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-out&gt; probably needs an association with a `Connection`, or use of `hasOptionalConnectionPoint` or `hasBoundaryConnectionPoint` qualifiers.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
             sh:resultSeverity sh:Info ;
-            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/aa74bb6c&gt; ],
+            sh:sourceConstraint _:ne61a079c1cb44b4eb486845a2e89c571b11 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/904425f1&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-position&gt; ;
-            sh:resultMessage &quot;s223: An `ObservableProperty` is usually referred to by a `Sensor` using the relation `observes`.&quot; ;
-       
+            sh:focusNode &lt;htt
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper needs to match one of the following shapes: n966c11634d3c4aea88bfe250a80bdc20b29, n966c11634d3c4aea88bfe250a80bdc20b35
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve needs to match one of the following shapes: n966c11634d3c4aea88bfe250a80bdc20b57, n966c11634d3c4aea88bfe250a80bdc20b63
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve needs to match one of the following shapes: n60c4491f5e2a4b7fb937b7a70277745eb57, n60c4491f5e2a4b7fb937b7a70277745eb63
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper needs to match one of the following shapes: n60c4491f5e2a4b7fb937b7a70277745eb29, n60c4491f5e2a4b7fb937b7a70277745eb35
 </pre></div>
 </div>
 </div>

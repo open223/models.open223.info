@@ -518,6 +518,7 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildingMOTIF</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ontoenv</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
@@ -565,25 +566,25 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-hot-deck-damper-position&gt; ;
-            sh:resultMessage &quot;s223: An `ObservableProperty` is usually referred to by a `Sensor` using the relation `observes`.&quot; ;
-            sh:resultPath [ sh:inversePath ns2:observes ] ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/1f91766f&gt; ],
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-cold-deck-in&gt; ;
+            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-cold-deck-in&gt; probably needs an association with a `Connection`, or use of `hasOptionalConnectionPoint` or `hasBoundaryConnectionPoint` qualifiers.&quot; ;
+            sh:resultPath ns2:connectsThrough ;
+            sh:resultSeverity sh:Info ;
+            sh:sourceConstraint _:nef769beeae0e430c828f5df60be9e59cb7 ;
+            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/a2f5f972&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-cold-deck-damper&gt; ;
-            sh:resultMessage &quot;g36: A damper shall have at least one analog damper co
+            
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-hot-deck-damper-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-hot-deck-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-cold-deck-damper-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-cold-deck-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-cold-deck-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-cold-deck-damper needs to match one of the following shapes: nc11a45209d9241ecb8dfcd74e6afb1a7b29, nc11a45209d9241ecb8dfcd74e6afb1a7b35
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-hot-deck-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-hot-deck-damper needs to match one of the following shapes: nc11a45209d9241ecb8dfcd74e6afb1a7b29, nc11a45209d9241ecb8dfcd74e6afb1a7b35
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-hot-deck-damper needs to match one of the following shapes: n344543b13c2a49f68ffba990782d1d00b29, n344543b13c2a49f68ffba990782d1d00b35
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-cold-deck-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-8#DualDuctDischargeSensor-cold-deck-damper needs to match one of the following shapes: n344543b13c2a49f68ffba990782d1d00b29, n344543b13c2a49f68ffba990782d1d00b35
 </pre></div>
 </div>
 </div>
