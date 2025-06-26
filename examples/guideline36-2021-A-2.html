@@ -595,25 +595,25 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-out&gt; ;
-            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-hot-water-out&gt; probably needs an association with a `Connection`, or use of `hasOptionalConnectionPoint` or `hasBoundaryConnectionPoint` qualifiers.&quot; ;
-            sh:resultPath ns2:connectsThrough ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:ne61a079c1cb44b4eb486845a2e89c571b11 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/904425f1&gt; ],
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#zone-temp&gt; ;
+            sh:resultMessage &quot;s223: An `ObservableProperty` is usually referred to by a `Sensor` using the relation `observes`.&quot; ;
+            sh:resultPath [ sh:inversePath ns2:observes ] ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/3fa3d60d&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;htt
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command&gt; ;
+            sh:resultMessage &quot;s223: If the relation `hasAspect` is present, it shall associate the `Property` with an `Enume
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve needs to match one of the following shapes: n60c4491f5e2a4b7fb937b7a70277745eb57, n60c4491f5e2a4b7fb937b7a70277745eb63
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-reheat-coil-valve needs to match one of the following shapes: n623d58b512404d7388b52efcff8e1ac7b57, n623d58b512404d7388b52efcff8e1ac7b63
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper needs to match one of the following shapes: n60c4491f5e2a4b7fb937b7a70277745eb29, n60c4491f5e2a4b7fb937b7a70277745eb35
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-2#VAVWithReheat-damper needs to match one of the following shapes: n623d58b512404d7388b52efcff8e1ac7b29, n623d58b512404d7388b52efcff8e1ac7b35
 </pre></div>
 </div>
 </div>

@@ -28,8 +28,16 @@ from datetime import datetime
 import glob
 import os
 from myst_nb import glue
-last_updated = os.path.getmtime("ontologies/223p.ttl")
-last_updated_formatted = datetime.fromtimestamp(last_updated).strftime("%Y-%m-%d %H:%M:%S")
+import subprocess
+
+def get_git_last_modified_date(file_path):
+    """Gets the last modified date of a file from git."""
+    git_cmd = ["git", "log", "-1", "--format=%ci", "--", file_path]
+    date_str = subprocess.check_output(git_cmd, text=True).strip()
+    return datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S %z')
+
+last_updated_dt = get_git_last_modified_date("ontologies/223p.ttl")
+last_updated_formatted = last_updated_dt.strftime("%Y-%m-%d %H:%M:%S")
 glue("last_updated", last_updated_formatted)
 ```
 
@@ -42,18 +50,21 @@ The following models may be out of date with the latest 223P:
 ```{code-cell} python3
 :tags: [remove-input]
 # loop through all the models and find the last time they were updated
-# on the file system
+# from git
 models = glob.glob("models/*.ttl")
 outofdate = {}
 for model in models:
-    # if the modified time is after the last_updated time,
-    # then add the model to the last_updated dictionary
-    if os.path.getmtime(model) < last_updated:
-        outofdate[model] = os.path.getmtime(model)
+    # if the modified time is before the last_updated_dt time,
+    # then add the model to the outofdate dictionary
+    model_last_updated_dt = get_git_last_modified_date(model)
+    if model_last_updated_dt < last_updated_dt:
+        outofdate[model] = model_last_updated_dt
 
-display_out_of_date_models = "The following models may be out of date with the latest 223P: \n"
-for model, updated in outofdate.items():
-    print(f"{model} was last updated on {datetime.fromtimestamp(updated).strftime('%Y-%m-%d %H:%M:%S')}")
+# sort by date, descending
+sorted_outofdate = sorted(outofdate.items(), key=lambda item: item[1], reverse=True)
+
+for model, updated in sorted_outofdate:
+    print(f"- {model} was last updated on {updated.strftime('%Y-%m-%d %H:%M:%S')}")
 ```
 
 ## Table of Contents

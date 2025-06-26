@@ -566,22 +566,21 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone&gt; ;
-            sh:resultMessage &quot;g36: A Zone shall have at least one window switch on-off property using the relation hasProperty.&quot; ;
-            sh:resultPath ns2:hasProperty ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/f6a8b43f&gt; ],
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-temp&gt; ;
+            sh:resultMessage &quot;s223: An `ObservableProperty` is usually referred to by a `Sensor` using the relation `observes`.&quot; ;
+            sh:resultPath [ sh:inversePath ns2:observes ] ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/09dfed29&gt; ],
         [ a sh:ValidationResult ;
             sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-duct-after-damper&gt; ;
-            sh:resultMessage &quot;s223: A `Connection` shall have two or more `connectsAt` relations to connection points&quot; ;
-            sh:resultPath
+            sh:resultMessage &quot;s223: You need either an `InletConnectionPoint` and an `OutletConnectionPoint`, or at least one `Bidi
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper needs to match one of the following shapes: n4ff6bb1568864d02ac2eec498c5e856ab29, n4ff6bb1568864d02ac2eec498c5e856ab35
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper needs to match one of the following shapes: ndf03dbacd83a44f49f4d049a6548616bb29, ndf03dbacd83a44f49f4d049a6548616bb35
 </pre></div>
 </div>
 </div>

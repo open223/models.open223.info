@@ -583,38 +583,39 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-in&gt; ;
-            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-supply-air-in&gt; probably needs an association with a `Connection`, or use of `hasOptionalConnectionPoint` or `hasBoundaryConnectionPoint` qualifiers.&quot; ;
-            sh:resultPath ns3:connectsThrough ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:n57fa6f796ecf41ae8cfe2e2ba0f0cf3ab11 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/993dadfd&gt; ],
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command&gt; ;
+            sh:resultMessage &quot;s223: If the relation `hasAspect` is present, it shall associate the `Property` with an `EnumerationKind`.&quot; ;
+            sh:resultPath ns2:hasAspect ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/deca5d73&gt; ;
+            sh:value ns2:EnumerationKind-Position ],
         [ a sh:ValidationResult ;
-           
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve&gt; ;
+            sh:resultMessage &quot;g36: A HotWa
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-status
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-status
   - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-cmd
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-cmd
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan expected at least 1 instance(s) of ns3:EnumeratedActuatableProperty on path ns3:hasProperty
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-fan expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve needs to match one of the following shapes: n5e194265487a404d8b87c33cf7f147d2b57, n5e194265487a404d8b87c33cf7f147d2b63
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-reheat-coil-valve needs to match one of the following shapes: n9859ddc671524d9383730332c6367e2cb57, n9859ddc671524d9383730332c6367e2cb63
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper needs to match one of the following shapes: n5e194265487a404d8b87c33cf7f147d2b29, n5e194265487a404d8b87c33cf7f147d2b35
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-3#ParallelFpuConstantFan-damper needs to match one of the following shapes: n9859ddc671524d9383730332c6367e2cb29, n9859ddc671524d9383730332c6367e2cb35
 </pre></div>
 </div>
 </div>
