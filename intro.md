@@ -64,7 +64,7 @@ for model in models:
 sorted_outofdate = sorted(outofdate.items(), key=lambda item: item[1], reverse=True)
 
 for model, updated in sorted_outofdate:
-    print(f"- `{model}` was last updated on {updated.strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"- {model} was last updated on {updated.strftime('%Y-%m-%d %H:%M:%S')}")
 ```
 
 ## Table of Contents
