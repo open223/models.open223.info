@@ -409,7 +409,7 @@ document.write(`
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-06-24 17:37:14. The model file was last updated on 2024-09-15 23:37:32</p>
+223P was last updated on 2025-07-08 10:11:44. The model file was last updated on 2024-09-15 23:37:32</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="ashrae-guideline-36-2021-a-7-dual-duct-terminal-unit-with-inlet-sensors">
 <h1>ASHRAE Guideline 36-2021 A-7 Dual Duct Terminal Unit with Inlet Sensors<a class="headerlink" href="#ashrae-guideline-36-2021-a-7-dual-duct-terminal-unit-with-inlet-sensors" title="Link to this heading">#</a></h1>
@@ -559,32 +559,32 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-position&gt; ;
-            sh:resultMessage &quot;s223: An `ObservableProperty` is usually referred to by a `Sensor` using the relation `observes`.&quot; ;
-            sh:resultPath [ sh:inversePath ns2:observes ] ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/37e50d80&gt; ],
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#zone&gt; ;
+            sh:resultMessage &quot;g36: A Zone shall have at least one window switch on-off property using the relation hasProperty.&quot; ;
+            sh:resultPath ns3:hasProperty ;
+            sh:resultSeverity sh:Info ;
+            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/d810ceaf&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper&gt; ;
-            sh:resultMessage &quot;g36: A damper shall have at least one analog damper command
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-in&gt; ;
+            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-d
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-command
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper needs to match one of the following shapes: n57b4f60987e14aaf901a1f890d553fe0b29, n57b4f60987e14aaf901a1f890d553fe0b35
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper
-  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper needs to match one of the following shapes: n57b4f60987e14aaf901a1f890d553fe0b29, n57b4f60987e14aaf901a1f890d553fe0b35
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-cold-deck-damper needs to match one of the following shapes: n8b36fa66a3ef40b6b6cbc3bdfcca42d6b29, n8b36fa66a3ef40b6b6cbc3bdfcca42d6b35
+http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper
+  - http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-7#DualDuctInletSensors-hot-deck-damper needs to match one of the following shapes: n8b36fa66a3ef40b6b6cbc3bdfcca42d6b29, n8b36fa66a3ef40b6b6cbc3bdfcca42d6b35
 </pre></div>
 </div>
 </div>

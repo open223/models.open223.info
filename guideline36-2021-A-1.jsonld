@@ -1,5 +1,52 @@
 [
     {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#mapsTo": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-in"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Vavcoolingonly Damper In"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#hasAspect": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Role-Discharge"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Vavcoolingonly Discharge Air Flow"
+            }
+        ]
+    },
+    {
         "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone",
         "@type": [
             "http://data.ashrae.org/standard223#Zone",
@@ -30,77 +77,6 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-duct-after-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Vavcoolingonly Duct After Damper"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#vav-supply-to-room-connection",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Vav Supply To Room Connection"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-duct-before-damper",
-        "@type": [
-            "http://data.ashrae.org/standard223#Connection",
-            "http://data.ashrae.org/standard223#Duct"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Vavcoolingonly Duct Before Damper"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-out",
-        "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Vavcoolingonly Damper Out"
-            }
-        ]
-    },
-    {
         "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain",
         "@type": [
             "http://data.ashrae.org/standard223#DomainSpace"
@@ -125,42 +101,26 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#",
         "@type": [
-            "http://data.ashrae.org/standard223#Damper",
-            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-in"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-out"
-            }
-        ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command"
-            },
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-position"
-            }
+            "http://www.w3.org/2002/07/owl#Ontology"
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Vavcoolingonly Damper"
+                "@value": ""
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#imports": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/model/all"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-out",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-duct-before-damper",
         "@type": [
-            "http://data.ashrae.org/standard223#OutletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#room-return-to-vav-connection"
-            }
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -169,28 +129,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Physicalspace Hvac Domain Out"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#hasMedium": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
-            }
-        ],
-        "http://data.ashrae.org/standard223#mapsTo": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-in"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Vavcoolingonly Damper In"
+                "@value": "Vavcoolingonly Duct Before Damper"
             }
         ]
     },
@@ -221,28 +160,123 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-co2-concentration",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace",
         "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+            "http://data.ashrae.org/standard223#PhysicalSpace"
         ],
-        "http://data.ashrae.org/standard223#ofSubstance": [
+        "http://data.ashrae.org/standard223#encloses": [
             {
-                "@id": "http://data.ashrae.org/standard223#Constituent-CO2"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/MoleFraction"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PPM"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Zone Co2 Concentration"
+                "@value": "Physicalspace"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow-sensor",
+        "@type": [
+            "http://data.ashrae.org/standard223#Sensor"
+        ],
+        "http://data.ashrae.org/standard223#hasObservationLocation": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out"
+            }
+        ],
+        "http://data.ashrae.org/standard223#observes": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Vavcoolingonly Discharge Air Flow Sensor"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#vav-supply-to-room-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Vavcoolingonly Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-position",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PERCENT"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Vavcoolingonly Damper Position"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#vav-supply-to-room-connection",
+        "@type": [
+            "http://data.ashrae.org/standard223#Connection"
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Vav Supply To Room Connection"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#room-return-to-vav-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Vavcoolingonly In"
             }
         ]
     },
@@ -284,77 +318,30 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-position",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/DimensionlessRatio"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/PERCENT"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Vavcoolingonly Damper Position"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-actuator",
-        "@type": [
-            "http://data.ashrae.org/standard223#Actuator"
-        ],
-        "http://data.ashrae.org/standard223#actuatedByProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command"
-            }
-        ],
-        "http://data.ashrae.org/standard223#actuates": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Vavcoolingonly Damper Actuator"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow",
-        "@type": [
-            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
-        ],
-        "http://data.ashrae.org/standard223#hasAspect": [
-            {
-                "@id": "http://data.ashrae.org/standard223#Role-Discharge"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasQuantityKind": [
-            {
-                "@id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate"
-            }
-        ],
-        "http://qudt.org/schema/qudt/hasUnit": [
-            {
-                "@id": "http://qudt.org/vocab/unit/FT3-PER-MIN"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Vavcoolingonly Discharge Air Flow"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-out",
         "@type": [
             "http://data.ashrae.org/standard223#OutletConnectionPoint"
+        ],
+        "http://data.ashrae.org/standard223#cnx": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#room-return-to-vav-connection"
+            }
+        ],
+        "http://data.ashrae.org/standard223#hasMedium": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Fluid-Air"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Physicalspace Hvac Domain Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-in",
+        "@type": [
+            "http://data.ashrae.org/standard223#InletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
@@ -366,14 +353,9 @@
                 "@id": "http://data.ashrae.org/standard223#Fluid-Air"
             }
         ],
-        "http://data.ashrae.org/standard223#hasProperty": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow"
-            }
-        ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Vavcoolingonly Out"
+                "@value": "Physicalspace Hvac Domain In"
             }
         ]
     },
@@ -403,14 +385,10 @@
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain-in",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-duct-after-damper",
         "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
-        ],
-        "http://data.ashrae.org/standard223#cnx": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#vav-supply-to-room-connection"
-            }
+            "http://data.ashrae.org/standard223#Connection",
+            "http://data.ashrae.org/standard223#Duct"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
@@ -419,81 +397,103 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Physicalspace Hvac Domain In"
+                "@value": "Vavcoolingonly Duct After Damper"
             }
         ]
     },
     {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#",
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper",
         "@type": [
-            "http://www.w3.org/2002/07/owl#Ontology"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": ""
-            }
-        ],
-        "http://www.w3.org/2002/07/owl#imports": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/model/all"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-in",
-        "@type": [
-            "http://data.ashrae.org/standard223#InletConnectionPoint"
+            "http://data.ashrae.org/standard223#Damper",
+            "http://data.ashrae.org/standard223/1.0/extensions/g36#Damper"
         ],
         "http://data.ashrae.org/standard223#cnx": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#room-return-to-vav-connection"
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-in"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-out"
             }
+        ],
+        "http://data.ashrae.org/standard223#hasProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command"
+            },
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-position"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Vavcoolingonly Damper"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#zone-co2-concentration",
+        "@type": [
+            "http://data.ashrae.org/standard223#QuantifiableObservableProperty"
+        ],
+        "http://data.ashrae.org/standard223#ofSubstance": [
+            {
+                "@id": "http://data.ashrae.org/standard223#Constituent-CO2"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasQuantityKind": [
+            {
+                "@id": "http://qudt.org/vocab/quantitykind/MoleFraction"
+            }
+        ],
+        "http://qudt.org/schema/qudt/hasUnit": [
+            {
+                "@id": "http://qudt.org/vocab/unit/PPM"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Zone Co2 Concentration"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-out",
+        "@type": [
+            "http://data.ashrae.org/standard223#OutletConnectionPoint"
         ],
         "http://data.ashrae.org/standard223#hasMedium": [
             {
                 "@id": "http://data.ashrae.org/standard223#Fluid-Air"
             }
         ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Vavcoolingonly In"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace",
-        "@type": [
-            "http://data.ashrae.org/standard223#PhysicalSpace"
-        ],
-        "http://data.ashrae.org/standard223#encloses": [
-            {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#PhysicalSpace-hvac-domain"
-            }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-            {
-                "@value": "Physicalspace"
-            }
-        ]
-    },
-    {
-        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow-sensor",
-        "@type": [
-            "http://data.ashrae.org/standard223#Sensor"
-        ],
-        "http://data.ashrae.org/standard223#hasObservationLocation": [
+        "http://data.ashrae.org/standard223#mapsTo": [
             {
                 "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-out"
             }
         ],
-        "http://data.ashrae.org/standard223#observes": [
+        "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-discharge-air-flow"
+                "@value": "Vavcoolingonly Damper Out"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-actuator",
+        "@type": [
+            "http://data.ashrae.org/standard223#Actuator"
+        ],
+        "http://data.ashrae.org/standard223#actuatedByProperty": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper-command"
+            }
+        ],
+        "http://data.ashrae.org/standard223#actuates": [
+            {
+                "@id": "http://data.ashrae.org/standard223/1.0/data/guideline36-2021-A-1#VAVCoolingOnly-damper"
             }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "Vavcoolingonly Discharge Air Flow Sensor"
+                "@value": "Vavcoolingonly Damper Actuator"
             }
         ]
     }

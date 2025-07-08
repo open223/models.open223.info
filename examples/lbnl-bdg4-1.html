@@ -412,7 +412,7 @@ document.write(`
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-06-24 17:37:14. The model file was last updated on 2024-09-12 18:39:55</p>
+223P was last updated on 2025-07-08 10:11:44. The model file was last updated on 2024-09-12 18:39:55</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="lbnl-example-building-4-model-1">
 <h1>LBNL Example Building 4 Model 1<a class="headerlink" href="#lbnl-example-building-4-model-1" title="Link to this heading">#</a></h1>
@@ -623,388 +623,388 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns1: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil-valve-position&gt; ;
-            sh:resultMessage &quot;s223: An `ObservableProperty` is usually referred to by a `Sensor` using the relation `observes`.&quot; ;
-            sh:resultPath [ sh:inversePath ns1:observes ] ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/9355966c&gt; ],
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/lbnl-example#zone-116&gt; ;
+            sh:resultMessage &quot;g36: A Zone shall have at least one binary zone occupancy property using the relation hasProperty&quot; ;
+            sh:resultPath ns2:hasProperty ;
+            sh:resultSeverity sh:Info ;
+            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/1e7c605d&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/lbnl-example#zone-305-heating-setpoint&gt; ;
-            sh:resultMessage &quot;s223: An `ActuatableProperty` normally is referred to by `Equipment` using the relation `actuatedBy
+            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-damper&gt; ;
+            sh:resultMessage &quot;g36: A damper shall have at least one analog damper command property or at least two binary damper command properties using the relation hasProper
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan expected at least 1 instance(s) of ns1:EnumeratedActuatableProperty on path ns1:hasProperty
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-colder-supply-air-requests
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-colder-supply-air-requests needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-start-status
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-start-status
   - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-clg-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-clg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-colder-chilled-water-requests
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-colder-chilled-water-requests needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-warmer-supply-air-requests
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-warmer-supply-air-requests needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-start-cmd
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-start-cmd
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-start-status
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-increased-air-pressure-requests
-  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-increased-air-pressure-requests needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan expected at least 1 instance(s) of ns1:EnumeratedActuatableProperty on path ns1:hasProperty
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ea-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ea-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-speed-cmd
-  - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-speed-cmd
-  - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-htg-coil-valve-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-htg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-oa-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-oa-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-colder-chilled-water-requests
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-colder-chilled-water-requests needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-damper-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-damper-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-colder-supply-air-requests
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-colder-supply-air-requests needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-start-cmd
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-increased-air-pressure-requests
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-increased-air-pressure-requests needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-speed-cmd
+  - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-damper-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil-valve-command
-  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-start-status
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-fan-start-status needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-warmer-supply-air-requests
+  - http://data.ashrae.org/standard223#EnumerationKind-HVACOperatingMode on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-warmer-supply-air-requests needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan expected at least 1 instance(s) of ns2:EnumeratedActuatableProperty on path ns2:hasProperty
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-start-cmd
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-start-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-speed-cmd
+  - http://data.ashrae.org/standard223#EnumerationKind-Speed on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-sa-fan-speed-cmd needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ea-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ea-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-reheat-coil-valve-command
   - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-oa-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-oa-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-clg-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-clg-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-damper-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-damper-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil-valve-command
+  - http://data.ashrae.org/standard223#EnumerationKind-Position on http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil-valve-command needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-oa-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-oa-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-htg-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-htg-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-clg-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-clg-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab15, n06af169c2cba409093d1a42d6b3ffb9ab21
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ea-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ea-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-540-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-oa-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-oa-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-524-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-517-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-505-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-510-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-clg-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-clg-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b15, nce87e05796524713833b8482f5f13bf5b21
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-528-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-511-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-534-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-520-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-htg-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-htg-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-506-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-503-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-531-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-501-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-507-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-523-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-522-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-516-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-518-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-537-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-538-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-529-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-527-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-512-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ea-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ea-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
-http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-damper
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-damper needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab29, n06af169c2cba409093d1a42d6b3ffb9ab35
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-514-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-502-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-513-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-532-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-535-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-539-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-526-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil-valve
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-508-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-536-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#MultipleZoneAhuOffice-ra-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-530-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-533-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-509-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-504-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-525-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
 http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-reheat-coil-valve
-  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-reheat-coil-valve needs to match one of the following shapes: n06af169c2cba409093d1a42d6b3ffb9ab57, n06af169c2cba409093d1a42d6b3ffb9ab63
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-521-reheat-coil-valve needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b57, nce87e05796524713833b8482f5f13bf5b63
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-515-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
+http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-damper
+  - http://data.ashrae.org/standard223/1.0/data/lbnl-example#vav-519-damper needs to match one of the following shapes: nce87e05796524713833b8482f5f13bf5b29, nce87e05796524713833b8482f5f13bf5b35
 </pre></div>
 </div>
 </div>

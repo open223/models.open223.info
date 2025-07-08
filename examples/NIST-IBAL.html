@@ -411,7 +411,7 @@ document.write(`
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-06-24 17:37:14. The model file was last updated on 2024-09-12 16:11:46</p>
+223P was last updated on 2025-07-08 10:11:44. The model file was last updated on 2024-09-12 16:11:46</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="intelligent-buildings-agents-laboratory-ibal">
 <h1>Intelligent Buildings Agents Laboratory (IBAL)<a class="headerlink" href="#intelligent-buildings-agents-laboratory-ibal" title="Link to this heading">#</a></h1>
@@ -659,99 +659,98 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#Jnc30-ICP2&gt; ;
-            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://example.org/IBAL#Jnc30-ICP2&gt; probably needs an association with a `Connection`, or use of `hasOptionalConnectionPoint` or `hasBoundaryConnectionPoint` qualifiers.&quot; ;
-            sh:resultPath ns3:connectsThrough ;
-            sh:resultSeverity sh:Info ;
-            sh:sourceConstraint _:ne642a9bf261e49d486280d348e0c3bb7b6 ;
-            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/bfc69c8e&gt; ],
+            sh:focusNode &lt;http://example.org/IBAL#HEC1_LowerICP&gt; ;
+            sh:resultMessage &quot;s223: A `ConnectionPoint` shall be associated with exactly one `Connectable` using the relation `isConnectionPointOf`.&quot; ;
+            sh:resultPath ns2:isConnectionPointOf ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape &lt;urn:well-known/f965351d&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/IBAL#Jnc38-OCP2&gt; ;
-            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://example.org/IBAL#Jnc
+            sh:focusNode &lt;http://example.org/IBAL#Jnc40_ICP2&gt; ;
+            sh:resultMessage &quot;s223: `ConnectionPoint` &lt;http://example.org/IBAL#Jnc40_ICP2&gt; probably needs an association with a `Connection`, or use of `hasOptionalConnectionPoint` or `hasBoundaryConnectionPoint` qua
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/IBAL#HEC1_LowerICP
-  - http://example.org/IBAL#HEC1_LowerICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#ch1_power
-  - http://data.ashrae.org/standard223#Aspect-Efficiency on http://example.org/IBAL#ch1_power needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP
-  - http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEE1_LowerICP
-  - http://example.org/IBAL#HEE1_LowerICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_3_Lower_ICP
-  - http://example.org/IBAL#PlateHeatExchange_3_Lower_ICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEE2_UpperOCP
-  - http://example.org/IBAL#HEE2_UpperOCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP
-  - http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEE2_LowerOCP
-  - http://example.org/IBAL#HEE2_LowerOCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEC1_LowerOCP
-  - http://example.org/IBAL#HEC1_LowerOCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP
-  - http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_2_Lower_ICP
-  - http://example.org/IBAL#PlateHeatExchange_2_Lower_ICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_3_Upper_OCP
-  - http://example.org/IBAL#PlateHeatExchange_3_Upper_OCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#d16_pos_c
-  - http://data.ashrae.org/standard223#Aspect-Command on http://example.org/IBAL#d16_pos_c needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://example.org/IBAL#ch2_power
-  - http://data.ashrae.org/standard223#Aspect-Efficiency on http://example.org/IBAL#ch2_power needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP
-  - http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEC2_UpperICP
-  - http://example.org/IBAL#HEC2_UpperICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEC2_LowerOCP
-  - http://example.org/IBAL#HEC2_LowerOCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+  - http://example.org/IBAL#HEC1_LowerICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 http://example.org/IBAL#d17_pos_c
   - http://data.ashrae.org/standard223#Aspect-Command on http://example.org/IBAL#d17_pos_c needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://example.org/IBAL#HEE1_UpperICP
-  - http://example.org/IBAL#HEE1_UpperICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+http://example.org/IBAL#HEE2_LowerOCP
+  - http://example.org/IBAL#HEE2_LowerOCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#HEE1_LowerICP
+  - http://example.org/IBAL#HEE1_LowerICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_3_Upper_ICP
+  - http://example.org/IBAL#PlateHeatExchange_3_Upper_ICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#HEE2_UpperOCP
+  - http://example.org/IBAL#HEE2_UpperOCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#HEE2_UpperICP
+  - http://example.org/IBAL#HEE2_UpperICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#d15_pos_c
+  - http://data.ashrae.org/standard223#Aspect-Command on http://example.org/IBAL#d15_pos_c needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP
+  - http://example.org/IBAL#PlateHeatExchange_1_Lower_ICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#ch2_power
+  - http://data.ashrae.org/standard223#Aspect-Efficiency on http://example.org/IBAL#ch2_power needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://example.org/IBAL#HEE1_UpperOCP
+  - http://example.org/IBAL#HEE1_UpperOCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_3_Lower_OCP
+  - http://example.org/IBAL#PlateHeatExchange_3_Lower_OCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 http://example.org/IBAL#PlateHeatExchange_1_Upper_ICP
-  - http://example.org/IBAL#PlateHeatExchange_1_Upper_ICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+  - http://example.org/IBAL#PlateHeatExchange_1_Upper_ICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#HEC2_LowerOCP
+  - http://example.org/IBAL#HEC2_LowerOCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP
+  - http://example.org/IBAL#PlateHeatExchange_2_Upper_OCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#HEE1_UpperICP
+  - http://example.org/IBAL#HEE1_UpperICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#HEC2_UpperICP
+  - http://example.org/IBAL#HEC2_UpperICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 http://example.org/IBAL#HEE2_LowerICP
-  - http://example.org/IBAL#HEE2_LowerICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+  - http://example.org/IBAL#HEE2_LowerICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#HEC2_UpperOCP
+  - http://example.org/IBAL#HEC2_UpperOCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 http://example.org/IBAL#d18_pos_c
   - http://data.ashrae.org/standard223#Aspect-Command on http://example.org/IBAL#d18_pos_c needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP
-  - http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#d15_pos_c
-  - http://data.ashrae.org/standard223#Aspect-Command on http://example.org/IBAL#d15_pos_c needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://example.org/IBAL#PlateHeatExchange_3_Lower_OCP
-  - http://example.org/IBAL#PlateHeatExchange_3_Lower_OCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEC2_UpperOCP
-  - http://example.org/IBAL#HEC2_UpperOCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEE1_UpperOCP
-  - http://example.org/IBAL#HEE1_UpperOCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP
-  - http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEE2_UpperICP
-  - http://example.org/IBAL#HEE2_UpperICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEC1_UpperICP
-  - http://example.org/IBAL#HEC1_UpperICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#HEC2_LowerICP
-  - http://example.org/IBAL#HEC2_LowerICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+  - http://example.org/IBAL#PlateHeatExchange_2_Upper_ICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#ch1_power
+  - http://data.ashrae.org/standard223#Aspect-Efficiency on http://example.org/IBAL#ch1_power needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://example.org/IBAL#HEC1_UpperOCP
-  - http://example.org/IBAL#HEC1_UpperOCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/IBAL#PlateHeatExchange_3_Upper_ICP
-  - http://example.org/IBAL#PlateHeatExchange_3_Upper_ICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+  - http://example.org/IBAL#HEC1_UpperOCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#HEC1_LowerOCP
+  - http://example.org/IBAL#HEC1_LowerOCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_2_Lower_ICP
+  - http://example.org/IBAL#PlateHeatExchange_2_Lower_ICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_3_Lower_ICP
+  - http://example.org/IBAL#PlateHeatExchange_3_Lower_ICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP
+  - http://example.org/IBAL#PlateHeatExchange_1_Lower_OCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#HEC1_UpperICP
+  - http://example.org/IBAL#HEC1_UpperICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 http://example.org/IBAL#HEE1_LowerOCP
-  - http://example.org/IBAL#HEE1_LowerOCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+  - http://example.org/IBAL#HEE1_LowerOCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#HEC2_LowerICP
+  - http://example.org/IBAL#HEC2_LowerICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_3_Upper_OCP
+  - http://example.org/IBAL#PlateHeatExchange_3_Upper_OCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP
+  - http://example.org/IBAL#PlateHeatExchange_2_Lower_OCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP
+  - http://example.org/IBAL#PlateHeatExchange_1_Upper_OCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/IBAL#d16_pos_c
+  - http://data.ashrae.org/standard223#Aspect-Command on http://example.org/IBAL#d16_pos_c needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://example.org/IBAL#WaterChiller_2
-  - http://example.org/IBAL#WaterChiller_2 needs to match one of the following shapes: n829d3227e31f468c811ca15d8fbe151ab1276, n829d3227e31f468c811ca15d8fbe151ab1277
-  - http://example.org/IBAL#WaterChiller_2 needs to match one of the following shapes: n829d3227e31f468c811ca15d8fbe151ab1276, n829d3227e31f468c811ca15d8fbe151ab1277
+  - http://example.org/IBAL#WaterChiller_2 needs to match one of the following shapes: n7b51de60c2334d7e85539de36d2f990cb1275, n7b51de60c2334d7e85539de36d2f990cb1276
+  - http://example.org/IBAL#WaterChiller_2 needs to match one of the following shapes: n7b51de60c2334d7e85539de36d2f990cb1275, n7b51de60c2334d7e85539de36d2f990cb1276
 http://example.org/IBAL#WaterChiller_1
-  - http://example.org/IBAL#WaterChiller_1 needs to match one of the following shapes: n829d3227e31f468c811ca15d8fbe151ab1276, n829d3227e31f468c811ca15d8fbe151ab1277
-  - http://example.org/IBAL#WaterChiller_1 needs to match one of the following shapes: n829d3227e31f468c811ca15d8fbe151ab1276, n829d3227e31f468c811ca15d8fbe151ab1277
+  - http://example.org/IBAL#WaterChiller_1 needs to match one of the following shapes: n7b51de60c2334d7e85539de36d2f990cb1275, n7b51de60c2334d7e85539de36d2f990cb1276
+  - http://example.org/IBAL#WaterChiller_1 needs to match one of the following shapes: n7b51de60c2334d7e85539de36d2f990cb1275, n7b51de60c2334d7e85539de36d2f990cb1276
 </pre></div>
 </div>
 </div>

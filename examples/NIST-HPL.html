@@ -411,7 +411,7 @@ document.write(`
   <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-06-24 17:37:14. The model file was last updated on 2024-09-12 16:11:46</p>
+223P was last updated on 2025-07-08 10:11:44. The model file was last updated on 2024-09-12 16:11:46</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="heat-pump-laboratory-hpl">
 <h1>Heat Pump Laboratory (HPL)<a class="headerlink" href="#heat-pump-laboratory-hpl" title="Link to this heading">#</a></h1>
@@ -601,35 +601,36 @@ To install the <code class="docutils literal notranslate"><span class="pre">buil
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns3: &lt;http://data.ashrae.org/standard223#&gt; .
+@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
 @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/HPL#OA_Connection_1_Temp_6&gt; ;
-            sh:resultMessage &quot;s223: An `ObservableProperty` is usually referred to by a `Sensor` using the relation `observes`.&quot; ;
-            sh:resultPath [ sh:inversePath ns3:observes ] ;
-            sh:resultSeverity sh:Warning ;
+            sh:focusNode &lt;http://example.org/HPL#FinnedHeatExchanger_A_OCP&gt; ;
+            sh:resultMessage &quot;s223: A `ConnectionPoint` shall be associated with exactly one `Connectable` using the relation `isConnectionPointOf`.&quot; ;
+            sh:resultPath ns2:isConnectionPointOf ;
+            sh:resultSeverity sh:Violation ;
             sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/26a7ae6c&gt; ],
+            sh:sourceShape &lt;urn:well-known/ccbb74e4&gt; ],
         [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://example.org/HPL#PressureSensor_8&gt; ;
-            sh:resultMessage &quot;s223: A `Sensor` shall be associated with exactly 1 of `Connectable`, `Connection`, or `ConnectionPoint` using the relation `hasObservationLocation`.&quot; ;
-            sh:resultSeverity sh:Vi
+            sh:focusNode &lt;http://example.org/HPL#OA_Unit&gt; ;
+            sh:resultMessage &quot;s223: If the relation `contains` is present it shall associate the `Equipment` with either `Equipment` or `Junction`.&quot; ;
+            sh:resultPath ns2:contains ;
+            sh:re
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://example.org/HPL#FinnedHeatExchanger_A_OCP
-  - http://example.org/HPL#FinnedHeatExchanger_A_OCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
-http://example.org/HPL#FinnedHeatExchanger_A_ICP
-  - http://example.org/HPL#FinnedHeatExchanger_A_ICP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+  - http://example.org/HPL#FinnedHeatExchanger_A_OCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 http://example.org/HPL#FinnedHeatExchanger_R_CP_2
   - http://example.org/HPL#FinnedHeatExchanger on http://example.org/HPL#FinnedHeatExchanger_R_CP_2 needs to be a http://data.ashrae.org/standard223#Connectable
 http://example.org/HPL#FinnedHeatExchanger_R_CP_1
-  - http://example.org/HPL#FinnedHeatExchanger_R_CP_1 expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+  - http://example.org/HPL#FinnedHeatExchanger_R_CP_1 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
+http://example.org/HPL#FinnedHeatExchanger_A_ICP
+  - http://example.org/HPL#FinnedHeatExchanger_A_ICP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 http://example.org/HPL#OA_Unit
-  - http://example.org/HPL#OA_Unit needs to match one of the following shapes: n70c0babb802645a7b487485e3fe72845b1276, n70c0babb802645a7b487485e3fe72845b1277
+  - http://example.org/HPL#OA_Unit needs to match one of the following shapes: n6fb936fcb90a4257b47fa4b9712fbb97b1275, n6fb936fcb90a4257b47fa4b9712fbb97b1276
 </pre></div>
 </div>
 </div>
