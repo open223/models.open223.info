@@ -42,7 +42,7 @@ if __name__ == "__main__":
         env.import_dependencies(graph)
         namespaces = dict(graph.namespace_manager.namespaces())
     if args.reason:
-        graph = infer(graph, deps)
+        graph = infer(graph, deps, min_iterations=5)
     if args.output:
         for prefix, uri in namespaces.items():
             graph.bind(prefix, uri)

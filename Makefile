@@ -31,4 +31,4 @@ install-kernel:
 
 # Rule to clean up the compiled models.
 clean:
-	rm -rf models/compiled models/withimports .ontoenv
+	rm -rf models/compiled/* models/withimports/* .ontoenv
