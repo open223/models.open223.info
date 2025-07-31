@@ -22,6 +22,15 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Restore file modification times
+      run: |
+        git ls-files -z | while IFS= read -r -d '' f; do
+          ts="$(git log -1 --format='%at' -- "$f")"
+          if [ -n "$ts" ]; then
+            touch -d "@$ts" "$f"
+          fi
+        done
+
     - name: get ontoenv
       run: |
         wget https://github.com/gtfierro/ontoenv-rs/releases/download/v0.2.0a5/ontoenv_v0.2.0a5_x86_64_linux_gnu
@@ -40,6 +49,18 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '17'
+
+    - name: Cache compiled models
+      id: cache-models
+      uses: actions/cache@v3
+      with:
+        path: |
+          .ontoenv
+          models/compiled
+          models/withimports
+        key: ${{ runner.os }}-models-${{ hashFiles('models/*.ttl', 'tools/compile.py', 'Makefile') }}
+        restore-keys: |
+          ${{ runner.os }}-models-
 
     - name: build examples
       run: |

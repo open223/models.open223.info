@@ -5,8 +5,8 @@
 all: compile-models
 
 # MODEL_SOURCES will find all .ttl files in the models directory.
-#MODEL_SOURCES := $(wildcard models/*.ttl)
-MODEL_SOURCES := models/nrel-example.ttl
+MODEL_SOURCES := $(wildcard models/*.ttl)
+#MODEL_SOURCES := models/nrel-example.ttl
 
 # COMPILED_MODELS will be the list of files but in the models/compiled folder.
 COMPILED_MODELS := $(patsubst models/%.ttl,models/compiled/%.ttl,$(MODEL_SOURCES))
@@ -31,4 +31,4 @@ install-kernel:
 
 # Rule to clean up the compiled models.
 clean:
-	rm -rf models/compiled/*.ttl .ontoenv
+	rm -rf models/compiled models/withimports .ontoenv
