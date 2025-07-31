@@ -17,10 +17,10 @@ WITH_IMPORTS_MODELS := $(patsubst models/%.ttl,models/withimports/%.ttl,$(MODEL_
 .ontoenv:
 	ontoenv init models ontologies
 
-models/compiled/%.ttl: models/%.ttl tools/compile.py .ontoenv
+models/compiled/%.ttl: models/%.ttl tools/compile.py
 	-uv run python tools/compile.py -r -o $@ $< 
 
-models/withimports/%.ttl: models/compiled/%.ttl tools/compile.py .ontoenv
+models/withimports/%.ttl: models/compiled/%.ttl tools/compile.py
 	-uv run python tools/compile.py -i -o $@ $< 
 
 # The compile-models target will "make" all of the COMPILED_MODELS.

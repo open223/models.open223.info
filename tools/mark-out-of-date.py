@@ -17,12 +17,14 @@ def generate_python_code(model_file_path):
         model_last_updated_formatted = model_last_updated.strftime('%Y-%m-%d %H:%M:%S')
         return f"""
 ```{{warning}}
-This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on {s223_last_updated_formatted}. The model file was last updated on {model_last_updated_formatted}
+This model has not been updated since the last revision of the 223P ontology and it may not pass validation.
+
+- 223P was last updated on {s223_last_updated_formatted}
+- model file was last updated on {model_last_updated_formatted}
 ```
         """
     return ""
-    
+
 def add_code_to_markdown(markdown_file_path, code_content):
     with open(markdown_file_path, "r") as file:
         content = file.read()

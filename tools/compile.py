@@ -4,8 +4,7 @@ import random
 import argparse
 import ontoenv
 import rdflib
-from brick_tq_shacl import topquadrant_shacl
-from brick_tq_shacl.topquadrant_shacl import infer, validate
+from brick_tq_shacl import infer, validate
 import rdflib
 
 graph = rdflib.Graph()
@@ -43,7 +42,6 @@ if __name__ == "__main__":
         env.import_dependencies(graph)
         namespaces = dict(graph.namespace_manager.namespaces())
     if args.reason:
-        topquadrant_shacl._MAX_EXTERNAL_LOOPS = 10
         graph = infer(graph, deps)
     if args.output:
         for prefix, uri in namespaces.items():
