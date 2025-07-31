@@ -41,5 +41,5 @@ uv run python tools/generate-queries.py models
 ontoenv update
 mkdir -p models/compiled
 mkdir -p models/withimports
-make compile-models -j 4
+make compile-models -j 2 -d
 uv run jb build .
