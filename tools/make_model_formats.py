@@ -30,37 +30,37 @@ def convert_ttl_to_jsonld(file_path):
     g.serialize(destination=jsonld_file_path, format='json-ld', indent=4)
     print(f"Converted {file_path} to {jsonld_file_path}")
 
-def replace_section_in_markdown(file_path, header, new_content):                                        
-    header_pattern = re.compile(r"^## .+$", re.MULTILINE)                                               
-    with open(file_path, 'r', encoding='utf-8') as file:                                                
-        content = file.read()                                                                           
-                                                                                                        
-    # Find the start index of the header section to be replaced                              
-    header_start_idx = content.find(header)                                                             
-    if header_start_idx == -1:                                                                          
-        print(f"The header '{header}' was not found in the file.")                                                                                                                                     
+def replace_section_in_markdown(file_path, header, new_content):
+    header_pattern = re.compile(r"^## .+$", re.MULTILINE)
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+
+    # Find the start index of the header section to be replaced
+    header_start_idx = content.find(header)
+    if header_start_idx == -1:
+        print(f"The header '{header}' was not found in the file.")
         return
-                                                    
-    # Find the start index of the next header (if it exists)                                             
-    headers_start = [match.start() for match in header_pattern.finditer(content)]                                                                                                                                 
-    next_header_idx = None                          
-    for start in headers_start:                                                                          
-        if start > header_start_idx:   
-            next_header_idx = start    
-            break                                                                                        
-                                                                                                         
-    # If there's a next header, split the content, otherwise take everything until the end               
-    if next_header_idx is not None:                                                                      
-        pre_content = content[:header_start_idx]                                                         
-        post_content = content[next_header_idx:]                                                         
-        new_content = f"{pre_content}{header}\n{new_content}\n{post_content}"                            
-    else:                                                                                                
-        pre_content = content[:header_start_idx]                                                         
-        new_content = f"{pre_content}{header}\n{new_content}\n"                                          
-                                                                                                         
-    # Write the modified content back to the same file                                                   
-    with open(file_path, 'w', encoding='utf-8') as file:                                                 
-        file.write(new_content)                                                                          
+
+    # Find the start index of the next header (if it exists)
+    headers_start = [match.start() for match in header_pattern.finditer(content)]
+    next_header_idx = None
+    for start in headers_start:
+        if start > header_start_idx:
+            next_header_idx = start
+            break
+
+    # If there's a next header, split the content, otherwise take everything until the end
+    if next_header_idx is not None:
+        pre_content = content[:header_start_idx]
+        post_content = content[next_header_idx:]
+        new_content = f"{pre_content}{header}\n{new_content}\n{post_content}"
+    else:
+        pre_content = content[:header_start_idx]
+        new_content = f"{pre_content}{header}\n{new_content}\n"
+
+    # Write the modified content back to the same file
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(new_content)
 
 # Walk through the directory
 for root, dirs, files in os.walk(directory):
@@ -91,7 +91,7 @@ for md in glob.glob('examples/*.md'):
 - **Turtle file (with all imports)**: This is the compiled Turtle file with all imports included in the file (223P ontology, QUDT ontology, and others). This is helpful when you do not want to deal with downloading and managing ontology dependencies. It is also much larger than the compiled file.
 - **JSON-LD file (original)**: This is the original Turtle file converted to the JSON-LD format.
 
-[Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers 
+[Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers
 are available in many programming languages. [JSON-LD](https://json-ld.org) is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.
 </details>
     """
