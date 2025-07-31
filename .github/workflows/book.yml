@@ -70,9 +70,10 @@ jobs:
       run: |
         ls -l models/*.ttl
         ls -l models/compiled
-        ls -l models/withimports
         make compile-models -n
         make models/compiled/nrel-example.ttl -d -n
+        ls -l models/withimports
+
 
     - name: build examples
       run: |
