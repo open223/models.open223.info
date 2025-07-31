@@ -45,7 +45,8 @@ mysystem:zone a s223:Zone,
     rdfs:label "Zone" ;
     s223:hasDomain s223:Domain-HVAC ;
     s223:hasDomainSpace mysystem:PhysicalSpace-hvac-domain ;
-    s223:hasProperty mysystem:zone-temp .
+    s223:hasProperty mysystem:zone-co2-concentration,
+        mysystem:zone-temp .
 
 mysystem:DualDuctDischargeSensor-cold-deck-damper-in a s223:InletConnectionPoint ;
     rdfs:label "Dualductdischargesensor Cold Deck Damper In" ;
@@ -108,6 +109,13 @@ mysystem:PhysicalSpace-hvac-domain-out a s223:OutletConnectionPoint ;
     rdfs:label "Physicalspace Hvac Domain Out" ;
     s223:hasMedium s223:Fluid-Air .
 
+mysystem:zone-co2-concentration a s223:QuantifiableObservableProperty ;
+    rdfs:label "Zone Co2 Concentration" ;
+    s223:ofMedium s223:Fluid-Air ;
+    s223:ofSubstance s223:Constituent-CO2 ;
+    qudt:hasQuantityKind qudtqk:MoleFraction ;
+    qudt:hasUnit unit:PPM .
+
 mysystem:zone-temp a s223:QuantifiableObservableProperty ;
     rdfs:label "Zone Temp" ;
     qudt:hasQuantityKind qudtqk:Temperature ;
@@ -125,7 +133,7 @@ mysystem:DualDuctDischargeSensor-cold-deck-damper a s223:Damper,
 
 mysystem:DualDuctDischargeSensor-cold-deck-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Dualductdischargesensor Cold Deck Damper Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -161,7 +169,7 @@ mysystem:DualDuctDischargeSensor-hot-deck-damper a s223:Damper,
 
 mysystem:DualDuctDischargeSensor-hot-deck-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Dualductdischargesensor Hot Deck Damper Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
