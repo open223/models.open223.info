@@ -68,11 +68,7 @@ jobs:
 
     - name: what will be compiled?
       run: |
-        ls -l models/*.ttl
-        ls -l models/compiled
-        make compile-models -n
         make models/compiled/nrel-example.ttl -d -n
-        ls -l models/withimports
 
 
     - name: build examples
