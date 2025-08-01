@@ -2,7 +2,7 @@
                                                                                                                                                                                                                   
 # Assuming 'all' should build everything. If 'environment' is a task that should be run,
 # you need to add a corresponding recipe for it.
-all: compile-models
+all: compile-models update-examples
 
 # MODEL_SOURCES will find all .ttl files in the models directory.
 MODEL_SOURCES := $(wildcard models/*.ttl)
@@ -13,6 +13,9 @@ COMPILED_MODELS := $(patsubst models/%.ttl,models/compiled/%.ttl,$(MODEL_SOURCES
 
 # WITH_IMPORTS_MODELS will be the list of files but in the models/withimports folder.
 WITH_IMPORTS_MODELS := $(patsubst models/%.ttl,models/withimports/%.ttl,$(MODEL_SOURCES))
+
+# Find all example markdown files that have a corresponding model file.
+EXAMPLE_MDS_WITH_MODELS := $(foreach md, $(wildcard examples/*.md), $(if $(wildcard $(patsubst examples/%.md,models/%.ttl,$(md))), $(md)))
 
 .ontoenv:
 	ontoenv init models ontologies
@@ -25,6 +28,15 @@ models/withimports/%.ttl: models/compiled/%.ttl tools/compile.py
 
 # The compile-models target will "make" all of the COMPILED_MODELS.
 compile-models: $(COMPILED_MODELS) $(WITH_IMPORTS_MODELS)
+
+# The update-examples target will check all of the example markdown files.
+# It will only update the ones where the source .ttl file is newer.
+update-examples: $(EXAMPLE_MDS_WITH_MODELS)
+
+examples/%.md: models/%.ttl tools/make_count_table.py tools/make-notebook.py tools/mark-out-of-date.py
+	uv run python tools/make_count_table.py $< $@
+	uv run python tools/make-notebook.py $< $@
+	uv run python tools/mark-out-of-date.py $< $@
 
 install-kernel:
 	python -m ipykernel install --user --name=python3
