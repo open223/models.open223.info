@@ -39,7 +39,7 @@ examples/%.md: models/%.ttl tools/make_count_table.py tools/make-notebook.py too
 	uv run python tools/mark-out-of-date.py $< $@
 
 install-kernel:
-	python -m ipykernel install --user --name=python3
+	uv run python -m ipykernel install --user --name open223-models --display-name "open223-models"
 
 # Rule to clean up the compiled models.
 clean:
