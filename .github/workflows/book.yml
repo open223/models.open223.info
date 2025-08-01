@@ -26,14 +26,17 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Restore file modification times
-      run: |
-        git ls-files -z models tools/compile.py | while IFS= read -r -d '' f; do
-          ts="$(git log -1 --format='%at' -- "$f")"
-          if [ -n "$ts" ]; then
-            touch -d "@$ts" "$f"
-          fi
-        done
+    # Fix timestamps
+    - name: restore timestamps
+      uses: chetan/git-restore-mtime-action@v2
+    #- name: Restore file modification times
+    #  run: |
+    #    git ls-files -z models tools/compile.py | while IFS= read -r -d '' f; do
+    #      ts="$(git log -1 --format='%at' -- "$f")"
+    #      if [ -n "$ts" ]; then
+    #        touch -d "@$ts" "$f"
+    #      fi
+    #    done
 
     - name: get ontoenv
       run: |
