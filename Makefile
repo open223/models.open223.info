@@ -1,7 +1,5 @@
-.PHONY: all environment compile-models clean
+.PHONY: all compile-models clean
                                                                                                                                                                                                                   
-# Assuming 'all' should build everything. If 'environment' is a task that should be run,
-# you need to add a corresponding recipe for it.
 all: compile-models update-examples
 
 # MODEL_SOURCES will find all .ttl files in the models directory.

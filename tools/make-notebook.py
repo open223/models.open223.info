@@ -22,9 +22,9 @@ bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ER
 
 # load 223P library. We will load a recent copy from the models.open223.info
 # git repository; later, we will load this from the location of the actual standard
-s223 = Library.load(ontology_graph="https://open223.info/223p.ttl")
-unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit")
-quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind")
+s223 = Library.load(ontology_graph="https://open223.info/223p.ttl", infer_templates=False)
+unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit", infer_templates=False)
+quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind", infer_templates=False)
 
 # load the model into the BuildingMOTIF instance
 model = Model.create("urn:{model_name}")
