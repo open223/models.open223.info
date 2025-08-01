@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
 kernelspec:
-  display_name: Python 3
+  display_name: open223-models
   language: python
-  name: python3
+  name: open223-models
 ---
 # ASHRAE Guideline 36-2021 A-7 Dual Duct Terminal Unit with Inlet Sensors
 
