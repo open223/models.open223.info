@@ -1773,7 +1773,7 @@ IBAL:Chiller2_FnB
   rdfs:label "Chiller2 Fn b" ;
 .
 IBAL:ChillerHEC1
-  a s223:HeatExchanger ;
+  a s223:HydronicHeatExchanger ;
   s223:cnx IBAL:HEC1_LowerICP ;
   s223:cnx IBAL:HEC1_LowerOCP ;
   s223:cnx IBAL:HEC1_UpperICP ;
@@ -1782,7 +1782,7 @@ IBAL:ChillerHEC1
   rdfs:label "Chiller HEC1" ;
 .
 IBAL:ChillerHEC2
-  a s223:HeatExchanger ;
+  a s223:HydronicHeatExchanger ;
   s223:hasConnectionPoint IBAL:HEC2_LowerICP ;
   s223:hasConnectionPoint IBAL:HEC2_LowerOCP ;
   s223:hasConnectionPoint IBAL:HEC2_UpperICP ;
@@ -1791,7 +1791,7 @@ IBAL:ChillerHEC2
   rdfs:label "ChillerHEC2" ;
 .
 IBAL:ChillerHEE1
-  a s223:HeatExchanger ;
+  a s223:HydronicHeatExchanger ;
   s223:cnx IBAL:HEE1_LowerICP ;
   s223:cnx IBAL:HEE1_LowerOCP ;
   s223:cnx IBAL:HEE1_UpperICP ;
@@ -1800,7 +1800,7 @@ IBAL:ChillerHEE1
   rdfs:label "Chiller HEE1" ;
 .
 IBAL:ChillerHEE2
-  a s223:HeatExchanger ;
+  a s223:HydronicHeatExchanger ;
   s223:hasConnectionPoint IBAL:HEE2_LowerICP ;
   s223:hasConnectionPoint IBAL:HEE2_LowerOCP ;
   s223:hasConnectionPoint IBAL:HEE2_UpperICP ;
@@ -2369,12 +2369,6 @@ IBAL:HC_1_E_ICP
   s223:mapsTo IBAL:AHU_1_E_ICP ;
   rdfs:label "HC 1 E ICP" ;
 .
-IBAL:HC_1_E_OCP
-  a s223:OutletConnectionPoint ;
-  s223:hasMedium s223:Constituent-Electricity ;
-  s223:mapsTo IBAL:AHU_1_E_OCP ;
-  rdfs:label "HC 1 E OCP" ;
-.
 IBAL:HC_1_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Air ;
@@ -2391,12 +2385,6 @@ IBAL:HC_2_E_ICP
   s223:hasMedium s223:Constituent-Electricity ;
   s223:mapsTo IBAL:VAV_1_E_ICP ;
   rdfs:label "HC 2 E ICP" ;
-.
-IBAL:HC_2_E_OCP
-  a s223:OutletConnectionPoint ;
-  s223:hasMedium s223:Constituent-Electricity ;
-  s223:mapsTo IBAL:VAV_1_E_OCP ;
-  rdfs:label "HC 2 E OCP" ;
 .
 IBAL:HC_2_ICP
   a s223:InletConnectionPoint ;
@@ -2415,12 +2403,6 @@ IBAL:HC_3_E_ICP
   s223:mapsTo IBAL:VAV_2_E_ICP ;
   rdfs:label "HC 3 E ICP" ;
 .
-IBAL:HC_3_E_OCP
-  a s223:OutletConnectionPoint ;
-  s223:hasMedium s223:Constituent-Electricity ;
-  s223:mapsTo IBAL:VAV_2_E_OCP ;
-  rdfs:label "HC 3 E OCP" ;
-.
 IBAL:HC_3_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Air ;
@@ -2437,12 +2419,6 @@ IBAL:HC_4_E_ICP
   s223:hasMedium s223:Constituent-Electricity ;
   s223:mapsTo IBAL:AHU_2_E_ICP ;
   rdfs:label "HC 4 E ICP" ;
-.
-IBAL:HC_4_E_OCP
-  a s223:OutletConnectionPoint ;
-  s223:hasMedium s223:Constituent-Electricity ;
-  s223:mapsTo IBAL:AHU_2_E_OCP ;
-  rdfs:label "HC 4 E OCP" ;
 .
 IBAL:HC_4_ICP
   a s223:InletConnectionPoint ;
@@ -2461,12 +2437,6 @@ IBAL:HC_5_E_ICP
   s223:mapsTo IBAL:VAV_3_E_ICP ;
   rdfs:label "HC 5 E ICP" ;
 .
-IBAL:HC_5_E_OCP
-  a s223:OutletConnectionPoint ;
-  s223:hasMedium s223:Constituent-Electricity ;
-  s223:mapsTo IBAL:VAV_3_E_OCP ;
-  rdfs:label "HC 5 E OCP" ;
-.
 IBAL:HC_5_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Air ;
@@ -2483,12 +2453,6 @@ IBAL:HC_6_E_ICP
   s223:hasMedium s223:Constituent-Electricity ;
   s223:mapsTo IBAL:VAV_4_E_ICP ;
   rdfs:label "HC 6 E ICP" ;
-.
-IBAL:HC_6_E_OCP
-  a s223:OutletConnectionPoint ;
-  s223:hasMedium s223:Constituent-Electricity ;
-  s223:mapsTo IBAL:VAV_4_E_OCP ;
-  rdfs:label "HC 6 E OCP" ;
 .
 IBAL:HC_6_ICP
   a s223:InletConnectionPoint ;
@@ -2507,12 +2471,6 @@ IBAL:HC_7_E_ICP
   s223:mapsTo IBAL:AHU_3_E_ICP ;
   rdfs:label "HC 7 E ICP" ;
 .
-IBAL:HC_7_E_OCP
-  a s223:OutletConnectionPoint ;
-  s223:hasMedium s223:Constituent-Electricity ;
-  s223:mapsTo IBAL:AHU_3_E_OCP ;
-  rdfs:label "HC 7 E OCP" ;
-.
 IBAL:HC_7_ICP
   a s223:InletConnectionPoint ;
   s223:cnx IBAL:AHU_3_Connection_2 ;
@@ -2527,6 +2485,7 @@ IBAL:HC_7_OCP
 IBAL:HEC1_LowerICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Water ;
+  s223:pairedConnectionPoint IBAL:HEC1_LowerOCP ;
   rdfs:label "HEC1 Lower ICP" ;
 .
 IBAL:HEC1_LowerOCP
@@ -2537,6 +2496,7 @@ IBAL:HEC1_LowerOCP
 IBAL:HEC1_UpperICP
   a s223:InletConnectionPoint ;
   s223:mapsTo IBAL:Chiller_1_Upper_ICP ;
+  s223:pairedConnectionPoint IBAL:HEC1_UpperOCP ;
   rdfs:label "HEC1 Upper ICP" ;
 .
 IBAL:HEC1_UpperOCP
@@ -2547,6 +2507,7 @@ IBAL:HEC1_UpperOCP
 IBAL:HEC2_LowerICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Water ;
+  s223:pairedConnectionPoint IBAL:HEC2_LowerOCP ;
   rdfs:label "HEC2 Lower ICP" ;
 .
 IBAL:HEC2_LowerOCP
@@ -2557,6 +2518,7 @@ IBAL:HEC2_LowerOCP
 IBAL:HEC2_UpperICP
   a s223:InletConnectionPoint ;
   s223:mapsTo IBAL:Chiller_2_Upper_ICP ;
+  s223:pairedConnectionPoint IBAL:HEC2_UpperOCP ;
   rdfs:label "HEC2 Upper ICP" ;
 .
 IBAL:HEC2_UpperOCP
@@ -2569,6 +2531,7 @@ IBAL:HEE1_LowerICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Water ;
   s223:mapsTo IBAL:Chiller_1_Lower_ICP ;
+  s223:pairedConnectionPoint IBAL:HEE1_LowerOCP ;
   rdfs:label "HEE1 Lower ICP" ;
 .
 IBAL:HEE1_LowerOCP
@@ -2580,6 +2543,7 @@ IBAL:HEE1_LowerOCP
 IBAL:HEE1_UpperICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Water ;
+  s223:pairedConnectionPoint IBAL:HEE1_UpperOCP ;
   rdfs:label "HEE1 Upper ICP" ;
 .
 IBAL:HEE1_UpperOCP
@@ -2591,6 +2555,7 @@ IBAL:HEE2_LowerICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Water ;
   s223:mapsTo IBAL:Chiller_2_Lower_ICP ;
+  s223:pairedConnectionPoint IBAL:HEE2_LowerOCP ;
   rdfs:label "HEE2 Lower ICP" ;
 .
 IBAL:HEE2_LowerOCP
@@ -2602,6 +2567,7 @@ IBAL:HEE2_LowerOCP
 IBAL:HEE2_UpperICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Water ;
+  s223:pairedConnectionPoint IBAL:HEE2_UpperOCP ;
   rdfs:label "HEE2 Upper ICP" ;
 .
 IBAL:HEE2_UpperOCP
@@ -2717,63 +2683,56 @@ IBAL:HeatExchange_Connection
   rdfs:label "Heat Exchange Connection" ;
 .
 IBAL:HeatingCoil_1
-  a s223:HeatingCoil ;
+  a s223:ElectricResistanceElement ;
   s223:hasConnectionPoint IBAL:HC_1_E_ICP ;
-  s223:hasConnectionPoint IBAL:HC_1_E_OCP ;
   s223:hasConnectionPoint IBAL:HC_1_ICP ;
   s223:hasConnectionPoint IBAL:HC_1_OCP ;
   s223:hasRole s223:Role-Heating ;
   rdfs:label "Heating coil 1" ;
 .
 IBAL:HeatingCoil_2
-  a s223:HeatingCoil ;
+  a s223:ElectricResistanceElement ;
   s223:hasConnectionPoint IBAL:HC_2_E_ICP ;
-  s223:hasConnectionPoint IBAL:HC_2_E_OCP ;
   s223:hasConnectionPoint IBAL:HC_2_ICP ;
   s223:hasConnectionPoint IBAL:HC_2_OCP ;
   s223:hasRole s223:Role-Heating ;
   rdfs:label "Heating coil 2" ;
 .
 IBAL:HeatingCoil_3
-  a s223:HeatingCoil ;
+  a s223:ElectricResistanceElement ;
   s223:hasConnectionPoint IBAL:HC_3_E_ICP ;
-  s223:hasConnectionPoint IBAL:HC_3_E_OCP ;
   s223:hasConnectionPoint IBAL:HC_3_ICP ;
   s223:hasConnectionPoint IBAL:HC_3_OCP ;
   s223:hasRole s223:Role-Heating ;
   rdfs:label "Heating coil 3" ;
 .
 IBAL:HeatingCoil_4
-  a s223:HeatingCoil ;
+  a s223:ElectricResistanceElement ;
   s223:hasConnectionPoint IBAL:HC_4_E_ICP ;
-  s223:hasConnectionPoint IBAL:HC_4_E_OCP ;
   s223:hasConnectionPoint IBAL:HC_4_ICP ;
   s223:hasConnectionPoint IBAL:HC_4_OCP ;
   s223:hasRole s223:Role-Heating ;
   rdfs:label "Heating coil 4" ;
 .
 IBAL:HeatingCoil_5
-  a s223:HeatingCoil ;
+  a s223:ElectricResistanceElement ;
   s223:hasConnectionPoint IBAL:HC_5_E_ICP ;
-  s223:hasConnectionPoint IBAL:HC_5_E_OCP ;
   s223:hasConnectionPoint IBAL:HC_5_ICP ;
   s223:hasConnectionPoint IBAL:HC_5_OCP ;
   s223:hasRole s223:Role-Heating ;
   rdfs:label "Heating coil 5" ;
 .
 IBAL:HeatingCoil_6
-  a s223:HeatingCoil ;
+  a s223:ElectricResistanceElement ;
   s223:hasConnectionPoint IBAL:HC_6_E_ICP ;
-  s223:hasConnectionPoint IBAL:HC_6_E_OCP ;
   s223:hasConnectionPoint IBAL:HC_6_ICP ;
   s223:hasConnectionPoint IBAL:HC_6_OCP ;
   s223:hasRole s223:Role-Heating ;
   rdfs:label "Heating coil 6" ;
 .
 IBAL:HeatingCoil_7
-  a s223:HeatingCoil ;
+  a s223:ElectricResistanceElement ;
   s223:hasConnectionPoint IBAL:HC_7_E_ICP ;
-  s223:hasConnectionPoint IBAL:HC_7_E_OCP ;
   s223:hasConnectionPoint IBAL:HC_7_ICP ;
   s223:hasConnectionPoint IBAL:HC_7_OCP ;
   s223:hasRole s223:Role-Heating ;
@@ -4611,6 +4570,7 @@ IBAL:PlateHeatExchange_1_ConnectionTemperature
 IBAL:PlateHeatExchange_1_Lower_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Water ;
+  s223:pairedConnectionPoint IBAL:PlateHeatExchange_1_Lower_OCP ;
   rdfs:label "Plate Heat Exchange 1 Lower ICP" ;
 .
 IBAL:PlateHeatExchange_1_Lower_OCP
@@ -4621,6 +4581,7 @@ IBAL:PlateHeatExchange_1_Lower_OCP
 IBAL:PlateHeatExchange_1_Upper_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Fluid-Water ;
+  s223:pairedConnectionPoint IBAL:PlateHeatExchange_1_Upper_OCP ;
   rdfs:label "Plate Heat Exchange 1 Upper ICP" ;
 .
 IBAL:PlateHeatExchange_1_Upper_OCP
@@ -4631,6 +4592,7 @@ IBAL:PlateHeatExchange_1_Upper_OCP
 IBAL:PlateHeatExchange_2_Lower_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Water-GlycolSolution ;
+  s223:pairedConnectionPoint IBAL:PlateHeatExchange_2_Lower_OCP ;
   rdfs:label "Plate Heat Exchange 2 Lower ICP" ;
 .
 IBAL:PlateHeatExchange_2_Lower_OCP
@@ -4641,6 +4603,7 @@ IBAL:PlateHeatExchange_2_Lower_OCP
 IBAL:PlateHeatExchange_2_Upper_ICP
   a s223:InletConnectionPoint ;
   s223:hasMedium s223:Water-ChilledWater ;
+  s223:pairedConnectionPoint IBAL:PlateHeatExchange_2_Upper_OCP ;
   rdfs:label "Plate Heat Exchange 2 Upper ICP" ;
 .
 IBAL:PlateHeatExchange_2_Upper_OCP
@@ -4652,6 +4615,7 @@ IBAL:PlateHeatExchange_3_Lower_ICP
   a s223:InletConnectionPoint ;
   s223:cnx IBAL:Segment_134 ;
   s223:hasMedium s223:Water-ChilledWater ;
+  s223:pairedConnectionPoint IBAL:PlateHeatExchange_3_Lower_OCP ;
   rdfs:label "Plate heat exchange 3 Lower ICP" ;
 .
 IBAL:PlateHeatExchange_3_Lower_OCP
@@ -4664,6 +4628,7 @@ IBAL:PlateHeatExchange_3_Upper_ICP
   a s223:InletConnectionPoint ;
   s223:cnx IBAL:Segment_143 ;
   s223:hasMedium s223:Water-HotWater ;
+  s223:pairedConnectionPoint IBAL:PlateHeatExchange_3_Upper_OCP ;
   rdfs:label "Plate heat exchange 3 Upper ICP" ;
 .
 IBAL:PlateHeatExchange_3_Upper_OCP
@@ -4673,7 +4638,7 @@ IBAL:PlateHeatExchange_3_Upper_OCP
   rdfs:label "Plate heat exchange 3 Upper OCP" ;
 .
 IBAL:PlateHeatExchanger_1
-  a s223:HeatExchanger ;
+  a s223:HydronicHeatExchanger ;
   s223:hasConnectionPoint IBAL:PlateHeatExchange_1_Lower_ICP ;
   s223:hasConnectionPoint IBAL:PlateHeatExchange_1_Lower_OCP ;
   s223:hasConnectionPoint IBAL:PlateHeatExchange_1_Upper_ICP ;
@@ -4681,7 +4646,7 @@ IBAL:PlateHeatExchanger_1
   rdfs:label "Plate heat exchanger 1" ;
 .
 IBAL:PlateHeatExchanger_2
-  a s223:HeatExchanger ;
+  a s223:HydronicHeatExchanger ;
   s223:hasConnectionPoint IBAL:PlateHeatExchange_2_Lower_ICP ;
   s223:hasConnectionPoint IBAL:PlateHeatExchange_2_Lower_OCP ;
   s223:hasConnectionPoint IBAL:PlateHeatExchange_2_Upper_ICP ;
@@ -4689,7 +4654,7 @@ IBAL:PlateHeatExchanger_2
   rdfs:label "Plate heat exchanger 2" ;
 .
 IBAL:PlateHeatExchanger_3
-  a s223:HeatExchanger ;
+  a s223:HydronicHeatExchanger ;
   s223:hasConnectionPoint IBAL:PlateHeatExchange_3_Lower_ICP ;
   s223:hasConnectionPoint IBAL:PlateHeatExchange_3_Lower_OCP ;
   s223:hasConnectionPoint IBAL:PlateHeatExchange_3_Upper_ICP ;
@@ -6887,7 +6852,6 @@ IBAL:ch1_on_xref
 .
 IBAL:ch1_power
   a s223:QuantifiableObservableProperty ;
-  s223:hasAspect s223:Aspect-Efficiency ;
   s223:hasExternalReference IBAL:ch1_power_xref ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
@@ -6911,7 +6875,6 @@ IBAL:ch1_t_reset
 .
 IBAL:ch1_t_sp
   a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:Aspect-Setpoint ;
   s223:hasExternalReference IBAL:ch1_t_sp_xref ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
@@ -7015,7 +6978,6 @@ IBAL:ch2_on_xref
 .
 IBAL:ch2_power
   a s223:QuantifiableObservableProperty ;
-  s223:hasAspect s223:Aspect-Efficiency ;
   s223:hasExternalReference IBAL:ch2_power_xref ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/W> ;
@@ -7039,7 +7001,6 @@ IBAL:ch2_t_reset
 .
 IBAL:ch2_t_sp
   a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:Aspect-Setpoint ;
   s223:hasExternalReference IBAL:ch2_t_sp_xref ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
@@ -7093,7 +7054,6 @@ IBAL:d11_pos_fb
 .
 IBAL:d15_pos_c
   a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:Aspect-Command ;
   s223:hasExternalReference IBAL:d15_pos_c_bac ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
@@ -7150,7 +7110,6 @@ IBAL:d15_pos_fb_xref
 .
 IBAL:d16_pos_c
   a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:Aspect-Command ;
   s223:hasExternalReference IBAL:d16_pos_c_bac ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/A> ;
@@ -7207,7 +7166,6 @@ IBAL:d16_pos_fb_xref
 .
 IBAL:d17_pos_c
   a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:Aspect-Command ;
   s223:hasExternalReference IBAL:d17_pos_c_bac ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
@@ -7219,8 +7177,7 @@ IBAL:d17_pos_c_bac
   bacnet:object-identifier "analog-output,2" ;
   bacnet:object-name "d17_pos_c" ;
   bacnet:present-value "0"^^xsd:float ;
-  bacnet:property-identifier "present-value" ;
-  rdfs:label "d17 pos c bac" ;
+  rdfs:label "d17 pos c xref" ;
 .
 IBAL:d17_pos_fb
   a s223:QuantifiableActuatableProperty ;
@@ -7240,7 +7197,6 @@ IBAL:d17_pos_fb_xref
 .
 IBAL:d18_pos_c
   a s223:QuantifiableActuatableProperty ;
-  s223:hasAspect s223:Aspect-Command ;
   s223:hasExternalReference IBAL:d18_pos_c_bac ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
@@ -7252,8 +7208,7 @@ IBAL:d18_pos_c_bac
   bacnet:object-identifier "analog-output,2" ;
   bacnet:object-name "d18_pos_c" ;
   bacnet:present-value "0"^^xsd:float ;
-  bacnet:property-identifier "present-value" ;
-  rdfs:label "d18 pos c bac" ;
+  rdfs:label "d18 pos c xref" ;
 .
 IBAL:d18_pos_fb
   a s223:QuantifiableActuatableProperty ;
@@ -7969,13 +7924,13 @@ IBAL:v14_pos_c
   rdfs:label "v14 pos c" ;
 .
 IBAL:v14_pos_fb
-  a s223:QuantifiableActuatableProperty ;
+  a s223:QuantifiableProperty ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
   rdfs:label "v14 pos fb" ;
 .
 IBAL:v15_pos_fb
-  a s223:QuantifiableActuatableProperty ;
+  a s223:QuantifiableProperty ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
   rdfs:label "v15 pos fb" ;
@@ -7987,7 +7942,7 @@ IBAL:v16_pos_c
   rdfs:label "v16 pos c" ;
 .
 IBAL:v16_pos_fb
-  a s223:QuantifiableActuatableProperty ;
+  a s223:QuantifiableProperty ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
   rdfs:label "v16 pos fb" ;
@@ -7999,7 +7954,7 @@ IBAL:v17_pos_c
   rdfs:label "v17 pos c" ;
 .
 IBAL:v17_pos_fb
-  a s223:QuantifiableActuatableProperty ;
+  a s223:QuantifiableProperty ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
   rdfs:label "v17 pos fb" ;
@@ -8081,7 +8036,7 @@ IBAL:v2_pos_c
   rdfs:label "v2 pos c" ;
 .
 IBAL:v2_pos_fb
-  a s223:QuantifiableActuatableProperty ;
+  a s223:QuantifiableProperty ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
   rdfs:label "v2 pos fb" ;
@@ -8564,7 +8519,7 @@ IBAL:vav4_t_in_xref
   rdfs:label "vav4 t in xref" ;
 .
 IBAL:vch1_pos_fb
-  a s223:QuantifiableActuatableProperty ;
+  a s223:QuantifiableProperty ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/V> ;
   rdfs:label "vch1 pos fb" ;
@@ -8627,7 +8582,6 @@ IBAL:zs1_rh
 .
 IBAL:zs1_t_sp_f
   a s223:QuantifiableProperty ;
-  s223:hasAspect s223:Aspect-Setpoint ;
   s223:hasExternalReference IBAL:zs1_t_sp_f_xref ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
@@ -8683,7 +8637,6 @@ IBAL:zs2_rh
 .
 IBAL:zs2_t_sp_f
   a s223:QuantifiableProperty ;
-  s223:hasAspect s223:Aspect-Setpoint ;
   s223:hasExternalReference IBAL:zs2_t_sp_f_xref ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
@@ -8731,7 +8684,6 @@ IBAL:zs3_rh
 .
 IBAL:zs3_t_sp_f
   a s223:QuantifiableProperty ;
-  s223:hasAspect s223:Aspect-Setpoint ;
   s223:hasExternalReference IBAL:zs3_t_sp_f_xref ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;
@@ -8779,7 +8731,6 @@ IBAL:zs4_rh
 .
 IBAL:zs4_t_sp_f
   a s223:QuantifiableProperty ;
-  s223:hasAspect s223:Aspect-Setpoint ;
   s223:hasExternalReference IBAL:zs4_t_sp_f_xref ;
   qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
   qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> ;

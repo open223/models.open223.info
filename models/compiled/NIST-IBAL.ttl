@@ -1306,13 +1306,6 @@ IBAL:PlateHeatExchange_1_ConnectionTemperature a s223:QuantifiableObservableProp
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
-IBAL:PlateHeatExchanger_3 a s223:HeatExchanger ;
-    rdfs:label "Plate heat exchange 3" ;
-    s223:hasConnectionPoint IBAL:PlateHeatExchange_3_Lower_ICP,
-        IBAL:PlateHeatExchange_3_Lower_OCP,
-        IBAL:PlateHeatExchange_3_Upper_ICP,
-        IBAL:PlateHeatExchange_3_Upper_OCP .
-
 IBAL:ReturnAir-1-Flow a s223:QuantifiableObservableProperty ;
     rdfs:label "Return Air 1 Flow" ;
     s223:hasValue 500.0 ;
@@ -1498,12 +1491,12 @@ IBAL:v14_pos_c a s223:QuantifiableActuatableProperty ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
 
-IBAL:v14_pos_fb a s223:QuantifiableActuatableProperty ;
+IBAL:v14_pos_fb a s223:QuantifiableProperty ;
     rdfs:label "v14 pos fb" ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
 
-IBAL:v15_pos_fb a s223:QuantifiableActuatableProperty ;
+IBAL:v15_pos_fb a s223:QuantifiableProperty ;
     rdfs:label "v15 pos fb" ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
@@ -1513,7 +1506,7 @@ IBAL:v16_pos_c a s223:QuantifiableActuatableProperty ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
 
-IBAL:v16_pos_fb a s223:QuantifiableActuatableProperty ;
+IBAL:v16_pos_fb a s223:QuantifiableProperty ;
     rdfs:label "v16 pos fb" ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
@@ -1523,17 +1516,17 @@ IBAL:v17_pos_c a s223:QuantifiableActuatableProperty ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
 
-IBAL:v17_pos_fb a s223:QuantifiableActuatableProperty ;
+IBAL:v17_pos_fb a s223:QuantifiableProperty ;
     rdfs:label "v17 pos fb" ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
 
-IBAL:v2_pos_fb a s223:QuantifiableActuatableProperty ;
+IBAL:v2_pos_fb a s223:QuantifiableProperty ;
     rdfs:label "v2 pos fb" ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
 
-IBAL:vch1_pos_fb a s223:QuantifiableActuatableProperty ;
+IBAL:vch1_pos_fb a s223:QuantifiableProperty ;
     rdfs:label "vch1 pos fb" ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
@@ -1546,38 +1539,6 @@ IBAL:AHU1_FnB a s223:Function ;
     s223:hasOutput IBAL:ahu2_vfd,
         IBAL:v13_pos_c .
 
-IBAL:ChillerHEC1 a s223:HeatExchanger ;
-    rdfs:label "Chiller HEC1" ;
-    s223:cnx IBAL:HEC1_LowerICP,
-        IBAL:HEC1_LowerOCP,
-        IBAL:HEC1_UpperICP,
-        IBAL:HEC1_UpperOCP ;
-    s223:hasRole s223:Role-Condenser .
-
-IBAL:ChillerHEC2 a s223:HeatExchanger ;
-    rdfs:label "ChillerHEC2" ;
-    s223:hasConnectionPoint IBAL:HEC2_LowerICP,
-        IBAL:HEC2_LowerOCP,
-        IBAL:HEC2_UpperICP,
-        IBAL:HEC2_UpperOCP ;
-    s223:hasRole s223:Role-Condenser .
-
-IBAL:ChillerHEE1 a s223:HeatExchanger ;
-    rdfs:label "Chiller HEE1" ;
-    s223:cnx IBAL:HEE1_LowerICP,
-        IBAL:HEE1_LowerOCP,
-        IBAL:HEE1_UpperICP,
-        IBAL:HEE1_UpperOCP ;
-    s223:hasRole s223:Role-Evaporator .
-
-IBAL:ChillerHEE2 a s223:HeatExchanger ;
-    rdfs:label "ChillerHEE2" ;
-    s223:hasConnectionPoint IBAL:HEE2_LowerICP,
-        IBAL:HEE2_LowerOCP,
-        IBAL:HEE2_UpperICP,
-        IBAL:HEE2_UpperOCP ;
-    s223:hasRole s223:Role-Evaporator .
-
 IBAL:HC-3-OutletFlow a s223:QuantifiableObservableProperty ;
     rdfs:label "HC 3 OutletFlow" ;
     s223:hasValue 500.0 ;
@@ -1589,92 +1550,6 @@ IBAL:HC-5-OutletFlow a s223:QuantifiableObservableProperty ;
     s223:hasValue 20.0 ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/FT3-PER-MIN> .
-
-IBAL:HEC1_LowerICP a s223:InletConnectionPoint ;
-    rdfs:label "HEC1 Lower ICP" ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:HEC1_LowerOCP a s223:OutletConnectionPoint ;
-    rdfs:label "HEC1 Lower OCP" ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:HEC1_UpperICP a s223:InletConnectionPoint ;
-    rdfs:label "HEC1 Upper ICP" ;
-    s223:hasMedium s223:Fluid-Water ;
-    s223:mapsTo IBAL:Chiller_1_Upper_ICP .
-
-IBAL:HEC1_UpperOCP a s223:OutletConnectionPoint ;
-    rdfs:label "HEC1 Upper OCP" ;
-    s223:hasMedium s223:Water-ChilledWater ;
-    s223:mapsTo IBAL:Chiller_1_Upper_OCP .
-
-IBAL:HEC2_LowerICP a s223:InletConnectionPoint ;
-    rdfs:label "HEC2 Lower ICP" ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:HEC2_LowerOCP a s223:OutletConnectionPoint ;
-    rdfs:label "HEC2 Lower OCP" ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:HEC2_UpperICP a s223:InletConnectionPoint ;
-    rdfs:label "HEC2 Upper ICP" ;
-    s223:hasMedium s223:Fluid-Water ;
-    s223:mapsTo IBAL:Chiller_2_Upper_ICP .
-
-IBAL:HEC2_UpperOCP a s223:OutletConnectionPoint ;
-    rdfs:label "HEC2 Upper OCP" ;
-    s223:hasMedium s223:Fluid-Water ;
-    s223:mapsTo IBAL:Chiller_2_Upper_OCP .
-
-IBAL:HEE1_LowerICP a s223:InletConnectionPoint ;
-    rdfs:label "HEE1 Lower ICP" ;
-    s223:hasMedium s223:Fluid-Water ;
-    s223:mapsTo IBAL:Chiller_1_Lower_ICP .
-
-IBAL:HEE1_LowerOCP a s223:OutletConnectionPoint ;
-    rdfs:label "HEE1 Lower OCP" ;
-    s223:hasMedium s223:Fluid-Water ;
-    s223:mapsTo IBAL:Chiller_1_Lower_OCP .
-
-IBAL:HEE1_UpperICP a s223:InletConnectionPoint ;
-    rdfs:label "HEE1 Upper ICP" ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:HEE1_UpperOCP a s223:OutletConnectionPoint ;
-    rdfs:label "HEE1 Upper OCP" ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:HEE2_LowerICP a s223:InletConnectionPoint ;
-    rdfs:label "HEE2 Lower ICP" ;
-    s223:hasMedium s223:Fluid-Water ;
-    s223:mapsTo IBAL:Chiller_2_Lower_ICP .
-
-IBAL:HEE2_LowerOCP a s223:OutletConnectionPoint ;
-    rdfs:label "HEE2 Lower OCP" ;
-    s223:hasMedium s223:Fluid-Water ;
-    s223:mapsTo IBAL:Chiller_2_Lower_OCP .
-
-IBAL:HEE2_UpperICP a s223:InletConnectionPoint ;
-    rdfs:label "HEE2 Upper ICP" ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:HEE2_UpperOCP a s223:OutletConnectionPoint ;
-    rdfs:label "HEE2 Upper OCP" ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:PlateHeatExchanger_1 a s223:HeatExchanger ;
-    rdfs:label "Plate heat exchanger 1" ;
-    s223:hasConnectionPoint IBAL:PlateHeatExchange_1_Lower_ICP,
-        IBAL:PlateHeatExchange_1_Lower_OCP,
-        IBAL:PlateHeatExchange_1_Upper_ICP,
-        IBAL:PlateHeatExchange_1_Upper_OCP .
-
-IBAL:PlateHeatExchanger_2 a s223:HeatExchanger ;
-    rdfs:label "Plate heat exchanger 2" ;
-    s223:hasConnectionPoint IBAL:PlateHeatExchange_2_Lower_ICP,
-        IBAL:PlateHeatExchange_2_Lower_OCP,
-        IBAL:PlateHeatExchange_2_Upper_ICP,
-        IBAL:PlateHeatExchange_2_Upper_OCP .
 
 IBAL:VAV1_FnB a s223:Function ;
     rdfs:label "VAV1 Fn b" ;
@@ -2215,12 +2090,11 @@ IBAL:d16_pos_fb_xref a s223:BACnetExternalReference ;
     bacnet:property-identifier "present-value" .
 
 IBAL:d17_pos_c_bac a s223:BACnetExternalReference ;
-    rdfs:label "d17 pos c bac" ;
+    rdfs:label "d17 pos c xref" ;
     bacnet:device-identifier "device,1113" ;
     bacnet:object-identifier "analog-output,2" ;
     bacnet:object-name "d17_pos_c" ;
-    bacnet:present-value "0.0"^^xsd:float ;
-    bacnet:property-identifier "present-value" .
+    bacnet:present-value "0.0"^^xsd:float .
 
 IBAL:d17_pos_fb_xref a s223:BACnetExternalReference ;
     rdfs:label "d17 pos fb xref" ;
@@ -2231,12 +2105,11 @@ IBAL:d17_pos_fb_xref a s223:BACnetExternalReference ;
     bacnet:property-identifier "present-value" .
 
 IBAL:d18_pos_c_bac a s223:BACnetExternalReference ;
-    rdfs:label "d18 pos c bac" ;
+    rdfs:label "d18 pos c xref" ;
     bacnet:device-identifier "device,1114" ;
     bacnet:object-identifier "analog-output,2" ;
     bacnet:object-name "d18_pos_c" ;
-    bacnet:present-value "0.0"^^xsd:float ;
-    bacnet:property-identifier "present-value" .
+    bacnet:present-value "0.0"^^xsd:float .
 
 IBAL:d18_pos_fb_xref a s223:BACnetExternalReference ;
     rdfs:label "d18 pos fb xref" ;
@@ -3205,6 +3078,24 @@ IBAL:zs4_t_sp_f_xref a s223:BACnetExternalReference ;
     bacnet:objectOf IBAL:VAV_4 ;
     bacnet:present-value "74.0"^^xsd:float .
 
+IBAL:AHU_1_E_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "AHU 1 E OCP" ;
+    s223:cnx IBAL:AHU_1 ;
+    s223:hasMedium s223:Constituent-Electricity ;
+    s223:isConnectionPointOf IBAL:AHU_1 .
+
+IBAL:AHU_2_E_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "AHU 2 E OCP" ;
+    s223:cnx IBAL:AHU_2 ;
+    s223:hasMedium s223:Constituent-Electricity ;
+    s223:isConnectionPointOf IBAL:AHU_2 .
+
+IBAL:AHU_3_E_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "AHU 3 E OCP" ;
+    s223:cnx IBAL:AHU_3 ;
+    s223:hasMedium s223:Constituent-Electricity ;
+    s223:isConnectionPointOf IBAL:AHU_3 .
+
 IBAL:CC_1_Water_ICP a s223:InletConnectionPoint ;
     rdfs:label "CC 1 Water ICP" ;
     s223:cnx IBAL:CoolingCoil_1 ;
@@ -3322,13 +3213,6 @@ IBAL:HC_1_E_ICP a s223:InletConnectionPoint ;
     s223:isConnectionPointOf IBAL:HeatingCoil_1 ;
     s223:mapsTo IBAL:AHU_1_E_ICP .
 
-IBAL:HC_1_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "HC 1 E OCP" ;
-    s223:cnx IBAL:HeatingCoil_1 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:HeatingCoil_1 ;
-    s223:mapsTo IBAL:AHU_1_E_OCP .
-
 IBAL:HC_1_ICP a s223:InletConnectionPoint ;
     rdfs:label "HC 1 ICP" ;
     s223:cnx IBAL:HeatingCoil_1 ;
@@ -3342,13 +3226,6 @@ IBAL:HC_2_E_ICP a s223:InletConnectionPoint ;
     s223:hasMedium s223:Constituent-Electricity ;
     s223:isConnectionPointOf IBAL:HeatingCoil_2 ;
     s223:mapsTo IBAL:VAV_1_E_ICP .
-
-IBAL:HC_2_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "HC 2 E OCP" ;
-    s223:cnx IBAL:HeatingCoil_2 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:HeatingCoil_2 ;
-    s223:mapsTo IBAL:VAV_1_E_OCP .
 
 IBAL:HC_2_OCP a s223:OutletConnectionPoint ;
     rdfs:label "HC 2 OCP" ;
@@ -3364,13 +3241,6 @@ IBAL:HC_3_E_ICP a s223:InletConnectionPoint ;
     s223:isConnectionPointOf IBAL:HeatingCoil_3 ;
     s223:mapsTo IBAL:VAV_2_E_ICP .
 
-IBAL:HC_3_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "HC 3 E OCP" ;
-    s223:cnx IBAL:HeatingCoil_3 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:HeatingCoil_3 ;
-    s223:mapsTo IBAL:VAV_2_E_OCP .
-
 IBAL:HC_3_OCP a s223:OutletConnectionPoint ;
     rdfs:label "HC 3 OCP" ;
     s223:cnx IBAL:HeatingCoil_3 ;
@@ -3385,26 +3255,12 @@ IBAL:HC_4_E_ICP a s223:InletConnectionPoint ;
     s223:isConnectionPointOf IBAL:HeatingCoil_4 ;
     s223:mapsTo IBAL:AHU_2_E_ICP .
 
-IBAL:HC_4_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "HC 4 E OCP" ;
-    s223:cnx IBAL:HeatingCoil_4 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:HeatingCoil_4 ;
-    s223:mapsTo IBAL:AHU_2_E_OCP .
-
 IBAL:HC_5_E_ICP a s223:InletConnectionPoint ;
     rdfs:label "HC 5 E ICP" ;
     s223:cnx IBAL:HeatingCoil_5 ;
     s223:hasMedium s223:Constituent-Electricity ;
     s223:isConnectionPointOf IBAL:HeatingCoil_5 ;
     s223:mapsTo IBAL:VAV_3_E_ICP .
-
-IBAL:HC_5_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "HC 5 E OCP" ;
-    s223:cnx IBAL:HeatingCoil_5 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:HeatingCoil_5 ;
-    s223:mapsTo IBAL:VAV_3_E_OCP .
 
 IBAL:HC_5_OCP a s223:OutletConnectionPoint ;
     rdfs:label "HC 5 OCP" ;
@@ -3420,13 +3276,6 @@ IBAL:HC_6_E_ICP a s223:InletConnectionPoint ;
     s223:isConnectionPointOf IBAL:HeatingCoil_6 ;
     s223:mapsTo IBAL:VAV_4_E_ICP .
 
-IBAL:HC_6_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "HC 6 E OCP" ;
-    s223:cnx IBAL:HeatingCoil_6 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:HeatingCoil_6 ;
-    s223:mapsTo IBAL:VAV_4_E_OCP .
-
 IBAL:HC_6_OCP a s223:OutletConnectionPoint ;
     rdfs:label "HC 6 OCP" ;
     s223:cnx IBAL:HeatingCoil_6 ;
@@ -3440,13 +3289,6 @@ IBAL:HC_7_E_ICP a s223:InletConnectionPoint ;
     s223:hasMedium s223:Constituent-Electricity ;
     s223:isConnectionPointOf IBAL:HeatingCoil_7 ;
     s223:mapsTo IBAL:AHU_3_E_ICP .
-
-IBAL:HC_7_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "HC 7 E OCP" ;
-    s223:cnx IBAL:HeatingCoil_7 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:HeatingCoil_7 ;
-    s223:mapsTo IBAL:AHU_3_E_OCP .
 
 IBAL:Jnc11-OCP a s223:OutletConnectionPoint ;
     rdfs:label "Jnc11-OCP" ;
@@ -3537,6 +3379,30 @@ IBAL:Jnc_39_OCP2 a s223:OutletConnectionPoint ;
     s223:cnx IBAL:Junction_39 ;
     s223:hasMedium s223:Water-ChilledWater ;
     s223:isConnectionPointOf IBAL:Junction_39 .
+
+IBAL:VAV_1_E_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "VAV 1 E OCP" ;
+    s223:cnx IBAL:VAV_1 ;
+    s223:hasMedium s223:Constituent-Electricity ;
+    s223:isConnectionPointOf IBAL:VAV_1 .
+
+IBAL:VAV_2_E_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "VAV 2 E OCP" ;
+    s223:cnx IBAL:VAV_2 ;
+    s223:hasMedium s223:Constituent-Electricity ;
+    s223:isConnectionPointOf IBAL:VAV_2 .
+
+IBAL:VAV_3_E_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "VAV 3 E OCP" ;
+    s223:cnx IBAL:VAV_3 ;
+    s223:hasMedium s223:Constituent-Electricity ;
+    s223:isConnectionPointOf IBAL:VAV_3 .
+
+IBAL:VAV_4_E_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "VAV 4 E OCP" ;
+    s223:cnx IBAL:VAV_4 ;
+    s223:hasMedium s223:Constituent-Electricity ;
+    s223:isConnectionPointOf IBAL:VAV_4 .
 
 IBAL:VFD_1_ICP a s223:InletConnectionPoint ;
     rdfs:label "VFD 1 ICP" ;
@@ -3805,28 +3671,24 @@ IBAL:vav4_heat_power a s223:QuantifiableObservableProperty ;
 
 IBAL:zs1_t_sp_f a s223:QuantifiableProperty ;
     rdfs:label "zs1 t sp f" ;
-    s223:hasAspect s223:Aspect-Setpoint ;
     s223:hasExternalReference IBAL:zs1_t_sp_f_xref ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 IBAL:zs2_t_sp_f a s223:QuantifiableProperty ;
     rdfs:label "zs2 t sp f" ;
-    s223:hasAspect s223:Aspect-Setpoint ;
     s223:hasExternalReference IBAL:zs2_t_sp_f_xref ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 IBAL:zs3_t_sp_f a s223:QuantifiableProperty ;
     rdfs:label "zs3 t sp f" ;
-    s223:hasAspect s223:Aspect-Setpoint ;
     s223:hasExternalReference IBAL:zs3_t_sp_f_xref ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 IBAL:zs4_t_sp_f a s223:QuantifiableProperty ;
     rdfs:label "zs4 t sp f" ;
-    s223:hasAspect s223:Aspect-Setpoint ;
     s223:hasExternalReference IBAL:zs4_t_sp_f_xref ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
@@ -3843,12 +3705,6 @@ IBAL:AHU_1_E_ICP a s223:InletConnectionPoint ;
     s223:hasMedium s223:Constituent-Electricity ;
     s223:isConnectionPointOf IBAL:AHU_1 .
 
-IBAL:AHU_1_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "AHU 1 E OCP" ;
-    s223:cnx IBAL:AHU_1 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:AHU_1 .
-
 IBAL:AHU_2_E2_ICP a s223:InletConnectionPoint ;
     rdfs:label "AHU 2 E2 ICP" ;
     s223:cnx IBAL:AHU_2 ;
@@ -3861,12 +3717,6 @@ IBAL:AHU_2_E_ICP a s223:InletConnectionPoint ;
     s223:hasMedium s223:Electricity-Signal ;
     s223:isConnectionPointOf IBAL:AHU_2 .
 
-IBAL:AHU_2_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "AHU 2 E OCP" ;
-    s223:cnx IBAL:AHU_2 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:AHU_2 .
-
 IBAL:AHU_3_E2_ICP a s223:InletConnectionPoint ;
     rdfs:label "AHU 3 E2 ICP" ;
     s223:cnx IBAL:AHU_3 ;
@@ -3875,12 +3725,6 @@ IBAL:AHU_3_E2_ICP a s223:InletConnectionPoint ;
 
 IBAL:AHU_3_E_ICP a s223:InletConnectionPoint ;
     rdfs:label "AHU 3 E ICP" ;
-    s223:cnx IBAL:AHU_3 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:AHU_3 .
-
-IBAL:AHU_3_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "AHU 3 E OCP" ;
     s223:cnx IBAL:AHU_3 ;
     s223:hasMedium s223:Constituent-Electricity ;
     s223:isConnectionPointOf IBAL:AHU_3 .
@@ -3897,6 +3741,126 @@ IBAL:AHU_3_G_OCP a s223:OutletConnectionPoint ;
     s223:hasMedium s223:Water-GlycolSolution ;
     s223:isConnectionPointOf IBAL:AHU_3 .
 
+IBAL:HEC1_LowerICP a s223:InletConnectionPoint ;
+    rdfs:label "HEC1 Lower ICP" ;
+    s223:cnx IBAL:ChillerHEC1 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEC1 ;
+    s223:pairedConnectionPoint IBAL:HEC1_LowerOCP .
+
+IBAL:HEC1_LowerOCP a s223:OutletConnectionPoint ;
+    rdfs:label "HEC1 Lower OCP" ;
+    s223:cnx IBAL:ChillerHEC1 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEC1 ;
+    s223:pairedConnectionPoint IBAL:HEC1_LowerICP .
+
+IBAL:HEC1_UpperICP a s223:InletConnectionPoint ;
+    rdfs:label "HEC1 Upper ICP" ;
+    s223:cnx IBAL:ChillerHEC1 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEC1 ;
+    s223:mapsTo IBAL:Chiller_1_Upper_ICP ;
+    s223:pairedConnectionPoint IBAL:HEC1_UpperOCP .
+
+IBAL:HEC1_UpperOCP a s223:OutletConnectionPoint ;
+    rdfs:label "HEC1 Upper OCP" ;
+    s223:cnx IBAL:ChillerHEC1 ;
+    s223:hasMedium s223:Water-ChilledWater ;
+    s223:isConnectionPointOf IBAL:ChillerHEC1 ;
+    s223:mapsTo IBAL:Chiller_1_Upper_OCP ;
+    s223:pairedConnectionPoint IBAL:HEC1_UpperICP .
+
+IBAL:HEC2_LowerICP a s223:InletConnectionPoint ;
+    rdfs:label "HEC2 Lower ICP" ;
+    s223:cnx IBAL:ChillerHEC2 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEC2 ;
+    s223:pairedConnectionPoint IBAL:HEC2_LowerOCP .
+
+IBAL:HEC2_LowerOCP a s223:OutletConnectionPoint ;
+    rdfs:label "HEC2 Lower OCP" ;
+    s223:cnx IBAL:ChillerHEC2 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEC2 ;
+    s223:pairedConnectionPoint IBAL:HEC2_LowerICP .
+
+IBAL:HEC2_UpperICP a s223:InletConnectionPoint ;
+    rdfs:label "HEC2 Upper ICP" ;
+    s223:cnx IBAL:ChillerHEC2 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEC2 ;
+    s223:mapsTo IBAL:Chiller_2_Upper_ICP ;
+    s223:pairedConnectionPoint IBAL:HEC2_UpperOCP .
+
+IBAL:HEC2_UpperOCP a s223:OutletConnectionPoint ;
+    rdfs:label "HEC2 Upper OCP" ;
+    s223:cnx IBAL:ChillerHEC2 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEC2 ;
+    s223:mapsTo IBAL:Chiller_2_Upper_OCP ;
+    s223:pairedConnectionPoint IBAL:HEC2_UpperICP .
+
+IBAL:HEE1_LowerICP a s223:InletConnectionPoint ;
+    rdfs:label "HEE1 Lower ICP" ;
+    s223:cnx IBAL:ChillerHEE1 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEE1 ;
+    s223:mapsTo IBAL:Chiller_1_Lower_ICP ;
+    s223:pairedConnectionPoint IBAL:HEE1_LowerOCP .
+
+IBAL:HEE1_LowerOCP a s223:OutletConnectionPoint ;
+    rdfs:label "HEE1 Lower OCP" ;
+    s223:cnx IBAL:ChillerHEE1 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEE1 ;
+    s223:mapsTo IBAL:Chiller_1_Lower_OCP ;
+    s223:pairedConnectionPoint IBAL:HEE1_LowerICP .
+
+IBAL:HEE1_UpperICP a s223:InletConnectionPoint ;
+    rdfs:label "HEE1 Upper ICP" ;
+    s223:cnx IBAL:ChillerHEE1 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEE1 ;
+    s223:pairedConnectionPoint IBAL:HEE1_UpperOCP .
+
+IBAL:HEE1_UpperOCP a s223:OutletConnectionPoint ;
+    rdfs:label "HEE1 Upper OCP" ;
+    s223:cnx IBAL:ChillerHEE1 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEE1 ;
+    s223:pairedConnectionPoint IBAL:HEE1_UpperICP .
+
+IBAL:HEE2_LowerICP a s223:InletConnectionPoint ;
+    rdfs:label "HEE2 Lower ICP" ;
+    s223:cnx IBAL:ChillerHEE2 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEE2 ;
+    s223:mapsTo IBAL:Chiller_2_Lower_ICP ;
+    s223:pairedConnectionPoint IBAL:HEE2_LowerOCP .
+
+IBAL:HEE2_LowerOCP a s223:OutletConnectionPoint ;
+    rdfs:label "HEE2 Lower OCP" ;
+    s223:cnx IBAL:ChillerHEE2 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEE2 ;
+    s223:mapsTo IBAL:Chiller_2_Lower_OCP ;
+    s223:pairedConnectionPoint IBAL:HEE2_LowerICP .
+
+IBAL:HEE2_UpperICP a s223:InletConnectionPoint ;
+    rdfs:label "HEE2 Upper ICP" ;
+    s223:cnx IBAL:ChillerHEE2 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEE2 ;
+    s223:pairedConnectionPoint IBAL:HEE2_UpperOCP .
+
+IBAL:HEE2_UpperOCP a s223:OutletConnectionPoint ;
+    rdfs:label "HEE2 Upper OCP" ;
+    s223:cnx IBAL:ChillerHEE2 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:ChillerHEE2 ;
+    s223:pairedConnectionPoint IBAL:HEE2_UpperICP .
+
 IBAL:Jnc50_ICP1 a s223:InletConnectionPoint ;
     rdfs:label "Jnc50 ICP1" ;
     s223:cnx IBAL:Junction_50 ;
@@ -3909,86 +3873,8 @@ IBAL:Jnc54_ICP a s223:InletConnectionPoint ;
     s223:hasMedium s223:Water-HotWater ;
     s223:isConnectionPointOf IBAL:Junction_54 .
 
-IBAL:PlateHeatExchange_1_Lower_ICP a s223:InletConnectionPoint ;
-    rdfs:label "Plate Heat Exchange 1 Lower ICP" ;
-    s223:cnx IBAL:Segment_63 ;
-    s223:connectsThrough IBAL:Segment_63 ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:PlateHeatExchange_1_Lower_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "Plate Heat Exchange 1 Lower OCP" ;
-    s223:cnx IBAL:PlateHeatExchange_1_Connection ;
-    s223:connectsThrough IBAL:PlateHeatExchange_1_Connection ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:PlateHeatExchange_1_Upper_ICP a s223:InletConnectionPoint ;
-    rdfs:label "Plate Heat Exchange 1 Upper ICP" ;
-    s223:cnx IBAL:Segment_154 ;
-    s223:connectsThrough IBAL:Segment_154 ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:PlateHeatExchange_1_Upper_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "Plate Heat Exchange 1 Upper OCP" ;
-    s223:cnx IBAL:Segment_151 ;
-    s223:connectsThrough IBAL:Segment_151 ;
-    s223:hasMedium s223:Water-HotWater .
-
-IBAL:PlateHeatExchange_2_Lower_ICP a s223:InletConnectionPoint ;
-    rdfs:label "Plate Heat Exchange 2 Lower ICP" ;
-    s223:cnx IBAL:Segment_70 ;
-    s223:connectsThrough IBAL:Segment_70 ;
-    s223:hasMedium s223:Water-GlycolSolution .
-
-IBAL:PlateHeatExchange_2_Lower_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "Plate Heat Exchange 2 Lower OCP" ;
-    s223:cnx IBAL:HeatExchange_Connection ;
-    s223:connectsThrough IBAL:HeatExchange_Connection ;
-    s223:hasMedium s223:Fluid-Water .
-
-IBAL:PlateHeatExchange_2_Upper_ICP a s223:InletConnectionPoint ;
-    rdfs:label "Plate Heat Exchange 2 Upper ICP" ;
-    s223:cnx IBAL:Segment_108 ;
-    s223:connectsThrough IBAL:Segment_108 ;
-    s223:hasMedium s223:Water-ChilledWater .
-
-IBAL:PlateHeatExchange_2_Upper_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "Plate Heat Exchange 2 Upper OCP" ;
-    s223:cnx IBAL:Segment_109 ;
-    s223:connectsThrough IBAL:Segment_109 ;
-    s223:hasMedium s223:Water-ChilledWater .
-
-IBAL:PlateHeatExchange_3_Lower_ICP a s223:InletConnectionPoint ;
-    rdfs:label "Plate heat exchange 3 Lower ICP" ;
-    s223:cnx IBAL:Segment_134 ;
-    s223:connectsThrough IBAL:Segment_134 ;
-    s223:hasMedium s223:Water-ChilledWater .
-
-IBAL:PlateHeatExchange_3_Lower_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "Plate heat exchange 3 Lower OCP" ;
-    s223:cnx IBAL:Segment_135 ;
-    s223:connectsThrough IBAL:Segment_135 ;
-    s223:hasMedium s223:Water-ChilledWater .
-
-IBAL:PlateHeatExchange_3_Upper_ICP a s223:InletConnectionPoint ;
-    rdfs:label "Plate heat exchange 3 Upper ICP" ;
-    s223:cnx IBAL:Segment_143 ;
-    s223:connectsThrough IBAL:Segment_143 ;
-    s223:hasMedium s223:Water-HotWater .
-
-IBAL:PlateHeatExchange_3_Upper_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "Plate heat exchange 3 Upper OCP" ;
-    s223:cnx IBAL:Segment_140 ;
-    s223:connectsThrough IBAL:Segment_140 ;
-    s223:hasMedium s223:Water-HotWater .
-
 IBAL:VAV_1_E_ICP a s223:InletConnectionPoint ;
     rdfs:label "VAV 1 E ICP" ;
-    s223:cnx IBAL:VAV_1 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:VAV_1 .
-
-IBAL:VAV_1_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "VAV 1 E OCP" ;
     s223:cnx IBAL:VAV_1 ;
     s223:hasMedium s223:Constituent-Electricity ;
     s223:isConnectionPointOf IBAL:VAV_1 .
@@ -3999,32 +3885,14 @@ IBAL:VAV_2_E_ICP a s223:InletConnectionPoint ;
     s223:hasMedium s223:Constituent-Electricity ;
     s223:isConnectionPointOf IBAL:VAV_2 .
 
-IBAL:VAV_2_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "VAV 2 E OCP" ;
-    s223:cnx IBAL:VAV_2 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:VAV_2 .
-
 IBAL:VAV_3_E_ICP a s223:InletConnectionPoint ;
     rdfs:label "VAV 3 E ICP" ;
     s223:cnx IBAL:VAV_3 ;
     s223:hasMedium s223:Constituent-Electricity ;
     s223:isConnectionPointOf IBAL:VAV_3 .
 
-IBAL:VAV_3_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "VAV 3 E OCP" ;
-    s223:cnx IBAL:VAV_3 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:VAV_3 .
-
 IBAL:VAV_4_E_ICP a s223:InletConnectionPoint ;
     rdfs:label "VAV 4 E ICP" ;
-    s223:cnx IBAL:VAV_4 ;
-    s223:hasMedium s223:Constituent-Electricity ;
-    s223:isConnectionPointOf IBAL:VAV_4 .
-
-IBAL:VAV_4_E_OCP a s223:OutletConnectionPoint ;
-    rdfs:label "VAV 4 E OCP" ;
     s223:cnx IBAL:VAV_4 ;
     s223:hasMedium s223:Constituent-Electricity ;
     s223:isConnectionPointOf IBAL:VAV_4 .
@@ -4145,14 +4013,12 @@ IBAL:ch2_on a s223:QuantifiableActuatableProperty ;
 
 IBAL:d15_pos_c a s223:QuantifiableActuatableProperty ;
     rdfs:label "d15 pos c" ;
-    s223:hasAspect s223:Aspect-Command ;
     s223:hasExternalReference IBAL:d15_pos_c_bac ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
 
 IBAL:d16_pos_c a s223:QuantifiableActuatableProperty ;
     rdfs:label "d16 pos c" ;
-    s223:hasAspect s223:Aspect-Command ;
     s223:hasExternalReference IBAL:d16_pos_c_bac ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/A> .
@@ -6584,28 +6450,24 @@ IBAL:ahu1_vfd a s223:QuantifiableActuatableProperty ;
 
 IBAL:ch1_power a s223:QuantifiableObservableProperty ;
     rdfs:label "ch1 power" ;
-    s223:hasAspect s223:Aspect-Efficiency ;
     s223:hasExternalReference IBAL:ch1_power_xref ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/W> .
 
 IBAL:ch1_t_sp a s223:QuantifiableActuatableProperty ;
     rdfs:label "ch1 t sp" ;
-    s223:hasAspect s223:Aspect-Setpoint ;
     s223:hasExternalReference IBAL:ch1_t_sp_xref ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
 
 IBAL:ch2_power a s223:QuantifiableObservableProperty ;
     rdfs:label "ch2 power" ;
-    s223:hasAspect s223:Aspect-Efficiency ;
     s223:hasExternalReference IBAL:ch2_power_xref ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Power> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/W> .
 
 IBAL:ch2_t_sp a s223:QuantifiableActuatableProperty ;
     rdfs:label "ch2 t sp" ;
-    s223:hasAspect s223:Aspect-Setpoint ;
     s223:hasExternalReference IBAL:ch2_t_sp_xref ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Temperature> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/DEG_F> .
@@ -6806,50 +6668,113 @@ IBAL:HVAC_Space_4_ICP a s223:InletConnectionPoint ;
     s223:hasMedium s223:Fluid-Air ;
     s223:isConnectionPointOf IBAL:HVACSpace_4 .
 
-IBAL:Segment_108 a s223:Connection ;
-    rdfs:label "Segment 108" ;
-    s223:cnx IBAL:Jnc_39_OCP1,
-        IBAL:PlateHeatExchange_2_Upper_ICP ;
-    s223:connectsAt IBAL:Jnc_39_OCP1,
-        IBAL:PlateHeatExchange_2_Upper_ICP ;
-    s223:connectsFrom IBAL:Junction_39 ;
-    s223:hasMedium s223:Water-ChilledWater .
+IBAL:PlateHeatExchange_1_Lower_ICP a s223:InletConnectionPoint ;
+    rdfs:label "Plate Heat Exchange 1 Lower ICP" ;
+    s223:cnx IBAL:PlateHeatExchanger_1,
+        IBAL:Segment_63 ;
+    s223:connectsThrough IBAL:Segment_63 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_1 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_1_Lower_OCP .
 
-IBAL:Segment_134 a s223:Connection ;
-    rdfs:label "Segment 134" ;
-    s223:cnx IBAL:Jnc51_OCP1,
-        IBAL:PlateHeatExchange_3_Lower_ICP ;
-    s223:connectsAt IBAL:Jnc51_OCP1,
-        IBAL:PlateHeatExchange_3_Lower_ICP ;
-    s223:connectsFrom IBAL:Junction_51 ;
-    s223:hasMedium s223:Water-ChilledWater .
+IBAL:PlateHeatExchange_1_Lower_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "Plate Heat Exchange 1 Lower OCP" ;
+    s223:cnx IBAL:PlateHeatExchange_1_Connection,
+        IBAL:PlateHeatExchanger_1 ;
+    s223:connectsThrough IBAL:PlateHeatExchange_1_Connection ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_1 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_1_Lower_ICP .
 
-IBAL:Segment_143 a s223:Connection ;
-    rdfs:label "Segment 143" ;
-    s223:cnx IBAL:Jnc52_OCP1,
-        IBAL:PlateHeatExchange_3_Upper_ICP ;
-    s223:connectsAt IBAL:Jnc52_OCP1,
-        IBAL:PlateHeatExchange_3_Upper_ICP ;
-    s223:connectsFrom IBAL:Junction_52 ;
-    s223:hasMedium s223:Water-HotWater .
+IBAL:PlateHeatExchange_1_Upper_ICP a s223:InletConnectionPoint ;
+    rdfs:label "Plate Heat Exchange 1 Upper ICP" ;
+    s223:cnx IBAL:PlateHeatExchanger_1,
+        IBAL:Segment_154 ;
+    s223:connectsThrough IBAL:Segment_154 ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_1 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_1_Upper_OCP .
 
-IBAL:Segment_154 a s223:Connection ;
-    rdfs:label "Segment 154" ;
-    s223:cnx IBAL:Jnc57_OCP1,
-        IBAL:PlateHeatExchange_1_Upper_ICP ;
-    s223:connectsAt IBAL:Jnc57_OCP1,
-        IBAL:PlateHeatExchange_1_Upper_ICP ;
-    s223:connectsFrom IBAL:Junction_57 ;
-    s223:hasMedium s223:Water-HotWater .
+IBAL:PlateHeatExchange_1_Upper_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "Plate Heat Exchange 1 Upper OCP" ;
+    s223:cnx IBAL:PlateHeatExchanger_1,
+        IBAL:Segment_151 ;
+    s223:connectsThrough IBAL:Segment_151 ;
+    s223:hasMedium s223:Water-HotWater ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_1 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_1_Upper_ICP .
 
-IBAL:Segment_63 a s223:Connection ;
-    rdfs:label "Segment 63" ;
-    s223:cnx IBAL:Jnc22-OCP1,
-        IBAL:PlateHeatExchange_1_Lower_ICP ;
-    s223:connectsAt IBAL:Jnc22-OCP1,
-        IBAL:PlateHeatExchange_1_Lower_ICP ;
-    s223:connectsFrom IBAL:Junction_22 ;
-    s223:hasMedium s223:Water-GlycolSolution .
+IBAL:PlateHeatExchange_2_Lower_ICP a s223:InletConnectionPoint ;
+    rdfs:label "Plate Heat Exchange 2 Lower ICP" ;
+    s223:cnx IBAL:PlateHeatExchanger_2,
+        IBAL:Segment_70 ;
+    s223:connectsThrough IBAL:Segment_70 ;
+    s223:hasMedium s223:Water-GlycolSolution ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_2 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_2_Lower_OCP .
+
+IBAL:PlateHeatExchange_2_Lower_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "Plate Heat Exchange 2 Lower OCP" ;
+    s223:cnx IBAL:HeatExchange_Connection,
+        IBAL:PlateHeatExchanger_2 ;
+    s223:connectsThrough IBAL:HeatExchange_Connection ;
+    s223:hasMedium s223:Fluid-Water ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_2 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_2_Lower_ICP .
+
+IBAL:PlateHeatExchange_2_Upper_ICP a s223:InletConnectionPoint ;
+    rdfs:label "Plate Heat Exchange 2 Upper ICP" ;
+    s223:cnx IBAL:PlateHeatExchanger_2,
+        IBAL:Segment_108 ;
+    s223:connectsThrough IBAL:Segment_108 ;
+    s223:hasMedium s223:Water-ChilledWater ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_2 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_2_Upper_OCP .
+
+IBAL:PlateHeatExchange_2_Upper_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "Plate Heat Exchange 2 Upper OCP" ;
+    s223:cnx IBAL:PlateHeatExchanger_2,
+        IBAL:Segment_109 ;
+    s223:connectsThrough IBAL:Segment_109 ;
+    s223:hasMedium s223:Water-ChilledWater ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_2 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_2_Upper_ICP .
+
+IBAL:PlateHeatExchange_3_Lower_ICP a s223:InletConnectionPoint ;
+    rdfs:label "Plate heat exchange 3 Lower ICP" ;
+    s223:cnx IBAL:PlateHeatExchanger_3,
+        IBAL:Segment_134 ;
+    s223:connectsThrough IBAL:Segment_134 ;
+    s223:hasMedium s223:Water-ChilledWater ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_3 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_3_Lower_OCP .
+
+IBAL:PlateHeatExchange_3_Lower_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "Plate heat exchange 3 Lower OCP" ;
+    s223:cnx IBAL:PlateHeatExchanger_3,
+        IBAL:Segment_135 ;
+    s223:connectsThrough IBAL:Segment_135 ;
+    s223:hasMedium s223:Water-ChilledWater ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_3 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_3_Lower_ICP .
+
+IBAL:PlateHeatExchange_3_Upper_ICP a s223:InletConnectionPoint ;
+    rdfs:label "Plate heat exchange 3 Upper ICP" ;
+    s223:cnx IBAL:PlateHeatExchanger_3,
+        IBAL:Segment_143 ;
+    s223:connectsThrough IBAL:Segment_143 ;
+    s223:hasMedium s223:Water-HotWater ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_3 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_3_Upper_OCP .
+
+IBAL:PlateHeatExchange_3_Upper_OCP a s223:OutletConnectionPoint ;
+    rdfs:label "Plate heat exchange 3 Upper OCP" ;
+    s223:cnx IBAL:PlateHeatExchanger_3,
+        IBAL:Segment_140 ;
+    s223:connectsThrough IBAL:Segment_140 ;
+    s223:hasMedium s223:Water-HotWater ;
+    s223:isConnectionPointOf IBAL:PlateHeatExchanger_3 ;
+    s223:pairedConnectionPoint IBAL:PlateHeatExchange_3_Upper_ICP .
 
 IBAL:VAV_1_ICP a s223:InletConnectionPoint ;
     rdfs:label "VAV 1 ICP" ;
@@ -6924,7 +6849,6 @@ IBAL:Valve2 a s223:Valve ;
 
 IBAL:d17_pos_c a s223:QuantifiableActuatableProperty ;
     rdfs:label "d17 pos c" ;
-    s223:hasAspect s223:Aspect-Command ;
     s223:hasExternalReference IBAL:d17_pos_c_bac ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
@@ -7087,13 +7011,14 @@ IBAL:Segment_107 a s223:Connection ;
     s223:connectsTo IBAL:Junction_23 ;
     s223:hasMedium s223:Water-GlycolSolution .
 
-IBAL:Segment_109 a s223:Connection ;
-    rdfs:label "Segment 109" ;
-    s223:cnx IBAL:PlateHeatExchange_2_Upper_OCP,
-        IBAL:Valve1_ICP ;
-    s223:connectsAt IBAL:PlateHeatExchange_2_Upper_OCP,
-        IBAL:Valve1_ICP ;
-    s223:connectsTo IBAL:Valve1 ;
+IBAL:Segment_108 a s223:Connection ;
+    rdfs:label "Segment 108" ;
+    s223:cnx IBAL:Jnc_39_OCP1,
+        IBAL:PlateHeatExchange_2_Upper_ICP ;
+    s223:connectsAt IBAL:Jnc_39_OCP1,
+        IBAL:PlateHeatExchange_2_Upper_ICP ;
+    s223:connectsFrom IBAL:Junction_39 ;
+    s223:connectsTo IBAL:PlateHeatExchanger_2 ;
     s223:hasMedium s223:Water-ChilledWater .
 
 IBAL:Segment_111 a s223:Connection ;
@@ -7256,6 +7181,16 @@ IBAL:Segment_133 a s223:Connection ;
     s223:connectsTo IBAL:Junction_51 ;
     s223:hasMedium s223:Water-ChilledWater .
 
+IBAL:Segment_134 a s223:Connection ;
+    rdfs:label "Segment 134" ;
+    s223:cnx IBAL:Jnc51_OCP1,
+        IBAL:PlateHeatExchange_3_Lower_ICP ;
+    s223:connectsAt IBAL:Jnc51_OCP1,
+        IBAL:PlateHeatExchange_3_Lower_ICP ;
+    s223:connectsFrom IBAL:Junction_51 ;
+    s223:connectsTo IBAL:PlateHeatExchanger_3 ;
+    s223:hasMedium s223:Water-ChilledWater .
+
 IBAL:Segment_136 a s223:Connection ;
     rdfs:label "Segment 136" ;
     s223:cnx IBAL:ManualTwoWayValve_7_ICP,
@@ -7316,6 +7251,16 @@ IBAL:Segment_142 a s223:Connection ;
     s223:connectsTo IBAL:Junction_52 ;
     s223:hasMedium s223:Water-HotWater .
 
+IBAL:Segment_143 a s223:Connection ;
+    rdfs:label "Segment 143" ;
+    s223:cnx IBAL:Jnc52_OCP1,
+        IBAL:PlateHeatExchange_3_Upper_ICP ;
+    s223:connectsAt IBAL:Jnc52_OCP1,
+        IBAL:PlateHeatExchange_3_Upper_ICP ;
+    s223:connectsFrom IBAL:Junction_52 ;
+    s223:connectsTo IBAL:PlateHeatExchanger_3 ;
+    s223:hasMedium s223:Water-HotWater .
+
 IBAL:Segment_144 a s223:Connection ;
     rdfs:label "Segment 144" ;
     s223:cnx IBAL:Jnc52_OCP2,
@@ -7374,6 +7319,16 @@ IBAL:Segment_153 a s223:Connection ;
         IBAL:Jnc57_ICP ;
     s223:connectsFrom IBAL:Junction_55 ;
     s223:connectsTo IBAL:Junction_57 ;
+    s223:hasMedium s223:Water-HotWater .
+
+IBAL:Segment_154 a s223:Connection ;
+    rdfs:label "Segment 154" ;
+    s223:cnx IBAL:Jnc57_OCP1,
+        IBAL:PlateHeatExchange_1_Upper_ICP ;
+    s223:connectsAt IBAL:Jnc57_OCP1,
+        IBAL:PlateHeatExchange_1_Upper_ICP ;
+    s223:connectsFrom IBAL:Junction_57 ;
+    s223:connectsTo IBAL:PlateHeatExchanger_1 ;
     s223:hasMedium s223:Water-HotWater .
 
 IBAL:Segment_155 a s223:Connection ;
@@ -7726,6 +7681,16 @@ IBAL:Segment_62 a s223:Connection ;
     s223:connectsTo IBAL:Junction_23 ;
     s223:hasMedium s223:Water-GlycolSolution .
 
+IBAL:Segment_63 a s223:Connection ;
+    rdfs:label "Segment 63" ;
+    s223:cnx IBAL:Jnc22-OCP1,
+        IBAL:PlateHeatExchange_1_Lower_ICP ;
+    s223:connectsAt IBAL:Jnc22-OCP1,
+        IBAL:PlateHeatExchange_1_Lower_ICP ;
+    s223:connectsFrom IBAL:Junction_22 ;
+    s223:connectsTo IBAL:PlateHeatExchanger_1 ;
+    s223:hasMedium s223:Water-GlycolSolution .
+
 IBAL:Segment_64 a s223:Connection ;
     rdfs:label "Segment 64" ;
     s223:cnx IBAL:Jnc22-OCP2,
@@ -7744,15 +7709,6 @@ IBAL:Segment_68 a s223:Connection ;
         IBAL:MotorizedThreeWayValve_4_ICP_1 ;
     s223:connectsFrom IBAL:Junction_24 ;
     s223:connectsTo IBAL:MotorizedThreeWayValve_4 ;
-    s223:hasMedium s223:Water-GlycolSolution .
-
-IBAL:Segment_70 a s223:Connection ;
-    rdfs:label "Segment 70" ;
-    s223:cnx IBAL:Jnc25-OCP1,
-        IBAL:PlateHeatExchange_2_Lower_ICP ;
-    s223:connectsAt IBAL:Jnc25-OCP1,
-        IBAL:PlateHeatExchange_2_Lower_ICP ;
-    s223:connectsFrom IBAL:Junction_25 ;
     s223:hasMedium s223:Water-GlycolSolution .
 
 IBAL:Segment_71 a s223:Connection ;
@@ -8012,7 +7968,6 @@ IBAL:WaterPump_5_VFD a s223:VariableFrequencyDrive ;
 
 IBAL:d18_pos_c a s223:QuantifiableActuatableProperty ;
     rdfs:label "d18 pos c" ;
-    s223:hasAspect s223:Aspect-Command ;
     s223:hasExternalReference IBAL:d18_pos_c_bac ;
     qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/Voltage> ;
     qudt:hasUnit <http://qudt.org/vocab/unit/V> .
@@ -8075,15 +8030,6 @@ IBAL:Exhaust_Fan_2_Connection_2 a s223:Connection ;
     s223:connectsTo IBAL:MotorizedDamper_9 ;
     s223:hasMedium s223:Fluid-Air .
 
-IBAL:PlateHeatExchange_1_Connection a s223:Connection ;
-    rdfs:label "Plate Heat Exchange 1 Connection" ;
-    s223:cnx IBAL:MotorizedThreeWayValve_3_ICP_1,
-        IBAL:PlateHeatExchange_1_Lower_OCP ;
-    s223:connectsAt IBAL:MotorizedThreeWayValve_3_ICP_1,
-        IBAL:PlateHeatExchange_1_Lower_OCP ;
-    s223:connectsTo IBAL:MotorizedThreeWayValve_3 ;
-    s223:hasMedium s223:Water-ChilledWater .
-
 IBAL:Segment_104 a s223:Connection ;
     rdfs:label "Segment 104" ;
     s223:cnx IBAL:MotorizedThreeWayValve_5_ICP_1,
@@ -8092,6 +8038,16 @@ IBAL:Segment_104 a s223:Connection ;
         IBAL:ThermalStorage_1_OCP ;
     s223:connectsFrom IBAL:ThermalStorage_1 ;
     s223:connectsTo IBAL:MotorizedThreeWayValve_5 ;
+    s223:hasMedium s223:Water-ChilledWater .
+
+IBAL:Segment_109 a s223:Connection ;
+    rdfs:label "Segment 109" ;
+    s223:cnx IBAL:PlateHeatExchange_2_Upper_OCP,
+        IBAL:Valve1_ICP ;
+    s223:connectsAt IBAL:PlateHeatExchange_2_Upper_OCP,
+        IBAL:Valve1_ICP ;
+    s223:connectsFrom IBAL:PlateHeatExchanger_2 ;
+    s223:connectsTo IBAL:Valve1 ;
     s223:hasMedium s223:Water-ChilledWater .
 
 IBAL:Segment_110 a s223:Connection ;
@@ -8154,33 +8110,6 @@ IBAL:Segment_132 a s223:Connection ;
     s223:connectsTo IBAL:Junction_41 ;
     s223:hasMedium s223:Water-ChilledWater .
 
-IBAL:Segment_135 a s223:Connection ;
-    rdfs:label "Segment 135" ;
-    s223:cnx IBAL:PlateHeatExchange_3_Lower_OCP,
-        IBAL:Valve5_ICP1 ;
-    s223:connectsAt IBAL:PlateHeatExchange_3_Lower_OCP,
-        IBAL:Valve5_ICP1 ;
-    s223:connectsTo IBAL:Valve5 ;
-    s223:hasMedium s223:Water-ChilledWater .
-
-IBAL:Segment_140 a s223:Connection ;
-    rdfs:label "Segment 140" ;
-    s223:cnx IBAL:PlateHeatExchange_3_Upper_OCP,
-        IBAL:Valve4_ICP1 ;
-    s223:connectsAt IBAL:PlateHeatExchange_3_Upper_OCP,
-        IBAL:Valve4_ICP1 ;
-    s223:connectsTo IBAL:Valve4 ;
-    s223:hasMedium s223:Water-HotWater .
-
-IBAL:Segment_151 a s223:Connection ;
-    rdfs:label "Segment 151" ;
-    s223:cnx IBAL:PlateHeatExchange_1_Upper_OCP,
-        IBAL:Valve11_ICP1 ;
-    s223:connectsAt IBAL:PlateHeatExchange_1_Upper_OCP,
-        IBAL:Valve11_ICP1 ;
-    s223:connectsTo IBAL:Valve11 ;
-    s223:hasMedium s223:Water-HotWater .
-
 IBAL:Segment_2 a s223:Connection ;
     rdfs:label "Segment 2" ;
     s223:cnx IBAL:Jnc1-OCP2,
@@ -8219,6 +8148,16 @@ IBAL:Segment_69 a s223:Connection ;
         IBAL:MotorizedThreeWayValve_4_OCP ;
     s223:connectsFrom IBAL:MotorizedThreeWayValve_4 ;
     s223:connectsTo IBAL:Junction_25 ;
+    s223:hasMedium s223:Water-GlycolSolution .
+
+IBAL:Segment_70 a s223:Connection ;
+    rdfs:label "Segment 70" ;
+    s223:cnx IBAL:Jnc25-OCP1,
+        IBAL:PlateHeatExchange_2_Lower_ICP ;
+    s223:connectsAt IBAL:Jnc25-OCP1,
+        IBAL:PlateHeatExchange_2_Lower_ICP ;
+    s223:connectsFrom IBAL:Junction_25 ;
+    s223:connectsTo IBAL:PlateHeatExchanger_2 ;
     s223:hasMedium s223:Water-GlycolSolution .
 
 IBAL:Segment_73 a s223:Connection ;
@@ -8331,15 +8270,6 @@ IBAL:AHU_3_Connection_3 a s223:Connection ;
     s223:connectsTo IBAL:Fan_5 ;
     s223:hasMedium s223:Fluid-Air .
 
-IBAL:HeatExchange_Connection a s223:Connection ;
-    rdfs:label "Heat Exchange Connection" ;
-    s223:cnx IBAL:PlateHeatExchange_2_Lower_OCP,
-        IBAL:WaterPump_1_ICP ;
-    s223:connectsAt IBAL:PlateHeatExchange_2_Lower_OCP,
-        IBAL:WaterPump_1_ICP ;
-    s223:connectsTo IBAL:WaterPump_1 ;
-    s223:hasMedium s223:Water-ChilledWater .
-
 IBAL:MotorizedDamper_17 a s223:Damper ;
     rdfs:label "Motorized damper 17" ;
     s223:cnx IBAL:Damper_17_ICP,
@@ -8349,6 +8279,16 @@ IBAL:MotorizedDamper_17 a s223:Damper ;
     s223:connectedThrough IBAL:Segment_48 ;
     s223:hasConnectionPoint IBAL:Damper_17_ICP,
         IBAL:Damper_17_OCP .
+
+IBAL:PlateHeatExchange_1_Connection a s223:Connection ;
+    rdfs:label "Plate Heat Exchange 1 Connection" ;
+    s223:cnx IBAL:MotorizedThreeWayValve_3_ICP_1,
+        IBAL:PlateHeatExchange_1_Lower_OCP ;
+    s223:connectsAt IBAL:MotorizedThreeWayValve_3_ICP_1,
+        IBAL:PlateHeatExchange_1_Lower_OCP ;
+    s223:connectsFrom IBAL:PlateHeatExchanger_1 ;
+    s223:connectsTo IBAL:MotorizedThreeWayValve_3 ;
+    s223:hasMedium s223:Water-ChilledWater .
 
 IBAL:Segment_10 a s223:Connection ;
     rdfs:label "Segment 10" ;
@@ -8390,6 +8330,16 @@ IBAL:Segment_12 a s223:Connection ;
     s223:connectsTo IBAL:Junction_5 ;
     s223:hasMedium s223:Fluid-Air .
 
+IBAL:Segment_135 a s223:Connection ;
+    rdfs:label "Segment 135" ;
+    s223:cnx IBAL:PlateHeatExchange_3_Lower_OCP,
+        IBAL:Valve5_ICP1 ;
+    s223:connectsAt IBAL:PlateHeatExchange_3_Lower_OCP,
+        IBAL:Valve5_ICP1 ;
+    s223:connectsFrom IBAL:PlateHeatExchanger_3 ;
+    s223:connectsTo IBAL:Valve5 ;
+    s223:hasMedium s223:Water-ChilledWater .
+
 IBAL:Segment_14 a s223:Connection ;
     rdfs:label "Segment 14" ;
     s223:cnx IBAL:HVAC_Space_2_OCP,
@@ -8399,6 +8349,26 @@ IBAL:Segment_14 a s223:Connection ;
     s223:connectsFrom IBAL:HVACSpace_2 ;
     s223:connectsTo IBAL:Junction_5 ;
     s223:hasMedium s223:Fluid-Air .
+
+IBAL:Segment_140 a s223:Connection ;
+    rdfs:label "Segment 140" ;
+    s223:cnx IBAL:PlateHeatExchange_3_Upper_OCP,
+        IBAL:Valve4_ICP1 ;
+    s223:connectsAt IBAL:PlateHeatExchange_3_Upper_OCP,
+        IBAL:Valve4_ICP1 ;
+    s223:connectsFrom IBAL:PlateHeatExchanger_3 ;
+    s223:connectsTo IBAL:Valve4 ;
+    s223:hasMedium s223:Water-HotWater .
+
+IBAL:Segment_151 a s223:Connection ;
+    rdfs:label "Segment 151" ;
+    s223:cnx IBAL:PlateHeatExchange_1_Upper_OCP,
+        IBAL:Valve11_ICP1 ;
+    s223:connectsAt IBAL:PlateHeatExchange_1_Upper_OCP,
+        IBAL:Valve11_ICP1 ;
+    s223:connectsFrom IBAL:PlateHeatExchanger_1 ;
+    s223:connectsTo IBAL:Valve11 ;
+    s223:hasMedium s223:Water-HotWater .
 
 IBAL:Segment_16 a s223:Connection ;
     rdfs:label "Segment 16" ;
@@ -8510,6 +8480,58 @@ IBAL:VAV_3_Connection_2 a s223:Connection ;
     s223:connectsTo IBAL:HVACSpace_3 ;
     s223:hasMedium s223:Fluid-Air .
 
+IBAL:ChillerHEC1 a s223:HydronicHeatExchanger ;
+    rdfs:label "Chiller HEC1" ;
+    s223:cnx IBAL:HEC1_LowerICP,
+        IBAL:HEC1_LowerOCP,
+        IBAL:HEC1_UpperICP,
+        IBAL:HEC1_UpperOCP ;
+    s223:hasConnectionPoint IBAL:HEC1_LowerICP,
+        IBAL:HEC1_LowerOCP,
+        IBAL:HEC1_UpperICP,
+        IBAL:HEC1_UpperOCP ;
+    s223:hasRole s223:Role-Condenser,
+        s223:Role-HeatTransfer .
+
+IBAL:ChillerHEC2 a s223:HydronicHeatExchanger ;
+    rdfs:label "ChillerHEC2" ;
+    s223:cnx IBAL:HEC2_LowerICP,
+        IBAL:HEC2_LowerOCP,
+        IBAL:HEC2_UpperICP,
+        IBAL:HEC2_UpperOCP ;
+    s223:hasConnectionPoint IBAL:HEC2_LowerICP,
+        IBAL:HEC2_LowerOCP,
+        IBAL:HEC2_UpperICP,
+        IBAL:HEC2_UpperOCP ;
+    s223:hasRole s223:Role-Condenser,
+        s223:Role-HeatTransfer .
+
+IBAL:ChillerHEE1 a s223:HydronicHeatExchanger ;
+    rdfs:label "Chiller HEE1" ;
+    s223:cnx IBAL:HEE1_LowerICP,
+        IBAL:HEE1_LowerOCP,
+        IBAL:HEE1_UpperICP,
+        IBAL:HEE1_UpperOCP ;
+    s223:hasConnectionPoint IBAL:HEE1_LowerICP,
+        IBAL:HEE1_LowerOCP,
+        IBAL:HEE1_UpperICP,
+        IBAL:HEE1_UpperOCP ;
+    s223:hasRole s223:Role-Evaporator,
+        s223:Role-HeatTransfer .
+
+IBAL:ChillerHEE2 a s223:HydronicHeatExchanger ;
+    rdfs:label "ChillerHEE2" ;
+    s223:cnx IBAL:HEE2_LowerICP,
+        IBAL:HEE2_LowerOCP,
+        IBAL:HEE2_UpperICP,
+        IBAL:HEE2_UpperOCP ;
+    s223:hasConnectionPoint IBAL:HEE2_LowerICP,
+        IBAL:HEE2_LowerOCP,
+        IBAL:HEE2_UpperICP,
+        IBAL:HEE2_UpperOCP ;
+    s223:hasRole s223:Role-Evaporator,
+        s223:Role-HeatTransfer .
+
 IBAL:Chiller_1_Lower_Connection a s223:Connection ;
     rdfs:label "Chiller 1 Lower Connection" ;
     s223:cnx IBAL:Chiller_1_Lower_OCP,
@@ -8528,6 +8550,16 @@ IBAL:Chiller_2_Lower_Connection a s223:Connection ;
         IBAL:WaterPump_3_ICP ;
     s223:connectsFrom IBAL:WaterChiller_2 ;
     s223:connectsTo IBAL:WaterPump_3 ;
+    s223:hasMedium s223:Water-ChilledWater .
+
+IBAL:HeatExchange_Connection a s223:Connection ;
+    rdfs:label "Heat Exchange Connection" ;
+    s223:cnx IBAL:PlateHeatExchange_2_Lower_OCP,
+        IBAL:WaterPump_1_ICP ;
+    s223:connectsAt IBAL:PlateHeatExchange_2_Lower_OCP,
+        IBAL:WaterPump_1_ICP ;
+    s223:connectsFrom IBAL:PlateHeatExchanger_2 ;
+    s223:connectsTo IBAL:WaterPump_1 ;
     s223:hasMedium s223:Water-ChilledWater .
 
 IBAL:Junction_45 a s223:Junction ;
@@ -8612,20 +8644,6 @@ IBAL:VFD_5 a s223:VariableFrequencyDrive ;
     s223:connectedTo IBAL:Fan_5 ;
     s223:hasConnectionPoint IBAL:VFD_5_ICP,
         IBAL:VFD_5_OCP .
-
-IBAL:Junction_39 a s223:Junction ;
-    rdfs:label "Junction 39" ;
-    s223:cnx IBAL:Jnc_39_ICP,
-        IBAL:Jnc_39_OCP1,
-        IBAL:Jnc_39_OCP2 ;
-    s223:connected IBAL:Junction_46 ;
-    s223:connectedFrom IBAL:Junction_46 ;
-    s223:connectedThrough IBAL:Segment_108,
-        IBAL:Segment_118 ;
-    s223:hasConnectionPoint IBAL:Jnc_39_ICP,
-        IBAL:Jnc_39_OCP1,
-        IBAL:Jnc_39_OCP2 ;
-    s223:hasMedium s223:Water-ChilledWater .
 
 IBAL:ManualTwoWayValve_1 a s223:TwoWayValve ;
     rdfs:label "Manual two way valve 1" ;
@@ -8846,17 +8864,6 @@ IBAL:VFD_4 a s223:VariableFrequencyDrive ;
     s223:hasConnectionPoint IBAL:VFD_4_ICP,
         IBAL:VFD_4_OCP .
 
-IBAL:Valve1 a s223:TwoWayValve ;
-    rdfs:label "Valve1" ;
-    s223:cnx IBAL:Valve1_ICP,
-        IBAL:Valve1_OCP ;
-    s223:connected IBAL:Junction_40 ;
-    s223:connectedThrough IBAL:Segment_109,
-        IBAL:Segment_110 ;
-    s223:connectedTo IBAL:Junction_40 ;
-    s223:hasConnectionPoint IBAL:Valve1_ICP,
-        IBAL:Valve1_OCP .
-
 IBAL:Filter_1 a s223:Filter ;
     rdfs:label "Filter 1" ;
     s223:cnx IBAL:Filter_1_ICP,
@@ -8977,6 +8984,90 @@ IBAL:CoolingCoil_3 a s223:CoolingCoil ;
     s223:hasRole s223:Role-Cooling,
         s223:Role-HeatTransfer .
 
+IBAL:HeatingCoil_1 a s223:ElectricResistanceElement ;
+    rdfs:label "Heating coil 1" ;
+    s223:cnx IBAL:HC_1_E_ICP,
+        IBAL:HC_1_ICP,
+        IBAL:HC_1_OCP ;
+    s223:connected IBAL:CoolingCoil_1 ;
+    s223:connectedThrough IBAL:AHU_1_Connection_2 ;
+    s223:connectedTo IBAL:CoolingCoil_1 ;
+    s223:hasConnectionPoint IBAL:HC_1_E_ICP,
+        IBAL:HC_1_ICP,
+        IBAL:HC_1_OCP ;
+    s223:hasRole s223:Role-HeatTransfer,
+        s223:Role-Heating .
+
+IBAL:HeatingCoil_2 a s223:ElectricResistanceElement ;
+    rdfs:label "Heating coil 2" ;
+    s223:cnx IBAL:HC_2_E_ICP,
+        IBAL:HC_2_ICP,
+        IBAL:HC_2_OCP ;
+    s223:connected IBAL:MotorizedDamper_1 ;
+    s223:connectedFrom IBAL:MotorizedDamper_1 ;
+    s223:connectedThrough IBAL:VAV_1_Connection_1 ;
+    s223:hasConnectionPoint IBAL:HC_2_E_ICP,
+        IBAL:HC_2_ICP,
+        IBAL:HC_2_OCP ;
+    s223:hasRole s223:Role-HeatTransfer,
+        s223:Role-Heating .
+
+IBAL:HeatingCoil_3 a s223:ElectricResistanceElement ;
+    rdfs:label "Heating coil 3" ;
+    s223:cnx IBAL:HC_3_E_ICP,
+        IBAL:HC_3_ICP,
+        IBAL:HC_3_OCP ;
+    s223:connected IBAL:MotorizedDamper_2 ;
+    s223:connectedFrom IBAL:MotorizedDamper_2 ;
+    s223:connectedThrough IBAL:VAV_2_Connection_1 ;
+    s223:hasConnectionPoint IBAL:HC_3_E_ICP,
+        IBAL:HC_3_ICP,
+        IBAL:HC_3_OCP ;
+    s223:hasRole s223:Role-HeatTransfer,
+        s223:Role-Heating .
+
+IBAL:HeatingCoil_4 a s223:ElectricResistanceElement ;
+    rdfs:label "Heating coil 4" ;
+    s223:cnx IBAL:HC_4_E_ICP,
+        IBAL:HC_4_ICP,
+        IBAL:HC_4_OCP ;
+    s223:connected IBAL:CoolingCoil_2 ;
+    s223:connectedThrough IBAL:AHU_2_Connection_2 ;
+    s223:connectedTo IBAL:CoolingCoil_2 ;
+    s223:hasConnectionPoint IBAL:HC_4_E_ICP,
+        IBAL:HC_4_ICP,
+        IBAL:HC_4_OCP ;
+    s223:hasRole s223:Role-HeatTransfer,
+        s223:Role-Heating .
+
+IBAL:HeatingCoil_5 a s223:ElectricResistanceElement ;
+    rdfs:label "Heating coil 5" ;
+    s223:cnx IBAL:HC_5_E_ICP,
+        IBAL:HC_5_ICP,
+        IBAL:HC_5_OCP ;
+    s223:connected IBAL:MotorizedDamper_3 ;
+    s223:connectedFrom IBAL:MotorizedDamper_3 ;
+    s223:connectedThrough IBAL:VAV_3_Connection_1 ;
+    s223:hasConnectionPoint IBAL:HC_5_E_ICP,
+        IBAL:HC_5_ICP,
+        IBAL:HC_5_OCP ;
+    s223:hasRole s223:Role-HeatTransfer,
+        s223:Role-Heating .
+
+IBAL:HeatingCoil_6 a s223:ElectricResistanceElement ;
+    rdfs:label "Heating coil 6" ;
+    s223:cnx IBAL:HC_6_E_ICP,
+        IBAL:HC_6_ICP,
+        IBAL:HC_6_OCP ;
+    s223:connected IBAL:MotorizedDamper_4 ;
+    s223:connectedFrom IBAL:MotorizedDamper_4 ;
+    s223:connectedThrough IBAL:VAV_4_Connection_1 ;
+    s223:hasConnectionPoint IBAL:HC_6_E_ICP,
+        IBAL:HC_6_ICP,
+        IBAL:HC_6_OCP ;
+    s223:hasRole s223:Role-HeatTransfer,
+        s223:Role-Heating .
+
 IBAL:Junction_11 a s223:Junction ;
     rdfs:label "Junction 11" ;
     s223:cnx IBAL:Jnc11-ICP1,
@@ -9056,6 +9147,22 @@ IBAL:Junction_38 a s223:Junction ;
         IBAL:Jnc38-OCP,
         IBAL:Jnc38-OCP2 ;
     s223:hasMedium s223:Water-GlycolSolution .
+
+IBAL:Junction_39 a s223:Junction ;
+    rdfs:label "Junction 39" ;
+    s223:cnx IBAL:Jnc_39_ICP,
+        IBAL:Jnc_39_OCP1,
+        IBAL:Jnc_39_OCP2 ;
+    s223:connected IBAL:Junction_46,
+        IBAL:PlateHeatExchanger_2 ;
+    s223:connectedFrom IBAL:Junction_46 ;
+    s223:connectedThrough IBAL:Segment_108,
+        IBAL:Segment_118 ;
+    s223:connectedTo IBAL:PlateHeatExchanger_2 ;
+    s223:hasConnectionPoint IBAL:Jnc_39_ICP,
+        IBAL:Jnc_39_OCP1,
+        IBAL:Jnc_39_OCP2 ;
+    s223:hasMedium s223:Water-ChilledWater .
 
 IBAL:Junction_40 a s223:Junction ;
     rdfs:label "Junction 40" ;
@@ -9152,6 +9259,19 @@ IBAL:Junction_56 a s223:Junction ;
         IBAL:Jnc56_ICP2,
         IBAL:Jnc56_OCP ;
     s223:hasMedium s223:Water-HotWater .
+
+IBAL:Valve1 a s223:TwoWayValve ;
+    rdfs:label "Valve1" ;
+    s223:cnx IBAL:Valve1_ICP,
+        IBAL:Valve1_OCP ;
+    s223:connected IBAL:Junction_40,
+        IBAL:PlateHeatExchanger_2 ;
+    s223:connectedFrom IBAL:PlateHeatExchanger_2 ;
+    s223:connectedThrough IBAL:Segment_109,
+        IBAL:Segment_110 ;
+    s223:connectedTo IBAL:Junction_40 ;
+    s223:hasConnectionPoint IBAL:Valve1_ICP,
+        IBAL:Valve1_OCP .
 
 IBAL:Valve6 a s223:TwoWayValve ;
     rdfs:label "Valve6" ;
@@ -9269,91 +9389,6 @@ IBAL:HVACSpace_4 a s223:DomainSpace ;
     s223:hasDomain s223:Domain-HVAC ;
     s223:hasProperty IBAL:zs4_t_sp_f .
 
-IBAL:Junction_22 a s223:Junction ;
-    rdfs:label "Junction 22" ;
-    s223:cnx IBAL:Jnc22-ICP,
-        IBAL:Jnc22-OCP1,
-        IBAL:Jnc22-OCP2 ;
-    s223:connected IBAL:Junction_36,
-        IBAL:ManualTwoWayValve_3 ;
-    s223:connectedFrom IBAL:Junction_36 ;
-    s223:connectedThrough IBAL:Segment_63,
-        IBAL:Segment_64,
-        IBAL:Segment_98 ;
-    s223:connectedTo IBAL:ManualTwoWayValve_3 ;
-    s223:hasConnectionPoint IBAL:Jnc22-ICP,
-        IBAL:Jnc22-OCP1,
-        IBAL:Jnc22-OCP2 ;
-    s223:hasMedium s223:Water-GlycolSolution .
-
-IBAL:Junction_25 a s223:Junction ;
-    rdfs:label "Junction 25" ;
-    s223:cnx IBAL:Jnc25-ICP,
-        IBAL:Jnc25-OCP1,
-        IBAL:Jnc25-OCP2 ;
-    s223:connected IBAL:Junction_26,
-        IBAL:MotorizedThreeWayValve_4 ;
-    s223:connectedFrom IBAL:MotorizedThreeWayValve_4 ;
-    s223:connectedThrough IBAL:Segment_69,
-        IBAL:Segment_70,
-        IBAL:Segment_71 ;
-    s223:connectedTo IBAL:Junction_26 ;
-    s223:hasConnectionPoint IBAL:Jnc25-ICP,
-        IBAL:Jnc25-OCP1,
-        IBAL:Jnc25-OCP2 ;
-    s223:hasMedium s223:Water-GlycolSolution .
-
-IBAL:Junction_51 a s223:Junction ;
-    rdfs:label "Junction 51" ;
-    s223:cnx IBAL:Jnc51_ICP,
-        IBAL:Jnc51_OCP1,
-        IBAL:Jnc51_OCP2 ;
-    s223:connected IBAL:Junction_48,
-        IBAL:ManualTwoWayValve_6 ;
-    s223:connectedFrom IBAL:Junction_48 ;
-    s223:connectedThrough IBAL:Segment_133,
-        IBAL:Segment_134,
-        IBAL:Segment_138 ;
-    s223:connectedTo IBAL:ManualTwoWayValve_6 ;
-    s223:hasConnectionPoint IBAL:Jnc51_ICP,
-        IBAL:Jnc51_OCP1,
-        IBAL:Jnc51_OCP2 ;
-    s223:hasMedium s223:Water-ChilledWater .
-
-IBAL:Junction_52 a s223:Junction ;
-    rdfs:label "Junction 52" ;
-    s223:cnx IBAL:Jnc52_ICP,
-        IBAL:Jnc52_OCP1,
-        IBAL:Jnc52_OCP2 ;
-    s223:connected IBAL:Junction_54,
-        IBAL:ManualTwoWayValve_8 ;
-    s223:connectedFrom IBAL:Junction_54 ;
-    s223:connectedThrough IBAL:Segment_142,
-        IBAL:Segment_143,
-        IBAL:Segment_144 ;
-    s223:connectedTo IBAL:ManualTwoWayValve_8 ;
-    s223:hasConnectionPoint IBAL:Jnc52_ICP,
-        IBAL:Jnc52_OCP1,
-        IBAL:Jnc52_OCP2 ;
-    s223:hasMedium s223:Water-HotWater .
-
-IBAL:Junction_57 a s223:Junction ;
-    rdfs:label "Junction 57" ;
-    s223:cnx IBAL:Jnc57_ICP,
-        IBAL:Jnc57_OCP1,
-        IBAL:Jnc57_OCP2 ;
-    s223:connected IBAL:Junction_55,
-        IBAL:ManualTwoWayValve_9 ;
-    s223:connectedFrom IBAL:Junction_55 ;
-    s223:connectedThrough IBAL:Segment_153,
-        IBAL:Segment_154,
-        IBAL:Segment_155 ;
-    s223:connectedTo IBAL:ManualTwoWayValve_9 ;
-    s223:hasConnectionPoint IBAL:Jnc57_ICP,
-        IBAL:Jnc57_OCP1,
-        IBAL:Jnc57_OCP2 ;
-    s223:hasMedium s223:Water-HotWater .
-
 IBAL:MotorizedDamper_11 a s223:Damper ;
     rdfs:label "Motorized damper 11" ;
     s223:cnx IBAL:Damper_11_ICP,
@@ -9458,22 +9493,6 @@ IBAL:MotorizedDamper_8 a s223:Damper ;
     s223:hasConnectionPoint IBAL:Damper_8_ICP,
         IBAL:Damper_8_OCP .
 
-IBAL:WaterPump_1 a s223:Pump ;
-    rdfs:label "Water pump 1" ;
-    s223:cnx IBAL:WaterPump_1_ICP,
-        IBAL:WaterPump_1_OCP,
-        IBAL:WaterPump_1_S_ICP,
-        IBAL:WaterPump_1_S_OCP ;
-    s223:connected IBAL:Junction_27 ;
-    s223:connectedThrough IBAL:HeatExchange_Connection,
-        IBAL:Segment_73 ;
-    s223:connectedTo IBAL:Junction_27 ;
-    s223:contains IBAL:WaterPump_1_VFD ;
-    s223:hasConnectionPoint IBAL:WaterPump_1_ICP,
-        IBAL:WaterPump_1_OCP,
-        IBAL:WaterPump_1_S_ICP,
-        IBAL:WaterPump_1_S_OCP .
-
 IBAL:Fan_5 a s223:Fan ;
     rdfs:label "Fan 5" ;
     s223:cnx IBAL:Fan_5_E_ICP,
@@ -9489,99 +9508,20 @@ IBAL:Fan_5 a s223:Fan ;
         IBAL:Fan_5_ICP,
         IBAL:Fan_5_OCP .
 
-IBAL:HeatingCoil_1 a s223:HeatingCoil ;
-    rdfs:label "Heating coil 1" ;
-    s223:cnx IBAL:HC_1_E_ICP,
-        IBAL:HC_1_E_OCP,
-        IBAL:HC_1_ICP,
-        IBAL:HC_1_OCP ;
-    s223:connected IBAL:CoolingCoil_1 ;
-    s223:connectedThrough IBAL:AHU_1_Connection_2 ;
-    s223:connectedTo IBAL:CoolingCoil_1 ;
-    s223:hasConnectionPoint IBAL:HC_1_E_ICP,
-        IBAL:HC_1_E_OCP,
-        IBAL:HC_1_ICP,
-        IBAL:HC_1_OCP ;
-    s223:hasRole s223:Role-HeatTransfer,
-        s223:Role-Heating .
-
-IBAL:HeatingCoil_2 a s223:HeatingCoil ;
-    rdfs:label "Heating coil 2" ;
-    s223:cnx IBAL:HC_2_E_ICP,
-        IBAL:HC_2_E_OCP,
-        IBAL:HC_2_ICP,
-        IBAL:HC_2_OCP ;
-    s223:connected IBAL:MotorizedDamper_1 ;
-    s223:connectedFrom IBAL:MotorizedDamper_1 ;
-    s223:connectedThrough IBAL:VAV_1_Connection_1 ;
-    s223:hasConnectionPoint IBAL:HC_2_E_ICP,
-        IBAL:HC_2_E_OCP,
-        IBAL:HC_2_ICP,
-        IBAL:HC_2_OCP ;
-    s223:hasRole s223:Role-HeatTransfer,
-        s223:Role-Heating .
-
-IBAL:HeatingCoil_3 a s223:HeatingCoil ;
-    rdfs:label "Heating coil 3" ;
-    s223:cnx IBAL:HC_3_E_ICP,
-        IBAL:HC_3_E_OCP,
-        IBAL:HC_3_ICP,
-        IBAL:HC_3_OCP ;
-    s223:connected IBAL:MotorizedDamper_2 ;
-    s223:connectedFrom IBAL:MotorizedDamper_2 ;
-    s223:connectedThrough IBAL:VAV_2_Connection_1 ;
-    s223:hasConnectionPoint IBAL:HC_3_E_ICP,
-        IBAL:HC_3_E_OCP,
-        IBAL:HC_3_ICP,
-        IBAL:HC_3_OCP ;
-    s223:hasRole s223:Role-HeatTransfer,
-        s223:Role-Heating .
-
-IBAL:HeatingCoil_4 a s223:HeatingCoil ;
-    rdfs:label "Heating coil 4" ;
-    s223:cnx IBAL:HC_4_E_ICP,
-        IBAL:HC_4_E_OCP,
-        IBAL:HC_4_ICP,
-        IBAL:HC_4_OCP ;
-    s223:connected IBAL:CoolingCoil_2 ;
-    s223:connectedThrough IBAL:AHU_2_Connection_2 ;
-    s223:connectedTo IBAL:CoolingCoil_2 ;
-    s223:hasConnectionPoint IBAL:HC_4_E_ICP,
-        IBAL:HC_4_E_OCP,
-        IBAL:HC_4_ICP,
-        IBAL:HC_4_OCP ;
-    s223:hasRole s223:Role-HeatTransfer,
-        s223:Role-Heating .
-
-IBAL:HeatingCoil_5 a s223:HeatingCoil ;
-    rdfs:label "Heating coil 5" ;
-    s223:cnx IBAL:HC_5_E_ICP,
-        IBAL:HC_5_E_OCP,
-        IBAL:HC_5_ICP,
-        IBAL:HC_5_OCP ;
-    s223:connected IBAL:MotorizedDamper_3 ;
-    s223:connectedFrom IBAL:MotorizedDamper_3 ;
-    s223:connectedThrough IBAL:VAV_3_Connection_1 ;
-    s223:hasConnectionPoint IBAL:HC_5_E_ICP,
-        IBAL:HC_5_E_OCP,
-        IBAL:HC_5_ICP,
-        IBAL:HC_5_OCP ;
-    s223:hasRole s223:Role-HeatTransfer,
-        s223:Role-Heating .
-
-IBAL:HeatingCoil_6 a s223:HeatingCoil ;
-    rdfs:label "Heating coil 6" ;
-    s223:cnx IBAL:HC_6_E_ICP,
-        IBAL:HC_6_E_OCP,
-        IBAL:HC_6_ICP,
-        IBAL:HC_6_OCP ;
-    s223:connected IBAL:MotorizedDamper_4 ;
-    s223:connectedFrom IBAL:MotorizedDamper_4 ;
-    s223:connectedThrough IBAL:VAV_4_Connection_1 ;
-    s223:hasConnectionPoint IBAL:HC_6_E_ICP,
-        IBAL:HC_6_E_OCP,
-        IBAL:HC_6_ICP,
-        IBAL:HC_6_OCP ;
+IBAL:HeatingCoil_7 a s223:ElectricResistanceElement ;
+    rdfs:label "Heating coil 7" ;
+    s223:cnx IBAL:HC_7_E_ICP,
+        IBAL:HC_7_ICP,
+        IBAL:HC_7_OCP ;
+    s223:connected IBAL:CoolingCoil_3,
+        IBAL:Fan_5 ;
+    s223:connectedFrom IBAL:CoolingCoil_3 ;
+    s223:connectedThrough IBAL:AHU_3_Connection_2,
+        IBAL:AHU_3_Connection_3 ;
+    s223:connectedTo IBAL:Fan_5 ;
+    s223:hasConnectionPoint IBAL:HC_7_E_ICP,
+        IBAL:HC_7_ICP,
+        IBAL:HC_7_OCP ;
     s223:hasRole s223:Role-HeatTransfer,
         s223:Role-Heating .
 
@@ -9775,6 +9715,25 @@ IBAL:Junction_21 a s223:Junction ;
         IBAL:Jnc21-OCP ;
     s223:hasMedium s223:Water-GlycolSolution .
 
+IBAL:Junction_22 a s223:Junction ;
+    rdfs:label "Junction 22" ;
+    s223:cnx IBAL:Jnc22-ICP,
+        IBAL:Jnc22-OCP1,
+        IBAL:Jnc22-OCP2 ;
+    s223:connected IBAL:Junction_36,
+        IBAL:ManualTwoWayValve_3,
+        IBAL:PlateHeatExchanger_1 ;
+    s223:connectedFrom IBAL:Junction_36 ;
+    s223:connectedThrough IBAL:Segment_63,
+        IBAL:Segment_64,
+        IBAL:Segment_98 ;
+    s223:connectedTo IBAL:ManualTwoWayValve_3,
+        IBAL:PlateHeatExchanger_1 ;
+    s223:hasConnectionPoint IBAL:Jnc22-ICP,
+        IBAL:Jnc22-OCP1,
+        IBAL:Jnc22-OCP2 ;
+    s223:hasMedium s223:Water-GlycolSolution .
+
 IBAL:Junction_23 a s223:Junction ;
     rdfs:label "Junction 23" ;
     s223:cnx IBAL:Jnc23-ICP,
@@ -9811,6 +9770,25 @@ IBAL:Junction_24 a s223:Junction ;
     s223:hasConnectionPoint IBAL:Jnc24-ICP,
         IBAL:Jnc24-OCP1,
         IBAL:Jnc24-OCP2 ;
+    s223:hasMedium s223:Water-GlycolSolution .
+
+IBAL:Junction_25 a s223:Junction ;
+    rdfs:label "Junction 25" ;
+    s223:cnx IBAL:Jnc25-ICP,
+        IBAL:Jnc25-OCP1,
+        IBAL:Jnc25-OCP2 ;
+    s223:connected IBAL:Junction_26,
+        IBAL:MotorizedThreeWayValve_4,
+        IBAL:PlateHeatExchanger_2 ;
+    s223:connectedFrom IBAL:MotorizedThreeWayValve_4 ;
+    s223:connectedThrough IBAL:Segment_69,
+        IBAL:Segment_70,
+        IBAL:Segment_71 ;
+    s223:connectedTo IBAL:Junction_26,
+        IBAL:PlateHeatExchanger_2 ;
+    s223:hasConnectionPoint IBAL:Jnc25-ICP,
+        IBAL:Jnc25-OCP1,
+        IBAL:Jnc25-OCP2 ;
     s223:hasMedium s223:Water-GlycolSolution .
 
 IBAL:Junction_26 a s223:Junction ;
@@ -10193,6 +10171,63 @@ IBAL:Junction_5 a s223:Junction ;
         IBAL:Jnc5-OCP ;
     s223:hasMedium s223:Fluid-Air .
 
+IBAL:Junction_51 a s223:Junction ;
+    rdfs:label "Junction 51" ;
+    s223:cnx IBAL:Jnc51_ICP,
+        IBAL:Jnc51_OCP1,
+        IBAL:Jnc51_OCP2 ;
+    s223:connected IBAL:Junction_48,
+        IBAL:ManualTwoWayValve_6,
+        IBAL:PlateHeatExchanger_3 ;
+    s223:connectedFrom IBAL:Junction_48 ;
+    s223:connectedThrough IBAL:Segment_133,
+        IBAL:Segment_134,
+        IBAL:Segment_138 ;
+    s223:connectedTo IBAL:ManualTwoWayValve_6,
+        IBAL:PlateHeatExchanger_3 ;
+    s223:hasConnectionPoint IBAL:Jnc51_ICP,
+        IBAL:Jnc51_OCP1,
+        IBAL:Jnc51_OCP2 ;
+    s223:hasMedium s223:Water-ChilledWater .
+
+IBAL:Junction_52 a s223:Junction ;
+    rdfs:label "Junction 52" ;
+    s223:cnx IBAL:Jnc52_ICP,
+        IBAL:Jnc52_OCP1,
+        IBAL:Jnc52_OCP2 ;
+    s223:connected IBAL:Junction_54,
+        IBAL:ManualTwoWayValve_8,
+        IBAL:PlateHeatExchanger_3 ;
+    s223:connectedFrom IBAL:Junction_54 ;
+    s223:connectedThrough IBAL:Segment_142,
+        IBAL:Segment_143,
+        IBAL:Segment_144 ;
+    s223:connectedTo IBAL:ManualTwoWayValve_8,
+        IBAL:PlateHeatExchanger_3 ;
+    s223:hasConnectionPoint IBAL:Jnc52_ICP,
+        IBAL:Jnc52_OCP1,
+        IBAL:Jnc52_OCP2 ;
+    s223:hasMedium s223:Water-HotWater .
+
+IBAL:Junction_57 a s223:Junction ;
+    rdfs:label "Junction 57" ;
+    s223:cnx IBAL:Jnc57_ICP,
+        IBAL:Jnc57_OCP1,
+        IBAL:Jnc57_OCP2 ;
+    s223:connected IBAL:Junction_55,
+        IBAL:ManualTwoWayValve_9,
+        IBAL:PlateHeatExchanger_1 ;
+    s223:connectedFrom IBAL:Junction_55 ;
+    s223:connectedThrough IBAL:Segment_153,
+        IBAL:Segment_154,
+        IBAL:Segment_155 ;
+    s223:connectedTo IBAL:ManualTwoWayValve_9,
+        IBAL:PlateHeatExchanger_1 ;
+    s223:hasConnectionPoint IBAL:Jnc57_ICP,
+        IBAL:Jnc57_OCP1,
+        IBAL:Jnc57_OCP2 ;
+    s223:hasMedium s223:Water-HotWater .
+
 IBAL:Junction_6 a s223:Junction ;
     rdfs:label "Junction 6" ;
     s223:cnx IBAL:Jnc6-ICP1,
@@ -10269,22 +10304,6 @@ IBAL:Junction_9 a s223:Junction ;
         IBAL:Jnc9-OCP2 ;
     s223:hasMedium s223:Fluid-Air .
 
-IBAL:MotorizedThreeWayValve_3 a s223:ThreeWayValve ;
-    rdfs:label "Motorized three way valve 3" ;
-    s223:cnx IBAL:MotorizedThreeWayValve_3_ICP_1,
-        IBAL:MotorizedThreeWayValve_3_ICP_2,
-        IBAL:MotorizedThreeWayValve_3_OCP ;
-    s223:connected IBAL:Junction_23,
-        IBAL:ManualTwoWayValve_3 ;
-    s223:connectedFrom IBAL:ManualTwoWayValve_3 ;
-    s223:connectedThrough IBAL:PlateHeatExchange_1_Bypass_Connection,
-        IBAL:PlateHeatExchange_1_Connection,
-        IBAL:Segment_107 ;
-    s223:connectedTo IBAL:Junction_23 ;
-    s223:hasConnectionPoint IBAL:MotorizedThreeWayValve_3_ICP_1,
-        IBAL:MotorizedThreeWayValve_3_ICP_2,
-        IBAL:MotorizedThreeWayValve_3_OCP .
-
 IBAL:VAV_1 a s223:TerminalUnit ;
     rdfs:label "VAV 1" ;
     s223:cnx IBAL:VAV_1_E_ICP,
@@ -10342,22 +10361,6 @@ IBAL:VAV_3 a s223:TerminalUnit ;
         IBAL:VAV_3_ICP,
         IBAL:VAV_3_OCP .
 
-IBAL:Valve11 a s223:ThreeWayValve ;
-    rdfs:label "Valve11" ;
-    s223:cnx IBAL:Valve11_ICP1,
-        IBAL:Valve11_ICP2,
-        IBAL:Vavle11_OCP ;
-    s223:connected IBAL:Junction_56,
-        IBAL:ManualTwoWayValve_9 ;
-    s223:connectedFrom IBAL:ManualTwoWayValve_9 ;
-    s223:connectedThrough IBAL:Segment_151,
-        IBAL:Segment_152,
-        IBAL:Segment_156 ;
-    s223:connectedTo IBAL:Junction_56 ;
-    s223:hasConnectionPoint IBAL:Valve11_ICP1,
-        IBAL:Valve11_ICP2,
-        IBAL:Vavle11_OCP .
-
 IBAL:Valve3 a s223:ThreeWayValve ;
     rdfs:label "Valve3" ;
     s223:cnx IBAL:Valve3_ICP1,
@@ -10376,37 +10379,23 @@ IBAL:Valve3 a s223:ThreeWayValve ;
         IBAL:Valve3_ICP2,
         IBAL:Valve3_OCP .
 
-IBAL:Valve4 a s223:ThreeWayValve ;
-    rdfs:label "Valve4" ;
-    s223:cnx IBAL:Valve4_ICP1,
-        IBAL:Valve4_ICP2,
-        IBAL:Valve4_OCP ;
-    s223:connected IBAL:Junction_53,
-        IBAL:ManualTwoWayValve_8 ;
-    s223:connectedFrom IBAL:ManualTwoWayValve_8 ;
-    s223:connectedThrough IBAL:Segment_140,
-        IBAL:Segment_141,
-        IBAL:Segment_145 ;
-    s223:connectedTo IBAL:Junction_53 ;
-    s223:hasConnectionPoint IBAL:Valve4_ICP1,
-        IBAL:Valve4_ICP2,
-        IBAL:Valve4_OCP .
-
-IBAL:Valve5 a s223:ThreeWayValve ;
-    rdfs:label "Valve5" ;
-    s223:cnx IBAL:Valve5_ICP1,
-        IBAL:Valve5_ICP2,
-        IBAL:Valve5_OCP ;
-    s223:connected IBAL:ManualTwoWayValve_6,
-        IBAL:ManualTwoWayValve_7 ;
-    s223:connectedFrom IBAL:ManualTwoWayValve_6 ;
-    s223:connectedThrough IBAL:Segment_135,
-        IBAL:Segment_136,
-        IBAL:Segment_139 ;
-    s223:connectedTo IBAL:ManualTwoWayValve_7 ;
-    s223:hasConnectionPoint IBAL:Valve5_ICP1,
-        IBAL:Valve5_ICP2,
-        IBAL:Valve5_OCP .
+IBAL:WaterPump_1 a s223:Pump ;
+    rdfs:label "Water pump 1" ;
+    s223:cnx IBAL:WaterPump_1_ICP,
+        IBAL:WaterPump_1_OCP,
+        IBAL:WaterPump_1_S_ICP,
+        IBAL:WaterPump_1_S_OCP ;
+    s223:connected IBAL:Junction_27,
+        IBAL:PlateHeatExchanger_2 ;
+    s223:connectedFrom IBAL:PlateHeatExchanger_2 ;
+    s223:connectedThrough IBAL:HeatExchange_Connection,
+        IBAL:Segment_73 ;
+    s223:connectedTo IBAL:Junction_27 ;
+    s223:contains IBAL:WaterPump_1_VFD ;
+    s223:hasConnectionPoint IBAL:WaterPump_1_ICP,
+        IBAL:WaterPump_1_OCP,
+        IBAL:WaterPump_1_S_ICP,
+        IBAL:WaterPump_1_S_OCP .
 
 IBAL:WaterPump_2 a s223:Pump ;
     rdfs:label "Water pump 2" ;
@@ -10499,25 +10488,6 @@ IBAL:CoolingCoil_2 a s223:CoolingCoil ;
         IBAL:CC_2_Water_OCP ;
     s223:hasRole s223:Role-Cooling,
         s223:Role-HeatTransfer .
-
-IBAL:HeatingCoil_7 a s223:HeatingCoil ;
-    rdfs:label "Heating coil 7" ;
-    s223:cnx IBAL:HC_7_E_ICP,
-        IBAL:HC_7_E_OCP,
-        IBAL:HC_7_ICP,
-        IBAL:HC_7_OCP ;
-    s223:connected IBAL:CoolingCoil_3,
-        IBAL:Fan_5 ;
-    s223:connectedFrom IBAL:CoolingCoil_3 ;
-    s223:connectedThrough IBAL:AHU_3_Connection_2,
-        IBAL:AHU_3_Connection_3 ;
-    s223:connectedTo IBAL:Fan_5 ;
-    s223:hasConnectionPoint IBAL:HC_7_E_ICP,
-        IBAL:HC_7_E_OCP,
-        IBAL:HC_7_ICP,
-        IBAL:HC_7_OCP ;
-    s223:hasRole s223:Role-HeatTransfer,
-        s223:Role-Heating .
 
 IBAL:VAV_4 a s223:TerminalUnit ;
     rdfs:label "VAV 4" ;
@@ -10673,6 +10643,24 @@ IBAL:MotorizedThreeWayValve_2 a s223:ThreeWayValve ;
         IBAL:MotorizedThreeWayValve_2_ICP_2,
         IBAL:MotorizedThreeWayValve_2_OCP .
 
+IBAL:MotorizedThreeWayValve_3 a s223:ThreeWayValve ;
+    rdfs:label "Motorized three way valve 3" ;
+    s223:cnx IBAL:MotorizedThreeWayValve_3_ICP_1,
+        IBAL:MotorizedThreeWayValve_3_ICP_2,
+        IBAL:MotorizedThreeWayValve_3_OCP ;
+    s223:connected IBAL:Junction_23,
+        IBAL:ManualTwoWayValve_3,
+        IBAL:PlateHeatExchanger_1 ;
+    s223:connectedFrom IBAL:ManualTwoWayValve_3,
+        IBAL:PlateHeatExchanger_1 ;
+    s223:connectedThrough IBAL:PlateHeatExchange_1_Bypass_Connection,
+        IBAL:PlateHeatExchange_1_Connection,
+        IBAL:Segment_107 ;
+    s223:connectedTo IBAL:Junction_23 ;
+    s223:hasConnectionPoint IBAL:MotorizedThreeWayValve_3_ICP_1,
+        IBAL:MotorizedThreeWayValve_3_ICP_2,
+        IBAL:MotorizedThreeWayValve_3_OCP .
+
 IBAL:MotorizedThreeWayValve_4 a s223:ThreeWayValve ;
     rdfs:label "Motorized three way valve 4" ;
     s223:cnx IBAL:MotorizedThreeWayValve_4_ICP_1,
@@ -10709,6 +10697,60 @@ IBAL:MotorizedThreeWayValve_5 a s223:ThreeWayValve ;
         IBAL:MotorizedThreeWayValve_5_ICP_2,
         IBAL:MotorizedThreeWayValve_5_OCP .
 
+IBAL:Valve11 a s223:ThreeWayValve ;
+    rdfs:label "Valve11" ;
+    s223:cnx IBAL:Valve11_ICP1,
+        IBAL:Valve11_ICP2,
+        IBAL:Vavle11_OCP ;
+    s223:connected IBAL:Junction_56,
+        IBAL:ManualTwoWayValve_9,
+        IBAL:PlateHeatExchanger_1 ;
+    s223:connectedFrom IBAL:ManualTwoWayValve_9,
+        IBAL:PlateHeatExchanger_1 ;
+    s223:connectedThrough IBAL:Segment_151,
+        IBAL:Segment_152,
+        IBAL:Segment_156 ;
+    s223:connectedTo IBAL:Junction_56 ;
+    s223:hasConnectionPoint IBAL:Valve11_ICP1,
+        IBAL:Valve11_ICP2,
+        IBAL:Vavle11_OCP .
+
+IBAL:Valve4 a s223:ThreeWayValve ;
+    rdfs:label "Valve4" ;
+    s223:cnx IBAL:Valve4_ICP1,
+        IBAL:Valve4_ICP2,
+        IBAL:Valve4_OCP ;
+    s223:connected IBAL:Junction_53,
+        IBAL:ManualTwoWayValve_8,
+        IBAL:PlateHeatExchanger_3 ;
+    s223:connectedFrom IBAL:ManualTwoWayValve_8,
+        IBAL:PlateHeatExchanger_3 ;
+    s223:connectedThrough IBAL:Segment_140,
+        IBAL:Segment_141,
+        IBAL:Segment_145 ;
+    s223:connectedTo IBAL:Junction_53 ;
+    s223:hasConnectionPoint IBAL:Valve4_ICP1,
+        IBAL:Valve4_ICP2,
+        IBAL:Valve4_OCP .
+
+IBAL:Valve5 a s223:ThreeWayValve ;
+    rdfs:label "Valve5" ;
+    s223:cnx IBAL:Valve5_ICP1,
+        IBAL:Valve5_ICP2,
+        IBAL:Valve5_OCP ;
+    s223:connected IBAL:ManualTwoWayValve_6,
+        IBAL:ManualTwoWayValve_7,
+        IBAL:PlateHeatExchanger_3 ;
+    s223:connectedFrom IBAL:ManualTwoWayValve_6,
+        IBAL:PlateHeatExchanger_3 ;
+    s223:connectedThrough IBAL:Segment_135,
+        IBAL:Segment_136,
+        IBAL:Segment_139 ;
+    s223:connectedTo IBAL:ManualTwoWayValve_7 ;
+    s223:hasConnectionPoint IBAL:Valve5_ICP1,
+        IBAL:Valve5_ICP2,
+        IBAL:Valve5_OCP .
+
 IBAL:Fan_3 a s223:Fan ;
     rdfs:label "Fan 3" ;
     s223:cnx IBAL:Fan_3_E_ICP,
@@ -10726,6 +10768,78 @@ IBAL:Fan_3 a s223:Fan ;
     s223:hasConnectionPoint IBAL:Fan_3_E_ICP,
         IBAL:Fan_3_ICP,
         IBAL:Fan_3_OCP .
+
+IBAL:PlateHeatExchanger_3 a s223:HydronicHeatExchanger ;
+    rdfs:label "Plate heat exchange 3" ;
+    s223:cnx IBAL:PlateHeatExchange_3_Lower_ICP,
+        IBAL:PlateHeatExchange_3_Lower_OCP,
+        IBAL:PlateHeatExchange_3_Upper_ICP,
+        IBAL:PlateHeatExchange_3_Upper_OCP ;
+    s223:connected IBAL:Junction_51,
+        IBAL:Junction_52,
+        IBAL:Valve4,
+        IBAL:Valve5 ;
+    s223:connectedFrom IBAL:Junction_51,
+        IBAL:Junction_52 ;
+    s223:connectedThrough IBAL:Segment_134,
+        IBAL:Segment_135,
+        IBAL:Segment_140,
+        IBAL:Segment_143 ;
+    s223:connectedTo IBAL:Valve4,
+        IBAL:Valve5 ;
+    s223:hasConnectionPoint IBAL:PlateHeatExchange_3_Lower_ICP,
+        IBAL:PlateHeatExchange_3_Lower_OCP,
+        IBAL:PlateHeatExchange_3_Upper_ICP,
+        IBAL:PlateHeatExchange_3_Upper_OCP ;
+    s223:hasRole s223:Role-HeatTransfer .
+
+IBAL:PlateHeatExchanger_1 a s223:HydronicHeatExchanger ;
+    rdfs:label "Plate heat exchanger 1" ;
+    s223:cnx IBAL:PlateHeatExchange_1_Lower_ICP,
+        IBAL:PlateHeatExchange_1_Lower_OCP,
+        IBAL:PlateHeatExchange_1_Upper_ICP,
+        IBAL:PlateHeatExchange_1_Upper_OCP ;
+    s223:connected IBAL:Junction_22,
+        IBAL:Junction_57,
+        IBAL:MotorizedThreeWayValve_3,
+        IBAL:Valve11 ;
+    s223:connectedFrom IBAL:Junction_22,
+        IBAL:Junction_57 ;
+    s223:connectedThrough IBAL:PlateHeatExchange_1_Connection,
+        IBAL:Segment_151,
+        IBAL:Segment_154,
+        IBAL:Segment_63 ;
+    s223:connectedTo IBAL:MotorizedThreeWayValve_3,
+        IBAL:Valve11 ;
+    s223:hasConnectionPoint IBAL:PlateHeatExchange_1_Lower_ICP,
+        IBAL:PlateHeatExchange_1_Lower_OCP,
+        IBAL:PlateHeatExchange_1_Upper_ICP,
+        IBAL:PlateHeatExchange_1_Upper_OCP ;
+    s223:hasRole s223:Role-HeatTransfer .
+
+IBAL:PlateHeatExchanger_2 a s223:HydronicHeatExchanger ;
+    rdfs:label "Plate heat exchanger 2" ;
+    s223:cnx IBAL:PlateHeatExchange_2_Lower_ICP,
+        IBAL:PlateHeatExchange_2_Lower_OCP,
+        IBAL:PlateHeatExchange_2_Upper_ICP,
+        IBAL:PlateHeatExchange_2_Upper_OCP ;
+    s223:connected IBAL:Junction_25,
+        IBAL:Junction_39,
+        IBAL:Valve1,
+        IBAL:WaterPump_1 ;
+    s223:connectedFrom IBAL:Junction_25,
+        IBAL:Junction_39 ;
+    s223:connectedThrough IBAL:HeatExchange_Connection,
+        IBAL:Segment_108,
+        IBAL:Segment_109,
+        IBAL:Segment_70 ;
+    s223:connectedTo IBAL:Valve1,
+        IBAL:WaterPump_1 ;
+    s223:hasConnectionPoint IBAL:PlateHeatExchange_2_Lower_ICP,
+        IBAL:PlateHeatExchange_2_Lower_OCP,
+        IBAL:PlateHeatExchange_2_Upper_ICP,
+        IBAL:PlateHeatExchange_2_Upper_OCP ;
+    s223:hasRole s223:Role-HeatTransfer .
 
 IBAL:AHU_3 a s223:AirHandlingUnit ;
     rdfs:label "AHU 3" ;
