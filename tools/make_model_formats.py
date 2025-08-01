@@ -1,21 +1,20 @@
 import os
-import glob
 import re
 import sys
 import rdflib
 from rdflib import Graph
 
-# Check if the path to the directory is provided
+# Check if the path to the file is provided
 if len(sys.argv) != 2:
-    print("Usage: python make-models.py <directory_path>")
+    print("Usage: python make_model_formats.py <file_path>")
     sys.exit(1)
 
-# Get directory name from command line argument
-directory = sys.argv[1]
+# Get file path from command line argument
+file_path = sys.argv[1]
 
-# Check if the provided directory exists
-if not os.path.isdir(directory):
-    print(f"The provided directory does not exist: {directory}")
+# Check if the provided file exists
+if not os.path.isfile(file_path):
+    print(f"The provided file does not exist: {file_path}")
     sys.exit(1)
 
 # Function to convert ttl files to json-ld
@@ -62,26 +61,26 @@ def replace_section_in_markdown(file_path, header, new_content):
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(new_content)
 
-# Walk through the directory
-for root, dirs, files in os.walk(directory):
-    for file in files:
-        if file.endswith('.ttl'):
-            # Construct the full file path
-            file_path = os.path.join(root, file)
-            # Convert the file
-            convert_ttl_to_jsonld(file_path)
+# Convert the file
+convert_ttl_to_jsonld(file_path)
 
-# for each each .md file in the examples/ directory, write the turtle and json-ld links
-# into the '## Downloads' folder
-for md in glob.glob('examples/*.md'):
-    # Extract the file name from the path
-    file_name = os.path.basename(md)
-    # create the markdown with the links in a <a> tag
-    markdown_content = f"""
-- <a href="/compiled/{file_name.replace('.md', '.ttl')}">Turtle file (compiled)</a>
-- <a href="/withimports/{file_name.replace('.md', '.ttl')}">Turtle file (with all imports)</a>
-- <a href="/{file_name.replace('.md', '.ttl')}">Turtle file (original)</a>
-- <a href="/{file_name.replace('.md', '.jsonld')}">JSON-LD file (original)</a>
+
+# update the markdown file if it exists
+ttl_filename = os.path.basename(file_path)
+md_filename = ttl_filename.replace('.ttl', '.md')
+md_filepath = os.path.join('examples', md_filename)
+
+if not os.path.exists(md_filepath):
+    print(f"No corresponding markdown file found at {md_filepath}, so not updating Downloads section")
+    sys.exit(0)
+
+# create the markdown with the links in a <a> tag
+jsonld_filename = ttl_filename.replace('.ttl', '.jsonld')
+markdown_content = f"""
+- <a href="/compiled/{ttl_filename}">Turtle file (compiled)</a>
+- <a href="/withimports/{ttl_filename}">Turtle file (with all imports)</a>
+- <a href="/{ttl_filename}">Turtle file (original)</a>
+- <a href="/{jsonld_filename}">JSON-LD file (original)</a>
 
 <details>
 <summary>What are these files?</summary>
@@ -94,6 +93,7 @@ for md in glob.glob('examples/*.md'):
 [Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers
 are available in many programming languages. [JSON-LD](https://json-ld.org) is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.
 </details>
-    """
-    replace_section_in_markdown(md, '## Downloads', markdown_content)
+"""
+replace_section_in_markdown(md_filepath, '## Downloads', markdown_content)
+print(f"Updated downloads section in {md_filepath}")
 
