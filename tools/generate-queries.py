@@ -1,41 +1,8 @@
 import urllib.parse
 import os
 import sys
-import re
 import toml
-
-def replace_section_in_markdown(file_path, header, new_content):
-    header_pattern = re.compile(r"^## .+$", re.MULTILINE)
-    with open(file_path, 'r', encoding='utf-8') as file:
-        content = file.read()
-
-    # Find the start index of the header section to be replaced
-    header_start_idx = content.find(header)
-    if header_start_idx == -1:
-        print(f"The header '{header}' was not found in the file.")
-        return
-
-    # Find the start index of the next header (if it exists)
-    headers_start = [match.start() for match in header_pattern.finditer(content)]
-    next_header_idx = None
-    for start in headers_start:
-        if start > header_start_idx:
-            next_header_idx = start
-            break
-
-    # If there's a next header, split the content, otherwise take everything until the end
-    if next_header_idx is not None:
-        pre_content = content[:header_start_idx]
-        post_content = content[next_header_idx:]
-        new_content = f"{pre_content}{header}\n{new_content}\n{post_content}"
-    else:
-        pre_content = content[:header_start_idx]
-        new_content = f"{pre_content}{header}\n{new_content}\n"
-
-    # Write the modified content back to the same file
-    with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(new_content)
-
+import markdown_utils
 
 # Check if the path to the directory is provided
 if len(sys.argv) != 2:
@@ -103,5 +70,8 @@ for key in toml_data:
         markdown_table += f"| {description} | <a href='{query_url}'>Query Link</a> |\n"
     header_to_replace = "## Queries"
     markdown_file_path = f"examples/{key}.md"
-    replace_section_in_markdown(markdown_file_path, header_to_replace, markdown_table)
+    try:
+        markdown_utils.replace_section(markdown_file_path, header_to_replace, markdown_table)
+    except ValueError as e:
+        print(e)
 
