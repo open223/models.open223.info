@@ -17,4 +17,5 @@ ontoenv update
 mkdir -p models/compiled
 mkdir -p models/withimports
 make -j 2
+make install-kernel
 uv run jb build .
