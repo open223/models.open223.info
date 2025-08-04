@@ -468,7 +468,6 @@ mysystem:MultipleZoneAhu-ra-fan-power a s223:QuantifiableObservableProperty ;
 
 mysystem:MultipleZoneAhu-ra-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
     rdfs:label "Multiplezoneahu Ra Fan Speed Cmd" ;
-    s223:hasAspect s223:EnumerationKind-Speed ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -479,11 +478,11 @@ mysystem:MultipleZoneAhu-ra-fan-speed-status a s223:QuantifiableObservableProper
 
 mysystem:MultipleZoneAhu-ra-fan-start-cmd a s223:EnumeratedActuatableProperty ;
     rdfs:label "Multiplezoneahu Ra Fan Start Cmd" ;
-    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:Binary-OnOff .
 
 mysystem:MultipleZoneAhu-ra-fan-start-status a s223:EnumeratedObservableProperty ;
     rdfs:label "Multiplezoneahu Ra Fan Start Status" ;
-    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:Binary-OnOff .
 
 mysystem:MultipleZoneAhu-return-exhaust-junction a s223:Junction ;
     rdfs:label "Multiplezoneahu Return Exhaust Junction" ;
@@ -524,7 +523,6 @@ mysystem:MultipleZoneAhu-sa-fan-power a s223:QuantifiableObservableProperty ;
 
 mysystem:MultipleZoneAhu-sa-fan-speed-cmd a s223:QuantifiableActuatableProperty ;
     rdfs:label "Multiplezoneahu Sa Fan Speed Cmd" ;
-    s223:hasAspect s223:EnumerationKind-Speed ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -535,11 +533,11 @@ mysystem:MultipleZoneAhu-sa-fan-speed-status a s223:QuantifiableObservableProper
 
 mysystem:MultipleZoneAhu-sa-fan-start-cmd a s223:EnumeratedActuatableProperty ;
     rdfs:label "Multiplezoneahu Sa Fan Start Cmd" ;
-    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:Binary-OnOff .
 
 mysystem:MultipleZoneAhu-sa-fan-start-status a s223:EnumeratedObservableProperty ;
     rdfs:label "Multiplezoneahu Sa Fan Start Status" ;
-    s223:hasEnumerationKind s223:EnumerationKind-OnOff .
+    s223:hasEnumerationKind s223:Binary-OnOff .
 
 mysystem:MultipleZoneAhu-sa-temp-setpoint a s223:QuantifiableActuatableProperty ;
     rdfs:label "Multiplezoneahu Sa Temp Setpoint" ;
@@ -705,6 +703,7 @@ mysystem:vav-702-reheat-coil-valve-position a s223:QuantifiableObservablePropert
 
 mysystem:zone-101-co2-concentration a s223:QuantifiableObservableProperty ;
     rdfs:label "Zone 101 Co2 Concentration" ;
+    s223:ofMedium s223:Fluid-Air ;
     s223:ofSubstance s223:Constituent-CO2 ;
     qudt:hasQuantityKind qudtqk:MoleFraction ;
     qudt:hasUnit unit:PPM .
@@ -716,6 +715,7 @@ mysystem:zone-101-temp a s223:QuantifiableObservableProperty ;
 
 mysystem:zone-102-co2-concentration a s223:QuantifiableObservableProperty ;
     rdfs:label "Zone 102 Co2 Concentration" ;
+    s223:ofMedium s223:Fluid-Air ;
     s223:ofSubstance s223:Constituent-CO2 ;
     qudt:hasQuantityKind qudtqk:MoleFraction ;
     qudt:hasUnit unit:PPM .
@@ -753,7 +753,7 @@ mysystem:MultipleZoneAhu-clg-coil-valve a s223:Valve,
 
 mysystem:MultipleZoneAhu-clg-coil-valve-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Multiplezoneahu Clg Coil Valve Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -828,7 +828,7 @@ mysystem:MultipleZoneAhu-ea-damper a s223:Damper,
 
 mysystem:MultipleZoneAhu-ea-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Multiplezoneahu Ea Damper Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -847,7 +847,7 @@ mysystem:MultipleZoneAhu-economizer-oa-damper a s223:Damper,
 
 mysystem:MultipleZoneAhu-economizer-oa-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Multiplezoneahu Economizer Oa Damper Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -895,7 +895,7 @@ mysystem:MultipleZoneAhu-htg-coil-valve a s223:Valve,
 
 mysystem:MultipleZoneAhu-htg-coil-valve-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Multiplezoneahu Htg Coil Valve Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -925,7 +925,7 @@ mysystem:MultipleZoneAhu-minimum-oa-damper a s223:Damper,
 
 mysystem:MultipleZoneAhu-minimum-oa-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Multiplezoneahu Minimum Oa Damper Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -966,7 +966,7 @@ mysystem:MultipleZoneAhu-ra-damper a s223:Damper,
 
 mysystem:MultipleZoneAhu-ra-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Multiplezoneahu Ra Damper Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -1079,7 +1079,7 @@ mysystem:vav-701-damper a s223:Damper,
 
 mysystem:vav-701-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Vav 701 Damper Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -1133,7 +1133,7 @@ mysystem:vav-701-reheat-coil-valve a s223:Valve,
 
 mysystem:vav-701-reheat-coil-valve-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Vav 701 Reheat Coil Valve Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -1162,7 +1162,7 @@ mysystem:vav-702-damper a s223:Damper,
 
 mysystem:vav-702-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Vav 702 Damper Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -1216,7 +1216,7 @@ mysystem:vav-702-reheat-coil-valve a s223:Valve,
 
 mysystem:vav-702-reheat-coil-valve-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Vav 702 Reheat Coil Valve Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 

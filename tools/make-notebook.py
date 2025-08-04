@@ -1,6 +1,6 @@
-import re
 import sys
 import pathlib
+import markdown_utils
 
 def generate_python_code(location):
     # rewrite the 'models/bdg1-1.ttl' location to 'compiled/bdg1-1.ttl'
@@ -22,9 +22,9 @@ bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ER
 
 # load 223P library. We will load a recent copy from the models.open223.info
 # git repository; later, we will load this from the location of the actual standard
-s223 = Library.load(ontology_graph="https://open223.info/223p.ttl")
-unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit")
-quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind")
+s223 = Library.load(ontology_graph="https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
+unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit", infer_templates=False, run_shacl_inference=False)
+quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind", infer_templates=False, run_shacl_inference=False)
 
 # load the model into the BuildingMOTIF instance
 model = Model.create("urn:{model_name}")
@@ -76,39 +76,6 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@devel
 ````
 """
 
-def add_code_to_markdown(markdown_file_path, code_content):
-    # code_tab = """
-    # ````{tab-set}
-    # ```{tab-item} Tab 1 title
-    # My first tab
-    # ```
-
-    # ```{tab-item} Tab 2 title
-    # My second tab with `some code`!
-    # ```
-    # ````
-    # """
-    code_block = f"\n```{{code-cell}} python3\n{code_content}\n```\n"
-
-    header = "## Load and Validate Model"
-    new_content = f"\n{header}\n{description}\n{code_block}"
-
-    with open(markdown_file_path, 'r', encoding='utf-8') as file:
-        content = file.read()
-
-    # Check if the header exists and replace its content if it does
-    if header in content:
-        # remove everything from this header up until the next markdown header or the end of the file (whichever is first)
-        # and replace it with the new content
-        content = re.sub(rf"{header}[\s\S]*?(?=##|$)", new_content, content)
-
-
-    else:
-        content += new_content
-
-    with open(markdown_file_path, 'w', encoding='utf-8') as file:
-        file.write(content)
-
 if __name__ == '__main__':
     if len(sys.argv) != 3:
         print("Usage: python make_notebook.py <path_to_model_file> <path_to_markdown_file>")
@@ -116,6 +83,12 @@ if __name__ == '__main__':
 
     model_file_path = sys.argv[1]
     markdown_file_path = sys.argv[2]
+    print(f"Generating code for model file: {model_file_path}")
 
     code_content = generate_python_code(model_file_path)
-    add_code_to_markdown(markdown_file_path, code_content)
+
+    code_block = f"```{{code-cell}} python3\n{code_content}\n```\n"
+    header = "## Load and Validate Model"
+    new_body = f"{description}\n{code_block}"
+
+    markdown_utils.upsert_section(markdown_file_path, header, new_body)
