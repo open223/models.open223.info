@@ -5,16 +5,10 @@ jupytext:
     extension: .md
     format_name: myst
 kernelspec:
-  display_name: Python 3
+  display_name: open223-models
   language: python
-  name: python3
+  name: open223-models
 ---
-
-```{warning}
-This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-07-08 10:11:44. The model file was last updated on 2024-09-15 23:37:32
-```
-        
 # ASHRAE Guideline 36-2021 A-9 Multiple Zone VAV Air Handling Unit
 
 This component model is an example of the multiple zone VAV air handling unit _with return fan and OA measurement station_ from Guideline 36-2021, Appendix A, Figure A-9.
@@ -34,10 +28,10 @@ This component model is an example of the multiple zone VAV air handling unit _w
 - **Turtle file (with all imports)**: This is the compiled Turtle file with all imports included in the file (223P ontology, QUDT ontology, and others). This is helpful when you do not want to deal with downloading and managing ontology dependencies. It is also much larger than the compiled file.
 - **JSON-LD file (original)**: This is the original Turtle file converted to the JSON-LD format.
 
-[Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers 
+[Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers
 are available in many programming languages. [JSON-LD](https://json-ld.org) is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.
 </details>
-    
+
 ## Model Components
 | Parent Class | Class | Instances |
 |------------|-------|----------------|
@@ -88,7 +82,6 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@devel
 ```
 ````
 
-
 ```{code-cell} python3
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
@@ -100,9 +93,9 @@ bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ER
 
 # load 223P library. We will load a recent copy from the models.open223.info
 # git repository; later, we will load this from the location of the actual standard
-s223 = Library.load(ontology_graph="https://open223.info/223p.ttl")
-unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit")
-quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind")
+s223 = Library.load(ontology_graph="https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
+unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit", infer_templates=False, run_shacl_inference=False)
+quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind", infer_templates=False, run_shacl_inference=False)
 
 # load the model into the BuildingMOTIF instance
 model = Model.create("urn:guideline36-2021-A-9")

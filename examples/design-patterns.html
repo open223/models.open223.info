@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -396,7 +396,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloads">Downloads</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queries">Queries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-validate-model">Load and Validate Model</a></li>
 </ul>
             </nav>
         </div>
@@ -408,12 +407,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-07-08 10:11:44. The model file was last updated on 2024-09-19 11:21:33</p>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="design-patterns">
+  <section class="tex2jax_ignore mathjax_ignore" id="design-patterns">
 <h1>Design Patterns<a class="headerlink" href="#design-patterns" title="Link to this heading">#</a></h1>
 <p>This file contains the Turtle code supporting the set of design patterns presented in the User Documentation site, in the section titled <a class="reference external" href="https://docs.open223.info/guides/design-patterns.html#">“Modeling Design Patterns”</a></p>
 <section id="source">
@@ -526,116 +520,6 @@ are available in many programming languages. <a class="reference external" href=
 </table>
 </div>
 </section>
-<section id="load-and-validate-model">
-<h2>Load and Validate Model<a class="headerlink" href="#load-and-validate-model" title="Link to this heading">#</a></h2>
-<p>This code uses the <a class="reference external" href="https://github.com/NREL/BuildingMOTIF">BuildingMOTIF</a> library to load the 223P ontology and the model file into a temporary in-memory instance.
-It then validates the model against the ontology. If the model is invalid, it will print the validation report.</p>
-<p>To run this code, you need to have Java installed on your system. If you do not have Java installed, you can remove the <code class="docutils literal notranslate"><span class="pre">shacl_engine='topquadrant'</span></code> parameter from the <code class="docutils literal notranslate"><span class="pre">BuildingMOTIF</span></code> constructor.
-Be warned that without the <code class="docutils literal notranslate"><span class="pre">shacl_engine='topquadrant'</span></code> parameter, the validation process will be slower.</p>
-<div class="dropdown admonition note">
-<p class="admonition-title">Note</p>
-<p>BuildingMOTIF installation
-To install the <code class="docutils literal notranslate"><span class="pre">buildingmotif</span></code> library, you can use the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;buildingmotif[topquadrant] @ git+https://github.com/NREL/buildingmotif.git@develop&#39;</span>
-</pre></div>
-</div>
-<p>If you do not have Java installed, you can use the following command to install the library:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif</span><span class="w"> </span><span class="kn">import</span> <span class="n">BuildingMOTIF</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">buildingmotif.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">Library</span><span class="p">,</span> <span class="n">Model</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ontoenv</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
-
-<span class="c1"># Create a BuildingMOTIF object. If you do not have Java installed, remove the &quot;shacl_engine&quot; parameter</span>
-<span class="n">bm</span> <span class="o">=</span> <span class="n">BuildingMOTIF</span><span class="p">(</span><span class="s1">&#39;sqlite://&#39;</span><span class="p">,</span> <span class="n">shacl_engine</span><span class="o">=</span><span class="s1">&#39;topquadrant&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
-
-<span class="c1"># load 223P library. We will load a recent copy from the models.open223.info</span>
-<span class="c1"># git repository; later, we will load this from the location of the actual standard</span>
-<span class="n">s223</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ontology_graph</span><span class="o">=</span><span class="s2">&quot;https://open223.info/223p.ttl&quot;</span><span class="p">)</span>
-<span class="n">unit</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ontology_graph</span><span class="o">=</span><span class="s2">&quot;http://qudt.org/3.1.1/vocab/unit&quot;</span><span class="p">)</span>
-<span class="n">quantitykind</span> <span class="o">=</span> <span class="n">Library</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ontology_graph</span><span class="o">=</span><span class="s2">&quot;http://qudt.org/3.1.1/vocab/quantitykind&quot;</span><span class="p">)</span>
-
-<span class="c1"># load the model into the BuildingMOTIF instance</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;urn:design-patterns&quot;</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;https://models.open223.info/design-patterns.ttl&quot;</span><span class="p">)</span>
-
-<span class="c1"># validate the model against 223P ontology</span>
-<span class="n">ctx</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">validate</span><span class="p">([</span><span class="n">s223</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">(),</span>
-                      <span class="n">unit</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">(),</span>
-                      <span class="n">quantitykind</span><span class="o">.</span><span class="n">get_shape_collection</span><span class="p">()],</span>
-                     <span class="n">error_on_missing_imports</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># print the validation result</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model is valid: </span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># if the model is invalid, print the validation report</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">ctx</span><span class="o">.</span><span class="n">valid</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">report_string</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span> <span class="c1"># first 1000 characters of the report</span>
-
-<span class="c1"># BuildingMOTIF can also interpret the report to provide recommendations on fixes</span>
-<span class="k">for</span> <span class="n">focus_node</span><span class="p">,</span> <span class="n">diffs</span> <span class="ow">in</span> <span class="n">ctx</span><span class="o">.</span><span class="n">get_reasons_with_severity</span><span class="p">(</span><span class="s2">&quot;Violation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">diffs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">focus_node</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">diff</span> <span class="ow">in</span> <span class="n">diffs</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - &quot;</span> <span class="o">+</span> <span class="n">diff</span><span class="o">.</span><span class="n">reason</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is valid: 0
-@prefix ns2: &lt;http://data.ashrae.org/standard223#&gt; .
-@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-
-[] a sh:ValidationReport ;
-    sh:conforms false ;
-    sh:result [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP&gt; ;
-            sh:resultMessage &quot;s223: A `ConnectionPoint` shall be associated with exactly one `Connectable` using the relation `isConnectionPointOf`.&quot; ;
-            sh:resultPath ns2:isConnectionPointOf ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape &lt;urn:well-known/176d51c9&gt; ],
-        [ a sh:ValidationResult ;
-            sh:focusNode &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty&gt; ;
-            sh:resultMessage &quot;s223: &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty&gt; has an
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty needs to be a http://data.ashrae.org/standard223#EnumerationKind
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -647,16 +531,16 @@ http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "open223-models"
         },
         kernelOptions: {
-            name: "python3",
+            name: "open223-models",
             path: "./examples"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'open223-models'</script>
 
                 </article>
               
@@ -706,7 +590,6 @@ http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloads">Downloads</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queries">Queries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-validate-model">Load and Validate Model</a></li>
 </ul>
   </nav></div>
 

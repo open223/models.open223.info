@@ -5,16 +5,10 @@ jupytext:
     extension: .md
     format_name: myst
 kernelspec:
-  display_name: Python 3
+  display_name: open223-models
   language: python
-  name: python3
+  name: open223-models
 ---
-
-```{warning}
-This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-07-08 10:11:44. The model file was last updated on 2025-05-28 10:30:30
-```
-        
 # NIST Example Building 1 Model 1
 
 Example Building 1 is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.
@@ -50,7 +44,7 @@ The model was created using [TopQuadrant](https://www.topquadrant.com/) TopBraid
 - **Turtle file (with all imports)**: This is the compiled Turtle file with all imports included in the file (223P ontology, QUDT ontology, and others). This is helpful when you do not want to deal with downloading and managing ontology dependencies. It is also much larger than the compiled file.
 - **JSON-LD file (original)**: This is the original Turtle file converted to the JSON-LD format.
 
-[Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers 
+[Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers
 are available in many programming languages. [JSON-LD](https://json-ld.org) is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.
 </details>
     
@@ -65,6 +59,7 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Actuator](https://explore.open223.info/s223/Actuator.html) | 12 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Luminaire](https://explore.open223.info/s223/Luminaire.html) | 12 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [TemperatureSensor](https://explore.open223.info/s223/TemperatureSensor.html) | 10 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [ElectricBreaker](https://explore.open223.info/s223/ElectricBreaker.html) | 6 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Damper](https://explore.open223.info/s223/Damper.html) | 6 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatingCoil](https://explore.open223.info/s223/HeatingCoil.html) | 3 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [FlowSensor](https://explore.open223.info/s223/FlowSensor.html) | 3 |
@@ -76,91 +71,29 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [SingleDuctTerminal](https://explore.open223.info/s223/SingleDuctTerminal.html) | 2 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [AirHandlingUnit](https://explore.open223.info/s223/AirHandlingUnit.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Boiler](https://explore.open223.info/s223/Boiler.html) | 1 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Chiller](https://explore.open223.info/s223/Chiller.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Filter](https://explore.open223.info/s223/Filter.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Generator](https://explore.open223.info/s223/Generator.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Thermostat](https://explore.open223.info/s223/Thermostat.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Window](https://explore.open223.info/s223/Window.html) | 1 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Coil](https://explore.open223.info/s223/Coil.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [CoolingCoil](https://explore.open223.info/s223/CoolingCoil.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Sensor](https://explore.open223.info/s223/Sensor.html) | 1 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [IlluminanceSensor](https://explore.open223.info/s223/IlluminanceSensor.html) | 1 |
-| [Connection](https://explore.open223.info/s223/Connection.html) | [Pipe](https://explore.open223.info/s223/Pipe.html) | 3 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [OccupantCounter](https://explore.open223.info/s223/OccupantCounter.html) | 1 |
+| [Connection](https://explore.open223.info/s223/Connection.html) | [ElectricWire](https://explore.open223.info/s223/ElectricWire.html) | 10 |
 | [Connection](https://explore.open223.info/s223/Connection.html) | [Duct](https://explore.open223.info/s223/Duct.html) | 1 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 73 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 70 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [BidirectionalConnectionPoint](https://explore.open223.info/s223/BidirectionalConnectionPoint.html) | 3 |
+| [Connection](https://explore.open223.info/s223/Connection.html) | [Pipe](https://explore.open223.info/s223/Pipe.html) | 1 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 71 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 68 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [BidirectionalConnectionPoint](https://explore.open223.info/s223/BidirectionalConnectionPoint.html) | 2 |
+| [FunctionBlock](https://explore.open223.info/s223/FunctionBlock.html) | [](https://explore.open223.info/s223/.html) | 3 |
+| [PhysicalSpace](https://explore.open223.info/s223/PhysicalSpace.html) | [OutsidePhysicalSpace](https://explore.open223.info/s223/OutsidePhysicalSpace.html) | 1 |
 | [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 19 |
 | [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 8 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableActuatableProperty](https://explore.open223.info/s223/QuantifiableActuatableProperty.html) | 21 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html) | 18 |
-| [Property](https://explore.open223.info/s223/Property.html) | [EnumerableProperty](https://explore.open223.info/s223/EnumerableProperty.html) | 14 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 12 |
+| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html) | 20 |
+| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableActuatableProperty](https://explore.open223.info/s223/QuantifiableActuatableProperty.html) | 18 |
+| [Property](https://explore.open223.info/s223/Property.html) | [EnumerableProperty](https://explore.open223.info/s223/EnumerableProperty.html) | 16 |
+| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 14 |
+| [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedActuatableProperty](https://explore.open223.info/s223/EnumeratedActuatableProperty.html) | 5 |
 | [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedObservableProperty](https://explore.open223.info/s223/EnumeratedObservableProperty.html) | 4 |
-| [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedActuatableProperty](https://explore.open223.info/s223/EnumeratedActuatableProperty.html) | 2 |
 
-
-## Load and Validate Model
-
-This code uses the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) library to load the 223P ontology and the model file into a temporary in-memory instance.
-It then validates the model against the ontology. If the model is invalid, it will print the validation report.
-
-To run this code, you need to have Java installed on your system. If you do not have Java installed, you can remove the `shacl_engine='topquadrant'` parameter from the `BuildingMOTIF` constructor.
-Be warned that without the `shacl_engine='topquadrant'` parameter, the validation process will be slower.
-
-````{note} BuildingMOTIF installation
-:class: dropdown
-To install the `buildingmotif` library, you can use the following command:
-
-```shell
-pip install 'buildingmotif[topquadrant] @ git+https://github.com/NREL/buildingmotif.git@develop'
-```
-
-If you do not have Java installed, you can use the following command to install the library:
-
-```shell
-pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop'
-```
-````
-
-
-```{code-cell} python3
-from buildingmotif import BuildingMOTIF
-from buildingmotif.dataclasses import Library, Model
-import ontoenv
-import logging
-
-# Create a BuildingMOTIF object. If you do not have Java installed, remove the "shacl_engine" parameter
-bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ERROR)
-
-# load 223P library. We will load a recent copy from the models.open223.info
-# git repository; later, we will load this from the location of the actual standard
-s223 = Library.load(ontology_graph="https://open223.info/223p.ttl")
-unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit")
-quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind")
-
-# load the model into the BuildingMOTIF instance
-model = Model.create("urn:nist-bdg1-1")
-model.graph.parse("https://models.open223.info/nist-bdg1-1.ttl")
-
-# validate the model against 223P ontology
-ctx = model.validate([s223.get_shape_collection(),
-                      unit.get_shape_collection(),
-                      quantitykind.get_shape_collection()],
-                     error_on_missing_imports=False)
-
-# print the validation result
-print(f"Model is valid: {ctx.valid}")
-
-# if the model is invalid, print the validation report
-if not ctx.valid:
-    print(ctx.report_string[:1000]) # first 1000 characters of the report
-
-# BuildingMOTIF can also interpret the report to provide recommendations on fixes
-for focus_node, diffs in ctx.get_reasons_with_severity("Violation").items():
-    if len(diffs) == 0:
-        continue
-    print(focus_node)
-    for diff in diffs:
-        print("  - " + diff.reason())
-
-```

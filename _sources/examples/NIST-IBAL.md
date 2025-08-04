@@ -5,16 +5,10 @@ jupytext:
     extension: .md
     format_name: myst
 kernelspec:
-  display_name: Python 3
+  display_name: open223-models
   language: python
-  name: python3
+  name: open223-models
 ---
-
-```{warning}
-This model has not been updated since the last revision of the 223P ontology, and it may not pass validation.
-223P was last updated on 2025-07-08 10:11:44. The model file was last updated on 2024-09-12 16:11:46
-```
-        
 
 # Intelligent Buildings Agents Laboratory (IBAL)
 
@@ -39,7 +33,7 @@ The IBAL is a mixed system lab at NIST that is able to test commercial equipment
 - **Turtle file (with all imports)**: This is the compiled Turtle file with all imports included in the file (223P ontology, QUDT ontology, and others). This is helpful when you do not want to deal with downloading and managing ontology dependencies. It is also much larger than the compiled file.
 - **JSON-LD file (original)**: This is the original Turtle file converted to the JSON-LD format.
 
-[Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers 
+[Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers
 are available in many programming languages. [JSON-LD](https://json-ld.org) is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.
 </details>
     
@@ -64,8 +58,6 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [VariableFrequencyDrive](https://explore.open223.info/s223/VariableFrequencyDrive.html) | 10 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [HumiditySensor](https://explore.open223.info/s223/HumiditySensor.html) | 9 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [ThreeWayValve](https://explore.open223.info/s223/ThreeWayValve.html) | 9 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatExchanger](https://explore.open223.info/s223/HeatExchanger.html) | 7 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatingCoil](https://explore.open223.info/s223/HeatingCoil.html) | 7 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Pump](https://explore.open223.info/s223/Pump.html) | 5 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Fan](https://explore.open223.info/s223/Fan.html) | 5 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [TerminalUnit](https://explore.open223.info/s223/TerminalUnit.html) | 4 |
@@ -76,13 +68,13 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Valve](https://explore.open223.info/s223/Valve.html) | 1 |
 | [Connection](https://explore.open223.info/s223/Connection.html) | [Pipe](https://explore.open223.info/s223/Pipe.html) | 1 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 226 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 221 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 214 |
 | [ExternalReference](https://explore.open223.info/s223/ExternalReference.html) | [BACnetExternalReference](https://explore.open223.info/s223/BACnetExternalReference.html) | 66 |
 | [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 4 |
 | [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 6 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html) | 151 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableActuatableProperty](https://explore.open223.info/s223/QuantifiableActuatableProperty.html) | 99 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 10 |
+| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableActuatableProperty](https://explore.open223.info/s223/QuantifiableActuatableProperty.html) | 93 |
+| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 16 |
 
 
 ## Load and Validate Model
@@ -107,7 +99,6 @@ If you do not have Java installed, you can use the following command to install 
 pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop'
 ```
 ````
-
 
 ```{code-cell} python3
 from buildingmotif import BuildingMOTIF
@@ -150,3 +141,4 @@ for focus_node, diffs in ctx.get_reasons_with_severity("Violation").items():
         print("  - " + diff.reason())
 
 ```
+

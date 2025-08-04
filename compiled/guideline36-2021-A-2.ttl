@@ -65,6 +65,7 @@ mysystem:VAVWithReheat-reheat-coil-valve-position a s223:QuantifiableObservableP
 
 mysystem:zone-co2-concentration a s223:QuantifiableObservableProperty ;
     rdfs:label "Zone Co2 Concentration" ;
+    s223:ofMedium s223:Fluid-Air ;
     s223:ofSubstance s223:Constituent-CO2 ;
     qudt:hasQuantityKind qudtqk:MoleFraction ;
     qudt:hasUnit unit:PPM .
@@ -76,7 +77,7 @@ mysystem:zone-temp a s223:QuantifiableObservableProperty ;
 
 mysystem:VAVWithReheat-damper-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Vavwithreheat Damper Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -118,7 +119,7 @@ mysystem:VAVWithReheat-reheat-coil-supply-water-temp a s223:QuantifiableObservab
 
 mysystem:VAVWithReheat-reheat-coil-valve-command a s223:QuantifiableActuatableProperty ;
     rdfs:label "Vavwithreheat Reheat Coil Valve Command" ;
-    s223:hasAspect s223:EnumerationKind-Position ;
+    s223:hasAspect s223:Binary-Position ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:hasUnit unit:PERCENT .
 
@@ -272,6 +273,7 @@ mysystem:VAVWithReheat-damper a s223:Damper,
         mysystem:VAVWithReheat-damper-position .
 
 mysystem:VAVWithReheat-reheat-coil-valve a s223:Valve,
+        g36:ChilledWaterValve,
         g36:HotWaterValve ;
     rdfs:label "Vavwithreheat Reheat Coil Valve" ;
     s223:cnx mysystem:VAVWithReheat-reheat-coil-valve-in,
