@@ -31,7 +31,7 @@ compile-models: $(COMPILED_MODELS) $(WITH_IMPORTS_MODELS)
 # It will only update the ones where the source .ttl file is newer.
 update-examples: $(EXAMPLE_MDS_WITH_MODELS)
 
-examples/%.md: models/%.ttl tools/make_count_table.py tools/make-notebook.py tools/mark-out-of-date.py tools/make_model_formats.py tools/generate-queries.py
+examples/%.md: models/%.ttl tools/make_count_table.py tools/make-notebook.py tools/mark-out-of-date.py tools/make_model_formats.py tools/generate-queries.py queries.toml
 	uv run python tools/make_model_formats.py $<
 	uv run python tools/generate-queries.py $< $@
 	uv run python tools/make_count_table.py $< $@
