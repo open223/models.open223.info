@@ -36,7 +36,7 @@ The IBAL is a mixed system lab at NIST that is able to test commercial equipment
 [Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers
 are available in many programming languages. [JSON-LD](https://json-ld.org) is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.
 </details>
-    
+
 ## Queries
 | Description | Query URL |
 |-------------|-----------|
@@ -111,9 +111,9 @@ bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ER
 
 # load 223P library. We will load a recent copy from the models.open223.info
 # git repository; later, we will load this from the location of the actual standard
-s223 = Library.load(ontology_graph="https://open223.info/223p.ttl")
-unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit")
-quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind")
+s223 = Library.load(ontology_graph="https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
+unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit", infer_templates=False, run_shacl_inference=False)
+quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind", infer_templates=False, run_shacl_inference=False)
 
 # load the model into the BuildingMOTIF instance
 model = Model.create("urn:NIST-IBAL")

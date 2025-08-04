@@ -9,6 +9,14 @@ kernelspec:
   language: python
   name: open223-models
 ---
+
+```{warning}
+This model has not been updated since the last revision of the 223P ontology and it may not pass validation.
+
+- 223P was last updated on 2025-07-08 10:11:44
+- model file was last updated on 2024-09-19 11:21:33
+```
+        
 # Design Patterns
 
 This file contains the Turtle code supporting the set of design patterns presented in the User Documentation site, in the section titled ["Modeling Design Patterns"](https://docs.open223.info/guides/design-patterns.html#)
@@ -35,7 +43,7 @@ The model was created using [TopQuadrant](https://www.topquadrant.com/) TopBraid
 [Turtle](https://www.w3.org/TR/turtle/) is a syntax for RDF (Resource Description Framework) that is easy to read and write. It is a popular format for representing linked data. Parsers and serializers
 are available in many programming languages. [JSON-LD](https://json-ld.org) is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.
 </details>
-    
+
 ## Queries
 | Description | Query URL |
 |-------------|-----------|
@@ -59,3 +67,68 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedObservableProperty](https://explore.open223.info/s223/EnumeratedObservableProperty.html) | 4 |
 | [Property](https://explore.open223.info/s223/Property.html) | [EnumerableProperty](https://explore.open223.info/s223/EnumerableProperty.html) | 3 |
 
+
+## Load and Validate Model
+
+This code uses the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) library to load the 223P ontology and the model file into a temporary in-memory instance.
+It then validates the model against the ontology. If the model is invalid, it will print the validation report.
+
+To run this code, you need to have Java installed on your system. If you do not have Java installed, you can remove the `shacl_engine='topquadrant'` parameter from the `BuildingMOTIF` constructor.
+Be warned that without the `shacl_engine='topquadrant'` parameter, the validation process will be slower.
+
+````{note} BuildingMOTIF installation
+:class: dropdown
+To install the `buildingmotif` library, you can use the following command:
+
+```shell
+pip install 'buildingmotif[topquadrant] @ git+https://github.com/NREL/buildingmotif.git@develop'
+```
+
+If you do not have Java installed, you can use the following command to install the library:
+
+```shell
+pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop'
+```
+````
+
+```{code-cell} python3
+from buildingmotif import BuildingMOTIF
+from buildingmotif.dataclasses import Library, Model
+import ontoenv
+import logging
+
+# Create a BuildingMOTIF object. If you do not have Java installed, remove the "shacl_engine" parameter
+bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ERROR)
+
+# load 223P library. We will load a recent copy from the models.open223.info
+# git repository; later, we will load this from the location of the actual standard
+s223 = Library.load(ontology_graph="https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
+unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit", infer_templates=False, run_shacl_inference=False)
+quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind", infer_templates=False, run_shacl_inference=False)
+
+# load the model into the BuildingMOTIF instance
+model = Model.create("urn:design-patterns")
+model.graph.parse("https://models.open223.info/design-patterns.ttl")
+
+# validate the model against 223P ontology
+ctx = model.validate([s223.get_shape_collection(),
+                      unit.get_shape_collection(),
+                      quantitykind.get_shape_collection()],
+                     error_on_missing_imports=False)
+
+# print the validation result
+print(f"Model is valid: {ctx.valid}")
+
+# if the model is invalid, print the validation report
+if not ctx.valid:
+    print(ctx.report_string[:1000]) # first 1000 characters of the report
+
+# BuildingMOTIF can also interpret the report to provide recommendations on fixes
+for focus_node, diffs in ctx.get_reasons_with_severity("Violation").items():
+    if len(diffs) == 0:
+        continue
+    print(focus_node)
+    for diff in diffs:
+        print("  - " + diff.reason())
+
+```
