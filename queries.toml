@@ -108,3 +108,29 @@ SELECT ?connectionDown ?connectionDown2 WHERE {
 	}
 }
 """
+[[nist-bdg1-1]]
+description="Where are all the temperature sensors?"
+query="""
+SELECT  ?sensorLabel ?sensor ?locationLabel ?physicalSpace
+WHERE {
+    ?sensor rdf:type/rdfs:subClassOf* s223:Sensor .
+    ?sensor s223:observes ?property .
+    ?property qudt:hasQuantityKind quantitykind:Temperature .
+    ?sensor s223:hasObservationLocation ?location .
+?sensor rdfs:label ?sensorLabel .
+?location rdfs:label ?locationLabel .
+OPTIONAL {?physicalSpace s223:encloses ?location}
+}
+"""
+[[nist-bdg1-1]]
+description="What equipment is serving a particular room?"
+query="""
+SELECT DISTINCT ?space ?domainspace ?equipment ?label WHERE {
+  ?space a s223:PhysicalSpace ;
+         s223:encloses ?domainspace .
+  ?domainspace a s223:DomainSpace .
+  ?equipment ?p ?domainspace . 
+  ?equipment a/rdfs:subClassOf* s223:Equipment .    
+  ?equipment rdfs:label ?label .   
+}
+"""

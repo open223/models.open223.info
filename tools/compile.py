@@ -4,12 +4,11 @@ import random
 import argparse
 import ontoenv
 import rdflib
-from brick_tq_shacl import topquadrant_shacl
-from brick_tq_shacl.topquadrant_shacl import infer, validate
+from brick_tq_shacl import infer, validate
 import rdflib
 
 graph = rdflib.Graph()
-cfg = ontoenv.Config(["models/nrel-example.ttl", "ontologies"], offline=False, strict=False, includes=['*.ttl'])
+cfg = ontoenv.Config(["models", "ontologies"], offline=False, strict=False, includes=['*.ttl'], excludes=["models/compiled/*.ttl", "models/withimports/*.ttl"])
 env = ontoenv.OntoEnv(cfg, read_only=True, recreate=False)
 
 if __name__ == "__main__":
@@ -43,8 +42,7 @@ if __name__ == "__main__":
         env.import_dependencies(graph)
         namespaces = dict(graph.namespace_manager.namespaces())
     if args.reason:
-        topquadrant_shacl._MAX_EXTERNAL_LOOPS = 10
-        graph = infer(graph, deps)
+        graph = infer(graph, deps, min_iterations=5)
     if args.output:
         for prefix, uri in namespaces.items():
             graph.bind(prefix, uri)

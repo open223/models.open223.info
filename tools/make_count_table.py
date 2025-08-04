@@ -1,7 +1,7 @@
 import sys
-import re                                                                                               
 import rdflib
 from collections import defaultdict
+import markdown_utils
 
 # Check for the correct number of arguments
 if len(sys.argv) != 3:
@@ -58,39 +58,6 @@ for root_class, subclasses in class_counts.items():
         # generate a link to the subclass as https://explore.open223.info/s223/{subclass}.html and use the short name
         markdown_table += f"| {root_class_link} | {subclass_link} | {count} |\n"
 
-
-                                                                                                        
-def replace_section_in_markdown(file_path, header, new_content):                                        
-    header_pattern = re.compile(r"^## .+$", re.MULTILINE)                                               
-    with open(file_path, 'r', encoding='utf-8') as file:                                                
-        content = file.read()                                                                           
-                                                                                                        
-    # Find the start index of the header section to be replaced                              
-    header_start_idx = content.find(header)                                                             
-    if header_start_idx == -1:                                                                          
-        raise ValueError(f"The header '{header}' was not found in the file.")                                                                                                                                     
-                                                    
-    # Find the start index of the next header (if it exists)                                             
-    headers_start = [match.start() for match in header_pattern.finditer(content)]                                                                                                                                 
-    next_header_idx = None                          
-    for start in headers_start:                                                                          
-        if start > header_start_idx:   
-            next_header_idx = start    
-            break                                                                                        
-                                                                                                         
-    # If there's a next header, split the content, otherwise take everything until the end               
-    if next_header_idx is not None:                                                                      
-        pre_content = content[:header_start_idx]                                                         
-        post_content = content[next_header_idx:]                                                         
-        new_content = f"{pre_content}{header}\n{new_content}\n{post_content}"                            
-    else:                                                                                                
-        pre_content = content[:header_start_idx]                                                         
-        new_content = f"{pre_content}{header}\n{new_content}\n"                                          
-                                                                                                         
-    # Write the modified content back to the same file                                                   
-    with open(file_path, 'w', encoding='utf-8') as file:                                                 
-        file.write(new_content)                                                                          
-                                                                                                         
 # Replace the section in the markdown file
-header_to_replace = "## Model Components"                                                                
-replace_section_in_markdown(markdown_file_path, header_to_replace, markdown_table)
+header_to_replace = "## Model Components"
+markdown_utils.replace_section(markdown_file_path, header_to_replace, markdown_table)
