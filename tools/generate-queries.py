@@ -64,6 +64,7 @@ for query in queries_for_model:
     markdown_table += f"| {description} | <a href='{query_url}'>Query Link</a> |\n"
 header_to_replace = "## Queries"
 try:
+    print(f"Replacing section with header '{header_to_replace}' in {markdown_file_path}")
     markdown_utils.replace_section(markdown_file_path, header_to_replace, markdown_table)
 except ValueError as e:
     print(e)
