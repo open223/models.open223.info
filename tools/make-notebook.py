@@ -22,9 +22,9 @@ bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ER
 
 # load 223P library. We will load a recent copy from the models.open223.info
 # git repository; later, we will load this from the location of the actual standard
-s223 = Library.load(ontology_graph="https://open223.info/223p.ttl", infer_templates=False)
-unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit", infer_templates=False)
-quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind", infer_templates=False)
+s223 = Library.load(ontology_graph="https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
+unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit", infer_templates=False, run_shacl_inference=False)
+quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind", infer_templates=False, run_shacl_inference=False)
 
 # load the model into the BuildingMOTIF instance
 model = Model.create("urn:{model_name}")
@@ -83,9 +83,10 @@ if __name__ == '__main__':
 
     model_file_path = sys.argv[1]
     markdown_file_path = sys.argv[2]
+    print(f"Generating code for model file: {model_file_path}")
 
     code_content = generate_python_code(model_file_path)
-    
+
     code_block = f"```{{code-cell}} python3\n{code_content}\n```\n"
     header = "## Load and Validate Model"
     new_body = f"{description}\n{code_block}"

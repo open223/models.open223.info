@@ -32,11 +32,11 @@ compile-models: $(COMPILED_MODELS) $(WITH_IMPORTS_MODELS)
 update-examples: $(EXAMPLE_MDS_WITH_MODELS)
 
 examples/%.md: models/%.ttl tools/make_count_table.py tools/make-notebook.py tools/mark-out-of-date.py tools/make_model_formats.py tools/generate-queries.py
+	uv run python tools/make_model_formats.py $<
+	uv run python tools/generate-queries.py $< $@
 	uv run python tools/make_count_table.py $< $@
 	uv run python tools/make-notebook.py $< $@
 	uv run python tools/mark-out-of-date.py $< $@
-	uv run python tools/make_model_formats.py $<
-	uv run python tools/generate-queries.py $< $@
 
 install-kernel:
 	uv run python -m ipykernel install --user --name open223-models --display-name "open223-models"

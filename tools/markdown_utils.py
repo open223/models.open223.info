@@ -44,8 +44,10 @@ def upsert_section(file_path, header, new_content_body):
     new_section_text = f"\n{header}\n{new_content_body}"
 
     if header in content:
+        print(f"Header '{header}' found in file. Replacing section.")
         content = re.sub(rf"{header}[\s\S]*?(?=##|$)", new_section_text, content)
     else:
+        print(f"Header '{header}' not found in file. Appending new section.")
         content += new_section_text
 
     with open(file_path, 'w', encoding='utf-8') as file:
