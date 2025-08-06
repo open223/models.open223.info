@@ -54,7 +54,7 @@ for query in queries_for_model:
 
     query_url = f"{base_url}?query={urllib.parse.quote_plus(encoded_query)}"
     # add a url parameter which points to models.open223.info/models/<key>.ttl
-    url_param = urllib.parse.quote_plus(f"https://models.open223.info/compiled/{key.lower()}.ttl")
+    url_param = urllib.parse.quote_plus(f"https://models.open223.info/withimports/{key.lower()}.ttl")
 
     query_url += "&url=" + url_param
     print(f"Query URL: {query_url}")
