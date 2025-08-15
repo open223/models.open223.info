@@ -9,6 +9,14 @@ kernelspec:
   language: python
   name: open223-models
 ---
+
+```{warning}
+This model has not been updated since the last revision of the 223P ontology and it may not pass validation.
+
+- 223P was last updated on 2025-08-15 14:58:35
+- model file was last updated on 2025-08-04 10:27:34
+```
+        
 # ASHRAE Guideline 36-2021 A-7 Dual Duct Terminal Unit with Inlet Sensors
 
 This component model is an example of the dual duct terminal unit with inlet sensors from Guideline 36-2021, Appendix A, Figure A-7.

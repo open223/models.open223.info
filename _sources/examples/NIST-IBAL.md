@@ -10,6 +10,14 @@ kernelspec:
   name: open223-models
 ---
 
+```{warning}
+This model has not been updated since the last revision of the 223P ontology and it may not pass validation.
+
+- 223P was last updated on 2025-08-15 14:58:35
+- model file was last updated on 2025-08-04 10:26:03
+```
+        
+
 # Intelligent Buildings Agents Laboratory (IBAL)
 
 The IBAL is a mixed system lab at NIST that is able to test commercial equipment under simulated conditions. For more information, vist the [IBAL Database](https://ibal.nist.gov/). 
