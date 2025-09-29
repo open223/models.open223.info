@@ -412,7 +412,7 @@ document.write(`
 <p class="admonition-title">Warning</p>
 <p>This model has not been updated since the last revision of the 223P ontology and it may not pass validation.</p>
 <ul class="simple">
-<li><p>223P was last updated on 2025-09-09 08:41:48</p></li>
+<li><p>223P was last updated on 2025-09-29 14:39:40</p></li>
 <li><p>model file was last updated on 2024-09-19 11:21:33</p></li>
 </ul>
 </div>
@@ -601,48 +601,46 @@ Validation Results (36):
 Severity: sh:Warning
 Focus Node: &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb&gt;
 Message: s223: &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightBulb&gt; is s223:connected (high-level) to &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LightActuator&gt; but not connected at the cnx-level.
-Path: ns2:cnx
+Path: ns3:cnx
 Source Constraint: sh:SPARQLConstraintComponent
-Source Shape: &lt;urn:well-known/3edc7528&gt;
+Source Shape: &lt;urn:well-known/11b68569&gt;
 
 --- Result 2 ---
 Severity: sh:Violation
-Focus Node: &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty&gt;
-Message: s223: An `EnumerableProperty` shall be associated with exactly one `EnumerationKind` using the relation `hasEnumerationKind`.
-Path: ns2:hasEnumerationKind
-Value: ns2:EnumerationKind-OnOff
-Source Constraint: sh:ClassConstraintComponent
-Source Shape: &lt;urn:well-known/d1138deb&gt;
+Focus Node: &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty&gt;
+Message: s223: &lt;http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty&gt; has an enumeration value of ns3:OnOff-Unknown which is not a valid ns3:EnumerationKind-OnOff.
+Path: ns3:hasValue
+Value: ns3:OnOff-Unknown
+Source Constraint: sh:SPARQLConstraintComponent
+Source Shape: &lt;urn:well-known/350fa154&gt;
 
---- Result 3 ---
-Severity: sh:Violation
-Focus Node:
+--- Result 3
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand
   - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#LuminaireCommand needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario7#BreakerOutletCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#SmartSwitchProperty needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand
   - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#LuminaireCommand needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#BreakerOutletCP expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
 http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty
   - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario6#UserInputProperty needs to be a http://data.ashrae.org/standard223#EnumerationKind
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1
-  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1 expected 1 instance(s) of ns2:Connectable on path ns2:isConnectionPointOf
-http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand
-  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand needs to be a http://data.ashrae.org/standard223#EnumerationKind
 http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty
   - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#UserSwitchProperty needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario4#BreakerOutletCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#LuminaireCommand needs to be a http://data.ashrae.org/standard223#EnumerationKind
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario3#BreakerOutletConnectionPoint_1 expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP
+  - http://data.ashrae.org/standard223/1.0/data/patterns-scenario8#BreakerOutletCP expected 1 instance(s) of ns3:Connectable on path ns3:isConnectionPointOf
+http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand
+  - http://data.ashrae.org/standard223#EnumerationKind-OnOff on http://data.ashrae.org/standard223/1.0/data/patterns-scenario2#LuminaireCommand needs to be a http://data.ashrae.org/standard223#EnumerationKind
 </pre></div>
 </div>
 </div>
