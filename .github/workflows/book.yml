@@ -62,11 +62,11 @@ jobs:
     - name: build jupyter book
       run: |
         uv run jupyter-book build --html --execute 
-        ls -l _build/site/public
+        ls -l _build/html
 
     - name: fix CNAME
       run: |
-        cp CNAME _build/site/public/
+        cp CNAME _build/html
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
@@ -74,4 +74,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/site/public
+        publish_dir: ./_build/html
