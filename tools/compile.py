@@ -8,8 +8,16 @@ from brick_tq_shacl import infer, validate
 import rdflib
 
 graph = rdflib.Graph()
-cfg = ontoenv.Config(["models", "ontologies"], offline=False, strict=False, includes=['*.ttl'], excludes=["models/compiled/*.ttl", "models/withimports/*.ttl"])
-env = ontoenv.OntoEnv(cfg, read_only=True, recreate=False)
+env = ontoenv.OntoEnv(
+    path=".",
+    search_directories=["models", "ontologies"],
+    includes=["*.ttl"],
+    excludes=["models/compiled/*.ttl", "models/withimports/*.ttl"],
+    offline=False,
+    strict=False,
+    read_only=True,
+    recreate=False,
+)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -32,7 +40,10 @@ if __name__ == "__main__":
     namespaces = dict(graph.namespace_manager.namespaces())
 
     deps = rdflib.Graph()
-    env.get_closure("http://data.ashrae.org/standard223/1.0/model/all", deps)
+    deps, _ = env.get_closure(
+        "http://data.ashrae.org/standard223/1.0/model/all",
+        destination_graph=deps,
+    )
     deps.serialize("deps.ttl", format="turtle")
     graph.serialize("graph.ttl", format="turtle")
 
