@@ -27,7 +27,6 @@ The 223P standard is not yet finalized and is still under development.
 from datetime import datetime
 import glob
 import os
-from myst_nb import glue
 import subprocess
 
 def get_git_last_modified_date(file_path):
@@ -38,12 +37,11 @@ def get_git_last_modified_date(file_path):
 
 last_updated_dt = get_git_last_modified_date("ontologies/223p.ttl")
 last_updated_formatted = last_updated_dt.strftime("%Y-%m-%d %H:%M:%S")
-glue("last_updated", last_updated_formatted)
 ```
 
 This site contains example buildings, systems, and other assets modeled in 223 with supporting documentation.
 
-The 223P ontology used to build this site was last updated at **{glue:text}`last_updated`**.
+The 223P ontology used to build this site was last updated at **{eval}`last_updated_formatted`**.
 
 The following models may be out of date with the latest 223P:
 
