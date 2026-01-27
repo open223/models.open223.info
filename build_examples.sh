@@ -13,4 +13,4 @@ mkdir -p models/compiled
 mkdir -p models/withimports
 make -j 2
 make install-kernel
-uv run jb build .
+uv run jupyter book build --html --execute
