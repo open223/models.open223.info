@@ -64,13 +64,14 @@ jobs:
         uv run jupyter-book build --html --execute 
     - name: stage pages assets
       run: |
-        if [ -d _build/site/public ] && [ "$(ls -A _build/site/public)" ]; then
-          site_dir="_build/site/public"
-        elif [ -d _build/html ] && [ "$(ls -A _build/html)" ]; then
+        # GitHub Pages requires a root index.html in publish_dir.
+        if [ -f _build/html/index.html ]; then
           site_dir="_build/html"
+        elif [ -f _build/site/public/index.html ]; then
+          site_dir="_build/site/public"
         else
-          echo "Could not find built site output in _build/site/public or _build/html"
-          find _build -maxdepth 3 -type d -print
+          echo "Could not find a publishable site with index.html in _build/html or _build/site/public"
+          find _build -maxdepth 3 -type f | sed -n '1,200p'
           exit 1
         fi
 
@@ -91,6 +92,7 @@ jobs:
         set -euo pipefail
 
         site_dir="${PUBLISH_DIR:?PUBLISH_DIR was not set by stage step}"
+        test -f "${site_dir}/index.html"
         root_count=$(find "${site_dir}" -maxdepth 1 -type f \( -name '*.ttl' -o -name '*.jsonld' \) | wc -l | tr -d ' ')
         models_count=$(find "${site_dir}/models" -maxdepth 1 -type f \( -name '*.ttl' -o -name '*.jsonld' \) | wc -l | tr -d ' ')
         compiled_count=$(find "${site_dir}/compiled" -maxdepth 1 -type f -name '*.ttl' | wc -l | tr -d ' ')
