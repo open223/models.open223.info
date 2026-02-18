@@ -62,11 +62,60 @@ jobs:
     - name: build jupyter book
       run: |
         uv run jupyter-book build --html --execute 
-        ls -l _build/html
-
-    - name: fix CNAME
+    - name: stage pages assets
       run: |
-        cp CNAME _build/html
+        if [ -d _build/site/public ] && [ "$(ls -A _build/site/public)" ]; then
+          site_dir="_build/site/public"
+        elif [ -d _build/html ] && [ "$(ls -A _build/html)" ]; then
+          site_dir="_build/html"
+        else
+          echo "Could not find built site output in _build/site/public or _build/html"
+          find _build -maxdepth 3 -type d -print
+          exit 1
+        fi
+
+        cp CNAME "${site_dir}/"
+        mkdir -p "${site_dir}/models" "${site_dir}/compiled" "${site_dir}/withimports"
+
+        # Keep source model downloads at both legacy root paths and /models/.
+        find models -maxdepth 1 -type f \( -name '*.ttl' -o -name '*.jsonld' \) -exec cp {} "${site_dir}/" \;
+        find models -maxdepth 1 -type f \( -name '*.ttl' -o -name '*.jsonld' \) -exec cp {} "${site_dir}/models/" \;
+        find models/compiled -maxdepth 1 -type f -name '*.ttl' -exec cp {} "${site_dir}/compiled/" \;
+        find models/withimports -maxdepth 1 -type f -name '*.ttl' -exec cp {} "${site_dir}/withimports/" \;
+
+        echo "PUBLISH_DIR=${site_dir}" >> "$GITHUB_ENV"
+        ls -la "${site_dir}" | sed -n '1,200p'
+
+    - name: verify published model artifacts
+      run: |
+        set -euo pipefail
+
+        site_dir="${PUBLISH_DIR:?PUBLISH_DIR was not set by stage step}"
+        root_count=$(find "${site_dir}" -maxdepth 1 -type f \( -name '*.ttl' -o -name '*.jsonld' \) | wc -l | tr -d ' ')
+        models_count=$(find "${site_dir}/models" -maxdepth 1 -type f \( -name '*.ttl' -o -name '*.jsonld' \) | wc -l | tr -d ' ')
+        compiled_count=$(find "${site_dir}/compiled" -maxdepth 1 -type f -name '*.ttl' | wc -l | tr -d ' ')
+        withimports_count=$(find "${site_dir}/withimports" -maxdepth 1 -type f -name '*.ttl' | wc -l | tr -d ' ')
+
+        echo "root model files: ${root_count}"
+        echo "models/ files: ${models_count}"
+        echo "compiled/ files: ${compiled_count}"
+        echo "withimports/ files: ${withimports_count}"
+
+        [ "${root_count}" -gt 0 ]
+        [ "${models_count}" -gt 0 ]
+        [ "${compiled_count}" -gt 0 ]
+        [ "${withimports_count}" -gt 0 ]
+
+        sample_path="$(find models -maxdepth 1 -type f -name '*.ttl' | head -n 1)"
+        if [ -z "${sample_path}" ]; then
+          echo "No source .ttl files found under models/"
+          exit 1
+        fi
+        sample_file="${sample_path##*/}"
+        test -f "${site_dir}/${sample_file}"
+        test -f "${site_dir}/models/${sample_file}"
+        test -f "${site_dir}/compiled/${sample_file}"
+        test -f "${site_dir}/withimports/${sample_file}"
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
@@ -74,4 +123,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/html
+        publish_dir: ${{ env.PUBLISH_DIR }}
