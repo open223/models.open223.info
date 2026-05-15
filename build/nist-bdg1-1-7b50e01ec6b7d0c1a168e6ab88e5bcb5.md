@@ -13,7 +13,7 @@ kernelspec:
 ```{warning}
 This model has not been updated since the last revision of the 223P ontology and it may not pass validation.
 
-- 223P was last updated on 2026-04-27 17:14:59
+- 223P was last updated on 2026-05-15 11:59:20
 - model file was last updated on 2025-05-28 10:30:30
 ```
         

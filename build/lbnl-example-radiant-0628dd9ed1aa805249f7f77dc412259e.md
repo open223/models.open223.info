@@ -13,20 +13,20 @@ kernelspec:
 ```{warning}
 This model has not been updated since the last revision of the 223P ontology and it may not pass validation.
 
-- 223P was last updated on 2026-04-27 17:14:59
-- model file was last updated on 2025-08-04 10:27:34
+- 223P was last updated on 2026-05-15 11:59:20
+- model file was last updated on 2024-09-12 17:10:55
 ```
         
-# ASHRAE Guideline 36-2021 A-7 Dual Duct Terminal Unit with Inlet Sensors
+# LBNL Example SMB Radiant
 
-This component model is an example of the dual duct terminal unit with inlet sensors from Guideline 36-2021, Appendix A, Figure A-7.
+This is a reference model provided by LBNL of a medium office building using a radiant system. Labels have been anonymized, and may not be interpretable.
 
 ## Downloads
 
-- <a href="/compiled/guideline36-2021-A-7.ttl">Turtle file (compiled)</a>
-- <a href="/withimports/guideline36-2021-A-7.ttl">Turtle file (with all imports)</a>
-- <a href="/guideline36-2021-A-7.ttl">Turtle file (original)</a>
-- <a href="/guideline36-2021-A-7.jsonld">JSON-LD file (original)</a>
+- <a href="/compiled/lbnl-example-radiant.ttl">Turtle file (compiled)</a>
+- <a href="/withimports/lbnl-example-radiant.ttl">Turtle file (with all imports)</a>
+- <a href="/lbnl-example-radiant.ttl">Turtle file (original)</a>
+- <a href="/lbnl-example-radiant.jsonld">JSON-LD file (original)</a>
 
 <details>
 <summary>What are these files?</summary>
@@ -40,21 +40,26 @@ This component model is an example of the dual duct terminal unit with inlet sen
 are available in many programming languages. [JSON-LD](https://json-ld.org) is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.
 </details>
 
+## Queries
+| Description | Query URL |
+|-------------|-----------|
+| Select all triples from model. | <a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+%0ASELECT+%2A+WHERE+%7B%0A%09+%3Fs+%3Fp+%3Fo+%0A%7D%0A+LIMIT+10&url=https%3A%2F%2Fmodels.open223.info%2Fwithimports%2Flbnl-example-radiant.ttl'>Query Link</a> |
+
 ## Model Components
 | Parent Class | Class | Instances |
 |------------|-------|----------------|
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Actuator](https://explore.open223.info/s223/Actuator.html) | 2 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Damper](https://explore.open223.info/s223/Damper.html) | 2 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Sensor](https://explore.open223.info/s223/Sensor.html) | 2 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [DualDuctTerminal](https://explore.open223.info/s223/DualDuctTerminal.html) | 1 |
-| [Connection](https://explore.open223.info/s223/Connection.html) | [Duct](https://explore.open223.info/s223/Duct.html) | 3 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 7 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 5 |
-| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 1 |
-| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 1 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html) | 6 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [RadiantPanel](https://explore.open223.info/s223/RadiantPanel.html) | 15 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatPump](https://explore.open223.info/s223/HeatPump.html) | 8 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [AirHandlingUnit](https://explore.open223.info/s223/AirHandlingUnit.html) | 3 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Radiator](https://explore.open223.info/s223/Radiator.html) | 2 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Boiler](https://explore.open223.info/s223/Boiler.html) | 1 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [CoolingTower](https://explore.open223.info/s223/CoolingTower.html) | 1 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatExchanger](https://explore.open223.info/s223/HeatExchanger.html) | 1 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 79 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 62 |
+| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 38 |
+| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 46 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 6 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableActuatableProperty](https://explore.open223.info/s223/QuantifiableActuatableProperty.html) | 2 |
 
 
 ## Load and Validate Model
@@ -96,8 +101,8 @@ unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit", infer_tem
 quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind", infer_templates=False, run_shacl_inference=False)
 
 # load the model into the BuildingMOTIF instance
-model = Model.create("urn:guideline36-2021-A-7")
-model.graph.parse("https://models.open223.info/guideline36-2021-A-7.ttl")
+model = Model.create("urn:lbnl-example-radiant")
+model.graph.parse("https://models.open223.info/lbnl-example-radiant.ttl")
 
 # validate the model against 223P ontology
 ctx = model.validate([s223.get_shape_collection(),
