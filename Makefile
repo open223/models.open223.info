@@ -25,9 +25,12 @@ EXAMPLE_MDS_WITH_MODELS := $(foreach md, $(wildcard examples/*.md), $(if $(wildc
 # order-only prerequisite: the environment must exist, but refreshing it should
 # not by itself invalidate already-compiled models.
 models/compiled/%.ttl: models/%.ttl tools/compile.py | .ontoenv
+	@mkdir -p $(@D)
 	-uv run python tools/compile.py -r -o $@ $<
 
+# models/withimports/ is gitignored, so it may not exist in a fresh clone
 models/withimports/%.ttl: models/compiled/%.ttl tools/compile.py | .ontoenv
+	@mkdir -p $(@D)
 	-uv run python tools/compile.py -i -o $@ $<
 
 # The compile-models target will "make" all of the COMPILED_MODELS.
