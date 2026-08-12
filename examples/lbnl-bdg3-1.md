@@ -112,24 +112,18 @@ import logging
 # engine by default, so there is nothing else to install and no Java required.
 bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 
-# Load the 223P shapes. The model's owl:imports names the 223P ontology IRI,
-# but that IRI is not resolvable on the web yet, so we load a recent copy from
-# the models.open223.info git repository; later, we will load this from the
-# location of the actual standard. BuildingMOTIF uses OntoEnv to resolve the
-# ontologies 223P itself depends on (QUDT, SHACL, ...).
+# load 223P library. We will load a recent copy from the models.open223.info
+# git repository; later, we will load this from the location of the actual standard.
+# BuildingMOTIF uses OntoEnv to fetch the ontologies 223P depends on (QUDT, SHACL, ...).
 s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
 
 # load the model into the BuildingMOTIF instance
 model = Model.from_file("https://models.open223.info/lbnl-bdg3-1.ttl")
 
-# A model's manifest is the set of libraries it claims to satisfy. Adding 223P
-# to it records the requirement by *name* -- the manifest stays two triples,
-# and the shapes stay in the library -- so validate() below needs no arguments.
-# Without this the manifest is empty, and an empty manifest means an empty
-# shapes graph: every model would trivially "pass" without being checked.
+# a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)
 
-# validate the model against everything its manifest names
+# validate the model against its manifest
 ctx = model.validate()
 
 # print the validation result
