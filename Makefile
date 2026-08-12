@@ -15,14 +15,23 @@ WITH_IMPORTS_MODELS := $(patsubst models/%.ttl,models/withimports/%.ttl,$(MODEL_
 # Find all example markdown files that have a corresponding model file.
 EXAMPLE_MDS_WITH_MODELS := $(foreach md, $(wildcard examples/*.md), $(if $(wildcard $(patsubst examples/%.md,models/%.ttl,$(md))), $(md)))
 
+# compile.py opens the environment read-only, so it has to exist and be
+# populated before any model is compiled. ontoenv 0.6 splits discovery out of
+# connect(), hence the explicit `update` after `init`.
 .ontoenv:
-	ontoenv init models ontologies
+	uv run ontoenv init -i '*.ttl' -e 'models/withimports/*.ttl' -e 'models/compiled/*.ttl' -- models ontologies
+	uv run ontoenv update
 
-models/compiled/%.ttl: models/%.ttl tools/compile.py
-	-uv run python tools/compile.py -r -o $@ $< 
+# order-only prerequisite: the environment must exist, but refreshing it should
+# not by itself invalidate already-compiled models.
+models/compiled/%.ttl: models/%.ttl tools/compile.py | .ontoenv
+	@mkdir -p $(@D)
+	-uv run python tools/compile.py -r -o $@ $<
 
-models/withimports/%.ttl: models/compiled/%.ttl tools/compile.py
-	-uv run python tools/compile.py -i -o $@ $< 
+# models/withimports/ is gitignored, so it may not exist in a fresh clone
+models/withimports/%.ttl: models/compiled/%.ttl tools/compile.py | .ontoenv
+	@mkdir -p $(@D)
+	-uv run python tools/compile.py -i -o $@ $<
 
 # The compile-models target will "make" all of the COMPILED_MODELS.
 compile-models: $(COMPILED_MODELS) $(WITH_IMPORTS_MODELS)

@@ -43,13 +43,7 @@ jobs:
 
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.11
-
-    - name: Set up Java
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'temurin'
-        java-version: '17'
+        python-version: '3.12'
 
     - name: what will be compiled?
       run: |
@@ -61,7 +55,7 @@ jobs:
 
     - name: build jupyter book
       run: |
-        uv run jupyter-book build --html --execute 
+        uv run jupyter-book build --html --execute --execute-parallel 1
     - name: stage pages assets
       run: |
         # GitHub Pages requires a root index.html in publish_dir.

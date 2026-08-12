@@ -3,38 +3,31 @@ import pathlib
 import markdown_utils
 
 def generate_python_code(location):
-    # rewrite the 'models/bdg1-1.ttl' location to 'compiled/bdg1-1.ttl'
-    model_path = pathlib.Path(location).name
-    #location = pathlib.Path('compiled') / model_path
-    location = model_path
-
-    # remove the extension from model_name
-    model_name = pathlib.Path(location).stem
+    # rewrite the 'models/bdg1-1.ttl' location to just the file name
+    location = pathlib.Path(location).name
 
     code_content = f"""\
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
-import ontoenv
 import logging
 
-# Create a BuildingMOTIF object. If you do not have Java installed, remove the "shacl_engine" parameter
-bm = BuildingMOTIF('sqlite://', shacl_engine='topquadrant', log_level=logging.ERROR)
+# Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL
+# engine by default, so there is nothing else to install and no Java required.
+bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 
 # load 223P library. We will load a recent copy from the models.open223.info
-# git repository; later, we will load this from the location of the actual standard
-s223 = Library.load(ontology_graph="https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
-unit = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/unit", infer_templates=False, run_shacl_inference=False)
-quantitykind = Library.load(ontology_graph="http://qudt.org/3.1.1/vocab/quantitykind", infer_templates=False, run_shacl_inference=False)
+# git repository; later, we will load this from the location of the actual standard.
+# BuildingMOTIF uses OntoEnv to fetch the ontologies 223P depends on (QUDT, SHACL, ...).
+s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
 
 # load the model into the BuildingMOTIF instance
-model = Model.create("urn:{model_name}")
-model.graph.parse("https://models.open223.info/{location}")
+model = Model.from_file("https://models.open223.info/{location}")
 
-# validate the model against 223P ontology
-ctx = model.validate([s223.get_shape_collection(),
-                      unit.get_shape_collection(),
-                      quantitykind.get_shape_collection()],
-                     error_on_missing_imports=False)
+# a model's manifest lists the libraries it should conform to
+model.manifest.add(s223)
+
+# validate the model against its manifest
+ctx = model.validate()
 
 # print the validation result
 print(f"Model is valid: {{ctx.valid}}")
@@ -57,21 +50,15 @@ description = """
 This code uses the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) library to load the 223P ontology and the model file into a temporary in-memory instance.
 It then validates the model against the ontology. If the model is invalid, it will print the validation report.
 
-To run this code, you need to have Java installed on your system. If you do not have Java installed, you can remove the `shacl_engine='topquadrant'` parameter from the `BuildingMOTIF` constructor.
-Be warned that without the `shacl_engine='topquadrant'` parameter, the validation process will be slower.
+BuildingMOTIF resolves the ontology's dependencies with [OntoEnv](https://ontoenv.gtf.fyi) and validates with
+[shifty](https://shifty.gtf.fyi), both of which are self-contained Rust extensions, so there is nothing else to install and no Java is required.
 
 ````{note} BuildingMOTIF installation
 :class: dropdown
 To install the `buildingmotif` library, you can use the following command:
 
 ```shell
-pip install 'buildingmotif[topquadrant] @ git+https://github.com/NREL/buildingmotif.git@develop'
-```
-
-If you do not have Java installed, you can use the following command to install the library:
-
-```shell
-pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@develop'
+pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@gtf-buildingmotif'
 ```
 ````
 """
