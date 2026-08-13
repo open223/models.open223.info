@@ -11,8 +11,7 @@ from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
 import logging
 
-# Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL
-# engine by default, so there is nothing else to install and no Java required.
+# Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL engine by default
 bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 
 # load 223P library. We will load a recent copy from the models.open223.info
@@ -50,8 +49,7 @@ description = """
 This code uses the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) library to load the 223P ontology and the model file into a temporary in-memory instance.
 It then validates the model against the ontology. If the model is invalid, it will print the validation report.
 
-BuildingMOTIF resolves the ontology's dependencies with [OntoEnv](https://ontoenv.gtf.fyi) and validates with
-[shifty](https://shifty.gtf.fyi), both of which are self-contained Rust extensions, so there is nothing else to install and no Java is required.
+BuildingMOTIF resolves the ontology's dependencies and performs SHACL validation and inference
 
 ````{note} BuildingMOTIF installation
 :class: dropdown
