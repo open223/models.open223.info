@@ -20,7 +20,7 @@ Example Building 2 Model 1 is provided by Pacific Northwest National Laboratory.
 
 This model contains a complete s223 representation of the building architecture, the electrical distribution system, the lighting system, and the lighting control system.
 
-In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types (e.g., rec:OfficeRoom, rec:OfficeLandscape).
+In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types (e.g., rec:EnclosedOffice, rec:OpenPlanOffice).
 
 ## Source
 
