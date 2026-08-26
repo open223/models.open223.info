@@ -123,6 +123,7 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@gtf-b
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
 import logging
+import os
 
 # Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL engine by default
 bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
@@ -132,8 +133,12 @@ bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 # BuildingMOTIF uses OntoEnv to fetch the ontologies 223P depends on (QUDT, SHACL, ...).
 s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
 
-# load the model into the BuildingMOTIF instance
-model = Model.from_file("https://models.open223.info/nist-bdg1-1.ttl")
+# Load the published model by default. Local development can override this so
+# a page build validates edits that have not been deployed yet.
+model_location = os.environ.get(
+    "OPEN223_MODEL_PATH", "https://models.open223.info/nist-bdg1-1.ttl"
+)
+model = Model.from_file(model_location)
 
 # a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)
@@ -155,6 +160,12 @@ for focus_node, diffs in ctx.get_reasons_with_severity("Violation").items():
     print(focus_node)
     for diff in diffs:
         print("  - " + diff.reason())
+
+# Production builds continue to render pages for historical invalid models.
+# The single-model development target opts into treating invalidity as an
+# execution error so its exit status can be used as a test result.
+if not ctx.valid and os.environ.get("OPEN223_FAIL_ON_INVALID"):
+    raise RuntimeError("Model validation failed")
 
 ```
 

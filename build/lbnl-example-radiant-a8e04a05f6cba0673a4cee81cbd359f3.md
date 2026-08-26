@@ -14,20 +14,20 @@ kernelspec:
 This model has not been updated since the last revision of the 223P ontology and it may not pass validation.
 
 - 223P was last updated on 2026-06-24 16:10:33
-- model file was last updated on 2025-08-04 10:27:34
+- model file was last updated on 2024-09-12 17:10:55
 ```
 
 
-# ASHRAE Guideline 36-2021 A-8 Dual Duct Terminal Unit with Discharge Sensor
+# LBNL Example SMB Radiant
 
-This component model is an example of the dual duct terminal unit with discharge sensor from Guideline 36-2021, Appendix A, Figure A-8.
+This is a reference model provided by LBNL of a medium office building using a radiant system. Labels have been anonymized, and may not be interpretable.
 
 ## Downloads
 
-- <a href="/compiled/guideline36-2021-A-8.ttl">Turtle file (compiled)</a>
-- <a href="/withimports/guideline36-2021-A-8.ttl">Turtle file (with all imports)</a>
-- <a href="/guideline36-2021-A-8.ttl">Turtle file (original)</a>
-- <a href="/guideline36-2021-A-8.jsonld">JSON-LD file (original)</a>
+- <a href="/compiled/lbnl-example-radiant.ttl">Turtle file (compiled)</a>
+- <a href="/withimports/lbnl-example-radiant.ttl">Turtle file (with all imports)</a>
+- <a href="/lbnl-example-radiant.ttl">Turtle file (original)</a>
+- <a href="/lbnl-example-radiant.jsonld">JSON-LD file (original)</a>
 
 <details>
 <summary>What are these files?</summary>
@@ -41,21 +41,26 @@ This component model is an example of the dual duct terminal unit with discharge
 are available in many programming languages. [JSON-LD](https://json-ld.org) is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.
 </details>
 
+## Queries
+| Description | Query URL |
+|-------------|-----------|
+| Select all triples from model. | <a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+%0ASELECT+%2A+WHERE+%7B%0A%09+%3Fs+%3Fp+%3Fo+%0A%7D%0A+LIMIT+10&url=https%3A%2F%2Fmodels.open223.info%2Fwithimports%2Flbnl-example-radiant.ttl'>Query Link</a> |
+
 ## Model Components
 | Parent Class | Class | Instances |
 |------------|-------|----------------|
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Actuator](https://explore.open223.info/s223/Actuator.html) | 2 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Damper](https://explore.open223.info/s223/Damper.html) | 2 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Sensor](https://explore.open223.info/s223/Sensor.html) | 1 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [DualDuctTerminal](https://explore.open223.info/s223/DualDuctTerminal.html) | 1 |
-| [Connection](https://explore.open223.info/s223/Connection.html) | [Duct](https://explore.open223.info/s223/Duct.html) | 3 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 7 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 5 |
-| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 1 |
-| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 1 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [RadiantPanel](https://explore.open223.info/s223/RadiantPanel.html) | 15 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatPump](https://explore.open223.info/s223/HeatPump.html) | 8 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [AirHandlingUnit](https://explore.open223.info/s223/AirHandlingUnit.html) | 3 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Radiator](https://explore.open223.info/s223/Radiator.html) | 2 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Boiler](https://explore.open223.info/s223/Boiler.html) | 1 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [CoolingTower](https://explore.open223.info/s223/CoolingTower.html) | 1 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatExchanger](https://explore.open223.info/s223/HeatExchanger.html) | 1 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 79 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 62 |
+| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 38 |
+| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 46 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 6 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html) | 5 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableActuatableProperty](https://explore.open223.info/s223/QuantifiableActuatableProperty.html) | 2 |
 
 
 ## Load and Validate Model
@@ -78,6 +83,7 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@gtf-b
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
 import logging
+import os
 
 # Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL engine by default
 bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
@@ -87,8 +93,12 @@ bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 # BuildingMOTIF uses OntoEnv to fetch the ontologies 223P depends on (QUDT, SHACL, ...).
 s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
 
-# load the model into the BuildingMOTIF instance
-model = Model.from_file("https://models.open223.info/guideline36-2021-A-8.ttl")
+# Load the published model by default. Local development can override this so
+# a page build validates edits that have not been deployed yet.
+model_location = os.environ.get(
+    "OPEN223_MODEL_PATH", "https://models.open223.info/lbnl-example-radiant.ttl"
+)
+model = Model.from_file(model_location)
 
 # a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)
@@ -110,6 +120,12 @@ for focus_node, diffs in ctx.get_reasons_with_severity("Violation").items():
     print(focus_node)
     for diff in diffs:
         print("  - " + diff.reason())
+
+# Production builds continue to render pages for historical invalid models.
+# The single-model development target opts into treating invalidity as an
+# execution error so its exit status can be used as a test result.
+if not ctx.valid and os.environ.get("OPEN223_FAIL_ON_INVALID"):
+    raise RuntimeError("Model validation failed")
 
 ```
 
