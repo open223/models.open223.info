@@ -1,4 +1,4 @@
-.PHONY: all compile-models clean
+.PHONY: all compile-models update-examples validate-model model-page install-kernel clean
                                                                                                                                                                                                                   
 all: compile-models update-examples
 
@@ -39,6 +39,25 @@ compile-models: $(COMPILED_MODELS) $(WITH_IMPORTS_MODELS)
 # The update-examples target will check all of the example markdown files.
 # It will only update the ones where the source .ttl file is newer.
 update-examples: $(EXAMPLE_MDS_WITH_MODELS)
+
+# Validate one local source model without writing compiled output:
+#   make validate-model MODEL=nrel-example
+validate-model:
+	@test -n "$(MODEL)" || { echo "Usage: make validate-model MODEL=<model-name>"; exit 2; }
+	@test -f "models/$(MODEL).ttl" || { echo "Model not found: models/$(MODEL).ttl"; exit 2; }
+	@$(MAKE) .ontoenv
+	uv run python tools/compile.py -r "models/$(MODEL).ttl"
+
+# Regenerate, execute, and build one model page against the local source model.
+# Unlike the full site build, this exits nonzero when notebook validation fails:
+#   make model-page MODEL=nrel-example
+model-page:
+	@test -n "$(MODEL)" || { echo "Usage: make model-page MODEL=<model-name>"; exit 2; }
+	@test -f "models/$(MODEL).ttl" || { echo "Model not found: models/$(MODEL).ttl"; exit 2; }
+	@$(MAKE) .ontoenv
+	@$(MAKE) "examples/$(MODEL).md"
+	OPEN223_MODEL_PATH="$(abspath models/$(MODEL).ttl)" OPEN223_FAIL_ON_INVALID=1 \
+		uv run jupyter book build "examples/$(MODEL).md" --html --execute --execute-parallel 1
 
 examples/%.md: models/%.ttl tools/make_count_table.py tools/make-notebook.py tools/mark-out-of-date.py tools/make_model_formats.py tools/generate-queries.py queries.toml
 	uv run python tools/make_model_formats.py $<

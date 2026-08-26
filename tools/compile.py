@@ -47,7 +47,11 @@ if __name__ == "__main__":
         description="Handle imports and perform SHACL reasoning)"
     )
     parser.add_argument("input", nargs="+")
-    parser.add_argument("-o", "--output", help="Output file", required=True)
+    parser.add_argument(
+        "-o",
+        "--output",
+        help="Output file (optional when only validating with --reason)",
+    )
     parser.add_argument(
         "-r", "--reason", help="Run SHACL reasoning + validation", action="store_true"
     )
@@ -55,6 +59,8 @@ if __name__ == "__main__":
         "-i", "--do-import", help="Perform imports", action="store_true"
     )
     args = parser.parse_args()
+    if not args.output and not args.reason:
+        parser.error("--output is required unless --reason is used")
     print(f"Input files: {args.input}")
 
     graph = rdflib.Graph()
@@ -98,3 +104,4 @@ if __name__ == "__main__":
         if not valid:
             print(report)
             raise Exception("Validation failed: {}".format(report))
+        print("Validation passed")

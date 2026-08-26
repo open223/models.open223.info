@@ -56,3 +56,21 @@ SELECT ?location ?sensor WHERE {
 }
 """
 ```
+
+### Validate or build one model
+
+To validate a local model directly against 223P without rebuilding the site:
+
+```shell
+make validate-model MODEL=mybuilding
+```
+
+To regenerate, execute, and build only that model's page:
+
+```shell
+make model-page MODEL=mybuilding
+```
+
+The single-page build validates the local `models/mybuilding.ttl`, not the
+published copy. It exits nonzero if validation fails and writes the rendered
+page under `_build/html/`.
