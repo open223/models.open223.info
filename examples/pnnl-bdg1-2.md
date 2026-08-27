@@ -35,7 +35,7 @@ See [NIST Example Building 1 Model 1](nist-bdg1-1.md) for a different modeling a
 
 This model contains a representation of the building architecture and electrical/lighting system.
 
-In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types (e.g., rec:EnclosedOffice, rec:OpenPlanOffice).
+In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types (e.g., rec:EnclosedOffice, rec:OpenPlanOffice) and model furniture (e.g., rec:Desk).
 
 ## Source
 
@@ -45,10 +45,19 @@ The model was created from source data consisting of a building information mode
 <img width="1212" alt="image" src="https://github.com/open223/models.open223.info/assets/22898727/92b1afd2-b3c3-492b-a7c7-61dea827a246">
 
 Model instance data have a prefix that is resolvable to a access-controlled Speckle URL.
-``` ttl
-@prefix bdg1: <https://app.speckle.systems/projects/9e62692a26/models>
-```
 
+For example, the following representative prefix:
+``` ttl
+@prefix bdg1: <https://app.speckle.systems/projects/uid1/models>
+```
+and the following luminaire:
+```ttl
+bdg1:uid2 a s223:Luminaire
+```
+resolves to:
+```ttl
+https://app.speckle.systems/projects/uid1/models/uid2)
+```
 
 ## Downloads
 
