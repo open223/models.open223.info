@@ -29,13 +29,13 @@ The model was created from souce data consisting of a Revit building information
 ### Speckle view of rooms and lighting fixtures
 <img width="1178" alt="image" src="https://github.com/open223/models.open223.info/assets/22898727/5a5dcecb-9b87-4e84-8261-6a3a315e1265">
 
-Model instance data have a prefix that is resolvable to a Speckle URL.
+Model instance data have a prefix that is resolvable to a access-controlled Speckle URL.
 
 For example, the following representative prefix:
 ``` ttl
 @prefix bdg2: <https://app.speckle.systems/projects/uid1/models>
 ```
-and the following luminaire:
+and the following representative luminaire:
 ```ttl
 bdg2:uid2 a s223:Luminaire
 ```
