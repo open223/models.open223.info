@@ -20,7 +20,7 @@ Example Building 2 Model 1 is provided by Pacific Northwest National Laboratory.
 
 This model contains a complete s223 representation of the building architecture, the electrical distribution system, the lighting system, and the lighting control system.
 
-In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types (e.g., rec:EnclosedOffice, rec:OpenPlanOffice).
+In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types (e.g., rec:EnclosedOffice, rec:OpenPlanOffice) and model furniture (e.g., rec:Desk).
 
 ## Source
 
@@ -30,13 +30,18 @@ The model was created from souce data consisting of a Revit building information
 <img width="1178" alt="image" src="https://github.com/open223/models.open223.info/assets/22898727/5a5dcecb-9b87-4e84-8261-6a3a315e1265">
 
 Model instance data have a prefix that is resolvable to a Speckle URL.
-``` ttl
-@prefix bdg2: <http://speckle.xyz/streams/1fed8e620e/objects/>
-```
 
-For example, the following luminaire resolves to http://speckle.xyz/streams/1fed8e620e/objects/b504da73194fd2dafccc5e91651e2066 :
+For example, the following representative prefix:
+``` ttl
+@prefix bdg2: <https://app.speckle.systems/projects/uid1/models>
+```
+and the following luminaire:
 ```ttl
-bdg2:b504da73194fd2dafccc5e91651e2066 a s223:Luminaire
+bdg2:uid2 a s223:Luminaire
+```
+resolves to:
+```ttl
+https://app.speckle.systems/projects/uid1/models/uid2)
 ```
 
 ## Downloads
