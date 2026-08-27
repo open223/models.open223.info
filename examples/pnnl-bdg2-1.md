@@ -41,7 +41,7 @@ bdg2:uid2 a s223:Luminaire
 ```
 resolves to:
 ```ttl
-https://app.speckle.systems/projects/uid1/models/uid2)
+https://app.speckle.systems/projects/uid1/models/uid2
 ```
 
 ## Downloads
