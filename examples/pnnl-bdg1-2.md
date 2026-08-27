@@ -50,7 +50,7 @@ For example, the following representative prefix:
 ``` ttl
 @prefix bdg1: <https://app.speckle.systems/projects/uid1/models>
 ```
-and the following luminaire:
+and the following representative luminaire:
 ```ttl
 bdg1:uid2 a s223:Luminaire
 ```
