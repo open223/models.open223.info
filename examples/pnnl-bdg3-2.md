@@ -45,11 +45,11 @@ Model instance data have a prefix that is resolvable to a Speckle URL.
 
 For example, the following representative prefix:
 ``` ttl
-@prefix bdg2: <https://app.speckle.systems/projects/uid1/models>
+@prefix bdg3: <https://app.speckle.systems/projects/uid1/models>
 ```
 and the following representative luminaire:
 ```ttl
-bdg2:uid2 a s223:Luminaire
+bdg3:uid2 a s223:Luminaire
 ```
 resolves to:
 ```ttl
