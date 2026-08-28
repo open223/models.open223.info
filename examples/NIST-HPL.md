@@ -105,8 +105,7 @@ bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
 
 # load the model into the BuildingMOTIF instance
-url = "https://models.open223.info/NIST-HPL.ttl"
-model = Model.from_file(url)
+model = Model.from_file("https://models.open223.info/NIST-HPL.ttl")
 
 # a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)
