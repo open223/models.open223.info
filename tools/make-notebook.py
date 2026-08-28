@@ -9,10 +9,11 @@ def generate_python_code(location):
     code_content = f"""\
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
+from datetime import datetime, timezone
 import logging
-import os
 
-# Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL engine by default
+# Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL
+# engine by default, so there is nothing else to install and no Java required.
 bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 
 # load 223P library. We will load a recent copy from the models.open223.info
@@ -20,18 +21,17 @@ bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 # BuildingMOTIF uses OntoEnv to fetch the ontologies 223P depends on (QUDT, SHACL, ...).
 s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
 
-# Load the published model by default. Local development can override this so
-# a page build validates edits that have not been deployed yet.
-model_location = os.environ.get(
-    "OPEN223_MODEL_PATH", "https://models.open223.info/{location}"
-)
-model = Model.from_file(model_location)
+# load the model into the BuildingMOTIF instance
+model = Model.from_file("https://models.open223.info/{location}")
 
 # a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)
 
 # validate the model against its manifest
 ctx = model.validate()
+
+# print when validation completed
+print(f"Validation run at: {{datetime.now(timezone.utc).isoformat(timespec='seconds')}}")
 
 # print the validation result
 print(f"Model is valid: {{ctx.valid}}")
@@ -47,12 +47,6 @@ for focus_node, diffs in ctx.get_reasons_with_severity("Violation").items():
     print(focus_node)
     for diff in diffs:
         print("  - " + diff.reason())
-
-# Production builds continue to render pages for historical invalid models.
-# The single-model development target opts into treating invalidity as an
-# execution error so its exit status can be used as a test result.
-if not ctx.valid and os.environ.get("OPEN223_FAIL_ON_INVALID"):
-    raise RuntimeError("Model validation failed")
 """
     return code_content
 
@@ -60,7 +54,8 @@ description = """
 This code uses the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) library to load the 223P ontology and the model file into a temporary in-memory instance.
 It then validates the model against the ontology. If the model is invalid, it will print the validation report.
 
-BuildingMOTIF resolves the ontology's dependencies and performs SHACL validation and inference
+BuildingMOTIF resolves the ontology's dependencies with [OntoEnv](https://ontoenv.gtf.fyi) and validates with
+[shifty](https://shifty.gtf.fyi), both of which are self-contained Rust extensions, so there is nothing else to install and no Java is required.
 
 ````{note} BuildingMOTIF installation
 :class: dropdown

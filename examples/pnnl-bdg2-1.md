@@ -87,8 +87,8 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [Connection](https://explore.open223.info/s223/Connection.html) | [ElectricWire](https://explore.open223.info/s223/ElectricWire.html) | 856 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 1709 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 1709 |
-| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 311 |
-| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 219 |
+| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | Direct instances | 311 |
+| [Zone](https://explore.open223.info/s223/Zone.html) | Direct instances | 219 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 396 |
 | [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedObservableProperty](https://explore.open223.info/s223/EnumeratedObservableProperty.html) | 204 |
 
@@ -113,6 +113,7 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@gtf-b
 ```{code-cell} python3
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
+from datetime import datetime, timezone
 import logging
 
 # Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL
@@ -132,6 +133,9 @@ model.manifest.add(s223)
 
 # validate the model against its manifest
 ctx = model.validate()
+
+# print when validation completed
+print(f"Validation run at: {datetime.now(timezone.utc).isoformat(timespec='seconds')}")
 
 # print the validation result
 print(f"Model is valid: {ctx.valid}")

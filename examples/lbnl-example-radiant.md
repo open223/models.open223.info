@@ -58,8 +58,8 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatExchanger](https://explore.open223.info/s223/HeatExchanger.html) | 1 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 79 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 62 |
-| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 38 |
-| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 46 |
+| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | Direct instances | 38 |
+| [Zone](https://explore.open223.info/s223/Zone.html) | Direct instances | 46 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 6 |
 
 
@@ -83,6 +83,7 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@gtf-b
 ```{code-cell} python3
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
+from datetime import datetime, timezone
 import logging
 
 # Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL
@@ -102,6 +103,9 @@ model.manifest.add(s223)
 
 # validate the model against its manifest
 ctx = model.validate()
+
+# print when validation completed
+print(f"Validation run at: {datetime.now(timezone.utc).isoformat(timespec='seconds')}")
 
 # print the validation result
 print(f"Model is valid: {ctx.valid}")

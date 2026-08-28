@@ -10,14 +10,6 @@ kernelspec:
   name: open223-models
 ---
 
-```{warning}
-This model has not been updated since the last revision of the 223P ontology and it may not pass validation.
-
-- 223P was last updated on 2026-06-24 16:10:33
-- model file was last updated on 2024-09-14 12:12:25
-```
-
-
 # PNNL Example Building 1 Model 2
 
 Example Building 1 is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types.
@@ -87,16 +79,19 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 ## Model Components
 | Parent Class | Class | Instances |
 |------------|-------|----------------|
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [urn:pnnl:extentions:LEDModule](https://explore.open223.info/s223/urn:pnnl:extentions:LEDModule.html) | 12 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Luminaire](https://explore.open223.info/s223/Luminaire.html) | 12 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [OccupantMotionSensor](https://explore.open223.info/s223/OccupantMotionSensor.html) | 6 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [ElectricBreaker](https://explore.open223.info/s223/ElectricBreaker.html) | 2 |
-| [Connection](https://explore.open223.info/s223/Connection.html) | [ElectricWire](https://explore.open223.info/s223/ElectricWire.html) | 14 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 26 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 26 |
-| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 12 |
-| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 8 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 23 |
-| [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedObservableProperty](https://explore.open223.info/s223/EnumeratedObservableProperty.html) | 6 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [IlluminanceSensor](https://explore.open223.info/s223/IlluminanceSensor.html) | 6 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [OccupantMotionSensor](https://explore.open223.info/s223/OccupantMotionSensor.html) | 5 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [EthernetSwitch](https://explore.open223.info/s223/EthernetSwitch.html) | 1 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 74 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 57 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [BidirectionalConnectionPoint](https://explore.open223.info/s223/BidirectionalConnectionPoint.html) | 2 |
+| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | Direct instances | 12 |
+| [Zone](https://explore.open223.info/s223/Zone.html) | Direct instances | 8 |
+| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 59 |
+| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html) | 6 |
+| [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedObservableProperty](https://explore.open223.info/s223/EnumeratedObservableProperty.html) | 5 |
 
 
 ## Load and Validate Model
@@ -119,6 +114,7 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@gtf-b
 ```{code-cell} python3
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
+from datetime import datetime, timezone
 import logging
 
 # Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL
@@ -138,6 +134,9 @@ model.manifest.add(s223)
 
 # validate the model against its manifest
 ctx = model.validate()
+
+# print when validation completed
+print(f"Validation run at: {datetime.now(timezone.utc).isoformat(timespec='seconds')}")
 
 # print the validation result
 print(f"Model is valid: {ctx.valid}")

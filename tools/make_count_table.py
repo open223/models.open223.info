@@ -54,8 +54,11 @@ for root_class, subclasses in class_counts.items():
     # generate a link to the root class as https://explore.open223.info/s223/{root class}.html and use the short name
     root_class_link = f"[{root_class.split('#')[-1]}](https://explore.open223.info/s223/{root_class.split('#')[-1]}.html)"
     for subclass, count in sorted(subclasses.items(), key=lambda x: x[1], reverse=True):
-        subclass_link = f"[{subclass.split('#')[-1]}](https://explore.open223.info/s223/{subclass.split('#')[-1]}.html)"
-        # generate a link to the subclass as https://explore.open223.info/s223/{subclass}.html and use the short name
+        if subclass:
+            subclass_name = subclass.split('#')[-1]
+            subclass_link = f"[{subclass_name}](https://explore.open223.info/s223/{subclass_name}.html)"
+        else:
+            subclass_link = "Direct instances"
         markdown_table += f"| {root_class_link} | {subclass_link} | {count} |\n"
 
 # Replace the section in the markdown file
