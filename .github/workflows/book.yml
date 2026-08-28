@@ -55,29 +55,10 @@ jobs:
 
     - name: build jupyter book
       run: |
-        uv run jupyter-book build --html --execute --execute-parallel 1
+        uv run jupyter-book build --html --execute --execute-parallel 1 --strict
     - name: stage pages assets
       run: |
-        # GitHub Pages requires a root index.html in publish_dir.
-        if [ -f _build/html/index.html ]; then
-          site_dir="_build/html"
-        elif [ -f _build/site/public/index.html ]; then
-          site_dir="_build/site/public"
-        else
-          echo "Could not find a publishable site with index.html in _build/html or _build/site/public"
-          find _build -maxdepth 3 -type f | sed -n '1,200p'
-          exit 1
-        fi
-
-        cp CNAME "${site_dir}/"
-        mkdir -p "${site_dir}/models" "${site_dir}/compiled" "${site_dir}/withimports"
-
-        # Keep source model downloads at both legacy root paths and /models/.
-        find models -maxdepth 1 -type f \( -name '*.ttl' -o -name '*.jsonld' \) -exec cp {} "${site_dir}/" \;
-        find models -maxdepth 1 -type f \( -name '*.ttl' -o -name '*.jsonld' \) -exec cp {} "${site_dir}/models/" \;
-        find models/compiled -maxdepth 1 -type f -name '*.ttl' -exec cp {} "${site_dir}/compiled/" \;
-        find models/withimports -maxdepth 1 -type f -name '*.ttl' -exec cp {} "${site_dir}/withimports/" \;
-
+        site_dir="$(bash tools/stage-site-assets.sh)"
         echo "PUBLISH_DIR=${site_dir}" >> "$GITHUB_ENV"
         ls -la "${site_dir}" | sed -n '1,200p'
 

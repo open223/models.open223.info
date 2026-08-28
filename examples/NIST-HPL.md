@@ -67,7 +67,7 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [BidirectionalConnectionPoint](https://explore.open223.info/s223/BidirectionalConnectionPoint.html) | 20 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 15 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 15 |
-| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 1 |
+| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | Direct instances | 1 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html) | 52 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 6 |
 
@@ -92,6 +92,7 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@gtf-b
 ```{code-cell} python3
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
+from datetime import datetime, timezone
 import logging
 
 # Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL
@@ -104,13 +105,17 @@ bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
 
 # load the model into the BuildingMOTIF instance
-model = Model.from_file("https://models.open223.info/NIST-HPL.ttl")
+url = "https://models.open223.info/NIST-HPL.ttl"
+model = Model.from_file(url)
 
 # a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)
 
 # validate the model against its manifest
 ctx = model.validate()
+
+# print when validation completed
+print(f"Validation run at: {datetime.now(timezone.utc).isoformat(timespec='seconds')}")
 
 # print the validation result
 print(f"Model is valid: {ctx.valid}")

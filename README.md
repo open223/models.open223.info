@@ -71,6 +71,8 @@ To regenerate, execute, and build only that model's page:
 make model-page MODEL=mybuilding
 ```
 
-The single-page build validates the local `models/mybuilding.ttl`, not the
-published copy. It exits nonzero if validation fails and writes the rendered
-page under `_build/html/`.
+The single-page build first validates the local `models/mybuilding.ttl` and
+exits nonzero if that validation fails. The executable page continues to load
+the published model URL, matching the code shown to readers. The rendered page
+is written under `_build/html/`. Executable-cell errors and exceptions also
+fail book builds; a model reporting that it does not validate does not.

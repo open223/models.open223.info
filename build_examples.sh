@@ -18,4 +18,8 @@ make install-kernel
 # every notebook loads its own copy of 223P plus the full QUDT closure into a
 # separate kernel; at that concurrency the build deadlocks (a kernel drops out
 # and myst waits on it forever, with no execution timeout).
-uv run jupyter book build --html --execute --execute-parallel 1
+uv run jupyter book build --html --execute --execute-parallel 1 --strict
+
+# Add the model download files referenced by the generated pages.
+site_dir="$(bash tools/stage-site-assets.sh)"
+echo "Staged site assets in ${site_dir}"
