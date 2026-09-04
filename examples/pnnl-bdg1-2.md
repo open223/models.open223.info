@@ -27,13 +27,7 @@ See [NIST Example Building 1 Model 1](nist-bdg1-1.md) for a different modeling a
 
 This model contains a representation of the building architecture and electrical/lighting system.
 
-In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types. The Real Estate Core ontology is extended by defining 2 subclasses for rec:Office.
-``` ttl
-recx:OpenOffice rdfs:subClassOf rec:Office;
-  rdfs:label "Open Office".
-recx:PrivateOffice rdfs:subClassOf rec:Office;
-  rdfs:label "Private Office".
-```
+In addition to the s223 ontology, the model uses the [Real Estate Core ontology](https://dev.realestatecore.io/ontology/) to describe space types (e.g., rec:EnclosedOffice, rec:OpenPlanOffice) and model furniture (e.g., rec:Desk).
 
 ## Source
 
@@ -42,14 +36,19 @@ The model was created from source data consisting of a building information mode
 ### Speckle view of rooms and lighting fixtures
 <img width="1212" alt="image" src="https://github.com/open223/models.open223.info/assets/22898727/92b1afd2-b3c3-492b-a7c7-61dea827a246">
 
-Model instance data have a prefix that is resolvable to a Speckle URL.
-``` ttl
-@prefix bdg1: <http://speckle.xyz/streams/59e5e3c6a8/objects/>
-```
+Model instance data have a prefix that is resolvable to a access-controlled Speckle URL.
 
-For example, the following luminaire resolves to http://speckle.xyz/streams/59e5e3c6a8/objects/e2164e3d14db5fcb6915a4a2c8474579 :
+For example, the following representative prefix:
 ``` ttl
-bdg1:e2164e3d14db5fcb6915a4a2c8474579 a s223:Luminaire
+@prefix bdg1: <https://app.speckle.systems/projects/uid1/models>
+```
+and the following representative luminaire:
+```ttl
+bdg1:uid2 a s223:Luminaire
+```
+resolves to:
+```ttl
+https://app.speckle.systems/projects/uid1/models/uid2)
 ```
 
 ## Downloads
