@@ -45,7 +45,7 @@
 @prefix bdg3: <http://app.speckle.systems/projects/bf7685a6aa/objects/> .
 @prefix cur: <http://qudt.org/vocab/currency/> .
 @prefix bdg4: <http://app.speckle.systems/projects/5bf2239c71/objects/> .
-@prefix bdg1: <https://app.speckle.systems/projects/9e62692a26/models/> .
+@prefix bdg1: <https://app.speckle.systems/projects/9e62692a26/models#> .
 @prefix soqk: <http://qudt.org/vocab/soqk/> .
 @prefix bdg2: <http://app.speckle.systems/projects/1fed8e620e/objects/> .
 @prefix sail: <http://www.openrdf.org/config/sail#> .
@@ -79,9 +79,9 @@
 
 <https://app.speckle.systems/projects/9e62692a26/models/>
   a owl:Ontology ;
-  rdfs:comment "This graph is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types." .
-#  owl:imports <http://data.ashrae.org/standard223/1.0/model/all> ;
-#  owl:versionInfo "Created with BIM2RDF" .
+  rdfs:comment "This graph is a simplistic, reference tiny office building consisting of a single story with 5 rooms spanning 5 space types." ;
+  owl:imports <http://data.ashrae.org/standard223/1.0/model/all> ;
+  owl:versionInfo "Created with BIM2RDF" .
 
 <urn:pnnl:extentions:LEDModule> a s223:Class, sh:NodeShape;
   rdfs:subClassOf s223:Equipment;
