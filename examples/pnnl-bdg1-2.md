@@ -82,6 +82,7 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Luminaire](https://explore.open223.info/s223/Luminaire.html) | 12 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [IlluminanceSensor](https://explore.open223.info/s223/IlluminanceSensor.html) | 6 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [OccupantMotionSensor](https://explore.open223.info/s223/OccupantMotionSensor.html) | 5 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [urn:pnnl:shape:ElectricityPanel](https://explore.open223.info/s223/urn:pnnl:shape:ElectricityPanel.html) | 2 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [EthernetSwitch](https://explore.open223.info/s223/EthernetSwitch.html) | 1 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 74 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 57 |

@@ -50,6 +50,14 @@ jobs:
     - name: check committed model URLs
       run: make check-model-urls
 
+    # Belt and braces for the deployed site: regenerate the pages against the
+    # published model URL before building, so what ships never depends on how
+    # tools/model-base-url.sh resolved or on what was committed. Branch and pull
+    # request builds skip this and keep their own preview URLs.
+    - name: publish model URLs
+      if: github.ref == 'refs/heads/main'
+      run: make publish-urls
+
     - name: build examples
       env:
         BUILD_EXAMPLES_LOG: build-examples.log
