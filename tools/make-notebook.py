@@ -1,8 +1,22 @@
+import os
 import sys
 import pathlib
 import markdown_utils
 
-def generate_python_code(location):
+PUBLISHED_BASE_URL = "https://models.open223.info"
+
+
+def model_base_url():
+    """Where the generated cell reads the model from.
+
+    The URL is baked into the page at generation time so that the code a reader
+    sees is a single, copy-pasteable Model.from_file(...) call. tools/model-base-url.sh
+    picks the value: the published site for main, the branch's own copy otherwise.
+    """
+    return os.environ.get("OPEN223_MODEL_BASE_URL", PUBLISHED_BASE_URL).rstrip("/")
+
+
+def generate_python_code(location, base_url):
     # rewrite the 'models/bdg1-1.ttl' location to just the file name
     location = pathlib.Path(location).name
 
@@ -22,7 +36,7 @@ bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
 
 # load the model into the BuildingMOTIF instance
-model = Model.from_file("https://models.open223.info/{location}")
+model = Model.from_file("{base_url}/{location}")
 
 # a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)
@@ -50,7 +64,7 @@ for focus_node, diffs in ctx.get_reasons_with_severity("Violation").items():
 """
     return code_content
 
-description = """
+description_template = """
 This code uses the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) library to load the 223P ontology and the model file into a temporary in-memory instance.
 It then validates the model against the ontology. If the model is invalid, it will print the validation report.
 
@@ -76,10 +90,23 @@ if __name__ == '__main__':
     markdown_file_path = sys.argv[2]
     print(f"Generating code for model file: {model_file_path}")
 
-    code_content = generate_python_code(model_file_path)
+    base_url = model_base_url()
+    print(f"Reading the model from: {base_url}")
+
+    code_content = generate_python_code(model_file_path, base_url)
 
     code_block = f"```{{code-cell}} python3\n{code_content}\n```\n"
     header = "## Load and Validate Model"
+
+    description = description_template
+    if base_url != PUBLISHED_BASE_URL:
+        # A preview build of a branch: say so, since the page is not validating
+        # the model that is currently published.
+        description += (
+            f"\n```{{warning}} Preview build\nThis page validates the model at `{base_url}/`, "
+            "which is a branch copy rather than the published one.\n```\n"
+        )
+
     new_body = f"{description}\n{code_block}"
 
     markdown_utils.upsert_section(markdown_file_path, header, new_body)

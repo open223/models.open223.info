@@ -1,6 +1,19 @@
-.PHONY: all compile-models update-examples validate-model model-page install-kernel clean
+.PHONY: all compile-models update-examples validate-model model-page publish-urls check-model-urls install-hooks install-kernel clean FORCE
                                                                                                                                                                                                                   
 all: compile-models update-examples
+
+# Base URL the generated notebooks read models from: the published site on main,
+# the branch's own copy on any other branch. Override by exporting
+# OPEN223_MODEL_BASE_URL. See tools/model-base-url.sh.
+OPEN223_MODEL_BASE_URL ?= $(shell tools/model-base-url.sh)
+export OPEN223_MODEL_BASE_URL
+
+# The base URL is written into examples/*.md when they are generated, so the
+# pages must be regenerated whenever it changes -- otherwise a branch URL would
+# linger in the markdown after switching back to main. This stamp file records
+# the URL the pages were last generated with, and is only rewritten when it
+# actually changes, so it does not force a rebuild on every run.
+MODEL_BASE_URL_STAMP := .model-base-url
 
 # MODEL_SOURCES will find all .ttl files in the models directory.
 MODEL_SOURCES := $(wildcard models/*.ttl)
@@ -57,12 +70,44 @@ model-page:
 	@$(MAKE) "examples/$(MODEL).md"
 	uv run jupyter book build "examples/$(MODEL).md" --html --execute --execute-parallel 1 --strict
 
-examples/%.md: models/%.ttl tools/make_count_table.py tools/make-notebook.py tools/mark-out-of-date.py tools/make_model_formats.py tools/generate-queries.py queries.toml
+$(MODEL_BASE_URL_STAMP): FORCE
+	@printf '%s\n' '$(OPEN223_MODEL_BASE_URL)' | cmp -s - $@ 2>/dev/null \
+		|| printf '%s\n' '$(OPEN223_MODEL_BASE_URL)' > $@
+
+FORCE:
+
+examples/%.md: models/%.ttl $(MODEL_BASE_URL_STAMP) tools/make_count_table.py tools/make-notebook.py tools/mark-out-of-date.py tools/make_model_formats.py tools/generate-queries.py queries.toml
 	uv run python tools/make_model_formats.py $<
 	uv run python tools/generate-queries.py $< $@
 	uv run python tools/make_count_table.py $< $@
 	uv run python tools/make-notebook.py $< $@
 	uv run python tools/mark-out-of-date.py $< $@
+
+# Rewrite the example pages with the published model URL. A local build points
+# them at this checkout, which must not be committed; run this first.
+publish-urls:
+	@$(MAKE) update-examples OPEN223_MODEL_BASE_URL=https://models.open223.info
+	@echo "examples/*.md now read models from https://models.open223.info"
+
+# Guard against committing a branch's base URL into the example pages: only the
+# published site belongs in the checked-in markdown. Checks the committed
+# content, not the working tree, which legitimately holds branch URLs mid-build.
+check-model-urls:
+	@bad=$$(git grep -n 'Model\.from_file(' HEAD -- 'examples/*.md' \
+		| grep -v 'Model\.from_file("https://models\.open223\.info/' || true); \
+	if [ -n "$$bad" ]; then \
+		echo "Committed example pages read models from somewhere other than https://models.open223.info:"; \
+		echo "$$bad"; \
+		echo "Regenerate them on main (make update-examples) before committing."; \
+		exit 1; \
+	fi
+	@echo "Committed example pages all read from https://models.open223.info"
+
+# Point git at the versioned hooks in .githooks/, which reject a commit that
+# carries a local model URL into examples/*.md. One-time, per clone.
+install-hooks:
+	git config core.hooksPath .githooks
+	@echo "git hooks installed from .githooks/"
 
 install-kernel:
 	uv run python -m ipykernel install --user --name open223-models --display-name "open223-models"

@@ -45,9 +45,25 @@ jobs:
       with:
         python-version: '3.12'
 
+    # The model URL in examples/*.md is generated; only the published one may be
+    # committed. Fails fast if a branch URL was checked in by mistake.
+    - name: check committed model URLs
+      run: make check-model-urls
+
+    # Belt and braces for the deployed site: regenerate the pages against the
+    # published model URL before building, so what ships never depends on how
+    # tools/model-base-url.sh resolved or on what was committed. Branch and pull
+    # request builds skip this and keep their own preview URLs.
+    - name: publish model URLs
+      if: github.ref == 'refs/heads/main'
+      run: make publish-urls
+
     - name: build examples
       env:
         BUILD_EXAMPLES_LOG: build-examples.log
+        # For a pull request the branch lives in the head repository (a fork, for
+        # a fork PR); tools/model-base-url.sh builds the branch's raw URL from it.
+        GITHUB_HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
       run: bash build_examples.sh
 
     - name: upload complete example build log
