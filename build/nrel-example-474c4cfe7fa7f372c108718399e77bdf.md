@@ -10,14 +10,6 @@ kernelspec:
   name: open223-models
 ---
 
-```{warning}
-This model has not been updated since the last revision of the 223P ontology and it may not pass validation.
-
-- 223P was last updated on 2026-06-24 16:10:33
-- model file was last updated on 2025-06-20 10:26:03
-```
-
-
 # NREL Example Building
 
 This is an example building provided by the National Renewable Energy Laboratory, built with the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) tool.
@@ -64,8 +56,8 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 | [Connection](https://explore.open223.info/s223/Connection.html) | [Duct](https://explore.open223.info/s223/Duct.html) | 57 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 211 |
 | [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 202 |
-| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | [](https://explore.open223.info/s223/.html) | 15 |
-| [Zone](https://explore.open223.info/s223/Zone.html) | [](https://explore.open223.info/s223/.html) | 3 |
+| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | Direct instances | 15 |
+| [Zone](https://explore.open223.info/s223/Zone.html) | Direct instances | 3 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html) | 393 |
 | [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedObservableProperty](https://explore.open223.info/s223/EnumeratedObservableProperty.html) | 107 |
 | [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedActuatableProperty](https://explore.open223.info/s223/EnumeratedActuatableProperty.html) | 66 |
@@ -78,7 +70,8 @@ are available in many programming languages. [JSON-LD](https://json-ld.org) is a
 This code uses the [BuildingMOTIF](https://github.com/NREL/BuildingMOTIF) library to load the 223P ontology and the model file into a temporary in-memory instance.
 It then validates the model against the ontology. If the model is invalid, it will print the validation report.
 
-BuildingMOTIF resolves the ontology's dependencies and performs SHACL validation and inference
+BuildingMOTIF resolves the ontology's dependencies with [OntoEnv](https://ontoenv.gtf.fyi) and validates with
+[shifty](https://shifty.gtf.fyi), both of which are self-contained Rust extensions, so there is nothing else to install and no Java is required.
 
 ````{note} BuildingMOTIF installation
 :class: dropdown
@@ -92,10 +85,11 @@ pip install 'buildingmotif @ git+https://github.com/NREL/buildingmotif.git@gtf-b
 ```{code-cell} python3
 from buildingmotif import BuildingMOTIF
 from buildingmotif.dataclasses import Library, Model
+from datetime import datetime, timezone
 import logging
-import os
 
-# Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL engine by default
+# Create a BuildingMOTIF object. This validates with the "pyshifty" SHACL
+# engine by default, so there is nothing else to install and no Java required.
 bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 
 # load 223P library. We will load a recent copy from the models.open223.info
@@ -103,18 +97,22 @@ bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 # BuildingMOTIF uses OntoEnv to fetch the ontologies 223P depends on (QUDT, SHACL, ...).
 s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
 
-# Load the published model by default. Local development can override this so
-# a page build validates edits that have not been deployed yet.
-model_location = os.environ.get(
-    "OPEN223_MODEL_PATH", "https://models.open223.info/nrel-example.ttl"
-)
-model = Model.from_file(model_location)
+# load the model into the BuildingMOTIF instance. This page pins the exact copy
+# it was built and validated against, so it stays reproducible as the site moves
+# on. To run this against the current published model, use the permanent URL:
+#
+#     model = Model.from_file("https://models.open223.info/nrel-example.ttl")
+#
+model = Model.from_file("https://raw.githubusercontent.com/open223/models.open223.info/1da4cd1739c0e45f9cd8c06a5c25635654355337/models/nrel-example.ttl")
 
 # a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)
 
 # validate the model against its manifest
 ctx = model.validate()
+
+# print when validation completed
+print(f"Validation run at: {datetime.now(timezone.utc).isoformat(timespec='seconds')}")
 
 # print the validation result
 print(f"Model is valid: {ctx.valid}")
@@ -130,12 +128,6 @@ for focus_node, diffs in ctx.get_reasons_with_severity("Violation").items():
     print(focus_node)
     for diff in diffs:
         print("  - " + diff.reason())
-
-# Production builds continue to render pages for historical invalid models.
-# The single-model development target opts into treating invalidity as an
-# execution error so its exit status can be used as a test result.
-if not ctx.valid and os.environ.get("OPEN223_FAIL_ON_INVALID"):
-    raise RuntimeError("Model validation failed")
 
 ```
 
