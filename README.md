@@ -170,18 +170,20 @@ published site locally:
 OPEN223_MODEL_BASE_URL=https://models.open223.info ./build_examples.sh
 ```
 
-A local build therefore leaves `examples/*.md` pointing at your checkout, with a
-"Preview build" warning admonition on each page. Do not commit that: only the
-published URL belongs in the repository. Before committing, run:
+While a local build runs, `examples/*.md` point at your checkout and carry a
+"Preview build" warning admonition. Only the published URL belongs in the
+repository, so three things keep it out:
 
-```shell
-make publish-urls
-```
+1. `./build_examples.sh` restores the published URL when it exits, however it
+   exits. A finished local build leaves no URL churn in `git status`.
+2. `make install-hooks` (once per clone) points git at `.githooks/`, whose
+   `pre-commit` hook rejects a commit that stages a non-published URL.
+3. `make check-model-urls` fails the CI build if one was committed anyway.
 
-which regenerates the pages with `https://models.open223.info`, keeping any real
-content changes (query tables, component counts). `git checkout -- examples/`
-also works but throws those away too. `make check-model-urls` (also a CI step)
-fails if a non-published URL was committed.
+To fix the pages by hand at any point, run `make publish-urls`: it regenerates
+them with `https://models.open223.info`, keeping real content changes such as
+query tables and component counts. (`git checkout -- examples/` also works, but
+throws those away too.)
 
 Nothing rewrites these files on merge: CI regenerates the pages in its own
 workspace and publishes only the built HTML, so a committed `file://` URL stays

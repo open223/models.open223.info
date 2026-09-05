@@ -1,4 +1,4 @@
-.PHONY: all compile-models update-examples validate-model model-page publish-urls check-model-urls install-kernel clean FORCE
+.PHONY: all compile-models update-examples validate-model model-page publish-urls check-model-urls install-hooks install-kernel clean FORCE
                                                                                                                                                                                                                   
 all: compile-models update-examples
 
@@ -102,6 +102,12 @@ check-model-urls:
 		exit 1; \
 	fi
 	@echo "Committed example pages all read from https://models.open223.info"
+
+# Point git at the versioned hooks in .githooks/, which reject a commit that
+# carries a local model URL into examples/*.md. One-time, per clone.
+install-hooks:
+	git config core.hooksPath .githooks
+	@echo "git hooks installed from .githooks/"
 
 install-kernel:
 	uv run python -m ipykernel install --user --name open223-models --display-name "open223-models"
