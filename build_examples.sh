@@ -72,6 +72,43 @@ run_step() {
     fi
 }
 
+# Like run_step, but retries. Every notebook builds its own BuildingMOTIF
+# instance, and that instance resolves 223P's imports over the network from
+# scratch -- QUDT, SHACL, SKOS, VAEM -- so one build makes the same request
+# once per model. www.w3.org sits behind Cloudflare and throttles datacenter
+# egress, which is why a GitHub Actions build intermittently loses a handful of
+# pages to `OntologyImportsNotFound: http://www.w3.org/ns/shacl#` while the same
+# build passes from a laptop. The failures are transient and unrelated to the
+# models, so retry rather than fail the deploy.
+#
+# This is cheap because myst caches executed notebooks under _build/execute and
+# does *not* cache a notebook whose execution raised: a second attempt re-runs
+# only the pages that actually failed. Measured locally, a rebuild after one
+# failing page re-executed that page alone and took 17s against 1.6 min cold.
+run_step_retrying() {
+    local name="$1"
+    local attempts="$2"
+    shift 2
+    local attempt=1
+
+    while true; do
+        if [ "${attempt}" -eq 1 ]; then
+            run_step "${name}" "$@" && return 0
+        else
+            run_step "${name} (attempt ${attempt}/${attempts})" "$@" && return 0
+        fi
+
+        local status="$?"
+        if [ "${attempt}" -ge "${attempts}" ]; then
+            echo "    still failing after ${attempts} attempts"
+            return "${status}"
+        fi
+
+        echo "    attempt ${attempt}/${attempts} failed; retrying (cached pages are not re-executed)"
+        attempt=$((attempt + 1))
+    done
+}
+
 # for debugging ontoenv
 export RUST_BACKTRACE=1
 
@@ -85,11 +122,16 @@ mkdir -p models/compiled
 mkdir -p models/withimports
 run_step "Compile models and update examples" make -j 2
 run_step "Install notebook kernel" make install-kernel
-# Execute notebooks one at a time. myst defaults to --execute-parallel 7, and
-# every notebook loads its own copy of 223P plus the full QUDT closure into a
-# separate kernel; at that concurrency the build deadlocks (a kernel drops out
-# and myst waits on it forever, with no execution timeout).
-run_step "Build and execute Jupyter Book" uv run jupyter book build --html --execute --execute-parallel 1 --strict
+# --execute-parallel asks for one notebook at a time, because every notebook
+# loads its own copy of 223P plus the full QUDT closure into a separate kernel.
+#
+# NOTE: jupyter-book 2.1.6 does not appear to honour the value. A local build of
+# these 20 pages starts 15 kernels at once (myst's own default) and a GitHub
+# Actions build starts 4, never the 1 asked for here. The flag is left in place
+# to document the intent, but do not rely on it for anything -- in particular,
+# do not assume the notebooks can share a resource that tolerates only one
+# writer.
+run_step_retrying "Build and execute Jupyter Book" 3 uv run jupyter book build --html --execute --execute-parallel 1 --strict
 
 echo "Example build completed successfully. Full output: ${build_log}"
 

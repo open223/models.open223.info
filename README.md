@@ -125,9 +125,22 @@ hand.
 - **A page did not pick up your change**: `make` only regenerates
   `examples/<name>.md` when `models/<name>.ttl`, one of the `tools/` scripts, or
   `.model-base-url` is newer. Force it with `touch models/<name>.ttl`.
-- **Do not raise `--execute-parallel`**: every notebook loads its own copy of 223P
-  plus the QUDT closure into a separate kernel; at the MyST default of 7 the build
-  deadlocks waiting on a kernel that dropped out, with no timeout.
+- **`OntologyImportsNotFound: ... http://www.w3.org/ns/shacl#`** (or
+  `.../2004/02/skos/core`): a transient fetch failure, not a problem with the
+  model. Each notebook builds its own BuildingMOTIF instance, and each of those
+  resolves 223P's imports over the network from scratch, so one build asks
+  `www.w3.org` for the same file once per model. It sits behind Cloudflare and
+  throttles datacenter egress, so a GitHub Actions build intermittently loses a
+  few pages this way while the identical build passes from a laptop.
+  `build_examples.sh` retries the book build up to three times; MyST does not
+  cache a notebook whose execution raised, so a retry re-runs only the pages
+  that actually failed and costs seconds rather than minutes.
+- **`--execute-parallel` does not appear to work**: `build_examples.sh` asks for
+  1, but jupyter-book 2.1.6 ignores the value — a local build of these pages
+  starts 15 kernels at once (MyST's own default) and a GitHub Actions build
+  starts 4. The flag documents the intent and nothing more. In particular, do
+  not give the notebooks anything that tolerates only one writer, such as a
+  shared persistent OntoEnv: they will run concurrently.
 - **OntoEnv errors after an upgrade**: environments written by ontoenv 0.5 cannot
   be read by 0.6. `rm -rf .ontoenv` and rebuild.
 - **Everything is stale or wrong**: `make clean` removes the compiled models and
@@ -160,8 +173,20 @@ into `examples/*.md` when the page is generated, by `tools/model-base-url.sh`:
 | Build | Model URL |
 | --- | --- |
 | any local build (`./build_examples.sh`, `make model-page`, `make update-examples`) | `file://` this checkout, so you validate the models you are editing |
-| CI, `main` | `https://models.open223.info` — the published models |
-| CI, a branch or pull request | that branch's models on `raw.githubusercontent.com` |
+| CI (`main`, a branch, or a pull request) | the exact commit under test on `raw.githubusercontent.com` |
+
+No build reads `https://models.open223.info`, `main` included. That copy is
+whatever the last *successful* deploy left behind, so validating against it
+deadlocks: a commit that fixes a broken model file is checked against the old
+broken file, the build fails, the site is never updated, and the next build
+checks the same stale file again. `pnnl-bdg1-2.ttl` was stuck exactly there —
+its `owl:Ontology` declaration was restored in #75, but every `main` build
+afterwards failed validating the pre-#75 published copy. Reading the commit
+under test also makes a built page reproducible: its URL keeps resolving to the
+bytes that page was validated against, even after `main` moves on.
+
+The published URL is still the one a reader wants, so the generated cell names
+it in a comment directly above the `Model.from_file(...)` line.
 
 Export `OPEN223_MODEL_BASE_URL` to override it, for instance to reproduce the
 published site locally:
@@ -171,7 +196,9 @@ OPEN223_MODEL_BASE_URL=https://models.open223.info ./build_examples.sh
 ```
 
 While a local build runs, `examples/*.md` point at your checkout and carry a
-"Preview build" warning admonition. Only the published URL belongs in the
+"Preview build" warning admonition; so do branch and pull request builds, whose
+pages validate a copy that is not going to be published. A `main` build is
+building what is about to be published, so it carries no such note. Only the published URL belongs in the
 repository, so three things keep it out:
 
 1. `./build_examples.sh` restores the published URL when it exits, however it
