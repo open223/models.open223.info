@@ -11,9 +11,49 @@ def model_base_url():
 
     The URL is baked into the page at generation time so that the code a reader
     sees is a single, copy-pasteable Model.from_file(...) call. tools/model-base-url.sh
-    picks the value: the published site for main, the branch's own copy otherwise.
+    picks the value: the commit under test in CI, the working tree locally.
     """
     return os.environ.get("OPEN223_MODEL_BASE_URL", PUBLISHED_BASE_URL).rstrip("/")
+
+
+def is_preview(base_url):
+    """Whether this build reads models from somewhere other than the canonical copy.
+
+    tools/model-base-url.sh --preview is the authority, because only it knows
+    whether a raw.githubusercontent.com URL is main's (canonical) or a branch's
+    (a preview); the Makefile passes its answer through OPEN223_MODEL_PREVIEW.
+    Fall back to comparing against the published site when the variable is not
+    set, so running this script by hand still does something sensible.
+    """
+    flag = os.environ.get("OPEN223_MODEL_PREVIEW")
+    if flag is not None:
+        return flag.strip() != "0"
+    return base_url != PUBLISHED_BASE_URL
+
+
+def model_load_block(filename, base_url):
+    """The commented `Model.from_file(...)` line the page shows.
+
+    A build reads the model from the commit under test (or, locally, from the
+    working tree) so that it validates what it is about to publish rather than
+    what was published last time. That URL is not the one a reader wants, so
+    name the published copy right above it -- it is the stable, pretty URL and
+    the one to use day to day.
+    """
+    published = f"{PUBLISHED_BASE_URL}/{filename}"
+    read_from = f"{base_url}/{filename}"
+
+    if read_from == published:
+        return f'''# load the model into the BuildingMOTIF instance
+model = Model.from_file("{published}")'''
+
+    return f'''# load the model into the BuildingMOTIF instance. This page pins the exact copy
+# it was built and validated against, so it stays reproducible as the site moves
+# on. To run this against the current published model, use the permanent URL:
+#
+#     model = Model.from_file("{published}")
+#
+model = Model.from_file("{read_from}")'''
 
 
 def generate_python_code(location, base_url):
@@ -35,8 +75,7 @@ bm = BuildingMOTIF('sqlite://', log_level=logging.ERROR)
 # BuildingMOTIF uses OntoEnv to fetch the ontologies 223P depends on (QUDT, SHACL, ...).
 s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=False, run_shacl_inference=False)
 
-# load the model into the BuildingMOTIF instance
-model = Model.from_file("{base_url}/{location}")
+{model_load_block(location, base_url)}
 
 # a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)
@@ -99,7 +138,7 @@ if __name__ == '__main__':
     header = "## Load and Validate Model"
 
     description = description_template
-    if base_url != PUBLISHED_BASE_URL:
+    if is_preview(base_url):
         # A preview build of a branch: say so, since the page is not validating
         # the model that is currently published.
         description += (

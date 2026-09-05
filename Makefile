@@ -2,11 +2,19 @@
                                                                                                                                                                                                                   
 all: compile-models update-examples
 
-# Base URL the generated notebooks read models from: the published site on main,
-# the branch's own copy on any other branch. Override by exporting
-# OPEN223_MODEL_BASE_URL. See tools/model-base-url.sh.
+# Base URL the generated notebooks read models from: the commit under test in
+# CI, this working tree locally. Override by exporting OPEN223_MODEL_BASE_URL.
+# See tools/model-base-url.sh.
 OPEN223_MODEL_BASE_URL ?= $(shell tools/model-base-url.sh)
 export OPEN223_MODEL_BASE_URL
+
+# Whether the generated pages should carry a "preview build" note. Only
+# tools/model-base-url.sh can tell main's raw URL (canonical, no note) from a
+# branch's (a preview), so it is asked rather than re-deriving it here. The URL
+# is passed in explicitly: `make publish-urls` sets it on the command line, and
+# a command-line variable does not reach a $(shell) through `export` alone.
+OPEN223_MODEL_PREVIEW := $(shell OPEN223_MODEL_BASE_URL='$(OPEN223_MODEL_BASE_URL)' tools/model-base-url.sh --preview)
+export OPEN223_MODEL_PREVIEW
 
 # The base URL is written into examples/*.md when they are generated, so the
 # pages must be regenerated whenever it changes -- otherwise a branch URL would
