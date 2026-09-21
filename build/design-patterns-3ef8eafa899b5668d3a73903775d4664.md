@@ -14,20 +14,24 @@ kernelspec:
 This model has not been updated since the last revision of the 223P ontology and it may not pass validation.
 
 - 223P was last updated on 2026-06-24 16:10:33
-- model file was last updated on 2025-08-04 10:27:34
+- model file was last updated on 2024-09-19 11:21:33
 ```
 
 
-# ASHRAE Guideline 36-2021 A-4 Parallel Fan-Powered Terminal Unit, Variable Volume Fan
+# Design Patterns
 
-This component model is an example of the parallel fan-powered terminal unit with variable volume fan from Guideline 36-2021, Appendix A, Figure A-4.
+This file contains the Turtle code supporting the set of design patterns presented in the User Documentation site, in the section titled ["Modeling Design Patterns"](https://docs.open223.info/guides/design-patterns.html#)
+
+## Source
+
+The model was created using [TopQuadrant](https://www.topquadrant.com/) TopBraid Composer Maestro Edition.
 
 ## Downloads
 
-- <a href="/compiled/guideline36-2021-A-4.ttl">Turtle file (compiled)</a>
-- <a href="/withimports/guideline36-2021-A-4.ttl">Turtle file (with all imports)</a>
-- <a href="/guideline36-2021-A-4.ttl">Turtle file (original)</a>
-- <a href="/guideline36-2021-A-4.jsonld">JSON-LD file (original)</a>
+- <a href="/compiled/design-patterns.ttl">Turtle file (compiled)</a>
+- <a href="/withimports/design-patterns.ttl">Turtle file (with all imports)</a>
+- <a href="/design-patterns.ttl">Turtle file (original)</a>
+- <a href="/design-patterns.jsonld">JSON-LD file (original)</a>
 
 <details>
 <summary>What are these files?</summary>
@@ -41,27 +45,28 @@ This component model is an example of the parallel fan-powered terminal unit wit
 are available in many programming languages. [JSON-LD](https://json-ld.org) is a JSON-based format for linked data that is easy to use with JavaScript and other web technologies.
 </details>
 
+## Queries
+| Description | Query URL |
+|-------------|-----------|
+| Select all triples from model. | <a href='https://query.open223.info/?query=PREFIX+s223%3A+%3Chttp%3A%2F%2Fdata.ashrae.org%2Fstandard223%23%3E+PREFIX+unit%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Funit%2F%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+quantitykind%3A+%3Chttp%3A%2F%2Fqudt.org%2Fvocab%2Fquantitykind%2F%3E+PREFIX+qudt%3A+%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%2F%3E+PREFIX+sh%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fshacl%23%3E+PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E+%0ASELECT+%2A+WHERE+%7B%0A%09+%3Fs+%3Fp+%3Fo+%0A%7D%0A+LIMIT+10&url=https%3A%2F%2Fmodels.open223.info%2Fwithimports%2Fdesign-patterns.ttl'>Query Link</a> |
+
 ## Model Components
 | Parent Class | Class | Instances |
 |------------|-------|----------------|
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Sensor](https://explore.open223.info/s223/Sensor.html) | 4 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Motor](https://explore.open223.info/s223/Motor.html) | 6 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [ElectricBreaker](https://explore.open223.info/s223/ElectricBreaker.html) | 5 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Luminaire](https://explore.open223.info/s223/Luminaire.html) | 4 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [OccupantMotionSensor](https://explore.open223.info/s223/OccupantMotionSensor.html) | 4 |
 | [Equipment](https://explore.open223.info/s223/Equipment.html) | [Actuator](https://explore.open223.info/s223/Actuator.html) | 2 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Damper](https://explore.open223.info/s223/Damper.html) | 1 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [HeatingCoil](https://explore.open223.info/s223/HeatingCoil.html) | 1 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Fan](https://explore.open223.info/s223/Fan.html) | 1 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Valve](https://explore.open223.info/s223/Valve.html) | 1 |
-| [Equipment](https://explore.open223.info/s223/Equipment.html) | [FanPoweredTerminal](https://explore.open223.info/s223/FanPoweredTerminal.html) | 1 |
-| [Connection](https://explore.open223.info/s223/Connection.html) | [Duct](https://explore.open223.info/s223/Duct.html) | 5 |
-| [Connection](https://explore.open223.info/s223/Connection.html) | [Pipe](https://explore.open223.info/s223/Pipe.html) | 1 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 11 |
-| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 9 |
-| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | Direct instances | 1 |
-| [Zone](https://explore.open223.info/s223/Zone.html) | Direct instances | 1 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableObservableProperty](https://explore.open223.info/s223/QuantifiableObservableProperty.html) | 9 |
+| [Equipment](https://explore.open223.info/s223/Equipment.html) | [Controller](https://explore.open223.info/s223/Controller.html) | 1 |
+| [Connection](https://explore.open223.info/s223/Connection.html) | [ElectricWire](https://explore.open223.info/s223/ElectricWire.html) | 12 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [InletConnectionPoint](https://explore.open223.info/s223/InletConnectionPoint.html) | 21 |
+| [ConnectionPoint](https://explore.open223.info/s223/ConnectionPoint.html) | [OutletConnectionPoint](https://explore.open223.info/s223/OutletConnectionPoint.html) | 19 |
+| [DomainSpace](https://explore.open223.info/s223/DomainSpace.html) | Direct instances | 5 |
 | [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableProperty](https://explore.open223.info/s223/QuantifiableProperty.html) | 6 |
-| [Property](https://explore.open223.info/s223/Property.html) | [QuantifiableActuatableProperty](https://explore.open223.info/s223/QuantifiableActuatableProperty.html) | 3 |
-| [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedActuatableProperty](https://explore.open223.info/s223/EnumeratedActuatableProperty.html) | 1 |
-| [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedObservableProperty](https://explore.open223.info/s223/EnumeratedObservableProperty.html) | 1 |
+| [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedActuatableProperty](https://explore.open223.info/s223/EnumeratedActuatableProperty.html) | 4 |
+| [Property](https://explore.open223.info/s223/Property.html) | [EnumeratedObservableProperty](https://explore.open223.info/s223/EnumeratedObservableProperty.html) | 4 |
+| [Property](https://explore.open223.info/s223/Property.html) | [EnumerableProperty](https://explore.open223.info/s223/EnumerableProperty.html) | 3 |
 
 
 ## Load and Validate Model
@@ -100,9 +105,9 @@ s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=Fa
 # it was built and validated against, so it stays reproducible as the site moves
 # on. To run this against the current published model, use the permanent URL:
 #
-#     model = Model.from_file("https://models.open223.info/guideline36-2021-A-4.ttl")
+#     model = Model.from_file("https://models.open223.info/design-patterns.ttl")
 #
-model = Model.from_file("https://raw.githubusercontent.com/open223/models.open223.info/1da4cd1739c0e45f9cd8c06a5c25635654355337/models/guideline36-2021-A-4.ttl")
+model = Model.from_file("https://raw.githubusercontent.com/open223/models.open223.info/48c95b6c8575654872eb37abb7dca40cd50636ab/models/design-patterns.ttl")
 
 # a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)

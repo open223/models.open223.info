@@ -123,7 +123,7 @@ s223 = Library.from_ontology("https://open223.info/223p.ttl", infer_templates=Fa
 #
 #     model = Model.from_file("https://models.open223.info/NIST-IBAL.ttl")
 #
-model = Model.from_file("https://raw.githubusercontent.com/open223/models.open223.info/1da4cd1739c0e45f9cd8c06a5c25635654355337/models/NIST-IBAL.ttl")
+model = Model.from_file("https://raw.githubusercontent.com/open223/models.open223.info/48c95b6c8575654872eb37abb7dca40cd50636ab/models/NIST-IBAL.ttl")
 
 # a model's manifest lists the libraries it should conform to
 model.manifest.add(s223)
